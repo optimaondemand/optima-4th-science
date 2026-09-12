@@ -689,7 +689,6 @@
     .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
   }
 
-
   /* ── Image Suggestion (shown only if /images/[name].png is missing) ── */
   .lesson-figure { margin: 20px 0; }
   .lesson-figure-label {
@@ -730,7 +729,6 @@
     padding: 5px 12px; display: inline-block; margin-top: 4px;
     user-select: all;
   }
-
 
 /* ── Response Textareas ── */
 .response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
@@ -991,7 +989,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🦋 Lesson Progress</span>
@@ -1235,20 +1232,6 @@
 <!-- ═══════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 13-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Flowering Plant Reproduction</div>
-  <div class="vp-slot">13-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce the plant reproduction cycle. Preview vocabulary: flower, pollination, pollen, seed, fertilization, germination. Walk through: pollination, fertilization, seed, germination. Students will put the process in order and observe a real flower. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -1320,7 +1303,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · The Flower Is the Maker</h3>
       <p>A <span class="vtip">flower<span class="vtip-box"><span class="vtip-word">Flower</span>The reproductive part of a plant.</span></span> is more than a pretty thing on a stem — it's the part of a plant that MAKES the next generation. Every flower has two important jobs: produce <span class="vtip">pollen<span class="vtip-box"><span class="vtip-word">Pollen</span>The yellow dust inside a flower.</span></span> (the male part) and hold tiny eggs deep inside (the female part).</p>
@@ -1548,7 +1530,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Sequence the 5 steps of flowering plant reproduction in your notebook. Then look at a real Florida flower (in your yard, a park, or a photo) and find as many parts as you can.</p>
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
 
@@ -1702,7 +1683,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Pollination, Fertilization, Seed, Germination</strong></p>
       <div class="pq">
@@ -1742,7 +1722,6 @@
         <span class="pq-text">A seed sits in a dry drawer for a year. Why didn't it grow? What three things does a seed need to GERMINATE?</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="A seed sits in a dry drawer for a year. Why didn&#x27;t..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Your Flower Reproduction Diagram</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your notebook, draw the FIVE steps of flowering plant reproduction as a cycle (a big circle with arrows between each step).</p>
@@ -1833,7 +1812,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -2066,7 +2044,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2112,8 +2089,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

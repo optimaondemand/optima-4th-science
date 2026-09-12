@@ -690,7 +690,6 @@
     .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
   }
 
-
   /* ── Image Suggestion (shown only if /images/[name].png is missing) ── */
   .lesson-figure { margin: 20px 0; }
   .lesson-figure-label {
@@ -731,7 +730,6 @@
     padding: 5px 12px; display: inline-block; margin-top: 4px;
     user-select: all;
   }
-
 
 /* ── Response Textareas ── */
 .response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
@@ -992,7 +990,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">📋 Lesson Progress</span>
@@ -1252,20 +1249,6 @@
 <!-- ═══════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 20-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Investigation: Observing Energy Moving</div>
-  <div class="vp-slot">20-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce hands-on energy transfer investigation. Preview vocabulary: transfer, station, receiver, evidence, measurement, source. Students will use their senses to spot evidence of energy transfer at investigation stations. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -1341,7 +1324,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · What a Station Looks Like</h3>
       <p>A <span class="vtip">station<span class="vtip-box"><span class="vtip-word">Station</span>A small investigation setup.</span></span> is a small setup designed to show ONE thing happening clearly. In real research labs, scientists set up stations to test one variable at a time. Today, you'll do the same — four stations, one for each form of energy.</p>
@@ -1509,7 +1491,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Walk around your home or school for two minutes (with permission). Find ONE example of each energy form: heat, light, sound, and electrical. By step 4 you'll have a four-row chart showing the source, the receiver, and your evidence for each.</p>
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
 
@@ -1663,7 +1644,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Station, Receiver, Evidence, Measurement</strong></p>
       <div class="pq">
@@ -1703,7 +1683,6 @@
         <span class="pq-text">Why are SIMPLE tools (a thermometer, a stopwatch) often enough to do real science? Give one example.</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="Why are SIMPLE tools (a thermometer, a stopwatch) ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
@@ -1794,7 +1773,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -2027,7 +2005,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2073,8 +2050,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

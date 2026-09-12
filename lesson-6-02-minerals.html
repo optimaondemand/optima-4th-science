@@ -931,7 +931,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">💎 Lesson Progress</span>
@@ -1233,20 +1232,6 @@
 ═══════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 6-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Physical Properties of Minerals</div>
-  <div class="vp-slot">6-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce mineral identification through physical properties. Preview vocabulary: mineral, hardness, luster, cleavage, streak, Mohs scale. Students will learn the five clues scientists use to tell minerals apart. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- Activity 1: Warm-Up -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -1327,7 +1312,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <p style="font-size:18px;"><strong>Part 1 — What Is a Mineral?</strong></p>
       <p>A <span class="vtip"><strong>mineral</strong><span class="vtip-box"><span class="vtip-word">Mineral</span>A naturally occurring, solid substance with a specific crystal structure found in Earth's crust.</span></span> is a naturally occurring, solid substance found in Earth's crust. Minerals are the <em>building blocks of rocks</em> — most rocks are made of two or more minerals locked together.</p>
@@ -1682,7 +1666,6 @@
     </div>
     <div class="act-body">
 
-
       <p>Imagine a geologist hands you an unknown mineral and asks: <strong>"What is this?"</strong> Here's the four-step process real scientists follow. As you read each step, imagine holding the mystery mineral in your hand.</p>
 
       <div style="position:relative; margin:16px 0;">
@@ -1839,7 +1822,6 @@
     </div>
     <div class="act-body">
 
-
       <!-- Part A -->
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Label the Properties</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the correct label for each property description below.<br><strong>Word Bank: hardness, luster, cleavage, streak, color, Mohs scale</strong></p>
@@ -1882,7 +1864,6 @@
         <span class="pq-text">Limestone and marble are both made of the mineral calcite. How does marble form from limestone? What happens to the minerals inside?</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="Limestone and marble are both made of the mineral ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <!-- Part C -->
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Mineral Identification Table &amp; Draw</p>
@@ -2017,7 +1998,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -2245,7 +2225,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2291,8 +2270,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

@@ -831,7 +831,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🪸 Lesson Progress</span>
@@ -1149,20 +1148,6 @@
 ════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 8-01-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Modern Resources: Exploring Earth Wonders</div>
-  <div class="vp-slot">8-01-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce modern exploration and resource discovery. Preview vocabulary: natural resource, biodiversity, renewable energy, nonrenewable, ecosystem, exploration. Students follow today explorers into Earth most amazing places. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- WARM-UP -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -1273,7 +1258,6 @@
       <div class="act-time" style="background:#1B90C0;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <p style="font-size:18px;"><strong>Part 1 — Modern-Day Explorers</strong></p>
       <p>Long ago, explorers sailed across oceans searching for new lands, gold, and spices. Today's explorers are on a very different kind of quest. Instead of treasure maps, they use <em>sonar equipment, satellites, and robots</em> to search for something even more valuable: <span class="vtip"><strong>natural resources</strong><span class="vtip-box"><span class="vtip-word">Natural Resource</span>Something found in nature that people use, such as water, oil, sunlight, plants, or minerals.</span></span> that could power our world and protect life on Earth.</p>
@@ -1563,7 +1547,6 @@
     </div>
     <div class="act-body">
 
-
       <p>Every great discovery follows a <strong>process</strong>. Let's trace the journey of a modern explorer — from spotting a problem all the way to protecting the environment.</p>
 
       <!-- 4-STEP EXPLORER PROCESS -->
@@ -1743,7 +1726,6 @@
     </div>
     <div class="act-body">
 
-
       <!-- PART A -->
       <p style="font-size:18px;color:#0B2A1E;font-weight:800;margin-bottom:6px;">🗺️ Part A &mdash; Quick Notes</p>
       <p style="font-size:15px;color:#6B9080;margin-bottom:14px;">Answer these questions in your science journal using bullet points or short sentences.</p>
@@ -1772,7 +1754,6 @@
       </div>
       <textarea class="response-textarea" id="ans-4" data-label="What are renewable energy sources, and why are the..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-
       <!-- PART B -->
       <p style="font-size:18px;color:#0B2A1E;font-weight:800;margin-bottom:6px;margin-top:20px;">🪸 Part B &mdash; Thinking Deeply</p>
       <p style="font-size:15px;color:#6B9080;margin-bottom:14px;">Write a short paragraph (4&ndash;5 sentences) to answer this question. Use your vocabulary words!</p>
@@ -1782,7 +1763,6 @@
         <span class="pq-text"><strong>How can we explore and use Earth's resources — like energy and biodiversity — while also protecting the environment for future generations?</strong><br/><br/>Think about: How scientists balance using resources with caring for nature &bull; Why protecting biodiversity matters &bull; What we can do to help</span>
       </div>
       <textarea class="response-textarea" id="ans-5" data-label="How can we explore and use Earth&#x27;s resources — lik..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <!-- PART C -->
       <p style="font-size:18px;color:#0B2A1E;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Draw &amp; Explore</p>
@@ -1874,7 +1854,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 <!-- ═══ FOOTER ═══ -->
@@ -2102,7 +2081,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card){
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2148,8 +2126,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

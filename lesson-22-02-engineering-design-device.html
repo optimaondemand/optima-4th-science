@@ -689,7 +689,6 @@
     .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
   }
 
-
   /* ── Image Suggestion (shown only if /images/[name].png is missing) ── */
   .lesson-figure { margin: 20px 0; }
   .lesson-figure-label {
@@ -730,7 +729,6 @@
     padding: 5px 12px; display: inline-block; margin-top: 4px;
     user-select: all;
   }
-
 
 /* ── Response Textareas ── */
 .response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
@@ -991,7 +989,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🛠️ Lesson Progress</span>
@@ -1247,20 +1244,6 @@
 <!-- ═══════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 22-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Engineering: Design a Device That Converts Energy</div>
-  <div class="vp-slot">22-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce the full engineering design cycle. Preview vocabulary: criteria, constraint, prototype, device, redesign, test. Students follow Ask, Imagine, Plan, Build, Test, Redesign to create a prototype. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -1332,7 +1315,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · Define the Problem and the Limits</h3>
       <p>Engineers start every design by asking <em>what does this device need to DO?</em> The answer becomes their <span class="vtip">criteria<span class="vtip-box"><span class="vtip-word">Criteria</span>What success looks like.</span></span> — the goals. Things like: "produce enough light to read a book," "fit in a backpack," "be safe for a 4th grader to use."</p>
@@ -1502,7 +1484,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Pick a problem you'd like to solve with an energy-converting device (real or invented). By step 4 you'll have a prototype sketch with criteria, constraints, and a test plan.</p>
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
 
@@ -1656,7 +1637,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Criteria, Constraint, Prototype, Redesign</strong></p>
       <div class="pq">
@@ -1696,7 +1676,6 @@
         <span class="pq-text">Why is REDESIGN so important in engineering? Give an example of how a redesign could improve a flashlight.</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="Why is REDESIGN so important in engineering? Give ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
@@ -1787,7 +1766,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -2020,7 +1998,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2066,8 +2043,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

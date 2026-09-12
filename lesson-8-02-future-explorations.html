@@ -892,7 +892,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🚀 Lesson Progress</span>
@@ -1245,20 +1244,6 @@
 <!-- ═══════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 8-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Future Explorations Beyond Earth</div>
-  <div class="vp-slot">8-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce space resource exploration. Preview vocabulary: resource, space exploration, rover, asteroid, mining, atmosphere. Students will discover why scientists look beyond Earth for resources and trace a space mission step by step. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- WARM-UP -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -1343,7 +1328,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <p style="font-size:18px;"><strong>Part 1 — Why Look Beyond Earth?</strong></p>
 
@@ -1740,7 +1724,6 @@
     </div>
     <div class="act-body">
 
-
       <!-- Mission Control header strip -->
       <div style="background:linear-gradient(135deg,#06091a,#1a1060);border:2px solid rgba(85,200,232,0.25);border-radius:14px;padding:12px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px;">
         <span style="font-size:30px;">🛸</span>
@@ -1915,7 +1898,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Exploration Targets</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the correct location or tool for each description. <strong>Word Bank: Mars, Venus, Asteroid Belt, Rover, Atmosphere, Mining</strong></p>
 
@@ -1956,7 +1938,6 @@
         <span class="pq-text">Explain what "responsible exploration" means using at least two vocabulary words from today's lesson.</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="Explain what &quot;responsible exploration&quot; means using..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Dream Mission Design</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, design your own future space resource mission. Draw a diagram showing: <strong>Where you're going · What resource you're collecting · What tool you'd use (rover, drone, mining robot)</strong></p>
@@ -2047,7 +2028,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -2280,7 +2260,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2326,8 +2305,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

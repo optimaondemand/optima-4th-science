@@ -949,7 +949,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🌴 Lesson Progress</span>
@@ -1258,20 +1257,6 @@
 <!-- ═══ TAB 1: VOCABULARY ═══ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 7-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Local Resources</div>
-  <div class="vp-slot">7-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce where everyday materials come from. Preview vocabulary: natural resource, renewable resource, nonrenewable resource, mineral, fossil fuel, conservation. Students will follow the journey a resource takes to reach their home. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- ACTIVITY 1: WARM-UP -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -1350,7 +1335,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <p style="font-size:18px;"><strong>Part 1 — What Are Natural Resources?</strong></p>
       <p><span class="vtip"><strong>Natural resources</strong><span class="vtip-box"><span class="vtip-word">Natural Resource</span>A material found in nature that people use — like water, soil, wood, sunlight, and minerals.</span></span> are materials that come from the Earth and are used to meet our needs. They include things we can drink, build with, grow food in, and use for energy. Natural resources are essential because without them, our homes, food, and technology simply would not exist.</p>
@@ -1727,7 +1711,6 @@
     </div>
     <div class="act-body">
 
-
       <p>Natural resources don't magically appear in stores and homes. Let's trace the <strong>4-step journey</strong> a resource takes — from deep in the Earth to your community. As you read, think about where you've seen each step in real life.</p>
 
       <div style="position:relative; margin:16px 0;">
@@ -1885,7 +1868,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🗺️ Part A — Identify the Resource Layer</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the correct label for each underground layer below. <strong>Word Bank: groundwater, limestone, phosphate, oil, solar energy, timber</strong></p>
 
@@ -1915,20 +1897,17 @@
       </div>
       <textarea class="response-textarea" id="ans-1" data-label="What is the difference between a renewable resourc..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">6</span>
         <span class="pq-text">Name TWO natural resources found in Florida. For each one, explain how people use it in everyday life.</span>
       </div>
       <textarea class="response-textarea" id="ans-2" data-label="Name TWO natural resources found in Florida. For e..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">7</span>
         <span class="pq-text">Florida does not have granite rock. A neighbor wants to build a granite countertop. What does this tell you about local vs. non-local resources? Why might communities need to trade with each other?</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="Florida does not have granite rock. A neighbor wan..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🌎 Part C — List &amp; Classify</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Look around your home or classroom and <strong>list at least 3 objects</strong>. For each object, identify the natural resource it is made from and whether that resource is <em>renewable</em> or <em>nonrenewable</em>. Write your list in your science notebook.</p>
@@ -2043,7 +2022,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -2271,7 +2249,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2317,8 +2294,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

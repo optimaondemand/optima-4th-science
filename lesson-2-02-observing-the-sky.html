@@ -580,7 +580,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">☀️ Lesson Progress</span>
@@ -879,20 +878,6 @@
 <!-- ═══ TAB 1: VOCABULARY ═══ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 2-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Observing the Sky</div>
-  <div class="vp-slot">2-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce sky observation as nature oldest navigation tool. Preview vocabulary: proximity, navigation, horizon, observation, pattern, cardinal directions. Students will learn how the sun, stars, and patterns in the sky have guided explorers for centuries. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- Activity 1: Warm-Up -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -1000,7 +985,6 @@
       <div class="act-time" style="background:#C7922C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <p style="font-size:18px;"><strong>Part 1 — Using the Sun as a Guide</strong></p>
       <p>Imagine you're on a big ship, sailing across the wide ocean. There are no maps, no phones, and no GPS. How would you know where you're going? Long ago, brave explorers had to use their eyes, their brains, and clues from nature to find their way.</p>
@@ -1334,7 +1318,6 @@
     </div>
     <div class="act-body">
 
-
       <p>Let's trace a day in the life of an early explorer at sea. At each step, they used <span class="vtip"><strong>observation</strong><span class="vtip-box"><span class="vtip-word">Observation</span>Using your senses to carefully notice and gather information about the world around you.</span></span> to navigate. Follow along in your notebook!</p>
 
       <div style="position:relative;margin:16px 0;">
@@ -1484,7 +1467,6 @@
     </div>
     <div class="act-body">
 
-
       <!-- Step 1: Table of Contents -->
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">📖 Step 1 — Update Your Table of Contents</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Add this new entry to your science notebook:</p>
@@ -1514,7 +1496,6 @@
       </div>
       <textarea class="response-textarea" idid="ans-3"ata-label="Draw small arrows along the arc to show the sun mo..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-
       <div class="socratic-q" style="margin-top:12px;">
         <span class="sq-icon">🤔</span>
         <div>
@@ -1533,7 +1514,6 @@
       </div>
       <textarea class="response-textarea" idid="ans-4"ata-label="Make a list of the 4 natural clues early sailors u..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-
       <p style="font-size:16px;color:#5A4D3E;margin:8px 0 4px 0;font-weight:700;">Here are the four clues to list:</p>
       <div class="pq"><span class="pq-num" style="background:#2980B9;">A</span><span class="pq-text"><strong>Birds</strong> — especially birds that don't fly far from land</span></div>
       <textarea class="response-textarea" idid="ans-5"ata-label="Birds — especially birds that don&#x27;t fly far from l..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
@@ -1546,7 +1526,6 @@
 
       <div class="pq"><span class="pq-num" style="background:#2980B9;">D</span><span class="pq-text"><strong>Seaweed or Driftwood</strong> — floating plants or sticks come from land</span></div>
       <textarea class="response-textarea" idid="ans-8"ata-label="Seaweed or Driftwood — floating plants or sticks c..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
@@ -1718,7 +1697,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -1948,7 +1926,6 @@ document.querySelector('[data-tab="vocab"]').classList.add('visited');
 document.getElementById('progressFill').style.width = '20%';
 document.getElementById('progressPct').textContent = '20%';
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -1994,8 +1971,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

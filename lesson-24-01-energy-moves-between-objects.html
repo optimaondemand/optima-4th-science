@@ -689,7 +689,6 @@
     .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
   }
 
-
   /* ── Image Suggestion (shown only if /images/[name].png is missing) ── */
   .lesson-figure { margin: 20px 0; }
   .lesson-figure-label {
@@ -730,7 +729,6 @@
     padding: 5px 12px; display: inline-block; margin-top: 4px;
     user-select: all;
   }
-
 
 /* ── Response Textareas ── */
 .response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
@@ -991,7 +989,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🔊 Lesson Progress</span>
@@ -1247,20 +1244,6 @@
 <!-- ═══════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 24-01-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Energy Moves Between Objects</div>
-  <div class="vp-slot">24-01-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce heat transfer, conductors, and insulators. Preview vocabulary: heat, conductor, insulator, device, transfer, temperature. Some materials speed up heat transfer and some slow it down — students will test which cup keeps water warm longest. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -1332,7 +1315,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · Heat Flows From Hot to Cold</h3>
       <p>Touch a metal handrail outside on a sunny day. It feels hot. Now imagine touching it at night when the air has cooled. It feels cold. The handrail itself didn't change — but it gave its <span class="vtip">heat<span class="vtip-box"><span class="vtip-word">Heat</span>Energy moving from warm to cool.</span></span> energy to the cooler air at night.</p>
@@ -1495,7 +1477,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Test which kind of cup is the best heat insulator. Pour warm water into 3 different cups, check the temperature after 10 minutes, and record what you observe.</p>
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
 
@@ -1649,7 +1630,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Conductor, Insulator, Heat, Transfer</strong></p>
       <div class="pq">
@@ -1689,7 +1669,6 @@
         <span class="pq-text">A spoon left in hot soup gets hot. Did the SOUP "give" something to the spoon? Use the word TRANSFER in your answer.</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="A spoon left in hot soup gets hot. Did the SOUP &quot;g..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
@@ -1780,7 +1759,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -2013,7 +1991,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2059,8 +2036,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

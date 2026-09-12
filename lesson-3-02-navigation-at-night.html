@@ -783,7 +783,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">⭐ Lesson Progress</span>
@@ -1078,19 +1077,6 @@
 <!-- ═══════════ TAB 1: VOCABULARY ═══════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 3-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Navigation at Night</div>
-  <div class="vp-slot">3-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce star and moon navigation. Preview vocabulary: navigate, constellation, Polaris, star map, moon phase, hemisphere. Students will learn how ancient and modern explorers read the night sky. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- WARM-UP -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -1862,7 +1848,6 @@
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="An explorer is sailing in the Southern Hemisphere...." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-
       <p style="font-size:18px;color:#0A0F2E;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw Your Star Map</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, create a page titled <strong>"Navigating by the Night Sky."</strong> Draw a large circle to represent the night sky. Inside, illustrate and label:</p>
       <div class="pq" style="background:#EEF8F0;border-color:#C4E5CC;">
@@ -2248,7 +2233,6 @@ document.querySelector('[data-tab="vocab"]').classList.add('visited');
 document.getElementById('progressFill').style.width = '20%';
 document.getElementById('progressPct').textContent = '20%';
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2294,8 +2278,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

@@ -574,7 +574,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🌱 Lesson Progress</span>
@@ -788,7 +787,6 @@
   <!-- Main lesson label -->
   <text x="460" y="272" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="800" fill="#FFD700" letter-spacing="3" opacity="0.85">RENEWABLE &amp; NONRENEWABLE RESOURCES</text>
 
-
 </svg>
 </div>
 
@@ -896,20 +894,6 @@
 ══════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 7-01-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Renewable and Nonrenewable Resources</div>
-  <div class="vp-slot">7-01-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce the difference between renewable and nonrenewable resources. Preview vocabulary: natural resource, renewable resource, nonrenewable resource, fossil fuel, solar energy, conservation. Students will follow energy from its source all the way to them. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- Activity 1: Warm-Up -->
   <div class="activity-card act-warmup">
@@ -1019,7 +1003,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <p style="font-size:18px;"><strong>Part 1 — What Is a Natural Resource?</strong></p>
 
@@ -1419,7 +1402,6 @@
     </div>
     <div class="act-body">
 
-
       <p>Have you ever flipped on a light switch and wondered where that energy actually comes from? Let's trace the journey of energy <strong>from its source all the way to your home</strong> — and compare how the path is different for renewable vs. nonrenewable energy.</p>
 
       <!-- Step-by-step -->
@@ -1578,7 +1560,6 @@
     </div>
     <div class="act-body">
 
-
       <!-- Part A -->
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A — Classify the Resource</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Fill in the blank with the correct word from the word bank.<br/><strong>Word Bank:</strong> renewable resource &nbsp;|&nbsp; nonrenewable resource &nbsp;|&nbsp; fossil fuel &nbsp;|&nbsp; conservation</p>
@@ -1621,7 +1602,6 @@
         <span class="pq-text">Fossil fuels are nonrenewable AND cause pollution when burned. Why do you think humans still depend on them so heavily today? What do you think we should do?</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="Fossil fuels are nonrenewable AND cause pollution ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <!-- Part C -->
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Compare</p>
@@ -1737,7 +1717,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 <!-- ═══ FOOTER ═══ -->
@@ -1965,7 +1944,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card){
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2011,8 +1989,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

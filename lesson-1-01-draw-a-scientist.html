@@ -776,7 +776,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🔬 Lesson Progress</span>
@@ -1116,19 +1115,6 @@
 <!-- ══════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 1-01-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Draw a Scientist</div>
-  <div class="vp-slot">1-01-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome students to 4th grade science! Introduce the idea that scientists come in all forms — not just lab coats. Preview that today they will draw what they think a scientist looks like, learn key vocabulary (scientist, observation, scientific sketch, label, diagram, accuracy), and practice the 5 rules of scientific sketching. Set a fun, low-pressure tone. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- Warm-Up Activity -->
   <div class="activity-card act-warmup">
@@ -1209,7 +1195,6 @@
       <div class="act-time" style="background:#8B6FC0;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <p style="font-size:18px;"><strong>Part 1 — What Is a Scientist?</strong></p>
       <p>Here's the truth: <strong>anyone can be a scientist.</strong> A <span class="vtip"><strong>scientist</strong><span class="vtip-box"><span class="vtip-word">Scientist</span>A person who studies the natural world by making careful observations, asking questions, and investigating.</span></span> is simply someone who looks carefully at the world, asks questions, and tries to find answers. Scientists work in forests, in oceans, in hospitals, in kitchens, in outer space — and yes, in laboratories wearing white coats too!</p>
@@ -1576,7 +1561,6 @@
     </div>
     <div class="act-body">
 
-
       <p>Let's trace the steps a scientist follows every time they make a scientific sketch. Follow along as we work through each step!</p>
 
       <!-- 4-step process -->
@@ -1732,7 +1716,6 @@
       <div class="act-time" style="background:#34B76F;">⏱ 12 min</div>
     </div>
     <div class="act-body">
-
 
       <!-- Part A: Rules Check -->
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">📋 Part A &mdash; The Five Rules Check</p>
@@ -1981,7 +1964,6 @@
     </div>
   </div>
 
-
 </div>
 
 <!-- ═══════════ FOOTER ═══════════ -->
@@ -2193,7 +2175,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2239,8 +2220,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

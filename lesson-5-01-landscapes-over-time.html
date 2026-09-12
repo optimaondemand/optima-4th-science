@@ -442,7 +442,6 @@ strong{color:#0E1C42}
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- PROGRESS BAR -->
 <div class="progress-wrap">
   <span class="progress-label">🪨 Lesson Progress</span>
@@ -601,20 +600,6 @@ strong{color:#0E1C42}
 <!-- ══════════ TAB 1: VOCABULARY ══════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 5-01-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Landscapes Over Time</div>
-  <div class="vp-slot">5-01-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce how landscapes change over millions of years. Preview vocabulary: landscape, rock layer, sediment, fossil, canyon, abiotic factors. Students will discover what rock layers and fossils reveal about Earth past. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <!-- ACTIVITY 1: WARM-UP -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -674,7 +659,6 @@ strong{color:#0E1C42}
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <p style="font-size:18px;"><strong>Part 1 — Rocks and Fossils Tell a Story</strong></p>
       <p>Long ago, explorers looked closely at the land around them and shared what they saw. Today, scientists do something similar &mdash; they study <span class="vtip"><strong>rocks</strong><span class="vtip-box"><span class="vtip-word">Rock Layer</span>A flat band of rock formed from sediment that piled up over time.</span></span> and <span class="vtip"><strong>fossils</strong><span class="vtip-box"><span class="vtip-word">Fossil</span>The preserved remains or imprint of a once-living plant or animal found inside rock.</span></span> to learn about how Earth has changed. These clues help us understand how <span class="vtip"><strong>landscapes</strong><span class="vtip-box"><span class="vtip-word">Landscape</span>The shape and features of an area of land, including its hills, valleys, rivers, and rocks.</span></span> grow and change, and how they become homes for different plants and animals.</p>
@@ -973,7 +957,6 @@ strong{color:#0E1C42}
     </div>
     <div class="act-body">
 
-
       <p>Let's trace how a <span class="vtip"><strong>canyon</strong><span class="vtip-box"><span class="vtip-word">Canyon</span>A deep valley with steep rocky walls, carved by a river flowing over the land for a very long time.</span></span> forms — <strong>step by step</strong>. As you read each step, think about how those rock layers we studied become the walls of the canyon.</p>
 
       <div style="position:relative;margin:16px 0;">
@@ -1102,7 +1085,6 @@ strong{color:#0E1C42}
       <div class="act-time" style="background:#34B76F;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <!-- PART A -->
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">📓 Part A &mdash; In Your Science Notebook</p>
@@ -1251,7 +1233,6 @@ strong{color:#0E1C42}
       </div>
     </div>
   </div>
-
 
 </div><!-- end tab-assignment -->
 
@@ -1447,7 +1428,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card){
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -1493,8 +1473,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();

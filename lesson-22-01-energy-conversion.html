@@ -691,7 +691,6 @@
     .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
   }
 
-
   /* ── Image Suggestion (shown only if /images/[name].png is missing) ── */
   .lesson-figure { margin: 20px 0; }
   .lesson-figure-label {
@@ -732,7 +731,6 @@
     padding: 5px 12px; display: inline-block; margin-top: 4px;
     user-select: all;
   }
-
 
 /* ── Response Textareas ── */
 .response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
@@ -993,7 +991,6 @@
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-
 <!-- ═══ PROGRESS BAR ═══ -->
 <div class="progress-wrap">
   <span class="progress-label">🔌 Lesson Progress</span>
@@ -1249,20 +1246,6 @@
 <!-- ═══════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
-
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 22-01-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Energy Conversion</div>
-  <div class="vp-slot">22-01-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduce how devices convert one form of energy to another. Preview vocabulary: input energy, output energy, transformation, device, convert, useful energy. Students will map the input and output energy of familiar devices. ~60-90 seconds.
-  </div>
-</div>
 </div>
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -1334,7 +1317,6 @@
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
-
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · Transfer vs. Transformation</h3>
       <p>In the last few lessons, you saw energy TRANSFER between things — one marble passing motion to another, sound moving from a drum to your ear. Today's idea is different. In <span class="vtip">transformation<span class="vtip-box"><span class="vtip-word">Transformation</span>Energy changes form.</span></span>, energy doesn't just move — it CHANGES into a different form.</p>
@@ -1497,7 +1479,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Pick ONE device you can see right now (a lamp, a phone charging, a clock). By step 4 you'll have an INPUT → CONVERSION → OUTPUT diagram for that device.</p>
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
 
@@ -1651,7 +1632,6 @@
     </div>
     <div class="act-body">
 
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Input energy, Output energy, Transformation, Device</strong></p>
       <div class="pq">
@@ -1691,7 +1671,6 @@
         <span class="pq-text">Why is no device 100% efficient? Where does the "extra" energy usually go? Use the word <em>useful</em> in your answer.</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="Why is no device 100% efficient? Where does the &quot;e..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
 
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
@@ -1782,7 +1761,6 @@
       </div>
     </div>
   </div>
-
 
 </div>
 
@@ -2015,7 +1993,6 @@ document.querySelectorAll('.intro-2col .card').forEach(function(card) {
   });
 });
 
-
 function refreshGathered() {
   var out = document.getElementById('gatheredOutput'); if (!out) return;
   var lines = [];
@@ -2061,8 +2038,6 @@ document.addEventListener('input', function(e) {
     window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
   }
 })();
-
-
 
 /* ───── AUTO-SAVE (persistence patch) ───── */
 var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
