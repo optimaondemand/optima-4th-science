@@ -1756,7 +1756,7 @@ function switchTab(tabId) {
     if (tabId === 'vocab') { c.classList.remove('collapsed'); }
     else { c.classList.add('collapsed'); }
   });
-  var tabBar = document.getElementById('tabBar'); if (tabBar) { tabBar.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  if (panel) { var rect = panel.getBoundingClientRect(); var offset = window.pageYOffset + rect.top - 100; window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' }); }
 }
 
 // ── Checklist ──
