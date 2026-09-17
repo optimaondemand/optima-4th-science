@@ -1756,7 +1756,7 @@ function switchTab(tabId) {
     if (tabId === 'vocab') { c.classList.remove('collapsed'); }
     else { c.classList.add('collapsed'); }
   });
-  if (panel) { var rect = panel.getBoundingClientRect(); var offset = window.pageYOffset + rect.top - 100; window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' }); }
+  var tb = document.getElementById('tabBar'); if (tb) { var tbTop = tb.getBoundingClientRect().top + window.pageYOffset - 44; window.scrollTo({ top: Math.max(0, tbTop), behavior: 'smooth' }); }
 }
 
 // ── Checklist ──
