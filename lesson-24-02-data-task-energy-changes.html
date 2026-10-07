@@ -1705,6 +1705,31 @@
         <textarea class="response-textarea ta-lg" id="cer-4" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
       </div>
 
+
+  <!-- OAO-GATHERED-CARD v1 -->
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">Lesson 24.02 · Submission Packet</div>
+        <div class="gathered-header-title">Gathered Answers</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-name-row">
+        <span class="gathered-name-label">Your name:</span>
+        <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
+      </div>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-download" onclick="downloadGathered()">⬇ Download as Text</button>
+      </div>
+      <div class="gathered-copied" id="copiedMsg">Copied! Paste into your Canvas text box to turn in.</div>
+    </div>
+  </div>
+
       <div style="background:#fff;border:2px solid #8B6FC0;border-radius:18px;margin-top:20px;overflow:hidden;">
         <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border-bottom:2px solid #D8D0E8;">
           <div style="width:42px;height:42px;border-radius:50%;background:#8B6FC0;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">☀️</div>

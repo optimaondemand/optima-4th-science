@@ -1801,6 +1801,31 @@
   <textarea class="response-textarea ta-lg" id="cer-6" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 </div>
 
+
+  <!-- OAO-GATHERED-CARD v1 -->
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">Lesson 8.01 · Submission Packet</div>
+        <div class="gathered-header-title">Gathered Answers</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-name-row">
+        <span class="gathered-name-label">Your name:</span>
+        <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
+      </div>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-download" onclick="downloadGathered()">⬇ Download as Text</button>
+      </div>
+      <div class="gathered-copied" id="copiedMsg">Copied! Paste into your Canvas text box to turn in.</div>
+    </div>
+  </div>
+
       <!-- SUBMISSION CHECKLIST -->
       <div style="background:#fff;border:2px solid #55C8E8;border-radius:18px;margin-top:20px;overflow:hidden;">
         <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #C0EBF8;">
@@ -1828,8 +1853,8 @@
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#F4FAF7;border:1.5px solid #D0EAE0;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #B0C8C0;background:#fff;transition:all .2s;">☐</span>
             <span style="font-size:16px;color:#1C2B1A;line-height:1.55;"><strong>Essential Question Response:</strong> A 2&ndash;3 sentence answer to today's big question, using at least three vocabulary words.</span>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>My CER response:</strong> I made a claim about a modern resource, supported it with evidence from the lesson, and explained my reasoning.</span></div>
           </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>My CER response:</strong> I made a claim about a modern resource, supported it with evidence from the lesson, and explained my reasoning.</span></div>
 
           <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
             <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
