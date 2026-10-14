@@ -751,14 +751,57 @@
   function getName() {
     var keys = ['oao.fs.profile', 'oao.ff.profile', 'oao.profile'];
     for (var i = 0; i < keys.length; i++) {
-      try { var v = localStorage.getItem(keys[i]); if (!v) continue; var n = v; try { var j = JSON.parse(v); n = (j && (j.name || j.first || j.firstName)) || (typeof j === 'string' ? j : ''); } catch (e) {} if (n) return String(n).slice(0, 24); } catch (e) {}
+      try { var v = localStorage.getItem(keys[i]); if (!v) continue; var n = v; try { var j = JSON.parse(v); n = (j && (j.name || j.first || j.firstName)) || (typeof j === 'string' ? j : ''); } catch (e) {} if (n && !unkind(n)) return String(n).slice(0, 24); } catch (e) {}
     }
-    var g = document.getElementById('student-name'); return g && g.value.trim() ? g.value.trim().slice(0, 24) : '';
+    var g = document.getElementById('student-name'); return g && g.value.trim() && !unkind(g.value) ? g.value.trim().slice(0, 24) : '';
   }
+  /* ---------- kind-name check (names show in badges, the journal and Gathered Answers) ----------
+     WORDS: whole words only (so Cassie, Bob, Kshitij and Hancock are fine).
+     START: also caught at the start of a word (Shithead).  ANY: caught anywhere, even with spaces or
+     symbols in between (f.u.c.k, b1tch). Repeated letters are allowed (fuuuck, poooop). */
+  var NAME_WORDS = ['ass','arse','butt','butts','booty','bum','poo','poop','poopy','pee','peepee','wee','weewee','piss','pp',
+    'dick','cock','tit','tits','titty','boob','boobs','balls','nut','nuts','weiner','wiener','sex','crap','damn','hell',
+    'turd','doodoo','dookie','fart','farts','puke','barf','booger','boogers','snot','toilet','diaper','suck','sucks',
+    'shit','shits','shitty','stupid','dumb','idiot','loser','ugly','fat','kill','die','dead','hate','kys','noob','sus'];
+  var NAME_START = ['butt','poop','fart','boob','crap','piss'];
+  var NAME_ANY = ['fuck','fuk','fck','bitch','biatch','cunt','nigg','niga','faggot','slut','whore','penis','vagina','pussy',
+    'porn','dildo','asshole','dumbass','jackass','badass','retard','nazi','hitler','sexy','poophead','butthead','buttface',
+    'fartface','poopface','shithead','shitface','dickhead','wtf','stfu','bastard','motherf','kkk'];
+  var LEET = { '0': 'o', '1': 'i', '!': 'i', '|': 'i', '3': 'e', '4': 'a', '@': 'a', '5': 's', '$': 's', '7': 't', '8': 'b', '9': 'g', '+': 't' };
+  function wordRe(w, how) { var r = w.split('').map(function (c) { return c + '+'; }).join(''); return new RegExp(how === 'any' ? r : how === 'start' ? '^' + r : '^' + r + '$'); }
+  var NAME_RES = NAME_WORDS.map(function (w) { return wordRe(w, 'word'); }), NAME_RES_S = NAME_START.map(function (w) { return wordRe(w, 'start'); }),
+      NAME_RES_A = NAME_ANY.map(function (w) { return wordRe(w, 'any'); });
+  function unkind(n) {
+    var low = String(n || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[0-9!|@$+]/g, function (c) { return LEET[c] || c; });
+    var toks = low.split(/[^a-z]+/).filter(Boolean), squash = toks.join('');
+    if (NAME_RES_A.some(function (r) { return r.test(squash); })) return true;
+    var all = toks.concat(toks.length > 1 ? [squash] : []);
+    return all.some(function (t) { return NAME_RES.some(function (r) { return r.test(t); }) || NAME_RES_S.some(function (r) { return r.test(t); }); });
+  }
+  window.fsUnkindName = unkind;
+  var KIND_MSG = 'Let’s keep it kind. Please type your real first name.';
   function nameProblem(n) {
     if (!n || n.length < 2) return 'Type your first name (at least 2 letters).';
     if (!/^[A-Za-zÀ-ÿ' -]+$/.test(n)) return 'Use letters only, please.';
+    if (unkind(n)) return KIND_MSG;
     return '';
+  }
+  /* guard the page's own "Your name" box in Gathered Answers too */
+  function guardNameBox() {
+    var g = document.getElementById('student-name'); if (!g || g.dataset.fsKind) return; g.dataset.fsKind = '1';
+    var note = el('div', 'fs-name-note'); note.setAttribute('role', 'alert'); var row = g.closest('.gathered-name-row') || g; row.parentNode.insertBefore(note, row.nextSibling);
+    function check(final) {
+      var v = g.value;
+      if (unkind(v)) {
+        g.value = ''; g.dispatchEvent(new Event('input', { bubbles: true }));
+        note.textContent = KIND_MSG; note.classList.add('on'); try { SFX.thud(); } catch (e) {}
+        try { localStorage.removeItem(g.id); } catch (e) {}
+      } else if (v.trim()) { note.classList.remove('on'); }
+    }
+    g.addEventListener('input', function () { if (/[\s'-]$/.test(g.value)) check(false); });
+    g.addEventListener('blur', function () { check(true); });
+    g.addEventListener('change', function () { check(true); });
+    check(true);
   }
   function setName(n) { try { localStorage.setItem('oao.fs.profile', JSON.stringify({ name: n })); } catch (e) {} var g = document.getElementById('student-name'); if (g && !g.value) { g.value = n; g.dispatchEvent(new Event('input', { bubbles: true })); } }
 
@@ -2015,6 +2058,7 @@
     guard('lens', buildWordLens);
     guard('slots', placeSlots);
     guard('id', buildID);
+    guard('name', guardNameBox);
     guard('ambient', buildAmbient);
     guard('camera', buildCamera);
     guard('journal', buildJournal);
