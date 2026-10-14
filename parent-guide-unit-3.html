@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Systems & Ecosystems Unit Guide · 4th Grade Science · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --rose-bg:#FDEEEE; --teal:#1A8A7D; --teal-bg:#E2F4F1;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+a{color:#1F6FA8;font-weight:700;}
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#1d3b2e center/cover no-repeat;min-height:250px;}
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.small{font-size:16px;color:var(--muted);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.b-rose{background:var(--rose-bg);} .b-rose .box-label{color:#A8434A;}
+.b-teal{background:var(--teal-bg);} .b-teal .box-label{color:#14695F;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+.story{background:var(--navy);color:#DCE6F7;border:none;}
+.story h2,.story strong{color:#fff;}
+.story .box{background:rgba(255,255,255,.08);color:#DCE6F7;}
+.story .box-label{color:#F2C46B;}
+.rhythm{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px;}
+.rhythm div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center;font-size:16px;}
+.rhythm b{display:block;font-family:"Lora",Georgia,serif;font-size:18px;color:var(--navy);}
+.routines{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;}
+.routines li{padding-left:30px;position:relative;font-size:17px;}
+.routines li span{position:absolute;left:0;top:0;}
+.cer{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px;}
+.cer div{border-radius:12px;padding:12px 14px;font-size:16px;}
+.cer b{display:block;font-family:"Lora",Georgia,serif;font-size:20px;color:var(--navy);}
+.weeks{display:grid;gap:14px;}
+.wk{display:grid;grid-template-columns:96px 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.wk-n{background:var(--navy);color:#fff;text-align:center;padding:14px 6px;display:flex;flex-direction:column;justify-content:center;}
+.wk-n b{font-family:"Lora",Georgia,serif;font-size:30px;line-height:1;}
+.wk-n span{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-top:4px;}
+.wk-body{padding:14px 18px;}
+.wk-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px;}
+.wk-ch{font-weight:900;color:var(--navy);font-size:18px;}
+.theme{font-size:14px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#1F8452;background:var(--green-bg);border-radius:999px;padding:2px 10px;}
+.theme.new{color:#6A4FA3;background:var(--plum-bg);}
+.wk-sum{margin:2px 0 10px;}
+.lp{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ls{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:16px;}
+.ls .lt{font-weight:900;color:var(--navy);display:block;font-size:17px;}
+.ls .ln{font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.ls .bq{display:block;font-family:"Lora",Georgia,serif;font-style:italic;color:var(--navy);margin:4px 0;}
+.ls .wd{display:block;margin-top:6px;font-size:15px;color:var(--muted);}
+.ls .wd b{color:var(--ink);}
+.home{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;}
+.home>div{border-radius:12px;padding:10px 14px;font-size:16px;}
+.home .box-label{font-size:13px;}
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.dont li::before{content:"✗";color:#C0545C;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .grid2,.grid3,.words,.routines,.howto ul,.lp,.home,.cer{grid-template-columns:1fr;}
+  .rhythm{grid-template-columns:1fr 1fr;}
+  .wk{grid-template-columns:1fr;}
+  .wk-n{flex-direction:row;gap:8px;align-items:baseline;justify-content:flex-start;padding:8px 16px;}
+  .wk-n b{font-size:22px;}
+  .wk-n span{order:-1;margin-top:0;}
+  .card{padding:18px 16px;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card,.wk,.howto{break-inside:avoid;}
+  .card{margin-top:12px;padding:14px 16px;}
+  .hero,.story,.wk-n{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade Science</div>
+      <h1>Unit 3: Life Systems &amp; Ecosystems</h1>
+      <div class="sub">Weeks 9–15 · How Florida’s plants and animals get energy, survive and grow</div>
+      <div class="chips">
+        <span class="chip">7 weeks</span>
+        <span class="chip">14 lessons</span>
+        <span class="chip">1 unit assessment</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('images/12-01-heron-everglades.jpg');" role="img" aria-label="A great blue heron standing in shallow Everglades water"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Five tabs, in order:</strong> Vocabulary → The Lesson → Explore → Self-Check → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>🧠</span><strong>Self-Check is 3 quick questions.</strong> It isn’t graded. It shows your student what to look at again before the Assignment.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📋</span><strong>Everything is gathered at the end.</strong> The bottom of the Assignment tab collects every typed answer. <strong>Copy</strong> or <strong>Download</strong> it and turn it in on Canvas.</li>
+      <li><span>📸</span><strong>Drawings count.</strong> Sketches can be turned in as a clear photo, and some answers can be a short video. A lesson isn’t turned in until it’s submitted in Canvas.</li>
+      <li><span>🔊</span><strong>Listen</strong> at the top reads the page aloud, with a speed control. Keep a <strong>science notebook</strong> and <strong>colored pencils</strong> nearby. Most lessons ask for a sketch.</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🌿</span><h2>About This Unit</h2></div>
+    <p>This unit starts with one big idea, that <strong>almost all the energy in living things comes from the Sun</strong>, and builds from there: food chains and food webs, how an ecosystem stays healthy, how body parts help living things survive, how animals sense the world, how traits are passed down, and how life cycles and seasons repeat.</p>
+    <p>Almost every example is from Florida: the Everglades, pine forests, springs and beaches. The last week turns to the resources people use, like water, sunlight, oil and phosphate, and where they’re found in Florida.</p>
+    <p>By the end, your student should be able to <strong>trace energy</strong> from the Sun to an animal, <strong>explain how a body part helps</strong> a living thing survive, <strong>name the four steps</strong> an animal uses to react, and <strong>back up a claim with evidence</strong>.</p>
+    <p class="quote">“Energy in a food chain always starts with the Sun. Plants capture it. Animals borrow it by eating.”<small>The big idea that runs through Unit 3, from Lesson 9.01</small></p>
+  </section>
+
+  <!-- HOW A LESSON WORKS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🗓️</span><h2>How a Week Works</h2></div>
+    <p>Every week has <strong>two lessons</strong> on one topic. The first usually explains an idea; the second often has your student build a <strong>model</strong> (a labeled drawing that explains how something works) or work with <strong>real data</strong>. Each lesson follows the same path:</p>
+    <div class="rhythm">
+      <div><b>📚 Vocabulary</b>A quick warm-up and the day’s six words</div>
+      <div><b>📘 The Lesson</b>Reading, pictures and short “Stop &amp; Think” questions</div>
+      <div><b>🔬 Explore</b>A step-by-step activity in the notebook</div>
+      <div><b>🧠 Self-Check</b>3 quick questions, not graded</div>
+      <div><b>✍️ Assignment</b>Show what you know, then turn it in</div>
+    </div>
+    <ul class="routines">
+      <li><span>❓</span><strong>A Big Question</strong> at the top that the lesson answers by the end</li>
+      <li><span>🔤</span><strong>Part A:</strong> four vocabulary blanks from a word bank</li>
+      <li><span>✏️</span><strong>Part B:</strong> three short answers in complete sentences</li>
+      <li><span>🎨</span><strong>Part C:</strong> a drawing, chart or model in the notebook</li>
+      <li><span>⚖️</span><strong>Use Your Evidence:</strong> agree or disagree with a claim, with two pieces of evidence</li>
+      <li><span>📬</span><strong>Turn-in checklist</strong> at the bottom, ending with submitting in Canvas</li>
+    </ul>
+  </section>
+
+  <!-- CER -->
+  <section class="card">
+    <div class="card-head"><span class="ico">⚖️</span><h2>Claim, Evidence, Reasoning</h2><span class="tag">Used all year</span></div>
+    <p>Every lesson ends with a short argument. A “classmate” says something like <em>“Plants don’t really need sunlight; they get their food from the soil,”</em> and your student decides whether they agree, then proves it. Scientists call this <strong>CER</strong>:</p>
+    <div class="cer">
+      <div class="b-sky"><b>Claim</b>What I think. One sentence.</div>
+      <div class="b-green"><b>Evidence</b>Facts from the lesson that show it. Two pieces.</div>
+      <div class="b-gold"><b>Reasoning</b>Why that evidence proves the claim.</div>
+    </div>
+    <p class="small" style="margin-top:12px;">The most common slip is giving an opinion with no evidence. A helpful question at home: <strong>“What in the lesson shows that?”</strong></p>
+  </section>
+
+  <!-- FIELD STATION -->
+  <section class="card story">
+    <div class="card-head"><span class="ico">📻</span><h2>New in Week 12: The Field Station</h2></div>
+    <p><strong>Lesson 12.01</strong> is the first Field Station lesson, where science becomes a field expedition. A field scientist, <strong>Dr. Lena Reyes</strong>, checks in over a walkie-talkie, and each lesson has a <strong>mystery</strong> to solve. In 12.01, four trail cameras caught four Florida animals reacting at almost the same moment. Why?</p>
+    <div class="grid3">
+      <div class="box"><div class="box-label">Short videos</div>As they’re recorded, quick videos from your student’s teacher walk through each part of the page.</div>
+      <div class="box"><div class="box-label">Four clues</div>Each game your student finishes unlocks a clue. With all four, they crack the case.</div>
+      <div class="box"><div class="box-label">Answers on the page</div>Everything is typed or dragged right on the page and gathered at the end. No separate notebook needed.</div>
+    </div>
+    <p style="margin-top:12px;">Dr. Reyes is a made-up character, but the animals, photos and science are real. Ask your student: <strong>“Did you crack the case? What were the clues?”</strong></p>
+  </section>
+
+  <!-- WEEK BY WEEK -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🗺️</span><h2>The Unit, Week by Week</h2></div>
+    <p class="small" style="margin-bottom:14px;">Each week shows both lessons, the words your student will use, and two easy ways to keep the science going at home.</p>
+    <div class="weeks">
+      <div class="wk"><div class="wk-n"><b>9</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Every animal runs on energy that started in the Sun.</span><span class="theme">Energy from the Sun</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 9.01</span><span class="lt">Energy Pathways: From Sun to Life</span><span class="bq">“How does the energy from the Sun end up inside a gopher tortoise, a hawk, or you?”</span>Traces one Everglades food chain step by step: Sun → sawgrass → grasshopper → tree frog → hawk.<span class="wd"><b>Words:</b> energy, producer, consumer, photosynthesis, food chain, decomposer</span></div><div class="ls"><span class="ln">Lesson 9.02</span><span class="lt">The Power of Producers and Consumers</span><span class="bq">“What happens to the rest of the food chain if one living thing disappears?”</span>Predicts what happens to a wetland if all the green tree frogs disappear, then sees why real food chains connect into food webs.<span class="wd"><b>Words:</b> food web, predator</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>“If all the grasshoppers disappeared, who would go hungry? Who might have too much to eat?”</div><div class="b-teal"><div class="box-label">Try at home</div>Pick something from dinner and trace it back to the Sun together. (Chicken → corn the chicken ate → Sun.)</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>10</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Living things depend on each other in more ways than eating.</span><span class="theme">A web of connections</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 10.01</span><span class="lt">Web of Life</span><span class="bq">“What other ways are living things in a Florida forest connected, besides eating each other?”</span>Maps the connections around one living thing (manatee, saw palmetto, bald eagle or gopher tortoise): food, pollination, shelter and nutrients.<span class="wd"><b>Words:</b> ecosystem, habitat, pollination, pollinator, nutrients</span></div><div class="ls"><span class="ln">Lesson 10.02</span><span class="lt">Ecosystem Balance</span><span class="bq">“How can we tell if a Florida ecosystem is healthy, and what can we do when it’s not?”</span>Reads real Florida numbers, like how manatee counts changed over 30 years, and uses data, not a hunch, to decide if an ecosystem is healthy.<span class="wd"><b>Words:</b> native species, invasive species, population, conservation</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>“How do scientists know a change is real and not just a guess?” (Listen for: they collect numbers for a long time.)</div><div class="b-teal"><div class="box-label">Try at home</div>Look at one tree near home. Count the living things that use it: birds, bugs, lizards, moss.</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>11</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Every body part has a job.</span><span class="theme">Built to survive</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 11.01</span><span class="lt">Inside Out: Plant and Animal Structures</span><span class="bq">“How do the parts of a plant or animal help it survive?”</span>Studies an alligator’s snout, teeth, eyes and nostrils, then writes a Claim, Evidence and Reasoning about one of them.<span class="wd"><b>Words:</b> structure, function, internal, external, organism</span></div><div class="ls"><span class="ln">Lesson 11.02</span><span class="lt">Model: Structure and Survival</span><span class="bq">“How can a model show why a structure helps an organism survive, not just what it’s called?”</span>Draws a Florida organism and adds arrows and short notes to show how one part does its job. A model explains; a label just names.<span class="wd"><b>Words:</b> model, adaptation, annotate, camouflage</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>“What’s the difference between a labeled drawing and a model?”</div><div class="b-teal"><div class="box-label">Try at home</div>Look at a pet or backyard bird. Pick one body part and guess its job together.</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>12</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Animals notice, decide and act in four steps.</span><span class="theme">Senses to brain</span> <span class="theme new">Field Station · new</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 12.01</span><span class="lt">Sensing the World</span><span class="bq">“How do animals notice what’s happening around them, and decide what to do about it?”</span>Solves a trail-camera mystery: four Florida animals reacted at almost the same time. Learns the four steps: stimulus → sense organ → brain → response.<span class="wd"><b>Words:</b> stimulus, sense organ, brain, response, signal</span></div><div class="ls"><span class="ln">Lesson 12.02</span><span class="lt">Model: From Senses to Brain</span><span class="bq">“How can a model show the way an animal turns information into action?”</span>Builds two four-step models for two different animals (for example an owl that hears and a bear that smells) and compares them.<span class="wd"><b>Words:</b> pathway, process, scenario</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>“What would happen if an animal’s ears worked but its brain didn’t get the message?”</div><div class="b-teal"><div class="box-label">Try at home</div>Drop a spoon behind your student. Then name the four steps of what just happened: the sound, the ears, the brain, the jump.</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>13</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Some traits come from parents. Others come from where you live.</span><span class="theme">Passed down</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 13.01</span><span class="lt">Like Parent, Like Child</span><span class="bq fo">Focus: Which traits come from parents, and which come from where a living thing lives?</span>Sorts the traits of a pet, a plant or a backyard bird into inherited, environmental or both.<span class="wd"><b>Words:</b> trait, inherited, environment, offspring, variation</span></div><div class="ls"><span class="ln">Lesson 13.02</span><span class="lt">Flowering Plant Reproduction</span><span class="bq fo">Focus: How a flower makes seeds, and how seeds become new plants.</span>Puts five steps in order (pollination, fertilization, seed, dispersal, germination), then looks at a real flower outside or in a photo.<span class="wd"><b>Words:</b> pollen, pollination, fertilization, seed, germination</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>“Is a dog’s fur color inherited or from its environment? What about how big it grows?” (Color is inherited. Size is both.)</div><div class="b-teal"><div class="box-label">Try at home</div>Find a flower outside. Look for the yellow pollen, and watch for a bee or butterfly visiting it.</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>14</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Living things grow in patterns and change with the seasons.</span><span class="theme">Life cycles and seasons</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 14.01</span><span class="lt">Circle of Life</span><span class="bq">“How are the life cycles of Florida plants and animals alike, and how are they different?”</span>Compares two life cycles in a chart, one with metamorphosis (like a monarch) and one without (like a gopher tortoise).<span class="wd"><b>Words:</b> life cycle, metamorphosis, stage, complete, incomplete</span></div><div class="ls"><span class="ln">Lesson 14.02</span><span class="lt">Model: Interdependence Across Seasons</span><span class="bq">“How do Florida plants and animals depend on each other, and on the seasons, to survive?”</span>Compares winter in Florida with winter somewhere colder, and shows why ducks and manatees come here for the winter.<span class="wd"><b>Words:</b> seasonal change, interdependence, region, migration, hibernation</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>“Why do so many birds spend the winter in Florida?” (Listen for: food, warmth.)</div><div class="b-teal"><div class="box-label">Try at home</div>Look for a caterpillar, a chrysalis or a butterfly on a milkweed or garden plant.</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>15</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">People use things from Earth. Some run out.</span><span class="theme">Earth’s resources</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 15.01</span><span class="lt">Renewable and Nonrenewable Resources</span><span class="bq">“How do people use Earth’s resources, and which ones will run out?”</span>Compares one resource that comes back (sun, wind, fresh water) with one that takes millions of years to form (oil, phosphate, limestone), using two sources.<span class="wd"><b>Words:</b> resource, renewable, nonrenewable, fossil fuel, impact</span></div><div class="ls"><span class="ln">Lesson 15.02</span><span class="lt">Data Task: Local Resources</span><span class="bq">“Why are some Florida resources found in one place and not another?”</span>Reads a Florida resource map and uses a pattern on it (where citrus, springs or phosphate are) as evidence.<span class="wd"><b>Words:</b> map key, pattern, distribution, location, evidence</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>“Why would phosphate mines be in one part of Florida and not all over?”</div><div class="b-teal"><div class="box-label">Try at home</div>Pick something in your kitchen and guess what it’s made from. Is that material renewable or not?</div></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- KEY WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Ten Words That Carry the Unit</h2></div>
+    <div class="words">
+      <div class="word"><b>Producer</b><span>A living thing, usually a plant, that makes its own food using sunlight.</span></div>
+      <div class="word"><b>Consumer</b><span>A living thing that gets energy by eating other living things. Your student is one!</span></div>
+      <div class="word"><b>Food web</b><span>All the food chains in one place, connected together.</span></div>
+      <div class="word"><b>Ecosystem</b><span>All the living and nonliving things in one place, like a wetland or a forest.</span></div>
+      <div class="word"><b>Structure &amp; function</b><span>A body part (structure) and the job it does (function), like a pelican’s pouch scooping up fish.</span></div>
+      <div class="word"><b>Stimulus → response</b><span>Something an animal notices, and what it does about it. The sense organ and brain are the steps in between.</span></div>
+      <div class="word"><b>Inherited trait</b><span>A feature passed from parents to offspring, like a bird’s beak shape.</span></div>
+      <div class="word"><b>Metamorphosis</b><span>A big change in an animal’s body as it grows, like a caterpillar becoming a butterfly.</span></div>
+      <div class="word"><b>Model</b><span>A drawing or build with labels and arrows that explains how something works.</span></div>
+      <div class="word"><b>Renewable</b><span>A resource that comes back quickly enough to keep using, like sunlight or wind.</span></div>
+    </div>
+  </section>
+
+  <!-- HOW LEARNING IS CHECKED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📋</span><h2>How Learning Is Checked</h2></div>
+    <div class="grid2">
+      <div class="box b-sky"><div class="box-label">Every lesson</div>Vocabulary blanks, three short answers, a drawing or model, and a short claim with evidence, submitted in Canvas. The Self-Check isn’t graded.</div>
+      <div class="box b-gold"><div class="box-label">End of unit</div><strong>Unit 3 Assessment</strong> (about 60 minutes, “take it slow”): trace a Florida pine forest food web, explain a body part, build a deer’s four-step pathway, explain inherited and environmental traits, and write one CER about how people affect an ecosystem.</div>
+    </div>
+    <p class="small" style="margin-top:12px;"><strong>It isn’t a memory test.</strong> The questions ask your student to <em>use</em> what they learned with new Florida examples. Answers are typed on the page, gathered with one button, and pasted into Canvas.</p>
+  </section>
+
+  <!-- GOOD TO KNOW -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💛</span><h2>Good to Know Ahead of Time</h2></div>
+    <div class="grid2">
+      <div class="box b-plum"><div class="box-label">Week 13 · Lesson 13.01</div>The warm-up uses a family photo, and the reflection asks your student to name a trait they got from a parent or grandparent. Any family member, a pet, or a plant they know well works just as well for this science. If you’d like a different option, let the teacher know.</div>
+      <div class="box b-teal"><div class="box-label">Week 13 · Going outside</div>Two Explore activities ask your student to look closely at a real pet, backyard tree or flower. A photo or a picture online works fine if getting outside isn’t easy that day.</div>
+      <div class="box b-rose"><div class="box-label">Week 10 · Lesson 10.02</div>Invasive species, like Burmese pythons and lionfish, harm Florida’s native animals. The lesson keeps it factual and focuses on what people are doing to help.</div>
+      <div class="box b-gold"><div class="box-label">Week 15 · A new topic</div>The last week switches from living things to Earth’s resources. It still counts toward the Unit 3 Assessment, which covers Lessons 9.01 to 15.02.</div>
+    </div>
+  </section>
+
+  <!-- HOW TO HELP -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🤝</span><h2>How to Help (Without Doing It for Them)</h2></div>
+    <div class="grid2">
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;">Try this</h3>
+        <ul class="check">
+          <li>Ask “How do you know?” or “What in the lesson shows that?”</li>
+          <li>Have your student explain their drawing to you out loud before writing about it.</li>
+          <li>Use the “Ask at dinner” questions above. Talking first makes the writing easier.</li>
+          <li>Point out Florida examples you see: a heron, a lizard, pollen on the car, a migrating flock.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;">Try to avoid</h3>
+        <ul class="check dont">
+          <li>Drawing or wording answers for them. Teachers need to see your student’s own thinking.</li>
+          <li>Looking up answers online. The questions ask for evidence from the lesson.</li>
+          <li>Skipping the submit step. Work isn’t turned in until it’s in Canvas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEE IT -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📍</span><h2>See It in Florida</h2><span class="tag">Optional</span></div>
+    <div class="grid3">
+      <div class="box b-teal"><div class="box-label">Everglades National Park</div><strong>Anhinga Trail.</strong> A short boardwalk where herons, anhingas and alligators show off a real food web.</div>
+      <div class="box b-teal"><div class="box-label">Orange City</div><strong>Blue Spring State Park.</strong> Hundreds of manatees come to the warm spring water in winter.</div>
+      <div class="box b-teal"><div class="box-label">Gainesville</div><strong>Florida Museum of Natural History.</strong> The Butterfly Rainforest is full of live butterflies and the flowers they visit.</div>
+    </div>
+    <p class="small" style="margin-top:12px;">Check hours before you go. A backyard, park or beach works too: every living thing your student sees is part of a food web.</p>
+  </section>
+
+  <p class="foot">Next: Unit 4, Natural Forces &amp; Safety Engineering<br><br>Optima Academy Online · 4th Grade Science · Unit 3 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+
+</body>
+</html>
