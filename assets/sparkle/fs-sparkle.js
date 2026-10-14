@@ -381,8 +381,20 @@
     var list = $('.fs-board-list', b);
     list.innerHTML = C.clues.map(function (c, i) {
       var have = found.indexOf(c.id) > -1;
-      return '<li class="' + (have ? 'on' : '') + '"><span>' + (have ? c.icon : '🔒') + '</span><div><b>Clue ' + (i + 1) + '</b> ' + (have ? esc(c.t) : '<em>' + esc(c.where) + '</em>') + '</div></li>';
+      return '<li class="' + (have ? 'on' : '') + '"><span>' + (have ? c.icon : '🔒') + '</span><div><b>Clue ' + (i + 1) + '</b> ' + (have ? esc(c.t) : '<em>' + esc(c.where) + '</em> <button type="button" class="fs-goclue" data-id="' + esc(c.id) + '">Go there →</button>') + '</div></li>';
     }).join('');
+    $$('.fs-goclue', list).forEach(function (btn) { btn.addEventListener('click', function (e) { e.stopPropagation(); goToClue(btn.dataset.id); }); });
+  }
+  function scrollToEl(t) {
+    var bar = $('#tabBar'), off = bar ? bar.getBoundingClientRect().height + 12 : 12;
+    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - off, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+  function goToClue(id) {
+    var g = $('[data-mod="' + id + '"]'); if (!g) return;
+    var tab = g.closest('[id^="tab-"]'); if (tab && window.switchTab) window.switchTab(tab.id.replace(/^tab-/, ''));
+    var b = $('.fs-board'); if (b) b.classList.remove('open');
+    setTimeout(function () { scrollToEl(g); g.classList.remove('fs-boardflash'); void g.offsetWidth; g.classList.add('fs-boardflash'); }, 120);
+    SFX.blip();
   }
   function buildCase() {
     var C = D.case; if (!C) return;
@@ -459,7 +471,10 @@
     cl.innerHTML = got.length ? '<div class="fs-in-k">Your clues</div><ol>' + got.map(function (c) { return '<li><span>' + c.icon + '</span>' + esc(c.t) + '</li>'; }).join('') + '</ol>' : '';
     var sb = $('.fs-lock .fs-showclues', g);
     if (!sb && $('.fs-lock', g)) { sb = el('button', 'fs-btn fs-showclues', '🔎 Show me where the clues are'); sb.type = 'button'; $('.fs-lock', g).appendChild(sb);
-      sb.addEventListener('click', function () { var b = $('.fs-board'); if (!b) return; b.classList.add('open'); b.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); b.classList.remove('fs-flash'); void b.offsetWidth; b.classList.add('fs-flash'); SFX.blip(); }); }
+      sb.addEventListener('click', function () { var b = $('.fs-board'); if (!b) return; b.classList.add('open'); scrollToEl(b); b.classList.remove('fs-boardflash'); void b.offsetWidth; b.classList.add('fs-boardflash'); var more = $('.fs-board-more', b), bk = $('.fs-backcase', b);
+        if (more && !bk) { bk = el('button', 'fs-btn alt fs-backcase', '↩ Back to Crack the Case'); bk.type = 'button'; more.appendChild(bk);
+          bk.addEventListener('click', function (e) { e.stopPropagation(); b.classList.remove('open'); bk.style.display = 'none'; var sv = $('.fs-solve'); if (sv) scrollToEl(sv); SFX.blip(); }); }
+        if (bk) bk.style.display = ''; SFX.blip(); }); }
     if (sb) sb.style.display = n < need ? '' : 'none';
   }
 
@@ -491,7 +506,7 @@
   function buildReaction() {
     var R = D.reaction; if (!R) return;
     var warm = $('.act-warmup .act-body'); if (!warm) return;
-    var g = gameShell('Try it for real', R.title, R.todo, R.why);
+    var g = gameShell('Try it for real', R.title, R.todo, R.why); g.dataset.mod = 'reaction';
     var trail = el('div', 'fs-trail');
     trail.setAttribute('role', 'button'); trail.setAttribute('tabindex', '0');
     trail.innerHTML = '<svg viewBox="0 0 600 190" preserveAspectRatio="xMidYMax slice"><g fill="#0B1A10" opacity=".9">' +
@@ -534,7 +549,7 @@
     var after = null;
     $$('p', body).some(function (p) { if (R.afterText && p.textContent.indexOf(R.afterText) > -1) { after = p; return true; } });
     if (!after) { FAILED.push('relay anchor text not found'); return; }
-    var g = gameShell('Send the signal', R.title, R.todo, R.why);
+    var g = gameShell('Send the signal', R.title, R.todo, R.why); g.dataset.mod = 'relay';
     var relay = el('div', 'fs-relay'); relay.appendChild(el('div', 'fs-relay-wire')); var pulse = el('div', 'fs-relay-pulse'); relay.appendChild(pulse);
     R.steps.forEach(function (s, i) {
       var st = el('div', 'fs-station', '<div class="fs-slot" data-i="' + i + '">' + (i + 1) + '</div><div class="fs-station-n">Step ' + (i + 1) + '</div><div class="fs-station-l"></div>');
