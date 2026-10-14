@@ -343,7 +343,7 @@
       });
       pill('ⓘ Lesson details', panel(dl + '</dl>'));
     }
-    var nb = pill('📓 <span class="fs-nb-l">Field Notebook</span> <span class="fs-count">0</span>', null, openNotebook);
+    /* the Field Notebook opens from the specimen card and the journal; no header pill (less clutter) */
     var hero = $('.hero-visual');
     if (hero && D.banner) {
       hero.classList.add('fs-has-banner');
@@ -800,7 +800,6 @@
   function buildAmbient() {
     var tools = $('.fs-hd-tools'); if (!tools) return;
     var b = el('button', 'fs-pill', '🦗 <span class="fs-nb-l">Marsh sounds</span>'); b.type = 'button';
-    var rk = el('span', 'fs-pill fs-hd-rank'); tools.insertBefore(rk, tools.firstChild); rk.innerHTML = rank().icon + ' <span>' + esc(rank().t) + '</span>';
     tools.appendChild(b);
     var on = false, timers = [];
     function chirp(t) { var c = ac(); if (!c) return; for (var k = 0; k < 3; k++) tone(4400 + Math.random() * 300, t + k * 0.045, 0.03, 'sine', 0.012); }
