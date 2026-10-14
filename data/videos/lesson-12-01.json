@@ -1,0 +1,362 @@
+{
+ "lesson": "12.01",
+ "prefix": "g4sci-12-1",
+ "manifestKey": "12-01",
+ "guide": "lena",
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the case file",
+   "length": "30–45 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "cam1",
+     "label": "📷 CAM 1 beach"
+    },
+    {
+     "kind": "photo",
+     "pic": "cam2",
+     "label": "📷 CAM 2 woods"
+    },
+    {
+     "kind": "photo",
+     "pic": "cam3",
+     "label": "📷 CAM 3 river"
+    },
+    {
+     "kind": "photo",
+     "pic": "cam4",
+     "label": "📷 CAM 4 marsh"
+    },
+    {
+     "label": "🗂 The case question",
+     "tag": "CASE FILE 12",
+     "title": "The Night Everything Moved",
+     "col": "#B9822A",
+     "body": "What made four animals react at almost the same time, and how did each one know?"
+    }
+   ],
+   "script": "Hi, scientists! Today we have a mystery to solve.\n\nLast night, Dr. Reyes set up trail cameras along the Florida coast. In about two minutes, four different animals all moved.\n\n[ON SCREEN: CAM 1 beach]\nBaby sea turtles started crawling toward the water.\n\n[ON SCREEN: CAM 2 woods]\nA panther froze.\n\n[ON SCREEN: CAM 3 river · CAM 4 marsh]\nA manatee dove, and a cottonmouth glided across the water.\n\n[ON SCREEN: The case question]\nSo here is our case: what made four animals react at almost the same time, and how did each one know? Find four clues as you go, and you'll crack it at the end. Let's go!"
+  },
+  "warmup": {
+   "label": "Warm-Up · the snap test",
+   "length": "20–30 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "⏱ The snap test",
+     "tag": "WARM-UP",
+     "title": "Hear the snap",
+     "col": "#2F6FD6",
+     "body": "Tap to start. Wait. The moment you hear SNAP, tap as fast as you can. Try it 3 times."
+    },
+    {
+     "label": "🤔 What happened?",
+     "tag": "THINK ABOUT IT",
+     "title": "What happened in your body?",
+     "col": "#2F6FD6",
+     "body": "You did not plan it. So what had to happen between the sound and your tap?"
+    }
+   ],
+   "script": "Before we look at any animals, let's test you.\n\n[ON SCREEN: The snap test]\nI'm going to try the snap test. I tap to start, then I wait, and I listen. The moment I hear the snap, I tap. Let's see my time.\n\n(Do the test and read your time out loud.)\n\nThat was fast! I didn't plan it. My body just did it.\n\n[ON SCREEN: What happened?]\nYour turn. Try it three times. Then think: what had to happen inside you between the sound and your tap?"
+  },
+  "vocab": {
+   "label": "Word Wall · act it out",
+   "length": "30–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🎭 Act it out",
+     "tag": "WORDS YOU’LL USE TODAY",
+     "title": "Act out the four steps",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "Stimulus",
+       "Snap your fingers."
+      ],
+      [
+       "Sense organ",
+       "Point to your ear."
+      ],
+      [
+       "Brain",
+       "Tap your head."
+      ],
+      [
+       "Response",
+       "Turn around."
+      ]
+     ]
+    }
+   ],
+   "script": "Here are four words you'll use all lesson. Let's act them out together.\n\n[ON SCREEN: Stimulus]\nStimulus. Something happens in the world. (Snap your fingers.)\n\n[ON SCREEN: Sense organ]\nSense organ. A body part picks it up. (Point to your ear.)\n\n[ON SCREEN: Brain]\nBrain. It decides what that means. (Tap your head.)\n\n[ON SCREEN: Response]\nResponse. You do something. (Turn around.)\n\n[ON SCREEN: Act it out]\nNow you do it with me: snap, ear, head, turn! Then tap each word below to hear what it means."
+  },
+  "lesson": {
+   "label": "The Lesson · the four steps",
+   "length": "45–60 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔁 The four steps",
+     "tag": "THE FOUR-STEP PATHWAY",
+     "title": "Every animal reaction",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "⚡ Stimulus",
+       "Something happens in the world: a sound, a smell, a flash of light."
+      ],
+      [
+       "👂 Sense organ",
+       "A body part picks it up: eyes, ears, nose, tongue or skin."
+      ],
+      [
+       "🧠 Brain",
+       "The brain decides what it means."
+      ],
+      [
+       "🏃 Response",
+       "The animal does something."
+      ]
+     ]
+    },
+    {
+     "kind": "photo",
+     "pic": "pathway",
+     "label": "🐊 Alligator pathway"
+    }
+   ],
+   "script": "Every time an animal reacts to something, the same four steps happen, in order.\n\n[ON SCREEN: The four steps]\nFirst, a stimulus. Something happens, like a sound or a smell.\nSecond, a sense organ picks it up. That's a body part like your eyes or ears.\nThird, the brain decides what it means.\nFourth, the response. The animal does something.\n\n[ON SCREEN: Alligator pathway]\nLook at this alligator. A splash is the stimulus. Its ear is the sense organ. A message, called a signal, travels to its brain. And the response? It turns toward the splash.\n\nAll four steps can happen in less than one second. Now you put the steps in order in the game below."
+  },
+  "figure": {
+   "label": "The alligator picture",
+   "length": "20–30 s",
+   "want": false,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "pathway",
+     "label": "🐊 Alligator pathway"
+    },
+    {
+     "label": "➡ Read it left to right",
+     "tag": "READ THE PICTURE",
+     "title": "Left to right",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "Splash",
+       "the stimulus"
+      ],
+      [
+       "Ear",
+       "the sense organ"
+      ],
+      [
+       "Brain",
+       "decides"
+      ],
+      [
+       "Turn",
+       "the response"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Alligator pathway]\nLet's read this picture together, left to right.\n\n[ON SCREEN: Read it left to right]\nThe splash happens first. That's the stimulus. The alligator's ear picks it up. A signal goes to its brain, and the brain decides. Then the alligator turns. That's the response."
+  },
+  "explore": {
+   "label": "Explore · sort the heron (model one card)",
+   "length": "30–45 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "heron",
+     "label": "🪶 The heron"
+    },
+    {
+     "label": "📖 The heron story",
+     "tag": "CAM 5 · 9:16 PM",
+     "title": "A heron hunting",
+     "col": "#B9822A",
+     "body": "A great blue heron stands still in shallow water. A small fish swims into view. The heron freezes, then strikes. Its sharp beak grabs the fish."
+    },
+    {
+     "label": "🃏 One card, sorted",
+     "tag": "WATCH ME SORT ONE",
+     "title": "A small fish swims into view.",
+     "col": "#B9822A",
+     "rows": [
+      [
+       "Stimulus",
+       "It happens out in the water, before the heron does anything. It starts everything."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: The heron]\nThis is CAM 5. It caught a great blue heron hunting.\n\n[ON SCREEN: The heron story]\nHere's what happened. The heron stood still in the water. A small fish swam into view. The heron froze, then struck, and grabbed the fish.\n\n[ON SCREEN: One card, sorted]\nLet me sort one card. \"A small fish swims into view.\" Is that something in the world, a body part, or something the heron did? It happens out in the water before the heron does anything. So it's the stimulus.\n\nYou sort the rest. And notice: one step is hidden inside the bird. No camera can film it. You'll explain that one yourself."
+  },
+  "assignment": {
+   "label": "Assignment · what each part asks",
+   "length": "45–60 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔎 Crack the case",
+     "tag": "CRACK THE CASE",
+     "title": "What happened that night?",
+     "col": "#B9822A",
+     "body": "Find all 4 clues. Then pick the answer that fits all four."
+    },
+    {
+     "label": "📋 Today’s parts",
+     "tag": "YOUR ASSIGNMENT",
+     "title": "Four parts",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "Part A",
+       "Drag each step word into its blank."
+      ],
+      [
+       "Part B",
+       "Answer 3 questions in complete sentences."
+      ],
+      [
+       "Part C",
+       "Make up a Florida animal moment. Label all four steps and sketch it."
+      ],
+      [
+       "CER",
+       "Agree or disagree with a classmate, using evidence."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nFirst, crack the case. Once you've found all four clues, pick the answer that fits all of them.\n\n[ON SCREEN: Today’s parts]\nThen there are four parts.\nPart A: drag each step word into its blank.\nPart B: answer three questions in complete sentences. Use your step words.\nPart C: make up your own moment with a Florida animal that wasn't in today's lesson. Label all four steps, and draw a sketch.\nAnd last, a CER. That's where you agree or disagree with a classmate, and prove it.\n\nIf you get stuck, press \"Need a hint?\" Everything you type is gathered at the bottom for you to turn in."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "30–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💬 The classmate says",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "A classmate says…",
+     "col": "#C8553D",
+     "body": "“Animals just react. They don’t really need a brain. Their senses do all the work.”"
+    },
+    {
+     "label": "⚖ CER",
+     "tag": "REMEMBER CER?",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "C",
+       "Claim: what you think is true."
+      ],
+      [
+       "E",
+       "Evidence: facts from the lesson that prove it."
+      ],
+      [
+       "R",
+       "Reasoning: how the facts prove your claim."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: The classmate says]\nA classmate says, \"Animals just react. They don't really need a brain. Their senses do all the work.\" Do you agree?\n\n[ON SCREEN: CER]\nRemember CER. Your claim is what you think. Your evidence is two facts from today's lesson. Tap them in the planner, and they drop right into your boxes. Then the reasoning: explain how those facts prove your claim. That part is all you."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "20–30 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🎉 Case closed",
+     "tag": "CASE CLOSED",
+     "title": "Four animals, four pathways",
+     "col": "#2F7A55",
+     "body": "Each animal noticed its own stimulus with its own sense organ, and its own brain decided what to do."
+    },
+    {
+     "label": "🔜 Next time",
+     "tag": "NEXT LESSON",
+     "title": "Two animals, side by side",
+     "col": "#2F6FD6",
+     "body": "Build models of two Florida animals’ pathways and compare them."
+    }
+   ],
+   "script": "[ON SCREEN: Case closed · Confetti]\nCase closed! Great work, scientists.\n\nEach animal noticed something different, with a different sense. Each one's own brain decided what to do. Four animals, four pathways.\n\n[ON SCREEN: Next time]\nNext time, we'll put two animals side by side and build models of their pathways. See you then!"
+  }
+ },
+ "other": [
+  {
+   "id": "part1",
+   "label": "Part 1 · the four steps",
+   "length": "20–30 s"
+  },
+  {
+   "id": "part2",
+   "label": "Part 2 · different senses",
+   "length": "30–45 s"
+  },
+  {
+   "id": "part3",
+   "label": "Four Florida senses · the cameras",
+   "length": "20–30 s"
+  },
+  {
+   "id": "quiz",
+   "label": "Self-Check",
+   "length": "15–20 s"
+  },
+  {
+   "id": "parta",
+   "label": "Part A",
+   "length": "15 s"
+  },
+  {
+   "id": "partb",
+   "label": "Part B",
+   "length": "30 s"
+  },
+  {
+   "id": "partc",
+   "label": "Part C · your own scenario",
+   "length": "30 s"
+  }
+ ],
+ "pics": {
+  "cam1": {
+   "src": "images/12-01-cam1.jpg",
+   "cap": "CAM 1 · beach · 9:14 PM · sea turtle hatchling"
+  },
+  "cam2": {
+   "src": "images/12-01-cam2.jpg",
+   "cap": "CAM 2 · woods · 9:14 PM · Florida panther"
+  },
+  "cam3": {
+   "src": "images/12-01-cam3.jpg",
+   "cap": "CAM 3 · river · 9:15 PM · Florida manatee"
+  },
+  "cam4": {
+   "src": "images/12-01-cam4.jpg",
+   "cap": "CAM 4 · marsh · 9:15 PM · cottonmouth"
+  },
+  "heron": {
+   "src": "images/12-01-heron-everglades.jpg",
+   "cap": "Great blue heron, Everglades National Park (NPS)"
+  },
+  "pathway": {
+   "src": "images/12-01-sense-pathway.png",
+   "cap": "An alligator hears a splash: the four-step pathway"
+  }
+ }
+}
