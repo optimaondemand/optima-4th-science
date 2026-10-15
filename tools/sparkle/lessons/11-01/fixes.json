@@ -1,0 +1,261 @@
+[
+ {
+  "kind": "fix",
+  "why": "quarter label: week 11 is Quarter 2 (matches 10.01)",
+  "old": "Q3 &middot; Week 11",
+  "new": "Q2 &middot; Week 11"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for a labeled Florida organism",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Label a Florida Organism"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one Florida plant or animal (not the spoonbill). Name <strong>three</strong> of its structures and the job each one does. Say whether each one is internal or external.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: supply list (every lesson lists a sunny window)",
+  "old": "<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": ""
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: lungs don’t let a turtle breathe underwater; it holds its breath. Also defines “predators”",
+  "old": "A turtle's shell (external) protects it from predators. The turtle's lungs (internal) let it breathe air, even underwater for short trips.",
+  "new": "A turtle's shell (external) protects it from predators (animals that hunt it). The turtle's lungs (internal) let it breathe air, then hold that air on short dives underwater."
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: mangrove roots hold the tree up and take in air (not just “breathe”); also plain-language rewrite of the box",
+  "old": "Plant structures aren't random &mdash; they're <strong>adaptations</strong> that help plants survive in their specific environment. A cactus in a desert has thick, waxy skin to hold water and sharp spines instead of leaves to keep animals from eating it. A mangrove tree along Florida's coast has tangled roots that rise above the water, helping it breathe in salty, muddy soil. A Venus flytrap in poor soil traps insects to get the nutrients the soil can't provide.",
+  "new": "Plant structures aren't random. They're <strong>adaptations</strong> (body parts that help a living thing survive where it lives). A desert cactus has thick, waxy skin to hold water and sharp spines to keep animals from eating it. A mangrove tree on Florida's coast has tangled roots that arch above the water and mud. They hold the tree up and take in air. A Venus flytrap grows in poor soil, so it traps insects to get the nutrients (the healthy stuff a living thing needs) the soil doesn't have."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dashes removed; defines “evidence”",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to look at a real plant or animal, point to one part, and explain — with evidence — exactly how that part helps the organism stay alive.",
+  "new": "Keep this question in mind as you work. By the end, you'll be able to point to one part of a real plant or animal and explain, with evidence (facts that prove it), how that part helps it stay alive."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dashes removed",
+  "old": "So far you've studied whole Florida ecosystems and how living things connect. Today you'll zoom way in — to the parts of one plant or one animal — and ask <em>why</em> each part is shaped the way it is.",
+  "new": "So far you've studied whole Florida ecosystems. Today you'll zoom way in, to the parts of one plant or animal, and ask <em>why</em> each part has the shape it has."
+ },
+ {
+  "kind": "plain",
+  "why": "the notebook sketch becomes the on-page beak game; defines the bird",
+  "old": "In your notebook, sketch the beak of a roseate spoonbill (the long pink Florida bird with a flat, spoon-shaped beak). Don't worry about being accurate. Just notice the shape.",
+  "new": "Start with the beak of a roseate spoonbill (a tall pink Florida bird with a flat, spoon-shaped beak). Then match four Florida beaks to the tools they work like."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "is the part itself — a leaf, a beak, a paw, a root.",
+  "new": "is the part itself, like a leaf, a beak, a paw or a root."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “talons” and “prey”",
+  "old": "A hawk's sharp talons are a structure. Their function is to grab prey.",
+  "new": "A hawk's sharp talons (claws) are a structure. Their function is to grab the animals it hunts."
+ },
+ {
+  "kind": "plain",
+  "why": "“misconception” → plain words; shorter; dashes removed",
+  "old": "<strong>Common misconception:</strong> Some people think a structure exists \"in order to\" help an animal — like the animal asked for it. That's not quite right. Structures developed slowly, over many generations, because the animals with the most useful structures were the ones most likely to survive and have babies. The structure didn't plan ahead — it just turned out to work.",
+  "new": "<strong>A mix-up to watch for:</strong> Animals don't choose their body parts. Over many, many generations, animals with the most useful parts were the most likely to survive and have babies. The babies got those parts too."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: repeats the paragraph above",
+  "old": "\\s*<p[^>]*>Each of these structures solves a <em>survival problem</em>.*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "“organisms” → plain words; dash removed",
+  "old": "<strong>Different organisms, different parts — same idea.</strong>",
+  "new": "<strong>Different living things, different parts, same idea.</strong>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the caption repeats Part 1",
+  "old": " Each labeled part is a <em>structure</em>, and each label tells you its <em>function</em>.</div>",
+  "new": "</div>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 1 (one idea per paragraph)",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "Every structure has a job — let's match them up",
+  "new": "Every structure has a job. Let's match them up."
+ },
+ {
+  "kind": "plain",
+  "why": "lean: the list below gives the examples; dashes removed",
+  "old": "structures are the parts you can see from the outside — skin, fur, feathers, leaves, shells, bark, claws.",
+  "new": "structures are the parts you can see from the outside."
+ },
+ {
+  "kind": "plain",
+  "why": "lean: dash removed",
+  "old": "structures are inside — hearts, lungs, bones, the inside of a stem.</p>",
+  "new": "structures are hidden inside.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; defines “model”",
+  "old": "Next lesson, we'll take the next step — building a <em>model</em> that doesn't just label parts, but actually <em>shows</em> how a structure does its job.",
+  "new": "Next lesson, you'll build a <em>model</em> (a drawing that explains how something works). It won't just name a part. It will <em>show</em> how the part does its job."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (the alligator moves to the Lesson as Part 4)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the diagram heading becomes Part 3; a short paragraph about legs introduces the wading game",
+  "old": "margin-top:22px;\">Four Florida Structures</h3>",
+  "new": "margin-top:22px;\">Part 3 · Shape Fits the Job</h3>\n      <p>Legs are structures too. How deep can each bird below go before it has to stop or swim?</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the eagle fact, the tortoise callout and Go Deeper at the end of the Lesson (the X-ray idea moves to the Tool of the Week); Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Built to Hide</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">An American alligator floats in a Florida swamp. Only a few bumps show above the water: its <strong>eyes</strong> and its <strong>nostrils</strong> (the holes it breathes through). The rest of its huge body hides below. Why would those parts sit right there? Build a model head and test it.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 is now number 5",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 is now number 6",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C matches the new task; the sketch is a bonus; the CER has its own line",
+  "old": "A sketch of one Florida organism with at least three structures labeled, plus a Claim-Evidence-Reasoning paragraph.",
+  "new": "One Florida plant or animal with three structures, the job of each, and whether each is internal or external. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer (CER is the last writing)",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether plants have important structures, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether plants have important structures, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

@@ -1,0 +1,369 @@
+#!/usr/bin/env python3
+"""Writes data.json and fixes.json for 11.01 (run from this folder)."""
+import json, copy
+P = json.load(open('../10-01/data.json', encoding='utf-8'))
+H3 = '<h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">'
+
+# ---------------------------------------------------------------- fixes
+F = []
+def fx(kind, why, old, new, regex=False):
+    e = {'kind': kind, 'why': why, 'old': old, 'new': new}
+    if regex: e['regex'] = True
+    F.append(e)
+
+# ticked fixes (Bethany, 15 Oct 2026)
+fx('fix', 'quarter label: week 11 is Quarter 2 (matches 10.01)', 'Q3 &middot; Week 11', 'Q2 &middot; Week 11')
+fx('fix', 'quarter label in the footer', 'Science &middot; Quarter 3 &middot;', 'Science &middot; Quarter 2 &middot;')
+fx('fix', 'copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for a labeled Florida organism', '🎨 Part C &mdash; Build Your Own Food Chain', '🎨 Part C &mdash; Label a Florida Organism')
+fx('fix', 'copy-paste leftover: Part C task from 9.01',
+   r'In your science notebook, draw a <strong>new</strong> food chain.*?</p>\s*<p[^>]*>Use colors\. Label every part\.</p>',
+   'Pick one Florida plant or animal (not the spoonbill). Name <strong>three</strong> of its structures and the job each one does. Say whether each one is internal or external.</p>', True)
+fx('fix', 'copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect',
+   r'<div class="socratic-q">\s*<span class="sq-icon">🤔</span>\s*<div>\s*<div class="label">Reflect</div>.*?</div>\s*</div>\s*</div>\s*', '', True)
+fx('fix', 'copy-paste leftover: supply list (every lesson lists a sunny window)', '<span class="need-chip"><span>🔆</span>A sunny window or memory of one</span>', '')
+fx('fix', 'accuracy: lungs don’t let a turtle breathe underwater; it holds its breath. Also defines “predators”',
+   "A turtle's shell (external) protects it from predators. The turtle's lungs (internal) let it breathe air, even underwater for short trips.",
+   "A turtle's shell (external) protects it from predators (animals that hunt it). The turtle's lungs (internal) let it breathe air, then hold that air on short dives underwater.")
+fx('fix', 'accuracy: mangrove roots hold the tree up and take in air (not just “breathe”); also plain-language rewrite of the box',
+   "Plant structures aren't random &mdash; they're <strong>adaptations</strong> that help plants survive in their specific environment. A cactus in a desert has thick, waxy skin to hold water and sharp spines instead of leaves to keep animals from eating it. A mangrove tree along Florida's coast has tangled roots that rise above the water, helping it breathe in salty, muddy soil. A Venus flytrap in poor soil traps insects to get the nutrients the soil can't provide.",
+   "Plant structures aren't random. They're <strong>adaptations</strong> (body parts that help a living thing survive where it lives). A desert cactus has thick, waxy skin to hold water and sharp spines to keep animals from eating it. A mangrove tree on Florida's coast has tangled roots that arch above the water and mud. They hold the tree up and take in air. A Venus flytrap grows in poor soil, so it traps insects to get the nutrients (the healthy stuff a living thing needs) the soil doesn't have.")
+
+# plain language
+fx('plain', 'shorter; dashes removed; defines “evidence”',
+   "Hold this question in your head as you work. By the end of the lesson, you'll be able to look at a real plant or animal, point to one part, and explain — with evidence — exactly how that part helps the organism stay alive.",
+   "Keep this question in mind as you work. By the end, you'll be able to point to one part of a real plant or animal and explain, with evidence (facts that prove it), how that part helps it stay alive.")
+fx('plain', 'shorter; dashes removed', "So far you've studied whole Florida ecosystems and how living things connect. Today you'll zoom way in — to the parts of one plant or one animal — and ask <em>why</em> each part is shaped the way it is.",
+   "So far you've studied whole Florida ecosystems. Today you'll zoom way in, to the parts of one plant or animal, and ask <em>why</em> each part has the shape it has.")
+fx('plain', 'the notebook sketch becomes the on-page beak game; defines the bird', "In your notebook, sketch the beak of a roseate spoonbill (the long pink Florida bird with a flat, spoon-shaped beak). Don't worry about being accurate. Just notice the shape.",
+   "Start with the beak of a roseate spoonbill (a tall pink Florida bird with a flat, spoon-shaped beak). Then match four Florida beaks to the tools they work like.")
+fx('plain', 'cut filler', "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+   "<strong>Tap a card to flip it</strong> and read what the word means.")
+fx('plain', 'dash removed', 'is the part itself — a leaf, a beak, a paw, a root.', 'is the part itself, like a leaf, a beak, a paw or a root.')
+fx('plain', 'defines “talons” and “prey”', "A hawk's sharp talons are a structure. Their function is to grab prey.", "A hawk's sharp talons (claws) are a structure. Their function is to grab the animals it hunts.")
+fx('plain', '“misconception” → plain words; shorter; dashes removed',
+   '<strong>Common misconception:</strong> Some people think a structure exists "in order to" help an animal — like the animal asked for it. That\'s not quite right. Structures developed slowly, over many generations, because the animals with the most useful structures were the ones most likely to survive and have babies. The structure didn\'t plan ahead — it just turned out to work.',
+   "<strong>A mix-up to watch for:</strong> Animals don't choose their body parts. Over many, many generations, animals with the most useful parts were the most likely to survive and have babies. The babies got those parts too.")
+fx('cut', 'lean: repeats the paragraph above', r'\s*<p[^>]*>Each of these structures solves a <em>survival problem</em>.*?</p>', '', True)
+fx('plain', '“organisms” → plain words; dash removed', '<strong>Different organisms, different parts — same idea.</strong>', '<strong>Different living things, different parts, same idea.</strong>')
+fx('cut', 'lean: the caption repeats Part 1', ' Each labeled part is a <em>structure</em>, and each label tells you its <em>function</em>.</div>', '</div>')
+fx('cut', 'lean: the Key Concept box repeats Part 1 (one idea per paragraph)', r'<div style="background:#FFF6E5;border:2.5px solid #F0C97A;[^"]*">\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\s*', '', True)
+fx('plain', 'dash removed', "Every structure has a job — let's match them up", "Every structure has a job. Let's match them up.")
+fx('plain', 'lean: the list below gives the examples; dashes removed', 'structures are the parts you can see from the outside — skin, fur, feathers, leaves, shells, bark, claws.', 'structures are the parts you can see from the outside.')
+fx('plain', 'lean: dash removed', 'structures are inside — hearts, lungs, bones, the inside of a stem.</p>', 'structures are hidden inside.</p>')
+fx('plain', 'shorter CER directions (the C/E/R boxes explain each part)',
+   "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+   "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson.")
+fx('plain', 'shorter', 'All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.', 'All your answers in one place. Copy or download them to turn in on Canvas.')
+fx('plain', 'dash removed; defines “model”',
+   "Next lesson, we'll take the next step — building a <em>model</em> that doesn't just label parts, but actually <em>shows</em> how a structure does its job.",
+   "Next lesson, you'll build a <em>model</em> (a drawing that explains how something works). It won't just name a part. It will <em>show</em> how the part does its job.")
+
+# lean cuts (standing approval, 15 Oct 2026)
+fx('cut', 'lean: no Explore tab button', r'\s*<button class="tab-btn" data-tab="explore"[^>]*>.*?</button>', '', True)
+fx('cut', 'lean: tab order without Explore', "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];", "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];")
+fx('cut', 'lean: remove the whole Explore tab (the alligator moves to the Lesson as Part 4)',
+   r'<!-- ═+ -->\s*<!-- TAB 3: GUIDED EXPLORATION\s*-->\s*<!-- ═+ -->\s*<div class="tab-panel" id="tab-explore">.*?(?=<!-- ═+ -->\s*<!-- TAB 4)', '', True)
+fx('cut', 'lean: the diagram heading becomes Part 3; a short paragraph about legs introduces the wading game',
+   'margin-top:22px;">Four Florida Structures</h3>',
+   'margin-top:22px;">Part 3 · Shape Fits the Job</h3>\n      <p>Legs are structures too. How deep can each bird below go before it has to stop or swim?</p>')
+fx('cut', 'lean: Observe & Reason, the eagle fact, the tortoise callout and Go Deeper at the end of the Lesson (the X-ray idea moves to the Tool of the Week); Part 4 = the old Explore; next button goes to Self-Check',
+   r'<div class="socratic-q">\s*<span class="sq-icon">👀</span>.*?<div class="tab-next-wrap">\s*<button class="tab-next-btn" onclick="switchTab\(\'explore\'\)">Continue to 🔬 Explore →</button>',
+   H3 + 'Part 4 · Built to Hide</h3>\n      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">An American alligator floats in a Florida swamp. Only a few bumps show above the water: its <strong>eyes</strong> and its <strong>nostrils</strong> (the holes it breathes through). The rest of its huge body hides below. Why would those parts sit right there? Build a model head and test it.</p>\n      <div class="tab-next-wrap">\n        <button class="tab-next-btn" onclick="switchTab(\'quiz\')">Continue to 🧠 Self-Check →</button>', True)
+fx('cut', 'lean: no Part A word bank', r'<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)', '', True)
+fx('cut', 'lean: Part B question 5 removed (Bethany kept 6 and 7)', r'<div class="pq">\s*<span class="pq-num"[^>]*>5</span>.*?</textarea>\s*', '', True)
+fx('cut', 'lean: Part B question 6 is now number 5', '<span class="pq-num" style="background:#D4772C;">6</span>', '<span class="pq-num" style="background:#D4772C;">5</span>')
+fx('cut', 'lean: Part B question 7 is now number 6', '<span class="pq-num" style="background:#D4772C;">7</span>', '<span class="pq-num" style="background:#D4772C;">6</span>')
+fx('cut', 'lean: checklist without Part A', r'<div class="checklist-item"[^>]*>\s*<span class="check-icon"[^>]*>☐</span>\s*<span[^>]*><strong>Part A:</strong>.*?</div>\s*', '', True)
+fx('cut', 'lean: Part B has 2 questions', 'Questions 5, 6, and 7 answered', 'Questions 5 and 6 answered')
+fx('cut', 'lean: Part C matches the new task; the sketch is a bonus; the CER has its own line',
+   'A sketch of one Florida organism with at least three structures labeled, plus a Claim-Evidence-Reasoning paragraph.',
+   'One Florida plant or animal with three structures, the job of each, and whether each is internal or external. (A sketch is a bonus.)')
+fx('cut', 'lean: no separate Big Question answer (CER is the last writing)', r'<div class="checklist-item"[^>]*>\s*<span class="check-icon"[^>]*>☐</span>\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\s*', '', True)
+fx('cut', 'lean: no separate Big Question answer', r"<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\s*", '', True)
+fx('plain', 'lean: shorter checklist', '<strong>Evidence Response:</strong> I made a claim about whether plants have important structures, and supported it with two pieces of evidence from the lesson.',
+   '<strong>Use Your Evidence:</strong> My claim about whether plants have important structures, with two pieces of evidence.')
+fx('cut', 'lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)',
+   r'Submit your work however works best for you:<br/><br/>.*?(?=\s*</div>\s*</div>)', 'Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.', True)
+
+# ---------------------------------------------------------------- data
+CR_CASE = ('Real photos, standing in for the notebook’s pages. Beak: roseate spoonbill at Orlando Wetlands Park, Florida, JeffreyGammon (CC BY 4.0). '
+           'Beak in the water, and the legs: roseate spoonbills, Russ (CC BY 2.0). Where I found it: roseate spoonbills on Sanibel Island, Florida, James St. John (CC BY 2.0). All via Wikimedia Commons.')
+D = {
+    'lesson': '11.01', 'week': 11, 'day': 1, 'guide': 'lena', 'prefix': 'g4sci-11-1', 'manifestKey': '11-01',
+    'paths': P['paths'], 'crew': P['crew'],
+    'expedition': {'num': 11, 'title': 'The Washed-Out Notebook'},
+    'ambient': {'icon': '🐸', 'label': 'Marsh sounds'},
+    'case': {
+        'num': 11, 'title': 'The Washed-Out Notebook', 'style': 'notebook',
+        'hook': 'On a boardwalk at a Florida wildlife refuge, I found an old field notebook, soaked by the rain. Most pages are ruined. But four photos of one tall pink bird survived, with notes about its body parts. The last line is washed out.',
+        'smudge': 'This bird finds food it can’t even see by…',
+        'question': 'How does this bird find food it can’t even see?',
+        'how': 'Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.',
+        'stills': [
+            {'cam': 'The beak', 'time': 'flat and wide at the tip', 'tag': 'pg. 3', 'img': 'images/11-01-case-beak.jpg', 'alt': 'A pink bird with a long, flat beak that widens into a round spoon shape at the tip.'},
+            {'cam': 'Beak in the water', 'time': 'swings it side to side', 'tag': 'pg. 4', 'img': 'images/11-01-case-sweep.jpg', 'alt': 'The bird bends its head down and holds its beak in shallow water.'},
+            {'cam': 'The legs', 'time': 'long, thin and pink', 'tag': 'pg. 5', 'img': 'images/11-01-case-legs.jpg', 'alt': 'Pink birds standing on long legs in shallow water, one with its beak under the water.'},
+            {'cam': 'Where I found it', 'time': 'a shallow lagoon', 'tag': 'pg. 6', 'img': 'images/11-01-case-flock.jpg', 'alt': 'A group of pink birds standing on a sandbar in a shallow lagoon, with mangrove trees behind them.'},
+        ],
+        'stillsCredit': CR_CASE,
+        'clues': [
+            {'id': 'beaks', 'icon': '🥄', 'where': 'Warm-Up: beak or tool?', 't': 'Its flat, wide beak works like a spoon. It sweeps side to side through the water and snaps shut on small animals.'},
+            {'id': 'judge', 'icon': '🫀', 'where': 'The Lesson, Part 2: inside or outside?', 't': 'Inside the tip of its beak are tiny touch sensors (an internal structure). The bird can feel food it can’t see.'},
+            {'id': 'wade', 'icon': '🦵', 'where': 'The Lesson, Part 3: how deep can you go?', 't': 'Long legs let it wade (walk in water) where short-legged birds can’t stand. It feeds in shallow water, usually less than knee-deep on a grown-up.'},
+            {'id': 'gator', 'icon': '🐊', 'where': 'The Lesson, Part 4: build a hiding head', 't': 'Where a part sits matters. A gator’s nostrils sit high so it can breathe while it hides. The mystery bird’s nostrils sit high too, near its face, far from the beak tip it sweeps through the water.'},
+        ],
+        'solve': {
+            'title': 'How does the mystery bird find food?', 'q': 'Which answer fits all four clues?',
+            'options': [
+                {'t': 'It flies high and spots its food with sharp eyes.', 'why': 'Check Clue 2. This bird finds food it can’t see. Spotting food from high up is an eagle’s job.'},
+                {'t': 'It wades into shallow water on long legs, sweeps its flat beak side to side, and feels for small animals with touch sensors in its beak. Its nostrils stay up high, so it keeps breathing.', 'right': True,
+                 'why': 'Case cracked! It’s a roseate spoonbill. Every part fits its job: legs for wading, a spoon-shaped beak for sweeping, touch sensors for feeling and nostrils up high for breathing. Now write your case report: it’s the questions below.'},
+                {'t': 'It dives deep underwater and spears fish with a pointy beak.', 'why': 'Check Clues 1 and 3. A spear-shaped beak belongs to the anhinga. This bird has a spoon shape and stands on long legs.'},
+            ]},
+    },
+    'beaks': {
+        'afterText': 'match four Florida beaks', 'kicker': 'Warm-Up game', 'title': 'Beak or tool?',
+        'todo': ['Look at the shape of each beak.', 'Drag the tool with the same shape onto it, or tap the tool and then the beak.', 'Match all four.'],
+        'why': {'icon': '🔧', 'q': 'Why tools?', 't': 'Scientists often compare body parts to tools. A beak’s shape tells you its job, just like a tool’s shape does.'},
+        'hint': 'Drag a tool onto a beak, or tap a tool and then tap a beak.',
+        'tools': [{'id': 'spoon', 'icon': '🥄', 't': 'Spoon'}, {'id': 'straw', 'icon': '🥤', 't': 'Straw'}, {'id': 'nut', 'icon': '🗜️', 't': 'Nutcracker'}, {'id': 'spear', 'icon': '🍢', 't': 'Skewer (a sharp stick)'}],
+        'birds': [
+            {'id': 'spoonbill', 'name': 'Roseate spoonbill', 'img': 'images/11-01-beak-spoonbill.jpg', 'alt': 'Close-up of a roseate spoonbill’s long beak, flat and round at the tip.', 'tool': 'spoon',
+             'job': 'Flat and wide at the tip, like a spoon. It sweeps side to side through shallow water and snaps shut on shrimp and small fish.',
+             'miss': {'straw': 'A straw is long and thin with a hole. Look at the spoonbill’s wide, flat tip.', 'nut': 'A nutcracker is short and strong. Is this beak short?', 'spear': 'A skewer is sharp and pointy. Is this tip pointy, or round and flat?'}},
+            {'id': 'hummer', 'name': 'Ruby-throated hummingbird', 'img': 'images/11-01-beak-hummingbird.jpg', 'alt': 'A tiny hummingbird hovering at a pink flower with its long, thin beak.', 'tool': 'straw',
+             'job': 'Long and thin, like a straw. It reaches deep into flowers to sip nectar (the sweet juice inside).',
+             'miss': {'spoon': 'A spoon is wide at the end. This beak is thin all the way.', 'nut': 'A nutcracker is short and thick. This beak is long and thin.', 'spear': 'Close! It’s long and thin. But it sips from flowers instead of stabbing fish.'}},
+            {'id': 'cardinal', 'name': 'Northern cardinal', 'img': 'images/11-01-beak-cardinal.jpg', 'alt': 'A red cardinal with a short, thick, cone-shaped orange beak.', 'tool': 'nut',
+             'job': 'Short, thick and strong, like a nutcracker. It cracks open hard seeds.',
+             'miss': {'spoon': 'A spoon is long and flat. This beak is short and thick.', 'straw': 'A straw is long and thin. This beak is short and thick.', 'spear': 'A skewer is long and sharp. This beak is short and thick.'}},
+            {'id': 'anhinga', 'name': 'Anhinga', 'img': 'images/11-01-beak-anhinga.jpg', 'alt': 'A dark water bird with a long neck and a long, sharp, pointed beak.', 'tool': 'spear',
+             'job': 'Long, straight and sharp, like a skewer. It swims underwater and stabs fish.',
+             'miss': {'spoon': 'A spoon is round at the end. This tip is sharp.', 'straw': 'A straw sips. This beak is sharp and strong. What would it do to a fish?', 'nut': 'A nutcracker is short. This beak is long and sharp.'}},
+        ],
+        'credit': 'Roseate spoonbill, Andrea Westmoreland (CC BY-SA 2.0). Ruby-throated hummingbird, Paul Danese (CC BY-SA 4.0). Northern cardinal, Robert Taylor (CC BY 2.0). Anhinga, Russ (CC BY 2.0). All via Wikimedia Commons.',
+        'win': 'All four matched! Same body part, four shapes, four jobs. That’s a clue: look at what the spoonbill’s spoon does.',
+        'clue': 'beaks'},
+    'judge': {
+        'afterText': 'Both kinds matter', 'kicker': 'Part 2 game', 'title': 'Inside or outside?',
+        'todo': ['Read the card.', 'Drag it to a side, or tap a side.', 'Ask: could I see this part from the outside?'],
+        'why': None,
+        'sides': [{'k': 'out', 'icon': '👀', 't': 'External (outside)'}, {'k': 'in', 'icon': '🫀', 't': 'Internal (inside)'}],
+        'hint': 'Pick a side for the card above.',
+        'miss': 'Ask: could you see this part from the outside of the living thing?',
+        'cards': [
+            {'t': 'A gopher tortoise’s hard shell', 'side': 'out', 'why': 'You can see the shell from the outside. It’s external.'},
+            {'t': 'A gopher tortoise’s lungs', 'side': 'in', 'why': 'Lungs are hidden inside the body. They take in air. They’re internal.'},
+            {'t': 'A saw palmetto’s big fan-shaped leaves', 'side': 'out', 'why': 'Leaves are on the outside of the plant, catching sunlight. External.'},
+            {'t': 'The tubes inside a palmetto’s stem that carry water', 'side': 'in', 'why': 'They’re hidden inside the stem. Internal.'},
+            {'t': 'An alligator’s bumpy, scaly skin', 'side': 'out', 'why': 'Skin covers the outside of the body. External.'},
+            {'t': 'An alligator’s heart', 'side': 'in', 'why': 'The heart is deep inside the body, pumping blood. Internal.'},
+            {'t': 'A spoonbill’s pink feathers', 'side': 'out', 'why': 'Feathers cover the outside of a bird. External.'},
+            {'t': 'Tiny touch sensors inside the tip of a spoonbill’s beak', 'side': 'in', 'why': 'They’re hidden inside the beak. These touch sensors let a spoonbill feel a shrimp it can’t see. Internal!',
+             'miss': 'You can see the beak from outside. But are the sensors on the outside, or inside it?'},
+        ],
+        'win': 'All eight sorted! Look at the last card again: that’s a clue about the mystery bird.',
+        'clue': 'judge'},
+    'wade': {
+        'afterText': 'Legs are structures too', 'kicker': 'Part 3 game', 'title': 'How deep can you go?',
+        'todo': ['Tap a water depth.', 'Read what happens to each bird.', 'Try all four depths, then answer the question.'],
+        'why': {'icon': '🥾', 'q': 'What is wading?', 't': 'Wading means walking through water. Some birds wade to find food, the way you might wade into a pond in tall rubber boots.'},
+        'depthLabel': 'Water depth:', 'start': 'Tap a water depth to start.',
+        'depths': [{'k': 'd1', 't': '1 inch', 'h': 12}, {'k': 'd6', 't': '6 inches', 'h': 30}, {'k': 'd12', 't': '1 foot', 'h': 46}, {'k': 'd36', 't': '3 feet', 'h': 88}],
+        'yes': 'Stands and feeds', 'no': 'Too deep to stand', 'swim': 'Floats instead',
+        'birds': [
+            {'id': 'sanderling', 'name': 'Sanderling (short legs)', 'img': 'images/11-01-wade-sanderling.jpg', 'alt': 'A small gray-and-white shorebird with short black legs on wet sand.',
+             'at': {'d1': {'ok': 'yes', 't': 'It runs along the wet sand at the edge of the waves, poking for tiny animals.'},
+                    'd6': {'ok': 'no', 't': 'Its short legs can’t reach the bottom here.'},
+                    'd12': {'ok': 'no', 't': 'Much too deep for those short legs.'},
+                    'd36': {'ok': 'no', 't': 'Much too deep. It stays at the edge of the water.'}}},
+            {'id': 'spoonbill', 'name': 'Roseate spoonbill (long legs)', 'img': 'images/11-01-wade-spoonbill.jpg', 'alt': 'A pink spoonbill standing on long legs in dark, shallow water, sweeping its beak.',
+             'at': {'d1': {'ok': 'yes', 't': 'Easy. It sweeps its beak through the shallow water.'},
+                    'd6': {'ok': 'yes', 't': 'Still standing! Its long legs keep its body above the water.'},
+                    'd12': {'ok': 'yes', 't': 'Still standing. This is near the deepest water it likes to feed in.'},
+                    'd36': {'ok': 'no', 't': 'Even long legs have limits. It can’t stand here and reach the bottom.'}}},
+            {'id': 'duck', 'name': 'Mottled duck (short legs, webbed feet)', 'img': 'images/11-01-wade-duck.jpg', 'alt': 'A brown duck with a yellow bill floating on rippled water.',
+             'at': {'d1': {'ok': 'yes', 't': 'It walks on short legs and dips its bill at the water’s edge.'},
+                    'd6': {'ok': 'swim', 't': 'Its legs are too short to stand, so it floats and paddles with its webbed feet.'},
+                    'd12': {'ok': 'swim', 't': 'It floats, then tips headfirst to reach food, like a duck doing a handstand.'},
+                    'd36': {'ok': 'swim', 't': 'It floats. Food on the bottom is out of reach.'}}},
+        ],
+        'q': {'q': 'What do the spoonbill’s long legs let it do?', 'opts': [
+            {'t': 'Swim in deep water like a duck', 'why': 'The duck floats and paddles with webbed feet. Did the spoonbill float, or stand?'},
+            {'t': 'Stand and feed in water too deep for short-legged birds, without swimming', 'ok': True, 'why': 'Yes! Long legs let it wade where short-legged birds can’t stand.'},
+            {'t': 'Run fast along dry sand', 'why': 'That’s the sanderling at the edge of the waves. What happened when the water got deeper?'}]},
+        'credit': 'Sanderling in Sarasota, Florida, Ryan Hodnett (CC BY-SA 4.0). Roseate spoonbill feeding, Andy Morffew (CC BY 2.0). Mottled duck in Royal Palm Beach, Florida, DickDaniels (CC BY-SA 3.0). All via Wikimedia Commons.',
+        'win': 'That’s a clue about the mystery bird’s long legs.',
+        'clue': 'wade'},
+    'gator': {
+        'afterText': 'An American alligator floats', 'kicker': 'Part 4 game', 'title': 'Build a hiding head',
+        'todo': ['Pick where the eyes go and where the nostrils go.', 'Press Sink it to hide and read the three tests.', 'Test at least two designs. Then answer the question.'],
+        'why': {'icon': '🧪', 'q': 'Why a model?', 't': 'Scientists can’t move a real gator’s eyes. So they test ideas with a model (a simple copy that shows how something works).'},
+        'bands': [{'k': 'top', 't': 'Top of the head', 'short': 'On top'}, {'k': 'side', 't': 'Side of the head', 'short': 'On the side'}, {'k': 'under', 't': 'Under the jaw', 'short': 'Underneath'}],
+        'waterLabel': 'water line', 'waterK': 'top',
+        'parts': [{'k': 'eyes', 'icon': '👀', 't': 'Eyes'}, {'k': 'nose', 'icon': '👃', 't': 'Nostrils'}],
+        'pickFirst': 'Put the eyes and the nostrils somewhere first.',
+        'tryAnother': 'That one passes! Now test a different design, so you can compare.',
+        'tests': [
+            {'k': 'hide', 'icon': '🙈', 't': 'Stays hidden', 'need': [], 'yes': 'Almost the whole head and body are under water. A fish swimming by sees only small bumps.', 'no': ''},
+            {'k': 'watch', 'icon': '👀', 't': 'Watches for food', 'need': ['eyes'], 'yes': 'The eyes stay above the water, so it can watch for a fish or a bird coming close.', 'no': 'The eyes are under the water. It can’t watch what’s happening above it.'},
+            {'k': 'breathe', 'icon': '👃', 't': 'Breathes while hiding', 'need': ['nose'], 'yes': 'The nostrils stay above the water, so it can breathe air without moving.', 'no': 'The nostrils are under the water. To breathe, it would have to lift its head and give itself away.'},
+        ],
+        'img': 'images/11-01-gator-hiding.jpg', 'alt': 'A real alligator in a swamp: its head is mostly under the water, with only its eye and the bumps of its nostrils above the surface.',
+        'photoCap': 'The real thing: an American alligator hiding. Its eyes and its nostrils sit on top of its head, so they stay above the water.',
+        'credit': 'American alligator in its hiding position, Mark Herr, via Wikimedia Commons (CC BY-SA 3.0).',
+        'q': {'q': 'Why are a gator’s eyes and nostrils on top of its head?', 'opts': [
+            {'t': 'So it can see the sky better', 'why': 'Think about the tests. What can it do while its body is under water?'},
+            {'t': 'Because it chose to put them there', 'why': 'Animals don’t choose their parts. Parts that worked well got passed on to babies over many generations.'},
+            {'t': 'So it can watch and breathe while the rest of its body hides', 'ok': True, 'why': 'Yes! Where a part sits matters as much as its shape.'}]},
+        'win': 'That’s your last clue. It works for the mystery bird, too.',
+        'clue': 'gator'},
+    'exploreMod': 'gator',
+    'quizKicker': '',
+    'quizMiss': {
+        'q1': {'A': 'Stems and roots move water. What does a leaf catch from the sky?', 'C': 'Holding the plant in the soil is the roots’ job. Which choice is about sunlight?'},
+        'q2': {'B': 'Internal means hidden inside. Can you see a tortoise’s shell from the outside?', 'C': 'Invasive means a living thing brought from somewhere else. That’s not about where a part is.'},
+        'q3': {'A': 'Birds don’t choose their beaks for looks. Which answer connects the shape to the job?', 'C': 'Spoonbills are native to Florida (they belong here). And that doesn’t explain the shape.'}},
+    'flags': {
+        'ans-2': [
+            {'label': 'what internal means', 're': 'inside|in the body|hidden|internal'},
+            {'label': 'what external means', 're': 'outside|surface|can see|see it|external'},
+            {'label': 'an inside example', 're': 'heart|lung|stomach|bone|brain|skeleton|spine|backbone|muscle|blood|sensor|nerve|windpipe|egg|inside (of )?(the |a )?(stem|seed)|tube'},
+            {'label': 'an outside example', 're': 'shell|beak|bill|feather|fur|skin|scale|lea(f|ves)|bark|claw|talon|leg|feet|foot|eye|ear|tail|thorn|spine|flower|fruit|wing|teeth|tooth|snout|nostril'}],
+        'ans-3': [
+            {'label': 'the word structure', 're': 'structur'},
+            {'label': 'the word function', 're': 'function'},
+            {'label': 'what each beak does', 're': 'nectar|sip|flower|straw|drink|tear|rip|meat|fish|hook|prey|catch|grab|hunt|eat'}],
+        'cer-4': [
+            {'label': 'your claim', 're': 'agree|disagree|wrong|right|not true|true|do have|have structures|matter'},
+            {'label': 'two pieces of evidence', 'any': ['lea(f|ves)', 'root', 'stem', 'bark', 'thorn|spine', 'mangrove', 'cactus', 'flytrap|venus|insect', 'palmetto', 'sunlight|light', 'water|nutrient'], 'min': 2},
+            {'label': 'your reasoning', 're': 'because|so |this shows|that shows|this means|that means|without|help'}]},
+    'minWords': {'ans-2': 18, 'ans-3': 18, 'cer-4': 30},
+    'hints': {
+        'ans-2': ['Internal means inside the body. External means outside, where you can see it.', 'Think of the cards you sorted: a shell, lungs, leaves, the tubes in a stem.', 'Try: An internal structure is ___, like ___. An external structure is ___, like ___.'],
+        'ans-3': ['Picture each beak. A hummingbird’s is long and thin. An eagle’s is short, sharp and hooked.', 'What does each bird eat? Nectar from flowers? Fish and other animals?', 'Try: Their beaks have different structures because ___. A hummingbird’s beak functions to ___. An eagle’s beak functions to ___.'],
+        'cer-4': ['First decide: do you agree or disagree with the classmate?', 'Look for two plant parts from today and the job each one does.', 'Try: I ___ because ___. One piece of evidence is ___. Another is ___.']},
+    'scholar': {},
+    'planner': {
+        'before': 'cer-4', 'title': 'Your claim and two pieces of evidence',
+        'rows': [
+            {'label': '1. Pick your side', 'options': ['I agree', 'I disagree'], 'pick': 1},
+            {'label': '2. Pick two pieces of evidence from the lesson', 'pick': 2, 'options': [
+                'Leaves catch sunlight so the plant can make its own food.',
+                'Roots pull water and nutrients from the soil.',
+                'Tubes inside a stem carry water through the plant.',
+                'A cactus has sharp spines that keep animals from eating it.',
+                'Mangrove roots hold the tree up and take in air.',
+                'A Venus flytrap traps insects to get nutrients the soil doesn’t have.']}],
+        'note': 'Tap your side and two facts. Then write your reasoning in your own words.'},
+    'slots': {
+        'welcome': {'label': 'Welcome · the washed-out notebook', 'length': '30–40 s',
+                    'script': 'Hi, it’s Dr. Lena Reyes. This morning I found something on a boardwalk at a Florida wildlife refuge: an old field notebook, soaked by the rain. Most of the pages are ruined. But four photos survived, all of the same tall pink bird. The last line is washed out. It says, this bird finds food it can’t even see by… and then nothing. Look at the photos, then help me find the clues to finish that sentence.'},
+        'warmup': {'label': 'Warm-Up · beak or tool (Clue 1)', 'length': '20–30 s',
+                   'script': 'Let’s start with the beak, because it’s the strangest part. Scientists often compare body parts to tools, because the shape tells you the job. Look at each beak, then find the tool with the same shape. A tip from the field: don’t look at the bird’s color. Look only at the shape.'},
+        'vocab': {'label': 'Word Wall', 'length': '30–45 s', 'notes': 'Say each word; for internal and external, point to your own heart, then your own skin.'},
+        'lesson': {'label': 'The Lesson', 'length': '30–45 s'},
+        'part1': {'label': 'Part 1 · structure meets function', 'length': '20–30 s'},
+        'part2': {'label': 'Part 2 · inside or outside (Clue 2)', 'length': '20–30 s',
+                  'script': 'Here’s a field trick. Some of the most important body parts are the ones you can’t see. Sort each card by asking one question: could I see this part from the outside, or is it hidden inside the body? Watch the last card closely. It’s about our mystery bird.'},
+        'part3': {'label': 'Part 3 · how deep can you go (Clue 3)', 'length': '20–30 s',
+                  'script': 'When I work in the marsh, I wear tall rubber boots so I can stand in the water without getting soaked. Some birds have something like that built right into their bodies. Pick a water depth and watch all three birds. Try every depth, and keep an eye on the bird with the longest legs.'},
+        'explore': {'label': 'Part 4 · build a hiding head (Clue 4)', 'length': '25–35 s',
+                    'script': 'Here’s my favorite Florida hider: the American alligator. When I paddle my kayak, sometimes all I see are two bumpy eyes and two little nostrils. Now it’s your turn to build a head. Put the eyes and nostrils where you think they belong, then sink it. Test more than one design. Which one can still watch and breathe?'},
+        'quiz': {'label': 'Self-Check', 'length': '15–20 s'},
+        'assignment': {'label': 'Assignment · crack the case', 'length': '20–30 s',
+                       'script': 'You’ve got all four clues. Before you write, crack the case at the top of this tab: how does the mystery bird find food it can’t see? Then write your case report. Use your clues and the words from today. Your answers save as you type.'},
+        'partb': {'label': 'Part B', 'length': '30 s'},
+        'partc': {'label': 'Part C · label a Florida organism', 'length': '30 s'},
+        'evidence': {'label': 'Use your evidence · CER', 'length': '25–35 s',
+                     'script': 'A classmate says plants don’t really have structures, that they’re just leaves and stems. Hmm. Do you agree? Think about the plants in today’s lesson: the cactus, the mangrove, the flytrap. Pick your side, choose two pieces of evidence in the planner, then explain how they prove your claim.'},
+        'closing': {'label': 'Case closed', 'length': '20–30 s', 'notes': 'Celebrate; tease 11.02 (build a model that explains how a part works).',
+                    'script': 'Case closed! That soggy notebook was about a bird built for feeling, not seeing. Every part of it fits its job. Next time, you’ll turn what you learned into a model, a drawing that explains how a body part does its job. Bring your clues.'},
+    },
+    'videoOff': [],
+    'camera': {'max': 8, 'huntTitle': 'Bonus: can you snap all 4 shots on this list?', 'missions': [
+        'All four beaks matched to their tools (Warm-Up)',
+        'The water at its deepest, with all three birds (The Lesson)',
+        'Your model head after you sink it (The Lesson)',
+        'The answer that cracked the case (Assignment)']},
+    'sketch': {'tip': P['sketch']['tip'], 'prompts': ['The spoonbill’s spoon-shaped beak', 'My Florida plant or animal', 'A gator hiding in the water'],
+               'inline': [{'id': 'partc', 'afterPart': 'C', 'kicker': 'Part C · sketch it (optional)', 'required': False, 'minLabels': 3,
+                           'prompts': ['My Florida plant or animal', 'Three structures, labeled', 'Which parts are inside, which are outside']}]},
+    'hlCoach': copy.deepcopy(P['hlCoach']),
+    'specimen': {'kicker': 'Specimen collected', 'stamp': 'CASE CLOSED', 'icon': '🪶', 'name': 'Roseate spoonbill feather',
+                 'line': 'You cracked Case 11, and a pink spoonbill feather goes in your Field Notebook. (A specimen is something a scientist collects to study.) Spoonbills get their pink color from the shrimp and other small animals they eat. Next lesson: build a model that shows how a body part does its job.'},
+    'notebookTitle': P['notebookTitle'],
+    'notebook': [
+        {'lesson': '9.01', 'icon': '🍃', 'name': 'Sunlit leaf', 'have': True}, {'lesson': '9.02', 'icon': '🐛', 'name': 'Caterpillar sketch', 'have': True},
+        {'lesson': '10.01', 'icon': '🌰', 'name': 'Live oak acorn', 'have': True}, {'lesson': '10.02', 'icon': '🐚', 'name': 'Florida apple snail shell', 'have': True},
+        {'lesson': '11.01', 'icon': '🪶', 'name': 'Roseate spoonbill feather'}, {'lesson': '11.02'},
+        {'lesson': '12.01', 'icon': '🪶', 'name': 'Great blue heron feather'}, {'lesson': '12.02'},
+        {'lesson': '13.01'}, {'lesson': '13.02'}, {'lesson': '14.01'}, {'lesson': '14.02'}, {'lesson': '15.01'}, {'lesson': '15.02'}],
+    'rankLine': P['rankLine'],
+    'lensWin': 'All six words are in focus. You’ll use every one of them today.',
+    'inputs': [
+        {'id': 'tab1', 'type': 'swap', 'find': {'sel': '.tab-btn[data-tab="vocab"]'}, 'swap': ['📚 Vocabulary', '🌅 Warm-Up']},
+        {'id': 'fs-warm', 'type': 'write', 'inside': True, 'find': {'sel': '.act-warmup .socratic-q', 'text': 'Notice'},
+         'swap': ['Write your best guess.', 'Write your best guess below.'],
+         'label': 'Warm-Up: why a flat beak?', 'q': 'Warm-Up: Why would a flat beak be more useful than a sharp, pointy one for sweeping through shallow water?', 'ph': 'My best guess is…', 'rows': 3},
+        {'id': 'sw-words', 'type': 'swap', 'find': {'sel': 'p', 'text': 'Tap a card to flip it'},
+         'swap': ['<strong>Tap a card to flip it</strong> and read what the word means.', '<strong>Tap a word</strong> to hear it and see what it means.']},
+        {'id': 'hide-tip', 'type': 'hide', 'find': {'sel': '.act-warmup .callout', 'text': 'Every body part'}},
+        {'id': 'hide-st', 'type': 'hide', 'find': {'sel': '.socratic-q', 'text': 'Pick one body part you used today'}},
+        {'id': 'fs-partc', 'type': 'frame', 'find': {'sel': '#tab-assignment p', 'text': 'Pick one Florida plant or animal'},
+         'label': 'Part C: My Florida organism', 'q': 'Part C: One Florida plant or animal, three of its structures, their jobs, and inside or outside',
+         'title': 'My Florida organism',
+         'fields': [{'t': 'My Florida plant or animal', 'icon': '🐾', 'ph': 'For example: a gopher tortoise, a manatee, a cabbage palm…'},
+                    {'t': 'Structure 1', 'icon': '1️⃣', 'ph': 'Its name, its job, and is it internal or external?', 'long': True},
+                    {'t': 'Structure 2', 'icon': '2️⃣', 'ph': 'Another structure, its job, inside or outside?', 'long': True},
+                    {'t': 'Structure 3', 'icon': '3️⃣', 'ph': 'One more…', 'long': True}]},
+        {'id': 'fs-cer', 'type': 'cer', 'target': 'cer-4', 'find': {'sel': 'textarea#cer-4'},
+         'reminder': 'Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.',
+         'parts': [{'k': 'C', 't': 'Claim', 'ask': 'Do you agree or disagree with the classmate?', 'ph': 'I disagree. Plants do have important structures because…'},
+                   {'k': 'E', 't': 'Evidence', 'ask': 'Two facts from the lesson. Tap them in the planner above, or type them.', 'ph': 'One fact is… Another fact is…', 'rows': 3},
+                   {'k': 'R', 't': 'Reasoning', 'ask': 'How do those facts prove your claim?', 'ph': 'This shows that…', 'rows': 3}]},
+        {'id': 'relabel', 'type': 'relabel', 'map': {'ans-2': 'Part B · Question 5', 'ans-3': 'Part B · Question 6', 'cer-4': 'Use Your Evidence (CER)'}},
+        {'id': 'sw-check', 'type': 'swap', 'find': {'sel': 'p', 'text': 'Tap to toggle'}, 'swap': [' Tap to toggle.', '']},
+        {'id': 'sw-circle', 'type': 'swap', 'find': {'sel': '.card-head-title', 'text': 'Revisit Our Key Question'}, 'swap': ['Revisit Our Key Question', 'Back to the Big Question']},
+    ],
+    'tool': {
+        'name': 'X-ray viewer', 'icon': '🩻', 'tab': 'assignment', 'after': '#tab-assignment .activity-card', 'key': '11-tool', 'sim': 'xray',
+        'kicker': 'Bonus · Tool of the Week',
+        'teaser': 'A light box and two real X-rays: see the internal structures you can’t see from outside.',
+        'done': 'You read both X-rays and found the hidden parts. An X-ray sticker is in your Field Notebook.',
+        'why': {'icon': '🩻', 'q': 'Why an X-ray this week?', 't': 'Internal structures are hidden inside the body. An X-ray lets vets and scientists see bones and other internal parts without hurting the animal.'},
+        'xray': {
+            'title': 'What’s hiding inside?',
+            'todo': ['Pick a film to clip onto the light box.', 'Tap every number to see what the X-ray shows.', 'Read both films, then answer the question.'],
+            'films': [
+                {'k': 't', 'name': 'A turtle, seen from above', 'icon': '🐢', 'img': 'images/11-01-xray-tortoise.jpg', 'alt': 'A gray X-ray of a turtle from above: the outline of the shell, a thin backbone down the middle, leg bones at the corners and three round eggs.',
+                 'credit': 'X-ray: Uwe Gille, via Wikimedia Commons (CC BY-SA 4.0)', 'intro': 'This is a real X-ray of a pet turtle. Tap the numbers.',
+                 'spots': [
+                     {'n': 1, 'x': 50, 'y': 37, 'label': 'Three eggs', 'kind': 'inside', 't': 'This turtle was carrying three eggs! A vet took this X-ray to check on them. You could never see them from the outside.'},
+                     {'n': 2, 'x': 45, 'y': 64, 'label': 'Backbone', 'kind': 'inside', 't': 'The thin line down the middle is the backbone. In a turtle, the backbone and ribs are joined to the inside of the shell.'},
+                     {'n': 3, 'x': 7, 'y': 50, 'label': 'Shell', 'kind': 'outside', 't': 'The edge of the shell. You can see a shell from outside, so it’s external. The X-ray shows it’s made of bone.'},
+                     {'n': 4, 'x': 9, 'y': 90, 'label': 'Leg bones', 'kind': 'inside', 't': 'From the outside you see scaly skin. Inside, bones hold the leg up.'}]},
+                {'k': 'h', 'name': 'A heron’s neck', 'icon': '🦢', 'img': 'images/11-01-xray-heron.jpg', 'alt': 'A gray X-ray of a heron’s long S-shaped neck and head, showing a chain of neck bones, a ringed air tube and a round ring in the eye.',
+                 'credit': 'X-ray of a heron’s neck, Long Beach Animal Hospital, via Wikimedia Commons (public domain)', 'intro': 'Herons are wading birds, like spoonbills. Tap the numbers.',
+                 'spots': [
+                     {'n': 1, 'x': 52, 'y': 27, 'label': 'Neck bones', 'kind': 'inside', 't': 'A chain of small neck bones, linked like train cars. They let a heron bend its neck into an S, then shoot its beak forward to grab a fish.'},
+                     {'n': 2, 'x': 83, 'y': 29, 'label': 'Eye ring', 'kind': 'inside', 't': 'A ring of tiny bones inside the eye. It helps hold a bird’s big eye in shape.'},
+                     {'n': 3, 'x': 22, 'y': 76, 'label': 'Windpipe', 'kind': 'inside', 't': 'The tube with tiny rings is the windpipe, the air tube to the lungs. The rings keep it from squeezing shut.'},
+                     {'n': 4, 'x': 96, 'y': 45, 'label': 'Beak', 'kind': 'outside', 't': 'You can see a beak from outside, so it’s external. The X-ray shows the bone inside it, too.'}]}],
+            'q': {'q': 'What can an X-ray show that a regular photo can’t?', 'opts': [
+                {'t': 'The animal’s real colors', 'why': 'X-rays are gray. A regular photo shows colors.'},
+                {'t': 'Internal structures, like bones and eggs, without hurting the animal', 'ok': True, 'why': 'Yes! That’s why vets and scientists use X-rays: to see hidden parts safely.'},
+                {'t': 'What sounds the animal makes', 'why': 'An X-ray is a picture, not a recording. What did you see on the films?'}]}}},
+}
+# highlighter coaching for this lesson
+D['hlCoach']['tips'][2][2] = 'Ask yourself: does this help me explain how a body part helps a living thing survive?'
+D['hlCoach']['practice'] = {
+    'q': 'Practice: tap the 3 to 5 words that matter most in this sentence.',
+    'text': 'A spoonbill sweeps its flat beak through shallow water to feel for shrimp.',
+    'key': ['spoonbill', 'sweeps', 'flat', 'beak', 'shallow', 'feel', 'shrimp'],
+    'small': ['A', 'its', 'through', 'to', 'for'],
+    'model': 'A scientist might highlight “spoonbill”, “flat beak”, “sweeps” and “feel for shrimp”. Those words tell who, which part and what it does. Small words like “a” and “to” don’t carry the idea.'}
+
+json.dump(D, open('data.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+json.dump(F, open('fixes.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print('wrote data.json and fixes.json:', len(F), 'fixes')

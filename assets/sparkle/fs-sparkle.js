@@ -459,6 +459,7 @@
       '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
+      (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
       '<div class="fs-case-ask">🔎 ' + esc(C.question) + '</div>' +
       '<div class="fs-case-how">' + esc(C.how) + '</div></div>';
     $('.fs-case-av', card).appendChild(avatar(crewOf(), 'small'));
@@ -1029,6 +1030,160 @@
   }
 
   /* ---------- Self-Check: one question at a time + miss lines ---------- */
+  /* ---------- Warm-Up: "Beak or tool?" — drag a kitchen tool onto each real beak (11.01) ----------
+     D.beaks = {afterText, kicker, title, todo[], why, tools:[{id,icon,t}], birds:[{id,name,img,alt,tool,job,miss:{toolId:hint}}], credit, win, clue} */
+  function buildBeaks() {
+    var B = D.beaks; if (!B) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (B.afterText && p.textContent.indexOf(B.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('beaks anchor text not found'); return; }
+    var g = gameShell(B.kicker || 'Warm-Up game', B.title, B.todo, B.why); g.dataset.mod = 'beaks';
+    var grid = el('div', 'fs-bk-grid'), tray = el('div', 'fs-bk-tray'), info = el('div', 'fs-hs-card fs-bk-info', '<em>' + esc(B.hint || 'Drag a tool onto a beak, or tap a tool and then tap a beak.') + '</em>');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
+    B.birds.forEach(function (b) {
+      var c = el('div', 'fs-bk-bird', '<div class="fs-bk-ph"><img alt="' + esc(b.alt) + '" src="' + esc(b.img) + '"><span class="fs-bk-slot">?</span></div><div class="fs-bk-n">' + esc(b.name) + '</div>');
+      c.dataset.id = b.id; c.setAttribute('role', 'button'); c.tabIndex = 0; grid.appendChild(c);
+    });
+    shuffle(B.tools).forEach(function (t) { var d = el('div', 'fs-card fs-bk-tool', '<span>' + t.icon + '</span>' + esc(t.t)); d.dataset.id = t.id; tray.appendChild(d); });
+    g.appendChild(tray); g.appendChild(grid); g.appendChild(info); g.appendChild(miss); g.appendChild(count); g.appendChild(win);
+    if (B.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(B.credit)));
+    var done = {}; try { done = JSON.parse(store('beaks') || '{}'); } catch (e) {}
+    var targets = $$('.fs-bk-bird', grid);
+    function bird(id) { return B.birds.filter(function (b) { return b.id === id; })[0]; }
+    function tool(id) { return B.tools.filter(function (t) { return t.id === id; })[0]; }
+    function place(b, animate) {
+      var c = $('.fs-bk-bird[data-id="' + b.id + '"]', grid), t = tool(b.tool), s = $('.fs-bk-slot', c);
+      c.classList.add('done'); s.innerHTML = t.icon; s.classList.add('on'); if (animate && !reduceMotion) { s.classList.remove('pop'); void s.offsetWidth; s.classList.add('pop'); }
+      var tk = $('.fs-bk-tool[data-id="' + t.id + '"]', tray); if (tk) { tk.classList.add('placed'); tk.classList.remove('sel'); }
+    }
+    function upd() {
+      var n = Object.keys(done).length; count.textContent = '🔧 ' + n + ' of ' + B.birds.length + ' beaks matched'; count.classList.toggle('ok', n === B.birds.length);
+      if (n === B.birds.length && !win.classList.contains('show')) { win.innerHTML = esc(B.win); win.classList.add('show'); SFX.win(); earnClue(B.clue || 'beaks'); }
+    }
+    function drop(tk, c) {
+      var b = bird(c.dataset.id); if (!b || done[b.id]) return;
+      if (tk.dataset.id !== b.tool) { bounce(tk, miss, (b.miss && b.miss[tk.dataset.id]) || B.miss || 'Look at the shape of that beak. Which tool has the same shape?'); return; }
+      miss.classList.remove('show'); done[b.id] = 1; store('beaks', JSON.stringify(done)); SFX.chime(); place(b, true);
+      info.innerHTML = '<span class="fs-hs-n">' + tool(b.tool).icon + '</span><div><b>' + esc(b.name) + '</b>' + esc(b.job) + '</div>'; info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash');
+      upd();
+    }
+    $$('.fs-bk-tool', tray).forEach(function (t) { dragDrop(t, function () { return targets.filter(function (x) { return !x.classList.contains('done'); }); }, drop); });
+    tapTargets(g, targets, drop);
+    targets.forEach(function (c) { c.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); var s = $('.sel', g); if (s) { s.classList.remove('sel'); drop(s, c); } } }); });
+    B.birds.forEach(function (b) { if (done[b.id]) place(b, false); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson: "How deep can you go?" — raise the water, see which legs still work (11.01) ----------
+     D.wade = {afterText, kicker, title, todo[], why, depths:[{k,t,h}], birds:[{id,name,img,alt,at:{k:{ok:'yes'|'no'|'swim', t}}}], q:{q, opts:[{t, ok, why}]}, credit, win, clue}
+     h = how high the water band climbs the photo (0–100) — a picture of "deeper", not a measurement */
+  function buildWade() {
+    var Wd = D.wade; if (!Wd) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (Wd.afterText && p.textContent.indexOf(Wd.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('wade anchor text not found'); return; }
+    var g = gameShell(Wd.kicker || 'Lesson game', Wd.title, Wd.todo, Wd.why); g.dataset.mod = 'wade';
+    var ctl = el('div', 'fs-wd-ctl', '<span class="fs-in-k">' + esc(Wd.depthLabel || 'Water depth') + '</span>' + Wd.depths.map(function (d) { return '<button type="button" class="fs-in-chip" data-k="' + d.k + '"><span>💧</span>' + esc(d.t) + '<em></em></button>'; }).join(''));
+    var row = el('div', 'fs-wd-row'), qbox = el('div', 'fs-sv-q'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    Wd.birds.forEach(function (b) {
+      row.appendChild(el('div', 'fs-wd-bird', '<div class="fs-wd-ph"><img alt="' + esc(b.alt) + '" src="' + esc(b.img) + '"><i class="fs-wd-water"></i></div><div class="fs-wd-n">' + esc(b.name) + '</div><div class="fs-wd-st"><em>Pick a depth.</em></div>'));
+    });
+    g.appendChild(ctl); g.appendChild(row); g.appendChild(qbox); g.appendChild(miss); g.appendChild(win);
+    if (Wd.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(Wd.credit)));
+    var tried = {}; try { tried = JSON.parse(store('wade') || '{}'); } catch (e) {}
+    var ICON = { yes: '✅', no: '🚫', swim: '🛟' };
+    function show(k, animate) {
+      var d = Wd.depths.filter(function (x) { return x.k === k; })[0]; if (!d) return;
+      $$('.fs-in-chip', ctl).forEach(function (c) { c.classList.toggle('on', c.dataset.k === k); });
+      $$('.fs-wd-bird', row).forEach(function (card, i) {
+        var b = Wd.birds[i], r = b.at[k], w = $('.fs-wd-water', card), st = $('.fs-wd-st', card);
+        w.style.height = d.h + '%'; card.className = 'fs-wd-bird st-' + r.ok;
+        st.innerHTML = '<b>' + ICON[r.ok] + ' ' + esc(r.ok === 'yes' ? (Wd.yes || 'Stands and feeds') : r.ok === 'swim' ? (Wd.swim || 'Swims instead') : (Wd.no || 'Too deep to stand')) + '</b>' + esc(r.t);
+        if (animate && !reduceMotion) { st.classList.remove('flash'); void st.offsetWidth; st.classList.add('flash'); }
+      });
+      tried[k] = 1; store('wade', JSON.stringify(tried));
+      $$('.fs-in-chip', ctl).forEach(function (c) { if (tried[c.dataset.k]) { c.classList.add('done'); $('em', c).textContent = ' ✓'; } });
+      if (Object.keys(tried).length >= Wd.depths.length) ask(); else qbox.innerHTML = '<div class="fs-sv-hint">🔎 ' + esc((Wd.depths.length - Object.keys(tried).length) + ' more ' + (Wd.depths.length - Object.keys(tried).length === 1 ? 'depth' : 'depths') + ' to try. Watch the long-legged bird.') + '</div>';
+    }
+    $$('.fs-in-chip', ctl).forEach(function (c) { c.addEventListener('click', function () { SFX.blip(); if (!reduceMotion) setTimeout(SFX.pop, 260); show(c.dataset.k, true); }); });
+    function ask() {
+      if (qbox.dataset.on) return; qbox.dataset.on = '1';
+      qbox.innerHTML = '<div class="fs-in-k">' + esc(Wd.q.q) + '</div><div class="fs-in-chips">' + Wd.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', qbox).forEach(function (c) { c.addEventListener('click', function () {
+        var o = Wd.q.opts[+c.dataset.i]; if (!o.ok) { bounce(c, miss, o.why); return; }
+        $$('.fs-in-chip', qbox).forEach(function (x) { x.classList.toggle('on', x === c); }); c.classList.add('ok'); miss.classList.remove('show');
+        win.innerHTML = esc(o.why + ' ' + (Wd.win || '')); win.classList.add('show'); SFX.win(); store('wade-done', '1'); earnClue(Wd.clue || 'wade');
+      }); });
+      if (store('wade-done')) { var r = Wd.q.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qbox)[r]; c.classList.add('on', 'ok'); win.innerHTML = esc(Wd.q.opts[r].why + ' ' + (Wd.win || '')); win.classList.add('show'); }
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    var keys = Object.keys(tried); if (keys.length) show(keys[keys.length - 1], false);
+    else qbox.innerHTML = '<div class="fs-sv-hint">🔎 ' + esc(Wd.start || 'Tap a water depth to start.') + '</div>';
+  }
+
+  /* ---------- Part 4: "Build a hiding head" — move the eyes and nostrils on a model, then sink it (11.01) ----------
+     D.gator = {afterText, kicker, title, todo[], why, img, alt, credit, parts:[{k,icon,t,spots:[{k,t}], right}], waterK (the spot that stays above water),
+               tests:[{k,icon,t,need:[partK…], yes, no}], q:{q,opts:[{t,ok,why}]}, win, clue}
+     The model is a plain diagram (three bands: top of head, side, under the jaw), never a drawn animal; the real photo is the answer key. */
+  function buildGator() {
+    var G = D.gator; if (!G) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (G.afterText && p.textContent.indexOf(G.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('gator anchor text not found'); return; }
+    var g = gameShell(G.kicker || 'Part 4 game', G.title, G.todo, G.why); g.dataset.mod = 'gator';
+    var bands = G.bands; // [{k,t}] top→bottom
+    var model = el('div', 'fs-gt-model', '<div class="fs-gt-head">' + bands.map(function (b) { return '<div class="fs-gt-band" data-k="' + b.k + '"><span class="fs-gt-bl">' + esc(b.t) + '</span><span class="fs-gt-drop"></span></div>'; }).join('') + '<i class="fs-gt-water"><span>' + esc(G.waterLabel || 'water') + '</span></i></div>');
+    var parts = el('div', 'fs-gt-parts', G.parts.map(function (p) { return '<div class="fs-gt-prow"><span class="fs-in-k">' + p.icon + ' ' + esc(p.t) + '</span>' + bands.map(function (b) { return '<button type="button" class="fs-in-chip" data-p="' + p.k + '" data-b="' + b.k + '">' + esc(b.short || b.t) + '</button>'; }).join('') + '</div>'; }).join(''));
+    var go = el('div', 'fs-gt-go', '<button type="button" class="fs-btn fs-gt-sink">🌊 Sink it to hide</button><button type="button" class="fs-btn alt fs-gt-up">⬆ Float back up</button>');
+    var res = el('div', 'fs-gt-res'), photo = el('div', 'fs-gt-photo', '<img alt="' + esc(G.alt) + '" src="' + esc(G.img) + '"><div class="fs-gt-cap">' + esc(G.photoCap || '') + '</div>');
+    var log = el('div', 'fs-count'), qbox = el('div', 'fs-sv-q'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    var wrap = el('div', 'fs-gt-wrap'); var left = el('div', 'fs-gt-left'); left.appendChild(parts); left.appendChild(go); left.appendChild(res);
+    wrap.appendChild(model); wrap.appendChild(left);
+    g.appendChild(wrap); g.appendChild(log); g.appendChild(photo); g.appendChild(qbox); g.appendChild(miss); g.appendChild(win);
+    if (G.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credit</summary>' + esc(G.credit)));
+    var pick = {}, designs = {}; try { designs = JSON.parse(store('gator') || '{}'); } catch (e) {}
+    function drawModel() {
+      $$('.fs-gt-drop', model).forEach(function (d) { d.innerHTML = ''; });
+      G.parts.forEach(function (p) { if (!pick[p.k]) return; var d = $('.fs-gt-band[data-k="' + pick[p.k] + '"] .fs-gt-drop', model); d.insertAdjacentHTML('beforeend', '<span class="fs-gt-tok">' + p.icon + '</span>'); });
+      $$('.fs-gt-parts .fs-in-chip', g).forEach(function (c) { c.classList.toggle('on', pick[c.dataset.p] === c.dataset.b); });
+    }
+    $$('.fs-gt-parts .fs-in-chip', g).forEach(function (c) { c.addEventListener('click', function () {
+      pick[c.dataset.p] = c.dataset.b; SFX.blip(); model.classList.remove('sunk'); res.innerHTML = ''; drawModel(); }); });
+    function sink() {
+      if (G.parts.some(function (p) { return !pick[p.k]; })) { miss.innerHTML = '🔎 ' + esc(G.pickFirst || 'Put the eyes and the nostrils somewhere first.'); miss.classList.add('show'); SFX.thud(); return; }
+      miss.classList.remove('show'); model.classList.add('sunk'); SFX.whoosh();
+      var key = G.parts.map(function (p) { return pick[p.k]; }).join('-'), pass = 0;
+      setTimeout(function () {
+        res.innerHTML = G.tests.map(function (t) {
+          var ok = t.need.every(function (pk) { return pick[pk] === G.waterK; }); if (ok) pass++;
+          return '<div class="fs-gt-test ' + (ok ? 'ok' : 'no') + '"><span>' + t.icon + '</span><div><b>' + esc(t.t) + ' ' + (ok ? '✅' : '❌') + '</b>' + esc(ok ? t.yes : t.no) + '</div></div>';
+        }).join('');
+        designs[key] = pass; store('gator', JSON.stringify(designs)); SFX[pass === G.tests.length ? 'chime' : 'thud']();
+        upd();
+      }, reduceMotion ? 0 : 900);
+    }
+    $('.fs-gt-sink', g).addEventListener('click', sink);
+    $('.fs-gt-up', g).addEventListener('click', function () { model.classList.remove('sunk'); res.innerHTML = ''; SFX.blip(); });
+    function upd() {
+      var n = Object.keys(designs).length, best = Object.keys(designs).some(function (k) { return designs[k] === G.tests.length; });
+      log.textContent = '🧪 ' + n + (n === 1 ? ' design' : ' designs') + ' tested' + (best ? ' · you found one that passes every test' : '');
+      log.classList.toggle('ok', best && n >= 2);
+      if (best && n >= 2) { photo.classList.add('show'); ask(); }
+      else if (best) qbox.innerHTML = '<div class="fs-sv-hint">🔎 ' + esc(G.tryAnother || 'Now test a different design, so you can compare.') + '</div>';
+    }
+    function ask() {
+      if (qbox.dataset.on) return; qbox.dataset.on = '1';
+      qbox.innerHTML = '<div class="fs-in-k">' + esc(G.q.q) + '</div><div class="fs-in-chips">' + G.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', qbox).forEach(function (c) { c.addEventListener('click', function () {
+        var o = G.q.opts[+c.dataset.i]; if (!o.ok) { bounce(c, miss, o.why); return; }
+        $$('.fs-in-chip', qbox).forEach(function (x) { x.classList.toggle('on', x === c); }); c.classList.add('ok'); miss.classList.remove('show');
+        win.innerHTML = esc(o.why + ' ' + (G.win || '')); win.classList.add('show'); SFX.win(); store('gator-done', '1'); earnClue(G.clue || 'gator');
+      }); });
+      if (store('gator-done')) { var r = G.q.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qbox)[r]; c.classList.add('on', 'ok'); win.innerHTML = esc(G.q.opts[r].why + ' ' + (G.win || '')); win.classList.add('show'); }
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    drawModel(); if (Object.keys(designs).length) upd();
+  }
+
+
   function buildQuiz() {
     var qs = $$('#tab-quiz .quiz-q'); if (!qs.length) return;
     var Q = D.quizMiss || {};
@@ -2405,6 +2560,46 @@
         if (!o.ok) { bounce(c, fb, o.why); return; } c.classList.add('on', 'ok'); var w = $('.fs-sd-win', host); w.innerHTML = esc(o.why); w.classList.add('show'); SFX.win(); toolDone(); }); });
     }
   };
+  /* ----- X-ray viewer (11.01): put a film on the light box, tap the numbers to see what's inside ----- 
+     T.xray = {title, todo[], films:[{k,name,icon,img,alt,credit,spots:[{n,x,y,label,kind:'inside'|'outside',t}]}], q:{q,opts:[{t,ok,why}]}} */
+  SIMS.xray = function (host, T) {
+    var S = T.xray;
+    host.innerHTML = '<div class="fs-game-k">Try it: the X-ray light box</div><div class="fs-game-t">' + esc(S.title) + '</div>' +
+      '<ul class="fs-todo">' + S.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-xr-films">' + S.films.map(function (f, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '"><span>' + f.icon + '</span>' + esc(f.name) + '<em></em></button>'; }).join('') + '</div>' +
+      '<div class="fs-xr-box"><div class="fs-xr-light"><div class="fs-xr-empty">💡 Pick a film to clip onto the light box.</div></div></div>' +
+      '<div class="fs-hs-card fs-xr-info"><em>Tap a number on the X-ray.</em></div><div class="fs-sv-q fs-xr-q"></div><div class="fs-miss fs-xr-miss"></div><div class="fs-win fs-xr-win"></div>';
+    var light = $('.fs-xr-light', host), info = $('.fs-xr-info', host), seen = {};
+    try { seen = JSON.parse(store('xray') || '{}'); } catch (e) {}
+    function film(i) {
+      var f = S.films[i]; SFX.blip();
+      $$('.fs-xr-films .fs-in-chip', host).forEach(function (c) { c.classList.toggle('on', +c.dataset.i === i); });
+      light.innerHTML = '<div class="fs-xr-film"><img alt="' + esc(f.alt) + '" src="' + esc(f.img) + '">' + f.spots.map(function (s, k) { return '<button type="button" class="fs-hs' + (seen[f.k + k] ? ' seen' : '') + '" style="left:' + s.x + '%;top:' + s.y + '%" data-k="' + k + '">' + s.n + '</button>'; }).join('') + '</div><div class="fs-xr-cr">' + esc(f.credit) + '</div>';
+      if (!reduceMotion) { light.classList.remove('on'); void light.offsetWidth; light.classList.add('on'); }
+      info.innerHTML = '<em>' + esc(f.intro || 'Tap a number on the X-ray.') + '</em>';
+      $$('.fs-hs', light).forEach(function (d) { d.addEventListener('click', function () {
+        var s = f.spots[+d.dataset.k]; seen[f.k + d.dataset.k] = 1; store('xray', JSON.stringify(seen)); d.classList.add('seen'); SFX.chime();
+        info.innerHTML = '<span class="fs-hs-n">' + s.n + '</span><div><b>' + esc(s.label) + ' <span class="fs-xr-kind ' + s.kind + '">' + (s.kind === 'inside' ? 'internal' : 'external') + '</span></b>' + esc(s.t) + '</div>';
+        info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash'); check();
+      }); });
+      check();
+    }
+    function check() {
+      S.films.forEach(function (f, i) { var all = f.spots.every(function (s, k) { return seen[f.k + k]; }); var c = $$('.fs-xr-films .fs-in-chip', host)[i]; c.classList.toggle('done', all); $('em', c).textContent = all ? ' ✓' : ''; });
+      var every = S.films.every(function (f) { return f.spots.every(function (s, k) { return seen[f.k + k]; }); });
+      if (every) ask();
+    }
+    function ask() {
+      var q = $('.fs-xr-q', host); if (q.dataset.on) return; q.dataset.on = '1';
+      q.innerHTML = '<div class="fs-in-k">' + esc(S.q.q) + '</div><div class="fs-in-chips">' + S.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', q).forEach(function (c) { c.addEventListener('click', function () { var o = S.q.opts[+c.dataset.i];
+        if (!o.ok) { bounce(c, $('.fs-xr-miss', host), o.why); return; } $('.fs-xr-miss', host).classList.remove('show');
+        c.classList.add('on', 'ok'); var w = $('.fs-xr-win', host); w.innerHTML = esc(o.why); w.classList.add('show'); SFX.win(); toolDone(); }); });
+    }
+    $$('.fs-xr-films .fs-in-chip', host).forEach(function (c) { c.addEventListener('click', function () { film(+c.dataset.i); }); });
+    check();
+  };
+
   /* ----- thermometer simulation ----- */
   SIMS.thermometer = function (host, T) {
     var S = T.thermo, places = S.places, Fmin = -20, Fmax = 220;
@@ -2637,6 +2832,9 @@
     guard('survey', buildSurvey);
     guard('verdict', buildVerdict);
     guard('trend', buildTrend);
+    guard('beaks', buildBeaks);
+    guard('wade', buildWade);
+    guard('gator', buildGator);
     guard('quiz', buildQuiz);
     guard('solve', buildSolve);
     guard('helpers', buildHelpers);
