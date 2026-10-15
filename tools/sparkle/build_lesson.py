@@ -74,6 +74,7 @@ if os.path.exists(vj):
     V = json.load(open(vj, encoding='utf-8'))
     V['other'] = [{'id': k, 'label': ((D.get('slots') or {}).get(k) or {}).get('label', k), 'length': ((D.get('slots') or {}).get(k) or {}).get('length', '')} for k in V.get('other', [])]
     os.makedirs(os.path.join('data', 'videos'), exist_ok=True)
+    V['redo'] = list(D.get('videoOff') or [])  # recorded takes that no longer match the page: the studio lists them as Re-record
     json.dump({'lesson': D['lesson'], 'prefix': D['prefix'], 'manifestKey': D['manifestKey'], 'guide': D['guide'], **V},
               open(os.path.join('data', 'videos', f'lesson-{WW}-{L}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('wrote', os.path.join('data', 'videos', f'lesson-{WW}-{L}.json'))
