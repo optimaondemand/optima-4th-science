@@ -25,6 +25,28 @@
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   /* ---------- notifications: one stack at the bottom; a new one pushes older ones up ---------- */
+  /* captions: a big, easy "Captions" button under each teacher video (the .vtt the Video Studio saves).
+     Off by default; a student's choice is remembered for every video. Hidden if the lesson has no .vtt. */
+  function capsOn() { try { return localStorage.getItem('oao.fs.captions') === '1'; } catch (e) { return false; } }
+  function addCaptions(wrap) {
+    var vid = wrap.querySelector('video'), tr = wrap.querySelector('track'); if (!vid || !tr) return;
+    var btn = el('button', 'fs-cc', '<span class="fs-cc-i">CC</span> <span class="fs-cc-t">Captions: off</span>'); btn.type = 'button';
+    btn.setAttribute('aria-pressed', 'false'); btn.style.display = 'none'; wrap.appendChild(btn);
+    function apply(on) {
+      var t = vid.textTracks && vid.textTracks[0]; if (t) t.mode = on ? 'showing' : 'hidden';
+      btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      $('.fs-cc-t', btn).textContent = on ? 'Captions: on' : 'Captions: off';
+    }
+    function ready(ok) { if (!ok) { tr.remove(); return; } btn.style.display = ''; apply(capsOn()); }
+    try { fetch(tr.getAttribute('src'), { method: 'HEAD', cache: 'no-store' }).then(function (r) { ready(r.ok); }, function () { ready(false); }); } catch (e) { ready(false); }
+    tr.addEventListener('load', function () { apply(capsOn()); });
+    btn.addEventListener('click', function () {
+      var on = !btn.classList.contains('on'); try { localStorage.setItem('oao.fs.captions', on ? '1' : '0'); } catch (e) {}
+      Array.prototype.forEach.call(document.querySelectorAll('.fs-video'), function (w) { var b = w.querySelector('.fs-cc'); if (b && b !== btn && b.style.display !== 'none') b.__set && b.__set(on); });
+      apply(on);
+    });
+    btn.__set = apply;
+  }
   function pushToast(icon, title, text, ms) {
     var st = $('#fsToasts'); if (!st) { st = fsOnly(el('div', 'fs-toasts')); st.id = 'fsToasts'; st.setAttribute('aria-live', 'polite'); document.body.appendChild(st); }
     var t = el('div', 'fs-toast', '<span>' + icon + '</span><div><b>' + esc(title) + '</b>' + esc(text) + '</div>');
@@ -249,8 +271,10 @@
     function showVideo(node) { box.classList.remove('fs-empty'); live.insertBefore(node, live.firstChild); }
     probe(vfile, 'video', function (ok) {
       if (ok) {
-        var v = el('div', 'fs-video', '<video controls playsinline preload="metadata" poster="' + vfile.replace(/\.mp4$/, '.jpg') + '" src="' + vfile + '"></video>');
-        showVideo(v); return;
+        var vtt = vfile.replace(/\.mp4$/, '.vtt');
+        var v = el('div', 'fs-video', '<video controls playsinline preload="metadata" poster="' + vfile.replace(/\.mp4$/, '.jpg') + '" src="' + vfile + '">' +
+          '<track kind="captions" srclang="en" label="English" src="' + vtt + '"></video>');
+        showVideo(v); addCaptions(v); return;
       }
       withManifest(function (m) {
         var e = m[key]; if (!e || e.status !== 'ready' || !e.embed) return;

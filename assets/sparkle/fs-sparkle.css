@@ -986,3 +986,10 @@ html.fs-review .fs-lens-demo { display:inline-block; }
 .fs-name-note{display:none;margin:-6px 0 12px;font-size:14px;font-weight:700;color:#A8434A;background:#FDEEEE;border-radius:8px;padding:6px 10px;}
 .fs-name-note.on{display:block;}
 html:not(.fs-on) .fs-name-note{display:none!important;}
+/* captions button under teacher videos */
+.fs-cc{display:inline-flex;align-items:center;gap:8px;margin:8px 0 0;padding:7px 14px;border-radius:999px;border:2px solid #0E1C42;background:#fff;color:#0E1C42;font:800 15px/1 Nunito,system-ui,sans-serif;cursor:pointer;}
+.fs-cc .fs-cc-i{background:#0E1C42;color:#fff;border-radius:5px;padding:3px 5px;font-size:12px;letter-spacing:.04em;}
+.fs-cc.on{background:#0E1C42;color:#fff;}
+.fs-cc.on .fs-cc-i{background:#F2C46B;color:#0E1C42;}
+.fs-cc:focus-visible{outline:3px solid #55C8E8;outline-offset:2px;}
+.fs-video video::cue{font-size:1.05em;background:rgba(14,28,66,.85);color:#fff;}
