@@ -10,8 +10,11 @@ page_file = glob.glob(f'lesson-{W}-{L}-*.html')[0]
 out = os.path.join('tools', 'sparkle', 'out', f'{WW}-{L}'); os.makedirs(out, exist_ok=True)
 class Quiet(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *a): pass
+class QuietServer(socketserver.ThreadingTCPServer):
+    daemon_threads = True
+    def handle_error(self, *a): pass  # browsers drop media requests mid-stream; that's fine
 H = functools.partial(Quiet, directory='.')
-srv = socketserver.TCPServer(('127.0.0.1', 0), H); port = srv.server_address[1]
+srv = QuietServer(('127.0.0.1', 0), H); port = srv.server_address[1]
 threading.Thread(target=srv.serve_forever, daemon=True).start()
 URL = f'http://127.0.0.1:{port}/{page_file}'
 TABS = ['vocab', 'lesson', 'explore', 'quiz', 'assignment']
@@ -32,6 +35,7 @@ with sync_playwright() as p:
         if st['sw'] > w + 1: fails.append(f'{w}px: page scrolls sideways ({st["sw"]}px wide)')
         if w == 1150: notes.append(f'slots placed: {st["slots"]}'); notes.append(f'games: {st["games"]}')
         for t in TABS:
+            if not pg.evaluate(f"!!document.getElementById('tab-{t}')"): continue
             pg.evaluate(f"window.switchTab && switchTab('{t}')"); pg.wait_for_timeout(500)
             pg.screenshot(path=os.path.join(out, f'{t}-{w}.png'), full_page=True)
             if w == 1150:

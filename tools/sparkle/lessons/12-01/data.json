@@ -51,7 +51,7 @@
    }
   ],
   "tooSoon": "You tapped before the snap, so nothing in the world had told you to move yet. Wait for the sound.",
-  "win": "Most grown-ups react to a sound in about two-tenths of a second. Kids are often a little slower, and that’s normal. Now the warm-up question: what happened inside you between the snap and your tap? List it in your notebook."
+  "win": "Most grown-ups react to a sound in about two-tenths of a second. Kids are often a little slower, and that’s normal. Now the warm-up question: what happened inside you between the snap and your tap? List it in the boxes below."
  },
  "relay": {
   "afterText": "All four steps can happen in less than one second.",
@@ -64,7 +64,7 @@
   "why": {
    "icon": "📡",
    "q": "What’s a signal?",
-   "t": "A signal is a tiny message that travels through an animal’s body, from a sense organ to the brain. Each step has to pass it along before the next step can happen. That’s why the stations sit in a line."
+   "t": "A signal is a tiny message that travels through the body, from a sense organ to the brain, one step at a time."
   },
   "steps": [
    {
@@ -102,7 +102,7 @@
   "why": {
    "icon": "📹",
    "q": "Why trail cameras?",
-   "t": "Field biologists can’t follow animals all night, so they strap small cameras to trees. A camera turns on when something moves in front of it and records what the animal does. That’s why each animal here has its own camera."
+   "t": "Scientists can’t watch animals all night, so they set up cameras that turn on when something moves."
   },
   "animals": [
    {
@@ -176,14 +176,14 @@
   "subject": "Great blue heron",
   "title": "Sort the heron’s moment",
   "todo": [
-   "Read the heron scenario above. It’s what CAM 5 caught.",
+   "Read the heron story just above.",
    "Drag each card into its step, or tap a card and then tap a step.",
-   "The brain step is hidden inside the bird. You’ll explain it yourself in Step 3."
+   "The brain step happens inside the heron, where no camera can see."
   ],
   "why": {
    "icon": "🪶",
    "q": "Why a heron?",
-   "t": "Great blue herons hunt by standing very still in shallow water and watching, sometimes even at night. When a fish comes close, they strike fast with their long, sharp beak. That makes them a great animal for spotting all four steps."
+   "t": "Herons stand very still in shallow water, watch, then strike fast. That makes every step easy to spot, except one."
   },
   "bins": [
    {
@@ -197,7 +197,7 @@
    {
     "icon": "🧠",
     "t": "Brain",
-    "write": "Hidden inside the heron. You’ll explain this step in your notebook."
+    "write": "Hidden inside the heron. No camera can film this step."
    },
    {
     "icon": "🏃",
@@ -221,8 +221,9 @@
     "miss": "Freezing and striking are things the heron does. Which step is about doing?"
    }
   ],
-  "win": "Sorted! Now write each step as a sentence in your notebook (Steps 1–4 below). The brain step is yours to explain.",
-  "kicker": "CAM 5 · 9:16:10 PM · great blue heron"
+  "win": "Sorted! That’s Clue 4. The brain step happened inside the heron, the one step no camera can film.",
+  "kicker": "CAM 5 · 9:16:10 PM · great blue heron",
+  "afterText": "CAM 5 caught one more animal"
  },
  "quizMiss": {
   "q1": {
@@ -271,23 +272,6 @@
     "re": "stimul|sense organ|signal|respon|informat"
    }
   ],
-  "ans-3": [
-   {
-    "label": "two senses",
-    "any": [
-     "smell|nose|scent|sniff",
-     "touch|feel|skin|vibrat|whisker|hair",
-     "hear|ear|sound",
-     "taste|tongue",
-     "electric"
-    ],
-    "min": 2
-   },
-   {
-    "label": "a reason",
-    "re": "because|so |so it|help|find|food|predator|dark|murky|can.?t see|safe|danger"
-   }
-  ],
   "cer-4": [
    {
     "label": "your claim",
@@ -313,28 +297,12 @@
     "label": "your reasoning",
     "re": "because|this shows|that shows|this means|that means|so "
    }
-  ],
-  "fs-bq": [
-   {
-    "label": "3 vocabulary words",
-    "any": [
-     "stimul",
-     "sense organ",
-     "brain",
-     "response",
-     "signal",
-     "information"
-    ],
-    "min": 3
-   }
   ]
  },
  "minWords": {
   "ans-1": 15,
   "ans-2": 20,
-  "ans-3": 20,
-  "cer-4": 30,
-  "fs-bq": 20
+  "cer-4": 30
  },
  "hints": {
   "ans-1": [
@@ -347,20 +315,13 @@
    "Imagine the ear hears the splash, but the message stops there. What does the alligator do?",
    "Try: The brain step matters because ___. If the brain couldn’t ___, the animal might ___."
   ],
-  "ans-3": [
-   "If you can’t see, what else could tell you something is close?",
-   "Look back at the lesson’s list of senses. Which ones still work in dark water? Think about the manatee and the shark fact too.",
-   "Try: A fish in murky water could use ___ because ___. It could also use ___ because ___."
-  ],
   "cer-4": [
    "First decide: do you agree or disagree with the classmate?",
    "Look for two facts from the lesson about what the brain does that senses can’t do.",
    "Try: I ___ because ___. One piece of evidence is ___. Another is ___."
   ]
  },
- "scholar": {
-  "ans-3": "Catfish have taste buds all over their skin. How could that help in murky water?"
- },
+ "scholar": {},
  "planner": {
   "before": "cer-4",
   "title": "Your claim and two pieces of evidence",
@@ -386,7 +347,7 @@
     ]
    }
   ],
-  "note": "Tap your side and two pieces of evidence. They drop into your CER boxes below. Then add your reasoning in your own words."
+  "note": "Tap your side and two facts. Then write your reasoning in your own words."
  },
  "specimen": {
   "kicker": "Specimen collected",
@@ -521,7 +482,7 @@
    {
     "id": "sort",
     "icon": "🪶",
-    "where": "Explore: the heron on CAM 5",
+    "where": "The Lesson: the heron on CAM 5",
     "t": "The heron shows the step no camera can film: inside the animal, the brain decides what the signal means. Then the body moves."
    }
   ],
@@ -588,7 +549,7 @@
    "script": "These are the four cameras from last night. Open each one and follow what happened, step by step. Here’s what to watch for: what started each reaction? When you’ve seen all four, look at what you found. Does it tell you anything?"
   },
   "explore": {
-   "label": "Explore · CAM 5",
+   "label": "The heron · CAM 5",
    "length": "30–45 s",
    "notes": "Model sorting one heron card (never the brain step).",
    "script": "One more camera. This one caught a heron right after the others, and it shows the whole moment from start to finish. Well, almost. One step happens where no camera can see. Sort what the camera caught, and you’ll have your last clue."
@@ -602,10 +563,6 @@
    "length": "45–60 s",
    "notes": "What each part asks; show the planner and the hint button.",
    "script": "You have the clues. Before you write, decide: what really happened that night? Then write it up like a real field report. Name the steps, use the step words, and back up what you say with what you found."
-  },
-  "parta": {
-   "label": "Part A",
-   "length": "15 s"
   },
   "partb": {
    "label": "Part B",
@@ -631,10 +588,10 @@
   "missions": [
    "Your best time on the snap test (Warm-Up)",
    "The trail camera animal that surprised you most (The Lesson)",
-   "The heron step you think is hardest to see (Explore)",
+   "The heron step you think is hardest to see (The Lesson)",
    "The answer that cracked the case (Assignment)"
   ],
-  "huntTitle": "Your field camera is ready. Can you find all 4 shots on today’s photo list?"
+  "huntTitle": "Bonus: can you snap all 4 shots on this list?"
  },
  "rankLine": "Your Field Station ID just updated. Keep going, scientist.",
  "sketch": {
@@ -649,8 +606,8 @@
    {
     "id": "partc",
     "afterPart": "C",
-    "kicker": "Part C · scientific sketch",
-    "required": true,
+    "kicker": "Part C · sketch it (optional)",
+    "required": false,
     "minLabels": 4,
     "prompts": [
      "My Part C animal and its four steps",
@@ -674,7 +631,7 @@
    "why": {
     "icon": "📸",
     "q": "Why a real photo?",
-    "t": "Scientists don’t just read about animals. They look closely at real ones. This manatee was photographed by government scientists from the U.S. Geological Survey at Crystal River National Wildlife Refuge in Florida (a protected place for wild animals). It is the same kind of animal as CAM 3."
+    "t": "A real manatee, photographed by U.S. Geological Survey scientists at Crystal River, Florida. It’s the same kind of animal as CAM 3."
    },
    "img": "images/12-01-manatee-crystal-river.jpg",
    "alt": "A Florida manatee underwater, seen from the side, with whiskers around its mouth and a small eye.",
@@ -732,97 +689,6 @@
      }
     ],
     "win": "Photo evidence collected! You can cite it in your answers from the 📎 My evidence drawer on the Assignment tab."
-   }
-  },
-  {
-   "id": "heron",
-   "after": "sort",
-   "kicker": "Look closer · a real heron hunting",
-   "short": "heron photo",
-   "title": "Find the four steps on a real heron",
-   "todo": [
-    "Tap each number on the photo.",
-    "Then match each step to the label that shows it. One step is hidden inside the head."
-   ],
-   "why": {
-    "icon": "📸",
-    "q": "Where is this?",
-    "t": "This great blue heron was photographed by a National Park Service ranger in Everglades National Park, Florida. It is leaning over the water, watching for fish."
-   },
-   "img": "images/12-01-heron-everglades.jpg",
-   "alt": "A great blue heron leaning toward the water with its long yellow beak pointed down.",
-   "credit": "Close-up great blue heron, Everglades National Park, Florida. Leslie Velarde, NPS (2011), via Wikimedia Commons",
-   "license": "Public domain",
-   "hotspots": [
-    {
-     "n": 1,
-     "x": 57.3,
-     "y": 28.3,
-     "label": "Eye",
-     "t": "The heron’s sharp eye watches the water for the tiny movement of a fish."
-    },
-    {
-     "n": 2,
-     "x": 42,
-     "y": 49,
-     "label": "Long, sharp beak",
-     "t": "The beak is the heron’s fishing tool. It grabs fish fast, and sometimes stabs them."
-    },
-    {
-     "n": 3,
-     "x": 83,
-     "y": 11,
-     "label": "S-shaped neck",
-     "t": "The neck is bent in an S. Herons can straighten it in a flash to strike, like a spring letting go."
-    },
-    {
-     "n": 4,
-     "x": 54,
-     "y": 70,
-     "label": "The water",
-     "t": "Somewhere in this water, a fish moves. That movement is what the heron is waiting to notice."
-    },
-    {
-     "n": 5,
-     "x": 65.5,
-     "y": 17,
-     "label": "Inside the head",
-     "t": "You can’t see it, but the heron’s brain is in here, behind the eye. A signal travels from the eye to the brain, and the brain decides: strike!"
-    }
-   ],
-   "task": {
-    "q": "Match each step to the label that shows it.",
-    "items": [
-     {
-      "step": "Stimulus",
-      "icon": "⚡",
-      "ans": 4,
-      "miss": "The stimulus is out in the world. Where would a fish be moving?",
-      "evid": "A fish moving in the water is the stimulus (heron photo, label 4)."
-     },
-     {
-      "step": "Sense organ",
-      "icon": "👁️",
-      "ans": 1,
-      "miss": "Which body part picks up the fish’s movement?",
-      "evid": "The heron’s eye picks up the fish moving (heron photo, label 1)."
-     },
-     {
-      "step": "Brain",
-      "icon": "🧠",
-      "ans": 5,
-      "miss": "The brain is hidden. Which label points inside the head?",
-      "evid": "The heron’s brain, inside its head, decides to strike (heron photo, label 5)."
-     },
-     {
-      "step": "Response",
-      "icon": "🏃",
-      "ans": 3,
-      "miss": "Which label is the body part that springs forward to strike?",
-      "evid": "The S-shaped neck straightens to strike (heron photo, label 3)."
-     }
-    ],
-    "win": "All four steps found on a real heron! This photo evidence is now in your 📎 My evidence drawer for the Assignment."
    }
   }
  ],
@@ -898,148 +764,6 @@
     "Next…",
     "Last: I turned around."
    ]
-  },
-  {
-   "id": "fs-sr",
-   "type": "frame",
-   "inside": true,
-   "compact": true,
-   "find": {
-    "sel": ".socratic-q",
-    "text": "raccoon"
-   },
-   "label": "Stop & Reason: the raccoon",
-   "q": "Stop & Reason: A raccoon freezes when it hears a barking dog. Name the four steps.",
-   "fields": [
-    {
-     "t": "Stimulus",
-     "icon": "⚡",
-     "ph": "What happened?"
-    },
-    {
-     "t": "Sense organ",
-     "icon": "👁️",
-     "ph": "Which body part?"
-    },
-    {
-     "t": "Brain",
-     "icon": "🧠",
-     "ph": "What did it decide?"
-    },
-    {
-     "t": "Response",
-     "icon": "🏃",
-     "ph": "What did it do?"
-    }
-   ]
-  },
-  {
-   "id": "fs-ex1",
-   "type": "write",
-   "rows": 2,
-   "find": {
-    "sel": "p",
-    "text": "What happened in the world that the heron"
-   },
-   "swap": [
-    "Write one short sentence in your notebook.",
-    "Write one short sentence."
-   ],
-   "label": "Explore Step 1: the stimulus",
-   "q": "Explore Step 1: What happened in the world that the heron could notice?",
-   "ph": "The stimulus was…"
-  },
-  {
-   "id": "fs-ex2",
-   "type": "pick",
-   "find": {
-    "sel": "p",
-    "text": "Which sense organ picked up that stimulus"
-   },
-   "label": "Explore Step 2: the sense organ",
-   "q": "Explore Step 2: Which sense organ picked up the stimulus?",
-   "why": "it saw the fish",
-   "opts": [
-    {
-     "t": "Eyes",
-     "icon": "👁️",
-     "ok": true
-    },
-    {
-     "t": "Ears",
-     "icon": "👂",
-     "miss": "The fish swam into view. Which body part notices things you can see?"
-    },
-    {
-     "t": "Nose",
-     "icon": "👃",
-     "miss": "Herons hunt by watching. Which body part watches?"
-    },
-    {
-     "t": "Tongue",
-     "icon": "👅",
-     "miss": "The tongue only works once food is in the mouth. What noticed the fish first?"
-    },
-    {
-     "t": "Skin",
-     "icon": "✋",
-     "miss": "The fish didn’t touch the heron. What noticed it from far away?"
-    }
-   ]
-  },
-  {
-   "id": "fs-ex3",
-   "type": "write",
-   "rows": 2,
-   "find": {
-    "sel": "p",
-    "text": "brain need to do between the sense organ"
-   },
-   "label": "Explore Step 3: the brain",
-   "q": "Explore Step 3: What did the heron’s brain do? (Use “information” or “signal”.)",
-   "ph": "The heron’s brain…"
-  },
-  {
-   "id": "fs-ex4",
-   "type": "write",
-   "rows": 2,
-   "find": {
-    "sel": "p",
-    "text": "What did the heron actually do"
-   },
-   "label": "Explore Step 4: the response",
-   "q": "Explore Step 4: What did the heron do?",
-   "ph": "The heron…"
-  },
-  {
-   "id": "fs-parta",
-   "type": "bank",
-   "sel": "#tab-assignment .pq-text",
-   "blank": "___",
-   "swap": null,
-   "label": "Part A: Match the Word",
-   "q": "Part A: Match the Word",
-   "words": [
-    "Stimulus",
-    "Sense organ",
-    "Brain",
-    "Response"
-   ],
-   "answers": [
-    "Stimulus",
-    "Sense organ",
-    "Brain",
-    "Response"
-   ],
-   "bankLabel": "Drag or tap a word, then tap its blank:",
-   "hole": "drop a word",
-   "miss": {
-    "Stimulus": "A stimulus is out in the world, like a sound or a smell. Which blank describes that?",
-    "Sense organ": "A sense organ is a body part that picks things up. Which blank describes that?",
-    "Brain": "The brain decides. Which blank is about deciding?",
-    "Response": "The response is what the animal does. Which blank is about doing?"
-   },
-   "win": "All four blanks filled! These go in your gathered answers."
   },
   {
    "id": "fs-partc",
@@ -1125,34 +849,6 @@
    ]
   },
   {
-   "id": "fs-bq",
-   "type": "write",
-   "rows": 3,
-   "find": {
-    "sel": "p",
-    "text": "2–3 sentence answer"
-   },
-   "swap": [
-    "to this question in your science notebook",
-    "to the Big Question"
-   ],
-   "label": "Big Question",
-   "q": "Big Question: How do animals notice what’s happening around them — and decide what to do about it?",
-   "ph": "Animals notice… with their… Then their brain…"
-  },
-  {
-   "id": "sw-parta",
-   "type": "swap",
-   "find": {
-    "sel": "#tab-assignment p",
-    "text": "Use the word bank"
-   },
-   "swap": [
-    "fill in the four blanks in your science notebook",
-    "fill in the four blanks below"
-   ]
-  },
-  {
    "id": "sw-words",
    "type": "swap",
    "find": {
@@ -1189,38 +885,13 @@
    ]
   },
   {
-   "id": "sw-cl-key",
-   "type": "swap",
-   "find": {
-    "sel": "#tab-assignment strong",
-    "text": "Key Question Response:"
-   },
-   "swap": [
-    "Key Question Response:",
-    "Big Question:"
-   ]
-  },
-  {
    "id": "relabel",
    "type": "relabel",
    "map": {
     "ans-1": "Part B · Question 5",
     "ans-2": "Part B · Question 6",
-    "ans-3": "Part B · Question 7",
     "cer-4": "Use Your Evidence (CER)"
    }
-  },
-  {
-   "id": "sw-bank",
-   "type": "swap",
-   "find": {
-    "sel": "#tab-assignment p strong",
-    "text": "Word Bank:"
-   },
-   "swap": [
-    "Word Bank: Stimulus, Sense organ, Brain, Response",
-    ""
-   ]
   },
   {
    "id": "recap-b5",
@@ -1261,7 +932,7 @@
     "text": "from the diagram"
    },
    "swap": [
-    "from the diagram",
+    "from the diagram (sea turtle, panther, manatee, or cottonmouth)",
     "from last night’s cameras (shown above)"
    ]
   },
@@ -1290,14 +961,6 @@
    }
   },
   {
-   "id": "hide-tls",
-   "type": "hide",
-   "find": {
-    "sel": ".socratic-q",
-    "text": "squirrel"
-   }
-  },
-  {
    "id": "hide-rf",
    "type": "hide",
    "find": {
@@ -1320,7 +983,7 @@
  "tool": {
   "name": "Trail camera",
   "icon": "📷",
-  "tab": "explore",
+  "tab": "assignment",
   "key": "12-tool",
   "sim": "trailcam",
   "kicker": "Bonus · Tool of the Week",
@@ -1433,6 +1096,15 @@
     }
    ],
    "pathWin": "Same four steps as an animal: stimulus, sense organ, brain, response. Scientists often build tools that work the way living things do."
-  }
- }
+  },
+  "after": "#tab-assignment .activity-card"
+ },
+ "videoOff": [
+  "lesson",
+  "figure",
+  "part3",
+  "explore",
+  "assignment",
+  "closing"
+ ]
 }

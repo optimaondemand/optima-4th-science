@@ -169,7 +169,7 @@
     {
      "label": "🗺 This tab",
      "tag": "THE LESSON",
-     "title": "Three parts, two clues",
+     "title": "Four parts, three clues",
      "col": "#2F7A55",
      "rows": [
       [
@@ -178,16 +178,20 @@
       ],
       [
        "Part 2",
-       "Different senses, the alligator picture, and the raccoon"
+       "Different senses and the alligator picture"
       ],
       [
        "Part 3",
        "Open last night’s four cameras (Clue 3)"
+      ],
+      [
+       "Part 4",
+       "One more camera: sort the heron’s steps (Clue 4)"
       ]
      ]
     }
    ],
-   "script": "[ON SCREEN: This tab]\nThis tab has three parts and two clues. Part 1 teaches the four steps, then you play Send the Signal for clue two. Part 2 is about different senses, with an alligator picture. In Part 3 you open Dr. Reyes's four cameras for clue three. Go in order, and watch your clue bar."
+   "script": "[ON SCREEN: This tab]\nThis tab has four parts and three clues. Part 1 teaches the four steps, then you play Send the Signal for clue two. Part 2 is about different senses, with an alligator picture. In Part 3 you open Dr. Reyes's four cameras for clue three. And in Part 4, one more camera shows a heron. Sort its steps for clue four. Go in order, and watch your clue bar."
   },
   "part1": {
    "label": "Part 1 · the four steps + Send the Signal",
@@ -285,8 +289,8 @@
    "script": "An eagle spots a fish with its eyes. A panther hears a rustle with its ears.\n\n[ON SCREEN: Five senses]\nEach sense organ picks up something different. Eyes pick up light, ears pick up sound, your nose picks up smell, your tongue picks up taste, and your skin picks up touch, heat and cold.\n\n[ON SCREEN: Watch out]\nWatch out for one mistake: the brain can't notice anything by itself. No sense organ, no signal. No signal, no response. Remember that for the end of the assignment."
   },
   "figure": {
-   "label": "The alligator picture + the raccoon",
-   "length": "40–50 s",
+   "label": "The alligator picture",
+   "length": "25–35 s",
    "want": true,
    "parts": [
     {
@@ -317,16 +321,9 @@
        "the response"
       ]
      ]
-    },
-    {
-     "label": "🦝 The raccoon",
-     "tag": "STOP & REASON",
-     "title": "Fill in the four boxes",
-     "col": "#2F7A55",
-     "body": "A raccoon freezes when it hears a barking dog. Type one short answer in each box: stimulus, sense organ, brain, response."
     }
    ],
-   "script": "[ON SCREEN: Alligator pathway]\nRead this picture left to right, like a sentence.\n\n[ON SCREEN: Read it left to right]\nA splash: that's the stimulus. The alligator's ear: the sense organ. Its brain decides, \"Food!\" Then it turns toward the splash: the response. The yellow lines show the message traveling.\n\n[ON SCREEN: The raccoon]\nUnder the picture, a raccoon freezes when it hears a barking dog. Type one short answer in each of the four boxes. For the brain box, ask yourself: what did the raccoon decide? Your answers save for you."
+   "script": "[ON SCREEN: Alligator pathway]\nRead this picture left to right, like a sentence.\n\n[ON SCREEN: Read it left to right]\nA splash: that's the stimulus. The alligator's ear: the sense organ. Its brain decides, \"Food!\" Then it turns toward the splash: the response. The yellow lines show the message traveling. Can you say all four steps without looking?"
   },
   "part3": {
    "label": "Part 3 · open the four cameras (Clue 3)",
@@ -362,19 +359,12 @@
      "kind": "photo",
      "pic": "manatee",
      "label": "🦭 The manatee photo"
-    },
-    {
-     "label": "🔒 Sealed field fact",
-     "tag": "SPARK",
-     "title": "Tap to crack it open",
-     "col": "#7A5BB5",
-     "body": "Each sealed fact holds something surprising about Florida animals."
     }
    ],
-   "script": "Time to look at the evidence, like a real field scientist.\n\n[ON SCREEN: How to open a camera]\nBelow the walkie-talkie are four trail cameras. Tap one, then press Next step to follow the message through that animal, one step at a time.\n\n[ON SCREEN: CAM 1 beach]\nFor each one, ask: what started this reaction? Was it the same thing for all four? That's clue three.\n\n[ON SCREEN: The manatee photo]\nThen tap the numbers on the manatee photo to see how it feels the water.\n\n[ON SCREEN: Sealed field fact]\nAnd crack open the sealed fact at the bottom. It's one of my favorites.\n\nPress Listen. Dr. Reyes will tell you what to watch for."
+   "script": "Time to look at the evidence, like a real field scientist.\n\n[ON SCREEN: How to open a camera]\nBelow the walkie-talkie are four trail cameras. Tap one, then press Next step to follow the message through that animal, one step at a time.\n\n[ON SCREEN: CAM 1 beach]\nFor each one, ask: what started this reaction? Was it the same thing for all four? That's clue three.\n\n[ON SCREEN: The manatee photo]\nThen tap the numbers on the manatee photo to see how it feels the water.\n\nPress Listen. Dr. Reyes will tell you what to watch for."
   },
   "explore": {
-   "label": "Explore · the heron on CAM 5 (Clue 4)",
+   "label": "Part 4 · the heron on CAM 5 (Clue 4)",
    "length": "50–60 s",
    "want": true,
    "parts": [
@@ -407,30 +397,10 @@
      "tag": "THE PINK BOX",
      "title": "No camera can see it",
      "col": "#C8553D",
-     "body": "The brain step happens inside the heron. You’ll explain it yourself in Step 3, a little lower on this tab."
-    },
-    {
-     "label": "🗺 Then",
-     "tag": "ALSO ON THIS TAB",
-     "title": "After the sort",
-     "col": "#B9822A",
-     "rows": [
-      [
-       "Photo",
-       "Find the four steps on a real heron."
-      ],
-      [
-       "Steps 1–4",
-       "Answer right in the boxes."
-      ],
-      [
-       "Bonus",
-       "Tool of the Week: the trail camera!"
-      ]
-     ]
+     "body": "The brain step happens inside the heron. Keep it in mind: it’s great evidence for your CER."
     }
    ],
-   "script": "[ON SCREEN: The heron]\nCAM 5 caught a great blue heron hunting, one minute after the other cameras.\n\n[ON SCREEN: The heron story]\nRead the story slowly. The heron stands still. A fish swims by. The heron freezes, then strikes. I notice it froze first. I wonder why?\n\n[ON SCREEN: One card, sorted]\nDrag each card into its step. Let's do one together: \"A small fish swims into view.\" That happens out in the water, before the heron does anything. So it's the stimulus! You sort the rest.\n\n[ON SCREEN: The hidden step]\nThe pink box is the brain. No card goes there, because no camera can see inside the heron's head. You'll explain it yourself in Step 3.\n\n[ON SCREEN: Then]\nThen answer Steps 1 to 4 right in the boxes. Press Listen for Dr. Reyes."
+   "script": "[ON SCREEN: The heron]\nCAM 5 caught a great blue heron hunting, one minute after the other cameras.\n\n[ON SCREEN: The heron story]\nRead the story slowly. The heron stands still. A fish swims by. The heron freezes, then strikes. I notice it froze first. I wonder why?\n\n[ON SCREEN: One card, sorted]\nDrag each card into its step. Let's do one together: \"A small fish swims into view.\" That happens out in the water, before the heron does anything. So it's the stimulus! You sort the rest.\n\n[ON SCREEN: The hidden step]\nThe pink box is the brain. No card goes there, because no camera can see inside the heron's head. Remember that for your CER.\n\nPress Listen for Dr. Reyes."
   },
   "quiz": {
    "label": "Self-Check · how it works",
@@ -488,20 +458,16 @@
     {
      "label": "📋 Today’s parts",
      "tag": "YOUR ASSIGNMENT",
-     "title": "Four parts",
+     "title": "Three parts",
      "col": "#2F7A55",
      "rows": [
       [
-       "Part A",
-       "Drag each step word into its blank."
-      ],
-      [
        "Part B",
-       "Answer 3 questions in complete sentences."
+       "Answer 2 questions in complete sentences."
       ],
       [
        "Part C",
-       "Make up a Florida animal moment, label the steps, and sketch it."
+       "Make up a Florida animal moment. A sketch is a bonus."
       ],
       [
        "CER",
@@ -517,35 +483,7 @@
      "body": "Every answer you type saves itself and shows up in Gathered Answers at the bottom of this tab."
     }
    ],
-   "script": "You made it to the assignment!\n\n[ON SCREEN: Crack the case]\nFirst, crack the case. Still locked? Tap \"Show me where the clues are,\" then \"Go there.\" With all four clues, pick the answer that fits every clue. Did all four animals react to the same thing?\n\n[ON SCREEN: Today’s parts]\nThen there are four parts. Part A: drag the step words into the blanks. Part B: three answers in complete sentences. Part C: make up your own Florida animal moment and sketch it. And last, a CER.\n\n[ON SCREEN: Saved for you]\nEverything saves itself and shows up in Gathered Answers at the bottom. That's what you turn in.\n\nPress Listen. Dr. Reyes wants a real field report."
-  },
-  "parta": {
-   "label": "Part A · the word bank",
-   "length": "15 s",
-   "want": false,
-   "parts": [
-    {
-     "label": "🔤 Word bank",
-     "tag": "PART A",
-     "title": "Drag or tap",
-     "col": "#2F7A55",
-     "rows": [
-      [
-       "1",
-       "Tap a word in the yellow bank."
-      ],
-      [
-       "2",
-       "Then tap the blank it belongs in."
-      ],
-      [
-       "Oops?",
-       "It bounces back with a hint. Try again!"
-      ]
-     ]
-    }
-   ],
-   "script": "[ON SCREEN: Word bank]\nDrag a word into its blank, or tap the word and then the blank. If it bounces back, read the hint and try again. Ask yourself: is this clue about the world, a body part, deciding, or doing?"
+   "script": "You made it to the assignment!\n\n[ON SCREEN: Crack the case]\nFirst, crack the case. Still locked? Tap \"Show me where the clues are,\" then \"Go there.\" With all four clues, pick the answer that fits every clue. Did all four animals react to the same thing?\n\n[ON SCREEN: Today’s parts]\nThen there are three parts. Part B: two answers in complete sentences. Part C: make up your own Florida animal moment. A sketch is a bonus. And last, a CER.\n\n[ON SCREEN: Saved for you]\nEverything saves itself and shows up in Gathered Answers at the bottom. That's what you turn in.\n\nPress Listen. Dr. Reyes wants a real field report."
   },
   "partb": {
    "label": "Part B · short answers",
@@ -612,7 +550,7 @@
     },
     {
      "label": "✏ The sketch pad",
-     "tag": "SKETCH IT",
+     "tag": "BONUS · SKETCH IT",
      "title": "Draw, then label",
      "col": "#7A5BB5",
      "rows": [
@@ -631,7 +569,7 @@
      ]
     }
    ],
-   "script": "Now you're the scientist.\n\n[ON SCREEN: Your scenario]\nMake up a short moment, like the heron story, about a Florida animal that wasn't in today's lesson. A pelican? A bobcat? A dolphin? Fill in the four boxes: what happened, what noticed it, what the brain decided, and what the animal did.\n\n[ON SCREEN: The sketch pad]\nThen sketch it. Draw with the pen. To add a label, pick Label, drag from a part of your drawing to an empty spot, and type. Add arrows to show the order."
+   "script": "Now you're the scientist.\n\n[ON SCREEN: Your scenario]\nMake up a short moment, like the heron story, about a Florida animal that wasn't in today's lesson. A pelican? A bobcat? A dolphin? Fill in the four boxes: what happened, what noticed it, what the brain decided, and what the animal did.\n\n[ON SCREEN: The sketch pad]\nIf you have time, sketch it too. It's a bonus. Draw with the pen. To add a label, pick Label, drag from a part of your drawing to an empty spot, and type. Add arrows to show the order."
   },
   "evidence": {
    "label": "Use your evidence · CER",
@@ -703,13 +641,9 @@
     {
      "label": "✅ Before you go",
      "tag": "FINISH STRONG",
-     "title": "Three last things",
+     "title": "Two last things",
      "col": "#2F6FD6",
      "rows": [
-      [
-       "❓",
-       "Answer the Big Question in 2–3 sentences. Use 3 step words."
-      ],
       [
        "☑",
        "Check off the boxes in What to Turn In."
@@ -728,7 +662,7 @@
      "body": "Build models of two Florida animals’ pathways and compare them."
     }
    ],
-   "script": "[ON SCREEN: Case closed · Confetti]\nCase closed! You did it, scientists.\n\nFour animals noticed four different things with four different senses, and each one's brain decided what to do. The four steps solved it.\n\n[ON SCREEN: Before you go]\nThree last things. Answer the Big Question using three step words. Check every box in What to Turn In to earn a heron feather. And download your field journal.\n\n[ON SCREEN: Next time]\nPress Listen. Dr. Reyes has a sneak peek at next time."
+   "script": "[ON SCREEN: Case closed · Confetti]\nCase closed! You did it, scientists.\n\nFour animals noticed four different things with four different senses, and each one's brain decided what to do. The four steps solved it.\n\n[ON SCREEN: Before you go]\nTwo last things. Check every box in What to Turn In to earn a heron feather. And download your field journal.\n\n[ON SCREEN: Next time]\nPress Listen. Dr. Reyes has a sneak peek at next time."
   }
  },
  "other": [],

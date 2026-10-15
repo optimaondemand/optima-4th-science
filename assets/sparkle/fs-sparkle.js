@@ -269,7 +269,8 @@
     box.appendChild(ph);
     var live = el('div', 'fs-ms-live'); box.appendChild(live);
     function showVideo(node) { box.classList.remove('fs-empty'); live.insertBefore(node, live.firstChild); }
-    probe(vfile, 'video', function (ok) {
+    /* D.videoOff: slots whose recorded video no longer matches the page (hidden until it is re-recorded) */
+    if ((D.videoOff || []).indexOf(id) < 0) probe(vfile, 'video', function (ok) {
       if (ok) {
         var vtt = vfile.replace(/\.mp4$/, '.vtt');
         var v = el('div', 'fs-video', '<video controls playsinline preload="metadata" poster="' + vfile.replace(/\.mp4$/, '.jpg') + '" src="' + vfile + '">' +
@@ -313,7 +314,10 @@
     add('lesson', $('#tab-lesson .act-body'), 'prepend');
     $$('#tab-lesson .act-body > h3').forEach(function (h, i) { add('part' + (i + 1), h, 'after'); });
     add('figure', $('#tab-lesson .lesson-figure'), 'before');
-    add('explore', $('#tab-explore .act-body'), 'prepend');
+    if ($('#tab-explore .act-body')) add('explore', $('#tab-explore .act-body'), 'prepend');
+    else { /* no Explore tab (lean lessons): the explore video sits just before the sort's story paragraph */
+      var sg = $('.fs-game[data-mod="sort"]'), sp = sg && sg.previousElementSibling;
+      if (sg) add('explore', sp && sp.tagName === 'P' ? sp : sg, 'before'); }
     add('quiz', $('#tab-quiz .quiz-card'), 'before');
     add('assignment', $('#tab-assignment .act-body'), 'prepend');
     $$('#tab-assignment .act-body > p').filter(function (p) { return /^\W*Part [A-Z]\b/.test(p.textContent.trim()); })
@@ -648,8 +652,11 @@
   /* ---------- Explore: sort the heron moment ---------- */
   function buildSort() {
     var S = D.sort; if (!S) return;
-    var body = $('#tab-explore .act-body'); if (!body) return;
-    var firstP = $('p', body);
+    var body = $('#tab-explore .act-body'), firstP = body && $('p', body);
+    if (S.afterText) { /* lean lessons: place the sort after the paragraph that holds this text, on any tab */
+      firstP = null; $$('.tab-panel p').some(function (p) { if (p.textContent.indexOf(S.afterText) > -1) { firstP = p; return true; } });
+      if (!firstP) { FAILED.push('sort anchor text not found'); return; } body = firstP.parentNode; }
+    if (!body) return;
     var g = gameShell(S.kicker || ('Field cam: ' + (S.subject || '')), S.title, S.todo, S.why); g.dataset.mod = 'sort';
     var bins = el('div', 'fs-sort');
     S.bins.forEach(function (b, i) {
@@ -1741,8 +1748,8 @@
   var SIMS = {};
   function buildTool() {
     var T = D.tool; if (!T) return;
-    var anchor = $('#tab-' + (T.tab || 'explore') + ' .tab-next-wrap') || $('#tab-' + (T.tab || 'explore') + ' .activity-card'); if (!anchor) return;
-    var before = anchor.classList.contains('tab-next-wrap');
+    var anchor = T.after ? $(T.after) : ($('#tab-' + (T.tab || 'explore') + ' .tab-next-wrap') || $('#tab-' + (T.tab || 'explore') + ' .activity-card')); if (!anchor) { FAILED.push('tool: no anchor'); return; }
+    var before = !T.after && anchor.classList.contains('tab-next-wrap');
     var box = fsOnly(el('div', 'fs-tool'));
     box.innerHTML = '<button type="button" class="fs-tool-head"><span class="fs-tool-ic">' + (T.icon || '🧰') + '</span><span><span class="fs-tool-k">' + esc(T.kicker || 'Bonus · Tool of the Week') + ' <span class="fs-sk-req">Optional</span></span>' +
       '<b>' + esc(T.name) + '</b><small>' + esc(T.teaser || '') + '</small></span><span class="fs-tool-c">▾</span></button><div class="fs-tool-body"></div>';

@@ -221,5 +221,142 @@
   "why": "defines “scenario”, which the checklist also uses",
   "old": "write a short scenario about a Florida animal that was <strong>not</strong> in today's lesson.",
   "new": "write a short scenario (a made-up moment, like the heron story) about a Florida animal that was <strong>not</strong> in today’s lesson."
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: remove the whole Explore tab (the heron moves to the Lesson)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: raccoon Stop & Reason",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?raccoon.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: Amazing Florida Fact, Florida connection and Go Deeper at the end of the Lesson; heron Part 4 added; next button goes to Self-Check",
+  "old": "<div class=\"mind-blow\">\\s*<span class=\"mind-blow-icon\">🤯</span>.*?electroreception.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · One More Camera</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">CAM 5 caught one more animal, one minute later: <em>A great blue heron is standing still in shallow water. Suddenly a small fish swims into view. The heron freezes, then strikes (jabs forward fast). Its sharp beak grabs the fish.</em> Read it twice, then sort its steps.</p>\n\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B word help only for kept questions",
+  "old": " <b>Murky</b> water is cloudy and hard to see through.",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: Part B question 7 removed",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C sketch is optional",
+  "old": "A short scenario about a Florida animal with all four steps clearly labeled and arrows showing the order.",
+  "new": "A short scenario about a Florida animal with all four steps."
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: no separate Big Question answer (CER is the last writing)",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": ""
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter",
+  "old": "<p>In the last lesson, you saw how body parts are built to do special jobs. Some of those parts have one job in common: <em>noticing things</em>. They're called ",
+  "new": "<p>Some body parts have one job: <em>noticing things</em>. They're called "
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter",
+  "old": ". Eyes, ears, noses, tongues, and skin are sense organs.</p>",
+  "new": ": eyes, ears, nose, tongue and skin.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter",
+  "old": "Animals don't all pick up the same kind of information. A Florida bald eagle has incredible eyesight for spotting fish from high in the sky. A Florida panther has sharp hearing for catching the tiny rustle (soft crunching sound) of a deer walking through leaves. A loggerhead sea turtle hatchling uses its eyes to find the ocean, crawling toward the brightest part of the night.",
+  "new": "Animals don't all notice the same things. A bald eagle spots fish from high in the sky with its sharp eyes. A Florida panther hears the tiny rustle (soft crunching sound) of a deer in the leaves."
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: repeats Part 1 and the signal card",
+  "old": "<p[^>]*>Each sense organ sends a .*?</p>\\s*",
+  "new": ""
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter",
+  "old": "Some people think the brain is the only part that \"knows\" things. But the sense organs do an important job first — they have to <em>pick up</em> the information before the brain ever sees it. No sense organ, no signal.",
+  "new": "The brain can't notice anything by itself. A sense organ has to <em>pick up</em> the information first. No sense organ, no signal."
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter CER directions (the CER boxes explain each part)",
+  "old": "Write a short argument: say whether you agree or disagree, then prove it. Your <b>claim</b> is what you think. Your <b>evidence</b> is facts from the lesson that show it. Use at least <strong>two pieces of evidence</strong> from today’s lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with at least <strong>two pieces of evidence</strong> from today’s lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether animals need brains in the response pathway, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>CER:</strong> My claim, two pieces of evidence, and my reasoning."
+ },
+ {
+  "kind": "cut",
+  "regex": true,
+  "why": "lean: answers are typed on the page, so one way to turn in",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment."
  }
 ]
