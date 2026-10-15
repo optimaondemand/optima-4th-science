@@ -12,6 +12,7 @@ def fx(kind, why, old, new, regex=False):
     F.append(e)
 
 # ticked fixes (Bethany, 15 Oct 2026)
+fx('fix', 'accuracy: the “saw” in saw palmetto is the sharp teeth on its leaf stems, not the leaf edges', "and tough — with sharp edges (that's the 'saw' part).", "and tough. The leaf stems have sharp teeth, like a saw (that's the 'saw' part).")
 fx('fix', 'quarter label: week 11 is Quarter 2 (matches 10.01)', 'Q3 &middot; Week 11', 'Q2 &middot; Week 11')
 fx('fix', 'quarter label in the footer', 'Science &middot; Quarter 3 &middot;', 'Science &middot; Quarter 2 &middot;')
 fx('fix', 'copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for a labeled Florida organism', '🎨 Part C &mdash; Build Your Own Food Chain', '🎨 Part C &mdash; Label a Florida Organism')

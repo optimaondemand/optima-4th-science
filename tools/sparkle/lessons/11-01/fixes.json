@@ -1,6 +1,12 @@
 [
  {
   "kind": "fix",
+  "why": "accuracy: the “saw” in saw palmetto is the sharp teeth on its leaf stems, not the leaf edges",
+  "old": "and tough — with sharp edges (that's the 'saw' part).",
+  "new": "and tough. The leaf stems have sharp teeth, like a saw (that's the 'saw' part)."
+ },
+ {
+  "kind": "fix",
   "why": "quarter label: week 11 is Quarter 2 (matches 10.01)",
   "old": "Q3 &middot; Week 11",
   "new": "Q2 &middot; Week 11"
