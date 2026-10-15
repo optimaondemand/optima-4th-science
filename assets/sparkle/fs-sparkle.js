@@ -1766,20 +1766,34 @@
       model.classList.remove('fs-empty');
       model.innerHTML = '<div class="fs-model-cover"><span>🧊</span><b>Look closer: a 3D ' + esc(T.name.toLowerCase()) + '</b><small>Drag to spin it. Scroll or pinch to zoom in on the parts.</small><button type="button" class="fs-btn">Open the 3D model</button></div>';
       $('.fs-btn', model).addEventListener('click', function () {
-        var btn = this; btn.disabled = true; btn.textContent = 'Loading…';
+        var btn = this; btn.disabled = true; btn.style.display = 'none';
+        /* loading bar: first the 3D viewer (0–30%, estimated), then the model itself (30–100%, real progress) */
+        var bar = el('div', 'fs-mv-load', '<div class="fs-mv-lt">Loading the 3D model… <span>0%</span></div><div class="fs-mv-track"><i></i></div>');
+        $('.fs-model-cover', model).appendChild(bar);
+        var fill = $('i', bar), pct = $('span', bar), shown = 0;
+        function setP(v) { v = Math.max(shown, Math.min(100, v)); shown = v; fill.style.width = v + '%'; pct.textContent = Math.round(v) + '%'; }
+        var est = setInterval(function () { if (shown < 28) setP(shown + 2); }, 120);
         function show() {
+          clearInterval(est); setP(30);
           var mv = document.createElement('model-viewer');
           mv.setAttribute('src', T.model); mv.setAttribute('alt', '3D model of a ' + T.name);
           ['camera-controls', 'auto-rotate'].forEach(function (k) { mv.setAttribute(k, ''); });
           mv.setAttribute('touch-action', 'pan-y'); mv.setAttribute('shadow-intensity', '1'); mv.setAttribute('exposure', '1.1');
           mv.setAttribute('interaction-prompt', 'auto'); mv.className = 'fs-mv';
-          model.innerHTML = ''; model.appendChild(mv);
+          mv.innerHTML = '<div slot="progress-bar"></div>';
+          mv.setAttribute('loading', 'eager'); model.classList.add('fs-mv-wait'); model.appendChild(mv); /* the cover + bar sit on top until the model is ready */
+          mv.addEventListener('progress', function (e) { setP(30 + 70 * ((e.detail && e.detail.totalProgress) || 0)); });
+          mv.addEventListener('load', function () {
+            setP(100);
+            setTimeout(function () { var cv = $('.fs-model-cover', model); if (cv) cv.remove(); model.classList.remove('fs-mv-wait'); }, 300);
+          });
+          mv.addEventListener('error', function () { clearInterval(est); $('.fs-mv-lt', bar).textContent = 'The 3D model couldn’t load. Try again later.'; });
           if (T.modelCredit) model.appendChild(el('div', 'fs-mv-cr', esc(T.modelCredit)));
           SFX.blip();
         }
         if (window.customElements && customElements.get('model-viewer')) return show();
         var sc = document.createElement('script'); sc.src = (D.paths && D.paths.mv) || 'assets/sparkle/vendor/model-viewer-umd.min.js';
-        sc.onload = show; sc.onerror = function () { btn.textContent = 'The 3D model couldn’t load here.'; };
+        sc.onload = show; sc.onerror = function () { clearInterval(est); $('.fs-mv-lt', bar).textContent = 'The 3D model couldn’t load here.'; };
         document.head.appendChild(sc);
       });
     } else withManifest(function (m) {
