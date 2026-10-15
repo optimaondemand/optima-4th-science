@@ -248,11 +248,19 @@
   }
   // mockup: a single-file preview carries its media inline, keyed by file name
   function au(u) { var k = String(u).split('/').pop(); return (D.art && D.art.audio && D.art.audio[k]) || u; }
+  /* Does this media file exist? A tiny HEAD request (no media download, no time limit),
+     so a slow connection or many videos on one page never hides a recorded video. */
   function probe(url, kind, cb) {
-    var m = document.createElement(kind); var done = false;
+    var done = false, u = au(url);
     function fin(ok) { if (done) return; done = true; cb(ok); }
-    m.preload = 'metadata'; m.addEventListener('loadedmetadata', function () { fin(true); }); m.addEventListener('error', function () { fin(false); });
-    setTimeout(function () { fin(false); }, 8000); m.src = au(url);
+    function viaMedia() {
+      var m = document.createElement(kind);
+      m.preload = 'metadata'; m.addEventListener('loadedmetadata', function () { fin(true); }); m.addEventListener('error', function () { fin(false); });
+      setTimeout(function () { fin(false); }, 30000); m.src = u;
+    }
+    if (/^(data|blob):/.test(u)) return fin(true);
+    if (!window.fetch || location.protocol === 'file:') return viaMedia();
+    fetch(u, { method: 'HEAD', cache: 'no-cache' }).then(function (r) { if (r.ok) fin(true); else if (r.status === 404) fin(false); else viaMedia(); }).catch(viaMedia);
   }
   function slotBox(id) {
     var info = (D.slots && D.slots[id]) || {};
