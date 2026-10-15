@@ -71,5 +71,19 @@
  "teacher/g4sci-10-1-partb": "skip",
  "teacher/g4sci-10-1-part1": "skip",
  "teacher/g4sci-10-1-partc": "skip",
- "teacher/g4sci-10-1-part2": "skip"
+ "teacher/g4sci-10-1-part2": "skip",
+ "teacher/g4sci-10-2-welcome": "want",
+ "teacher/g4sci-10-2-warmup": "want",
+ "teacher/g4sci-10-2-part2": "want",
+ "teacher/g4sci-10-2-explore": "want",
+ "teacher/g4sci-10-2-assignment": "want",
+ "teacher/g4sci-10-2-evidence": "want",
+ "teacher/g4sci-10-2-closing": "want",
+ "teacher/g4sci-10-2-part3": "skip",
+ "teacher/g4sci-10-2-quiz": "skip",
+ "teacher/g4sci-10-2-vocab": "skip",
+ "teacher/g4sci-10-2-lesson": "skip",
+ "teacher/g4sci-10-2-part1": "skip",
+ "teacher/g4sci-10-2-partb": "skip",
+ "teacher/g4sci-10-2-partc": "skip"
 }
