@@ -328,7 +328,7 @@ D = {
     'rankLine': P12['rankLine'],
     'lensWin': 'All six words are in focus. You’ll use every one of them today.',
     'tool': {
-        'name': 'Berlese funnel', 'icon': '🍂', 'tab': 'assignment', 'after': '#tab-assignment .activity-card', 'key': '10-tool', 'sim': 'berlese',
+        'name': 'Berlese funnel', 'icon': '🍂', 'tab': 'assignment', 'after': '#tab-assignment .activity-card', 'key': '10-tool', 'sim': 'berlese', 'model': 'assets/models/10-01-berlese.glb', 'modelCredit': '3D model made with Meshy AI.',
         'kicker': 'Bonus · Tool of the Week',
         'teaser': 'A lamp, a funnel and a jar: how scientists find the tiny recyclers hiding in fallen leaves.',
         'done': 'You learned the funnel’s parts, ran the lamp and met the tiny animals in the jar. A Berlese funnel sticker is in your Field Notebook.',
