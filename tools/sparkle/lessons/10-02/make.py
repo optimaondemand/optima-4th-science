@@ -260,31 +260,7 @@ D = {
         {'lesson': '13.01'}, {'lesson': '13.02'}, {'lesson': '14.01'}, {'lesson': '14.02'}, {'lesson': '15.01'}, {'lesson': '15.02'}],
     'rankLine': P['rankLine'],
     'lensWin': 'All six words are in focus. You’ll use every one of them today.',
-    'tool': {
-        'name': 'Secchi disk', 'icon': '⚪', 'tab': 'assignment', 'after': '#tab-assignment .activity-card', 'key': '10-tool2', 'sim': 'secchi',
-        'kicker': 'Bonus · Tool of the Week',
-        'teaser': 'A black-and-white disk on a rope: how scientists measure how clear the water is.',
-        'done': 'You tested three Florida waters with a Secchi disk and found out why clear water matters for seagrass and manatees. A Secchi disk sticker is in your Field Notebook.',
-        'why': {'icon': '⚪', 'q': 'Why a Secchi disk this week?', 't': 'Clear water lets sunlight reach seagrass, and seagrass is manatee food. A Secchi disk (say it: SECK-ee) is a simple tool that measures how clear water is, so it’s one number scientists and volunteers use to check a lake or lagoon’s health.'},
-        'secchi': {
-            'title': 'How clear is the water?',
-            'todo': ['Tap each part of the disk to learn it.', 'Pick a place, then lower the disk one foot at a time.', 'Press “I can’t see it anymore!” the moment it disappears. Test all three places.'],
-            'parts': [
-                {'label': 'The disk', 't': 'A flat disk about as wide as a dinner plate, painted in black and white parts so your eye can tell when it fades away.'},
-                {'label': 'The rope', 't': 'Marked every foot, so you can read how deep the disk is when it disappears.'},
-                {'label': 'The weight', 't': 'Hangs under the disk so it sinks straight down instead of floating sideways.'},
-            ],
-            'sites': [
-                {'k': 'spring', 'name': 'A clear Florida spring', 'icon': '💎', 'clear': 25, 'bottom': 18, 'tint': '#4FB3D9', 'note': 'You can still see the disk on the bottom! Spring water is so clear that the disk never disappears here.'},
-                {'k': 'lagoon', 'name': 'A lagoon on a normal day', 'icon': '🌊', 'clear': 4, 'bottom': 8, 'tint': '#4E8C7A', 'note': 'About 4 feet. Sunlight still reaches seagrass in the shallow parts.'},
-                {'k': 'bloom', 'name': 'The same lagoon in an algae bloom', 'icon': '🟢', 'clear': 1, 'bottom': 8, 'tint': '#6B8F2A', 'note': 'Only about 1 foot! Tiny algae turn the water green and block the sunlight.'},
-            ],
-            'q': {'q': 'In 2021, more than 1,000 manatees died, most from hunger. Which reading helps explain why?', 'opts': [
-                {'t': 'The clear spring', 'why': 'Clear springs are good for seagrass. Which reading shows sunlight being blocked?'},
-                {'t': 'The algae bloom', 'ok': True, 'why': 'Yes! In blooms, the water got so murky that sunlight couldn’t reach the seagrass. The seagrass died, and the manatees that eat it went hungry.'},
-                {'t': 'None of them', 'why': 'Look at the bloom reading again. What happens to plants on the bottom when sunlight can’t reach them?'}]},
-        },
-    },
+    # no Tool of the Week: one tool per week (10.01 has the Berlese funnel)
 }
 D['hlCoach']['tips'][2] = ['🎯', 'Look for answers to the Big Question.', 'Ask yourself: does this help me tell if an ecosystem is healthy, or what people can do?']
 D['hlCoach']['practice'] = {'q': 'Practice: tap the 3 to 5 words that matter most in this sentence.',
