@@ -1,0 +1,225 @@
+[
+ {
+  "kind": "fix",
+  "why": "accuracy: loggerhead hatchlings find the ocean by sight (light), not smell",
+  "old": "A loggerhead sea turtle uses smell to find its way back across the ocean to the beach where it was born.",
+  "new": "A loggerhead sea turtle hatchling uses its eyes to find the ocean, crawling toward the brightest part of the night."
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: the shark sense has a name",
+  "old": "That's a sense we don't even have a name for in human language.",
+  "new": "Scientists call this sense <em>electroreception</em>, and people don't have it at all."
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C from 9.01",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Your Own Animal Scenario"
+ },
+ {
+  "kind": "fix",
+  "regex": true,
+  "why": "copy-paste leftover: Part C task from 9.01",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "In your science notebook, write a short scenario about a Florida animal that was <strong>not</strong> in today's lesson. Label all four steps: <strong>stimulus · sense organ · brain · response</strong>, and draw arrows to show the order. Use colors.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect from 9.01",
+  "old": "\"What was the trickiest part of figuring out where the energy in a hawk really comes from? Write 2–3 sentences about something you learned today that you didn't know before.\"",
+  "new": "\"Which step of the pathway was hardest to spot in your scenario? Write 2–3 sentences about something you learned today that you didn't know before.\""
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: submit option",
+  "old": "Record a short video explaining your food chain.",
+  "new": "Record a short video explaining your animal scenario."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; “trace the path of information” → “follow a message”",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to trace the path of information through an animal — from the world, into its body, into its brain, and back out as an action.",
+  "new": "Keep this question in mind as you work. By the end, you’ll be able to follow a message through an animal: from the world, into its body, to its brain, and back out as an action."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “pathway” the first time students see it",
+  "old": "Every animal — including you — has a four-step pathway that turns information from the world into action. Today you'll learn the steps and spot them in Florida animals.",
+  "new": "Every animal, including you, uses four steps to turn what it notices into an action. Scientists call these steps a <b>pathway</b>, like a path a message travels along. Today you’ll learn the steps and find them in Florida animals."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "You’ll use these six words all lesson. <strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "“predator” replaced with its meaning",
+  "old": "like the smell of a predator,",
+  "new": "like the smell of an animal that might eat it,"
+ },
+ {
+  "kind": "plain",
+  "why": "“module” → “lesson”; “specific” → “special”",
+  "old": "In the last module you saw how body parts are built to do specific jobs.",
+  "new": "In the last lesson, you saw how body parts are built to do special jobs."
+ },
+ {
+  "kind": "plain",
+  "why": "“a fraction of a second” → plain words",
+  "old": "<p>The whole thing can happen in a fraction of a second.</p>",
+  "new": "<p>All four steps can happen in less than one second.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "defines “rustle”",
+  "old": "A Florida panther has sharp hearing for catching the tiny rustle of a deer.",
+  "new": "A Florida panther has sharp hearing for catching the tiny rustle (soft crunching sound) of a deer walking through leaves."
+ },
+ {
+  "kind": "plain",
+  "why": "“(Vision.)” → plain words",
+  "old": "pick up light. (Vision.)",
+  "new": "pick up light. That’s how you see."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “vibration”",
+  "old": "pick up sound and vibration.",
+  "new": "pick up sound and vibration (tiny, fast shaking)."
+ },
+ {
+  "kind": "plain",
+  "why": "“temperature” → “heat and cold”",
+  "old": "picks up touch, temperature, and pain.",
+  "new": "picks up touch, heat and cold, and pain."
+ },
+ {
+  "kind": "plain",
+  "why": "“misconception” → plain words",
+  "old": "<strong>Common misconception:</strong>",
+  "new": "<strong>Watch out for this mistake:</strong>"
+ },
+ {
+  "kind": "plain",
+  "why": "the caption said “process” for the brain step, which doesn't match the four step names; “triggers” cut",
+  "old": "travels as a signal to the brain (<em>process</em>), and triggers an action (<em>response</em>) — all in less than a second.",
+  "new": "travels as a signal to the <em>brain</em>, and the alligator turns toward the splash (<em>response</em>). All of it takes less than a second."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "<strong>Tap each animal</strong> to see how it uses one of its senses — and what it does next.",
+  "new": "<strong>Tap each animal</strong> to see how it uses one of its senses, and what it does next."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “magnetic field”",
+  "old": "Scientists think they use a special sense to feel Earth's magnetic field, like a built-in compass.",
+  "new": "Scientists think they can feel Earth’s magnetic field (an invisible force around Earth that makes a compass needle point north). It works like a compass built into their bodies."
+ },
+ {
+  "kind": "plain",
+  "why": "ACCURACY: turning all the way around takes longer than a quarter second, and “alligators are even faster” could not be checked; jargon (“finely tuned machine”) cut",
+  "old": "For a person, the whole pathway — sound to ear to brain to turn — can happen in under a quarter of a second. For an alligator snapping at prey, even faster. That's why animals don't need to think through every step. The pathway runs automatically, like a finely tuned machine.",
+  "new": "For a grown-up, the steps from a sound to the ear, to the brain, to the start of a move take about two-tenths of a second. That’s why you don’t have to stop and think through each step. Your body runs the steps on its own."
+ },
+ {
+  "kind": "plain",
+  "why": "“scenario” → plain words",
+  "old": "Here's a scenario: <em>A great blue heron",
+  "new": "Here’s a real moment in nature: <em>A great blue heron"
+ },
+ {
+  "kind": "plain",
+  "why": "defines “strikes”",
+  "old": "The heron freezes, then strikes — its sharp beak grabs the fish.</em>",
+  "new": "The heron freezes, then strikes (jabs forward fast). Its sharp beak grabs the fish.</em>"
+ },
+ {
+  "kind": "plain",
+  "why": "“scenario” → “heron story”",
+  "old": "Re-read the scenario. What happened",
+  "new": "Read the heron story again. What happened"
+ },
+ {
+  "kind": "plain",
+  "why": "“structure” → plain words",
+  "old": "so the whole head turns instead. That's a structure built for sensing.",
+  "new": "so the whole head turns instead. Its head and neck are built to help it sense the world."
+ },
+ {
+  "kind": "plain",
+  "why": "“brain-based” cut; shorter",
+  "old": "These are reactions, not the kind of fast, brain-based response animals make. Plants notice the world too — just in a much slower way.",
+  "new": "These are slow reactions. Plants don’t have a brain, so they can’t make the fast responses animals make."
+ },
+ {
+  "kind": "plain",
+  "why": "ACCURACY: grown sunflowers stop turning and face east",
+  "old": "Sunflower heads turn toward the sun.",
+  "new": "Young sunflowers turn toward the sun."
+ },
+ {
+  "kind": "plain",
+  "why": "“processes” → plain words",
+  "old": "The brain processes and decides.",
+  "new": "The brain’s job is to decide what the signal means."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “process” (Q6) and “murky” (Q7) before the questions, which stay as written",
+  "old": "Answer in <strong>complete sentences</strong>. Use vocabulary words from today's lesson.",
+  "new": "Answer in <strong>complete sentences</strong>. Use vocabulary words from today’s lesson.<br><b>Word help:</b> to <b>process</b> information means to figure out what it means. <b>Murky</b> water is cloudy and hard to see through."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “argument”, “claim” and “evidence”",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Write a short argument: say whether you agree or disagree, then prove it. Your <b>claim</b> is what you think. Your <b>evidence</b> is facts from the lesson that show it. Use at least <strong>two pieces of evidence</strong> from today’s lesson to support your claim."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your written answers in one place, so you can copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "plain words",
+  "old": "You can now trace the four-step pathway —",
+  "new": "You can now follow the four steps:"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter sentences; defines “pores” and “snout”",
+  "old": "A Florida shark can detect the heartbeat of a hiding fish using tiny pores on its snout that pick up",
+  "new": "A shark in Florida waters can sense the heartbeat of a hiding fish. Tiny holes called pores on its snout (the front of its face) pick up"
+ },
+ {
+  "kind": "plain",
+  "why": "“trace” → “show”",
+  "old": "Trace the four-step pathway in your own animal scenario",
+  "new": "Show the four steps in your own animal scenario"
+ },
+ {
+  "kind": "plain",
+  "why": "“scenario” before it is defined → plain words",
+  "old": "Explore: Sort a Sense Scenario",
+  "new": "Explore: Find the Steps in a Real Moment"
+ },
+ {
+  "kind": "plain",
+  "why": "defines “model”; cut filler",
+  "old": "Next lesson, you'll <em>model</em> two different Florida animal pathways and compare them — turning today's ideas into a working diagram you can show off.",
+  "new": "Next lesson, you’ll build <em>models</em> (labeled drawings that show how something works) of two Florida animals’ pathways and compare them."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “scenario”, which the checklist also uses",
+  "old": "write a short scenario about a Florida animal that was <strong>not</strong> in today's lesson.",
+  "new": "write a short scenario (a made-up moment, like the heron story) about a Florida animal that was <strong>not</strong> in today’s lesson."
+ }
+]

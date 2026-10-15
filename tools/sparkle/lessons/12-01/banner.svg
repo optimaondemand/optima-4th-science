@@ -1,0 +1,137 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A night marsh: a fish splashes, the sound travels across the water, and an alligator's ear and brain light up as it notices.">
+  <defs>
+    <linearGradient id="fsSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#081629"/><stop offset=".55" stop-color="#14374E"/><stop offset="1" stop-color="#2B5A57"/>
+    </linearGradient>
+    <linearGradient id="fsWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#153A44"/><stop offset="1" stop-color="#081A20"/>
+    </linearGradient>
+    <radialGradient id="fsMoonGlow"><stop offset="0" stop-color="#FFF4C8" stop-opacity=".55"/><stop offset="1" stop-color="#FFF4C8" stop-opacity="0"/></radialGradient>
+    <radialGradient id="fsBrain"><stop offset="0" stop-color="#FFE08A"/><stop offset=".5" stop-color="#F5B83D" stop-opacity=".7"/><stop offset="1" stop-color="#F5B83D" stop-opacity="0"/></radialGradient>
+    <radialGradient id="fsFly"><stop offset="0" stop-color="#F7FFB0"/><stop offset="1" stop-color="#F7FFB0" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="920" height="200" fill="url(#fsSky)"/>
+  <!-- stars -->
+  <g fill="#fff">
+    <circle cx="60" cy="24" r="1.2"><animate attributeName="opacity" values=".3;1;.3" dur="3.2s" repeatCount="indefinite"/></circle>
+    <circle cx="250" cy="40" r="1"><animate attributeName="opacity" values="1;.3;1" dur="4.1s" repeatCount="indefinite"/></circle>
+    <circle cx="410" cy="18" r="1.4"><animate attributeName="opacity" values=".4;1;.4" dur="2.7s" repeatCount="indefinite"/></circle>
+    <circle cx="530" cy="52" r="1"/><circle cx="620" cy="22" r="1.1"/>
+    <circle cx="860" cy="30" r="1.3"><animate attributeName="opacity" values=".5;1;.5" dur="3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="700" cy="60" r=".9"/><circle cx="340" cy="70" r=".8"/>
+  </g>
+  <!-- moon -->
+  <circle cx="140" cy="48" r="60" fill="url(#fsMoonGlow)"/>
+  <circle cx="140" cy="48" r="20" fill="#FFF6D6"/>
+  <circle cx="133" cy="44" r="4" fill="#EDE2B8" opacity=".6"/><circle cx="148" cy="55" r="3" fill="#EDE2B8" opacity=".5"/>
+  <!-- far treeline -->
+  <path d="M0,128 Q30,112 60,122 Q90,104 120,120 Q160,100 200,118 Q240,108 270,121 Q320,98 360,118 Q400,110 440,122 Q480,102 520,119 Q560,108 600,121 Q650,100 700,118 Q740,110 780,122 Q830,104 870,119 Q900,112 920,120 L920,145 L0,145 Z" fill="#0E2620"/>
+  <!-- cypress trees -->
+  <g fill="#0A1C17">
+    <path d="M40,145 L46,60 Q47,52 50,60 L56,145 Z"/><path d="M28,72 Q48,58 70,72 Q50,66 28,72 Z"/><path d="M24,92 Q50,76 76,92 Q50,86 24,92 Z"/>
+    <path d="M500,145 L505,74 Q507,66 509,74 L514,145 Z"/><path d="M488,86 Q507,74 528,88 Q507,82 488,86 Z"/>
+    <path d="M884,145 L890,54 Q892,46 894,54 L900,145 Z"/><path d="M870,70 Q892,54 914,70 Q892,64 870,70 Z"/><path d="M866,96 Q892,80 918,96 Q892,90 866,96 Z"/>
+  </g>
+  <!-- spanish moss -->
+  <g stroke="#3D5A48" stroke-width="1.4" fill="none" opacity=".8">
+    <path d="M34,74 q2,12 -1,22"/><path d="M44,76 q-2,14 1,26"/><path d="M62,74 q3,10 0,18"/>
+    <path d="M876,72 q2,12 -1,22"/><path d="M906,72 q-2,14 1,24"/>
+  </g>
+  <!-- water -->
+  <rect y="145" width="920" height="55" fill="url(#fsWater)"/>
+  <g stroke="#FFF4C8" stroke-linecap="round" opacity=".35">
+    <line x1="120" y1="156" x2="160" y2="156" stroke-width="2"/><line x1="128" y1="164" x2="152" y2="164" stroke-width="1.5"/><line x1="134" y1="172" x2="146" y2="172" stroke-width="1"/>
+  </g>
+  <!-- the splash (stimulus) -->
+  <g transform="translate(300,150)">
+    <g>
+      <path d="M-14,-10 Q-2,-30 14,-20 L20,-26 L19,-14 L12,-16 Q0,-6 -14,-10 Z" fill="#9FC0B6">
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.04;.18;.24;1" dur="5s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0,14;0,-6;0,14;0,14" keyTimes="0;.1;.22;1" dur="5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g fill="#CDE6EA">
+      <circle cx="-10" cy="-4" r="2.2"><animate attributeName="cy" values="0;-22;0;0" keyTimes="0;.1;.22;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;.06;.22;1" dur="5s" repeatCount="indefinite"/></circle>
+      <circle cx="10" cy="-4" r="2"><animate attributeName="cy" values="0;-26;0;0" keyTimes="0;.1;.22;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;.06;.22;1" dur="5s" repeatCount="indefinite"/></circle>
+      <circle cx="0" cy="-4" r="2.6"><animate attributeName="cy" values="0;-32;0;0" keyTimes="0;.1;.22;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;.06;.22;1" dur="5s" repeatCount="indefinite"/></circle>
+    </g>
+    <ellipse cx="0" cy="2" rx="6" ry="1.6" fill="none" stroke="#CDE6EA" stroke-width="1.6">
+      <animate attributeName="rx" values="6;60;60" keyTimes="0;.4;1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="1.6;10;10" keyTimes="0;.4;1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.9;0;0" keyTimes="0;.06;.4;1" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <!-- sound arcs travelling to the alligator -->
+  <g fill="none" stroke="#F5B83D" stroke-width="2.4" stroke-linecap="round">
+    <path d="M0,-12 Q8,0 0,12">
+      <animateTransform attributeName="transform" type="translate" values="330,140;330,140;768,140;768,140" keyTimes="0;.06;.42;1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;.9;.9;0;0" keyTimes="0;.06;.1;.36;.42;1" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,-16 Q11,0 0,16">
+      <animateTransform attributeName="transform" type="translate" values="318,140;318,140;756,140;756,140" keyTimes="0;.09;.45;1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;.7;.7;0;0" keyTimes="0;.09;.13;.39;.45;1" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,-20 Q14,0 0,20">
+      <animateTransform attributeName="transform" type="translate" values="306,140;306,140;744,140;744,140" keyTimes="0;.12;.48;1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;.5;.5;0;0" keyTimes="0;.12;.16;.42;.48;1" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <!-- alligator, head facing the splash -->
+  <g transform="translate(-372,-76) scale(1.5)">
+    <ellipse cx="740" cy="153" rx="150" ry="5" fill="#081A20" opacity=".7"/>
+    <!-- lower jaw just above the water -->
+    <path d="M606,150 Q640,152 700,151 L728,150 L728,154 L604,154 Z" fill="#2C4A36"/>
+    <!-- head + back: long snout, nostril bump, eye bump, then the body -->
+    <path d="M604,149 Q603,142 611,140 Q615,137 620,139 Q632,141 650,141 L700,139 Q722,137 740,131 Q748,122 762,121 Q774,121 780,129 Q790,133 806,135 Q840,139 870,142 L912,146 L912,154 L728,154 L728,150 Q700,149 660,149.5 Q630,150 604,149 Z" fill="#244531"/>
+    <!-- moonlit rim so the shape reads at night -->
+    <path d="M604,148 Q603,142 611,140 Q615,137 620,139 Q632,141 650,141 L700,139 Q722,137 740,131 Q748,122 762,121 Q774,121 780,129 Q790,133 806,135 Q840,139 870,142 L912,146" fill="none" stroke="#6E9C78" stroke-width="1.3" stroke-linecap="round" opacity=".85"/>
+    <!-- smile line + teeth -->
+    <path d="M605,149 Q650,150.5 700,149 Q716,148 726,143" fill="none" stroke="#0A1C17" stroke-width="1.6" stroke-linecap="round"/>
+    <g fill="#EDE7CF"><path d="M616,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M625,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M634,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M643,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M652,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M661,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M670,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M679,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M688,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M697,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M706,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M715,148.6 l1.6,-3.2 l1.6,3.2 z"/><path d="M620,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M629,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M638,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M647,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M656,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M665,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M674,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M683,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M692,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M701,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M710,148.8 l1.4,2.6 l1.4,-2.6 z"/><path d="M719,147 l1.8,-3.4 l1.6,3.6 z"/></g>
+    <!-- nostrils -->
+    <ellipse cx="614" cy="139.5" rx="5" ry="2.6" fill="#2C4A36"/><circle cx="612" cy="139" r="1" fill="#081A20"/><circle cx="616" cy="139.2" r="1" fill="#081A20"/>
+    <!-- bony ridges (scutes) down the back -->
+    <g fill="none" stroke="#5F8A69" stroke-width="1.6" stroke-linecap="round"><path d="M790,133.0 q3,-6 6,0"/><path d="M799,134.0 q3,-6 6,0"/><path d="M808,135.0 q3,-6 6,0"/><path d="M817,136.0 q3,-6 6,0"/><path d="M826,137.0 q3,-6 6,0"/><path d="M835,137.9 q3,-6 6,0"/><path d="M844,138.9 q3,-6 6,0"/><path d="M853,139.9 q3,-6 6,0"/><path d="M862,140.9 q3,-6 6,0"/><path d="M871,141.9 q3,-6 6,0"/><path d="M880,142.9 q3,-6 6,0"/><path d="M889,143.9 q3,-6 6,0"/><path d="M898,144.9 q3,-6 6,0"/></g>
+    <g fill="none" stroke="#3B6047" stroke-width="1.2" stroke-linecap="round"><path d="M800,137.0 q2.5,-4.5 5,0"/><path d="M810,138.0 q2.5,-4.5 5,0"/><path d="M820,139.0 q2.5,-4.5 5,0"/><path d="M830,140.0 q2.5,-4.5 5,0"/><path d="M840,141.0 q2.5,-4.5 5,0"/><path d="M850,142.0 q2.5,-4.5 5,0"/><path d="M860,143.0 q2.5,-4.5 5,0"/><path d="M870,144.0 q2.5,-4.5 5,0"/><path d="M880,145.0 q2.5,-4.5 5,0"/><path d="M890,146.0 q2.5,-4.5 5,0"/><path d="M900,147.0 q2.5,-4.5 5,0"/></g>
+    <!-- skin texture on the snout -->
+    <g fill="#2F553D"><circle cx="640" cy="144" r="1.3"/><circle cx="660" cy="143.5" r="1.3"/><circle cx="680" cy="143" r="1.3"/><circle cx="700" cy="142.5" r="1.3"/><circle cx="650" cy="146.5" r="1.1"/><circle cx="670" cy="146" r="1.1"/><circle cx="690" cy="145.5" r="1.1"/></g>
+    <!-- eye on its bump, with a brow -->
+    <path d="M748,125 Q760,117 772,123" fill="none" stroke="#0A1C17" stroke-width="1.6" stroke-linecap="round"/>
+    <ellipse cx="760" cy="128" rx="5.4" ry="3.8" fill="#C9B94A">
+      <animate attributeName="fill" values="#C9B94A;#C9B94A;#FFE66B;#C9B94A;#C9B94A" keyTimes="0;.66;.7;.8;1" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+    <rect x="759.3" y="125" width="1.4" height="6" rx=".7" fill="#081A20"/>
+    <circle cx="762" cy="126.6" r=".9" fill="#FFF8D8" opacity=".9"/>
+    <!-- ear (sense organ) -->
+    <path d="M772,134 q4,-1 7,1" stroke="#0A1C17" stroke-width="2" fill="none"/>
+    <circle cx="775" cy="134" r="5" fill="none" stroke="#F5B83D" stroke-width="2">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.4;.44;.56;.62;1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="4;4;9;6;6;4" keyTimes="0;.4;.46;.56;.62;1" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- brain glow -->
+    <circle cx="792" cy="137" r="14" fill="url(#fsBrain)">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.54;.6;.72;.8;1" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- signal pulse ear -> brain -->
+    <path id="fsSig" d="M775,134 Q784,128 792,137" fill="none" stroke="#F5B83D" stroke-width="1.2" stroke-dasharray="2 3" opacity=".55"/>
+    <circle r="2.6" fill="#FFE08A">
+      <animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.48;.58;1" calcMode="linear"><mpath href="#fsSig"/></animateMotion>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.47;.48;.58;.6;1" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- response: a small turn wake toward the splash -->
+    <path d="M606,156 q-14,4 -30,2" stroke="#9FC0B6" stroke-width="1.6" fill="none" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;0;.9;0;0" keyTimes="0;.72;.78;.92;1" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <!-- reeds -->
+  <g stroke="#0A1C17" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M14,200 q2,-40 -6,-70"/><path d="M24,200 q0,-48 8,-80"/><path d="M34,200 q-2,-34 -10,-58"/>
+    <path d="M560,200 q2,-30 -4,-50"/><path d="M570,200 q0,-36 6,-60"/>
+  </g>
+  <!-- fireflies -->
+  <g>
+    <circle cx="420" cy="110" r="5" fill="url(#fsFly)"><animate attributeName="opacity" values="0;1;0" dur="2.6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;6,-4;0,0" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="210" cy="124" r="4" fill="url(#fsFly)"><animate attributeName="opacity" values="0;0;1;0" dur="3.4s" repeatCount="indefinite"/></circle>
+    <circle cx="660" cy="104" r="4.5" fill="url(#fsFly)"><animate attributeName="opacity" values="1;0;0;1" dur="3s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>
