@@ -1,0 +1,1261 @@
+{
+ "lesson": "10.02",
+ "week": 10,
+ "day": 2,
+ "guide": "lena",
+ "prefix": "g4sci-10-2",
+ "manifestKey": "10-02",
+ "paths": {
+  "audio": "assets/audio/guide/",
+  "video": "assets/video/teacher/",
+  "manifest": "https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json",
+  "h2c": "assets/sparkle/vendor/html2canvas.min.js",
+  "crew": "assets/crew/",
+  "ornaments": "assets/ornaments/"
+ },
+ "crew": {
+  "lena": {
+   "name": "Dr. Lena Reyes",
+   "role": "field biologist (a scientist who studies animals in the wild)",
+   "initials": "LR",
+   "color": "#2F7A55",
+   "lens": "binoculars",
+   "voiceId": "u5S2O6UbbmDc2GMY2y6X"
+  }
+ },
+ "expedition": {
+  "num": 10,
+  "title": "The Manatee Count"
+ },
+ "ambient": {
+  "icon": "🌊",
+  "label": "Spring sounds"
+ },
+ "case": {
+  "num": "10 · part 2",
+  "title": "The One-Year Jump",
+  "style": "logs",
+  "hook": "After the big oak, I wanted to know how scientists check a whole ecosystem. So I flew! Every winter, scientists ride in small planes over Florida’s springs and rivers and count every manatee they can see. Look at two of the state’s flight logs. In one year, the count jumped by 1,275 manatees.",
+  "logs": [
+   {
+    "head": "Flight log · statewide",
+    "img": "images/10-02-springs.jpg",
+    "alt": "Dozens of manatees resting close together in a clear Florida spring.",
+    "rows": [
+     [
+      "Dates",
+      "January 19–23, 2009"
+     ],
+     [
+      "Counted by",
+      "airplane"
+     ]
+    ],
+    "big": "3,802"
+   },
+   {
+    "head": "Flight log · statewide",
+    "img": "images/10-02-aerial.jpg",
+    "alt": "Seen from an airplane: a huge group of gray manatees packed together in a blue-green spring.",
+    "rows": [
+     [
+      "Dates",
+      "January 12–15, 2010"
+     ],
+     [
+      "Counted by",
+      "airplane"
+     ]
+    ],
+    "big": "5,077"
+   }
+  ],
+  "sticky": "1,275 more manatees in ONE year? Is that real?",
+  "stillsCredit": "Counts: Florida Fish and Wildlife Conservation Commission (FWC) synoptic aerial surveys. Photos (public domain): manatees at Three Sisters Springs, Steve Hillebrand, U.S. Fish & Wildlife Service; manatees from the air at Crystal River National Wildlife Refuge, U.S. Fish & Wildlife Service.",
+  "question": "Did Florida really gain 1,275 manatees in one year, and how can scientists tell if a Florida ecosystem is healthy?",
+  "how": "Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.",
+  "clues": [
+   {
+    "id": "judge",
+    "icon": "📏",
+    "where": "Warm-Up: count it or feel it?",
+    "t": "Scientists trust things they can count or measure, not feelings."
+   },
+   {
+    "id": "survey",
+    "icon": "✈️",
+    "where": "The Lesson, Part 2: fly the survey",
+    "t": "A count depends on the weather. Cold, calm days pack manatees into warm springs, where they are easy to see. The same manatees can give very different counts."
+   },
+   {
+    "id": "verdict",
+    "icon": "🗂",
+    "where": "The Lesson, Part 3: four Florida stories",
+    "t": "Numbers measured over many years show which places are recovering (manatees, wood storks) and which are out of balance (pythons, lionfish)."
+   },
+   {
+    "id": "trend",
+    "icon": "📈",
+    "where": "The Lesson, Part 4: thirty years of counts",
+    "t": "One year can fool you. Counts bounce up and down, but over 30 years they climbed a lot, and scientists now estimate 8,350 to 11,730 manatees."
+   }
+  ],
+  "solve": {
+   "title": "Did the manatees really jump?",
+   "q": "Which answer fits all four clues?",
+   "options": [
+    {
+     "t": "Yes. 1,275 new manatees appeared in one year.",
+     "why": "Check Clue 2. The weather can change a count a lot, even when the number of manatees stays the same."
+    },
+    {
+     "t": "One count can’t prove it. Weather changes counts, but 30 years of data show manatees really have recovered. Scientists keep measuring to catch new problems.",
+     "right": true,
+     "why": "Case cracked! A jump in one year can come partly from the weather. Many years of measurements are what show the real story. Now write your case report: it’s the questions below."
+    },
+    {
+     "t": "Counts are useless, so nobody can know.",
+     "why": "Check Clues 3 and 4. Many years of careful measurements do tell a real story."
+    }
+   ]
+  }
+ },
+ "judge": {
+  "afterText": "Picture two Florida wetlands",
+  "kicker": "Warm-Up game",
+  "title": "Count it or feel it?",
+  "todo": [
+   "Read the card about the two wetlands.",
+   "Drag it to a side, or tap a side.",
+   "Ask: could a scientist write down a number for this?"
+  ],
+  "why": {
+   "icon": "📏",
+   "q": "Why does it matter?",
+   "t": "Two people can feel differently about the same place. A number someone measured stays the same no matter who reads it."
+  },
+  "sides": [
+   {
+    "k": "m",
+    "icon": "📏",
+    "t": "A scientist can measure it"
+   },
+   {
+    "k": "f",
+    "icon": "💭",
+    "t": "It’s just a feeling"
+   }
+  ],
+  "hint": "Read the card, then drag it to a side, or tap a side.",
+  "cards": [
+   {
+    "t": "We counted 42 wading birds in one hour.",
+    "side": "m",
+    "why": "A count is a number anyone can check."
+   },
+   {
+    "t": "This wetland feels peaceful.",
+    "side": "f",
+    "why": "Peaceful is a feeling. Someone else might feel bored or scared.",
+    "miss": "Can you write down a number for “peaceful”?"
+   },
+   {
+    "t": "We found 11 different kinds of fish.",
+    "side": "m",
+    "why": "Counting the kinds of living things is a big clue to health. More kinds usually means more balance."
+   },
+   {
+    "t": "The water looks kind of gross.",
+    "side": "f",
+    "why": "Gross is a feeling. A scientist would measure how clear the water is instead.",
+    "miss": "Is “gross” a number? What could you measure instead?"
+   },
+   {
+    "t": "We could see the bottom 6 feet down.",
+    "side": "m",
+    "why": "How far you can see is a measurement of how clear the water is."
+   },
+   {
+    "t": "It seems like there are fewer frogs this year.",
+    "side": "f",
+    "why": "“It seems” is a guess. Counting frogs every year would turn it into evidence.",
+    "miss": "Did anyone count the frogs? “It seems” is a clue."
+   },
+   {
+    "t": "Hunters removed 3 pythons from this wetland this year.",
+    "side": "m",
+    "why": "That’s a count someone wrote down."
+   },
+   {
+    "t": "I just have a good feeling about this place.",
+    "side": "f",
+    "why": "A good feeling isn’t evidence. Numbers are."
+   }
+  ],
+  "win": "All 8 sorted! That’s Clue 1: scientists trust what they can count or measure. Now answer the warm-up question below.",
+  "clue": "judge"
+ },
+ "survey": {
+  "afterText": "the data is the only way to spot it",
+  "kicker": "Part 2 game · Fly the survey",
+  "title": "Fly the survey",
+  "todo": [
+   "Pick the weather and the wind.",
+   "Press Fly the survey and watch the count.",
+   "Fly at least 3 times with different weather. Then answer the question."
+  ],
+  "why": {
+   "icon": "✈️",
+   "q": "Why fly?",
+   "t": "Manatees spread out across rivers and bays, so scientists count them from small planes flying low over the water. When water gets cold, manatees crowd into warm springs to stay warm."
+  },
+  "img": "images/10-02-aerial.jpg",
+  "alt": "Seen from an airplane: a huge group of gray manatees packed together in a blue-green spring.",
+  "credit": "Manatees gathered at a warm spring, Crystal River National Wildlife Refuge, Florida. U.S. Fish & Wildlife Service, public domain.",
+  "total": 200,
+  "note": "This is a model (a practice version). On every flight, the same 200 manatees live near this spring.",
+  "tempLabel": "Weather",
+  "windLabel": "Wind",
+  "temps": [
+   {
+    "k": "warm",
+    "icon": "☀️",
+    "t": "Warm",
+    "f": 0.25
+   },
+   {
+    "k": "cool",
+    "icon": "🌤️",
+    "t": "Cool",
+    "f": 0.6
+   },
+   {
+    "k": "cold",
+    "icon": "🥶",
+    "t": "Cold",
+    "f": 0.95
+   }
+  ],
+  "winds": [
+   {
+    "k": "windy",
+    "icon": "🌬️",
+    "t": "Windy",
+    "f": 0.55
+   },
+   {
+    "k": "calm",
+    "icon": "🍃",
+    "t": "Calm",
+    "f": 0.95
+   }
+  ],
+  "bestTemp": "cold",
+  "bestWind": "calm",
+  "minFlights": 3,
+  "bestHint": "Try one more flight: which weather would pack the most manatees into the spring, where you can see them best?",
+  "q": {
+   "q": "The same 200 manatees lived here on every flight. Why did your counts change?",
+   "opts": [
+    {
+     "t": "Manatees were born and died between flights.",
+     "why": "The model kept the same 200 manatees every time. What changed was the weather."
+    },
+    {
+     "t": "Cold weather packs them into the warm spring, and calm water makes them easier to see.",
+     "ok": true,
+     "why": "Right! That’s Clue 2. A count can change with the weather even when the number of manatees doesn’t."
+    },
+    {
+     "t": "The plane flew faster on some days.",
+     "why": "Look at what you changed: the weather and the wind."
+    }
+   ]
+  },
+  "win": "",
+  "clue": "survey"
+ },
+ "verdict": {
+  "kicker": "Part 3 game · Case files",
+  "title": "Four Florida stories: recovering or out of balance?",
+  "todo": [
+   "Tap a story to open its data.",
+   "Stamp it: Recovering or Out of balance.",
+   "Then pick the line that proves it. Do all four."
+  ],
+  "why": {
+   "icon": "🗂",
+   "q": "What counts as proof?",
+   "t": "Proof is a number someone measured, usually over many years. A feeling or a fun fact is not proof."
+  },
+  "stamps": [
+   {
+    "k": "up",
+    "icon": "📈",
+    "t": "Recovering"
+   },
+   {
+    "k": "down",
+    "icon": "⚠️",
+    "t": "Out of balance"
+   }
+  ],
+  "credit": "Photos (public domain): manatee, Keith Ramos, USFWS; Burmese python in the Everglades, Bryan Falk, USGS; red lionfish, Paula Whitfield, NOAA (photographed off North Carolina; the same kind lives on Florida reefs); wood stork, National Park Service.",
+  "stories": [
+   {
+    "id": "manatee",
+    "name": "Florida manatees",
+    "img": "images/10-02-manatee.jpg",
+    "alt": "A manatee swimming over sand with a school of small fish.",
+    "answer": "up",
+    "data": [
+     "1991: scientists counted about 1,200 manatees from airplanes.",
+     "2022: scientists estimated 8,350 to 11,730 manatees.",
+     "2017: the government moved manatees from “endangered” to “threatened” because their numbers rose."
+    ],
+    "proof": [
+     {
+      "t": "Counts and estimates rose a lot over about 30 years.",
+      "ok": true
+     },
+     {
+      "t": "Manatees look happy in the springs.",
+      "miss": "Happy is a feeling. Which line has numbers?"
+     },
+     {
+      "t": "Manatees eat seagrass.",
+      "miss": "True, but it doesn’t show whether they are recovering."
+     }
+    ],
+    "why": "Speed limits for boats, protected springs and rescues helped. Scientists still watch closely: in 2021, more than 1,000 manatees died, most from hunger after seagrass died in a polluted lagoon."
+   },
+   {
+    "id": "python",
+    "name": "Burmese pythons",
+    "img": "images/10-02-python.jpg",
+    "alt": "A large Burmese python with brown and tan patches coiled in grass.",
+    "answer": "down",
+    "data": [
+     "Pythons don’t belong in Florida. Many were pets that escaped or were let go.",
+     "In parts of the Everglades with many pythons, scientists counted about 99 out of every 100 raccoons and opossums gone, compared with years before."
+    ],
+    "proof": [
+     {
+      "t": "Raccoons and opossums dropped about 99% where pythons live.",
+      "ok": true
+     },
+     {
+      "t": "Pythons are scary.",
+      "miss": "Scary is a feeling. Which line has a number?"
+     },
+     {
+      "t": "Pythons can grow very long.",
+      "miss": "True, but it doesn’t show what they did to the ecosystem."
+     }
+    ],
+    "why": "An invasive species (one that doesn’t belong and causes harm) with no natural enemies here can wipe out native animals."
+   },
+   {
+    "id": "lionfish",
+    "name": "Lionfish",
+    "img": "images/10-02-lionfish.jpg",
+    "alt": "A striped lionfish with long spiky fins swimming over a reef.",
+    "answer": "down",
+    "data": [
+     "Lionfish come from the Pacific and Indian Oceans. They don’t belong in Florida.",
+     "In one study, a single lionfish ate 20 small fish in 30 minutes.",
+     "Divers now hold special hunts to remove them."
+    ],
+    "proof": [
+     {
+      "t": "One lionfish ate 20 small fish in 30 minutes.",
+      "ok": true
+     },
+     {
+      "t": "Lionfish are beautiful.",
+      "miss": "Beautiful is a feeling. Which line has numbers?"
+     },
+     {
+      "t": "Lionfish have long fins.",
+      "miss": "True, but it doesn’t show harm to the reef."
+     }
+    ],
+    "why": "Native reef fish didn’t evolve to escape lionfish, so lionfish can eat many of them fast."
+   },
+   {
+    "id": "stork",
+    "name": "Everglades wood storks",
+    "img": "images/10-02-woodstork.jpg",
+    "alt": "A tall white wood stork with a dark, bare head and a long thick beak, standing in tall grass.",
+    "answer": "up",
+    "data": [
+     "People drained much of the Everglades, and wading birds like wood storks lost places to feed and nest.",
+     "Florida and the U.S. are putting water back in the Everglades.",
+     "2014: wood storks moved from “endangered” to “threatened” as their numbers grew."
+    ],
+    "proof": [
+     {
+      "t": "Wood storks moved from “endangered” to “threatened” as their numbers grew.",
+      "ok": true
+     },
+     {
+      "t": "Everglades restoration costs a lot of money.",
+      "miss": "Money spent isn’t proof the birds are doing better."
+     },
+     {
+      "t": "Wood storks have bare heads.",
+      "miss": "True, but it says nothing about recovery."
+     }
+    ],
+    "why": "Recovery takes decades, and scientists keep counting nests to be sure it lasts."
+   }
+  ],
+  "win": "All four decided! That’s Clue 3: numbers measured over years show which places are recovering and which are out of balance.",
+  "clue": "verdict"
+ },
+ "trend": {
+  "afterText": "Every dot on the chart below is one real survey flight",
+  "kicker": "Part 4 game · Read the data",
+  "title": "One year, or thirty?",
+  "todo": [
+   "Look at two flights, one year apart. Did the count go up or down?",
+   "Then press Show every flight.",
+   "Answer the question about all 30 years."
+  ],
+  "why": {
+   "icon": "📈",
+   "q": "Why so many dots?",
+   "t": "Scientists have flown these surveys most winters since 1991. One dot can mislead you; lots of dots show the real pattern."
+  },
+  "yLabel": "Manatees counted",
+  "ymax": 12000,
+  "ystep": 2000,
+  "x0": 1990,
+  "x1": 2024,
+  "alt": "Dot chart of Florida manatee airplane counts from 1991 to 2019, rising from about 1,300 to about 6,000, with estimate bars for 2016 and 2022.",
+  "points": [
+   {
+    "x": 1991.04,
+    "n": 1267,
+    "label": "January 1991"
+   },
+   {
+    "x": 1991.12,
+    "n": 1478,
+    "label": "February 1991"
+   },
+   {
+    "x": 1992.04,
+    "n": 1844,
+    "label": "January 1992"
+   },
+   {
+    "x": 1995.04,
+    "n": 1456,
+    "label": "January 1995"
+   },
+   {
+    "x": 1995.12,
+    "n": 1823,
+    "label": "February 1995"
+   },
+   {
+    "x": 1996.04,
+    "n": 2277,
+    "label": "January 1996"
+   },
+   {
+    "x": 1996.12,
+    "n": 2630,
+    "label": "February 1996"
+   },
+   {
+    "x": 1997.04,
+    "n": 2241,
+    "label": "January 1997"
+   },
+   {
+    "x": 1997.12,
+    "n": 1715,
+    "label": "February 1997"
+   },
+   {
+    "x": 1998.04,
+    "n": 2018,
+    "label": "January 1998"
+   },
+   {
+    "x": 1999.04,
+    "n": 1865,
+    "label": "January 1999"
+   },
+   {
+    "x": 1999.12,
+    "n": 2023,
+    "label": "February 1999"
+   },
+   {
+    "x": 1999.18,
+    "n": 2360,
+    "label": "March 1999"
+   },
+   {
+    "x": 2000.04,
+    "n": 1646,
+    "label": "January 2000"
+   },
+   {
+    "x": 2000.07,
+    "n": 2223,
+    "label": "January 2000"
+   },
+   {
+    "x": 2001.04,
+    "n": 3300,
+    "label": "January 2001"
+   },
+   {
+    "x": 2002.18,
+    "n": 1758,
+    "label": "March 2002"
+   },
+   {
+    "x": 2003.04,
+    "n": 2843,
+    "label": "January 2003"
+   },
+   {
+    "x": 2003.07,
+    "n": 3127,
+    "label": "January 2003"
+   },
+   {
+    "x": 2003.1,
+    "n": 3016,
+    "label": "January 2003"
+   },
+   {
+    "x": 2004.12,
+    "n": 2505,
+    "label": "February 2004"
+   },
+   {
+    "x": 2005.04,
+    "n": 3143,
+    "label": "January 2005"
+   },
+   {
+    "x": 2006.12,
+    "n": 3113,
+    "label": "February 2006"
+   },
+   {
+    "x": 2007.04,
+    "n": 2817,
+    "label": "January 2007"
+   },
+   {
+    "x": 2009.04,
+    "n": 3802,
+    "label": "January 2009"
+   },
+   {
+    "x": 2010.04,
+    "n": 5077,
+    "label": "January 2010"
+   },
+   {
+    "x": 2011.04,
+    "n": 4834,
+    "label": "January 2011"
+   },
+   {
+    "x": 2014.04,
+    "n": 4824,
+    "label": "January 2014"
+   },
+   {
+    "x": 2015.12,
+    "n": 6063,
+    "label": "February 2015"
+   },
+   {
+    "x": 2016.12,
+    "n": 6250,
+    "label": "February 2016"
+   },
+   {
+    "x": 2017.04,
+    "n": 6620,
+    "label": "January 2017"
+   },
+   {
+    "x": 2018.04,
+    "n": 6131,
+    "label": "January 2018"
+   },
+   {
+    "x": 2019.04,
+    "n": 5733,
+    "label": "January 2019"
+   }
+  ],
+  "pair": [
+   2010.04,
+   2011.04
+  ],
+  "pairText": "Here are two flights, one year apart: January 2010 and January 2011. Did the count go up or down?",
+  "pairWin": "Down by {diff}! If you only saw these two flights, you might worry the manatees were in trouble. But is that the whole story?",
+  "moreBtn": "📊 Show every flight",
+  "allText": "Every dot is one airplane count. The dashed line shows the overall direction. The green bars are newer estimates of all the manatees in Florida, including ones the planes miss.",
+  "est": [
+   {
+    "x": 2016.1,
+    "lo": 7520,
+    "hi": 10280,
+    "t": "2016 estimate"
+   },
+   {
+    "x": 2022.0,
+    "lo": 8350,
+    "hi": 11730,
+    "t": "2022 estimate"
+   }
+  ],
+  "marks": [
+   {
+    "x": 2021.0,
+    "t": "2021: 1,101 died"
+   }
+  ],
+  "q": {
+   "q": "What do 30 years of data show?",
+   "opts": [
+    {
+     "t": "Manatees have been going down since 2010.",
+     "why": "That was one dip. Look at the dashed line and the green bars after 2010."
+    },
+    {
+     "t": "Counts bounce up and down, but over 30 years they climbed a lot.",
+     "ok": true,
+     "why": "Yes! That’s Clue 4. Ups and downs happen from year to year, but the long pattern shows a real recovery."
+    },
+    {
+     "t": "Each count is the exact number of manatees in Florida.",
+     "why": "Planes always miss some manatees. That’s why scientists also make estimates (the green bars)."
+    }
+   ]
+  },
+  "win": "Even so, 2021 was a hard year: more than 1,000 manatees died, most from hunger after seagrass died.",
+  "clue": "trend"
+ },
+ "quizKicker": "",
+ "quizMiss": {
+  "q1": {
+   "A": "Pythons were brought here from far away. Do they belong in Florida?",
+   "C": "A pollinator carries pollen. Pythons eat animals."
+  },
+  "q2": {
+   "A": "One photo shows one moment. What tells a longer story?",
+   "B": "A feeling isn’t a measurement. Which choice has numbers?"
+  },
+  "q3": {
+   "B": "Manatees have always lived in Florida. Invasive means they don’t belong.",
+   "C": "Growing numbers show protection is working. What might happen if it stopped?"
+  }
+ },
+ "inputs": [
+  {
+   "id": "tab1",
+   "type": "swap",
+   "find": {
+    "sel": ".tab-btn[data-tab=\"vocab\"]"
+   },
+   "swap": [
+    "📚 Vocabulary",
+    "🌅 Warm-Up"
+   ]
+  },
+  {
+   "id": "fs-warm",
+   "type": "list",
+   "find": {
+    "sel": "p",
+    "text": "list three things"
+   },
+   "label": "Warm-Up: things a scientist could measure",
+   "q": "Warm-Up: Three things a scientist could count or measure to tell which wetland is healthy",
+   "min": 3,
+   "unit": "things",
+   "addLabel": "+ Add another",
+   "ph": [
+    "Something you could count…",
+    "Something you could measure…",
+    "One more…"
+   ]
+  },
+  {
+   "id": "hide-nw",
+   "type": "hide",
+   "find": {
+    "sel": ".act-warmup .socratic-q",
+    "text": "Notice"
+   }
+  },
+  {
+   "id": "hide-tip",
+   "type": "hide",
+   "find": {
+    "sel": ".act-warmup .callout",
+    "text": "Today you"
+   }
+  },
+  {
+   "id": "sw-words",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap a card to flip it"
+   },
+   "swap": [
+    "<strong>Tap a card to flip it</strong> and read what the word means.",
+    "<strong>Tap a word</strong> to hear it and see what it means."
+   ]
+  },
+  {
+   "id": "recap-b5",
+   "type": "recap",
+   "find": {
+    "sel": ".pq-text",
+    "text": "Pick one of the four Florida"
+   },
+   "title": "The four Florida stories",
+   "items": [
+    {
+     "name": "📈 Manatees",
+     "img": "images/10-02-manatee.jpg",
+     "t": "About 1,200 counted in 1991; an estimated 8,350 to 11,730 in 2022."
+    },
+    {
+     "name": "⚠️ Burmese pythons",
+     "img": "images/10-02-python.jpg",
+     "t": "Where pythons live, raccoons and opossums dropped about 99%."
+    },
+    {
+     "name": "⚠️ Lionfish",
+     "img": "images/10-02-lionfish.jpg",
+     "t": "One lionfish ate 20 small fish in 30 minutes."
+    },
+    {
+     "name": "📈 Everglades",
+     "img": "images/10-02-woodstork.jpg",
+     "t": "Water is coming back; wood storks went from endangered to threatened in 2014."
+    }
+   ]
+  },
+  {
+   "id": "fs-partc",
+   "type": "graph",
+   "find": {
+    "sel": "#tab-assignment p",
+    "text": "Make a simple line graph"
+   },
+   "label": "Part C: My manatee line graph",
+   "q": "Part C: A line graph of the manatee data (1991 and today) and one sentence about the trend",
+   "title": "My manatee line graph",
+   "how": "Tap in each column to put its dot at the right height (drag up or down to adjust). The line connects them.",
+   "yLabel": "Manatees",
+   "ymax": 12000,
+   "ystep": 2000,
+   "step": 250,
+   "points": [
+    {
+     "x": "1991",
+     "lo": 1000,
+     "hi": 1500,
+     "hint": "1991: scientists counted about 1,200 manatees."
+    },
+    {
+     "x": "Today",
+     "lo": 7500,
+     "hi": 12000,
+     "hint": "Today: scientists estimate more than 7,500 manatees (8,350 to 11,730)."
+    }
+   ],
+   "sLabel": "Part C: trend sentence",
+   "ph": "One sentence: what happened to the number of manatees?"
+  },
+  {
+   "id": "fs-cer",
+   "type": "cer",
+   "target": "cer-4",
+   "find": {
+    "sel": "textarea#cer-4"
+   },
+   "reminder": "Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.",
+   "parts": [
+    {
+     "k": "C",
+     "t": "Claim",
+     "ask": "Do you agree or disagree with the quote?",
+     "ph": "I disagree. Invasive species are a big deal because…"
+    },
+    {
+     "k": "E",
+     "t": "Evidence",
+     "ask": "Two facts from the lesson. Tap them in the planner above, or type them.",
+     "ph": "One fact is… Another fact is…",
+     "rows": 3
+    },
+    {
+     "k": "R",
+     "t": "Reasoning",
+     "ask": "How do those facts prove your claim?",
+     "ph": "This shows that…",
+     "rows": 3
+    }
+   ]
+  },
+  {
+   "id": "relabel",
+   "type": "relabel",
+   "map": {
+    "ans-1": "Part B · Question 5",
+    "ans-3": "Part B · Question 6",
+    "cer-4": "Use Your Evidence (CER)"
+   }
+  },
+  {
+   "id": "sw-check",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap to toggle"
+   },
+   "swap": [
+    " Tap to toggle.",
+    ""
+   ]
+  },
+  {
+   "id": "sw-circle",
+   "type": "swap",
+   "find": {
+    "sel": ".card-head-title",
+    "text": "Revisit Our Key Question"
+   },
+   "swap": [
+    "Revisit Our Key Question",
+    "Back to the Big Question"
+   ]
+  }
+ ],
+ "flags": {
+  "ans-1": [
+   {
+    "label": "one Florida story",
+    "re": "manatee|python|lionfish|lion fish|everglade|wood stork|stork|wetland"
+   },
+   {
+    "label": "the change",
+    "re": "went up|grew|rose|increas|more|recover|went down|dropp|fewer|less|decreas|gone|disappear|lost|eat|ate|killed|chang|better|worse|coming back"
+   },
+   {
+    "label": "evidence (a number)",
+    "re": "\\d|percent|%|hundred|thousand|twenty|ninety|endangered|threatened"
+   }
+  ],
+  "ans-3": [
+   {
+    "label": "something people do",
+    "re": "speed|boat|protect|law|rescu|hunt|remov|catch|restor|water back|plant|clean|count|survey|park|refuge|feed|lettuce|recycl|pick up|trash"
+   },
+   {
+    "label": "the word conservation",
+    "re": "conserv"
+   },
+   {
+    "label": "how it helps",
+    "re": "because|so |help|safe|recover|grow|fewer|more|keep|save|stop"
+   }
+  ],
+  "cer-4": [
+   {
+    "label": "your claim",
+    "re": "agree|disagree|i think|wrong|right|not true|true|big deal|matter|problem"
+   },
+   {
+    "label": "two pieces of evidence",
+    "any": [
+     "raccoon|opossum|possum|rabbit",
+     "99|ninety",
+     "lionfish|lion fish",
+     "20|twenty",
+     "native",
+     "predator|enem|eat|ate|food",
+     "balance",
+     "python"
+    ],
+    "min": 2
+   },
+   {
+    "label": "a reason",
+    "re": "because|so |this shows|that means|which means|without|if "
+   },
+   {
+    "label": "your reasoning",
+    "re": "because|this shows|that shows|this means|that means|so "
+   }
+  ]
+ },
+ "minWords": {
+  "ans-1": 20,
+  "ans-3": 20,
+  "cer-4": 30
+ },
+ "hints": {
+  "ans-1": [
+   "Pick the story you remember best from the four cards above.",
+   "Sentence 1: what is changing? Sentence 2: what number proves it?",
+   "Try: The ___ population is ___. The evidence is ___."
+  ],
+  "ans-3": [
+   "Think of the manatee or Everglades stories. What did people do to help?",
+   "Boat speed limits, protected springs, python hunts and putting water back are all kinds of conservation.",
+   "Try: One kind of conservation in Florida is ___. It helps because ___."
+  ],
+  "cer-4": [
+   "First decide: do you agree or disagree with the quote?",
+   "Look for two facts with numbers from the python and lionfish stories.",
+   "Try: I ___ because ___. One piece of evidence is ___. Another is ___."
+  ]
+ },
+ "scholar": {},
+ "planner": {
+  "before": "cer-4",
+  "title": "Your claim and two pieces of evidence",
+  "rows": [
+   {
+    "label": "1. Pick your side",
+    "options": [
+     "I agree",
+     "I disagree"
+    ],
+    "pick": 1
+   },
+   {
+    "label": "2. Pick two pieces of evidence from the lesson",
+    "pick": 2,
+    "options": [
+     "Where pythons live, raccoons and opossums dropped about 99%.",
+     "One lionfish ate 20 small fish in 30 minutes.",
+     "Invasive species have no natural enemies here, so their numbers can explode.",
+     "When a native species disappears, the ecosystem can tip out of balance.",
+     "Scientists use numbers measured over many years, not feelings."
+    ]
+   }
+  ],
+  "note": "Tap your side and two facts. Then write your reasoning in your own words."
+ },
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the flight logs",
+   "length": "30–40 s",
+   "script": "Welcome back! After the big oak, I had a new question: how do scientists check if a whole ecosystem is healthy? So I flew. Every winter, scientists count manatees from small planes. Look at these two flight logs. In just one year, the count jumped by more than twelve hundred. Did that many manatees really show up? Let’s find out."
+  },
+  "warmup": {
+   "label": "Warm-Up · count it or feel it",
+   "length": "20–30 s",
+   "script": "Here’s a field secret. Two scientists can stand in the same wetland and feel totally different about it. That’s why we don’t trust feelings. We trust numbers. Read each card and decide: could a scientist measure this, or is it just a feeling?"
+  },
+  "vocab": {
+   "label": "Word Wall",
+   "length": "30–45 s",
+   "notes": "Say each word; act out balance on one foot."
+  },
+  "lesson": {
+   "label": "The Lesson",
+   "length": "30–45 s"
+  },
+  "part1": {
+   "label": "Part 1 · balance",
+   "length": "20–30 s"
+  },
+  "part2": {
+   "label": "Part 2 · fly the survey (Clue 2)",
+   "length": "25–35 s",
+   "script": "Buckle up. This is a practice survey flight. The same two hundred manatees live near this spring every day. Pick the weather, pick the wind, and fly. Then change one thing and fly again. Watch your count closely. I learned something about my own flight logs this way."
+  },
+  "part3": {
+   "label": "Part 3 · four Florida stories (Clue 3)",
+   "length": "20–30 s",
+   "script": "Some Florida stories are getting better, and some are in trouble. Open each case file and read the data. Stamp it, then find the line that really proves it. Careful: some lines are true but don’t prove anything."
+  },
+  "explore": {
+   "label": "Part 4 · thirty years of counts (Clue 4)",
+   "length": "20–30 s",
+   "script": "Every dot on this chart is one real flight. Start with just two of them, one year apart. Then show them all. This is my favorite chart in Florida, because it taught me not to panic over one bad year."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s"
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "25–35 s",
+   "script": "You have all four clues. Crack the case at the top of this tab first: did the manatees really jump by twelve hundred in one year? Then write your report. Build your own manatee graph in Part C, and use real numbers as your evidence. Your answers save as you type."
+  },
+  "partb": {
+   "label": "Part B",
+   "length": "30 s"
+  },
+  "partc": {
+   "label": "Part C · your manatee graph",
+   "length": "30 s"
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "25–35 s",
+   "script": "Some people say invasive species are no big deal, because Florida has plenty of native animals. Hmm. Think about the python and lionfish files you opened. Pick your side, choose two pieces of evidence in the planner, then explain how they prove your claim."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "20–30 s",
+   "notes": "Celebrate; tease 11.01 (body parts built for survival).",
+   "script": "Case closed, field scientist. One count can fool you, but many years of numbers tell the truth. Next week, we zoom in on the living things themselves: the body parts that help Florida plants and animals survive. See you in the field."
+  }
+ },
+ "exploreMod": "trend",
+ "videoOff": [],
+ "camera": {
+  "max": 8,
+  "huntTitle": "Bonus: can you snap all 4 shots on this list?",
+  "missions": [
+   "Your flight log with the biggest count (The Lesson)",
+   "A case file you stamped Out of balance (The Lesson)",
+   "The chart with every flight showing (The Lesson)",
+   "Your own manatee graph (Assignment)"
+  ]
+ },
+ "sketch": {
+  "tip": "Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.",
+  "prompts": [
+   "A manatee in a warm spring",
+   "A healthy wetland vs. an unhealthy one",
+   "My manatee line graph"
+  ],
+  "inline": [
+   {
+    "id": "partc",
+    "afterPart": "C",
+    "kicker": "Part C · draw it too (optional)",
+    "required": false,
+    "minLabels": 3,
+    "prompts": [
+     "My manatee line graph with labels",
+     "A Florida story I stamped",
+     "Before and after a change"
+    ]
+   }
+  ]
+ },
+ "hlCoach": {
+  "title": "Highlight like a scientist",
+  "tips": [
+   [
+    "🔑",
+    "Highlight key words, not whole paragraphs.",
+    "If everything is yellow, nothing stands out. Aim for a few words in each paragraph."
+   ],
+   [
+    "📖",
+    "Look for words that are explained.",
+    "Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."
+   ],
+   [
+    "🎯",
+    "Look for answers to the Big Question.",
+    "Ask yourself: does this help me tell if an ecosystem is healthy, or what people can do?"
+   ],
+   [
+    "🔗",
+    "Watch for clue words.",
+    "“Because”, “so” and “first … then” show how ideas connect."
+   ],
+   [
+    "🎨",
+    "Use the colors on purpose.",
+    "Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."
+   ]
+  ],
+  "practice": {
+   "q": "Practice: tap the 3 to 5 words that matter most in this sentence.",
+   "text": "In 1991, scientists in airplanes counted about 1,200 manatees in Florida.",
+   "key": [
+    "1991",
+    "airplanes",
+    "counted",
+    "1,200",
+    "manatees"
+   ],
+   "small": [
+    "In",
+    "in",
+    "about",
+    "Florida"
+   ],
+   "model": "A scientist might highlight “1991”, “counted” and “1,200 manatees”. Those words tell when, how and how many. Small words like “in” and “about” don’t carry the idea."
+  },
+  "outside": "This works in every subject. When you read anything, save the words that answer your question, and skip the rest."
+ },
+ "specimen": {
+  "kicker": "Specimen collected",
+  "stamp": "CASE CLOSED",
+  "icon": "🐚",
+  "name": "Florida apple snail shell",
+  "line": "You cracked Case 10, part 2, and a Florida apple snail shell goes in your Field Notebook. (A specimen is something a scientist collects to study.) Apple snails are native to Florida; snail kites, a kind of hawk, eat almost nothing else. Next week: the body parts that help Florida living things survive."
+ },
+ "notebookTitle": "Unit 3 · Life Systems & Ecosystems",
+ "notebook": [
+  {
+   "lesson": "9.01",
+   "icon": "🍃",
+   "name": "Sunlit leaf",
+   "have": true
+  },
+  {
+   "lesson": "9.02",
+   "icon": "🐛",
+   "name": "Caterpillar sketch",
+   "have": true
+  },
+  {
+   "lesson": "10.01",
+   "icon": "🌰",
+   "name": "Live oak acorn",
+   "have": true
+  },
+  {
+   "lesson": "10.02",
+   "icon": "🐚",
+   "name": "Florida apple snail shell"
+  },
+  {
+   "lesson": "11.01"
+  },
+  {
+   "lesson": "11.02"
+  },
+  {
+   "lesson": "12.01"
+  },
+  {
+   "lesson": "12.02"
+  },
+  {
+   "lesson": "13.01"
+  },
+  {
+   "lesson": "13.02"
+  },
+  {
+   "lesson": "14.01"
+  },
+  {
+   "lesson": "14.02"
+  },
+  {
+   "lesson": "15.01"
+  },
+  {
+   "lesson": "15.02"
+  }
+ ],
+ "rankLine": "Your Field Station ID just updated. Keep going, scientist.",
+ "lensWin": "All six words are in focus. You’ll use every one of them today.",
+ "tool": {
+  "name": "Secchi disk",
+  "icon": "⚪",
+  "tab": "assignment",
+  "after": "#tab-assignment .activity-card",
+  "key": "10-tool2",
+  "sim": "secchi",
+  "kicker": "Bonus · Tool of the Week",
+  "teaser": "A black-and-white disk on a rope: how scientists measure how clear the water is.",
+  "done": "You tested three Florida waters with a Secchi disk and found out why clear water matters for seagrass and manatees. A Secchi disk sticker is in your Field Notebook.",
+  "why": {
+   "icon": "⚪",
+   "q": "Why a Secchi disk this week?",
+   "t": "Clear water lets sunlight reach seagrass, and seagrass is manatee food. A Secchi disk (say it: SECK-ee) is a simple tool that measures how clear water is, so it’s one number scientists and volunteers use to check a lake or lagoon’s health."
+  },
+  "secchi": {
+   "title": "How clear is the water?",
+   "todo": [
+    "Tap each part of the disk to learn it.",
+    "Pick a place, then lower the disk one foot at a time.",
+    "Press “I can’t see it anymore!” the moment it disappears. Test all three places."
+   ],
+   "parts": [
+    {
+     "label": "The disk",
+     "t": "A flat disk about as wide as a dinner plate, painted in black and white parts so your eye can tell when it fades away."
+    },
+    {
+     "label": "The rope",
+     "t": "Marked every foot, so you can read how deep the disk is when it disappears."
+    },
+    {
+     "label": "The weight",
+     "t": "Hangs under the disk so it sinks straight down instead of floating sideways."
+    }
+   ],
+   "sites": [
+    {
+     "k": "spring",
+     "name": "A clear Florida spring",
+     "icon": "💎",
+     "clear": 25,
+     "bottom": 18,
+     "tint": "#4FB3D9",
+     "note": "You can still see the disk on the bottom! Spring water is so clear that the disk never disappears here."
+    },
+    {
+     "k": "lagoon",
+     "name": "A lagoon on a normal day",
+     "icon": "🌊",
+     "clear": 4,
+     "bottom": 8,
+     "tint": "#4E8C7A",
+     "note": "About 4 feet. Sunlight still reaches seagrass in the shallow parts."
+    },
+    {
+     "k": "bloom",
+     "name": "The same lagoon in an algae bloom",
+     "icon": "🟢",
+     "clear": 1,
+     "bottom": 8,
+     "tint": "#6B8F2A",
+     "note": "Only about 1 foot! Tiny algae turn the water green and block the sunlight."
+    }
+   ],
+   "q": {
+    "q": "In 2021, more than 1,000 manatees died, most from hunger. Which reading helps explain why?",
+    "opts": [
+     {
+      "t": "The clear spring",
+      "why": "Clear springs are good for seagrass. Which reading shows sunlight being blocked?"
+     },
+     {
+      "t": "The algae bloom",
+      "ok": true,
+      "why": "Yes! In blooms, the water got so murky that sunlight couldn’t reach the seagrass. The seagrass died, and the manatees that eat it went hungry."
+     },
+     {
+      "t": "None of them",
+      "why": "Look at the bloom reading again. What happens to plants on the bottom when sunlight can’t reach them?"
+     }
+    ]
+   }
+  }
+ }
+}

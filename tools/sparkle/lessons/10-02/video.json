@@ -1,0 +1,314 @@
+{
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the one-year jump",
+   "length": "50–60 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "aerial",
+     "label": "📷 Manatees from the air"
+    },
+    {
+     "label": "🗂 Two flight logs",
+     "tag": "CASE FILE 10 · PART 2",
+     "title": "The One-Year Jump",
+     "col": "#B9822A",
+     "rows": [
+      [
+       "Jan 2009",
+       "3,802 manatees counted"
+      ],
+      [
+       "Jan 2010",
+       "5,077 manatees counted"
+      ]
+     ]
+    },
+    {
+     "label": "❓ The case question",
+     "tag": "THE QUESTION",
+     "title": "Did 1,275 manatees really show up in one year?",
+     "col": "#B9822A",
+     "body": "Find 4 clues. Then crack the case on the Assignment tab."
+    }
+   ],
+   "script": "Hi, scientists! Last time, one fallen oak changed a whole forest. Today: how do scientists know if a whole ecosystem is healthy?\n\n[ON SCREEN: Manatees from the air]\nEvery winter, scientists fly over Florida in small planes and count manatees. Those gray shapes? Manatees!\n\n[ON SCREEN: Two flight logs]\nLook at these two flight logs. 2009: 3,802. One year later: 5,077. That’s more than twelve hundred extra manatees in one year. Hmm. Manatees usually have one baby every few years.\n\n[ON SCREEN: The case question]\nSo did that many really show up? Find the four clues. Press Listen on Dr. Reyes’s walkie-talkie, right below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · count it or feel it? (Clue 1)",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "⚖ Two sides",
+     "tag": "WARM-UP GAME",
+     "title": "Count it or feel it?",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "📏",
+       "A scientist can count or measure it."
+      ],
+      [
+       "💭",
+       "It’s just a feeling."
+      ]
+     ]
+    },
+    {
+     "label": "👆 How to play",
+     "tag": "HOW TO PLAY",
+     "title": "One card at a time",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "1",
+       "Read the card."
+      ],
+      [
+       "2",
+       "Drag it to a side, or tap a side."
+      ],
+      [
+       "3",
+       "Then list three things you could measure."
+      ]
+     ]
+    }
+   ],
+   "script": "(Step outside or look out a window.) Is it a nice day? I think so. But you might not! That’s a feeling.\n\nHow many clouds are in the sky? That we can count.\n\n[ON SCREEN: Two sides]\nScientists trust things they can count or measure, not feelings.\n\n[ON SCREEN: How to play]\nRead each card about two Florida wetlands. Drag it to the side it belongs on, or tap the side. Then list three things a scientist could measure. Press Listen. Dr. Reyes has a field secret for you."
+  },
+  "part2": {
+   "label": "Part 2 · fly the survey (Clue 2)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "springs",
+     "label": "📷 Manatees in a warm spring"
+    },
+    {
+     "label": "🛩 The practice flight",
+     "tag": "FLY THE SURVEY",
+     "title": "Same 200 manatees every flight",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "🌡",
+       "Pick the weather."
+      ],
+      [
+       "🌬",
+       "Pick the wind."
+      ],
+      [
+       "✈",
+       "Fly, then change ONE thing and fly again."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Manatees in a warm spring]\nWhen the water gets cold, manatees crowd into warm springs like this one. Easy to count! On warm days they spread out all over.\n\n[ON SCREEN: The practice flight]\nNow you fly. Two hundred manatees live near this spring, every single day. Pick the weather and the wind, then fly. Write down your count. Now change just one thing and fly again.\n\nDid the manatees change, or did your count? That’s Clue 2. Press Listen on the walkie-talkie."
+  },
+  "explore": {
+   "label": "Part 4 · thirty years of counts (Clue 4)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "📈 Two dots",
+     "tag": "PART 4",
+     "title": "Start with two flights",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "2010",
+       "One flight"
+      ],
+      [
+       "2011",
+       "One year later"
+      ]
+     ]
+    },
+    {
+     "label": "📈 Every flight",
+     "tag": "THE BIG PICTURE",
+     "title": "Thirty years of dots",
+     "col": "#2D7AA6",
+     "body": "The dashed line shows the trend: which way the numbers go over many years."
+    }
+   ],
+   "script": "(Hold up one sock.) If I find one sock on the floor, is my room messy? Maybe! I need more evidence.\n\n[ON SCREEN: Two dots]\nThis chart starts with just two survey flights, one year apart. Up or down? Decide.\n\n[ON SCREEN: Every flight]\nThen press Show every flight. Thirty years of real dots! Some years jump, some dip. The dashed line shows the trend, the way the numbers move over many years.\n\nThat’s your last clue. Press Listen."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔓 Crack the case",
+     "tag": "TOP OF THE ASSIGNMENT",
+     "title": "Did 1,275 manatees really show up?",
+     "col": "#B9822A",
+     "body": "Pick the answer that fits all four clues."
+    },
+    {
+     "label": "✍️ Your case report",
+     "tag": "WHAT TO DO",
+     "title": "Four places to work",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "Part B",
+       "Two short answers"
+      ],
+      [
+       "Part C",
+       "Build your own manatee graph"
+      ],
+      [
+       "CER",
+       "Claim, evidence, reasoning"
+      ],
+      [
+       "📋",
+       "Copy your Gathered Answers into Canvas"
+      ]
+     ]
+    },
+    {
+     "label": "📈 Part C graph",
+     "tag": "PART C",
+     "title": "Tap to place each dot",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "1991",
+       "About 1,200 counted"
+      ],
+      [
+       "Today",
+       "More than 7,500"
+      ],
+      [
+       "✏",
+       "One sentence about the trend"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nYou found all four clues! Crack the case at the top of this tab. Did twelve hundred manatees really appear in one year?\n\n[ON SCREEN: Your case report]\nThen your case report: two short answers, a graph, and a CER.\n\n[ON SCREEN: Part C graph]\nIn Part C, you build the graph. Tap in each column to set the dot at the right height. Then write one sentence: which way did the numbers go?\n\nStuck? Press Hint under any box. Press Listen on the walkie-talkie."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "python",
+     "label": "📷 A Burmese python"
+    },
+    {
+     "label": "💬 The quote",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "Some people say…",
+     "col": "#C8553D",
+     "body": "“Invasive species like Burmese pythons are no big deal. Florida has plenty of native animals.”"
+    },
+    {
+     "label": "🧩 The planner",
+     "tag": "PLAN BEFORE YOU WRITE",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "1",
+       "Tap I agree or I disagree."
+      ],
+      [
+       "2",
+       "Tap two pieces of evidence."
+      ],
+      [
+       "3",
+       "You write the reasoning."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: A Burmese python]\nThis snake is not from Florida. It came from Asia.\n\n[ON SCREEN: The quote]\nSome people say invasive species are no big deal, because Florida has plenty of native animals. Hmm. Do you agree?\n\n[ON SCREEN: The planner]\nRemember CER. Tap your side, then two facts from the lesson. Numbers make strong evidence! Then explain how your facts prove your claim. Try starting with “This shows that…”\n\nPress Listen. Dr. Reyes wants to hear your side."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "30–40 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🐚 Your specimen",
+     "tag": "FIELD NOTEBOOK",
+     "title": "Florida apple snail shell",
+     "col": "#B9822A",
+     "body": "Finish the checklist to stamp CASE CLOSED."
+    },
+    {
+     "label": "➡ Next time",
+     "tag": "LESSON 11.01",
+     "title": "Inside out",
+     "col": "#2F7A55",
+     "body": "Body parts that help Florida plants and animals survive."
+    }
+   ],
+   "script": "Case closed! One count can fool you. Many years of counts tell the truth.\n\n[ON SCREEN: Your specimen]\nFinish your checklist and a Florida apple snail shell goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next time]\nNext time, we zoom in. Why does a spoonbill have a flat, spoon-shaped beak? We’ll find out how body parts help living things survive.\n\nPress Listen for Dr. Reyes’s last word."
+  },
+  "part3": {
+   "label": "Part 3 · four Florida stories (Clue 3)",
+   "length": "25–35 s",
+   "want": false,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "manatee",
+     "label": "📷 A Florida manatee"
+    }
+   ],
+   "script": "[ON SCREEN: A Florida manatee]\nFour Florida stories, four case files. Read each one, stamp it Recovering or Out of balance, then find the line that proves it. Careful: some lines are true but don’t prove anything. Press Listen."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s",
+   "want": false,
+   "parts": [],
+   "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  }
+ },
+ "pics": {
+  "aerial": {
+   "src": "images/10-02-aerial.jpg",
+   "cap": "Manatees from the air · Crystal River (USFWS)"
+  },
+  "springs": {
+   "src": "images/10-02-springs.jpg",
+   "cap": "Manatees crowd into a warm spring in winter (USFWS)"
+  },
+  "manatee": {
+   "src": "images/10-02-manatee.jpg",
+   "cap": "A Florida manatee (USFWS)"
+  },
+  "python": {
+   "src": "images/10-02-python.jpg",
+   "cap": "A Burmese python in the Everglades (USGS)"
+  }
+ },
+ "other": [
+  "vocab",
+  "lesson",
+  "part1",
+  "partb",
+  "partc"
+ ]
+}

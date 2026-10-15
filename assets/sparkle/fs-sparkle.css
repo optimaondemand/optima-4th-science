@@ -1126,3 +1126,107 @@ html:not(.fs-on) .fs-name-note{display:none!important;}
   .fs-bf { grid-template-columns: 1fr; } .fs-bf-rig { max-width:240px; margin:0 auto; }
 }
 @media (prefers-reduced-motion: reduce) { .fs-web-lines line.draw { animation:none; stroke-dashoffset:0; stroke-dasharray:none; } .fs-bf-specks circle { animation:none; } }
+
+/* ===================== 10.02: flight logs, judge, survey, verdict, trend, graph, Secchi ===================== */
+.fs-logs { display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin:8px 0 14px; position:relative; }
+.fs-log { background:#FFFDF4; border:1.5px solid #D9CFAE; border-radius:6px; padding:10px 12px 12px; box-shadow:0 3px 8px rgba(0,0,0,.15); font:600 13px/1.4 'Courier New',monospace; color:#3B2F1E;
+  background-image: repeating-linear-gradient(0deg, transparent 0 21px, rgba(90,140,200,.18) 21px 22px); }
+.fs-log:nth-child(1) { transform: rotate(-1.2deg); } .fs-log:nth-child(2) { transform: rotate(1deg); }
+.fs-log-img { margin:-4px -6px 8px; height:120px; overflow:hidden; border-radius:4px; }
+.fs-log-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.fs-log-h { font:900 12px 'Nunito',sans-serif; letter-spacing:1px; text-transform:uppercase; color:#7A5B1E; margin-bottom:4px; }
+.fs-log dl { display:grid; grid-template-columns:auto 1fr; gap:2px 10px; margin:0; } .fs-log dt { color:#8A7A5A; } .fs-log dd { margin:0; }
+.fs-log-big { margin-top:6px; font:900 30px/1 'Nunito',sans-serif; color:#0E1C42; }
+.fs-log-sticky { position:absolute; right:-6px; bottom:-18px; background:#FFE97A; color:#3B2F1E; font:800 14px/1.3 'Nunito',sans-serif; padding:10px 12px; width:190px; transform:rotate(3deg); box-shadow:0 4px 10px rgba(0,0,0,.2); }
+/* judge */
+.fs-jd { display:grid; gap:12px; }
+.fs-jd-card { min-height:86px; background:#fff; border:3px solid #0E1C42; border-radius:14px; padding:14px 16px; font:800 18px/1.35 'Nunito',sans-serif; color:#0E1C42; display:flex; flex-direction:column; gap:6px; cursor:grab; touch-action:none; user-select:none; box-shadow:0 4px 0 #0E1C42; }
+.fs-jd-card.in { animation: fsPop .3s; } .fs-jd-card.bounce { animation: fsBounce .45s; } .fs-jd-card.done { cursor:default; box-shadow:none; border-color:#B7DDC3; background:#EEF8F0; }
+.fs-jd-card.ghost { position:fixed; z-index:9999; pointer-events:none; opacity:.92; }
+.fs-jd-n { font:900 11px 'Nunito',sans-serif; letter-spacing:1px; text-transform:uppercase; color:#7C8C92; }
+.fs-jd-sides { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.fs-jd-side { border:2.5px dashed #9FB7BE; border-radius:12px; padding:10px; min-height:96px; background:#F7FBFC; cursor:pointer; }
+.fs-jd-side.over { border-color: var(--fs-gold); background:#FFF9E8; }
+.fs-jd-h { font:900 14px 'Nunito',sans-serif; color:#0E1C42; text-align:center; } .fs-jd-h span { display:block; font-size:26px; }
+.fs-jd-pile { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
+.fs-jd-chip { font:700 11px/1.25 'Nunito',sans-serif; background:#fff; border:1.5px solid #C9D6DA; border-radius:8px; padding:3px 6px; color:#2B1D12; max-width:100%; }
+.fs-jd-chip.drop { animation: fsPop .35s; }
+.fs-jd-meter { height:10px; border-radius:6px; background:#E3ECEE; overflow:hidden; margin-top:10px; } .fs-jd-meter i { display:block; height:100%; width:0; background:linear-gradient(90deg,#55C8E8,#34B76F); transition: width .4s; }
+/* survey */
+.fs-sv-view { position:relative; border-radius:14px; overflow:hidden; border:4px solid #1D2C44; box-shadow: inset 0 0 0 4px #5B6B80; }
+.fs-sv-view img { display:block; width:100%; height:auto; transition: filter .5s; }
+.fs-sv-glare, .fs-sv-haze { position:absolute; inset:0; pointer-events:none; opacity:0; transition: opacity .5s; }
+.fs-sv-glare { background: repeating-linear-gradient(115deg, rgba(255,255,255,.0) 0 14px, rgba(255,255,255,.55) 18px, rgba(255,255,255,0) 24px 40px); }
+.fs-sv-view.windy .fs-sv-glare { opacity:.95; animation: fsGlare 2.4s linear infinite; }
+@keyframes fsGlare { from { background-position:0 0; } to { background-position:80px 0; } }
+.fs-sv-haze { background: rgba(40,90,110,.55); }
+.fs-sv-view.warm .fs-sv-haze { opacity:.6; } .fs-sv-view.warm img { filter: saturate(.5); }
+.fs-sv-plane { position:absolute; top:10px; left:-40px; font-size:30px; filter: drop-shadow(0 2px 2px rgba(0,0,0,.4)); }
+.fs-sv-plane.go { animation: fsFly 1.6s ease-in-out forwards; } @keyframes fsFly { to { left:105%; } }
+.fs-sv-tally { position:absolute; right:10px; bottom:10px; background:rgba(14,28,66,.88); color:#fff; font:900 20px 'Nunito',sans-serif; padding:6px 12px; border-radius:10px; }
+.fs-sv-tally:empty { display:none; }
+.fs-sv-note { font-size:13.5px; color:#5A4D3E; margin:8px 0; }
+.fs-sv-ctl { display:grid; gap:8px; margin:8px 0; } .fs-sv-row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; } .fs-sv-row .fs-in-k { margin:0 6px 0 0; min-width:70px; }
+.fs-sv-ctl .fs-btn { justify-self:start; }
+.fs-sv-log { width:100%; border-collapse:collapse; margin:10px 0; font-size:14px; }
+.fs-sv-log th, .fs-sv-log td { border:1px solid #D8E7EA; padding:5px 8px; text-align:left; } .fs-sv-log th { background:#EEF4F6; font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:#5C6F75; }
+.fs-sv-q { margin-top:10px; } .fs-sv-hint { font-size:14px; font-weight:700; color:#8A4118; }
+/* verdict */
+.fs-vd-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:10px; }
+.fs-vd-card { background:#fff; border:2px solid #C9D6DA; border-radius:12px; padding:6px 6px 8px; cursor:pointer; font:800 14px 'Nunito',sans-serif; color:#0E1C42; text-align:center; }
+.fs-vd-card.on { border-color: var(--fs-gold); box-shadow:0 3px 0 #E3A92D; }
+.fs-vd-img { position:relative; aspect-ratio:4/3; border-radius:8px; overflow:hidden; margin-bottom:6px; } .fs-vd-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.fs-vd-stamp { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) rotate(-12deg) scale(1.6); opacity:0; font:900 12px 'Nunito',sans-serif; padding:4px 8px; border:3px solid currentColor; border-radius:6px; background:rgba(255,255,255,.85); white-space:nowrap; }
+.fs-vd-card.done .fs-vd-stamp, .fs-vd-card.stamping .fs-vd-stamp { opacity:1; transform:translate(-50%,-50%) rotate(-12deg) scale(1); transition: all .25s cubic-bezier(.3,1.6,.6,1); }
+.st-up .fs-vd-stamp, .fs-vd-sb.st-up { color:#1F7A3E; } .st-down .fs-vd-stamp, .fs-vd-sb.st-down { color:#B23A2E; }
+.fs-vd-panel { display:none; margin-top:12px; background:#F7FBFC; border:2px solid #D8E7EA; border-radius:12px; padding:12px 14px; } .fs-vd-panel.open { display:block; animation: fsPop .3s; }
+.fs-vd-data { list-style:none; padding:0; margin:6px 0 10px; display:grid; gap:4px; font-size:15px; line-height:1.45; }
+.fs-vd-stamps { display:flex; gap:8px; flex-wrap:wrap; margin:4px 0 10px; }
+.fs-vd-sb { background:#fff; border:3px solid currentColor; border-radius:10px; padding:8px 14px; font:900 15px 'Nunito',sans-serif; cursor:pointer; }
+.fs-vd-sb.ok { background:currentColor; } .fs-vd-sb.ok { color:#fff !important; } .fs-vd-sb.st-up.ok { background:#1F7A3E; } .fs-vd-sb.st-down.ok { background:#B23A2E; }
+.fs-vd-sb.bounce { animation: fsBounce .45s; }
+.fs-vd-proof { opacity:.5; } .fs-vd-panel.stamped .fs-vd-proof { opacity:1; }
+/* trend */
+.fs-tr { background:#fff; border:2px solid #D8E7EA; border-radius:12px; padding:6px; }
+.fs-tr-svg, .fs-gr-svg { width:100%; height:auto; display:block; font:700 11px 'Nunito',sans-serif; fill:#5C6F75; }
+.fs-tr .gl, .fs-gr-svg .gl { stroke:#E3ECEE; } .fs-tr .yl, .fs-gr-svg .yl { font-size:11px; fill:#0E1C42; }
+.fs-tr .dt { fill:#E07B2E; stroke:#fff; stroke-width:1.5; }
+.fs-tr.stage1 .dt:not(.pr), .fs-tr.stage1 .fit, .fs-tr.stage1 .est, .fs-tr.stage1 .mk { display:none; }
+.fs-tr.stage1 .dt.pr { r:8; }
+.fs-tr.stage2 .dt { animation: fsPop .4s both; }
+.fs-tr .fit { stroke:#0E1C42; stroke-width:2.5; stroke-dasharray:6 5; opacity:.7; }
+.fs-tr .est rect { fill:rgba(52,183,111,.25); stroke:#1F7A3E; stroke-width:1.5; } .fs-tr .est text { fill:#1F7A3E; font-size:10.5px; }
+.fs-tr .mk line { stroke:#B23A2E; stroke-dasharray:3 4; } .fs-tr .mk text { fill:#B23A2E; font-size:10.5px; }
+.fs-tr-btns { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; } .fs-tr-btns .bounce { animation: fsBounce .45s; }
+.fs-tr-more { margin-top:10px; }
+/* graph input */
+.fs-in-graph .fs-gr-how { font-size:14px; color:#5A4D3E; margin:4px 0 8px; }
+.fs-gr-svg { max-width:460px; background:#fff; border:2px solid #D8E7EA; border-radius:12px; touch-action:none; }
+.fs-gr-svg .col { fill:rgba(85,200,232,.06); cursor:crosshair; } .fs-gr-svg .col:hover { fill:rgba(85,200,232,.16); }
+.fs-gr-svg .xl { fill:#0E1C42; font-size:12px; } .fs-gr-svg .ln { fill:none; stroke:#E07B2E; stroke-width:3; pointer-events:none; }
+.fs-gr-svg .pt { pointer-events:none; } .fs-gr-svg .pt circle { fill:#E07B2E; stroke:#fff; stroke-width:2; } .fs-gr-svg .pt text { fill:#0E1C42; font-size:12px; font-weight:900; }
+.fs-gr-chips { display:flex; gap:6px; margin:8px 0; }
+.fs-in-graph textarea { width:100%; margin-top:6px; }
+/* Secchi */
+.fs-sd-parts, .fs-sd-sites { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.fs-sd { display:grid; grid-template-columns: 220px 1fr; gap:14px; align-items:start; }
+.fs-sd-svg { width:100%; height:auto; border-radius:10px; border:2px solid #D8E7EA; }
+.fs-sd-disk { transition: transform .35s, opacity .35s; } .fs-sd-rope { transition: all .35s; }
+.fs-sd-depth { font-size:15px; margin-bottom:8px; } .fs-sd-btns { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+@media (max-width:640px) {
+  .fs-logs { grid-template-columns:1fr; } .fs-log-sticky { position:static; width:auto; transform:rotate(-1deg); margin-top:6px; }
+  .fs-vd-grid { grid-template-columns: 1fr 1fr; }
+  .fs-sd { grid-template-columns: 1fr; } .fs-sd-svg { max-width:220px; margin:0 auto; display:block; }
+  .fs-jd-card { font-size:16px; }
+}
+@media (prefers-reduced-motion: reduce) { .fs-sv-view.windy .fs-sv-glare { animation:none; } .fs-sv-plane.go { animation:none; left:auto; right:10px; } }
+
+/* 10.02 narrow screens: the 30-year chart scrolls sideways inside its box so the labels stay readable; the flight log fits */
+@media (max-width: 600px) {
+  .fs-tr { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .fs-tr .fs-tr-svg { min-width:540px; }
+  .fs-tr-slide { display:block !important; }
+  .fs-sv-log { font-size:13px; } .fs-sv-log th, .fs-sv-log td { padding:4px 5px; } .fs-sv-log th { font-size:10px; letter-spacing:0; }
+}
+
+.fs-tr-slide { display:none; font-size:13px; color:#5C6F75; margin:4px 2px 0; font-style:italic; }
