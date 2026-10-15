@@ -993,3 +993,7 @@ html:not(.fs-on) .fs-name-note{display:none!important;}
 .fs-cc.on .fs-cc-i{background:#F2C46B;color:#0E1C42;}
 .fs-cc:focus-visible{outline:3px solid #55C8E8;outline-offset:2px;}
 .fs-video video::cue{font-size:1.05em;background:rgba(14,28,66,.85);color:#fff;}
+/* Tool of the Week: a repo .glb in model-viewer */
+.fs-model .fs-mv{display:block;width:100%;height:380px;background:radial-gradient(circle at 50% 40%,#2B3F6B,#0E1C42);--poster-color:transparent;}
+.fs-model .fs-mv-cr{font:600 12px/1.4 Nunito,system-ui,sans-serif;color:#BFD0EE;padding:6px 12px;background:#0E1C42;}
+@media (max-width:600px){.fs-model .fs-mv{height:300px;}}

@@ -1762,7 +1762,27 @@
     var model = el('div', 'fs-model fs-empty');
     model.innerHTML = '<div class="fs-model-ph"><span>🧊</span><div><b>3D model slot</b> <span class="fs-ms-id">' + esc(T.key) + '</span><div class="fs-ms-n">Add an entry "' + esc(T.key) + '" to video-manifest.json with the Sketchfab embed code (status "ready"). Students never see this box.</div></div></div>';
     body.appendChild(model);
-    withManifest(function (m) {
+    if (T.model) { /* a .glb in the repo, shown with model-viewer (loaded only when a student opens it) */
+      model.classList.remove('fs-empty');
+      model.innerHTML = '<div class="fs-model-cover"><span>🧊</span><b>Look closer: a 3D ' + esc(T.name.toLowerCase()) + '</b><small>Drag to spin it. Scroll or pinch to zoom in on the parts.</small><button type="button" class="fs-btn">Open the 3D model</button></div>';
+      $('.fs-btn', model).addEventListener('click', function () {
+        var btn = this; btn.disabled = true; btn.textContent = 'Loading…';
+        function show() {
+          var mv = document.createElement('model-viewer');
+          mv.setAttribute('src', T.model); mv.setAttribute('alt', '3D model of a ' + T.name);
+          ['camera-controls', 'auto-rotate'].forEach(function (k) { mv.setAttribute(k, ''); });
+          mv.setAttribute('touch-action', 'pan-y'); mv.setAttribute('shadow-intensity', '1'); mv.setAttribute('exposure', '1.1');
+          mv.setAttribute('interaction-prompt', 'auto'); mv.className = 'fs-mv';
+          model.innerHTML = ''; model.appendChild(mv);
+          if (T.modelCredit) model.appendChild(el('div', 'fs-mv-cr', esc(T.modelCredit)));
+          SFX.blip();
+        }
+        if (window.customElements && customElements.get('model-viewer')) return show();
+        var sc = document.createElement('script'); sc.src = (D.paths && D.paths.mv) || 'assets/sparkle/vendor/model-viewer-umd.min.js';
+        sc.onload = show; sc.onerror = function () { btn.textContent = 'The 3D model couldn’t load here.'; };
+        document.head.appendChild(sc);
+      });
+    } else withManifest(function (m) {
       var e = m[T.key]; if (!e || e.status !== 'ready' || !e.embed) return;
       var t = document.createElement('div'); t.innerHTML = e.embed; var f = t.querySelector('iframe'); if (!f) return;
       var src = f.getAttribute('src'); model.classList.remove('fs-empty');
