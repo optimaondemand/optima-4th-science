@@ -696,12 +696,5 @@
    "cap": "An alligator hears a splash: the four-step pathway"
   }
  },
- "redo": [
-  "lesson",
-  "figure",
-  "part3",
-  "explore",
-  "assignment",
-  "closing"
- ]
+ "redo": []
 }
