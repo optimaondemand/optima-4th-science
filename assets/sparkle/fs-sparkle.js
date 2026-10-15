@@ -49,10 +49,13 @@
   }
   function pushToast(icon, title, text, ms) {
     var st = $('#fsToasts'); if (!st) { st = fsOnly(el('div', 'fs-toasts')); st.id = 'fsToasts'; st.setAttribute('aria-live', 'polite'); document.body.appendChild(st); }
-    var t = el('div', 'fs-toast', '<span>' + icon + '</span><div><b>' + esc(title) + '</b>' + esc(text) + '</div>');
+    /* notes stay until the student closes them (some kids read slower); at most 3 at once, oldest closes first */
+    var t = el('div', 'fs-toast', '<span>' + icon + '</span><div><b>' + esc(title) + '</b>' + esc(text) + '</div><button type="button" class="fs-toast-x" aria-label="Close this note">✕</button>');
+    function close() { t.classList.remove('show'); t.classList.add('leave'); setTimeout(function () { t.remove(); }, 450); }
+    $('.fs-toast-x', t).addEventListener('click', close);
     st.appendChild(t);
+    var open = $$('.fs-toast:not(.leave)', st); if (open.length > 3) open[0].querySelector('.fs-toast-x').click();
     setTimeout(function () { t.classList.add('show'); SFX.win(); }, 30);
-    setTimeout(function () { t.classList.remove('show'); t.classList.add('leave'); setTimeout(function () { t.remove(); }, 450); }, ms || 4600);
   }
   /* ---------- sound (WebAudio, generated, quiet, never on load) ---------- */
   var AC = null;
