@@ -1009,3 +1009,26 @@ html:not(.fs-on) .fs-name-note{display:none!important;}
 .fs-toast.leave { pointer-events:none; }
 .fs-toast-x { position:absolute; top:6px; right:6px; width:30px; height:30px; border-radius:50%; border:2px solid var(--fs-gold); background:#fff; color: var(--fs-navy); font:800 14px/1 Nunito,system-ui,sans-serif; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 .fs-toast-x:hover, .fs-toast-x:focus-visible { background: var(--fs-gold); outline:none; }
+/* camera mode: make it obvious the camera is on */
+.fs-snapov { background: rgba(14,28,66,.32); }
+.fs-vf { position:fixed; inset:10px; pointer-events:none; border:3px solid rgba(242,196,107,.85); border-radius:16px; box-shadow: inset 0 0 0 2px rgba(14,28,66,.25); animation: fsVfPulse 1.6s ease-in-out infinite; }
+.fs-vf i { position:absolute; width:44px; height:44px; border-color:#fff; border-style:solid; border-width:0; }
+.fs-vf .tl { top:-3px; left:-3px; border-top-width:7px; border-left-width:7px; border-top-left-radius:16px; }
+.fs-vf .tr { top:-3px; right:-3px; border-top-width:7px; border-right-width:7px; border-top-right-radius:16px; }
+.fs-vf .bl { bottom:-3px; left:-3px; border-bottom-width:7px; border-left-width:7px; border-bottom-left-radius:16px; }
+.fs-vf .br { bottom:-3px; right:-3px; border-bottom-width:7px; border-right-width:7px; border-bottom-right-radius:16px; }
+@keyframes fsVfPulse { 0%,100% { border-color: rgba(242,196,107,.95); } 50% { border-color: rgba(242,196,107,.35); } }
+.fs-snapov .fs-snap-tip { top:24px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center; white-space:normal; max-width:calc(100vw - 40px); padding:12px 18px; border-radius:16px; font-size:17px; border:3px solid #F2C46B; }
+.fs-snap-tip b { font-weight:800; }
+.fs-snap-rec { background:#E8636B; color:#fff; border-radius:999px; padding:3px 10px; font-size:13px; letter-spacing:.06em; animation: fsRec 1.2s steps(2) infinite; }
+@keyframes fsRec { 50% { opacity:.55; } }
+.fs-snapov .fs-snap-tip button { font-size:14px; padding:6px 14px; margin-left:0; }
+.fs-snap-mid { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; text-align:center; color:#fff; font:800 20px/1.35 'Nunito',sans-serif; background: rgba(14,28,66,.78); border:3px dashed #F2C46B; border-radius:20px; padding:18px 26px; }
+.fs-snap-mid span { display:block; font-size:44px; margin-bottom:4px; }
+.fs-snapov.drag .fs-snap-mid { display:none; }
+.fs-fab-snap.on { box-shadow: 0 0 0 4px #E8636B, 0 0 18px 6px rgba(232,99,107,.6); }
+.fs-snap-dev { position:fixed; top:24px; left:50%; transform:translateX(-50%); z-index:9950; background: var(--fs-navy); color:#fff; font:800 17px 'Nunito',sans-serif; padding:12px 20px; border-radius:16px; border:3px solid #F2C46B; box-shadow:0 6px 20px rgba(0,0,0,.35); }
+.fs-snap-dev span { display:inline-block; animation: fsJiggle 1s infinite; }
+@media (prefers-reduced-motion: reduce) { .fs-vf, .fs-snap-rec, .fs-snap-dev span { animation:none; } }
+.fs-snap-mid { width:min(300px, calc(100vw - 80px)); box-sizing:border-box; }
+@media (max-width:600px) { .fs-snap-mid { font-size:17px; padding:14px 18px; } .fs-snap-mid span { font-size:36px; } .fs-snapov .fs-snap-tip { font-size:15px; padding:10px 14px; } }

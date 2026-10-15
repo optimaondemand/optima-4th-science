@@ -944,18 +944,22 @@
     var ov = null;
     function startSnap() {
       if (allPhotos().length >= MAX) { toast('🖼️', 'Camera roll is full', 'Delete a photo in your camera roll to make room (' + MAX + ' max).'); return; }
-      ov = fsOnly(el('div', 'fs-snapov', '<div class="fs-snap-tip">📷 Drag a box around what you want to snap. <button type="button">Cancel</button></div><div class="fs-snap-box"></div>'));
+      /* camera mode is unmistakable: a viewfinder frame, a big banner, a centered hint, and the Snap button lit up */
+      ov = fsOnly(el('div', 'fs-snapov', '<div class="fs-vf"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>' +
+        '<div class="fs-snap-tip"><span class="fs-snap-rec">● CAMERA ON</span><b>Drag a box around what you want to snap.</b><button type="button">✕ Cancel</button></div>' +
+        '<div class="fs-snap-mid"><span>📷</span>Press, hold and drag to draw your box</div><div class="fs-snap-box"></div>'));
       document.body.appendChild(ov); SFX.blip();
+      var sb = $('.fs-fab-snap'); if (sb) sb.classList.add('on');
       var box = $('.fs-snap-box', ov), st = null;
       $('.fs-snap-tip button', ov).addEventListener('click', function (e) { e.stopPropagation(); end(); });
       document.addEventListener('keydown', esc1);
       function esc1(e) { if (e.key === 'Escape') end(); }
-      function end() { if (ov) { ov.remove(); ov = null; } document.removeEventListener('keydown', esc1); }
-      ov.addEventListener('pointerdown', function (e) { if (e.target.closest('.fs-snap-tip')) return; st = { x: e.clientX, y: e.clientY }; ov.setPointerCapture && ov.setPointerCapture(e.pointerId); box.style.display = 'block'; draw(e); });
+      function end() { if (ov) { ov.remove(); ov = null; } document.removeEventListener('keydown', esc1); var b = $('.fs-fab-snap'); if (b) b.classList.remove('on'); }
+      ov.addEventListener('pointerdown', function (e) { if (e.target.closest('.fs-snap-tip')) return; st = { x: e.clientX, y: e.clientY }; ov.classList.add('drag'); ov.setPointerCapture && ov.setPointerCapture(e.pointerId); box.style.display = 'block'; draw(e); });
       ov.addEventListener('pointermove', function (e) { if (st) draw(e); });
       ov.addEventListener('pointerup', function (e) {
         if (!st) return; var r = rect(e); st = null;
-        if (r.w < 24 || r.h < 24) { box.style.display = 'none'; return; }
+        if (r.w < 24 || r.h < 24) { box.style.display = 'none'; ov.classList.remove('drag'); return; }
         end(); snap(r);
       });
       function rect(e) { return { x: Math.min(st.x, e.clientX), y: Math.min(st.y, e.clientY), w: Math.abs(e.clientX - st.x), h: Math.abs(e.clientY - st.y) }; }
@@ -963,6 +967,8 @@
     }
     function snap(r) {
       var flash = fsOnly(el('div', 'fs-flash')); document.body.appendChild(flash);
+      var dev = fsOnly(el('div', 'fs-snap-dev', '<span>📷</span> Developing your photo…')); document.body.appendChild(dev);
+      window.__fsDev = dev;
       SFX.snap(); setTimeout(function () { flash.remove(); }, 450);
       ensureH2C(function () {
         // render the page column, then crop to the box (more reliable than x/y offsets with sticky bars and scroll)
@@ -991,7 +997,7 @@
           },
           scale: sc, useCORS: true, logging: false, imageTimeout: 3000, backgroundColor: '#FAF7F3',
           windowWidth: document.documentElement.clientWidth, windowHeight: window.innerHeight, scrollX: 0, scrollY: -window.scrollY,
-          ignoreElements: function (n) { return n.classList && (n.classList.contains('fs-fab') || n.classList.contains('fs-mock') || n.classList.contains('fs-toasts') || n.classList.contains('fs-flash') || n.classList.contains('fs-modal') || n.classList.contains('fs-snapov')); }
+          ignoreElements: function (n) { return n.classList && (n.classList.contains('fs-fab') || n.classList.contains('fs-mock') || n.classList.contains('fs-toasts') || n.classList.contains('fs-flash') || n.classList.contains('fs-snap-dev') || n.classList.contains('fs-modal') || n.classList.contains('fs-snapov')); }
         }).then(function (full) {
           window.FS_DRIFT = drift; var cx = Math.max(0, r.x - rr.left + drift.x), cy = Math.max(0, r.y - rr.top + drift.y);
           var cv = document.createElement('canvas'); cv.width = Math.round(r.w * sc); cv.height = Math.round(r.h * sc);
@@ -1002,10 +1008,11 @@
           out.width = Math.round(cv.width * s); out.height = Math.round(cv.height * s);
           out.getContext('2d').drawImage(cv, 0, 0, out.width, out.height);
           caption(out.toDataURL('image/jpeg', 0.72));
-        }).catch(function (e) { ref.removeAttribute('data-fs-ref'); root.removeAttribute('data-fs-root'); FAILED.push('camera: ' + (e && e.message)); window.FS_SNAP_ERR = String(e && (e.stack || e.message) || e); toast('📷', 'That snap didn’t work', 'Scroll a little and try again.'); });
+        }).catch(function (e) { ref.removeAttribute('data-fs-ref'); root.removeAttribute('data-fs-root'); FAILED.push('camera: ' + (e && e.message)); if (window.__fsDev) { window.__fsDev.remove(); window.__fsDev = null; } window.FS_SNAP_ERR = String(e && (e.stack || e.message) || e); toast('📷', 'That snap didn’t work', 'Scroll a little and try again.'); });
       });
     }
     function caption(src) {
+      if (window.__fsDev) { window.__fsDev.remove(); window.__fsDev = null; }
       var m = modal();
       var tabLabel = (function () { var b = $('.tab-btn.active'); return b ? b.textContent.replace('✓', '').trim() : ''; })();
       var missions = (CAM.missions || []).map(function (ms, i) { var done = allPhotos().some(function (p) { return p.mission === i; }); return '<button type="button" class="fs-opt' + (done ? ' done' : '') + '" data-m="' + i + '">' + (done ? '✓ ' : '') + esc(ms) + '</button>'; }).join('');
