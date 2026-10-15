@@ -1,0 +1,260 @@
+[
+ {
+  "kind": "fix",
+  "why": "accuracy: oaks are wind-pollinated (no nectar, no bees needed); the bee example moves to the saw palmetto",
+  "old": "But a bee visits its flowers and carries pollen — that's ",
+  "new": "In spring, the wind carries its pollen from flower to flower — that's "
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: oaks are wind-pollinated (follow-on sentence)",
+  "old": "for the soil — that's recycling. Even rain rolling off its leaves matters.</p>",
+  "new": "for the soil — that's recycling. (Oaks don't need bees. Bees pollinate other plants, like the saw palmetto that grows under the oak.)</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: the diagram hotspot said a bee pollinates the oak for nectar",
+  "old": "When a bee visits an oak flower for nectar, pollen sticks to its fuzzy body. The bee carries that pollen to the next flower it visits. Without pollination, oak trees couldn't make acorns, and most of Florida's flowering plants couldn't make seeds.",
+  "new": "Oak flowers have no nectar for bees. Instead, the wind blows their pollen from flower to flower. Without pollination, oak trees couldn't make acorns. Many other Florida plants, like the saw palmetto, need bees to carry their pollen."
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: the diagram showed a bee as the oak’s pollinator",
+  "old": "<text x=\"0\" y=\"6\" text-anchor=\"middle\" font-size=\"34\">🐝</text>",
+  "new": "<text x=\"0\" y=\"6\" text-anchor=\"middle\" font-size=\"34\">🌬️</text>"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: the diagram showed a bee as the oak’s pollinator (label)",
+  "old": "fill=\"#A07000\">BEE</text>",
+  "new": "fill=\"#A07000\">WIND</text>"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: diagram description",
+  "old": "connected to a squirrel, bee, owl, mushroom, and human",
+  "new": "connected to a squirrel, the wind, an owl, mushrooms, and a person"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: the lesson picture shows a honeybee pollinating the oak (and its prompt asks for that); removed until a correct one is made",
+  "old": "<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"lesson-figure-caption\">.*?</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: Q1 (oak flowers are wind-pollinated); same answer (Pollination)",
+  "old": "A bee visiting an oak flower is an example of which kind of connection?",
+  "new": "A bee visiting a saw palmetto flower is an example of which kind of connection?"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: most Florida oranges set fruit without bees, and “millions of hives” is wrong; Florida blueberries do need bees. Same answer.",
+  "old": "If every bee in a Florida orange grove disappeared, the trees would still get plenty of sunlight, water, and soil. So why would the orange harvest drop?",
+  "new": "If every bee on a Florida blueberry farm disappeared, the plants would still get plenty of sunlight, water, and soil. So why would the blueberry harvest drop?"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: Q3 oranges → blueberries (same answer, C)",
+  "old": "All the bees in a Florida orange grove disappear. Why is the harvest smaller that year?",
+  "new": "All the bees on a Florida blueberry farm disappear. Why is the harvest smaller that year?"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: Q3 option A",
+  "old": "<span class=\"quiz-text\">The trees stopped getting sunlight</span>",
+  "new": "<span class=\"quiz-text\">The plants stopped getting sunlight</span>"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: Q3 option C",
+  "old": "<span class=\"quiz-text\">Without pollinators, the trees can't make as many oranges</span>",
+  "new": "<span class=\"quiz-text\">Without pollinators, the plants can't make as many blueberries</span>"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: Q3 feedback",
+  "old": "🍊 Right! No pollinators means most flowers never turn into fruit.",
+  "new": "🫐 Right! No pollinators means most flowers never turn into berries."
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: Q3 feedback",
+  "old": "The trees still have sun, water, and soil.",
+  "new": "The plants still have sun, water, and soil."
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for an ecosystem web",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Build Your Own Ecosystem Web"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick a Florida place: a beach, a backyard, a pond, or a pine forest. Name at least <strong>five</strong> living things that live there. Then show at least <strong>three different kinds</strong> of connections between them (food, pollination, shelter, nutrients, or human care), and name the kind for each one.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: supply list (every lesson lists a sunny window)",
+  "old": "<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": ""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to name several kinds of connections in a Florida ecosystem — and explain why removing one thing changes many other things.",
+  "new": "Keep this question in mind as you work. By the end, you’ll be able to name several kinds of connections in a Florida ecosystem and explain why removing one thing changes many other things."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "You’ll use these six words all lesson. <strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “hollow”",
+  "old": "A barred owl nests in a hollow in its trunk — that's shelter.",
+  "new": "A barred owl nests in a hollow (a hole) in its trunk — that's shelter."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “fungi” and “bacteria” the first time they appear",
+  "old": "<strong>Nutrient cycling</strong> — fungi and bacteria breaking down dead leaves and putting nutrients back into the soil.",
+  "new": "<strong>Nutrient cycling</strong> — fungi (like mushrooms) and bacteria (living things too small to see) breaking down dead leaves and putting nutrients back into the soil."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with at least <strong>two pieces of evidence</strong> from today’s lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your written answers in one place, so you can copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; plain words",
+  "old": "Next lesson, you'll use real Florida data to decide whether an ecosystem is healthy or out of balance — and figure out what we can do about it.",
+  "new": "Next lesson, you’ll use real Florida numbers to decide whether an ecosystem is healthy or out of balance, and what people can do about it."
+ },
+ {
+  "kind": "plain",
+  "why": "defines “model”",
+  "old": "Build a model of an ecosystem web with at least three kinds of connections",
+  "new": "Build a model (a drawing that shows how something works) of an ecosystem web"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (the saw palmetto moves to the Lesson as Part 4)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the old diagram heading becomes Part 3 (the Pull a Thread game replaces the tap diagram)",
+  "old": "margin-top:22px;\">Explore the Oak Web</h3>",
+  "new": "margin-top:22px;\">Part 3 · Pull a Thread</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the caterpillar fact, the orange-grove callout and Go Deeper at the end of the Lesson (they repeat or overstate; the shaky facts go with them); Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · One Plant, Five Connections</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Right next to Dr. Reyes’s oak grows a <strong>saw palmetto</strong>, a short palm with big fan-shaped leaves called fronds. It’s one of the most common plants in Florida, and it is tied to its neighbors in five different ways.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 is now number 6",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the sketch is optional, so “every arrow labeled” → each connection named",
+  "old": "An ecosystem web with at least five living things, at least three different kinds of connections, and every arrow labeled.",
+  "new": "An ecosystem web with at least five living things and three different kinds of connections, each one named."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer (CER is the last writing)",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether ecosystems need small living things, and supported it with two pieces of evidence.",
+  "new": "<strong>CER:</strong> My claim, two pieces of evidence, and my reasoning."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

@@ -1,0 +1,114 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A giant live oak at dusk, tied by thin glowing threads to a barred owl in its hollow, a squirrel holding an acorn, mushrooms at its base, and a bee on a saw palmetto.">
+  <defs>
+    <linearGradient id="fbSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2B2350"/><stop offset=".45" stop-color="#6E4A72"/><stop offset=".8" stop-color="#D9845A"/><stop offset="1" stop-color="#F2B35E"/>
+    </linearGradient>
+    <linearGradient id="fbGround" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E3A22"/><stop offset="1" stop-color="#18200F"/>
+    </linearGradient>
+    <radialGradient id="fbSun"><stop offset="0" stop-color="#FFE2A0" stop-opacity=".9"/><stop offset="1" stop-color="#FFE2A0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="fbGlow"><stop offset="0" stop-color="#FFE9A6" stop-opacity=".9"/><stop offset="1" stop-color="#FFE9A6" stop-opacity="0"/></radialGradient>
+    <filter id="fbSoft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter>
+  </defs>
+  <rect width="920" height="200" fill="url(#fbSky)"/>
+  <!-- low sun behind the hammock -->
+  <circle cx="740" cy="150" r="90" fill="url(#fbSun)"/>
+  <circle cx="740" cy="150" r="22" fill="#FFE7AE" opacity=".95"/>
+  <!-- far hammock treeline -->
+  <path d="M0,150 Q20,128 48,140 Q70,118 100,136 Q130,122 160,140 L160,160 L0,160Z" fill="#3D3550" opacity=".85"/>
+  <path d="M560,150 Q590,124 620,140 Q650,118 690,138 Q730,120 770,140 Q810,126 850,140 Q885,124 920,136 L920,160 L560,160Z" fill="#3D3550" opacity=".85"/>
+  <!-- ground -->
+  <path d="M0,158 Q200,146 420,154 T920,152 L920,200 L0,200Z" fill="url(#fbGround)"/>
+  <g fill="#3A2A18" opacity=".55"><ellipse cx="300" cy="172" rx="80" ry="5"/><ellipse cx="470" cy="178" rx="90" ry="5"/></g>
+
+  <!-- THE LIVE OAK: short thick trunk, long low twisting limbs, broad canopy wider than tall -->
+  <g fill="#3B2A1C">
+    <path d="M378,160 C384,128 382,104 372,86 L398,82 C404,104 410,124 416,160 Z"/>
+    <path d="M376,96 C340,84 300,82 250,96 C236,100 220,110 206,122 L212,128 C230,114 252,104 280,100 C318,94 346,98 372,106 Z"/>
+    <path d="M400,92 C440,80 490,80 540,90 C560,94 580,104 598,118 L592,124 C574,112 556,104 532,100 C490,94 450,96 404,104 Z"/>
+    <path d="M388,86 C384,64 392,48 404,36 L410,40 C400,54 396,68 398,84 Z"/>
+    <path d="M374,92 C356,70 334,58 312,52 L314,46 C340,52 362,66 380,86 Z"/>
+    <path d="M410,160 Q426,162 438,168 L410,166 Z"/><path d="M380,160 Q362,162 350,168 L380,166 Z"/>
+  </g>
+  <g fill="#2F4A26">
+    <ellipse cx="300" cy="62" rx="92" ry="34"/><ellipse cx="400" cy="44" rx="86" ry="36"/><ellipse cx="500" cy="60" rx="96" ry="34"/>
+    <ellipse cx="226" cy="96" rx="44" ry="20"/><ellipse cx="578" cy="96" rx="44" ry="20"/>
+  </g>
+  <g fill="#3E5E30" opacity=".9">
+    <ellipse cx="282" cy="54" rx="56" ry="18"/><ellipse cx="410" cy="34" rx="58" ry="20"/><ellipse cx="520" cy="50" rx="60" ry="18"/>
+  </g>
+  <g><ellipse cx="302" cy="71" rx="13" ry="5" fill="#355A2A" opacity=".85"/><ellipse cx="310" cy="64" rx="6" ry="5" fill="#557A40" opacity=".85"/><ellipse cx="250" cy="60" rx="7" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="318" cy="89" rx="10" ry="5" fill="#557A40" opacity=".85"/><ellipse cx="323" cy="75" rx="7" ry="8" fill="#557A40" opacity=".85"/><ellipse cx="272" cy="77" rx="8" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="275" cy="63" rx="6" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="229" cy="50" rx="12" ry="7" fill="#27401F" opacity=".85"/><ellipse cx="255" cy="51" rx="9" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="295" cy="88" rx="6" ry="7" fill="#4B6E3A" opacity=".85"/><ellipse cx="269" cy="51" rx="11" ry="5" fill="#355A2A" opacity=".85"/><ellipse cx="337" cy="62" rx="9" ry="7" fill="#355A2A" opacity=".85"/><ellipse cx="292" cy="79" rx="9" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="317" cy="66" rx="10" ry="8" fill="#27401F" opacity=".85"/><ellipse cx="269" cy="53" rx="8" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="283" cy="64" rx="10" ry="6" fill="#4B6E3A" opacity=".85"/><ellipse cx="345" cy="64" rx="12" ry="8" fill="#27401F" opacity=".85"/><ellipse cx="290" cy="55" rx="13" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="334" cy="75" rx="11" ry="8" fill="#27401F" opacity=".85"/><ellipse cx="318" cy="62" rx="11" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="364" cy="62" rx="9" ry="7" fill="#355A2A" opacity=".85"/><ellipse cx="325" cy="57" rx="6" ry="5" fill="#4B6E3A" opacity=".85"/><ellipse cx="231" cy="46" rx="13" ry="8" fill="#4B6E3A" opacity=".85"/><ellipse cx="301" cy="91" rx="10" ry="7" fill="#4B6E3A" opacity=".85"/><ellipse cx="278" cy="51" rx="9" ry="7" fill="#27401F" opacity=".85"/><ellipse cx="286" cy="65" rx="13" ry="5" fill="#355A2A" opacity=".85"/><ellipse cx="369" cy="28" rx="13" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="439" cy="47" rx="9" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="365" cy="52" rx="6" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="328" cy="32" rx="6" ry="7" fill="#355A2A" opacity=".85"/><ellipse cx="361" cy="57" rx="11" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="361" cy="21" rx="12" ry="8" fill="#557A40" opacity=".85"/><ellipse cx="415" cy="71" rx="11" ry="7" fill="#557A40" opacity=".85"/><ellipse cx="421" cy="42" rx="9" ry="4" fill="#557A40" opacity=".85"/><ellipse cx="351" cy="59" rx="6" ry="5" fill="#557A40" opacity=".85"/><ellipse cx="379" cy="25" rx="12" ry="7" fill="#355A2A" opacity=".85"/><ellipse cx="401" cy="46" rx="6" ry="8" fill="#27401F" opacity=".85"/><ellipse cx="419" cy="37" rx="9" ry="8" fill="#355A2A" opacity=".85"/><ellipse cx="473" cy="54" rx="11" ry="8" fill="#27401F" opacity=".85"/><ellipse cx="408" cy="23" rx="6" ry="4" fill="#355A2A" opacity=".85"/><ellipse cx="460" cy="49" rx="10" ry="8" fill="#355A2A" opacity=".85"/><ellipse cx="402" cy="38" rx="6" ry="6" fill="#4B6E3A" opacity=".85"/><ellipse cx="438" cy="20" rx="13" ry="7" fill="#4B6E3A" opacity=".85"/><ellipse cx="422" cy="73" rx="9" ry="7" fill="#355A2A" opacity=".85"/><ellipse cx="431" cy="29" rx="7" ry="8" fill="#4B6E3A" opacity=".85"/><ellipse cx="414" cy="26" rx="12" ry="7" fill="#355A2A" opacity=".85"/><ellipse cx="468" cy="56" rx="10" ry="7" fill="#27401F" opacity=".85"/><ellipse cx="338" cy="57" rx="11" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="414" cy="55" rx="11" ry="6" fill="#355A2A" opacity=".85"/><ellipse cx="327" cy="36" rx="6" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="419" cy="51" rx="7" ry="8" fill="#355A2A" opacity=".85"/><ellipse cx="402" cy="72" rx="9" ry="5" fill="#557A40" opacity=".85"/><ellipse cx="570" cy="58" rx="11" ry="8" fill="#4B6E3A" opacity=".85"/><ellipse cx="552" cy="50" rx="13" ry="8" fill="#557A40" opacity=".85"/><ellipse cx="459" cy="48" rx="11" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="517" cy="66" rx="8" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="544" cy="50" rx="7" ry="4" fill="#557A40" opacity=".85"/><ellipse cx="430" cy="76" rx="11" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="478" cy="74" rx="6" ry="8" fill="#4B6E3A" opacity=".85"/><ellipse cx="576" cy="52" rx="7" ry="5" fill="#557A40" opacity=".85"/><ellipse cx="536" cy="86" rx="7" ry="5" fill="#4B6E3A" opacity=".85"/><ellipse cx="458" cy="41" rx="10" ry="7" fill="#27401F" opacity=".85"/><ellipse cx="532" cy="50" rx="9" ry="6" fill="#355A2A" opacity=".85"/><ellipse cx="449" cy="78" rx="12" ry="8" fill="#355A2A" opacity=".85"/><ellipse cx="435" cy="75" rx="13" ry="7" fill="#557A40" opacity=".85"/><ellipse cx="462" cy="52" rx="11" ry="7" fill="#355A2A" opacity=".85"/><ellipse cx="566" cy="53" rx="7" ry="7" fill="#27401F" opacity=".85"/><ellipse cx="587" cy="55" rx="10" ry="4" fill="#557A40" opacity=".85"/><ellipse cx="502" cy="40" rx="7" ry="5" fill="#355A2A" opacity=".85"/><ellipse cx="521" cy="57" rx="6" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="446" cy="73" rx="6" ry="8" fill="#557A40" opacity=".85"/><ellipse cx="502" cy="85" rx="6" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="540" cy="67" rx="8" ry="5" fill="#557A40" opacity=".85"/><ellipse cx="452" cy="37" rx="11" ry="4" fill="#4B6E3A" opacity=".85"/><ellipse cx="489" cy="39" rx="8" ry="5" fill="#355A2A" opacity=".85"/><ellipse cx="534" cy="43" rx="12" ry="5" fill="#4B6E3A" opacity=".85"/><ellipse cx="543" cy="83" rx="10" ry="7" fill="#355A2A" opacity=".85"/><ellipse cx="474" cy="76" rx="6" ry="6" fill="#355A2A" opacity=".85"/><ellipse cx="230" cy="94" rx="7" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="250" cy="105" rx="9" ry="5" fill="#4B6E3A" opacity=".85"/><ellipse cx="200" cy="92" rx="13" ry="7" fill="#27401F" opacity=".85"/><ellipse cx="217" cy="102" rx="7" ry="7" fill="#27401F" opacity=".85"/><ellipse cx="198" cy="85" rx="12" ry="8" fill="#557A40" opacity=".85"/><ellipse cx="223" cy="81" rx="10" ry="8" fill="#27401F" opacity=".85"/><ellipse cx="247" cy="85" rx="13" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="230" cy="91" rx="11" ry="4" fill="#27401F" opacity=".85"/><ellipse cx="208" cy="84" rx="13" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="241" cy="93" rx="13" ry="8" fill="#4B6E3A" opacity=".85"/><ellipse cx="196" cy="92" rx="6" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="215" cy="87" rx="10" ry="4" fill="#27401F" opacity=".85"/><ellipse cx="188" cy="95" rx="7" ry="5" fill="#4B6E3A" opacity=".85"/><ellipse cx="203" cy="87" rx="6" ry="4" fill="#4B6E3A" opacity=".85"/><ellipse cx="211" cy="97" rx="9" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="235" cy="88" rx="12" ry="4" fill="#355A2A" opacity=".85"/><ellipse cx="239" cy="107" rx="10" ry="8" fill="#4B6E3A" opacity=".85"/><ellipse cx="213" cy="82" rx="11" ry="5" fill="#355A2A" opacity=".85"/><ellipse cx="232" cy="107" rx="10" ry="6" fill="#355A2A" opacity=".85"/><ellipse cx="227" cy="85" rx="11" ry="8" fill="#355A2A" opacity=".85"/><ellipse cx="231" cy="105" rx="6" ry="7" fill="#4B6E3A" opacity=".85"/><ellipse cx="224" cy="105" rx="11" ry="4" fill="#27401F" opacity=".85"/><ellipse cx="259" cy="90" rx="9" ry="6" fill="#4B6E3A" opacity=".85"/><ellipse cx="207" cy="82" rx="7" ry="6" fill="#355A2A" opacity=".85"/><ellipse cx="257" cy="97" rx="8" ry="4" fill="#27401F" opacity=".85"/><ellipse cx="227" cy="112" rx="11" ry="6" fill="#4B6E3A" opacity=".85"/><ellipse cx="599" cy="87" rx="7" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="606" cy="87" rx="9" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="601" cy="98" rx="11" ry="5" fill="#557A40" opacity=".85"/><ellipse cx="587" cy="103" rx="8" ry="4" fill="#4B6E3A" opacity=".85"/><ellipse cx="568" cy="88" rx="7" ry="5" fill="#355A2A" opacity=".85"/><ellipse cx="585" cy="86" rx="11" ry="6" fill="#355A2A" opacity=".85"/><ellipse cx="555" cy="101" rx="6" ry="5" fill="#4B6E3A" opacity=".85"/><ellipse cx="589" cy="103" rx="11" ry="8" fill="#27401F" opacity=".85"/><ellipse cx="604" cy="84" rx="12" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="565" cy="95" rx="9" ry="6" fill="#27401F" opacity=".85"/><ellipse cx="590" cy="107" rx="6" ry="4" fill="#4B6E3A" opacity=".85"/><ellipse cx="591" cy="110" rx="13" ry="4" fill="#557A40" opacity=".85"/><ellipse cx="612" cy="91" rx="8" ry="5" fill="#355A2A" opacity=".85"/><ellipse cx="610" cy="96" rx="11" ry="4" fill="#557A40" opacity=".85"/><ellipse cx="564" cy="98" rx="12" ry="5" fill="#4B6E3A" opacity=".85"/><ellipse cx="595" cy="102" rx="7" ry="7" fill="#4B6E3A" opacity=".85"/><ellipse cx="596" cy="108" rx="8" ry="8" fill="#4B6E3A" opacity=".85"/><ellipse cx="579" cy="106" rx="6" ry="7" fill="#4B6E3A" opacity=".85"/><ellipse cx="545" cy="102" rx="6" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="587" cy="104" rx="11" ry="8" fill="#355A2A" opacity=".85"/><ellipse cx="567" cy="91" rx="11" ry="6" fill="#557A40" opacity=".85"/><ellipse cx="545" cy="86" rx="8" ry="6" fill="#4B6E3A" opacity=".85"/><ellipse cx="544" cy="89" rx="13" ry="4" fill="#355A2A" opacity=".85"/><ellipse cx="607" cy="102" rx="8" ry="5" fill="#27401F" opacity=".85"/><ellipse cx="564" cy="94" rx="11" ry="4" fill="#4B6E3A" opacity=".85"/><ellipse cx="576" cy="92" rx="8" ry="6" fill="#27401F" opacity=".85"/></g>
+  <!-- Spanish moss hanging from the limbs -->
+  <g stroke="#9DA88C" stroke-width="1.3" fill="none" opacity=".75">
+    <path d="M232,112 q-2,12 2,22 q-3,6 0,12"/><path d="M262,102 q2,10 -2,18 q2,6 0,10"/><path d="M300,98 q-2,12 1,20"/>
+    <path d="M520,98 q2,12 -2,20 q2,6 0,12"/><path d="M556,104 q-2,10 2,18"/><path d="M586,116 q2,10 -1,18 q2,5 0,9"/>
+  </g>
+
+  <!-- glowing threads from the oak to its neighbors (they shimmer in turn) -->
+  <g fill="none" stroke-linecap="round" filter="url(#fbSoft)" opacity=".95">
+    <path d="M410,100 Q500,104 570,120" stroke="#FFB067" stroke-width="2.4" stroke-dasharray="4 5"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;1;.35" dur="4.8s" begin="1.2s" repeatCount="indefinite"/></path>
+    <path d="M384,150 Q330,160 282,164" stroke="#E0B07A" stroke-width="2.4" stroke-dasharray="4 5"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;1;.35" dur="4.8s" begin="2.4s" repeatCount="indefinite"/></path>
+    <path d="M416,140 Q560,120 686,136" stroke="#FFE07A" stroke-width="2.4" stroke-dasharray="4 5"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;1;.35" dur="4.8s" begin="3.6s" repeatCount="indefinite"/></path>
+  </g>
+
+  <!-- BARRED OWL peeking out of a hollow in the trunk -->
+  <g transform="translate(396,120)">
+    <ellipse cx="0" cy="0" rx="15" ry="19" fill="#1A120B"/>
+    <circle cx="0" cy="0" r="22" fill="url(#fbGlow)" opacity=".35"><animate attributeName="opacity" values=".1;.5;.1" dur="4.8s" repeatCount="indefinite"/></circle>
+    <ellipse cx="0" cy="4" rx="11" ry="13" fill="#9C8466"/>
+    <circle cx="0" cy="-4" r="10.5" fill="#B49A78"/>
+    <circle cx="-4.6" cy="-5" r="4.4" fill="#E9DCC4"/><circle cx="4.6" cy="-5" r="4.4" fill="#E9DCC4"/>
+    <circle cx="-4.6" cy="-5" r="2.6" fill="#1A120B"/><circle cx="4.6" cy="-5" r="2.6" fill="#1A120B"/>
+    <circle cx="-4" cy="-5.8" r=".8" fill="#fff"/><circle cx="5.2" cy="-5.8" r=".8" fill="#fff"/>
+    <path d="M0,-2 l-1.6,2.6 h3.2z" fill="#E8C24A"/>
+    <path d="M-6,6 h12 M-6,9.5 h12 M-5,13 h10" stroke="#6E5A42" stroke-width="1.2"/>
+  </g>
+
+  <!-- GRAY SQUIRREL on the right limb, holding an acorn -->
+  <g transform="translate(578,110)">
+    <path d="M-16,4 C-34,0 -36,-22 -22,-28 C-12,-32 -6,-24 -12,-18 C-18,-12 -24,-12 -18,-2 Z" fill="#8E8A86"/>
+    <path d="M-22,-24 C-30,-18 -28,-6 -18,-2" fill="none" stroke="#B9B4AE" stroke-width="2"/>
+    <ellipse cx="-2" cy="-2" rx="12" ry="9" fill="#9E9994"/>
+    <ellipse cx="2" cy="1" rx="6" ry="5" fill="#D9D3CB"/>
+    <circle cx="9" cy="-11" r="7" fill="#9E9994"/>
+    <path d="M6,-17 l1,-6 l3,5z" fill="#9E9994"/>
+    <circle cx="11.5" cy="-12" r="1.5" fill="#111"/><circle cx="15.8" cy="-10" r="1.1" fill="#5A4A44"/>
+    <g transform="translate(12,-3)"><ellipse cx="0" cy="2" rx="3" ry="3.8" fill="#9A6230"/><path d="M-3.4,0 q3.4,-3.4 6.8,0z" fill="#5E3B1C"/></g>
+    <path d="M6,-2 q4,1 5,4" stroke="#9E9994" stroke-width="2.4" fill="none"/>
+  </g>
+
+  <!-- MUSHROOMS on a fallen branch at the oak's base -->
+  <g transform="translate(270,164)">
+    <path d="M-60,6 Q-10,0 30,6 L30,12 Q-10,8 -60,12Z" fill="#4A3622"/>
+    <g fill="#EADBC3"><rect x="-26" y="-6" width="4" height="10" rx="2"/><rect x="-12" y="-10" width="4.6" height="14" rx="2"/><rect x="2" y="-5" width="3.6" height="9" rx="1.8"/></g>
+    <path d="M-33,-6 Q-24,-16 -15,-6Z" fill="#B5622E"/><path d="M-21,-10 Q-9.7,-23 1.6,-10Z" fill="#C8763A"/><path d="M-5,-5 Q3.8,-14 12.6,-5Z" fill="#A9582A"/>
+    <g fill="#F2E3C6" opacity=".8"><circle cx="-12" cy="-15" r="1.4"/><circle cx="-6" cy="-14" r="1"/><circle cx="-26" cy="-10" r="1"/></g>
+  </g>
+
+  <!-- SAW PALMETTO fan with a honeybee on its flowers -->
+  <g transform="translate(700,168)">
+    <g fill="#4E7A3A" stroke="#3C6230" stroke-width="1">
+      <path d="M0,0 L-52,-26 L-48,-20Z"/><path d="M0,0 L-46,-40 L-40,-34Z"/><path d="M0,0 L-32,-52 L-27,-46Z"/><path d="M0,0 L-14,-60 L-9,-54Z"/>
+      <path d="M0,0 L4,-62 L8,-55Z"/><path d="M0,0 L22,-56 L25,-49Z"/><path d="M0,0 L38,-46 L39,-39Z"/><path d="M0,0 L50,-30 L49,-24Z"/>
+    </g>
+    <path d="M0,0 L-4,12" stroke="#3C6230" stroke-width="3"/>
+    <g fill="#F4EBC8"><circle cx="-26" cy="-24" r="2.4"/><circle cx="-22" cy="-28" r="2"/><circle cx="-30" cy="-28" r="2"/><circle cx="-25" cy="-32" r="1.8"/></g>
+    <!-- the bee hovers above the flowers -->
+    <g transform="translate(-14,-42)">
+      <animateTransform attributeName="transform" type="translate" values="-14,-42; -10,-46; -14,-42" dur="1.8s" repeatCount="indefinite"/>
+      <ellipse cx="-3" cy="-7" rx="5" ry="3.4" fill="#E9F3FF" opacity=".8"><animate attributeName="ry" values="3.4;1.6;3.4" dur=".12s" repeatCount="indefinite"/></ellipse>
+      <ellipse cx="3" cy="-7" rx="5" ry="3.4" fill="#E9F3FF" opacity=".8"><animate attributeName="ry" values="3.4;1.6;3.4" dur=".12s" repeatCount="indefinite"/></ellipse>
+      <ellipse cx="0" cy="0" rx="9" ry="6" fill="#F2B632"/>
+      <path d="M-3,-5.6 v11.2 M2,-5.8 v11.6 M6.4,-4 v8" stroke="#2A1D0E" stroke-width="2.2"/>
+      <circle cx="-9" cy="-1" r="3.6" fill="#2A1D0E"/>
+      <path d="M9,0 l3,0" stroke="#2A1D0E" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <!-- fireflies of dusk -->
+  <g fill="#FFF0A0">
+    <circle cx="150" cy="120" r="1.6"><animate attributeName="opacity" values="0;1;0" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="640" cy="112" r="1.4"><animate attributeName="opacity" values="0;1;0" dur="3.1s" begin="1s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="128" r="1.5"><animate attributeName="opacity" values="0;1;0" dur="2.9s" begin=".5s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>

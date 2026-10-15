@@ -448,9 +448,10 @@
     drawBoard();
     // the case file that opens the lesson (tab 1)
     var vocab = $('#tab-vocab'); if (!vocab) return;
-    var card = fsOnly(el('div', 'fs-casecard'));
+    var card = fsOnly(el('div', 'fs-casecard' + (C.style ? ' fs-case-' + C.style : '')));
+    function tagOf(s) { return s.tag != null ? s.tag : '● REC'; }
     var stills = (C.stills || []).map(function (s) {
-      return '<div class="fs-still"><div class="fs-still-img' + (s.img ? ' photo' : '') + '">' + (s.img ? '<img alt="' + esc(s.alt || s.cam) + '" src="' + esc(s.img) + '"><span class="fs-still-rec">● REC</span>' : s.svg) + '<span class="fs-still-q">?</span></div><div class="fs-still-cap"><b>' + esc(s.cam) + '</b> ' + esc(s.time) + '</div></div>';
+      return '<div class="fs-still"><div class="fs-still-img' + (s.img ? ' photo' : '') + '">' + (s.img ? '<img alt="' + esc(s.alt || s.cam) + '" src="' + esc(s.img) + '"><span class="fs-still-rec">' + esc(tagOf(s)) + '</span>' : s.svg) + '<span class="fs-still-q">?</span></div><div class="fs-still-cap"><b>' + esc(s.cam) + '</b> ' + esc(s.time) + '</div></div>';
     }).join('');
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
@@ -462,11 +463,11 @@
     // tap a camera still to see it big
     $$('.fs-still', card).forEach(function (st, i) {
       var s = (C.stills || [])[i]; if (!s || !s.img) { st.style.cursor = 'default'; return; }
-      st.setAttribute('role', 'button'); st.tabIndex = 0; st.title = 'Tap to see this camera bigger';
+      st.setAttribute('role', 'button'); st.tabIndex = 0; st.title = C.style ? 'Tap to see this photo bigger' : 'Tap to see this camera bigger';
       function open() {
         var m = modal(); SFX.blip();
-        m.innerHTML = '<div class="fs-nb fs-kraft fs-still-big"><button class="fs-x" type="button" aria-label="Close">✕</button>' +
-          '<div class="fs-still-img photo"><img alt="' + esc(s.alt || s.cam) + '" src="' + esc(s.img) + '"><span class="fs-still-rec">● REC</span></div>' +
+        m.innerHTML = '<div class="fs-nb fs-kraft fs-still-big' + (C.style ? ' fs-case-' + C.style : '') + '"><button class="fs-x" type="button" aria-label="Close">✕</button>' +
+          '<div class="fs-still-img photo"><img alt="' + esc(s.alt || s.cam) + '" src="' + esc(s.img) + '"><span class="fs-still-rec">' + esc(tagOf(s)) + '</span></div>' +
           '<div class="fs-still-cap"><b>' + esc(s.cam || '') + '</b> ' + esc(s.time || '') + '</div>' + (s.alt ? '<p class="fs-still-alt">' + esc(s.alt) + '</p>' : '') + '</div>';
         $('.fs-x', m).addEventListener('click', function () { m.classList.remove('open'); });
       }
@@ -669,7 +670,7 @@
       if (!firstP) { FAILED.push('sort anchor text not found'); return; } body = firstP.parentNode; }
     if (!body) return;
     var g = gameShell(S.kicker || ('Field cam: ' + (S.subject || '')), S.title, S.todo, S.why); g.dataset.mod = 'sort';
-    var bins = el('div', 'fs-sort');
+    var bins = el('div', 'fs-sort n' + S.bins.length);
     S.bins.forEach(function (b, i) {
       var bin = el('div', 'fs-bin' + (b.write ? ' brain' : ''), '<div class="fs-bin-h"><span>' + b.icon + '</span>' + esc(b.t) + '</div>' + (b.write ? '<p>' + esc(b.write) + '</p>' : ''));
       bin.dataset.i = i; if (!b.write) bin.dataset.drop = '1'; bins.appendChild(bin);
@@ -687,6 +688,136 @@
     $$('.fs-card', deck).forEach(function (c) { dragDrop(c, function () { return targets; }, drop); });
     tapTargets(g, targets, drop);
     body.insertBefore(g, firstP ? firstP.nextSibling : body.firstChild);
+  }
+
+  /* ---------- Warm-Up: tie each visitor to the center with the right kind of thread (10.01) ----------
+     D.thread = {afterText, kicker, title, todo[], why, center:{name, img, alt}, kinds:{key:{t, icon, c}},
+                 visitors:[{id, icon, name, does, kind, x, y, miss:{kind:hint}, hint, ok}], win, clue} */
+  function buildThread() {
+    var T = D.thread; if (!T) return;
+    var at = null;
+    $$('.tab-panel p').some(function (p) { if (T.afterText && p.textContent.indexOf(T.afterText) > -1) { at = p; return true; } });
+    if (!at) at = $('.act-warmup .act-body p');
+    if (!at) { FAILED.push('thread anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Try it', T.title, T.todo, T.why); g.dataset.mod = 'thread';
+    var web = el('div', 'fs-web');
+    var svg = '<svg class="fs-web-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">' +
+      T.visitors.map(function (v) { return '<line data-v="' + esc(v.id) + '" x1="' + T.center.x + '" y1="' + T.center.y + '" x2="' + v.x + '" y2="' + v.y + '" vector-effect="non-scaling-stroke"/>'; }).join('') + '</svg>';
+    web.innerHTML = svg + '<div class="fs-web-center" style="left:' + T.center.x + '%;top:' + T.center.y + '%">' +
+      (T.center.img ? '<img alt="' + esc(T.center.alt || T.center.name) + '" src="' + esc(T.center.img) + '">' : '') + '<b>' + esc(T.center.name) + '</b></div>';
+    T.visitors.forEach(function (v) {
+      var n = el('button', 'fs-web-node', '<span class="fs-web-ic">' + v.icon + '</span><span class="fs-web-nm">' + esc(v.name) + '</span><span class="fs-web-kd"></span>');
+      n.type = 'button'; n.dataset.v = v.id; n.style.left = v.x + '%'; n.style.top = v.y + '%';
+      n.title = v.does; web.appendChild(n);
+    });
+    var spools = el('div', 'fs-spools');
+    Object.keys(T.kinds).forEach(function (k) {
+      var K = T.kinds[k], s = el('div', 'fs-spool', '<i style="background:' + K.c + '"></i><span>' + K.icon + '</span>' + esc(K.t));
+      s.dataset.k = k; spools.appendChild(s);
+    });
+    var info = el('div', 'fs-hs-card fs-web-info', '<em>' + esc(T.tapHint || 'Tap a visitor to see what it does with the oak.') + '</em>');
+    var miss = el('div', 'fs-miss'), win = el('div', 'fs-win'), count = el('div', 'fs-count');
+    g.appendChild(web); g.appendChild(info); g.appendChild(spools); g.appendChild(miss); g.appendChild(count); g.appendChild(win);
+    var tied = {}; try { tied = JSON.parse(store('thread') || '{}'); } catch (e) {}
+    function vOf(id) { return T.visitors.filter(function (v) { return v.id === id; })[0]; }
+    function tie(v, animate) {
+      var K = T.kinds[v.kind], n = $('.fs-web-node[data-v="' + v.id + '"]', web), ln = $('line[data-v="' + v.id + '"]', web);
+      tied[v.id] = 1; n.classList.add('tied'); n.style.borderColor = K.c; $('.fs-web-kd', n).innerHTML = K.icon + ' ' + esc(K.t); $('.fs-web-kd', n).style.background = K.c;
+      ln.style.stroke = K.c; ln.classList.add('on'); if (animate && !reduceMotion) { ln.classList.remove('draw'); void ln.getBoundingClientRect(); ln.classList.add('draw'); }
+    }
+    function upd() {
+      var n = Object.keys(tied).length; count.textContent = '🧵 ' + n + ' of ' + T.visitors.length + ' threads tied'; count.classList.toggle('ok', n === T.visitors.length);
+      if (n === T.visitors.length && !win.classList.contains('show')) { win.innerHTML = esc(T.win); win.classList.add('show'); earnClue(T.clue || 'thread'); }
+    }
+    Object.keys(tied).forEach(function (id) { var v = vOf(id); if (v) tie(v, false); });
+    function show(v) { info.innerHTML = '<span class="fs-hs-n">' + v.icon + '</span><div><b>' + esc(v.name) + '</b>' + esc(v.does) + '</div>'; info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash'); }
+    var targets = $$('.fs-web-node', web);
+    targets.forEach(function (n) { n.addEventListener('click', function () { if (!$('.fs-spool.sel', g)) { show(vOf(n.dataset.v)); SFX.blip(); } }); });
+    function drop(sp, node) {
+      var v = vOf(node.dataset.v); if (tied[v.id]) { show(v); return; }
+      show(v);
+      if (sp.dataset.k !== v.kind) { bounce(sp, miss, (v.miss && v.miss[sp.dataset.k]) || v.hint || 'Read what this visitor does with the oak. Which kind of thread fits?'); return; }
+      sp.classList.remove('sel'); miss.classList.remove('show'); tie(v, true); SFX.chime();
+      if (v.ok) { $('div', info).insertAdjacentHTML('beforeend', '<div class="fs-web-ok">✅ ' + esc(v.ok) + '</div>'); }
+      store('thread', JSON.stringify(tied)); upd(); if (Object.keys(tied).length === T.visitors.length) SFX.win();
+    }
+    $$('.fs-spool', spools).forEach(function (s) { dragDrop(s, function () { return targets; }, drop); });
+    tapTargets(g, targets, drop);
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson: pull one thread of the web, predict, then watch what changes (10.01) ----------
+     D.ripple = {kicker, title, todo[], why, nodes:[{id, icon, name, x, y}], links:[{a, b, kind}], kinds:{key:{t, c}},
+                 pulls:[{id, btn, why, fx:{nodeId:{s:'hurt'|'grow'|'same', t}}}], win, clue} — replaces #tab-lesson .diagram-wrap */
+  function buildRipple() {
+    var R = D.ripple; if (!R) return;
+    var wrap = $(R.replace || '#tab-lesson .diagram-wrap'); if (!wrap) { FAILED.push('ripple: no diagram to replace'); return; }
+    var g = gameShell(R.kicker || 'Pull a thread', R.title, R.todo, R.why); g.dataset.mod = 'ripple';
+    var pv = wrap.previousElementSibling; if (pv && pv.tagName === 'P' && pv.textContent.length < 160) pv.classList.add('fs-hide-on');
+    function node(id) { return R.nodes.filter(function (n) { return n.id === id; })[0]; }
+    var web = el('div', 'fs-web fs-ripple');
+    web.innerHTML = '<svg class="fs-web-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">' + R.links.map(function (l, i) {
+      var a = node(l.a), b = node(l.b); return '<line class="on" data-i="' + i + '" data-a="' + l.a + '" data-b="' + l.b + '" style="stroke:' + R.kinds[l.kind].c + '" x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" vector-effect="non-scaling-stroke"/>';
+    }).join('') + '</svg>';
+    R.nodes.forEach(function (n) {
+      var b = el('button', 'fs-web-node fs-rp-node', '<span class="fs-web-ic">' + n.icon + '</span><span class="fs-web-nm">' + esc(n.name) + '</span><span class="fs-rp-fx"></span>');
+      b.type = 'button'; b.dataset.n = n.id; b.style.left = n.x + '%'; b.style.top = n.y + '%'; web.appendChild(b);
+    });
+    var legend = el('div', 'fs-rp-legend', Object.keys(R.kinds).map(function (k) { return '<span><i style="background:' + R.kinds[k].c + '"></i>' + esc(R.kinds[k].t) + '</span>'; }).join(''));
+    var picks = el('div', 'fs-rp-picks', '<span class="fs-in-k">Pull a thread:</span>' + R.pulls.map(function (p, i) { return '<button type="button" class="fs-btn alt fs-rp-pick" data-i="' + i + '">' + esc(p.btn) + '</button>'; }).join(''));
+    var stage = el('div', 'fs-rp-stage'), out = el('div', 'fs-rp-out'), win = el('div', 'fs-win'), count = el('div', 'fs-count');
+    g.appendChild(picks); g.appendChild(web); g.appendChild(legend); g.appendChild(stage); g.appendChild(out); g.appendChild(count); g.appendChild(win);
+    var done = {}; try { done = JSON.parse(store('ripple') || '{}'); } catch (e) {}
+    var cur = null, phase = 'pick', guesses = {};
+    function reset() {
+      web.className = 'fs-web fs-ripple'; guesses = {};
+      $$('.fs-rp-node', web).forEach(function (b) { b.className = 'fs-web-node fs-rp-node'; $('.fs-rp-fx', b).textContent = ''; });
+      $$('line', web).forEach(function (l) { l.classList.remove('cut'); });
+    }
+    function upd() {
+      var n = Object.keys(done).length; count.textContent = '🧵 ' + n + ' of ' + R.pulls.length + ' threads pulled'; count.classList.toggle('ok', n === R.pulls.length);
+      $$('.fs-rp-pick', picks).forEach(function (b) { b.classList.toggle('done', !!done[R.pulls[+b.dataset.i].id]); });
+      if (n === R.pulls.length && !win.classList.contains('show')) { win.innerHTML = esc(R.win); win.classList.add('show'); SFX.win(); earnClue(R.clue || 'ripple'); }
+    }
+    $$('.fs-rp-pick', picks).forEach(function (b) { b.addEventListener('click', function () {
+      reset(); cur = R.pulls[+b.dataset.i]; phase = 'guess'; out.innerHTML = ''; SFX.blip();
+      $$('.fs-rp-pick', picks).forEach(function (x) { x.classList.toggle('on', x === b); });
+      var gone = node(cur.id); $('.fs-rp-node[data-n="' + cur.id + '"]', web).classList.add('target');
+      web.classList.add('guessing');
+      stage.innerHTML = '<div class="fs-rp-ask">🤔 <b>Predict first.</b> If the ' + esc(gone.name.toLowerCase()) + ' disappeared, which living things would change? <b>Tap them on the web.</b> Then pull the thread.</div>' +
+        '<button type="button" class="fs-btn fs-rp-go">🧵 Pull the thread</button>';
+      $('.fs-rp-go', stage).addEventListener('click', pull);
+      stage.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
+    }); });
+    $$('.fs-rp-node', web).forEach(function (b) { b.addEventListener('click', function () {
+      if (phase !== 'guess' || b.dataset.n === cur.id) return;
+      guesses[b.dataset.n] = !guesses[b.dataset.n]; b.classList.toggle('guess', guesses[b.dataset.n]); SFX.blip();
+    }); });
+    function pull() {
+      if (phase !== 'guess') return; phase = 'show'; web.classList.remove('guessing'); SFX.snap();
+      var gb = $('.fs-rp-node[data-n="' + cur.id + '"]', web); gb.classList.add('gone');
+      $$('line', web).forEach(function (l) { if (l.dataset.a === cur.id || l.dataset.b === cur.id) l.classList.add('cut'); });
+      var ids = Object.keys(cur.fx), right = 0, changed = 0;
+      ids.forEach(function (id, i) {
+        var f = cur.fx[id], b = $('.fs-rp-node[data-n="' + id + '"]', web); if (!b) return;
+        if (f.s !== 'same') changed++;
+        if ((f.s !== 'same') === !!guesses[id]) right++;
+        setTimeout(function () { b.classList.add(f.s); $('.fs-rp-fx', b).textContent = f.s === 'hurt' ? '⬇' : f.s === 'grow' ? '⬆' : '✓'; if (f.s === 'hurt') SFX.thud(); else if (f.s === 'grow') SFX.chime(); }, reduceMotion ? 0 : 500 + i * 380);
+      });
+      var missed = R.nodes.filter(function (n) { return n.id !== cur.id && !cur.fx[n.id] && guesses[n.id]; }).length;
+      setTimeout(function () {
+        stage.innerHTML = '<div class="fs-rp-score">🔮 You predicted <b>' + right + ' of ' + ids.length + '</b> of these right.' + (missed ? ' (' + missed + ' you tapped didn’t change much.)' : '') + '</div>';
+        out.innerHTML = '<ul class="fs-rp-list">' + ids.map(function (id) { var f = cur.fx[id], n = node(id);
+          return '<li class="' + f.s + '"><span>' + (f.s === 'hurt' ? '⬇' : f.s === 'grow' ? '⬆' : '✓') + '</span><div><b>' + n.icon + ' ' + esc(n.name) + '</b> ' + esc(f.t) + '</div></li>'; }).join('') + '</ul>' +
+          (cur.why ? '' : '');
+        if (cur.why) out.appendChild(whyCard(cur.why));
+        done[cur.id] = 1; store('ripple', JSON.stringify(done)); upd();
+      }, reduceMotion ? 10 : 700 + ids.length * 380);
+    }
+    wrap.classList.add('fs-replaced');
+    wrap.parentNode.insertBefore(g, wrap);
+    upd();
   }
 
   /* ---------- Self-Check: one question at a time + miss lines ---------- */
@@ -884,7 +1015,7 @@
   /* ---------- marsh sounds (generated, off by default, never on load) ---------- */
   function buildAmbient() {
     var tools = $('.fs-hd-tools'); if (!tools) return;
-    var b = el('button', 'fs-pill', '🦗 <span class="fs-nb-l">Marsh sounds</span>'); b.type = 'button';
+    var b = el('button', 'fs-pill', esc((D.ambient && D.ambient.icon) || '🦗') + ' <span class="fs-nb-l">' + esc((D.ambient && D.ambient.label) || 'Marsh sounds') + '</span>'); b.type = 'button';
     tools.appendChild(b);
     var on = false, timers = [];
     function chirp(t) { var c = ac(); if (!c) return; for (var k = 0; k < 3; k++) tone(4400 + Math.random() * 300, t + k * 0.045, 0.03, 'sine', 0.012); }
@@ -1096,13 +1227,13 @@
       var box = fsOnly(el('div', 'fs-in fs-in-list')), mir = gField(I.id, I.label, I.q, false);
       var saved = []; try { saved = JSON.parse(store('ans.' + I.id + '.rows') || '[]'); } catch (e) {}
       var rows = el('ol', 'fs-in-rows'); box.appendChild(rows);
-      var add = el('button', 'fs-hintbtn fs-in-add', '+ Add a step'); add.type = 'button'; box.appendChild(add);
+      var add = el('button', 'fs-hintbtn fs-in-add', esc(I.addLabel || '+ Add a step')); add.type = 'button'; box.appendChild(add);
       var cnt = el('span', 'fs-count'); box.appendChild(cnt); box.appendChild(mir);
       function sync() {
         var vals = $$('input', rows).map(function (x) { return x.value.trim(); });
         store('ans.' + I.id + '.rows', JSON.stringify(vals));
         var f = vals.filter(Boolean); setG(mir, f.map(function (v, i) { return (i + 1) + '. ' + v; }).join('\n'));
-        cnt.textContent = '📝 ' + Math.min(f.length, I.min || 3) + ' of ' + (I.min || 3) + ' steps' + (f.length >= (I.min || 3) ? ' ✓' : '');
+        cnt.textContent = '📝 ' + Math.min(f.length, I.min || 3) + ' of ' + (I.min || 3) + ' ' + (I.unit || 'steps') + (f.length >= (I.min || 3) ? ' ✓' : '');
         cnt.classList.toggle('ok', f.length >= (I.min || 3));
       }
       function row(v, ph) { var li = el('li'); var x = el('input'); x.type = 'text'; x.value = v || ''; x.placeholder = ph || 'Next…'; x.addEventListener('input', sync); li.appendChild(x); rows.appendChild(li); return x; }
@@ -1448,6 +1579,7 @@
         if (hdr) { ref = hdr.nextElementSibling; while (ref && ref.classList.contains('fs-only')) ref = ref.nextElementSibling; }
       }
       if (!ref) { FAILED.push('sketch: no anchor for ' + spot.id); return; }
+      while (ref.nextElementSibling && ref.nextElementSibling.classList.contains('fs-in')) ref = ref.nextElementSibling; /* the answer frame comes first; the sketch is the bonus */
       put(sketchPad(spot.id, spot), ref, 'after');
     });
     // free sketch pad from the floating tools
@@ -1523,10 +1655,11 @@
   /* ---------- real photos with numbered hotspots + an evidence match (SS pattern) ---------- */
   function buildPhotos() {
     (D.photos || []).forEach(function (P) {
-      var anchorGame = $$('.fs-game').filter(function (g) { return g.dataset.mod === P.after; })[0];
-      if (!anchorGame) { FAILED.push('photo: no anchor ' + P.after); return; }
+      var anchorGame = P.after ? $$('.fs-game').filter(function (g) { return g.dataset.mod === P.after; })[0] : null;
+      if (!anchorGame && P.afterText) $$('.tab-panel p').some(function (p) { if (p.textContent.indexOf(P.afterText) > -1) { anchorGame = p; return true; } });
+      if (!anchorGame) { FAILED.push('photo: no anchor ' + (P.after || P.afterText)); return; }
       var g = gameShell(P.kicker || 'Look closer', P.title, P.todo, P.why);
-      g.classList.add('fs-photo-game');
+      g.classList.add('fs-photo-game'); if (P.clue) g.dataset.mod = P.clue;
       var fig = el('div', 'fs-photo');
       fig.innerHTML = '<div class="fs-photo-img"><img alt="' + esc(P.alt || P.title) + '" src="' + esc(P.img) + '">' +
         P.hotspots.map(function (h) { return '<button type="button" class="fs-hs" data-n="' + h.n + '" style="left:' + h.x + '%;top:' + h.y + '%" aria-label="Label ' + h.n + ': ' + esc(h.label) + '">' + h.n + '</button>'; }).join('') + '</div>' +
@@ -1559,7 +1692,7 @@
             if ([].concat(it.ans).map(String).indexOf(b.dataset.n) < 0) { bounce(b, miss, it.miss || 'Look at that label again. Which one shows this step?'); return; }
             b.classList.add('right'); row.classList.add('done'); $('.fs-ev-ok', row).textContent = '📎 added to your evidence'; SFX.chime(); miss.classList.remove('show'); left--;
             addEvidence({ id: P.id + '-' + it.step, kind: 'photo', t: it.evid, where: P.short || P.title });
-            if (!left) { win.innerHTML = esc(P.task.win); win.classList.add('show'); SFX.win(); store('photo-' + P.id, '1'); }
+            if (!left) { win.innerHTML = esc(P.task.win); win.classList.add('show'); SFX.win(); store('photo-' + P.id, '1'); if (P.clue) earnClue(P.clue); }
           });
         });
       });
@@ -1907,6 +2040,72 @@
     tapTargets(host.querySelector('.fs-tc-path'), targets, drop);
     function maybeDone() { if (host.classList.contains('play-done') && host.classList.contains('path-done')) toolDone(); }
   };
+
+  /* ----- Berlese funnel simulation (10.01): parts, predict, run the lamp, meet what fell into the jar -----
+     T.berlese = {title, todo[], parts:[{x,y,label,t}], predict:{q, opts:[{t, ok, why}]}, days:[{t, n}], critters:[{name, count, job, t}], runWin, meetWin} */
+  var BERLESE_SVG = '<svg viewBox="0 0 220 320" class="fs-bf-svg" role="img" aria-label="A Berlese funnel: a lamp over a funnel of leaf litter, with a jar underneath">' +
+    '<defs><linearGradient id="bfGlass" x1="0" x2="1"><stop offset="0" stop-color="#DDEFF5"/><stop offset=".5" stop-color="#F7FCFE"/><stop offset="1" stop-color="#CFE5EE"/></linearGradient>' +
+    '<radialGradient id="bfGlow" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset="1" stop-color="#FFE9A8" stop-opacity="0"/></radialGradient></defs>' +
+    '<path class="fs-bf-glow" d="M70 52 L30 150 L190 150 L150 52Z" fill="url(#bfGlow)" opacity="0"/>' +
+    '<rect x="104" y="0" width="12" height="18" fill="#5C6670"/><path d="M68 18 h84 l12 34 h-108z" fill="#3E4A55"/><ellipse class="fs-bf-bulb" cx="110" cy="54" rx="16" ry="7" fill="#C9C2A8"/>' +
+    '<path d="M22 112 h176 l-74 104 h-28z" fill="#E9EEF1" stroke="#7D8C95" stroke-width="3"/>' +
+    '<g class="fs-bf-litter"><path d="M30 112 q20 -16 40 -4 q16 -14 34 -2 q18 -12 36 0 q20 -12 50 6 v16 h-160z" fill="#8A5A2B"/>' +
+    '<path d="M40 104 l14 -6 l6 8z M84 100 l16 -4 l-4 9z M128 102 l14 -5 l2 9z M160 106 l12 -3 l-2 8z" fill="#B07A3E"/></g>' +
+    '<path d="M28 128 h164" stroke="#5C6670" stroke-width="2.5" stroke-dasharray="4 3"/>' +
+    '<rect x="96" y="216" width="28" height="22" fill="#E9EEF1" stroke="#7D8C95" stroke-width="3"/>' +
+    '<path d="M74 240 h72 v62 q0 14 -14 14 h-44 q-14 0 -14 -14z" fill="url(#bfGlass)" stroke="#7D8C95" stroke-width="3"/>' +
+    '<g class="fs-bf-specks"></g>' +
+    '</svg>';
+  SIMS.berlese = function (host, T) {
+    var S = T.berlese;
+    host.innerHTML = '<div class="fs-game-k">Try it: the soil-critter lab</div><div class="fs-game-t">' + esc(S.title) + '</div>' +
+      '<ul class="fs-todo">' + S.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-bf"><div class="fs-bf-rig">' + BERLESE_SVG + S.parts.map(function (p, i) { return '<button type="button" class="fs-hs fs-bf-hs" style="left:' + p.x + '%;top:' + p.y + '%" data-i="' + i + '">' + (i + 1) + '</button>'; }).join('') + '</div>' +
+      '<div class="fs-bf-side"><div class="fs-hs-card fs-bf-info"><em>Tap a number to learn each part.</em></div><div class="fs-count fs-bf-pn"></div>' +
+      '<div class="fs-bf-step fs-bf-predict"><div class="fs-in-k">' + esc(S.predict.q) + '</div><div class="fs-in-chips">' + S.predict.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div><div class="fs-miss fs-bf-pm"></div></div>' +
+      '<div class="fs-bf-step fs-bf-run"><button type="button" class="fs-btn fs-bf-go">💡 Turn on the lamp</button><div class="fs-bf-day"></div></div>' +
+      '</div></div>' +
+      '<div class="fs-bf-jar"><div class="fs-in-k">What fell into the jar (looked at with a hand lens)</div><div class="fs-bf-crits"></div><div class="fs-hs-card fs-bf-cinfo" style="display:none"></div><div class="fs-count fs-bf-cn"></div></div>' +
+      '<div class="fs-win fs-bf-win"></div>';
+    var info = $('.fs-bf-info', host), pn = $('.fs-bf-pn', host), seen = {}, predicted = false, day = 0, met = {};
+    function pcount() { var n = Object.keys(seen).length; pn.textContent = '🔎 ' + n + ' of ' + S.parts.length + ' parts'; pn.classList.toggle('ok', n === S.parts.length); if (n === S.parts.length) host.classList.add('bf-parts'); }
+    $$('.fs-bf-hs', host).forEach(function (b) { b.addEventListener('click', function () {
+      var p = S.parts[+b.dataset.i]; seen[b.dataset.i] = 1; $$('.fs-bf-hs', host).forEach(function (x) { x.classList.toggle('on', x === b); }); b.classList.add('seen');
+      info.innerHTML = '<span class="fs-hs-n">' + (+b.dataset.i + 1) + '</span><div><b>' + esc(p.label) + '</b>' + esc(p.t) + '</div>'; SFX.blip(); pcount();
+    }); });
+    pcount();
+    var pm = $('.fs-bf-pm', host);
+    $$('.fs-bf-predict .fs-in-chip', host).forEach(function (c) { c.addEventListener('click', function () {
+      var o = S.predict.opts[+c.dataset.i];
+      $$('.fs-bf-predict .fs-in-chip', host).forEach(function (x) { x.classList.toggle('on', x === c); });
+      pm.innerHTML = (o.ok ? '✅ ' : '🔎 ') + esc(o.why); pm.classList.add('show'); pm.classList.toggle('ok', !!o.ok);
+      if (o.ok) { predicted = true; host.classList.add('bf-predicted'); SFX.chime(); } else SFX.thud();
+    }); });
+    var go = $('.fs-bf-go', host), dayBox = $('.fs-bf-day', host), specks = $('.fs-bf-specks', host), rig = $('.fs-bf-rig', host);
+    var total = S.critters.reduce(function (a, c) { return a + c.count; }, 0);
+    go.addEventListener('click', function () {
+      if (!predicted) { pm.innerHTML = '🔎 ' + esc(S.predictFirst || 'Make your prediction first.'); pm.classList.add('show'); pm.classList.remove('ok'); SFX.thud(); return; }
+      if (day >= S.days.length) return;
+      var d = S.days[day]; day++; rig.classList.add('lamp'); rig.style.setProperty('--dry', day / S.days.length); SFX.blip();
+      dayBox.innerHTML = '<b>' + esc(d.t) + '</b> · ' + d.n + ' tiny animals in the jar so far';
+      var have = specks.childNodes.length, want = Math.round(d.n / total * 40);
+      for (var i = have; i < want; i++) { var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); c.setAttribute('cx', 84 + Math.random() * 52); c.setAttribute('cy', 268 + Math.random() * 40); c.setAttribute('r', 1.4 + Math.random() * 1.4); c.setAttribute('fill', '#3B2F1E'); c.style.animationDelay = (Math.random() * 0.8) + 's'; specks.appendChild(c); }
+      go.textContent = day < S.days.length ? 'Next day ▶' : '✅ The leaves are dry';
+      if (day >= S.days.length) { go.disabled = true; showCrits(); }
+    });
+    var crits = $('.fs-bf-crits', host), cinfo = $('.fs-bf-cinfo', host), cn = $('.fs-bf-cn', host);
+    function showCrits() {
+      host.classList.add('bf-ran'); SFX.chime();
+      crits.innerHTML = S.critters.map(function (c, i) { return '<button type="button" class="fs-bf-crit" data-i="' + i + '"><b>' + c.count + '</b>' + esc(c.name) + '</button>'; }).join('');
+      $$('.fs-bf-crit', crits).forEach(function (b) { b.addEventListener('click', function () {
+        var c = S.critters[+b.dataset.i]; met[b.dataset.i] = 1; b.classList.add('seen', c.job); SFX.blip();
+        cinfo.style.display = ''; cinfo.innerHTML = '<span class="fs-hs-n">' + (c.job === 'recycler' ? '♻️' : '🎯') + '</span><div><b>' + esc(c.name) + ' · ' + (c.job === 'recycler' ? 'recycler' : 'hunter') + '</b>' + esc(c.t) + '</div>';
+        var n = Object.keys(met).length; cn.textContent = '🔎 ' + n + ' of ' + S.critters.length + ' kinds met'; cn.classList.toggle('ok', n === S.critters.length);
+        if (n === S.critters.length) { var w = $('.fs-bf-win', host); if (!w.classList.contains('show')) { w.innerHTML = esc(S.meetWin); w.classList.add('show'); SFX.win(); toolDone(); } }
+      }); });
+      cn.textContent = '🔎 0 of ' + S.critters.length + ' kinds met';
+    }
+  };
   /* ----- thermometer simulation ----- */
   SIMS.thermometer = function (host, T) {
     var S = T.thermo, places = S.places, Fmin = -20, Fmax = 220;
@@ -2133,6 +2332,8 @@
     guard('relay', buildRelay);
     guard('cams', buildCams);
     guard('sort', buildSort);
+    guard('thread', buildThread);
+    guard('ripple', buildRipple);
     guard('quiz', buildQuiz);
     guard('solve', buildSolve);
     guard('helpers', buildHelpers);
