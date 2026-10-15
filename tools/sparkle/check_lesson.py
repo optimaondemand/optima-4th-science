@@ -60,6 +60,8 @@ with sync_playwright() as p:
         if errs: fails.append(f'{w}px page errors: {errs[:3]}')
         pg.close()
     b.close()
+tw = sum(len(open(os.path.join(out, f), encoding='utf-8').read().split()) for f in os.listdir(out) if f.startswith('text-'))
+notes.append(f'words a student reads (all tabs): {tw}' + ('  (OVER the lean budget of about 2,100; trim)' if tw > 2300 else '  (within the lean budget)'))
 rep = '\n'.join(['FAIL: ' + f for f in fails] + ['note: ' + n for n in notes]) or 'all good'
 open(os.path.join(out, 'report.txt'), 'w', encoding='utf-8').write(rep); print(rep); print('screenshots + text in', out)
 srv.shutdown(); sys.exit(1 if fails else 0)
