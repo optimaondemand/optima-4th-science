@@ -1,0 +1,214 @@
+[
+ {
+  "kind": "fix",
+  "why": "quarter label: week 11 is Quarter 2",
+  "old": "Q3 &middot; Week 11",
+  "new": "Q2 &middot; Week 11"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for an annotated model",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Build an Annotated Model"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one Florida organism and one of its structures (not the spoonbill). Build a model in words: name the structure, tell what it does (that's your arrow), and finish with a caption that ties it to a survival need.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: supply list (every lesson lists a sunny window)",
+  "old": "<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": ""
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: NGSS does not name exactly four “model types”; plain words",
+  "old": "A model can be a drawing on paper, a clay sculpture, a digital diagram, or even an explanation you say out loud\\. NGSS calls these \"<span class=\"vtip\">model<span class=\"vtip-box\">.*?</span></span> types\": two-dimensional \\(flat\\), three-dimensional \\(solid\\), in-your-mind \\(mental\\), or computer model\\. They\\'re all useful for different jobs\\.",
+  "new": "Scientists use many kinds of models: a drawing on paper, a clay build, a computer model, or even a clear explanation you say out loud. Each kind is good for a different job.",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dashes removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll build your own model — a drawing with labels and arrows — that <em>explains</em> how a Florida animal's structure helps it meet a survival need.",
+  "new": "Keep this question in mind. By the end, you'll build your own model, a drawing with labels and arrows that <em>explains</em> how a Florida animal's body part helps it meet a survival need."
+ },
+ {
+  "kind": "plain",
+  "why": "the notebook drawing becomes the on-page arrow game",
+  "old": "<p>In your notebook, draw a Florida alligator quickly.*?</ul>",
+  "new": "<p>Here is an alligator, shown two ways. <strong>Drawing 1</strong> just has a label. <strong>Drawing 2</strong> is a tiny model: an arrow shows what the part does. Build Drawing 2 below.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "“relationship” → plain words",
+  "old": "A model goes one step further: it explains a <em>relationship</em>. It tells your reader why something matters.",
+  "new": "A model goes one step further: it explains <em>how the part helps</em>. It tells your reader why the part matters."
+ },
+ {
+  "kind": "plain",
+  "why": "“misconception” → plain words; shorter",
+  "old": "<strong>Common misconception:</strong> A really pretty drawing is <em>not</em> the same as a strong model. A simple stick-figure drawing with good labels and arrows can be a stronger model than a beautiful artwork with no explanation. The model's job is to make the relationship clear, not to look fancy.",
+  "new": "<strong>A mix-up to watch for:</strong> A pretty drawing is <em>not</em> the same as a strong model. A stick figure with good labels and arrows can explain more than a beautiful painting with no words. A model's job is to explain, not to look fancy."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "<strong>This is a model — not just a label.</strong>",
+  "new": "<strong>This is a model, not just a label.</strong>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "“module” → “week”; dash removed",
+  "old": " — not just label one. Next module, we'll move from structures to <em>behaviors</em>: how Florida animals use their senses, send information to the brain, and respond to the world around them.",
+  "new": ", not just label one. Next week, we'll move from body parts to <em>behaviors</em>: how Florida animals use their senses, send messages to the brain, and react to the world around them."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (the model build moves to the Lesson as Part 4)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the diagram heading becomes Part 3 (the Chain it game replaces the tap diagram)",
+  "old": "margin-top:22px;\">Four Models of Florida Adaptations</h3>",
+  "new": "margin-top:22px;\">Part 3 · Structure → Action → Survival Need</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the pine fact, the panther callout and Go Deeper at the end of the Lesson (the pine-cone fact and the panther paws were shaky); Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Build Your Own Model</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Now it's your turn. Pick a Florida organism, pick one of its structures, and turn it into a model: a label, an arrow that shows what the part does, and a caption about a survival need.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 is now number 5",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 is now number 6",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C is a model in words; the sketch is a bonus",
+  "old": "An annotated model of one Florida adaptation — including the organism, the structure, an arrow showing action, and a caption tying the structure to a survival need.",
+  "new": "A model of one Florida organism’s structure: the label, what it does (the arrow), and a caption about a survival need. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether drawings count as science, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether drawings count as science, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

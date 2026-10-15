@@ -1,0 +1,75 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The same dawn lagoon with the spoonbill sweeping its beak, now drawn over with hand-written model notes and arrows: the beak sweeps, feels the shrimp, and the bird gets food.">
+<defs>
+<linearGradient id="b12sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9EC5DD"/><stop offset=".55" stop-color="#F6D7B8"/><stop offset="1" stop-color="#F9C9A0"/></linearGradient>
+<linearGradient id="b12water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7B999"/><stop offset=".35" stop-color="#8FB3BE"/><stop offset="1" stop-color="#4E7F8E"/></linearGradient>
+<radialGradient id="b12sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF4D6"/><stop offset=".6" stop-color="#FFD9A0" stop-opacity=".9"/><stop offset="1" stop-color="#FFD9A0" stop-opacity="0"/></radialGradient>
+<linearGradient id="b12body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7B6C8"/><stop offset="1" stop-color="#EE8FAA"/></linearGradient>
+<linearGradient id="b12bill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AA78F"/><stop offset="1" stop-color="#B9A27C"/></linearGradient>
+<style>
+.b12-head{transform-origin:600px 78px;animation:b12sweep 4.8s ease-in-out infinite}
+.b12-rip{animation:b12rip 4.8s ease-out infinite;transform-origin:540px 150px}
+.b12-rip2{animation-delay:2.4s}
+.b12-shrimp{animation:b12dart 4.8s ease-in-out infinite}
+.b12-shine{animation:b12shine 6s ease-in-out infinite}
+@keyframes b12sweep{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(6deg)}}
+@keyframes b12rip{0%{transform:scale(.4);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes b12dart{0%,60%,100%{transform:translate(0,0)}70%{transform:translate(-14px,2px)}}
+@keyframes b12shine{0%,100%{opacity:.35}50%{opacity:.7}}
+@media (prefers-reduced-motion: reduce){.b12-head,.b12-rip,.b12-shrimp,.b12-shine{animation:none}}
+</style>
+</defs>
+<rect width="920" height="200" fill="url(#b12sky)"/>
+<circle cx="190" cy="118" r="70" fill="url(#b12sun)"/>
+<circle cx="190" cy="118" r="22" fill="#FFF1D2"/>
+<!-- mangroves along the far shore -->
+<path d="M0 124 Q20 104 44 112 Q60 96 84 108 Q102 98 120 110 Q140 100 160 114 L160 128 L0 128 Z" fill="#4E6B55" opacity=".55"/>
+<path d="M600 126 Q622 102 648 112 Q668 94 694 106 Q716 92 742 104 Q764 96 790 106 Q812 94 840 104 Q866 96 892 108 Q906 102 920 106 L920 130 L600 130 Z" fill="#3F5E49" opacity=".6"/>
+<path d="M610 128 l4 -10 M640 129 l-3 -12 M700 129 l5 -11 M760 130 l-4 -12 M830 129 l3 -11 M880 130 l-4 -10" stroke="#3F5E49" stroke-width="2" opacity=".5"/>
+<!-- water -->
+<rect y="126" width="920" height="74" fill="url(#b12water)"/>
+<g class="b12-shine" stroke="#FFF4D6" stroke-width="2" stroke-linecap="round" opacity=".5"><path d="M150 134h80M170 142h44M120 150h36M250 147h30"/></g>
+<g stroke="#ffffff" stroke-opacity=".35" stroke-width="1.5" fill="none"><path d="M40 170q30 -4 60 0M330 182q40 -5 80 0M700 176q40 -4 80 0M820 160q30 -3 60 0"/></g>
+<!-- shrimp hiding near the bottom -->
+<g class="b12-shrimp" transform="translate(500 172)">
+<path d="M0 0 q10 -9 22 -4 q6 3 4 9 q-12 4 -26 -5z" fill="#E9A07E" opacity=".85"/>
+<path d="M22 -4 l10 -6 M24 -3 l11 -2" stroke="#E9A07E" stroke-width="1.2" opacity=".85"/>
+<circle cx="19" cy="-2" r="1.2" fill="#3B2F1E"/>
+</g>
+<!-- ripples where the beak sweeps -->
+<ellipse class="b12-rip" cx="540" cy="150" rx="30" ry="6" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="1.6"/>
+<ellipse class="b12-rip b12-rip2" cx="540" cy="150" rx="30" ry="6" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="1.6"/>
+<!-- legs (long, pink) -->
+<g stroke="#D8708C" stroke-width="4" stroke-linecap="round" fill="none">
+<path d="M650 108 L646 136 L652 166"/>
+<path d="M666 108 L672 138 L668 168"/>
+</g>
+<!-- legs under water (softer) -->
+<g stroke="#D8708C" stroke-width="4" stroke-linecap="round" opacity=".35"><path d="M652 166 l-4 14 M668 168 l4 12"/></g>
+<!-- body -->
+<path d="M612 82 Q640 56 690 62 Q730 66 744 88 Q732 100 716 104 Q684 116 648 110 Q622 104 612 82 Z" fill="url(#b12body)"/>
+<path d="M650 74 Q690 64 726 80 Q712 92 690 92 Q664 92 650 74 Z" fill="#D9405F" opacity=".85"/>
+<path d="M728 84 Q752 86 760 96 Q744 100 730 96 Z" fill="#E86E8E"/>
+<path d="M690 108 Q700 116 716 112" stroke="#F7C3D1" stroke-width="2" fill="none"/>
+<!-- neck + head + bill: sweeps side to side -->
+<g class="b12-head">
+<path d="M622 86 Q598 74 594 92 Q592 106 582 114" stroke="#F4E6E4" stroke-width="9" stroke-linecap="round" fill="none"/>
+<ellipse cx="578" cy="118" rx="11" ry="9" fill="#DCE3CF"/>
+<circle cx="580" cy="115" r="2.6" fill="#C0392B"/><circle cx="580" cy="115" r="1.1" fill="#2B1D12"/>
+<path d="M570 122 L548 142 Q541 150 534 147 Q528 142 536 137 L566 116 Z" fill="url(#b12bill)"/>
+<ellipse cx="535" cy="145" rx="10" ry="6.5" fill="#B9A27C" transform="rotate(-38 535 145)"/>
+<path d="M570 116 l-3 2" stroke="#6E6450" stroke-width="1.6"/>
+</g>
+<!-- model notes drawn over the scene -->
+<g class="b12-notes" font-family="'Segoe Print','Bradley Hand','Comic Sans MS',cursive" font-weight="700" fill="#1F3A68">
+<rect x="352" y="22" width="236" height="34" rx="6" fill="#FFFDF6" opacity=".92" transform="rotate(-3 447 39)"/>
+<text x="364" y="45" font-size="17" transform="rotate(-3 447 39)">BEAK sweeps side to side</text>
+<path d="M470 58 Q500 90 530 132" stroke="#F5B83D" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="7 6"/>
+<path d="M522 122 L531 135 L536 119" stroke="#F5B83D" stroke-width="4" fill="none" stroke-linecap="round"/>
+<rect x="306" y="150" width="176" height="32" rx="6" fill="#FFFDF6" opacity=".92" transform="rotate(2 381 166)"/>
+<text x="316" y="172" font-size="16" transform="rotate(2 381 166)">feels a shrimp!</text>
+<path d="M458 168 Q478 176 492 172" stroke="#F5B83D" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="7 6"/>
+<rect x="756" y="28" width="140" height="34" rx="6" fill="#F5B83D" opacity=".95" transform="rotate(3 826 45)"/>
+<text x="772" y="51" font-size="17" fill="#0E1C42" transform="rotate(3 826 45)">= FOOD ✓</text>
+<path d="M745 52 Q712 60 700 70" stroke="#F5B83D" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="7 6"/>
+</g>
+</svg>

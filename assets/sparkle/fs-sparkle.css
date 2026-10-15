@@ -1322,3 +1322,55 @@ html:not(.fs-on) .fs-name-note{display:none!important;}
 .fs-xr-kind { font:900 10.5px 'Nunito',sans-serif; letter-spacing:.6px; text-transform:uppercase; padding:1px 7px; border-radius:999px; margin-left:4px; vertical-align:2px; }
 .fs-xr-kind.inside { background:#E6E0F5; color:#4B3690; } .fs-xr-kind.outside { background:#E6F6EC; color:#1a6b35; }
 @media (prefers-reduced-motion: reduce) { .fs-xr-light.on { animation:none; } }
+
+/* ===== 11.02: model photos with arrows (arrow, upgrade, kit) ===== */
+.fs-mp { position:relative; border-radius:12px; overflow:hidden; line-height:0; background:#0E1C42; }
+.fs-mp img { width:100%; display:block; }
+.fs-mp-svg { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.fs-ma { stroke:#F5B83D; stroke-width:4; stroke-linecap:round; filter: drop-shadow(0 1px 1px rgba(0,0,0,.6)); }
+.fs-ma.draw { stroke-dasharray:2000; stroke-dashoffset:2000; animation: fsDraw .7s ease-out forwards; }
+@keyframes fsDraw { to { stroke-dashoffset:0; } }
+.fs-mp-tag { position:absolute; transform: translate(-50%,-50%); background:#FFFDF6; color:#0E1C42; border:2px solid #0E1C42; border-radius:6px; padding:2px 8px; font:900 13px/1.3 'Nunito',sans-serif; white-space:nowrap; box-shadow:0 2px 4px rgba(0,0,0,.35); z-index:2; max-width:46%; white-space:normal; text-align:center; }
+.fs-mp-tag.act { background:#F5B83D; border-color:#8A5A00; font-size:12.5px; }
+.fs-mp-tag.tgt { background:#E3F1FA; border-color:#2B7BB9; }
+.fs-mp-tag.pop { animation: fsPop .35s; }
+.fs-mp .fs-hs { z-index:3; }
+.fs-ar-two { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.fs-ar-col .fs-in-k { margin-bottom:4px; }
+.fs-ar-row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.fs-ar-tok { font-weight:900; }
+.fs-ar-tok.placed { opacity:.35; pointer-events:none; }
+.fs-ar-tg { display:flex; gap:6px; align-items:center; background:#F7FBFC; border:2.5px dashed #9FB7BE; border-radius:12px; padding:8px 12px; font:900 15px 'Nunito',sans-serif; color: var(--fs-navy); cursor:pointer; }
+.fs-ar-tg span { font-size:20px; }
+.fs-ar-tg.over { border-color: var(--fs-gold); background:#FFF9E8; }
+.fs-ar-tg.ok { border-style:solid; border-color:#2E9E5E; background:#EEF8F0; }
+.fs-ar-tg.bounce { animation: fsBounce .45s; }
+.fs-up-meter { margin:4px 0 10px; }
+.fs-up-bar { height:12px; border-radius:999px; background:#E6EEF0; overflow:hidden; }
+.fs-up-bar i { display:block; height:100%; width:0; background: linear-gradient(90deg, #9FB7BE, #2E9E5E); transition: width .6s; }
+.fs-up-lbl { font:900 13px 'Nunito',sans-serif; color:#5C6B70; margin-top:4px; }
+.fs-up-meter.full .fs-up-lbl { color:#1a6b35; }
+.fs-up-cap { display:none; margin-top:-2px; background:#0E1C42; color:#fff; border-radius:0 0 12px 12px; padding:9px 14px; font:800 15px/1.45 'Nunito',sans-serif; }
+.fs-up-cap.show { display:block; animation: fsPop .35s; }
+.fs-up-step { margin-top:10px; }
+.fs-ch-tabs { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 12px; }
+.fs-ch-tabs .fs-in-chip.on { background:#E3F1FA; border-color:#2B7BB9; }
+.fs-ch-row { display:flex; align-items:stretch; gap:6px; }
+.fs-ch-arw { align-self:center; font:900 24px 'Nunito',sans-serif; color:#9FB7BE; }
+.fs-ch-slot { flex:1; border:2.5px dashed #9FB7BE; border-radius:12px; padding:8px; min-height:92px; background:#F7FBFC; cursor:pointer; }
+.fs-ch-slot.over { border-color: var(--fs-gold); background:#FFF9E8; }
+.fs-ch-slot.full { border-style:solid; border-color:#2E9E5E; background:#EEF8F0; cursor:default; }
+.fs-ch-h { font:900 12px 'Nunito',sans-serif; letter-spacing:.5px; text-transform:uppercase; color:#5C6B70; }
+.fs-ch-h span { margin-right:4px; }
+.fs-ch-in { font:800 15px/1.35 'Nunito',sans-serif; color: var(--fs-navy); margin-top:6px; animation: fsPop .3s; }
+.fs-ch-pool { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; min-height:10px; }
+.fs-kt-stage { max-width:640px; }
+.fs-kt-stage .fs-hs { font-size:18px; }
+.fs-kt-stage + .fs-up-cap { max-width:640px; box-sizing:border-box; }
+.fs-kt-cr { font-size:11.5px; color:#7C8C92; margin-top:4px; }
+@media (max-width: 640px) {
+  .fs-ar-two { grid-template-columns:1fr; }
+  .fs-ch-row { flex-direction:column; } .fs-ch-arw { transform: rotate(90deg); }
+  .fs-mp-tag { font-size:11.5px; padding:1px 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .fs-ma.draw { animation:none; stroke-dashoffset:0; } .fs-up-bar i { transition:none; } .fs-mp-tag.pop, .fs-ch-in, .fs-up-cap.show { animation:none; } }
