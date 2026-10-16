@@ -1577,6 +1577,159 @@
     open(0); upd();
   }
 
+  /* ---------- Warm-Up: "Find the family" — match each baby to its parent by inherited traits (13.01) ----------
+     D.lineup = {afterText, kicker, title, todo[], why, hint, babies:[{id,name,img,alt}], parents:[{id,name,img,alt,same,diff,miss}], q, opts:[{t,ok,miss}], credit, win, clue}
+     a baby's id equals its parent's id */
+  function buildLineup() {
+    var L = D.lineup; if (!L) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (L.afterText && p.textContent.indexOf(L.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('lineup anchor text not found'); return; }
+    var g = gameShell(L.kicker || 'Warm-Up game', L.title, L.todo, L.why); g.dataset.mod = 'lineup';
+    var tray = el('div', 'fs-lu-tray'), grid = el('div', 'fs-lu-grid'), info = el('div', 'fs-hs-card fs-lu-info', '<em>' + esc(L.hint || 'Drag a baby onto its parent, or tap a baby and then a parent.') + '</em>');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    tray.appendChild(el('div', 'fs-lu-lab', '🐣 The babies'));
+    shuffle(L.babies).forEach(function (b) { var d = el('div', 'fs-card fs-lu-baby', '<img alt="' + esc(b.alt) + '" src="' + esc(b.img) + '"><span>' + esc(b.name) + '</span>'); d.dataset.id = b.id; tray.appendChild(d); });
+    grid.appendChild(el('div', 'fs-lu-lab', '👪 The parents'));
+    var row = el('div', 'fs-lu-row'); grid.appendChild(row);
+    shuffle(L.parents).forEach(function (p) {
+      var c = el('div', 'fs-lu-par', '<div class="fs-lu-ph"><img alt="' + esc(p.alt) + '" src="' + esc(p.img) + '"><span class="fs-lu-kid"></span></div><div class="fs-lu-n">' + esc(p.name) + '</div>');
+      c.dataset.id = p.id; c.setAttribute('role', 'button'); c.tabIndex = 0; row.appendChild(c);
+    });
+    g.appendChild(tray); g.appendChild(grid); g.appendChild(info); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    if (L.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(L.credit)));
+    var done = {}; try { done = JSON.parse(store('lineup') || '{}'); } catch (e) {}
+    var targets = $$('.fs-lu-par', row);
+    function par(id) { return L.parents.filter(function (p) { return p.id === id; })[0]; }
+    function baby(id) { return L.babies.filter(function (b) { return b.id === id; })[0]; }
+    function place(id, animate) {
+      var c = $('.fs-lu-par[data-id="' + id + '"]', row), k = $('.fs-lu-kid', c), b = baby(id);
+      c.classList.add('done'); k.innerHTML = '<img alt="" src="' + esc(b.img) + '">'; k.classList.add('on');
+      if (animate && !reduceMotion) { k.classList.remove('pop'); void k.offsetWidth; k.classList.add('pop'); }
+      var t = $('.fs-lu-baby[data-id="' + id + '"]', tray); if (t) { t.classList.add('placed'); t.classList.remove('sel'); }
+    }
+    function ask() {
+      if (qh.dataset.on) return; qh.dataset.on = '1';
+      chipsQ(qh, L.q, L.opts, function () { store('lineup-q', '1'); finish(); }, miss);
+      if (store('lineup-q')) { var ok = L.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qh)[ok]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; finish(); }
+    }
+    function finish() { if (win.classList.contains('show')) return; win.innerHTML = esc(L.win); win.classList.add('show'); SFX.win(); earnClue(L.clue || 'lineup'); }
+    function upd() {
+      var n = Object.keys(done).length; count.textContent = '👪 ' + n + ' of ' + L.parents.length + ' families found'; count.classList.toggle('ok', n === L.parents.length);
+      if (n === L.parents.length) ask();
+    }
+    function drop(tk, c) {
+      var p = par(c.dataset.id); if (!p || done[p.id]) return;
+      if (tk.dataset.id !== p.id) { var b = baby(tk.dataset.id); bounce(tk, miss, (b && b.miss) || p.miss || 'Look at the body shape, not the color. Which parent has the same shape?'); return; }
+      miss.classList.remove('show'); done[p.id] = 1; store('lineup', JSON.stringify(done)); SFX.chime(); place(p.id, true);
+      info.innerHTML = '<span class="fs-hs-n">✓</span><div><b>' + esc(p.name) + ' family</b><span class="fs-lu-same">👪 Same as the parent: ' + esc(p.same) + '</span><span class="fs-lu-diff">🔄 Different for now: ' + esc(p.diff) + '</span></div>';
+      info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash'); upd();
+    }
+    $$('.fs-lu-baby', tray).forEach(function (t) { dragDrop(t, function () { return targets.filter(function (x) { return !x.classList.contains('done'); }); }, drop); });
+    tapTargets(g, targets, drop);
+    targets.forEach(function (c) { c.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); var s = $('.sel', g); if (s) { s.classList.remove('sel'); drop(s, c); } } }); });
+    Object.keys(done).forEach(function (id) { if (par(id)) place(id, false); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson: "Grow the twins" — two seeds from one parent, change the garden (13.01) ----------
+     D.grow = {afterText, kicker, title, todo[], why, model, dials:[{k,t,opts:[{k,icon,t}]}], results:{"<opt>-<opt>":{img,h,w,flowers,note}}, fixed:[{t,v}], measures:[{k,t,unit}],
+               need:{dialK:[optK,optK]}, needLine, growBtn, weeks, q, opts:[{t,ok,miss}], credit, win, clue}
+     results keys are the dial option keys joined with "-" in dial order; h = height in cm (also scales the photo) */
+  function buildGrow() {
+    var G = D.grow; if (!G) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (G.afterText && p.textContent.indexOf(G.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('grow anchor text not found'); return; }
+    var g = gameShell(G.kicker || 'Part 2 game', G.title, G.todo, G.why); g.dataset.mod = 'grow';
+    if (G.model) g.appendChild(el('div', 'fs-gr-model', '🧪 ' + esc(G.model)));
+    var pots = el('div', 'fs-gr-pots'), log = el('div', 'fs-gr-log'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(pots); g.appendChild(log); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    if (G.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(G.credit)));
+    var tried = {}; try { tried = JSON.parse(store('grow') || '{}'); } catch (e) {}
+    var maxH = Math.max.apply(null, Object.keys(G.results).map(function (k) { return G.results[k].h; }));
+    ['A', 'B'].forEach(function (name, pi) {
+      var p = el('div', 'fs-gr-pot');
+      p.innerHTML = '<div class="fs-gr-h">🌱 Pot ' + name + ' <small>' + esc(G.seedLine || 'a seed from the same parent plant') + '</small></div>' +
+        G.dials.map(function (d) { return '<div class="fs-gr-dial" data-k="' + d.k + '"><span>' + esc(d.t) + '</span>' + d.opts.map(function (o, oi) { return '<button type="button" class="fs-in-chip' + (oi === (pi === 0 ? 0 : d.opts.length - 1) ? ' on' : '') + '" data-o="' + o.k + '">' + o.icon + ' ' + esc(o.t) + '</button>'; }).join('') + '</div>'; }).join('') +
+        '<div class="fs-gr-bed"><div class="fs-gr-ruler"></div><div class="fs-gr-plant"><img alt="" src=""></div><div class="fs-gr-seed">🌰</div></div><div class="fs-gr-res"><em>Pick a garden, then press Grow.</em></div>';
+      $$('.fs-gr-dial', p).forEach(function (row) { $$('.fs-in-chip', row).forEach(function (b) { b.addEventListener('click', function () { $$('.fs-in-chip', row).forEach(function (x) { x.classList.toggle('on', x === b); }); SFX.blip(); reset(p); }); }); });
+      pots.appendChild(p);
+    });
+    var btn = el('button', 'fs-btn fs-gr-go', esc(G.growBtn || '▶ Grow both pots')); btn.type = 'button'; g.insertBefore(btn, log);
+    function keyOf(p) { return G.dials.map(function (d) { return $('.fs-gr-dial[data-k="' + d.k + '"] .on', p).dataset.o; }).join('-'); }
+    function reset(p) { p.classList.remove('grown'); $('.fs-gr-plant', p).style.height = '0%'; $('.fs-gr-res', p).innerHTML = '<em>Press Grow to see what happens.</em>'; }
+    function show(p, r, animate) {
+      var pl = $('.fs-gr-plant', p), im = $('img', pl);
+      im.src = r.img; im.alt = r.alt || '';
+      pl.style.width = (r.w || 80) + '%';
+      if (animate && !reduceMotion) { pl.style.transition = 'none'; pl.style.height = '0%'; void pl.offsetWidth; pl.style.transition = ''; }
+      pl.style.height = Math.round(18 + 82 * r.h / maxH) + '%'; p.classList.add('grown');
+      $('.fs-gr-res', p).innerHTML = '<table>' + G.measures.map(function (m) { return '<tr><th>' + esc(m.t) + '</th><td>' + esc(String(r[m.k])) + (m.unit ? ' ' + esc(m.unit) : '') + '</td></tr>'; }).join('') +
+        (G.fixed || []).map(function (f) { return '<tr class="fs-gr-fx"><th>' + esc(f.t) + '</th><td>' + esc(f.v) + '</td></tr>'; }).join('') + '</table>' + (r.note ? '<p>' + esc(r.note) + '</p>' : '');
+    }
+    function enough() {
+      return Object.keys(G.need || {}).every(function (dk) { var di = G.dials.map(function (d) { return d.k; }).indexOf(dk); return G.need[dk].every(function (ok) { return Object.keys(tried).some(function (k) { return k.split('-')[di] === ok; }); }); });
+    }
+    function upd() {
+      var keys = Object.keys(tried);
+      log.innerHTML = keys.length ? '<b>📒 Gardens you tried:</b> ' + keys.map(function (k) { var r = G.results[k]; return '<span class="fs-gr-chip">' + esc(r.label || k) + ': ' + r.h + ' cm, ' + r.flowers + ' 🌼</span>'; }).join(' ') : '';
+      if (enough() && !qh.dataset.on) {
+        qh.dataset.on = '1';
+        chipsQ(qh, G.q, G.opts, function () { store('grow-q', '1'); finish(); }, miss);
+        if (store('grow-q')) { var i = G.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]; $$('.fs-in-chip', qh)[i].classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; finish(); }
+      } else if (keys.length && !enough()) { miss.innerHTML = '🔎 ' + esc(G.needLine || 'Try a sunny pot AND a shady pot.'); miss.classList.add('show'); }
+    }
+    function finish() { if (win.classList.contains('show')) return; miss.classList.remove('show'); win.innerHTML = esc(G.win); win.classList.add('show'); SFX.win(); earnClue(G.clue || 'grow'); }
+    btn.addEventListener('click', function () {
+      $$('.fs-gr-pot', pots).forEach(function (p) { var k = keyOf(p), r = G.results[k]; if (!r) return; tried[k] = 1; show(p, r, true); });
+      store('grow', JSON.stringify(tried)); SFX.sparkle(); upd();
+    });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson Part 4: "Pass it on?" — predict which of a parent's traits the babies get (13.01) ----------
+     D.passiton = {afterText, kicker, title, todo[], why, parent:{name,img,alt}, kids:{name,img,alt}, yes, no, traits:[{id,icon,t,pass,why}], nextBtn, q, opts, credit, win, clue} */
+  function buildPassiton() {
+    var P = D.passiton; if (!P) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (P.afterText && p.textContent.indexOf(P.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('passiton anchor text not found'); return; }
+    var g = gameShell(P.kicker || 'Part 4 game', P.title, P.todo, P.why); g.dataset.mod = 'passiton';
+    var stage = el('div', 'fs-pi-stage'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    stage.innerHTML = '<div class="fs-pi-gen"><div class="fs-pi-ph"><img alt="' + esc(P.parent.alt) + '" src="' + esc(P.parent.img) + '"></div><b>' + esc(P.parent.name) + '</b></div>' +
+      '<div class="fs-pi-list">' + P.traits.map(function (t, i) { return '<div class="fs-pi-tr" data-i="' + i + '"><div class="fs-pi-t"><span>' + t.icon + '</span>' + esc(t.t) + '</div><div class="fs-pi-bt"><button type="button" class="fs-in-chip" data-v="1">✅ ' + esc(P.yes || 'Passed to the kittens') + '</button><button type="button" class="fs-in-chip" data-v="0">✋ ' + esc(P.no || 'Stays with mom') + '</button></div></div>'; }).join('') + '</div>' +
+      '<div class="fs-pi-go"><button type="button" class="fs-btn" disabled>' + esc(P.nextBtn || '▶ Next generation') + '</button><small>Make a guess for every trait first.</small></div>' +
+      '<div class="fs-pi-gen fs-pi-kids"><div class="fs-pi-ph"><img alt="' + esc(P.kids.alt) + '" src="' + esc(P.kids.img) + '"><span class="fs-pi-veil">?</span></div><b>' + esc(P.kids.name) + '</b><ul class="fs-pi-out"></ul></div>';
+    g.appendChild(stage); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    if (P.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(P.credit)));
+    var guess = {}, go = $('.fs-pi-go .fs-btn', stage), kids = $('.fs-pi-kids', stage), out = $('.fs-pi-out', stage);
+    $$('.fs-pi-tr', stage).forEach(function (row) { $$('.fs-in-chip', row).forEach(function (b) { b.addEventListener('click', function () {
+      if (stage.classList.contains('ran')) return;
+      $$('.fs-in-chip', row).forEach(function (x) { x.classList.toggle('on', x === b); }); guess[row.dataset.i] = b.dataset.v === '1'; SFX.blip();
+      go.disabled = Object.keys(guess).length < P.traits.length;
+    }); }); });
+    function run(animate) {
+      stage.classList.add('ran'); go.disabled = true; kids.classList.add('born');
+      if (animate) { SFX.whoosh(); }
+      out.innerHTML = '';
+      P.traits.forEach(function (t, i) {
+        var right = guess[i] === undefined ? true : guess[i] === t.pass;
+        var li = el('li', t.pass ? 'yes' : 'no', '<b>' + t.icon + ' ' + (t.pass ? '✅ ' : '✋ ') + esc(t.short || t.t) + '</b>' + esc(t.why) + (right ? '' : ' <em class="fs-pi-oops">(Your guess was different. Now you know why!)</em>'));
+        if (animate && !reduceMotion) li.style.animationDelay = (0.25 + i * 0.35) + 's';
+        out.appendChild(li);
+        var row = $('.fs-pi-tr[data-i="' + i + '"]', stage); row.classList.add(t.pass ? 'yes' : 'no');
+        if (guess[i] !== undefined) row.classList.add(right ? 'right' : 'wrong');
+      });
+      store('passiton', '1');
+      if (!qh.dataset.on) { qh.dataset.on = '1'; chipsQ(qh, P.q, P.opts, function () { store('passiton-q', '1'); finish(); }, miss);
+        if (store('passiton-q')) { var i = P.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]; $$('.fs-in-chip', qh)[i].classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; finish(); } }
+    }
+    function finish() { if (win.classList.contains('show')) return; win.innerHTML = esc(P.win); win.classList.add('show'); SFX.win(); earnClue(P.clue || 'passiton'); }
+    go.addEventListener('click', function () { run(true); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    if (store('passiton')) run(false);
+  }
+
   function buildQuiz() {
     var qs = $$('#tab-quiz .quiz-q'); if (!qs.length) return;
     var Q = D.quizMiss || {};
@@ -1982,6 +2135,7 @@
     list: function (I, at) {
       var box = fsOnly(el('div', 'fs-in fs-in-list')), mir = gField(I.id, I.label, I.q, false);
       var saved = []; try { saved = JSON.parse(store('ans.' + I.id + '.rows') || '[]'); } catch (e) {}
+      if (I.title) box.appendChild(el('div', 'fs-in-k', esc(I.title)));
       var rows = el('ol', 'fs-in-rows'); box.appendChild(rows);
       var add = el('button', 'fs-hintbtn fs-in-add', esc(I.addLabel || '+ Add a step')); add.type = 'button'; box.appendChild(add);
       var cnt = el('span', 'fs-count'); box.appendChild(cnt); box.appendChild(mir);
@@ -2993,6 +3147,63 @@
     check();
   };
 
+  /* ----- digital calipers (13.01): measure leaves from one parent plant grown in sun and in shade ----- */
+  SIMS.calipers = function (host, T) {
+    var S = T.calipers;
+    host.innerHTML = '<div class="fs-game-k">Try it: digital calipers</div><div class="fs-game-t">' + esc(S.title) + '</div>' +
+      '<ul class="fs-todo">' + S.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-cp-tool"><svg viewBox="0 0 400 120" class="fs-cp-svg" role="img" aria-label="Digital calipers: a steel ruler bar with a fixed jaw on the left, a sliding jaw, and a small screen that shows the length.">' +
+      '<rect x="20" y="30" width="370" height="16" rx="3" fill="#C9D1D6" stroke="#6E7A82" stroke-width="2"/>' +
+      (function () { var d = ''; for (var i = 0; i <= 34; i++) d += '<line x1="' + (40 + i * 10) + '" y1="30" x2="' + (40 + i * 10) + '" y2="' + (i % 5 ? 36 : 41) + '" stroke="#55606A" stroke-width="1.2"/>'; return d; })() +
+      '<path d="M24 24h16v92h-8l-8-8z" fill="#AEB8BE" stroke="#6E7A82" stroke-width="2"/>' +
+      '<g class="fs-cp-jaw"><path d="M0 20h66v36h-54v60h-4l-8-8z" fill="#8E9AA2" stroke="#55606A" stroke-width="2"/><rect x="16" y="24" width="46" height="20" rx="3" fill="#1D2B22"/><text class="fs-cp-read" x="39" y="39" text-anchor="middle" font-family="Courier New,monospace" font-size="12" font-weight="900" fill="#9EF0A8">0.0</text><text x="39" y="52" text-anchor="middle" font-family="Nunito,sans-serif" font-size="7" font-weight="800" fill="#24313A">mm</text></g>' +
+      '</svg><div class="fs-cp-leafbox"><img class="fs-cp-leaf" alt="" src="' + esc(S.leafImg) + '"></div></div>' +
+      '<div class="fs-cp-picks">' + S.groups.map(function (gr) { return '<div class="fs-cp-g"><b>' + gr.icon + ' ' + esc(gr.t) + '</b>' + gr.leaves.map(function (mm, i) { return '<button type="button" class="fs-in-chip" data-g="' + gr.k + '" data-i="' + i + '">🍃 Leaf ' + (i + 1) + '<em></em></button>'; }).join('') + '</div>'; }).join('') + '</div>' +
+      '<div class="fs-cp-plot"></div><div class="fs-sv-q fs-cp-q"></div><div class="fs-miss fs-cp-miss"></div><div class="fs-win fs-cp-win"></div>' +
+      (S.credit ? '<div class="fs-xr-cr">' + esc(S.credit) + '</div>' : '');
+    var jaw = $('.fs-cp-jaw', host), read = $('.fs-cp-read', host), leaf = $('.fs-cp-leaf', host), plot = $('.fs-cp-plot', host);
+    var got = {}; try { got = JSON.parse(store('calipers') || '{}'); } catch (e) {}
+    var MAX = S.maxMm || 100, PX = 330 / MAX; /* svg units per mm; jaw 0 sits at x=40 */
+    function setJaw(mm, animate) {
+      jaw.style.transition = animate && !reduceMotion ? 'transform .9s cubic-bezier(.3,1.2,.5,1)' : 'none';
+      jaw.style.transform = 'translateX(' + (40 + mm * PX) + 'px)'; /* SVG user units: the sliding jaw's face sits at x = 40 + mm */
+    }
+    function count(target, ms) {
+      if (reduceMotion || !ms) { read.textContent = target.toFixed(1); return; }
+      var t0 = performance.now(); (function f(t) { var k = Math.min(1, (t - t0) / ms); read.textContent = (target * k).toFixed(1); if (k < 1) requestAnimationFrame(f); })(t0);
+    }
+    setJaw(0, false);
+    function draw() {
+      var all = S.groups.map(function (gr) {
+        var vals = gr.leaves.filter(function (mm, i) { return got[gr.k + i]; });
+        var avg = vals.length ? (vals.reduce(function (a, b) { return a + b; }, 0) / vals.length) : null;
+        return '<div class="fs-cp-row"><span class="fs-cp-rl">' + gr.icon + ' ' + esc(gr.short || gr.t) + '</span><div class="fs-cp-line">' +
+          vals.map(function (mm) { return '<i style="left:' + (100 * mm / MAX) + '%" title="' + mm + ' mm"></i>'; }).join('') +
+          (avg != null && vals.length === gr.leaves.length ? '<u style="left:' + (100 * avg / MAX) + '%"></u>' : '') + '</div><span class="fs-cp-avg">' + (avg != null && vals.length === gr.leaves.length ? 'average ' + avg.toFixed(0) + ' mm' : vals.length + ' of ' + gr.leaves.length) + '</span></div>';
+      }).join('');
+      plot.innerHTML = '<div class="fs-cp-axis"><span>0 mm</span><span>' + (MAX / 2) + ' mm</span><span>' + MAX + ' mm</span></div>' + all;
+      $$('.fs-cp-picks .fs-in-chip', host).forEach(function (b) { var k = b.dataset.g + b.dataset.i; b.classList.toggle('done', !!got[k]); $('em', b).textContent = got[k] ? ' ' + S.groups.filter(function (gr) { return gr.k === b.dataset.g; })[0].leaves[+b.dataset.i] + ' mm' : ''; });
+      var every = S.groups.every(function (gr) { return gr.leaves.every(function (mm, i) { return got[gr.k + i]; }); });
+      if (every) ask();
+    }
+    function ask() {
+      var q = $('.fs-cp-q', host); if (q.dataset.on) return; q.dataset.on = '1';
+      q.innerHTML = '<div class="fs-in-k">' + esc(S.q.q) + '</div><div class="fs-in-chips">' + S.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', q).forEach(function (c) { c.addEventListener('click', function () { var o = S.q.opts[+c.dataset.i];
+        if (!o.ok) { bounce(c, $('.fs-cp-miss', host), o.why); return; } $('.fs-cp-miss', host).classList.remove('show');
+        c.classList.add('on', 'ok'); var w = $('.fs-cp-win', host); w.innerHTML = esc(o.why); w.classList.add('show'); SFX.win(); toolDone(); }); });
+    }
+    $$('.fs-cp-picks .fs-in-chip', host).forEach(function (b) { b.addEventListener('click', function () {
+      var gr = S.groups.filter(function (x) { return x.k === b.dataset.g; })[0], mm = gr.leaves[+b.dataset.i];
+      $$('.fs-cp-picks .fs-in-chip', host).forEach(function (x) { x.classList.toggle('on', x === b); });
+      leaf.style.width = (100 * mm / MAX * 330 / 400) + '%';
+      setJaw(0, false); read.textContent = '0.0';
+      setTimeout(function () { setJaw(mm, true); count(mm, 900); }, 60);
+      SFX.blip(); setTimeout(function () { SFX.snap(); got[gr.k + b.dataset.i] = 1; store('calipers', JSON.stringify(got)); draw(); }, reduceMotion ? 0 : 950);
+    }); });
+    draw();
+  };
+
   /* ----- thermometer simulation ----- */
   SIMS.thermometer = function (host, T) {
     var S = T.thermo, places = S.places, Fmin = -20, Fmax = 220;
@@ -3236,6 +3447,9 @@
     guard('build', buildBuild);
     guard('compare', buildCompare);
     guard('fix', buildFix);
+    guard('lineup', buildLineup);
+    guard('grow', buildGrow);
+    guard('passiton', buildPassiton);
     guard('quiz', buildQuiz);
     guard('solve', buildSolve);
     guard('helpers', buildHelpers);

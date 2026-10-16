@@ -1,0 +1,302 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: the Big Question was about life cycles (shared with 13.02–14.01)",
+  "old": "Think about this…</div>\n          <div class=\"question\">\"How are the life cycles of Florida plants and animals alike — and how are they different?\"",
+  "new": "Think about this…</div>\n          <div class=\"question\">\"Which traits do Florida plants and animals get from their parents, and which come from where they live?\""
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Circle Back repeats the life-cycle Big Question",
+  "old": "Now You Know!</div>\n          <div class=\"question\">\"How are the life cycles of Florida plants and animals alike — and how are they different?\"",
+  "new": "Now You Know!</div>\n          <div class=\"question\">\"Which traits do Florida plants and animals get from their parents, and which come from where they live?\""
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: “predict what stages it goes through” is about life cycles",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to look at a Florida plant or animal and predict what stages it goes through from birth to making the next generation.",
+  "new": "Keep this question in mind. By the end, you'll be able to look at a Florida plant or animal and tell which traits came from its parents and which came from its environment."
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: “Complete vs. Incomplete” is about metamorphosis",
+  "old": "<div class=\"info-detail\">Complete vs. Incomplete</div>",
+  "new": "<div class=\"info-detail\">Inherited vs. Environmental</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the chart listed plant height as environmental only; Part 2 says size is BOTH",
+  "old": "<text x=\"50\" y=\"-4\" font-size=\"14\" font-weight=\"800\" fill=\"#0E1C42\">Plant height</text>\n            <text x=\"50\" y=\"14\" font-size=\"12\" fill=\"#3F3F3F\">Bigger with sun + water</text>",
+  "new": "<text x=\"50\" y=\"-4\" font-size=\"14\" font-weight=\"800\" fill=\"#0E1C42\">A broken branch</text>\n            <text x=\"50\" y=\"14\" font-size=\"12\" fill=\"#3F3F3F\">From a storm, not from parents</text>"
+ },
+ {
+  "kind": "fix",
+  "why": "the chart listed body strength as environmental only; Part 2 says strength is BOTH",
+  "old": "<text x=\"50\" y=\"-4\" font-size=\"14\" font-weight=\"800\" fill=\"#0E1C42\">Body strength</text>\n            <text x=\"50\" y=\"14\" font-size=\"12\" fill=\"#3F3F3F\">Built up by exercise</text>",
+  "new": "<text x=\"50\" y=\"-4\" font-size=\"14\" font-weight=\"800\" fill=\"#0E1C42\">A dented shell</text>\n            <text x=\"50\" y=\"14\" font-size=\"12\" fill=\"#3F3F3F\">From a fall or a bite</text>"
+ },
+ {
+  "kind": "fix",
+  "why": "chart icon: the dented shell row had the strength icon",
+  "old": "<text x=\"0\" y=\"0\" font-size=\"34\">💪</text>",
+  "new": "<text x=\"0\" y=\"0\" font-size=\"34\">🐚</text>"
+ },
+ {
+  "kind": "fix",
+  "why": "the chart’s description still named plant size and dog weight as environmental",
+  "old": "Right: environmental traits like scars, plant size from sunlight, dog weight from food.",
+  "new": "Right: environmental traits like a scar, a broken branch, a dented shell and a tan."
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: turning toward the sun is an inherited ability; which way it points depends on the sun (and grown sunflowers stop turning and face east)",
+  "old": "data-part=\"Sunflower facing sun · ENVIRONMENTAL\"",
+  "new": "data-part=\"Sunflower facing sun · BOTH\""
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: sunflower case text",
+  "old": "data-info=\"Young sunflowers turn to follow the sun across the sky during the day\\..*?\"/>",
+  "new": "data-info=\"Young sunflowers turn to follow the sun across the sky. The ABILITY to turn is inherited: every young sunflower can do it. Which way a flower points right now depends on the environment: where the sun is. (Grown sunflowers stop turning and face east.) INHERITED + ENVIRONMENTAL.\"/>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 13 is Quarter 2",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook or sunny window needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "pelican chicks aren’t the same color as adults; the warm-up now asks about a family from the game",
+  "old": "<p>In your notebook, draw a quick sketch of two pelicans.*?</p>",
+  "new": "<p><strong>Find the family:</strong> match four Florida babies to their parents. Look closely. Some traits passed straight down. Others change as the baby grows up.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "Picture a family photo: a brown-eyed mom, a brown-eyed dad, and three kids. Two kids have brown eyes. One has green eyes (just like Grandma). Some traits passed straight down. Others skipped a generation. And nobody got mom's accent — that came from where she grew up.",
+  "new": "Picture a family photo: a brown-eyed mom, a brown-eyed dad and three kids. Two kids have brown eyes. One has green eyes, just like Grandma. Nobody got Mom's accent (the way she says words). That came from where she grew up."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "one idea per paragraph; dash removed",
+  "old": "A baby pelican looks like a smaller pelican. A puppy looks like a smaller dog. A sunflower seedling, given time, becomes a sunflower again. Why? Because parents pass down their",
+  "new": "A baby pelican grows into a pelican. A sunflower seed grows into a sunflower. Why? Because parents pass down their"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter list",
+  "old": "Examples of inherited traits: eye color, beak shape, leaf shape, fur color (mostly), height (mostly), how a plant's flowers look. Offspring",
+  "new": "Eye color, beak shape, leaf shape and flower color are inherited traits. Offspring"
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed; “stays small” → what really happens in shade (matches Grow the twins)",
+  "old": " — where you live, what you eat, how much sun you get — can affect traits too. A plant that gets lots of sun and water grows BIG; the same kind of plant in dry shade stays small. A puppy that's well fed grows full size; one that doesn't eat enough stays smaller.</p>",
+  "new": " (where you live, what you eat, how much sun you get) can change traits too. A plant with lots of sun and water grows big and bushy. The same kind of plant in shade grows thin, with few flowers. A puppy that eats well grows full size. One that doesn't get enough food stays smaller.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "So when you see a trait on an offspring, the scientist's question is: did this come from the parents, or from where it grew up? Offspring show",
+  "new": "So a scientist asks: did this trait come from the parents, or from where it grew up? Offspring show"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "Small differences between offspring and parents.</span></span> — they're never EXACTLY their parents.</p>",
+  "new": "Small differences between offspring and parents.</span></span>. They're never EXACTLY like their parents.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "“potential” → plain words",
+  "old": "SIZE (you inherit the potential, but food and care decide if you reach it)",
+  "new": "SIZE (parents pass down how big you COULD grow; food and care decide if you get there)"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter caption",
+  "old": "<strong>Some traits come from parents. Some come from the world around you.</strong> Many traits — like SIZE — are a mix of both.",
+  "new": "<strong>Some traits come from parents. Some come from the world around you.</strong> Many traits, like size, are a mix of both."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; tease the next lesson in plain words",
+  "old": "Next lesson, you'll see how flowering plants actually MAKE the next generation — pollination, seeds, and germination.",
+  "new": "Next lesson, you'll find out how a flower makes the seeds for the next generation."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (sorting a real organism’s traits moves to Part C; Pass it on? is Part 4)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception paragraph is what Pass it on? (Part 4) teaches",
+  "old": "\\s*<p><strong>Common misconception:</strong>.*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: one thinking stop per tab (Stop & Think in Part 1 stays)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the diagram heading becomes Part 3 (Stamp the case replaces the tap diagram)",
+  "old": "margin-top:22px;\">Four Florida Trait Cases</h3>",
+  "new": "margin-top:22px;\">Part 3 · Four Florida Trait Cases</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the panther fact, the mangrove callout and Go Deeper at the end of the Lesson; Part 4 = Pass it on?; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Pass It On?</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">A Florida panther mother has three new kittens in her den. Some of her traits she was born with. Others came from her life in the swamp. Which ones will her kittens get?</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; Stamp the case covers the four cases)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 is now number 5",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 is now number 6",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page (the drawing is a bonus)",
+  "old": "In your notebook, draw a parent animal or plant and one of its offspring side by side\\. Could be real or invented — a pelican \\+ chick, a dog \\+ puppy, a flower \\+ seedling\\.</p>\\s*<p[^>]*>Label THREE inherited traits.*?</p>",
+  "new": "Pick a real Florida parent and its offspring: a pet, a backyard plant, or an animal from today. Name THREE traits the offspring inherited and TWO it could get from its environment.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the sketch is a bonus",
+  "old": "A parent + offspring drawing with 3 inherited traits and 2 environmental traits labeled clearly.",
+  "new": "A parent and offspring with 3 inherited traits and 2 environmental traits. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether offspring are basically clones, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether offspring are clones of their parents, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

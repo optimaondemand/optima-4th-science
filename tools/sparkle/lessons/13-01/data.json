@@ -1,0 +1,1209 @@
+{
+ "lesson": "13.01",
+ "week": 13,
+ "day": 1,
+ "guide": "lena",
+ "prefix": "g4sci-13-1",
+ "manifestKey": "13-01",
+ "paths": {
+  "audio": "assets/audio/guide/",
+  "video": "assets/video/teacher/",
+  "manifest": "https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json",
+  "h2c": "assets/sparkle/vendor/html2canvas.min.js",
+  "crew": "assets/crew/",
+  "ornaments": "assets/ornaments/"
+ },
+ "crew": {
+  "lena": {
+   "name": "Dr. Lena Reyes",
+   "role": "field biologist (a scientist who studies animals in the wild)",
+   "initials": "LR",
+   "color": "#2F7A55",
+   "lens": "binoculars",
+   "voiceId": "u5S2O6UbbmDc2GMY2y6X"
+  }
+ },
+ "expedition": {
+  "num": 13,
+  "title": "One Parent, Two Gardens"
+ },
+ "ambient": {
+  "icon": "🌊",
+  "label": "Dune sounds"
+ },
+ "case": {
+  "num": 13,
+  "title": "One Parent, Two Gardens",
+  "style": "tags",
+  "hook": "Last spring I collected seeds from ONE wild beach sunflower on the dunes. I planted some in our sunny dune garden and some in the shady courtyard behind the lab. Now the plants look so different that a volunteer wrote on the tags: “Mixed up? Different parents?”",
+  "question": "Did the seeds get mixed up, or can one parent plant have offspring this different?",
+  "how": "Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.",
+  "stills": [
+   {
+    "cam": "Tag P · the parent plant",
+    "time": "wild, on the dunes",
+    "tag": "PARENT",
+    "kind": "print",
+    "img": "images/13-01-case-parent.jpg",
+    "alt": "A wild beach sunflower growing on a sand dune: one yellow flower with a dark center and rough green leaves."
+   },
+   {
+    "cam": "Tag S · its seeds",
+    "time": "collected in May",
+    "tag": "SEEDS",
+    "kind": "print",
+    "img": "images/13-01-case-seeds.jpg",
+    "alt": "Dried brown flower heads on the parent plant. Each one is full of seeds."
+   },
+   {
+    "cam": "Pot A · sunny dune garden",
+    "time": "planted in June",
+    "tag": "POT A",
+    "kind": "print",
+    "img": "images/13-01-case-sun.jpg",
+    "alt": "A low, bushy patch of beach sunflowers covered in yellow flowers."
+   },
+   {
+    "cam": "Pot B · shady courtyard",
+    "time": "planted in June",
+    "tag": "POT B",
+    "kind": "print",
+    "img": "images/13-01-case-shade.jpg",
+    "alt": "One tall, thin beach sunflower stem with only one yellow flower."
+   }
+  ],
+  "stillsCredit": "Parent: Dune sunflowers on the sand, Miami Beach, Daniel Di Palma, via Wikimedia Commons (CC BY-SA 4.0). Seeds: Dune sunflower seed heads, Miami Beach, Daniel Di Palma, via Wikimedia Commons (CC BY-SA 4.0). Pot A: Dune sunflowers, Sanibel Island, James St. John, via Wikimedia Commons (CC BY 2.0). Pot B: Beach sunflower with one tall stem, sonnia hill, via Wikimedia Commons (CC BY 2.0). The tags and the gardens are part of the story.",
+  "clues": [
+   {
+    "id": "lineup",
+    "icon": "👪",
+    "where": "Warm-Up: find the family",
+    "t": "Babies resemble their parents in inherited traits like body shape, even when other things (spots, stripes, size) are different for now."
+   },
+   {
+    "id": "grow",
+    "icon": "🌱",
+    "where": "The Lesson, Part 2: grow the twins",
+    "t": "Two seeds from one parent: sun and water changed the height, the spread and the number of flowers, but never the flower color or the leaf shape."
+   },
+   {
+    "id": "verdict",
+    "icon": "🗂",
+    "where": "The Lesson, Part 3: stamp the case",
+    "t": "Some traits are inherited (a pelican’s beak), some come from the environment (a manatee’s scars), and many are both (how tall an oak grows)."
+   },
+   {
+    "id": "passiton",
+    "icon": "🐾",
+    "where": "The Lesson, Part 4: pass it on?",
+    "t": "Only inherited traits pass to the next generation. A scar, or being thin after a hard year, stays with the parent."
+   }
+  ],
+  "solve": {
+   "title": "What happened in the two gardens?",
+   "q": "Which answer fits all four clues?",
+   "options": [
+    {
+     "t": "Someone mixed up the seeds. Plants that look this different must have different parents.",
+     "why": "Check Clue 2. In Grow the twins, seeds from ONE parent looked very different in sun and in shade. Different looks don’t prove different parents."
+    },
+    {
+     "t": "Same parent. Both plants have the same yellow flowers with dark centers and the same leaf shape: those are inherited. The shady plant grew tall and thin with few flowers because it got less sun: that’s the environment.",
+     "right": true,
+     "why": "Case cracked! The seeds weren’t mixed up. Inherited traits matched; the garden changed the rest. Now write your case report: it’s the questions below."
+    },
+    {
+     "t": "The shady plant changed its traits on purpose to reach the sun, so its seeds will grow tall and thin too.",
+     "why": "Check Clue 4. Traits from the environment stay with that plant. They don’t pass to its seeds. And plants don’t choose their traits."
+    }
+   ]
+  }
+ },
+ "lineup": {
+  "afterText": "Find the family:",
+  "kicker": "Warm-Up game",
+  "title": "Find the family",
+  "todo": [
+   "Look at each baby’s body shape, not its colors.",
+   "Drag each baby onto its parent, or tap a baby and then a parent.",
+   "Find all four families, then answer the question."
+  ],
+  "why": {
+   "icon": "👪",
+   "q": "Why match families?",
+   "t": "Offspring (babies) inherit traits from their parents. Some babies look different at first, but their inherited traits give them away."
+  },
+  "hint": "Drag a baby onto its parent, or tap a baby and then a parent.",
+  "babies": [
+   {
+    "id": "panther",
+    "name": "Spotted kitten",
+    "img": "images/13-01-kitten.jpg",
+    "alt": "A Florida panther kitten with dark spots and blue eyes.",
+    "miss": "Look at the face and the round ears. Which parent has the same face shape?"
+   },
+   {
+    "id": "crane",
+    "name": "Fluffy brown chick",
+    "img": "images/13-01-colt.jpg",
+    "alt": "A fluffy, rusty-brown chick with long legs, walking in shallow water.",
+    "miss": "Look at the long legs and long neck. Which parent has them too?"
+   },
+   {
+    "id": "tortoise",
+    "name": "Tiny shelled baby",
+    "img": "images/13-01-tortoise-baby.jpg",
+    "alt": "A tiny tortoise with a yellow and orange patterned shell.",
+    "miss": "A dome-shaped shell and thick front legs. Which parent has the same shape?"
+   },
+   {
+    "id": "gator",
+    "name": "Striped babies",
+    "img": "images/13-01-gator-baby.jpg",
+    "alt": "A group of baby alligators with bright yellow stripes, resting in the grass.",
+    "miss": "Ignore the stripes. Look at the snout and the eyes on top of the head."
+   }
+  ],
+  "parents": [
+   {
+    "id": "panther",
+    "name": "Florida panther",
+    "img": "images/13-01-panther.jpg",
+    "alt": "An adult Florida panther with a plain tan coat, sitting in the grass.",
+    "same": "the face shape, round ears and long tail.",
+    "diff": "the spots and blue eyes. The spots fade as the kitten grows, and its eyes turn golden brown."
+   },
+   {
+    "id": "crane",
+    "name": "Sandhill crane",
+    "img": "images/13-01-crane.jpg",
+    "alt": "A tall gray sandhill crane with a red patch on its head, standing by a tree in the water.",
+    "same": "long legs, a long neck and a long, pointed beak.",
+    "diff": "the fluffy brown feathers. The chick (called a colt) grows gray feathers and a red cap later."
+   },
+   {
+    "id": "tortoise",
+    "name": "Gopher tortoise",
+    "img": "images/11-02-kit-tortoise.jpg",
+    "alt": "An adult gopher tortoise with a domed brown shell and thick front legs.",
+    "same": "the domed shell and thick front legs made for digging.",
+    "diff": "the bright yellow shell. It turns brown and gray as the tortoise gets older."
+   },
+   {
+    "id": "gator",
+    "name": "American alligator",
+    "img": "images/11-02-gator-head.jpg",
+    "alt": "An adult alligator’s head with eyes and nostrils on top.",
+    "same": "the wide snout, the sharp teeth, and eyes and nostrils on top of the head.",
+    "diff": "the yellow stripes. They fade as the alligator grows."
+   }
+  ],
+  "q": "Look at all four families. Which is true?",
+  "opts": [
+   {
+    "t": "Babies look exactly like their parents.",
+    "miss": "The kitten has spots and the chick is brown. Do they look EXACTLY like their parents?"
+   },
+   {
+    "t": "Babies inherit their parents’ body shape, but some things, like spots or colors, can be different for now.",
+    "ok": true
+   },
+   {
+    "t": "Babies pick which traits to copy from their parents.",
+    "miss": "Babies can’t choose their traits. Where do inherited traits come from?"
+   }
+  ],
+  "win": "Four families found! Each baby inherited its parents’ body shape. Spots, stripes and fluffy feathers are traits that change as the baby grows. That’s a clue.",
+  "clue": "lineup",
+  "credit": "Florida panther kitten, U.S. Army Corps of Engineers / Erica Skolte, via Wikimedia Commons (public domain). Florida panther, George Gentry / U.S. Fish and Wildlife Service, via Wikimedia Commons (public domain). Sandhill crane colt, NASA / Bill White, via Wikimedia Commons (public domain). Sandhill crane, NASA / Bill White, via Wikimedia Commons (public domain). Baby gopher tortoise, U.S. Fish and Wildlife Service, via Wikimedia Commons (public domain). Alligator hatchlings, Everglades National Park / R. Cammauf, via Wikimedia Commons (public domain). Adult gopher tortoise at its burrow, Andrea Westmoreland, via Wikimedia Commons (CC BY-SA 2.0). American alligator head, Stephenx77, via Wikimedia Commons (public domain)."
+ },
+ "grow": {
+  "afterText": "can change traits too",
+  "kicker": "Part 2 game",
+  "title": "Grow the twins",
+  "model": "This is a model of Dr. Reyes’s test pots. Each pot gets one seed from the SAME parent beach sunflower.",
+  "todo": [
+   "Pick the sun and water for Pot A and Pot B.",
+   "Press ▶ Grow both pots and compare the plants.",
+   "Try a sunny pot AND a shady pot. Then answer the question."
+  ],
+  "why": {
+   "icon": "🌻",
+   "q": "Meet the beach sunflower",
+   "t": "A wild Florida flower that grows on sand dunes by the beach. It spreads low across the sand."
+  },
+  "seedLine": "a seed from the same parent plant",
+  "dials": [
+   {
+    "k": "sun",
+    "t": "Sun",
+    "opts": [
+     {
+      "k": "sun",
+      "icon": "☀️",
+      "t": "Full sun"
+     },
+     {
+      "k": "shade",
+      "icon": "🌳",
+      "t": "Shade"
+     }
+    ]
+   },
+   {
+    "k": "water",
+    "t": "Water",
+    "opts": [
+     {
+      "k": "wet",
+      "icon": "💧",
+      "t": "Plenty"
+     },
+     {
+      "k": "dry",
+      "icon": "🏜",
+      "t": "A little"
+     }
+    ]
+   }
+  ],
+  "results": {
+   "sun-wet": {
+    "label": "☀️💧",
+    "img": "images/13-01-case-sun.jpg",
+    "alt": "A bushy beach sunflower with many flowers.",
+    "h": 30,
+    "w": 92,
+    "spread": 90,
+    "flowers": 24,
+    "note": "Low, bushy and covered in flowers."
+   },
+   "sun-dry": {
+    "label": "☀️🏜",
+    "img": "images/13-01-case-sun.jpg",
+    "alt": "A small beach sunflower with a few flowers.",
+    "h": 15,
+    "w": 48,
+    "spread": 35,
+    "flowers": 8,
+    "note": "Smaller, with fewer flowers."
+   },
+   "shade-wet": {
+    "label": "🌳💧",
+    "img": "images/13-01-case-shade.jpg",
+    "alt": "A tall, thin beach sunflower with one flower.",
+    "h": 55,
+    "w": 46,
+    "spread": 20,
+    "flowers": 3,
+    "note": "Tall and thin: it stretched toward the light."
+   },
+   "shade-dry": {
+    "label": "🌳🏜",
+    "img": "images/13-01-case-shade.jpg",
+    "alt": "A short, thin beach sunflower with one flower.",
+    "h": 25,
+    "w": 30,
+    "spread": 10,
+    "flowers": 1,
+    "note": "Thin and weak, with one flower."
+   }
+  },
+  "measures": [
+   {
+    "k": "h",
+    "t": "📏 Height",
+    "unit": "cm"
+   },
+   {
+    "k": "spread",
+    "t": "↔️ Spread",
+    "unit": "cm"
+   },
+   {
+    "k": "flowers",
+    "t": "🌼 Flowers",
+    "unit": ""
+   }
+  ],
+  "fixed": [
+   {
+    "t": "🎨 Flower color",
+    "v": "yellow, dark center"
+   },
+   {
+    "t": "🍃 Leaf shape",
+    "v": "rough, with wavy edges"
+   }
+  ],
+  "need": {
+   "sun": [
+    "sun",
+    "shade"
+   ]
+  },
+  "needLine": "Now change the sun: grow a sunny pot AND a shady pot.",
+  "growBtn": "▶ Grow both pots (8 weeks)",
+  "q": "Which traits NEVER changed, no matter what garden you picked?",
+  "opts": [
+   {
+    "t": "Height and number of flowers",
+    "miss": "Look at your results. Did the height change between gardens?"
+   },
+   {
+    "t": "Flower color and leaf shape",
+    "ok": true
+   },
+   {
+    "t": "Nothing stayed the same",
+    "miss": "Check the green rows in each pot’s results. Did they ever change?"
+   }
+  ],
+  "credit": "Dune sunflowers, Sanibel Island, James St. John, via Wikimedia Commons (CC BY 2.0). Beach sunflower with one tall stem, sonnia hill, via Wikimedia Commons (CC BY 2.0).",
+  "win": "Same parent, different gardens. Sun and water changed the height, spread and flowers (environment). Flower color and leaf shape never changed (inherited). That’s a clue.",
+  "clue": "grow"
+ },
+ "verdict": {
+  "replace": "#tab-lesson .diagram-wrap",
+  "kicker": "Part 3 game",
+  "title": "Stamp the case",
+  "todo": [
+   "Open a case and read the facts.",
+   "Stamp it INHERITED, ENVIRONMENT or BOTH.",
+   "Pick the fact that proves it. Stamp all four."
+  ],
+  "why": {
+   "icon": "🗂",
+   "q": "Three stamps",
+   "t": "INHERITED = from the parents. ENVIRONMENT = from where it lives and what happens to it. BOTH = the parents give the start, and the environment shapes the rest."
+  },
+  "stamps": [
+   {
+    "k": "inh",
+    "icon": "👪",
+    "t": "INHERITED"
+   },
+   {
+    "k": "env",
+    "icon": "🌍",
+    "t": "ENVIRONMENT"
+   },
+   {
+    "k": "both",
+    "icon": "⚖️",
+    "t": "BOTH"
+   }
+  ],
+  "stories": [
+   {
+    "id": "pelican",
+    "name": "Pelican beak shape",
+    "img": "images/13-01-pelican.jpg",
+    "alt": "A young brown pelican with a long, straight beak.",
+    "data": [
+     "Every brown pelican has a long beak with a stretchy pouch underneath.",
+     "Chicks hatch with a short beak of the same shape. It grows longer.",
+     "Pelicans that catch lots of fish and pelicans that catch few have the same beak shape."
+    ],
+    "answer": "inh",
+    "stampMiss": "Does the beak shape change with what a pelican eats or where it lives? Read the facts again.",
+    "proof": [
+     {
+      "t": "Every pelican has the same beak shape, no matter how much it eats.",
+      "ok": true
+     },
+     {
+      "t": "Pelicans live near the ocean.",
+      "miss": "True, but does that prove where the beak shape came from?"
+     },
+     {
+      "t": "Some pelicans are bigger than others.",
+      "miss": "That’s about size, not beak shape."
+     }
+    ],
+    "why": "The beak shape comes from the parents. It’s the same in every pelican, whatever its life is like."
+   },
+   {
+    "id": "manatee",
+    "name": "A manatee’s scars",
+    "img": "images/13-01-manatee-scars.jpg",
+    "alt": "A gray manatee underwater with two long white scars on its back.",
+    "data": [
+     "Many Florida manatees have long white scars on their backs.",
+     "The scars come from boat propellers (the spinning blades that push a boat).",
+     "Manatee calves are born with smooth skin and no scars."
+    ],
+    "answer": "env",
+    "stampMiss": "Were the calves born with these scars? Read the facts again.",
+    "proof": [
+     {
+      "t": "Calves are born with no scars. The scars come from boat injuries.",
+      "ok": true
+     },
+     {
+      "t": "Manatees are gray.",
+      "miss": "That’s about color, not the scars."
+     },
+     {
+      "t": "Manatees swim slowly.",
+      "miss": "Swimming slowly is why boats hit them, but what proves the scars aren’t inherited?"
+     }
+    ],
+    "why": "Scars come from the environment, not the parents. Scientists use each manatee’s scar pattern to tell it apart from others."
+   },
+   {
+    "id": "oak",
+    "name": "How tall a live oak grows",
+    "img": "images/10-01-live-oak.jpg",
+    "alt": "A huge live oak tree with wide, spreading branches.",
+    "data": [
+     "A live oak acorn always grows into a live oak, never a palm.",
+     "In an open, sunny field, a live oak can grow huge and wide.",
+     "The same kind of tree squeezed into a small, shady spot stays much smaller."
+    ],
+    "answer": "both",
+    "stampMiss": "One fact is about the parents and two are about the place it grows. What does that tell you?",
+    "proof": [
+     {
+      "t": "It’s a live oak because of its parents, but sun and space change how big it grows.",
+      "ok": true
+     },
+     {
+      "t": "Live oaks grow in Florida.",
+      "miss": "True, but which fact shows two causes?"
+     },
+     {
+      "t": "Oak trees make acorns.",
+      "miss": "True, but that doesn’t explain its height."
+     }
+    ],
+    "why": "Both! The parents give the tree the ability to grow tall. Sun, water, soil and space decide how tall it really gets."
+   },
+   {
+    "id": "sunflower",
+    "name": "A sunflower turning to the sun",
+    "img": "images/13-01-sunflowers.jpg",
+    "alt": "A field of young sunflowers, all facing the same direction.",
+    "data": [
+     "Young sunflowers turn to follow the sun across the sky.",
+     "Every young sunflower can do this. The ability comes from its parents.",
+     "Which way a flower points right now depends on where the sun is."
+    ],
+    "answer": "both",
+    "stampMiss": "One fact is about the parents and one is about the sun. What does that tell you?",
+    "proof": [
+     {
+      "t": "The ability to turn is inherited, but where it points depends on the sun.",
+      "ok": true
+     },
+     {
+      "t": "Sunflowers are yellow.",
+      "miss": "That’s about color, not turning."
+     },
+     {
+      "t": "Sunflowers are tall.",
+      "miss": "That’s about height, not turning."
+     }
+    ],
+    "why": "Both! The ability to turn is inherited. Where the flower points depends on the sun. (Grown sunflowers stop turning and face east.)"
+   }
+  ],
+  "credit": "Young brown pelican, Sarasota, Stuart Woodfin, via Wikimedia Commons (CC BY 2.0). Florida manatee with propeller scars, Robert K. Bonde / U.S. Fish and Wildlife Service, via Wikimedia Commons (public domain). Southern live oak with resurrection ferns, JamesDeMers, via Wikimedia Commons (CC0). Young sunflowers in a field, Timothy Akolamazima, via Wikimedia Commons (CC BY-SA 4.0).",
+  "win": "Four cases stamped! Some traits are inherited, some come from the environment, and many are both. That’s a clue.",
+  "clue": "verdict"
+ },
+ "passiton": {
+  "afterText": "Which ones will her kittens get",
+  "kicker": "Part 4 game",
+  "title": "Pass it on?",
+  "todo": [
+   "Read each of the mother’s traits.",
+   "Guess: will it pass to her kittens, or stay with her?",
+   "Press ▶ Next generation to see what the kittens got."
+  ],
+  "why": {
+   "icon": "🐾",
+   "q": "What is a generation?",
+   "t": "A generation is one step in a family: parents are one generation, and their babies are the next."
+  },
+  "parent": {
+   "name": "The mother panther",
+   "img": "images/13-01-pan-mom.jpg",
+   "alt": "A trail camera photo of a Florida panther mother carrying her kitten in her mouth."
+  },
+  "kids": {
+   "name": "Her three kittens",
+   "img": "images/13-01-pan-kits.jpg",
+   "alt": "Three spotted Florida panther kittens with blue eyes in their den."
+  },
+  "yes": "Passed to the kittens",
+  "no": "Stays with mom",
+  "traits": [
+   {
+    "id": "tail",
+    "icon": "〰️",
+    "t": "A kink (a sharp bend) at the tip of her tail. She was born with it.",
+    "short": "The kinked tail",
+    "pass": true,
+    "why": "Inherited traits pass down. Kinked tails were once common in Florida panther families, passed from parents to kittens."
+   },
+   {
+    "id": "scar",
+    "icon": "🩹",
+    "t": "A scar on her nose from an old fight.",
+    "short": "The scar",
+    "pass": false,
+    "why": "A scar comes from something that happened to her (the environment). Her kittens are born without it."
+   },
+   {
+    "id": "ears",
+    "icon": "👂",
+    "t": "Round ears and a long, thick tail, like every Florida panther.",
+    "short": "Round ears and a long tail",
+    "pass": true,
+    "why": "All Florida panthers inherit these from their parents. Every kitten has them too."
+   },
+   {
+    "id": "thin",
+    "icon": "🦌",
+    "t": "She is thin because deer were hard to find this year.",
+    "short": "Being thin",
+    "pass": false,
+    "why": "Her body changed because of not enough food (the environment). Kittens that eat well will grow to full size."
+   }
+  ],
+  "nextBtn": "▶ Next generation",
+  "q": "Why didn’t the kittens get the scar?",
+  "opts": [
+   {
+    "t": "The scar came from the environment, so it can’t be passed down.",
+    "ok": true
+   },
+   {
+    "t": "The kittens are too young to have a scar yet.",
+    "miss": "Even when they grow up, they won’t get HER scar. Where did the scar come from?"
+   },
+   {
+    "t": "Only fathers pass down traits.",
+    "miss": "Both parents pass down inherited traits. Where did the scar come from?"
+   }
+  ],
+  "credit": "Florida panther mother carrying her kitten, on a U.S. Fish and Wildlife Service trail camera, via Wikimedia Commons (public domain). Florida panther kittens in their den, U.S. Fish and Wildlife Service, via Wikimedia Commons (public domain). This panther family is part of the lesson’s story.",
+  "win": "Only inherited traits pass to the next generation. Things that happen to a parent, like a scar or a hungry year, stay with that parent. That’s your last clue.",
+  "clue": "passiton"
+ },
+ "exploreMod": "passiton",
+ "quizKicker": "",
+ "quizMiss": {
+  "q1": {
+   "B": "Can a puppy choose what it looks like?",
+   "C": "Growing up in one place doesn’t give a puppy its mother’s ear shape. What does?"
+  },
+  "q2": {
+   "A": "Did the flower’s parents have that color too?",
+   "B": "Is an alligator born with scaly skin?"
+  },
+  "q3": {
+   "A": "Read again: both seedlings came from the same parent plant.",
+   "C": "If size were 100% inherited, would the two seedlings be different sizes?"
+  }
+ },
+ "flags": {
+  "ans-2": [
+   {
+    "label": "what inherited means",
+    "re": "inherit|parent|born with|pass|mom|dad|mother|father|family"
+   },
+   {
+    "label": "what environment means",
+    "re": "environ|where|live|food|eat|sun|water|happen|injur|scar|grow up|place"
+   },
+   {
+    "label": "a Florida example of each",
+    "any": [
+     "pelican",
+     "beak",
+     "manatee",
+     "scar",
+     "oak",
+     "tree",
+     "sunflower",
+     "flower",
+     "panther",
+     "kitten",
+     "spot",
+     "alligator|gator",
+     "stripe",
+     "tortoise",
+     "crane",
+     "turtle",
+     "shell",
+     "leaf|leaves",
+     "color",
+     "tail",
+     "tan",
+     "branch",
+     "height|tall",
+     "dent"
+    ],
+    "min": 2
+   }
+  ],
+  "ans-3": [
+   {
+    "label": "inherited",
+    "re": "inherit|parent|same mom|same mother|born with|pass"
+   },
+   {
+    "label": "environment",
+    "re": "environ|food|eat|home|care|place|grew up|hungry"
+   },
+   {
+    "label": "which traits differ",
+    "re": "size|big|small|tall|short|weigh|strong|healthy|thin|fat|fur|shin"
+   }
+  ],
+  "cer-4": [
+   {
+    "label": "your claim",
+    "re": "agree|disagree|wrong|right|true|not true|clone|not"
+   },
+   {
+    "label": "two pieces of evidence",
+    "any": [
+     "sunflower|pot",
+     "shade|sun",
+     "scar",
+     "manatee",
+     "kitten|panther",
+     "spot",
+     "stripe|gator|alligator",
+     "oak|tree",
+     "environ",
+     "variation|differ",
+     "puppy|puppies",
+     "tail",
+     "food|water"
+    ],
+    "min": 2
+   },
+   {
+    "label": "your reasoning",
+    "re": "because|so |this shows|that shows|this means|that means|which means|proves"
+   }
+  ]
+ },
+ "minWords": {
+  "ans-2": 20,
+  "ans-3": 15,
+  "cer-4": 30
+ },
+ "hints": {
+  "ans-2": [
+   "Inherited = from the parents. Environment = from where it lives and what happens to it.",
+   "Think of the cases you stamped in Part 3: the pelican’s beak and the manatee’s scars.",
+   "Try: An inherited trait ___. For example, ___. An environmental trait ___. For example, ___."
+  ],
+  "ans-3": [
+   "The puppies have the same parents. What did they inherit?",
+   "Think of Grow the twins: same parent, different gardens.",
+   "Try: The puppies inherited ___ from their parents. But the environment ___, so ___."
+  ],
+  "cer-4": [
+   "First decide: are offspring clones (exact copies) of their parents?",
+   "Think of the two gardens, the kittens’ spots, or the manatee’s scars.",
+   "Try: I ___ because ___. One piece of evidence is ___. Another is ___."
+  ]
+ },
+ "scholar": {},
+ "planner": {
+  "before": "cer-4",
+  "title": "Your claim and two pieces of evidence",
+  "rows": [
+   {
+    "label": "1. Pick your side",
+    "options": [
+     "I agree",
+     "I disagree"
+    ],
+    "pick": 1
+   },
+   {
+    "label": "2. Pick two pieces of evidence from the lesson",
+    "pick": 2,
+    "options": [
+     "Seeds from one beach sunflower grew very differently in sun and in shade.",
+     "Panther kittens have spots that their mother doesn’t have.",
+     "A manatee’s scars come from boats, not from its parents.",
+     "Siblings from the same parents still have small differences (variation).",
+     "An oak’s height depends on its parents AND on sun and space."
+    ]
+   }
+  ],
+  "note": "Tap your side and two facts. Then write your reasoning in your own words."
+ },
+ "slots": {
+  "welcome": {
+   "label": "Welcome · one parent, two gardens",
+   "length": "30–40 s",
+   "script": "Hi, it’s Dr. Reyes. Last spring I collected seeds from one wild beach sunflower on the dunes. I planted some in the sunny dune garden and some in the shady courtyard. Look at the two pots in the case file. They look so different! A volunteer thinks the seeds got mixed up. Did they? Help me find out."
+  },
+  "warmup": {
+   "label": "Warm-Up · find the family (Clue 1)",
+   "length": "20–30 s",
+   "script": "Here’s a field trick. When you match a baby to its parents, don’t look at colors first. Look at the shape: the legs, the snout, the shell. Some babies wear spots or stripes that fade later. Their body shape gives them away."
+  },
+  "vocab": {
+   "label": "Word Wall",
+   "length": "30–45 s",
+   "notes": "Say each word. For resemble, point to a family photo."
+  },
+  "lesson": {
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  "part1": {
+   "label": "Part 1 · traits are passed down",
+   "length": "20–30 s"
+  },
+  "part2": {
+   "label": "Part 2 · grow the twins (Clue 2)",
+   "length": "25–35 s",
+   "script": "This is my favorite test. Two seeds, same parent. You pick the garden for each pot: sun or shade, plenty of water or a little. Then grow them. Watch which traits change, and which ones never change at all. Make sure you try one pot in the shade."
+  },
+  "figure": {
+   "label": "The inherited or environmental chart",
+   "length": "20–30 s"
+  },
+  "part3": {
+   "label": "Part 3 · stamp the case (Clue 3)",
+   "length": "20–30 s",
+   "script": "Four Florida cases, three stamps. Inherited means from the parents. Environment means from where it lives, or something that happened to it. Both means a little of each. Read the facts, stamp it, then pick the fact that proves it."
+  },
+  "explore": {
+   "label": "Part 4 · pass it on? (Clue 4)",
+   "length": "25–35 s",
+   "script": "A panther mother just had three kittens. She has a kinked tail, a scar on her nose, and she’s thin after a hard year. Which of those will her kittens get? Make your guess for each one, then press Next generation. Don’t worry if a guess is wrong. That’s how scientists learn."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s"
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "20–30 s",
+   "script": "Do you have all four clues? Crack the case at the top of this tab: did my seeds get mixed up? Then answer two questions, write about a parent and its offspring, and write your CER. Your answers save as you type."
+  },
+  "partb": {
+   "label": "Part B",
+   "length": "30 s"
+  },
+  "partc": {
+   "label": "Part C · parent and offspring",
+   "length": "30 s"
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "25–35 s",
+   "script": "A classmate says babies are basically clones of their parents. Clones are exact copies. Hmm. Think about my two sunflower pots, the spotted kittens, the manatee’s scars. Are babies exact copies? Pick your side, tap two pieces of evidence in the planner, then explain how they prove your claim."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "20–30 s",
+   "notes": "Celebrate; tease 13.02 (how a flower makes seeds).",
+   "script": "Case closed! My seeds weren’t mixed up. Same parent, different gardens. The flower color and leaves came from the parent, and the sun did the rest. Next time, a new question: how did that one beach sunflower make all those seeds in the first place?"
+  }
+ },
+ "videoOff": [],
+ "camera": {
+  "max": 8,
+  "huntTitle": "Bonus: can you snap all 4 shots on this list?",
+  "missions": [
+   "All four families matched (Warm-Up)",
+   "Your sunny pot next to your shady pot (The Lesson)",
+   "The kittens after Next generation (The Lesson)",
+   "The answer that cracked the case (Assignment)"
+  ]
+ },
+ "sketch": {
+  "tip": "Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.",
+  "prompts": [
+   "A parent and its offspring",
+   "My sunny pot and my shady pot",
+   "A trait that passes down"
+  ],
+  "inline": [
+   {
+    "id": "partc",
+    "afterPart": "C",
+    "kicker": "Part C · sketch it (optional)",
+    "required": false,
+    "minLabels": 2,
+    "prompts": [
+     "The parent and its offspring side by side",
+     "Label 3 inherited traits",
+     "Label 2 traits from the environment"
+    ]
+   }
+  ]
+ },
+ "hlCoach": {
+  "title": "Highlight like a scientist",
+  "tips": [
+   [
+    "🔑",
+    "Highlight key words, not whole paragraphs.",
+    "If everything is yellow, nothing stands out. Aim for a few words in each paragraph."
+   ],
+   [
+    "📖",
+    "Look for words that are explained.",
+    "Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."
+   ],
+   [
+    "🎯",
+    "Look for answers to the Big Question.",
+    "Ask yourself: does this help me explain how animals notice and respond?"
+   ],
+   [
+    "🔗",
+    "Watch for clue words.",
+    "“Because”, “so” and “first … then” show how ideas connect."
+   ],
+   [
+    "🎨",
+    "Use the colors on purpose.",
+    "Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."
+   ]
+  ],
+  "practice": {
+   "q": "Practice: tap the 3 to 5 words that matter most in this sentence.",
+   "text": "Offspring inherit many traits from their parents, but the environment shapes other traits.",
+   "key": [
+    "Offspring",
+    "inherit",
+    "traits",
+    "parents",
+    "environment",
+    "shapes"
+   ],
+   "small": [
+    "many",
+    "from",
+    "their",
+    "but",
+    "the",
+    "other"
+   ],
+   "model": "A scientist might highlight “inherit”, “parents” and “environment”. Those words carry the idea. Small words like “the” and “but” don’t."
+  },
+  "outside": "This works in every subject. When you read anything, save the words that answer your question, and skip the rest."
+ },
+ "specimen": {
+  "kicker": "Specimen collected",
+  "stamp": "CASE CLOSED",
+  "icon": "🌻",
+  "name": "Beach sunflower seed packet",
+  "line": "You cracked Case 13, and a packet of beach sunflower seeds goes in your Field Notebook. (A specimen is something a scientist collects to study.) Next lesson: how did one flower make all those seeds?"
+ },
+ "notebookTitle": "Unit 3 · Life Systems & Ecosystems",
+ "notebook": [
+  {
+   "lesson": "9.01",
+   "icon": "🍃",
+   "name": "Sunlit leaf",
+   "have": true
+  },
+  {
+   "lesson": "9.02",
+   "icon": "🐛",
+   "name": "Caterpillar sketch",
+   "have": true
+  },
+  {
+   "lesson": "10.01",
+   "icon": "🌰",
+   "name": "Oak acorn",
+   "have": true
+  },
+  {
+   "lesson": "10.02",
+   "icon": "🐚",
+   "name": "Apple snail shell",
+   "have": true
+  },
+  {
+   "lesson": "11.01",
+   "icon": "🐦",
+   "name": "Beak sketch",
+   "have": true
+  },
+  {
+   "lesson": "11.02",
+   "icon": "🦴",
+   "name": "Bone model",
+   "have": true
+  },
+  {
+   "lesson": "12.01",
+   "icon": "🪶",
+   "name": "Great blue heron feather",
+   "have": true
+  },
+  {
+   "lesson": "12.02",
+   "icon": "🦇",
+   "name": "Bat detector printout",
+   "have": true
+  },
+  {
+   "lesson": "13.01",
+   "icon": "🌻",
+   "name": "Beach sunflower seed packet"
+  },
+  {
+   "lesson": "13.02"
+  },
+  {
+   "lesson": "14.01"
+  },
+  {
+   "lesson": "14.02"
+  },
+  {
+   "lesson": "15.01"
+  },
+  {
+   "lesson": "15.02"
+  }
+ ],
+ "rankLine": "Your Field Station ID just updated. Keep going, scientist.",
+ "lensWin": "All six words are in focus. You’ll use every one of them today.",
+ "tool": {
+  "name": "Digital calipers",
+  "icon": "📏",
+  "tab": "assignment",
+  "after": "#tab-assignment .activity-card",
+  "key": "13-tool",
+  "sim": "calipers",
+  "kicker": "Bonus · Tool of the Week",
+  "teaser": "Measure leaves from one parent plant, grown in sun and in shade. Does the garden change the leaves?",
+  "done": "You measured all six leaves and found the pattern. A calipers sticker is in your Field Notebook.",
+  "why": {
+   "icon": "📏",
+   "q": "What are calipers?",
+   "t": "A tool that measures small things very exactly. You close the jaws on the object and read the length, in millimeters (mm), on the screen."
+  },
+  "calipers": {
+   "title": "Sun leaves vs. shade leaves",
+   "todo": [
+    "Tap a leaf. The jaws close on it and the screen shows its length.",
+    "Measure all three leaves from each pot.",
+    "Look at the dots, then answer the question."
+   ],
+   "leafImg": "images/13-01-leaf.jpg",
+   "maxMm": 100,
+   "groups": [
+    {
+     "k": "a",
+     "icon": "☀️",
+     "t": "Pot A · sunny garden",
+     "short": "Pot A (sun)",
+     "leaves": [
+      42,
+      55,
+      48
+     ]
+    },
+    {
+     "k": "b",
+     "icon": "🌳",
+     "t": "Pot B · shady courtyard",
+     "short": "Pot B (shade)",
+     "leaves": [
+      71,
+      63,
+      78
+     ]
+    }
+   ],
+   "credit": "Leaf photo: Dune sunflower leaves, Sanibel Island, James St. John, via Wikimedia Commons (CC BY 2.0). The leaf lengths are a model.",
+   "q": {
+    "q": "What do your measurements show?",
+    "opts": [
+     {
+      "t": "Every leaf is exactly the same length.",
+      "why": "Look at the dots. Are any two leaves the same?"
+     },
+     {
+      "t": "The leaves vary, and the shade leaves are bigger on average.",
+      "ok": true,
+      "why": "Yes! Leaves from one parent still vary a little (variation). And shade leaves grew bigger, to catch more of the dim light. That’s the environment at work."
+     },
+     {
+      "t": "The shade plant must have a different parent.",
+      "why": "Both pots grew from the same parent’s seeds. What else was different between the pots?"
+     }
+    ]
+   }
+  }
+ },
+ "inputs": [
+  {
+   "id": "tab1",
+   "type": "swap",
+   "find": {
+    "sel": ".tab-btn[data-tab=\"vocab\"]"
+   },
+   "swap": [
+    "📚 Vocabulary",
+    "🌅 Warm-Up"
+   ]
+  },
+  {
+   "id": "fs-warm",
+   "type": "list",
+   "find": {
+    "sel": ".fs-game[data-mod=\"lineup\"]"
+   },
+   "label": "Warm-Up: inherited traits I spotted",
+   "q": "Warm-Up: Pick one family from the game. List traits the baby inherited from its parent.",
+   "title": "Your turn: pick one family. List two traits the baby inherited from its parent.",
+   "min": 2,
+   "unit": "traits",
+   "addLabel": "+ Add a trait",
+   "ph": [
+    "Family: ___. The baby inherited…",
+    "It also inherited…"
+   ]
+  },
+  {
+   "id": "sw-words",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap a card to flip it"
+   },
+   "swap": [
+    "<strong>Tap a card to flip it</strong> and read what the word means.",
+    "<strong>Tap a word</strong> to hear it and see what it means."
+   ]
+  },
+  {
+   "id": "hide-nw",
+   "type": "hide",
+   "find": {
+    "sel": ".act-warmup .socratic-q",
+    "text": "Notice"
+   }
+  },
+  {
+   "id": "hide-tip",
+   "type": "hide",
+   "find": {
+    "sel": ".act-warmup .callout",
+    "text": "Today"
+   }
+  },
+  {
+   "id": "fs-partc",
+   "type": "frame",
+   "find": {
+    "sel": "#tab-assignment p",
+    "text": "Pick a real Florida parent and its offspring"
+   },
+   "label": "Part C: My parent and offspring",
+   "q": "Part C: A Florida parent and its offspring: three inherited traits and two traits from the environment",
+   "title": "My parent and offspring",
+   "fields": [
+    {
+     "t": "The parent and its offspring",
+     "icon": "👪",
+     "ph": "Parent: ___. Offspring: ___."
+    },
+    {
+     "t": "Three traits the offspring inherited",
+     "icon": "🧬",
+     "ph": "1. ___ 2. ___ 3. ___",
+     "long": true
+    },
+    {
+     "t": "Two traits it could get from its environment",
+     "icon": "🌍",
+     "ph": "1. ___ 2. ___",
+     "long": true
+    },
+    {
+     "t": "How I can tell the difference",
+     "icon": "🔎",
+     "ph": "I can tell because…",
+     "long": true
+    }
+   ]
+  },
+  {
+   "id": "fs-cer",
+   "type": "cer",
+   "target": "cer-4",
+   "find": {
+    "sel": "textarea#cer-4"
+   },
+   "reminder": "Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.",
+   "parts": [
+    {
+     "k": "C",
+     "t": "Claim",
+     "ask": "Are offspring clones (exact copies) of their parents?",
+     "ph": "I disagree. Offspring are not clones because…"
+    },
+    {
+     "k": "E",
+     "t": "Evidence",
+     "ask": "Two facts from the lesson. Tap them in the planner above, or type them.",
+     "ph": "One fact is… Another fact is…",
+     "rows": 3
+    },
+    {
+     "k": "R",
+     "t": "Reasoning",
+     "ask": "How do those facts prove your claim?",
+     "ph": "This shows that…",
+     "rows": 3
+    }
+   ]
+  },
+  {
+   "id": "relabel",
+   "type": "relabel",
+   "map": {
+    "ans-2": "Part B · Question 5",
+    "ans-3": "Part B · Question 6",
+    "cer-4": "Use Your Evidence (CER)"
+   }
+  },
+  {
+   "id": "sw-check",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap to toggle"
+   },
+   "swap": [
+    " Tap to toggle.",
+    ""
+   ]
+  },
+  {
+   "id": "sw-circle",
+   "type": "swap",
+   "find": {
+    "sel": ".card-head-title",
+    "text": "Revisit Our Key Question"
+   },
+   "swap": [
+    "Revisit Our Key Question",
+    "Back to the Big Question"
+   ]
+  }
+ ]
+}
