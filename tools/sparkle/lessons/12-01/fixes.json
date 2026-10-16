@@ -1,6 +1,18 @@
 [
  {
   "kind": "fix",
+  "why": "quarter label: week 12 is Quarter 2 (Bethany, 16 Oct 2026)",
+  "old": "Q3 &middot; Week 12",
+  "new": "Q2 &middot; Week 12"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
   "why": "accuracy: loggerhead hatchlings find the ocean by sight (light), not smell",
   "old": "A loggerhead sea turtle uses smell to find its way back across the ocean to the beach where it was born.",
   "new": "A loggerhead sea turtle hatchling uses its eyes to find the ocean, crawling toward the brightest part of the night."

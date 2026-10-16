@@ -1,6 +1,18 @@
 [
  {
   "kind": "fix",
+  "why": "quarter label: week 12 is Quarter 2",
+  "old": "Q3 &middot; Week 12",
+  "new": "Q2 &middot; Week 12"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
   "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for two pathway models",
   "old": "🎨 Part C &mdash; Build Your Own Food Chain",
   "new": "🎨 Part C &mdash; Build Two Pathway Models"

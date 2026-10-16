@@ -10,6 +10,8 @@ def fx(kind, why, old, new, regex=False):
     F.append(e)
 
 # ---------------------------------------------------------------- ticked fixes (Bethany, 16 Oct 2026)
+fx('fix', 'quarter label: week 12 is Quarter 2', 'Q3 &middot; Week 12', 'Q2 &middot; Week 12')
+fx('fix', 'quarter label in the footer', 'Science &middot; Quarter 3 &middot;', 'Science &middot; Quarter 2 &middot;')
 fx('fix', 'copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for two pathway models', '🎨 Part C &mdash; Build Your Own Food Chain', '🎨 Part C &mdash; Build Two Pathway Models')
 fx('fix', 'copy-paste leftover: Part C task from 9.01',
    r'In your science notebook, draw a <strong>new</strong> food chain.*?</p>\s*<p[^>]*>Use colors\. Label every part\.</p>',
