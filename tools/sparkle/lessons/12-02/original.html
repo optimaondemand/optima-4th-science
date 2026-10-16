@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Model: From Senses to Brain</title>
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  LESSON 12.02 — MODEL: FROM SENSES TO BRAIN
+  Optima Academy Online · 4th Grade Science · Q2 · Module 9
+  NGSS 4-LS1-2 core  ·  CPALMS: SC.4.L.16.3
+  ════════════════════════════════════════════════════════════════════════
+
+  ── VIDEO MANIFEST ────────────────────────────────────────────────────
+  Naming pattern:  [module]-[lesson 2-digit]-[slot]
+
+    12-02-welcome                Tab 1 · Teacher welcome
+    12-02-lesson-explainer       Tab 2 · Main teaching video
+    12-02-exploration-explainer  Tab 3 · Walks through the 4-step trace
+    12-02-quiz-perfect           Tab 4 · Plays on 3/3 score
+    12-02-quiz-review            Tab 4 · Plays when student needs review
+    12-02-assignment-explainer   Tab 5 · How to do the assignment
+    12-02-closing                Tab 5 · Wrap-up + tease for 12.02
+
+  ── IMAGE MANIFEST ────────────────────────────────────────────────────
+  One image per lesson. Push to /images/ in the optima-4th-science repo.
+  The <img> tag uses a relative path: `src="images/[filename]"`.
+  If the file is missing, the .image-suggestion block is shown instead
+  (no JS needed — handled by the <img>'s onerror handler).
+
+    12-02-compare-pathways.png  Two pathway models side by side — a
+                              bat using echolocation vs. a panther
+                              using sight — to compare animal responses.
+
+  ════════════════════════════════════════════════════════════════════════
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+    background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: #2B1D12;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; padding: 0 18px; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0E1C42 0%, #1a1060 60%, #0E1C42 100%);
+    border-bottom: 6px solid #8B6FC0;
+    padding: 22px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #55C8E8, #8B6FC0, #55C8E8);
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .header-logo {
+    width: 52px; height: 52px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-logo img { width: 48px; height: 38px; }
+  .header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+  .header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+  .header-title {
+    font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(139,111,192,0.4);
+  }
+  .header-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(139,111,192,0.18); border: 1.5px solid rgba(139,111,192,0.4);
+    border-radius: 28px; padding: 6px 16px;
+  }
+  .header-badge span:first-child { font-size: 22px; }
+  .header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+  /* ── Hero Visual ── */
+  .hero-visual {
+    background: linear-gradient(180deg, #06091a 0%, #0d0a2a 60%, #1a0a2e 100%);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #8B6FC0;
+  }
+  .hero-visual svg { display: block; width: 100%; height: auto; }
+
+  /* ── Info Strip ── */
+  .info-strip {
+    display: flex; flex-wrap: wrap; background: #fff;
+    border-bottom: 2px solid #E8DDD2;
+  }
+  .info-item {
+    flex: 1; min-width: 150px; padding: 12px 16px;
+    border-right: 1px solid #E8DDD2;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+  .info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+  /* ── Content Area ── */
+  .content { padding: 24px 28px 36px; }
+
+  /* ── Card System ── */
+  .card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 22px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(43,29,18,0.04);
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 20px; border-bottom: 2px solid;
+  }
+  .card-head-icon {
+    width: 42px; height: 42px; border-radius: 50%; color: #fff;
+    font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .card-body { padding: 18px 22px; }
+  .card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  /* ── Color Themes ── */
+  .theme-lava .card-head { background: #FFF0EC; border-color: #F5C4BA; }
+  .theme-lava .card-head-icon { background: #E8636B; }
+  .theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+  .theme-earth .card-head-icon { background: #C7922C; }
+  .theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+  .theme-sky .card-head-icon { background: #55C8E8; }
+  .theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+  .theme-forest .card-head-icon { background: #34B76F; }
+  .theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+  .theme-rock .card-head-icon { background: #8B6FC0; }
+  .theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+  .theme-magma .card-head-icon { background: #D4772C; }
+
+  /* ── Activity Cards ── */
+  .activity-card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+  .activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+  .activity-card.act-explore { border-left: 6px solid #55C8E8; }
+  .activity-card.act-practice{ border-left: 6px solid #34B76F; }
+  .activity-card.act-check   { border-left: 6px solid #8B6FC0; }
+
+  .act-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px 14px 18px;
+    border-bottom: 1.5px solid #E8DDD2;
+  }
+  .act-num {
+    width: 38px; height: 38px; border-radius: 14px; color: #fff;
+    font-size: 18px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .act-subtitle { font-size: 12px; color: #9A8E82; }
+  .act-time {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+    margin-left: auto; flex-shrink: 0;
+  }
+  .act-body { padding: 18px 22px 18px 20px; }
+  .act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+  /* ── Callout Boxes ── */
+  .callout {
+    border-radius: 14px; padding: 16px 18px;
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+  .callout-lava   { background: #FFF0EC; border: 2px solid #F5C4BA; }
+  .callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+  .callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+  .callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+  .callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+  .callout-space  { background: linear-gradient(135deg, #0E1C42, #1a1060); border: 2px solid rgba(139,111,192,0.4); }
+  .callout-space p { color: #fff; }
+
+  /* ── Socratic Questions ── */
+  .socratic-q {
+    background: linear-gradient(135deg, #f0edf6, #e8e2f2);
+    border: 2px solid #C8B8E8;
+    border-radius: 16px; padding: 16px 20px;
+    margin: 16px 0;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+  .socratic-q .label {
+    font-size: 11px; color: #8B6FC0; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+  }
+  .socratic-q .question {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; font-style: italic;
+  }
+
+  /* ── Diagram Containers ── */
+  .diagram-wrap {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-radius: 16px; padding: 16px; margin: 16px 0;
+    text-align: center;
+  }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption {
+    font-size: 13px; color: #9A8E82; margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Key Concept Box ── */
+  .key-concept {
+    background: #F0EDF6; border: 2px solid #D8D0E8;
+    border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+  }
+  .key-concept .kc-label {
+    font-size: 13px; color: #8B6FC0; text-transform: uppercase;
+    letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+  }
+  .key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+  .key-concept p:last-child { margin-bottom: 0; }
+
+  /* ── Practice Questions ── */
+  .pq {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+  }
+  .pq-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    color: #fff; font-weight: 800; font-size: 14px;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+  /* ── Vocab Flashcards ── */
+  .vocab-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin: 14px 0;
+  }
+  .flip-card {
+    perspective: 800px;
+    height: 160px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 18px 20px;
+    text-align: center;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.06);
+  }
+  .flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+  .flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+  .flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+  .flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+  .flip-card-back {
+    background: linear-gradient(145deg, #0E1C42, #1a1060);
+    border-color: #0E1C42;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .flip-card-back .fc-word-back {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 8px;
+  }
+  .flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+  .fc-color-1 .flip-card-front { border-top-color: #8B6FC0; }
+  .fc-color-2 .flip-card-front { border-top-color: #55C8E8; }
+  .fc-color-3 .flip-card-front { border-top-color: #E8636B; }
+  .fc-color-4 .flip-card-front { border-top-color: #D4772C; }
+  .fc-color-5 .flip-card-front { border-top-color: #34B76F; }
+  .fc-color-6 .flip-card-front { border-top-color: #C7922C; }
+
+  /* ── Vocab Tooltips ── */
+  .vtip {
+    position: relative; color: #8B6FC0; font-weight: 700;
+    cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45);
+    transition: color 0.15s;
+  }
+  .vtip:hover { color: #6B4FA0; }
+  .vtip .vtip-box {
+    position: fixed; background: #0E1C42; color: #fff;
+    padding: 12px 16px; border-radius: 12px;
+    font-size: 14px; font-weight: 600; font-style: normal;
+    line-height: 1.55; width: 250px; text-align: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none; z-index: 9999;
+    box-shadow: 0 6px 24px rgba(14,28,66,0.35);
+    border: 1.5px solid rgba(85,200,232,0.3);
+    transform: translateY(6px);
+  }
+  .vtip .vtip-box::after {
+    content: ''; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent; border-top-color: #0E1C42;
+  }
+  .vtip .vtip-word {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+  }
+  .vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* ── Details / Reveal ── */
+  details {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 5px solid #8B6FC0;
+    border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+  }
+  details summary {
+    padding: 12px 18px; font-size: 16px; font-weight: 700;
+    color: #0E1C42; cursor: pointer;
+  }
+  details summary:hover { background: #FAFAF6; }
+  details > div {
+    padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E;
+    line-height: 1.65; border-top: 1.5px solid #E8DDD2;
+  }
+
+  /* ── Go Deeper ── */
+  .go-deeper {
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 16px;
+    margin: 16px 0; overflow: hidden;
+  }
+  .go-deeper summary {
+    padding: 14px 18px; font-size: 16px; font-weight: 800;
+    color: #0E1C42; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; list-style: none;
+  }
+  .go-deeper summary::-webkit-details-marker { display: none; }
+  .go-deeper summary::before { content: '🔭'; font-size: 22px; }
+  .go-deeper summary::after {
+    content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0;
+    transition: transform 0.3s;
+  }
+  .go-deeper[open] summary::after { transform: rotate(90deg); }
+  .go-deeper .gd-body {
+    padding: 4px 18px 16px; font-size: 15px;
+    color: #5A4D3E; line-height: 1.7;
+    border-top: 1.5px solid #D8D0E8;
+  }
+  .go-deeper .gd-body p { margin-bottom: 10px; }
+
+  /* ── Mind-Blowing Fact ── */
+  .mind-blow {
+    background: linear-gradient(135deg, #06091a, #1a1060);
+    border: 2px solid rgba(139,111,192,0.4);
+    border-radius: 18px; padding: 18px 22px;
+    margin: 18px 0; display: flex;
+    align-items: flex-start; gap: 14px;
+    position: relative; overflow: hidden;
+  }
+  .mind-blow::before {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,111,192,0.2), transparent);
+  }
+  .mind-blow-icon {
+    font-size: 36px; flex-shrink: 0;
+    animation: mind-blow-bounce 2s ease-in-out infinite;
+  }
+  @keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+  .mind-blow-content { flex: 1; }
+  .mind-blow-label {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+  }
+  .mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .mind-blow-text strong { color: #55C8E8; }
+
+  /* ── Diagram Interactive ── */
+  .diagram-interactive { position: relative; }
+  .diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .diagram-interactive .hotspot:hover { opacity: 0.25; }
+  .diagram-interactive .hotspot.active { opacity: 0.35; }
+  .diagram-info-panel {
+    background: #0E1C42; color: #fff;
+    padding: 14px 20px; border-radius: 14px;
+    font-size: 15px; line-height: 1.55; font-weight: 600;
+    text-align: center;
+    border: 1.5px solid rgba(85,200,232,0.3);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    margin: 10px 0 0; display: none;
+  }
+  .diagram-info-panel.visible { display: block; }
+  .diagram-info-panel .dip-word {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+  }
+
+  /* ── Types Grid ── */
+  .types-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin: 16px 0;
+  }
+  .type-card {
+    border-radius: 16px; padding: 16px; text-align: center;
+    border: 2px solid; position: relative; overflow: hidden;
+  }
+  .type-card svg { display: block; margin: 0 auto 10px; }
+  .type-name { font-size: 16px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+  .type-desc { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+  .tc-mars    { background: #FFF0EC; border-color: #F5C4BA; }
+  .tc-venus   { background: #FFF7EE; border-color: #F0DCC4; }
+  .tc-asteroid{ background: #F0EDF6; border-color: #D8D0E8; }
+
+  /* ── Size Compare ── */
+  .size-compare-wrap {
+    background: linear-gradient(180deg, #06091a, #0d1230);
+    border: 2px solid rgba(85,200,232,0.2); border-radius: 16px;
+    padding: 16px; margin: 16px 0; text-align: center;
+  }
+  .size-compare-wrap svg { max-width: 100%; height: auto; }
+  .size-compare-caption {
+    font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Mission Steps ── */
+  .mission-step {
+    display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px;
+  }
+  .mission-num {
+    width: 52px; height: 52px; border-radius: 50%; color: #fff;
+    font-size: 13px; font-weight: 900;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(14,28,66,0.3);
+    letter-spacing: 0.5px; line-height: 1.1;
+  }
+  .mission-num .phase-label { font-size: 8px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+  .mission-num .phase-num { font-size: 22px; font-weight: 900; }
+  .mission-body {
+    flex: 1; border-radius: 14px; padding: 14px 16px;
+  }
+
+  /* ── Self-Check Quiz ── */
+  .quiz-card {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 6px solid #8B6FC0;
+    border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .quiz-q {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+  }
+  .quiz-q-text {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; margin-bottom: 12px;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 16px; border-radius: 12px;
+    border: 2px solid #E8DDD2; background: #fff;
+    font-size: 15px; font-weight: 700; color: #2B1D12;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 10px;
+    user-select: none;
+  }
+  .quiz-opt:hover { background: #F0EDF6; border-color: #8B6FC0; }
+  .quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+  .quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+  .quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+  .quiz-opt .opt-letter {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #E8DDD2; color: #5A4D3E;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.2s;
+  }
+  .quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+  .quiz-opt.wrong .opt-letter   { background: #E8636B; color: #fff; }
+  .quiz-feedback {
+    font-size: 14px; padding: 10px 14px; border-radius: 10px;
+    margin-top: 10px; display: none; font-weight: 600; line-height: 1.5;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+  .quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+  .quiz-score {
+    text-align: center; padding: 16px;
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 14px; margin-top: 8px; display: none;
+  }
+  .quiz-score.show { display: block; }
+  .quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+  .quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+  .quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+  /* ── Video System ── */
+  .video-wrap {
+    border-radius: 18px; overflow: hidden;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 4px 20px rgba(43,29,18,0.08);
+    background: #000; margin: 0 0 22px;
+  }
+  .video-wrap-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #0E1C42, #1a1060);
+    border-bottom: 2px solid rgba(139,111,192,0.3);
+  }
+  .video-wrap-type { font-size: 10px; color: #8B6FC0; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+  .video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+  .video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+  .video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-placeholder {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #06091a, #0E1C42);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
+  }
+  .video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+  .video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+  .video-placeholder-id { font-size: 11px; color: rgba(139,111,192,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+  .video-feedback { display: none; }
+  .video-feedback.show { display: block; }
+
+  /* ── Progress Bar ── */
+  .progress-wrap {
+    position: sticky; top: 0; z-index: 200;
+    background: #06091a; padding: 8px 20px 10px;
+    border-bottom: 2px solid rgba(139,111,192,0.3);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .progress-label { font-size: 12px; color: #8B6FC0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+  .progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+  .progress-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, #8B6FC0, #55C8E8, #FFD700);
+    border-radius: 10px; transition: width 0.4s ease;
+  }
+  .progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    position: sticky; top: 44px; z-index: 100;
+    background: #FAF7F3; border-bottom: 3px solid #E8DDD2;
+    display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1; min-width: 130px; padding: 12px 8px 11px;
+    background: transparent; border: none;
+    border-bottom: 4px solid transparent;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+    color: #9A8E82; cursor: pointer; transition: all 0.2s;
+    white-space: nowrap; line-height: 1.3; text-align: center;
+  }
+  .tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+  .tab-btn.active { color: #0E1C42; border-bottom-color: #8B6FC0; background: #fff; }
+  .tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+  .tab-btn.visited .tab-check { display: inline; }
+
+  /* ── Tab Panels ── */
+  .tab-panel { display: none; padding: 24px 28px 36px; }
+  .tab-panel.active { display: block; }
+  .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* ── Intro 2-col ── */
+  .intro-2col {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; padding: 20px 28px 0;
+  }
+  .intro-2col .card { margin-bottom: 0; }
+  .intro-2col .card .card-head {
+    cursor: pointer; user-select: none; position: relative;
+  }
+  .intro-2col .card .card-head::after {
+    content: '▾'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+  }
+  .intro-2col .card.collapsed .card-head::after {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  .intro-2col .card.collapsed .card-body { display: none; }
+
+  /* ── Need Strip ── */
+  .need-strip {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+    padding: 12px 28px 16px;
+  }
+  .need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+  .need-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #F0EDF6; border: 1.5px solid #D8D0E8;
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 13px; color: #0E1C42; font-weight: 700;
+  }
+
+  /* ── Tab Next Button ── */
+  .tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+  .tab-next-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 30px;
+    background: linear-gradient(135deg, #8B6FC0, #55C8E8);
+    color: #fff; border: none; border-radius: 28px;
+    font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(139,111,192,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(139,111,192,0.5); }
+
+  /* ── Checklist ── */
+  .checklist-item:hover { background: #F0EDE8 !important; }
+  .checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+  .checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+  .checklist-item.checked span:last-child { color: #5A4D3E; }
+
+  /* ── Back to Top ── */
+  .back-to-top {
+    position: fixed; bottom: 28px; right: 28px;
+    height: 44px; padding: 0 18px 0 14px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #8B6FC0, #55C8E8);
+    color: #fff; border: none; font-size: 14px; font-weight: 800;
+    font-family: 'Nunito', sans-serif; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(139,111,192,0.4);
+    display: flex; align-items: center; gap: 6px;
+    opacity: 0; visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+    z-index: 500; letter-spacing: 0.3px;
+  }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { box-shadow: 0 6px 24px rgba(139,111,192,0.6); transform: translateY(-3px); }
+
+  /* ── Confetti ── */
+  #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+  /* ── Footer ── */
+  .footer {
+    background: #06091a; border-top: 4px solid #8B6FC0;
+    padding: 18px 28px; text-align: center;
+  }
+  .footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+  .footer-line1 span { color: #8B6FC0; font-weight: 700; }
+  .footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+  .footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  strong { color: #0E1C42; }
+
+  @media (max-width: 620px) {
+    .intro-2col { grid-template-columns: 1fr; }
+    .types-grid { grid-template-columns: 1fr; }
+    .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+  }
+
+  /* ── Image Suggestion (shown only if /images/[name].png is missing) ── */
+  .lesson-figure { margin: 20px 0; }
+  .lesson-figure-label {
+    font-size: 12px; color: #5A4D3E; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    margin-bottom: 8px;
+  }
+  .lesson-figure img { width: 100%; height: auto; border-radius: 14px; display: block; }
+  .lesson-figure-caption {
+    font-size: 14px; color: #5A4D3E; line-height: 1.6;
+    margin-top: 10px; padding: 10px 14px;
+    background: #FAFAF6; border-left: 4px solid #34B76F;
+    border-radius: 6px;
+  }
+  .lesson-figure-caption strong { color: #1B6F3F; }
+  .image-suggestion {
+    background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+    border: 2.5px dashed #F9A825;
+    border-radius: 16px;
+    padding: 20px 22px;
+    text-align: center;
+  }
+  .image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+  .image-suggestion-label {
+    font-size: 11px; color: #E65100; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .image-suggestion-desc {
+    font-size: 15px; color: #5A4D3E; line-height: 1.65;
+    font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+    text-align: left;
+  }
+  .image-suggestion-file {
+    font-size: 12px; color: #2B1D12; font-family: 'Courier New', monospace;
+    font-weight: 700;
+    background: rgba(0,0,0,0.06); border-radius: 6px;
+    padding: 5px 12px; display: inline-block; margin-top: 4px;
+    user-select: all;
+  }
+
+/* ── Response Textareas ── */
+.response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
+.response-textarea:focus { outline: none; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.15); background: #fff; }
+.response-textarea.ta-sm { min-height: 64px; }
+.response-textarea.ta-lg { min-height: 110px; }
+/* ── Gathered Answers ── */
+.gathered-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin: 24px 0; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.06); }
+.gathered-header { background: linear-gradient(135deg, #0E1C42, #1A2D5A); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.gathered-header-icon { font-size: 24px; }
+.gathered-header-label { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.gathered-header-title { font-size: 18px; color: #fff; font-weight: 800; line-height: 1.2; }
+.gathered-body { padding: 16px 20px 18px; }
+.gathered-intro { font-size: 14px; color: #5A4D3E; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+.gathered-name-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1.5px solid #E8DDD2; }
+.gathered-name-label { font-size: 13px; color: #0E1C42; font-weight: 800; white-space: nowrap; }
+.gathered-name-input { flex: 1; padding: 8px 12px; border: 1.5px solid #D0C8BE; border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 14px; color: #2B1D12; background: #FAFAF6; }
+.gathered-name-input:focus { outline: none; border-color: #55C8E8; background: #fff; }
+.gathered-output { width: 100%; min-height: 200px; padding: 12px 14px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #F4F0EB; font-family: 'Courier New', monospace; font-size: 13px; color: #2B1D12; resize: vertical; line-height: 1.6; white-space: pre-wrap; box-sizing: border-box; }
+.gathered-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.gathered-btn { background: #0E1C42; color: #fff; border: none; padding: 9px 18px; border-radius: 10px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.gathered-btn:hover { background: #55C8E8; transform: translateY(-1px); }
+.gathered-btn-download { background: #34B76F; }
+.gathered-copied { display: none; margin-top: 8px; padding: 6px 12px; background: #EEF8F0; color: #1a6b35; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1.5px solid #B8E8CF; }
+.gathered-copied.show { display: block; }
+
+/* ═══ VIDEO PLACEHOLDER ═══ */
+.video-placeholder-wrap {
+  display: none;
+  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
+  border: 2px dashed rgba(139, 111, 192, 0.4);
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+}
+.video-placeholder-inner {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 28px 20px;
+}
+.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
+.video-placeholder-inner .vp-label {
+  font-size: 10px; color: #55C8E8; text-transform: uppercase;
+  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
+}
+.video-placeholder-inner .vp-title {
+  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
+}
+.video-placeholder-inner .vp-slot {
+  font-family: monospace; font-size: 11px; color: #8B6FC0;
+  background: rgba(139,111,192,0.15); padding: 3px 10px; border-radius: 4px;
+}
+.video-placeholder-inner .vp-notes {
+  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
+  margin-top: 10px; text-align: left; padding: 10px 12px;
+  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #8B6FC0;
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     OPTIMA READ-ALOUD PLAYER — drop-in snippet for GitHub-hosted lesson pages
+     ═══════════════════════════════════════════════════════════════════════ -->
+<div id="optima-read-aloud">
+<style>
+    #optima-read-aloud { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 14px 18px; margin: 0 0 20px 0; }
+    #optima-read-aloud .ora-kicker { font-size: 11px; color: #1B6A94; letter-spacing: 0.4px; margin-bottom: 10px; }
+    #optima-read-aloud .ora-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    #optima-read-aloud .ora-controls button { border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+    #ora-play { background: #0E1C42; color: #FFFFFF; border: 1.5px solid #0E1C42; }
+    #ora-play:hover:enabled { background: #1B2D5E; }
+    #ora-play:disabled { background: #D0D9E8; border-color: #D0D9E8; color: #6b7a99; cursor: default; }
+    #ora-stop { background: #FFFFFF; color: #0E1C42; border: 1.5px solid #D0D9E8; }
+    #ora-stop:hover:enabled { background: #F4F6FA; border-color: #55C8E8; }
+    #ora-stop:disabled { color: #999; border-color: #E4E9F2; cursor: default; }
+    #optima-read-aloud .ora-speed { font-size: 12px; color: #6b7a99; display: flex; align-items: center; gap: 6px; }
+    #ora-rate { font-family: inherit; font-size: 13px; color: #0E1C42; border: 1.5px solid #D0D9E8; border-radius: 6px; padding: 5px 8px; background: #FFFFFF; }
+    #ora-status { font-size: 12px; color: #666; }
+    .ora-highlight { background: #FDF3E3 !important; box-shadow: inset 4px 0 0 #C7922C; border-radius: 4px; transition: background 0.2s; }
+</style>
+    <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
+    <div class="ora-controls">
+        <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
+        <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
+        <label class="ora-speed">Speed
+            <select id="ora-rate" aria-label="Reading speed">
+                <option value="0.8">Slower</option>
+                <option value="1" selected>Normal</option>
+                <option value="1.25">Faster</option>
+            </select>
+        </label>
+        <span id="ora-status" role="status" aria-live="polite"></span>
+    </div>
+<script>
+(function () {
+    "use strict";
+    var playBtn  = document.getElementById("ora-play");
+    var stopBtn  = document.getElementById("ora-stop");
+    var rateSel  = document.getElementById("ora-rate");
+    var statusEl = document.getElementById("ora-status");
+
+    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+        playBtn.disabled = true;
+        rateSel.disabled = true;
+        statusEl.textContent = "Read-aloud is not supported in this browser.";
+        return;
+    }
+
+    var LABEL_PLAY   = "▶️ Listen";
+    var LABEL_PAUSE  = "⏸️ Pause";
+    var LABEL_RESUME = "▶️ Resume";
+    var BLOCK_SEL = "p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, dt, dd, figcaption, div";
+    var SKIP_SEL  = "#optima-read-aloud, [data-ra-skip], button, script, style, select, noscript, iframe";
+
+    var queue = [];
+    var idx = 0;
+    var playing = false, paused = false, stopping = false;
+    var currentBlock = null;
+    var currentUtterance = null;
+
+    var voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    loadVoices();
+    if ("onvoiceschanged" in window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+    function pickVoice() {
+        if (!voices.length) loadVoices();
+        var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
+        return en.filter(function (v) { return /natural/i.test(v.name); })[0]
+            || en.filter(function (v) { return /google us english/i.test(v.name); })[0]
+            || en.filter(function (v) { return v.default; })[0]
+            || en[0] || null;
+    }
+
+    function isVisible(el) {
+        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+    }
+
+    function collectQueue() {
+        var root = document.querySelector("[data-readaloud-root]")
+                || document.querySelector(".canvas-frame")
+                || document.body;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+        var items = [];
+        var node;
+        while ((node = walker.nextNode())) {
+            if (!/\S/.test(node.textContent)) continue;
+            var el = node.parentElement;
+            if (!el || el.closest(SKIP_SEL)) continue;
+            if (!isVisible(el)) continue;
+            var block = el.closest(BLOCK_SEL) || root;
+            var last = items[items.length - 1];
+            if (last && last.el === block) last.text += " " + node.textContent;
+            else items.push({ el: block, text: node.textContent });
+        }
+        var q = [];
+        items.forEach(function (item) {
+            var clean = item.text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}\u{2B55}\u{25A0}-\u{25FF}\u{2702}-\u{27B0}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu, "").replace(/\s+/g, " ").trim();
+            if (!clean) return;
+            var sentences = clean.match(/[^.!?]+[.!?]+["”’')\]]*\s*|[^.!?]+$/g) || [clean];
+            sentences.forEach(function (s) {
+                s = s.trim();
+                if (s) q.push({ el: item.el, text: s });
+            });
+        });
+        return q;
+    }
+
+    function highlight(el) {
+        if (el === currentBlock) return;
+        clearHighlight();
+        currentBlock = el;
+        if (el && el !== document.body) {
+            el.classList.add("ora-highlight");
+            try { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
+        }
+    }
+    function clearHighlight() {
+        if (currentBlock) currentBlock.classList.remove("ora-highlight");
+        currentBlock = null;
+    }
+
+    function speakNext() {
+        if (idx >= queue.length) { finish("Finished reading this page."); return; }
+        var item = queue[idx];
+        highlight(item.el);
+        var u = new SpeechSynthesisUtterance(item.text);
+        u.rate = parseFloat(rateSel.value) || 1;
+        var v = pickVoice();
+        if (v) u.voice = v;
+        u.onend = function () {
+            if (stopping) return;
+            idx++;
+            speakNext();
+        };
+        u.onerror = function (e) {
+            if (stopping || e.error === "canceled" || e.error === "interrupted") return;
+            idx++;
+            speakNext();
+        };
+        currentUtterance = u;
+        window.speechSynthesis.speak(u);
+        statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
+    }
+
+    function finish(message) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        playBtn.textContent = LABEL_PLAY;
+        stopBtn.disabled = true;
+        statusEl.textContent = message || "";
+        currentUtterance = null;
+    }
+
+    playBtn.addEventListener("click", function () {
+        if (playing && !paused) {
+            window.speechSynthesis.pause();
+            paused = true;
+            playBtn.textContent = LABEL_RESUME;
+            statusEl.textContent = "Paused";
+            return;
+        }
+        if (playing && paused) {
+            window.speechSynthesis.resume();
+            paused = false;
+            playBtn.textContent = LABEL_PAUSE;
+            statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
+            return;
+        }
+        queue = collectQueue();
+        if (!queue.length) { statusEl.textContent = "Nothing to read on this page."; return; }
+        idx = 0;
+        stopping = false;
+        playing = true;
+        paused = false;
+        window.speechSynthesis.cancel();
+        playBtn.textContent = LABEL_PAUSE;
+        stopBtn.disabled = false;
+        speakNext();
+    });
+
+    stopBtn.addEventListener("click", function () {
+        stopping = true;
+        window.speechSynthesis.cancel();
+        finish("");
+    });
+
+    rateSel.addEventListener("change", function () {
+        if (!playing || paused) return;
+        stopping = true;
+        window.speechSynthesis.cancel();
+        setTimeout(function () { stopping = false; speakNext(); }, 60);
+    });
+
+    window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
+})();
+</script>
+</div>
+<!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">🧠 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Model: From Senses to Brain</div>
+  <div class="header-badge">
+    <span>🧠</span>
+    <span>LESSON 12.02</span>
+  </div>
+</div>
+
+<!-- ═══ HERO SVG ═══ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="duskM12" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFB97A"/>
+      <stop offset="45%" stop-color="#E48B5C"/>
+      <stop offset="100%" stop-color="#5C3F5C"/>
+    </linearGradient>
+    <radialGradient id="moonGlowM12" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF7C6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFD24A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waterM12" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3B5E78"/>
+      <stop offset="100%" stop-color="#1F3E58"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dusk sky -->
+  <rect width="920" height="260" fill="url(#duskM12)"/>
+
+  <!-- Moon glow + moon -->
+  <circle cx="180" cy="62" r="100" fill="url(#moonGlowM12)"/>
+  <circle cx="180" cy="62" r="32" fill="#FFF6C9"/>
+
+  <!-- Distant treeline -->
+  <path d="M0,150 L70,135 L140,148 L210,128 L280,142 L350,124 L420,148 L500,128 L570,144 L640,128 L720,140 L800,124 L920,142 L920,260 L0,260 Z"
+        fill="#2B4A2C" opacity="0.85"/>
+
+  <!-- DEER (left) — ears up, alert -->
+  <g transform="translate(150,200)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="28" ry="14" fill="#6E4528"/>
+    <!-- Neck -->
+    <ellipse cx="-20" cy="-15" rx="7" ry="14" fill="#6E4528"/>
+    <!-- Head -->
+    <ellipse cx="-22" cy="-30" rx="8" ry="9" fill="#6E4528"/>
+    <!-- Ears (up — alert!) -->
+    <ellipse cx="-26" cy="-40" rx="3" ry="9" fill="#8A5A35" transform="rotate(-18 -26 -40)"/>
+    <ellipse cx="-18" cy="-40" rx="3" ry="9" fill="#8A5A35" transform="rotate(15 -18 -40)"/>
+    <!-- Eye -->
+    <circle cx="-25" cy="-30" r="1.4" fill="#fff"/>
+    <!-- Legs -->
+    <rect x="-20" y="12" width="4" height="20" fill="#6E4528"/>
+    <rect x="-8" y="12" width="4" height="20" fill="#6E4528"/>
+    <rect x="8" y="12" width="4" height="20" fill="#6E4528"/>
+    <rect x="20" y="12" width="4" height="20" fill="#6E4528"/>
+    <!-- Tail -->
+    <ellipse cx="26" cy="-2" rx="3" ry="6" fill="#fff"/>
+  </g>
+
+  <!-- OWL on a branch (top-center) — head turned to hear -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="-3 380 90; 4 380 90; -3 380 90" dur="4s" repeatCount="indefinite"/>
+    <g transform="translate(380,90)">
+      <!-- Body -->
+      <ellipse cx="0" cy="0" rx="22" ry="26" fill="#5A4D3E"/>
+      <!-- Belly stripe -->
+      <ellipse cx="0" cy="5" rx="14" ry="18" fill="#9A8467"/>
+      <!-- Head -->
+      <ellipse cx="0" cy="-22" rx="20" ry="18" fill="#5A4D3E"/>
+      <!-- Ear tufts -->
+      <path d="M-14,-36 L-10,-42 L-6,-36 Z" fill="#5A4D3E"/>
+      <path d="M6,-36 L10,-42 L14,-36 Z" fill="#5A4D3E"/>
+      <!-- Eyes (big, alert) -->
+      <circle cx="-7" cy="-22" r="6" fill="#FFD24A"/>
+      <circle cx="7" cy="-22" r="6" fill="#FFD24A"/>
+      <circle cx="-7" cy="-22" r="2.5" fill="#2B1D12"/>
+      <circle cx="7" cy="-22" r="2.5" fill="#2B1D12"/>
+      <!-- Beak -->
+      <path d="M-3,-15 L0,-9 L3,-15 Z" fill="#D4A017"/>
+    </g>
+  </g>
+  <!-- Branch under owl -->
+  <line x1="340" y1="120" x2="430" y2="120" stroke="#5A4D3E" stroke-width="3"/>
+
+  <!-- ALLIGATOR — just eyes + nostrils above water (right-center) -->
+  <g transform="translate(620,210)">
+    <!-- Snout/eyes above water -->
+    <ellipse cx="0" cy="0" rx="40" ry="6" fill="#3F5F1B"/>
+    <!-- Eye bumps -->
+    <ellipse cx="-15" cy="-3" rx="4" ry="3" fill="#3F5F1B"/>
+    <ellipse cx="15" cy="-3" rx="4" ry="3" fill="#3F5F1B"/>
+    <!-- Eye -->
+    <circle cx="-15" cy="-4" r="1.5" fill="#FFD24A"/>
+    <circle cx="15" cy="-4" r="1.5" fill="#FFD24A"/>
+    <!-- Nostril bumps -->
+    <ellipse cx="-32" cy="-2" rx="2.5" ry="2" fill="#3F5F1B"/>
+    <ellipse cx="-28" cy="-2" rx="2.5" ry="2" fill="#3F5F1B"/>
+    <!-- Water ripples around gator -->
+    <ellipse cx="0" cy="0" rx="48" ry="5" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.5"/>
+    <ellipse cx="0" cy="0" rx="58" ry="6" fill="none" stroke="#fff" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <!-- Water band -->
+  <rect x="0" y="215" width="920" height="45" fill="url(#waterM12)"/>
+  <path d="M0,222 Q60,218 120,222 T240,222 T360,222 T480,222 T600,222 T720,222 T840,222 T920,222 L920,228 L0,228 Z" fill="#fff" opacity="0.18">
+    <animateTransform attributeName="transform" type="translate" values="0 0; -20 0; 0 0" dur="6s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- TREE FROG mid-jump (top-right) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="800,130; 800,118; 800,130" dur="2s" repeatCount="indefinite"/>
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="14" ry="11" fill="#34B76F"/>
+    <ellipse cx="0" cy="-3" rx="10" ry="7" fill="#5BD085"/>
+    <!-- Eyes (big and forward — looking ahead) -->
+    <circle cx="-5" cy="-9" r="4" fill="#FFD24A"/>
+    <circle cx="5" cy="-9" r="4" fill="#FFD24A"/>
+    <circle cx="-5" cy="-9" r="2" fill="#2B1D12"/>
+    <circle cx="5" cy="-9" r="2" fill="#2B1D12"/>
+    <!-- Legs mid-jump -->
+    <path d="M-10,5 Q-18,15 -22,8" stroke="#34B76F" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M10,5 Q18,15 22,8" stroke="#34B76F" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M-6,10 Q-12,20 -10,28" stroke="#34B76F" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M6,10 Q12,20 10,28" stroke="#34B76F" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Subtle signal lines: sound radiating from a splash near the gator -->
+  <g stroke="#fff" stroke-width="1.5" fill="none" stroke-dasharray="3,4" opacity="0.6">
+    <circle cx="700" cy="215" r="14">
+      <animate attributeName="r" values="14;28;14" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="215" r="22">
+      <animate attributeName="r" values="22;40;22" dur="2.5s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <!-- Splash droplets -->
+  <g fill="#5BB5C9">
+    <circle cx="700" cy="210" r="2">
+      <animate attributeName="cy" values="210;200;210" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="708" cy="208" r="1.5">
+      <animate attributeName="cy" values="208;196;208" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="692" cy="208" r="1.5">
+      <animate attributeName="cy" values="208;198;208" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- A few stars in dusk sky -->
+  <g fill="#fff">
+    <circle cx="80" cy="30" r="1.2"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="500" cy="22" r="1"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="0.7s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="40" r="1.3"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="1.4s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>
+</div>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF5E1;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Week</div>
+      <div class="info-value">Q3 &middot; Week 12</div>
+      <div class="info-detail">Ecosystems &amp; Energy</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📖</div>
+    <div>
+      <div class="info-label">Lesson</div>
+      <div class="info-value">Lesson 12.02</div>
+      <div class="info-detail">Life Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF5E1;">☀️</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Modeling Task</div>
+      <div class="info-detail">Build and Compare Two Pathways</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🌿</div>
+    <div>
+      <div class="info-label">Standards</div>
+      <div class="info-value">4-LS1-2 · TEKS 4.5(G)</div>
+      <div class="info-detail">NGSS core · Structure &amp; Function</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INTRO 2-COL ═══ -->
+<div class="intro-2col">
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">❓</div>
+      <div>
+        <div class="card-head-label">Key Question</div>
+        <div class="card-head-title">Our Big Question for Today</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think about this…</div>
+          <div class="question">"How can a model show the way an animal turns information into action?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your head as you work. By the end of the lesson, you'll build <strong>two</strong> response models for two different Florida animals — and compare them to see what the same four steps look like in two very different lives.</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> build a model that shows the four-step pathway for one animal.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> build a second model for a different animal and compare the two.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> use my models to explain how different animals can respond to different stimuli.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Colored pencils</span>
+  <span class="need-chip"><span>🔆</span>A sunny window or memory of one</span>
+</div>
+
+<!-- ═══ TAB BAR ═══ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                  -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+<!-- ═══ INTRODUCTION VIDEO ═══ -->
+<div class="video-placeholder-wrap">
+<!-- slot: 12-02-intro -->
+<div class="video-placeholder-inner">
+  <span class="vp-icon">&#x1F3AC;</span>
+  <div class="vp-label">Introduction Video</div>
+  <div class="vp-title">Optima Academy Online – Model: From Senses to Brain</div>
+  <div class="vp-slot">12-02-intro</div>
+  <div class="vp-notes">
+    <strong>Teacher recording notes:</strong> Introduction video for this lesson.
+  </div>
+</div>
+</div>
+
+
+</div>
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Warm-Up: Same Steps, Different Animals</div>
+        <div class="act-subtitle">A quick prediction before we build models</div>
+      </div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>You already know the four steps: <strong>stimulus → sense organ → brain → response</strong>. Today the question is: <em>do all animals do them the same way?</em></p>
+
+      <p>In your notebook, predict: imagine a bald eagle and a sea turtle each notice a fish. Both will use a sense organ. Both will respond. Are the two pathways exactly the same? Where do you think they'll be different?</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Predict &amp; Wonder</div>
+          <div class="question">"Same four steps, two very different animals. Which step do you think changes the most between them? Which probably looks pretty similar?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Today's job is to <em>build</em> response pathways instead of just identifying them. By the end you'll have two models for two animals — and you'll see what stays the same and what changes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Words You'll Use Today</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⚡</div><div class="fc-word">Stimulus</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Stimulus</div><div class="fc-def">Something in the world that an animal can notice — a sound, a smell, a flash of light, a touch.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">➡️</div><div class="fc-word">Pathway</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Pathway</div><div class="fc-def">A path with steps that information follows — from the world, through the body, to a response.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⚙️</div><div class="fc-word">Process</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Process</div><div class="fc-def">What the brain does — takes a signal in and figures out what it means before sending an action message back.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🏃</div><div class="fc-word">Response</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Response</div><div class="fc-def">What an animal does after its brain decides — running, freezing, jumping, eating, hiding, calling out.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🧩</div><div class="fc-word">Model</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Model</div><div class="fc-def">A drawing, diagram, build, or explanation that shows how something works — like a pathway from stimulus to response.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🎬</div><div class="fc-word">Scenario</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Scenario</div><div class="fc-def">A short story of one moment — a situation where an animal notices something and reacts. Scientists use scenarios to test ideas about pathways.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                  -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📘 The Lesson: Building Pathways You Can See</div>
+        <div class="act-subtitle">Two animals, two models, one big idea</div>
+      </div>
+      <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · What Makes a Strong Pathway Model</h3>
+      <p>You've already met the four steps. A good <span class="vtip">model<span class="vtip-box"><span class="vtip-word">Model</span>A drawing, build, or explanation of how something works.</span></span> shows them in order, with arrows that explain what happens at each step. The strongest models include:</p>
+
+      <ul style="font-size:16px;color:#2B1D12;line-height:1.7;margin:10px 0 12px 24px;">
+        <li><strong>An arrow from the stimulus into the sense organ</strong> — showing what the animal noticed.</li>
+        <li><strong>An arrow from the sense organ to the brain</strong> — labeled "signal" to show information traveling.</li>
+        <li><strong>An arrow from the brain to the body</strong> — showing what the brain decided.</li>
+        <li><strong>A short caption</strong> tying the response to a survival need (food, safety, shelter, mates).</li>
+      </ul>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🛑</span>
+        <div>
+          <div class="label">Stop &amp; Think</div>
+          <div class="question">"If a model only labels the four parts but has no arrows, is it still a <em>pathway</em> model? Why or why not?"</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 2 · Two Animals, Two Pathways</h3>
+      <p>The four steps stay the same, but the <em>details</em> change a lot between animals. Two Florida examples that look totally different — but follow the same pathway:</p>
+
+      <ul style="font-size:16px;color:#2B1D12;line-height:1.7;margin:10px 0 12px 24px;">
+        <li><strong>Bald eagle hunting:</strong> sees flash of fish (stimulus) → eye picks it up (sense organ) → brain decides "food, dive!" (<span class="vtip">process<span class="vtip-box"><span class="vtip-word">Process</span>What the brain does with a signal.</span></span>) → eagle dives (response).</li>
+        <li><strong>Florida bat hunting at night:</strong> sends out a high-pitched click → click bounces off a moth (stimulus) → bat's ears pick up the echo (sense organ) → brain calculates where the moth is (process) → bat swoops and grabs it (response).</li>
+      </ul>
+
+      <p>Same four-step <span class="vtip">pathway<span class="vtip-box"><span class="vtip-word">Pathway</span>The steps information follows from world to response.</span></span>. Totally different ways of doing it. That's why scientists like to build <em>multiple</em> models — comparing them shows what's universal and what's special to each animal.</p>
+
+      <p><strong>Common misconception:</strong> Some people think a model is "right" or "wrong." Most scientific models aren't either — they're <em>good enough</em> for the question you're asking. The bat model leaves out a million tiny details, but it's perfect for explaining how echolocation works.</p>
+      <div class="lesson-figure scroll-reveal">
+        <div class="lesson-figure-label">🧩 Two Pathways Compared: Eagle Sight vs. Bat Echolocation</div>
+        <img src="images/12-02-compare-pathways.png"
+             alt="Two side-by-side pathway models. Top: bald eagle. Stimulus = flash of fish in water. Sense organ = eye. Process = brain decides 'food, dive.' Response = dive. Bottom: bat. Stimulus = echo of click bouncing off a moth. Sense organ = ear. Process = brain calculates location. Response = swoop and grab."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">A wide horizontal diagram showing TWO pathway models stacked on top of each other for easy comparison. TOP ROW (BALD EAGLE): four panels left to right labeled (1) STIMULUS — a flash of silver fish in blue water, (2) SENSE ORGAN — close-up of the eagle's sharp yellow eye with a curved arrow showing light entering, (3) PROCESS — the eagle's head with a small brain icon glowing and a labeled "signal" line connecting eye to brain, (4) RESPONSE — the eagle diving toward the water. BOTTOM ROW (FLORIDA BAT AT NIGHT): four panels left to right labeled (1) STIMULUS — a clicking sound bouncing off a moth, drawn with curved sound-wave lines, (2) SENSE ORGAN — close-up of the bat's large ear with sound waves entering, (3) PROCESS — the bat's head with brain glowing and a signal line from ear to brain, (4) RESPONSE — the bat swooping toward the moth. Both rows use Optima palette (navy, coral, amber, forest green). Each row has the same step labels along the top so kids can compare directly. Cream/transparent background. 16:9 ratio. Each row should be clearly readable.</div>
+          <div class="image-suggestion-file">Save as: images/12-02-compare-pathways.png</div>
+        </div>
+        <div class="lesson-figure-caption"><strong>Same four steps, two different animals.</strong> The labels match — but the stimulus, sense organ, and response look very different between the two pathways.</div>
+      </div>
+
+      <div style="background:#FFF6E5;border:2.5px solid #F0C97A;border-radius:14px;padding:18px 20px;margin:18px 0;">
+        <div style="font-size:12px;color:#9A6E10;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:6px;">⭐ Key Concept</div>
+        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin:0;line-height:1.6;">A strong pathway model uses arrows to show how a signal moves through an animal — and a caption that ties the response to a real survival need.</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🧠</span>
+        <div>
+          <div class="label">Stop &amp; Reason</div>
+          <div class="question">"Look at the eagle and bat models above. Which step (stimulus, sense organ, process, or response) looks <em>most</em> different between them? Which step looks the most alike?"</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Four Pathway Models to Study</h3>
+      <p><strong>Tap each animal</strong> to see a full <em>stimulus → sense → process → response</em> model. Notice what changes and what stays the same.</p>
+
+      <div class="diagram-wrap diagram-interactive" style="background:linear-gradient(135deg,#E8DCEF,#D2BEDE);border-radius:14px;padding:14px;">
+        <div style="font-size:13px;color:#5A3B92;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;text-align:center;">
+          🧩 Tap an animal to see its full pathway model
+        </div>
+        <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;width:100%;height:auto;" role="img" aria-label="Four Florida pathway models to compare">
+
+          <!-- Quadrant backgrounds -->
+          <rect x="0"   y="0"   width="360" height="160" fill="#D8C8E2" opacity="0.6"/>
+          <rect x="360" y="0"   width="360" height="160" fill="#C5DCE6" opacity="0.6"/>
+          <rect x="0"   y="160" width="360" height="160" fill="#DDCCB4" opacity="0.6"/>
+          <rect x="360" y="160" width="360" height="160" fill="#C5D6B5" opacity="0.6"/>
+
+          <line x1="360" y1="0"   x2="360" y2="320" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+          <line x1="0"   y1="160" x2="720" y2="160" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+
+          <!-- TOP-LEFT: Bat (echolocation) -->
+          <text x="180" y="78" text-anchor="middle" font-size="56">🦇</text>
+          <rect x="100" y="115" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
+          <text x="180" y="135" text-anchor="middle" font-size="14" font-weight="900" fill="#5A3B92">FLORIDA BAT</text>
+
+          <!-- TOP-RIGHT: Anhinga (sight underwater) -->
+          <text x="540" y="78" text-anchor="middle" font-size="56">🦢</text>
+          <rect x="460" y="115" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
+          <text x="540" y="135" text-anchor="middle" font-size="14" font-weight="900" fill="#1B4A6F">ANHINGA</text>
+
+          <!-- BOTTOM-LEFT: Black bear (smell) -->
+          <text x="180" y="240" text-anchor="middle" font-size="56">🐻</text>
+          <rect x="100" y="278" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
+          <text x="180" y="298" text-anchor="middle" font-size="14" font-weight="900" fill="#5A4014">FLORIDA BLACK BEAR</text>
+
+          <!-- BOTTOM-RIGHT: Crab (touch via antennae) -->
+          <text x="540" y="240" text-anchor="middle" font-size="56">🦀</text>
+          <rect x="460" y="278" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
+          <text x="540" y="298" text-anchor="middle" font-size="14" font-weight="900" fill="#3F5F1B">BLUE CRAB</text>
+
+          <!-- Hotspots -->
+          <rect class="hotspot" x="0" y="0" width="360" height="160"
+                fill="#8B6FC0"
+                data-part="Florida bat · echolocation pathway"
+                data-info="STIMULUS: a moth flying nearby (the bat sends out a high-pitched click first, then the click bounces off the moth as an echo). SENSE ORGAN: the bat's large, sensitive ears. PROCESS: the brain calculates the moth's position from how long the echo took to come back. RESPONSE: the bat swoops and catches the moth. SURVIVAL NEED: food, in the dark, when sight wouldn't work."/>
+          <rect class="hotspot" x="360" y="0" width="360" height="160"
+                fill="#2D7AA6"
+                data-part="Anhinga · underwater sight pathway"
+                data-info="STIMULUS: a small fish swimming near the bird's feet underwater. SENSE ORGAN: the anhinga's eyes, which work well in cloudy Florida water. PROCESS: the brain identifies it as prey and aims the head. RESPONSE: the anhinga's long, sharp beak snaps forward and spears the fish. SURVIVAL NEED: food."/>
+          <rect class="hotspot" x="0" y="160" width="360" height="160"
+                fill="#8B6F3A"
+                data-part="Florida black bear · smell pathway"
+                data-info="STIMULUS: the smell of ripe palmetto berries on the breeze. SENSE ORGAN: the bear's nose, which has hundreds of times more scent cells than yours. PROCESS: the brain matches the smell to "food" and figures out the direction. RESPONSE: the bear walks toward the smell. SURVIVAL NEED: food."/>
+          <rect class="hotspot" x="360" y="160" width="360" height="160"
+                fill="#5C8540"
+                data-part="Blue crab · touch pathway (antennae)"
+                data-info="STIMULUS: a tiny vibration in the water from something approaching. SENSE ORGAN: the crab's long antennae, which can feel tiny water movements. PROCESS: the brain decides the vibration could be a predator. RESPONSE: the crab raises its claws or skitters sideways into a hiding spot. SURVIVAL NEED: safety."/>
+        </svg>
+
+        <div class="diagram-info-panel" id="diagramPanel">
+          <span class="dip-word" id="diagramWord"></span>
+          <span id="diagramInfo"></span>
+        </div>
+      </div>
+      
+      
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">Observe &amp; Reason</div>
+          <div class="question">"Compare two of the four pathway models. Which step (stimulus, sense organ, process, or response) is the most <em>different</em> between them? Use evidence from the descriptions."</div>
+        </div>
+      </div>
+
+      <div class="mind-blow">
+        <span class="mind-blow-icon">🤯</span>
+        <div class="mind-blow-content">
+          <div class="mind-blow-label">Amazing Florida Fact</div>
+          <div class="mind-blow-text">When a Florida bat sends out its clicks, it can hear back an echo as quiet as <strong>1/10,000 of a whisper</strong> — and its brain processes that signal fast enough to dodge a moving moth. Same four steps, lightning fast.</div>
+        </div>
+      </div>
+      <div class="callout callout-info" style="margin-top:18px;">
+        <span class="callout-icon">🌴</span>
+        <p><strong>Florida connection:</strong> Florida wildlife biologists use trail cameras and microphones to record stimulus-response pathways in the wild — like a panther stalking a deer or an owl catching a mouse. Each clip is real-world evidence they can model and study back at the lab.</p>
+      </div>
+
+      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
+        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · Can a pathway model be a 3-D build?</summary>
+        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
+          Yes! Some scientists use yarn, clay, or pipe cleaners to build 3-D pathway models. A piece of yarn might be the signal traveling from a sense organ to a clay brain, and a small arrow shows what the animal does next. Sometimes a hands-on model makes the relationship easier to see — and easier to teach.
+        </div>
+      </details>
+
+      <div class="tab-next-wrap">
+        <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 3: GUIDED EXPLORATION          -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#55C8E8;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Explore: Build Two Pathway Models</div>
+        <div class="act-subtitle">One animal at a time — then compare</div>
+      </div>
+      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Pick TWO different Florida animals — anything you like. By step 4 you'll have two complete pathway models, side by side, ready to compare.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFF5E1;border:2px solid #F0C97A;border-radius:14px;padding:14px 18px;">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#F5A623,#D4772C);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;color:#9A6E10;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 1</div>
+            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Pick your two animals</div>
+            <p style="color:#2B1D12;margin:0;">Write the names of two different Florida animals at the top of your page. Try to pick ones that use <em>different senses</em> — for example, an owl (hearing) and a bear (smell).</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#EEF8F0;border:2px solid #B7DDC3;border-radius:14px;padding:14px 18px;">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#34B76F,#1F9252);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;color:#1F6E3F;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 2</div>
+            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Build Model #1</div>
+            <p style="color:#2B1D12;margin:0;">For your first animal, draw four boxes labeled <em>stimulus → sense organ → process → response</em>. Fill in each box with a real moment that animal might experience. Use arrows between every step.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFEDEF;border:2px solid #F0B4B8;border-radius:14px;padding:14px 18px;">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#E8636B,#D04450);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;color:#9A1B22;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 3</div>
+            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Build Model #2</div>
+            <p style="color:#2B1D12;margin:0;">Now do the same thing for your second animal. Same four boxes. Different details in each.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#F0EDF6;border:2px solid #C9BFE0;border-radius:14px;padding:14px 18px;">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8B6FC0,#6E4FA8);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;color:#5A3B92;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 4</div>
+            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Compare</div>
+            <p style="color:#2B1D12;margin:0;">Underneath both models, write two sentences: (1) "These pathways are alike because…" (2) "These pathways are different because…" Use evidence from your boxes.</p>
+          </div>
+        </div>
+
+      </div>
+      
+      
+      
+      <div class="mind-blow" style="margin-top:22px;">
+        <span class="mind-blow-icon">🤯</span>
+        <div class="mind-blow-content">
+          <div class="mind-blow-label">Amazing Florida Fact</div>
+          <div class="mind-blow-text">A Florida mantis shrimp has <strong>16 different kinds of color receptors</strong> in its eyes (humans have only 3). So when scientists build a model of how it sees, they have to use 16 different "sense" inputs — same four steps, much wilder details.</div>
+        </div>
+      </div>
+      <div class="socratic-q">
+        <span class="sq-icon">🧪</span>
+        <div>
+          <div class="label">Think like a scientist</div>
+          <div class="question">"A scientist builds a model of one Florida bird's pathway. Then they build a second model for a completely different bird. Why does building two help more than building one?"</div>
+        </div>
+      </div>
+
+      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
+        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · Why do scientists revise models?</summary>
+        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
+          A first model is almost never perfect. As scientists learn more — by watching, recording, and testing — they update their models. A bat's echolocation model from 50 years ago is very different from the model we use today. Each version is a step closer to how the world really works.
+        </div>
+      </details>
+
+      <div class="tab-next-wrap">
+        <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ             -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal">
+    <div style="display:flex;align-items:center;gap:12px;padding:16px 22px;background:linear-gradient(135deg,#FFF6E5,#FFEEC8);border-bottom:2px solid #F0DCC4;">
+      <div style="font-size:28px;">🧠</div>
+      <div>
+        <div style="font-size:11px;color:#9A6E10;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;">Quick Self-Check</div>
+        <div style="font-size:22px;color:#0E1C42;font-weight:900;">Not graded — just for you!</div>
+      </div>
+    </div>
+    <div style="padding:20px 22px;">
+
+      <div class="quiz-q" data-answer="B">
+        <div class="quiz-q-num">Q1</div>
+        <p class="quiz-q-text">What does a pathway <em>model</em> need that a labeled drawing alone does NOT?</p>
+        <div class="quiz-opt" data-val="A" onclick="checkQuiz(this)"><span class="quiz-letter">A</span><span class="quiz-text">Bright colors</span></div>
+        <div class="quiz-opt" data-val="B" onclick="checkQuiz(this)"><span class="quiz-letter">B</span><span class="quiz-text">Arrows showing how the signal moves between steps</span></div>
+        <div class="quiz-opt" data-val="C" onclick="checkQuiz(this)"><span class="quiz-letter">C</span><span class="quiz-text">A long paragraph of text</span></div>
+        <div class="quiz-feedback fb-correct">➡️ Right! Arrows show the order and direction of the pathway — that's what makes it a model.</div>
+        <div class="quiz-feedback fb-wrong">A labeled drawing names parts. A model explains the <em>order</em> of the pathway — and arrows are how it does that.</div>
+      </div>
+
+      <div class="quiz-q" data-answer="C">
+        <div class="quiz-q-num">Q2</div>
+        <p class="quiz-q-text">If you compare a bat's pathway model and a Florida black bear's pathway model, what stays the SAME?</p>
+        <div class="quiz-opt" data-val="A" onclick="checkQuiz(this)"><span class="quiz-letter">A</span><span class="quiz-text">The sense organ they use</span></div>
+        <div class="quiz-opt" data-val="B" onclick="checkQuiz(this)"><span class="quiz-letter">B</span><span class="quiz-text">The exact stimulus</span></div>
+        <div class="quiz-opt" data-val="C" onclick="checkQuiz(this)"><span class="quiz-letter">C</span><span class="quiz-text">The four steps of the pathway</span></div>
+        <div class="quiz-feedback fb-correct">🧩 Right! The steps are universal — stimulus, sense organ, process, response. The <em>details</em> change.</div>
+        <div class="quiz-feedback fb-wrong">The sense organ and the stimulus are very different between animals. What stays the same is the four-step pathway itself.</div>
+      </div>
+
+      <div class="quiz-q" data-answer="A">
+        <div class="quiz-q-num">Q3</div>
+        <p class="quiz-q-text">A friend's model shows: <em>stimulus → response</em>, with no other steps. What is missing?</p>
+        <div class="quiz-opt" data-val="A" onclick="checkQuiz(this)"><span class="quiz-letter">A</span><span class="quiz-text">The sense organ AND the brain processing the signal</span></div>
+        <div class="quiz-opt" data-val="B" onclick="checkQuiz(this)"><span class="quiz-letter">B</span><span class="quiz-text">Nothing — the model is complete</span></div>
+        <div class="quiz-opt" data-val="C" onclick="checkQuiz(this)"><span class="quiz-letter">C</span><span class="quiz-text">The arrows</span></div>
+        <div class="quiz-feedback fb-correct">🧠 Right! A real pathway always includes a sense organ picking up the stimulus and the brain processing the signal in the middle.</div>
+        <div class="quiz-feedback fb-wrong">An animal can't respond if there's nothing to pick up the stimulus and decide what it means. The sense organ and the brain processing the signal are both missing.</div>
+      </div>
+
+      <div id="quizScore" class="quiz-score">
+        <div class="quiz-score-num"><span id="quizScoreNum">0</span>/3</div>
+        <div id="quizScoreMsg" class="quiz-score-msg"></div>
+
+        <div id="quizVideoCorrect" class="video-feedback" style="margin-top:18px;">
+        </div>
+
+        <div id="quizVideoReview" class="video-feedback" style="margin-top:18px;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                  -->
+<!-- ═══════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Show What You Know</div>
+        <div class="act-subtitle">Build, label, and compare your own pathway models</div>
+      </div>
+      <div class="act-time" style="background:#34B76F;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Pathway, Process, Model, Scenario</strong></p>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">1</span>
+        <span class="pq-text">A path with steps that information follows from world to response: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">2</span>
+        <span class="pq-text">What the brain does — figure out what a signal means: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">3</span>
+        <span class="pq-text">A drawing, build, or explanation that shows how something works: ___________</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#34B76F;">4</span>
+        <span class="pq-text">A short story of one moment used to test or explain an idea: ___________</span>
+      </div>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🌿 Part B &mdash; Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use vocabulary words from today's lesson.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">5</span>
+        <span class="pq-text">Pick one of the four Florida animals from the diagram (bat, anhinga, bear, or crab). Write a complete pathway model as a sentence: "When the [stimulus] happens, the [sense organ] picks it up. The brain [process]. The animal [response]."</span>
+      </div>
+      <textarea class="response-textarea" id="ans-1" data-label="Pick one of the four Florida animals from the diag..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">6</span>
+        <span class="pq-text">Why is comparing TWO pathway models more useful than just building one? Use the word <em>pathway</em> in your answer.</span>
+      </div>
+      <textarea class="response-textarea" id="ans-2" data-label="Why is comparing TWO pathway models more useful th..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">7</span>
+        <span class="pq-text">A classmate's model only shows <em>stimulus → response</em> — no middle steps. What two parts of the pathway are they missing, and why does that matter?</span>
+      </div>
+      <textarea class="response-textarea" id="ans-3" data-label="A classmate&#x27;s model only shows stimulus → response..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use colors. Label every part.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"What was the trickiest part of figuring out where the energy in a hawk really comes from? Write 2–3 sentences about something you learned today that you didn't know before."</div>
+        </div>
+      </div>
+
+      <div style="background:#FAF7F3;border:2px solid #8B6FC0;border-radius:16px;padding:22px 24px;margin-bottom:20px;">
+        <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ Use Your Evidence</div>
+        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A classmate says, <em>"You only need to build one pathway model to understand how all animals respond. Building two is a waste of time."</em></p>
+        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.</p>
+        <textarea class="response-textarea ta-lg" id="cer-4" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+      </div>
+
+
+  <!-- OAO-GATHERED-CARD v1 -->
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">Lesson 12.02 · Submission Packet</div>
+        <div class="gathered-header-title">Gathered Answers</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-name-row">
+        <span class="gathered-name-label">Your name:</span>
+        <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
+      </div>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-download" onclick="downloadGathered()">⬇ Download as Text</button>
+      </div>
+      <div class="gathered-copied" id="copiedMsg">Copied! Paste into your Canvas text box to turn in.</div>
+    </div>
+  </div>
+
+      <div style="background:#fff;border:2px solid #8B6FC0;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border-bottom:2px solid #D8D0E8;">
+          <div style="width:42px;height:42px;border-radius:50%;background:#8B6FC0;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">☀️</div>
+          <div>
+            <div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Submission Checklist</div>
+            <div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">Check each box when that part is done. Tap to toggle.</p>
+
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A:</strong> All four blanks filled in using words from the bank.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5, 6, and 7 answered in complete sentences using lesson vocabulary.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> Two complete pathway models (four boxes each, all arrows present) plus two comparison sentences underneath.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Key Question Response:</strong> 2–3 sentences answering the big question using at least three vocabulary words.</span>
+          </div>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
+            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Evidence Response:</strong> I made a claim about whether one pathway model is enough, and supported it with two pieces of evidence from the lesson.</span>
+          </div>
+
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
+              Submit your work however works best for you:<br/><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> — Take a clear photo of your handwritten work and upload it.</span><br/>
+              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> — Record a short video explaining your food chain.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🔄</div>
+      <div>
+        <div class="card-head-label">Circle Back</div>
+        <div class="card-head-title">Revisit Our Key Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Now You Know!</div>
+          <div class="question">"How can a model show the way an animal turns information into action?"</div>
+        </div>
+      </div>
+      <p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong> to this question in your science notebook. Use at least <strong>three vocabulary words</strong> from today.</p>
+      <div class="callout callout-tip">
+        <span class="callout-icon">⭐</span>
+        <p><strong>Nicely done.</strong> You can now build a <span class="vtip">pathway<span class="vtip-box"><span class="vtip-word">Pathway</span>The steps from world to response.</span></span> <span class="vtip">model<span class="vtip-box"><span class="vtip-word">Model</span>A drawing, build, or explanation of how something works.</span></span> and compare two animals' responses. Next module, you'll switch gears from <em>behavior</em> to <em>family</em>: how Florida plants and animals pass traits to their offspring — and which traits the environment shapes along the way.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 3 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Lesson 12.02 &middot; Life Science: Model — From Senses to Brain</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <span style="font-size:20px;">🧠</span> Back to Top
+</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── Tab System ──
+var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var tabsVisited = new Set(['vocab']);
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + tabId);
+  var btn = document.querySelector('[data-tab="' + tabId + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn) { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabsVisited.add(tabId);
+  var pct = Math.round((tabsVisited.size / TAB_ORDER.length) * 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c) {
+    if (tabId === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Checklist ──
+document.querySelectorAll('.checklist-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    var icon = this.querySelector('.check-icon');
+    if (this.classList.contains('checked')) { icon.textContent = '🚀'; }
+    else { icon.textContent = '☐'; }
+  });
+});
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel = document.getElementById('diagramPanel');
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen = optEl.getAttribute('data-val');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o) {
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview = document.getElementById('quizVideoReview');
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '🚀 Perfect! You\'re ready for the mission!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌟 Great job! Almost cleared for launch!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('show', window.pageYOffset > 400);
+  });
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#8B6FC0','#55C8E8','#FFD700','#E8636B','#34B76F','#F5A623','#D4772C','#fff'];
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x, y, count) {
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i) {
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function() {
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Hook confetti to quiz ──
+(function() {
+  var scoreEl = document.getElementById('quizScore');
+  if(!scoreEl) return;
+  new MutationObserver(function(muts) {
+    muts.forEach(function(m) {
+      if(m.target.classList.contains('show') && m.target.id==='quizScore') {
+        if(parseInt(document.getElementById('quizScoreNum').textContent)===3)
+          setTimeout(window.launchConfetti,300);
+      }
+    });
+  }).observe(scoreEl,{attributes:true,attributeFilter:['class']});
+})();
+
+// ── Hook confetti to checklist ──
+(function() {
+  var items = document.querySelectorAll('.checklist-item');
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      setTimeout(function() {
+        if(Array.from(items).every(function(it){ return it.classList.contains('checked'); }))
+          setTimeout(window.launchConfetti, 200);
+      }, 50);
+    });
+  });
+})();
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+
+// ── Intro card click-to-toggle ──
+document.querySelectorAll('.intro-2col .card').forEach(function(card) {
+  card.querySelector('.card-head').addEventListener('click', function() {
+    card.classList.toggle('collapsed');
+  });
+});
+
+function refreshGathered() {
+  var out = document.getElementById('gatheredOutput'); if (!out) return;
+  var lines = [];
+  var nameEl = document.getElementById('student-name'); var name = nameEl ? nameEl.value.trim() : '';
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('  OPTIMA ACADEMY ONLINE — 4TH GRADE SCIENCE');
+  lines.push('  Lesson 12.02 · Model Senses To Brain');
+  lines.push('  Student: ' + (name || '(add your name above)'));
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('');
+  var textareas = document.querySelectorAll('.response-textarea[data-label]');
+  textareas.forEach(function(ta) {
+    lines.push('--- ' + ta.getAttribute('data-label').toUpperCase() + ' ---');
+    lines.push(ta.value.trim() || '(not yet answered)');
+    lines.push('');
+  });
+  out.value = lines.join('\n');
+}
+function copyGathered() {
+  refreshGathered();
+  var out = document.getElementById('gatheredOutput'); out.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  var msg = document.getElementById('copiedMsg');
+  if (msg) { msg.classList.add('show'); setTimeout(function(){ msg.classList.remove('show'); }, 2400); }
+}
+function downloadGathered() {
+  refreshGathered();
+  var text = document.getElementById('gatheredOutput').value;
+  var blob = new Blob([text], {type: 'text/plain'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'lesson-12-02-model-senses-to-brain.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+document.addEventListener('input', function(e) {
+  if (e.target.classList.contains('response-textarea') || e.target.id === 'student-name') {
+    var panel = document.getElementById('tab-assignment');
+    if (panel && panel.classList.contains('active')) refreshGathered();
+  }
+});
+(function(){
+  var origSwitch = window.switchTab;
+  if (origSwitch) {
+    window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
+  }
+})();
+
+/* ───── AUTO-SAVE (persistence patch) ───── */
+var _lessonKey = (document.title || 'science-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+(function(){
+  document.querySelectorAll('textarea.response-textarea').forEach(function(t){
+    if(!t.id) return;
+    /* Restore saved value */
+    try{
+      var v = localStorage.getItem(_lessonKey+'-'+t.id);
+      if(v){ t.value = v; }
+    }catch(e){}
+    /* Save on every keystroke */
+    t.addEventListener('input', function(){
+      try{ localStorage.setItem(_lessonKey+'-'+this.id, this.value); }catch(e){}
+    });
+  });
+})();
+
+/* Warn before leaving if student has typed anything */
+window.addEventListener('beforeunload', function(e){
+  var hasWork = false;
+  document.querySelectorAll('textarea.response-textarea').forEach(function(t){
+    if(t.value && t.value.trim().length > 0){ hasWork = true; }
+  });
+  if(hasWork){
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+
+</script>
+<!-- Video Manifest Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://raw.githubusercontent.com/bbirchum1/optima-4th-science/main/video-manifest.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll('.video-placeholder-wrap').forEach(function(wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var temp = document.createElement('div');
+        temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe');
+        if (!iframe) return;
+        iframe.removeAttribute('width');
+        iframe.removeAttribute('height');
+        iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
+        wrap.innerHTML = '';
+        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.appendChild(iframe);
+      });
+    })
+    .catch(function(err) { console.warn('Video manifest load failed:', err); });
+});
+</script>
+
+<!-- OAO-GATHERED-FIX v1 — clipboard + storage resilience (cross-origin iframe safe) -->
+<script>
+(function(){
+  /* ── 1. Storage probe ─────────────────────────────────────────── */
+  var _store = null, _durable = false;
+  try { var _t = '__oao_probe_' + Math.random();
+        localStorage.setItem(_t, '1'); localStorage.removeItem(_t);
+        _store = localStorage; _durable = true;
+  } catch(e) {
+    try { var _t2 = '__oao_probe_' + Math.random();
+          sessionStorage.setItem(_t2, '1'); sessionStorage.removeItem(_t2);
+          _store = sessionStorage;
+    } catch(e2) {
+      _store = { _m:{}, getItem:function(k){return this._m[k]||null;},
+                 setItem:function(k,v){this._m[k]=v;},
+                 removeItem:function(k){delete this._m[k];} };
+    }
+  }
+
+  /* ── 2. Lesson key (match existing convention) ────────────────── */
+  var _lessonKey = (typeof window._lessonKey !== 'undefined') ? window._lessonKey
+                 : document.title.replace(/[^a-zA-Z0-9]/g,'').substring(0,40);
+
+  /* ── 3. Save + restore for textareas / .cell-input ────────────── */
+  function saveField(el){
+    if(!el||!el.id) return;
+    try{ _store.setItem(_lessonKey+'-'+el.id, el.value); }catch(e){}
+  }
+  function restoreField(el){
+    if(!el||!el.id) return;
+    try{
+      var v = _store.getItem(_lessonKey+'-'+el.id);
+      if(v && !el.value){ el.value = v; }
+    }catch(e){}
+  }
+
+  var fields = document.querySelectorAll('textarea, .cell-input, input[type="text"]');
+  fields.forEach(function(el){
+    restoreField(el);
+    el.addEventListener('input', function(){ saveField(this); });
+  });
+
+  /* Student-name field */
+  var nameEl = document.getElementById('student-name');
+  if(nameEl){
+    restoreField(nameEl);
+    nameEl.addEventListener('input', function(){ saveField(this); });
+  }
+
+  /* Periodic sweep every 5 s */
+  setInterval(function(){
+    document.querySelectorAll('textarea, .cell-input, input[type="text"]').forEach(saveField);
+  }, 5000);
+
+  /* ── 4. Detect gathered-output element ────────────────────────── */
+  var _gEl = document.getElementById('gatheredOutput')
+          || document.getElementById('gathered-output')
+          || document.getElementById('gatherBox')
+          || document.getElementById('answersDisplay');
+
+  /* ── 5. Robust copy ───────────────────────────────────────────── */
+  function _getGatheredText(){
+    if(!_gEl) return '';
+    return _gEl.value !== undefined ? _gEl.value : _gEl.textContent;
+  }
+
+  function _robustCopy(){
+    var txt = _getGatheredText();
+    if(!txt || !txt.trim()){
+      alert('Gather your answers first before copying.');
+      return;
+    }
+
+    /* Strategy A: execCommand (works in cross-origin iframes) */
+    if(_gEl && _gEl.select){
+      try{
+        _gEl.select();
+        if(document.execCommand('copy')){
+          _showCopyOK(); return;
+        }
+      }catch(e){}
+    } else {
+      /* For non-textarea elements, use a temp textarea */
+      try{
+        var ta = document.createElement('textarea');
+        ta.value = txt; ta.style.cssText='position:fixed;left:-9999px;';
+        document.body.appendChild(ta); ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if(ok){ _showCopyOK(); return; }
+      }catch(e){}
+    }
+
+    /* Strategy B: Clipboard API (may work if permissions granted) */
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){
+        _showCopyOK();
+      }).catch(function(){
+        _showManualCopy();
+      });
+      return;
+    }
+
+    /* Strategy C: Tell the student to copy manually */
+    _showManualCopy();
+  }
+
+  function _showCopyOK(){
+    /* Try all known success indicators */
+    var m = document.getElementById('copiedMsg')
+         || document.getElementById('copied-msg')
+         || document.getElementById('copyToast')
+         || document.getElementById('gatheredCopied');
+    if(m){
+      if(m.classList) m.classList.add('show');
+      m.style.display = 'block';
+      setTimeout(function(){
+        if(m.classList) m.classList.remove('show');
+        m.style.display = '';
+      }, 2500);
+    } else {
+      /* No existing indicator — make a temp one */
+      var d = document.createElement('div');
+      d.textContent = '✓ Copied! Paste into Canvas now.';
+      d.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);'
+        + 'background:#27ae60;color:#fff;padding:12px 24px;border-radius:8px;'
+        + 'font:bold 15px/1.4 sans-serif;z-index:99999;box-shadow:0 4px 16px rgba(0,0,0,.25);';
+      document.body.appendChild(d);
+      setTimeout(function(){ document.body.removeChild(d); }, 3000);
+    }
+  }
+
+  function _showManualCopy(){
+    /* Select the text so Ctrl+C works */
+    if(_gEl && _gEl.select) _gEl.select();
+    var d = document.createElement('div');
+    d.innerHTML = '<strong style="color:#c0392b;">✗ Auto-copy didn’t work.</strong><br>'
+      + 'Click in the answers box, press <kbd>Ctrl+A</kbd> then <kbd>Ctrl+C</kbd> '
+      + '(or <kbd>⌘+A</kbd> then <kbd>⌘+C</kbd> on Mac).';
+    d.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);'
+      + 'background:#ffeaa7;color:#2d3436;padding:14px 24px;border-radius:8px;'
+      + 'font:14px/1.5 sans-serif;z-index:99999;box-shadow:0 4px 16px rgba(0,0,0,.25);'
+      + 'max-width:420px;text-align:center;';
+    document.body.appendChild(d);
+    setTimeout(function(){ document.body.removeChild(d); }, 8000);
+  }
+
+  /* Override all known copy function names */
+  if(typeof window.copyGathered !== 'undefined' || _gEl){
+    window.copyGathered = _robustCopy;
+  }
+  if(typeof window.copyAnswers !== 'undefined'){
+    window.copyAnswers = _robustCopy;
+  }
+  /* Wire up any copy button that calls these */
+  document.querySelectorAll('[onclick*="copyGathered"],[onclick*="copyAnswers"]').forEach(function(btn){
+    btn.setAttribute('onclick','');
+    btn.addEventListener('click', _robustCopy);
+  });
+
+  /* ── 6. Refresh gathered on load + on typing ──────────────────── */
+  function _triggerGather(){
+    if(typeof window.gatherAnswers === 'function') try{ window.gatherAnswers(); }catch(e){}
+    if(typeof window.refreshGathered === 'function') try{ window.refreshGathered(); }catch(e){}
+  }
+  _triggerGather();
+  document.addEventListener('input', function(e){
+    if(e.target.matches('textarea, .cell-input, input[type="text"], select')){
+      setTimeout(_triggerGather, 50);
+    }
+  });
+
+  /* ── 7. Warning banner when storage isn't durable ─────────────── */
+  if(!_durable && _gEl){
+    var warn = document.createElement('div');
+    warn.innerHTML = '⚠️ <strong>Your answers may not save</strong> between visits. '
+      + 'Copy or download your answers before leaving this page.';
+    warn.style.cssText = 'background:#fff3cd;color:#856404;border:1px solid #ffc107;'
+      + 'border-radius:8px;padding:10px 16px;margin:10px 0;font:14px/1.5 sans-serif;text-align:center;';
+    if(_gEl.parentNode) _gEl.parentNode.insertBefore(warn, _gEl);
+  }
+})();
+</script>
+
+</body>
+</html>

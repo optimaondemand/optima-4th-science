@@ -1,0 +1,251 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for two pathway models",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Build Two Pathway Models"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick two different Florida animals that use <strong>different senses</strong> (not the bat or the eagle). Build a pathway model for each one: stimulus → sense organ → brain → response. Then compare them.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: a black bear’s smelling area is about 100 times bigger than a person’s (NPS); “hundreds of times more scent cells” isn’t supported",
+  "old": "the bear's nose, which has hundreds of times more scent cells than yours",
+  "new": "the bear's nose, whose smelling area is about 100 times bigger than yours"
+ },
+ {
+  "kind": "fix",
+  "why": "accuracy: Florida’s sea turtles don’t hunt fish (green turtles eat plants; loggerheads eat crabs and jellyfish)",
+  "old": "In your notebook, predict: imagine a bald eagle and a sea turtle each notice a fish\\..*?</p>",
+  "new": "<strong>Predict:</strong> an eagle notices a fish, and a sea turtle notices a jellyfish. Which step will change the most between them?</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dashes removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll build <strong>two</strong> response models for two different Florida animals — and compare them to see what the same four steps look like in two very different lives.",
+  "new": "Keep this question in mind. By the end, you'll build pathway models for different Florida animals and compare them: same four steps, very different lives."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "Today the question is: <em>do all animals do them the same way?</em>",
+  "new": "Today's question: <em>do all animals do them the same way?</em>"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "shows them in order, with arrows that explain what happens at each step. The strongest models include:",
+  "new": "shows them in order, with arrows between the steps. The strongest models have:"
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "</strong> — showing what the animal noticed.",
+  "new": "</strong>: what the animal noticed."
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "</strong> — labeled \"signal\" to show information traveling.",
+  "new": "</strong>, labeled \"signal\": the message traveling inside the body."
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "</strong> — showing what the brain decided.",
+  "new": "</strong>: what the brain decided."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "The four steps stay the same, but the <em>details</em> change a lot between animals. Two Florida examples that look totally different — but follow the same pathway:",
+  "new": "The four steps stay the same, but the <em>details</em> change a lot. Here are two Florida hunters that look totally different but follow the same pathway:"
+ },
+ {
+  "kind": "plain",
+  "why": "“calculates” → plain words",
+  "old": "brain calculates where the moth is (process)",
+  "new": "brain works out where the moth is (process)"
+ },
+ {
+  "kind": "plain",
+  "why": "“universal” → plain words",
+  "old": "Totally different ways of doing it. That's why scientists like to build <em>multiple</em> models — comparing them shows what's universal and what's special to each animal.",
+  "new": "Totally different ways of doing it. Comparing models shows what is the same for every animal and what is special to each one."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the “misconception” paragraph (good enough models) is extra reading; the games carry the idea",
+  "old": "\\s*<p><strong>Common misconception:</strong>.*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason repeats Match the sense (Part 3)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "only shows <em>stimulus → response</em> — no middle steps.",
+  "new": "only shows <em>stimulus → response</em>, with no middle steps."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter caption",
+  "old": "<strong>Same four steps, two different animals.</strong> The labels match — but the stimulus, sense organ, and response look very different between the two pathways.",
+  "new": "<strong>Same four steps, two different animals.</strong> The step names match, but the stimulus, sense organ and response look very different."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5: the four animals now live in Part 3",
+  "old": "Pick one of the four Florida animals from the diagram (bat, anhinga, bear, or crab).",
+  "new": "Pick one of the four Florida animals from Part 3 (bat, anhinga, bear, or crab)."
+ },
+ {
+  "kind": "plain",
+  "why": "“module” → “week”; dash removed",
+  "old": " Next module, you'll switch gears from <em>behavior</em> to <em>family</em>: how Florida plants and animals pass traits to their offspring — and which traits the environment shapes along the way.",
+  "new": " Next week, you'll switch from <em>behavior</em> to <em>families</em>: how Florida plants and animals pass traits to their young, and which traits the world around them shapes."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (building and comparing two models moves to Part C; the fixing game is Part 4)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 1",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the diagram heading becomes Part 3 (Match the sense replaces the tap diagram)",
+  "old": "margin-top:22px;\">Four Pathway Models to Study</h3>",
+  "new": "margin-top:22px;\">Part 3 · Four Florida Pathways</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the bat fact (shaky), the Florida callout and Go Deeper at the end of the Lesson; Part 4 = fix the broken models; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Fix the Broken Models</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Last night, volunteers at the field station drew models of Florida animals. Some models are broken: a step is missing. Find what’s wrong, fix it, and run it.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7; the CER asks almost the same thing)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 is now number 6",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the sketch is a bonus",
+  "old": "Two complete pathway models (four boxes each, all arrows present) plus two comparison sentences underneath.",
+  "new": "Two pathway models (all four steps each) and two sentences comparing them. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether one pathway model is enough, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether one pathway model is enough, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

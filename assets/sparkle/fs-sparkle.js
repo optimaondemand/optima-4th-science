@@ -451,7 +451,7 @@
     var card = fsOnly(el('div', 'fs-casecard' + (C.style ? ' fs-case-' + C.style : '')));
     function tagOf(s) { return s.tag != null ? s.tag : '● REC'; }
     var stills = (C.stills || []).map(function (s) {
-      return '<div class="fs-still"><div class="fs-still-img' + (s.img ? ' photo' : '') + '">' + (s.img ? '<img alt="' + esc(s.alt || s.cam) + '" src="' + esc(s.img) + '"><span class="fs-still-rec">' + esc(tagOf(s)) + '</span>' : s.svg) + '<span class="fs-still-q">?</span></div><div class="fs-still-cap"><b>' + esc(s.cam) + '</b> ' + esc(s.time) + '</div></div>';
+      return '<div class="fs-still' + (s.kind ? ' fs-still-' + s.kind : '') + '"><div class="fs-still-img' + (s.img ? ' photo' : '') + '">' + (s.img ? '<img alt="' + esc(s.alt || s.cam) + '" src="' + esc(s.img) + '"><span class="fs-still-rec">' + esc(tagOf(s)) + '</span>' : s.svg) + '<span class="fs-still-q">?</span></div><div class="fs-still-cap"><b>' + esc(s.cam) + '</b> ' + esc(s.time) + '</div></div>';
     }).join('');
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
@@ -1366,6 +1366,215 @@
     at.parentNode.insertBefore(g, at.nextSibling);
     open(0); if (Object.keys(built).length) { upd(); }
     else count.textContent = '🧩 0 models built';
+  }
+
+  /* ---------- Warm-Up: "Echo hunt" — click, time the echo, work out where the moth is (12.02) ----------
+     D.echo = {afterText, kicker, title, todo[], why, img, alt, mothImg, credit, marks:[m,…] (meters), rounds:[m,…] (moth distance each round),
+               wall:{m, t}, clickBtn, ask, needClick, closer, farther, foundLine, win, clue}
+     Echo time = 2 × distance ÷ 343 m/s (the speed of sound in air), shown in ms (thousandths of a second). */
+  function buildEcho() {
+    var E = D.echo; if (!E) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (E.afterText && p.textContent.indexOf(E.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('echo anchor text not found'); return; }
+    var g = gameShell(E.kicker || 'Warm-Up game', E.title, E.todo, E.why); g.dataset.mod = 'echo';
+    var marks = E.marks || [1, 3, 6], far = Math.max.apply(null, marks) * 1.12;
+    function xOf(m) { return 28 + 64 * m / far; }
+    function ms(m) { return Math.round(2 * m / 343 * 1000); }
+    var lane = el('div', 'fs-ec-lane', '<div class="fs-ec-bat"><img alt="' + esc(E.alt || '') + '" src="' + esc(E.img) + '"></div>' +
+      marks.map(function (m) { return '<div class="fs-ec-mark" data-m="' + m + '" role="button" tabindex="0" style="left:' + xOf(m) + '%"><span class="fs-ec-fog">?</span><b>' + m + ' m</b></div>'; }).join('') +
+      '<i class="fs-ec-ping"></i><i class="fs-ec-back"></i>');
+    var wall = el('div', 'fs-ec-wall', '📏 ' + esc(E.wall.t));
+    var ctl = el('div', 'fs-ec-ctl', '<button type="button" class="fs-btn fs-ec-click">' + esc(E.clickBtn || '🔊 Click!') + '</button><div class="fs-ec-read">—</div><div class="fs-card fs-ec-pin">📍 ' + esc(E.pin || 'The moth is here') + '</div>');
+    var ask = el('div', 'fs-in-k fs-ec-ask'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
+    g.appendChild(wall); g.appendChild(lane); g.appendChild(ctl); g.appendChild(ask); g.appendChild(miss); g.appendChild(count); g.appendChild(win);
+    if (E.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(E.credit)));
+    var rounds = E.rounds, r = Math.min(+store('echo') || 0, rounds.length), clicked = false, busy = false;
+    var markEls = $$('.fs-ec-mark', lane), pin = $('.fs-ec-pin', ctl), read = $('.fs-ec-read', ctl);
+    function upd() {
+      count.textContent = '🦋 Moths found: ' + r + ' of ' + rounds.length; count.classList.toggle('ok', r === rounds.length);
+      ask.textContent = r < rounds.length ? 'Round ' + (r + 1) + ': ' + (E.ask || 'Click, read the echo time, then show where the moth is.') : '';
+      if (r === rounds.length) markEls.forEach(function (k) { k.classList.add('found'); $('.fs-ec-fog', k).innerHTML = '<img alt="" src="' + esc(E.mothImg) + '">'; });
+      if (r === rounds.length && !win.classList.contains('show')) { win.innerHTML = esc(E.win); win.classList.add('show'); lane.classList.add('done'); $('.fs-ec-click', ctl).disabled = true; pin.classList.add('placed'); earnClue(E.clue || 'echo'); }
+    }
+    function reset() { clicked = false; read.textContent = '—'; markEls.forEach(function (k) { k.classList.remove('found', 'bad'); $('.fs-ec-fog', k).innerHTML = '?'; }); }
+    $('.fs-ec-click', ctl).addEventListener('click', function () {
+      if (busy || r >= rounds.length) return; busy = true; miss.classList.remove('show');
+      var m = rounds[r], t = ms(m), vis = reduceMotion ? 0 : 220 + t * 34;
+      tone(2600, 0, 0.03, 'square', 0.05);
+      var ping = $('.fs-ec-ping', lane), back = $('.fs-ec-back', lane);
+      [ping, back].forEach(function (p) { p.style.transition = 'none'; p.style.opacity = '0'; p.style.left = '12%'; });
+      void lane.offsetWidth;
+      if (vis) { ping.style.transition = 'left ' + vis / 2 + 'ms linear'; ping.style.opacity = '1'; ping.style.left = xOf(m) + '%'; }
+      setTimeout(function () {
+        ping.style.opacity = '0'; tone(2600, 0, 0.03, 'square', 0.018);
+        if (vis) { back.style.transition = 'none'; back.style.left = xOf(m) + '%'; void back.offsetWidth; back.style.transition = 'left ' + vis / 2 + 'ms linear'; back.style.opacity = '1'; back.style.left = '12%'; }
+        setTimeout(function () { back.style.opacity = '0'; read.innerHTML = 'Echo back in <b>' + t + ' ms</b>'; read.classList.remove('flash'); void read.offsetWidth; read.classList.add('flash'); clicked = true; busy = false; }, vis / 2);
+      }, vis / 2);
+    });
+    function guess(item, mk) {
+      if (r >= rounds.length) return;
+      if (!clicked) { bounce(mk, miss, E.needClick || 'Click first, then read how long the echo took.'); return; }
+      var m = +mk.dataset.m, real = rounds[r];
+      if (m !== real) { mk.classList.add('bad'); bounce(mk, miss, (m < real ? E.farther : E.closer) || ''); return; }
+      miss.classList.remove('show'); mk.classList.add('found'); $('.fs-ec-fog', mk).innerHTML = '<img alt="" src="' + esc(E.mothImg) + '">';
+      SFX.whoosh(); lane.classList.remove('swoop'); void lane.offsetWidth; lane.classList.add('swoop'); lane.style.setProperty('--fs-ec-x', xOf(m) + '%');
+      r++; store('echo', String(r)); clicked = false;
+      var line = el('div', 'fs-sv-hint fs-ec-line', '✅ ' + esc((E.foundLine || 'Found it! {ms} ms means {m} m away.').replace('{ms}', ms(m)).replace('{m}', m)));
+      ask.parentNode.insertBefore(line, miss); setTimeout(function () { line.remove(); if (r < rounds.length) reset(); upd(); }, reduceMotion ? 900 : 1700);
+      if (r === rounds.length) upd();
+    }
+    dragDrop(pin, function () { return markEls; }, guess);
+    markEls.forEach(function (k) {
+      k.addEventListener('click', function () { pin.classList.remove('sel'); guess(pin, k); });
+      k.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); guess(pin, k); } });
+    });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson: "Build a strong model" — steps in order, then arrows, then a caption, with a meter (12.02) ----------
+     D.build = {afterText, kicker, title, todo[], why, img, alt, credit, name, slots:[{k,icon,t}]×4, cards:[{t,k}] (k 'x' = decoy), hint, missX, missSlot:{k:hint},
+                arrows:[{q, opts:[{t,ok,miss}]}]×3, caption:{q, opts}, meter:[6 labels], win, clue} */
+  function buildBuild() {
+    var B = D.build; if (!B) return;
+    var at = null; $$('.tab-panel p, .tab-panel ul').some(function (p) { if (B.afterText && p.textContent.indexOf(B.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('build anchor text not found'); return; }
+    if (at.tagName === 'P' && at.nextElementSibling && at.nextElementSibling.tagName === 'UL') at = at.nextElementSibling;
+    var g = gameShell(B.kicker || 'Lesson game', B.title, B.todo, B.why); g.dataset.mod = 'build';
+    var meter = el('div', 'fs-up-meter', '<div class="fs-up-bar"><i></i></div><div class="fs-up-lbl"></div>');
+    var head = el('div', 'fs-bd-head', '<img alt="' + esc(B.alt || '') + '" src="' + esc(B.img) + '"><div><b>' + esc(B.name) + '</b><span>' + esc(B.sub || '') + '</span></div>');
+    var row = el('div', 'fs-ch-row fs-bd-row'), pool = el('div', 'fs-ch-pool'), steps = el('div', 'fs-up-steps'), cap = el('div', 'fs-up-cap'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    g.appendChild(meter); g.appendChild(head); g.appendChild(row); g.appendChild(cap); g.appendChild(pool); g.appendChild(steps); g.appendChild(miss); g.appendChild(win);
+    if (B.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credit</summary>' + esc(B.credit)));
+    row.innerHTML = B.slots.map(function (s, k) { return (k ? '<span class="fs-ch-arw fs-bd-arw" data-a="' + (k - 1) + '"><i>→</i><em></em></span>' : '') + '<div class="fs-ch-slot" data-k="' + s.k + '" role="button" tabindex="0"><div class="fs-ch-h"><span>' + s.icon + '</span>' + esc(s.t) + '</div><div class="fs-ch-in"></div></div>'; }).join('');
+    var slots = $$('.fs-ch-slot', row), arws = $$('.fs-bd-arw', row);
+    var total = 2 + B.arrows.length, n = 0;
+    function setMeter() { $('i', meter).style.width = (100 * n / total) + '%'; $('.fs-up-lbl', meter).textContent = B.meter[n] || ''; meter.classList.toggle('full', n === total); }
+    var right = B.cards.filter(function (c) { return c.k !== 'x'; });
+    function fillAll() { right.forEach(function (c) { var s = $('.fs-ch-slot[data-k="' + c.k + '"]', row); $('.fs-ch-in', s).textContent = c.t; s.classList.add('full'); }); }
+    function setArrow(i, o) { var a = arws[i]; a.classList.add('on'); $('em', a).textContent = o.tag || o.t; }
+    function finish(animate) { cap.textContent = B.caption.opts.filter(function (o) { return o.ok; })[0].t; cap.classList.add('show'); n = total; setMeter(); win.innerHTML = esc(B.win); win.classList.add('show'); if (animate) { SFX.win(); earnClue(B.clue || 'build'); } }
+    function askArrow(i) {
+      if (i >= B.arrows.length) { var w = chipsQ(steps, B.caption.q, B.caption.opts, function () { store('build', String(total)); finish(true); }, miss); w.classList.add('fs-up-step'); return; }
+      arws.forEach(function (a, k) { a.classList.toggle('ask', k === i); });
+      var w2 = chipsQ(steps, B.arrows[i].q, B.arrows[i].opts, function (o) { arws[i].classList.remove('ask'); setArrow(i, o); SFX.whoosh(); n = 2 + i; store('build', String(n)); setMeter(); setTimeout(function () { askArrow(i + 1); }, reduceMotion ? 0 : 350); }, miss);
+      w2.classList.add('fs-up-step');
+    }
+    function drop(card, slot) {
+      if (slot.classList.contains('full')) return;
+      if (card.dataset.k !== slot.dataset.k) { bounce(card, miss, card.dataset.k === 'x' ? B.missX : (B.missSlot && B.missSlot[card.dataset.k]) || 'That card is a different step.'); return; }
+      miss.classList.remove('show'); $('.fs-ch-in', slot).textContent = card.textContent; slot.classList.add('full'); card.remove(); SFX.chime();
+      if (slots.every(function (s) { return s.classList.contains('full'); })) { pool.innerHTML = ''; n = 1; store('build', '1'); setMeter(); setTimeout(function () { askArrow(0); }, reduceMotion ? 0 : 350); }
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    var saved = Math.min(+store('build') || 0, total);
+    if (saved >= 1) {
+      fillAll(); for (var i = 0; i < saved - 1 && i < B.arrows.length; i++) setArrow(i, B.arrows[i].opts.filter(function (o) { return o.ok; })[0]);
+      n = saved; setMeter(); if (saved === total) finish(false); else askArrow(saved - 1);
+      return;
+    }
+    setMeter();
+    pool.appendChild(el('div', 'fs-sv-hint', '🔎 ' + esc(B.hint || 'Drag each card into its step, or tap a card and then a step.')));
+    shuffle(B.cards).forEach(function (c) { var d = el('div', 'fs-card', esc(c.t)); d.dataset.k = c.k; pool.appendChild(d); dragDrop(d, function () { return slots.filter(function (s) { return !s.classList.contains('full'); }); }, drop); });
+    tapTargets(g, slots, drop);
+  }
+
+  /* ---------- Lesson: "Match the sense" — four real pathway models; drop the sense organ that can pick up each stimulus, then compare (12.02) ----------
+     D.compare = {replace, kicker, title, todo[], why, rows:[{k,icon,t}] (k: stim|sense|brain|resp), senseK, animals:[{id,name,img,alt,stim,sense,brain,resp,miss}], senses:[{id,t}], q, opts, credit, win, clue} */
+  function buildCompare() {
+    var C = D.compare; if (!C) return;
+    var wrap = $(C.replace || '#tab-lesson .diagram-wrap'); if (!wrap) { FAILED.push('compare: nothing to replace'); return; }
+    var g = gameShell(C.kicker || 'Lesson game', C.title, C.todo, C.why); g.dataset.mod = 'compare';
+    var pv = wrap.previousElementSibling; if (pv && pv.tagName === 'P' && pv.textContent.length < 200) pv.classList.add('fs-hide-on');
+    var grid = el('div', 'fs-cp-grid'), pool = el('div', 'fs-ch-pool fs-cp-pool'), qbox = el('div', 'fs-cp-q'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
+    grid.innerHTML = C.animals.map(function (a) {
+      return '<div class="fs-cp-card" data-id="' + a.id + '"><div class="fs-cp-top"><img alt="' + esc(a.alt || '') + '" src="' + esc(a.img) + '"><b>' + esc(a.name) + '</b></div>' +
+        C.rows.map(function (rw) {
+          var t = a[rw.k];
+          return '<div class="fs-cp-row' + (rw.k === 'sense' ? ' fs-cp-drop' : '') + '" data-k="' + rw.k + '"' + (rw.k === 'sense' ? ' role="button" tabindex="0"' : '') + '><span class="fs-cp-h">' + rw.icon + ' ' + esc(rw.t) + '</span><span class="fs-cp-t">' + (rw.k === 'sense' ? '<i>' + esc(C.dropHere || 'Drop the sense organ here') + '</i>' : esc(t)) + '</span></div>';
+        }).join('') + '</div>';
+    }).join('');
+    g.appendChild(grid); g.appendChild(pool); g.appendChild(miss); g.appendChild(count); g.appendChild(qbox); g.appendChild(win);
+    if (C.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(C.credit)));
+    var done = {}; try { done = JSON.parse(store('compare') || '{}'); } catch (e) {}
+    var drops = $$('.fs-cp-drop', grid);
+    function place(id) { var a = C.animals.filter(function (x) { return x.id === id; })[0], d = $('.fs-cp-card[data-id="' + id + '"] .fs-cp-drop', grid); $('.fs-cp-t', d).textContent = a.sense; d.classList.add('full'); }
+    function upd() {
+      var n = Object.keys(done).length; count.textContent = '👂 ' + n + ' of ' + C.animals.length + ' sense organs placed'; count.classList.toggle('ok', n === C.animals.length);
+      if (n === C.animals.length && !qbox.dataset.on) {
+        qbox.dataset.on = '1'; grid.classList.add('all'); pool.innerHTML = '';
+        if (store('compare-q')) { var r = C.opts.filter(function (o) { return o.ok; })[0]; qbox.innerHTML = '<div class="fs-sv-q"><div class="fs-in-k">' + esc(C.q) + '</div><div class="fs-in-chips"><button type="button" class="fs-in-chip on ok">' + esc(r.t) + '</button></div></div>'; win.innerHTML = esc(C.win); win.classList.add('show'); return; }
+        chipsQ(qbox, C.q, C.opts, function () { store('compare-q', '1'); win.innerHTML = esc(C.win); win.classList.add('show'); SFX.win(); earnClue(C.clue || 'compare'); }, miss);
+      }
+    }
+    function drop(card, d) {
+      if (d.classList.contains('full')) return;
+      var id = d.parentNode.dataset.id, a = C.animals.filter(function (x) { return x.id === id; })[0];
+      if (card.dataset.id !== id) { var s = C.senses.filter(function (x) { return x.id === card.dataset.id; })[0]; bounce(card, miss, (a.miss && a.miss[card.dataset.id]) || a.missAny || (s && s.miss) || 'Can that body part pick up this kind of stimulus?'); return; }
+      miss.classList.remove('show'); card.remove(); done[id] = 1; store('compare', JSON.stringify(done)); place(id); SFX.chime(); upd();
+    }
+    Object.keys(done).forEach(place);
+    shuffle(C.senses).forEach(function (s) { if (done[s.id]) return; var c = el('div', 'fs-card', esc(s.t)); c.dataset.id = s.id; pool.appendChild(c); dragDrop(c, function () { return drops.filter(function (x) { return !x.classList.contains('full'); }); }, drop); });
+    tapTargets(g, drops, drop);
+    wrap.classList.add('fs-replaced'); wrap.parentNode.insertBefore(g, wrap);
+    upd();
+  }
+
+  /* ---------- Part 4: "Fix the broken models" — spot what's wrong, add the missing steps, run the model (12.02) ----------
+     D.fix = {afterText, kicker, title, todo[], why, slots:[{k,icon,t}]×4, models:[{id,name,icon,img,alt,drawn:[t…], q, opts:[{t,ok,miss}], have:{k:t}, pool:[{t,k}], ran, why}], missX, missSlot, runBtn, credit, win, clue} */
+  function buildFix() {
+    var X = D.fix; if (!X) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (X.afterText && p.textContent.indexOf(X.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('fix anchor text not found'); return; }
+    var g = gameShell(X.kicker || 'Part 4 game', X.title, X.todo, X.why); g.dataset.mod = 'fix';
+    var tabs = el('div', 'fs-ch-tabs', X.models.map(function (m, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '"><span>' + m.icon + '</span>' + esc(m.name) + '<em></em></button>'; }).join(''));
+    var stage = el('div', 'fs-fx-stage'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
+    g.appendChild(tabs); g.appendChild(stage); g.appendChild(miss); g.appendChild(count); g.appendChild(win);
+    if (X.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(X.credit)));
+    var fixed = {}; try { fixed = JSON.parse(store('fix') || '{}'); } catch (e) {}
+    function upd() {
+      var n = Object.keys(fixed).length; count.textContent = '🛠 ' + n + ' of ' + X.models.length + ' models fixed'; count.classList.toggle('ok', n === X.models.length);
+      $$('.fs-in-chip', tabs).forEach(function (b, i) { var ok = !!fixed[X.models[i].id]; b.classList.toggle('done', ok); $('em', b).textContent = ok ? ' ✓' : ''; });
+      if (n === X.models.length && !win.classList.contains('show')) { win.innerHTML = esc(X.win); win.classList.add('show'); SFX.win(); earnClue(X.clue || 'fix'); }
+    }
+    function frame(m) {
+      return '<div class="fs-ch-row fs-fx-row">' + X.slots.map(function (s, k) { var have = m.have[s.k]; return (k ? '<span class="fs-ch-arw">→</span>' : '') + '<div class="fs-ch-slot' + (have ? ' full given' : '') + '" data-k="' + s.k + '" role="button" tabindex="0"><div class="fs-ch-h"><span>' + s.icon + '</span>' + esc(s.t) + '</div><div class="fs-ch-in">' + (have ? esc(have) : '') + '</div></div>'; }).join('') + '<i class="fs-fx-pulse"></i></div>';
+    }
+    function ran(m, animate) {
+      var res = el('div', 'fs-hs-card', '<span class="fs-hs-n">✅</span><div><b>' + esc(X.runOk || 'It runs!') + '</b>' + esc(m.why) + '</div>'); stage.appendChild(res);
+      if (animate) { var row = $('.fs-fx-row', stage); row.classList.remove('run'); void row.offsetWidth; row.classList.add('run'); SFX.sparkle(); }
+      var nx = X.models.map(function (o, i) { return fixed[o.id] ? -1 : i; }).filter(function (i) { return i > -1; })[0];
+      if (nx != null) { var b = el('button', 'fs-btn alt fs-ch-next', 'Next model →'); b.type = 'button'; b.addEventListener('click', function () { open(nx); }); stage.appendChild(b); }
+    }
+    function open(i) {
+      var m = X.models[i]; SFX.blip(); miss.classList.remove('show');
+      $$('.fs-in-chip', tabs).forEach(function (b, k) { b.classList.toggle('on', k === i); });
+      stage.innerHTML = '<div class="fs-fx-drawn"><img alt="' + esc(m.alt || '') + '" src="' + esc(m.img) + '"><div><div class="fs-fx-by">' + esc(m.by || 'A volunteer drew this model:') + '</div><div class="fs-fx-line">' + m.drawn.map(esc).join(' <b>→</b> ') + '</div></div></div>';
+      if (fixed[m.id]) {
+        var full = {}; X.slots.forEach(function (s) { full[s.k] = m.have[s.k] || m.pool.filter(function (c) { return c.k === s.k; })[0].t; });
+        stage.insertAdjacentHTML('beforeend', frame({ have: full })); ran(m, false); return;
+      }
+      chipsQ(stage, m.q, m.opts, function () {
+        stage.insertAdjacentHTML('beforeend', frame(m));
+        var slots = $$('.fs-fx-row .fs-ch-slot:not(.given)', stage), pool = el('div', 'fs-ch-pool');
+        pool.appendChild(el('div', 'fs-sv-hint', '🔎 ' + esc(X.hint || 'Drag the missing step into its box, or tap a card and then a box.')));
+        stage.appendChild(pool);
+        shuffle(m.pool).forEach(function (c) { var d = el('div', 'fs-card', esc(c.t)); d.dataset.k = c.k; pool.appendChild(d); dragDrop(d, function () { return slots.filter(function (s) { return !s.classList.contains('full'); }); }, drop); });
+        tapTargets(stage, slots, drop);
+        function drop(card, slot) {
+          if (slot.classList.contains('full')) return;
+          if (card.dataset.k !== slot.dataset.k) { bounce(card, miss, card.dataset.k === 'x' ? X.missX : (X.missSlot && X.missSlot[card.dataset.k]) || 'That card is a different step.'); return; }
+          miss.classList.remove('show'); $('.fs-ch-in', slot).textContent = card.textContent; slot.classList.add('full'); card.remove(); SFX.chime();
+          if (slots.every(function (s) { return s.classList.contains('full'); })) {
+            pool.innerHTML = ''; var b = el('button', 'fs-btn', esc(X.runBtn || '▶ Run the model')); b.type = 'button'; pool.appendChild(b);
+            b.addEventListener('click', function () { pool.remove(); fixed[m.id] = 1; store('fix', JSON.stringify(fixed)); ran(m, true); upd(); });
+          }
+        }
+      }, miss);
+    }
+    $$('.fs-in-chip', tabs).forEach(function (b) { b.addEventListener('click', function () { open(+b.dataset.i); }); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    open(0); upd();
   }
 
   function buildQuiz() {
@@ -3023,6 +3232,10 @@
     guard('upgrade', buildUpgrade);
     guard('chain', buildChain);
     guard('kit', buildKit);
+    guard('echo', buildEcho);
+    guard('build', buildBuild);
+    guard('compare', buildCompare);
+    guard('fix', buildFix);
     guard('quiz', buildQuiz);
     guard('solve', buildSolve);
     guard('helpers', buildHelpers);

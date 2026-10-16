@@ -1,0 +1,368 @@
+{
+ "lesson": "12.02",
+ "prefix": "g4sci-12-2",
+ "manifestKey": "12-02",
+ "guide": "lena",
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the silent camera",
+   "length": "50–60 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "moth",
+     "label": "📷 9:41 PM"
+    },
+    {
+     "kind": "photo",
+     "pic": "empty",
+     "label": "📷 9:52 PM"
+    },
+    {
+     "kind": "photo",
+     "pic": "detector",
+     "label": "🎙 The printout"
+    },
+    {
+     "label": "🗂 The case question",
+     "tag": "CASE FILE 12 · PART 2",
+     "title": "The Silent Camera",
+     "col": "#B9822A",
+     "body": "What caught the moths in the dark, and how did it find them?"
+    }
+   ],
+   "script": "Welcome back, scientists! The case isn’t over. Dr. Reyes put one more camera by the pond.\n\n[ON SCREEN: 9:41 PM · 9:52 PM]\nAt 9:41, moths are flying around the porch light. Eleven minutes later, they’re gone, and the camera saw nothing move. Hmm.\n\n[ON SCREEN: The printout]\nBut her bat detector heard something at that exact minute. Look: slow clicks, faster clicks, then a buzz. I wonder what that means.\n\n[ON SCREEN: The case question]\nThat’s our case. Find four clues today. Press Listen on Dr. Reyes’s walkie-talkie, right below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · echo hunt (Clue 1)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔊 Echo",
+     "tag": "WARM-UP GAME",
+     "title": "What’s an echo?",
+     "col": "#2F7A55",
+     "body": "A sound that bounces off something and comes back."
+    },
+    {
+     "label": "📏 Test click",
+     "tag": "USE THIS",
+     "title": "The test click",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "3 m away",
+       "17 ms"
+      ],
+      [
+       "Quicker echo",
+       "closer moth"
+      ],
+      [
+       "Slower echo",
+       "farther moth"
+      ]
+     ]
+    }
+   ],
+   "script": "(Clap once, then pretend to listen.) If I clap near a wall, the sound bounces back. That’s an echo.\n\n[ON SCREEN: Echo]\nBats use echoes to hunt. A bat clicks, and the echo off a moth comes back to its ears.\n\n[ON SCREEN: Test click]\nIn the echo hunt, press Click and read how long the echo took. A quicker echo means a closer moth. Use the test click to help you, then drag the pin to the moth. Find it three times.\n\nPress Listen for Dr. Reyes first."
+  },
+  "vocab": {
+   "label": "Word Wall",
+   "length": "30–45 s",
+   "want": false,
+   "parts": [],
+   "script": "[ON SCREEN: Pathway]\nA pathway is the path a message follows: stimulus, sense organ, brain, response. (Trace four steps in the air.)\n\n[ON SCREEN: Model]\nA model shows how something works. Today you build pathway models.\n\nTap each word below me to hear it."
+  },
+  "part1": {
+   "label": "Part 1 · build a strong model (Clue 2)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "bat",
+     "label": "📷 The bonneted bat"
+    },
+    {
+     "label": "✅ A strong model",
+     "tag": "PART 1",
+     "title": "What makes a model strong",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "1",
+       "Four steps, in order"
+      ],
+      [
+       "2",
+       "An arrow between each step"
+      ],
+      [
+       "3",
+       "“Signal” on the arrow to the brain"
+      ],
+      [
+       "4",
+       "A caption about a survival need"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: The bonneted bat]\nMeet our suspect: the Florida bonneted bat, Florida’s biggest bat. Look at those ears!\n\n[ON SCREEN: A strong model]\nA strong model has four things: the four steps in order, an arrow between each step, the word signal on the arrow to the brain, and a caption about a survival need.\n\nBuild one for the bat in the game below. Watch the meter fill up as your model gets stronger.\n\nPress Listen on the walkie-talkie."
+  },
+  "figure": {
+   "label": "The eagle and bat picture",
+   "length": "25–35 s",
+   "want": false,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "pathways",
+     "label": "📷 Two pathways"
+    }
+   ],
+   "script": "[ON SCREEN: Two pathways]\nRead this picture like two sentences. Top row, the eagle: a fish flashes, the eye sees it, a signal goes to the brain, the eagle dives. Bottom row, the bat. Point to each step. Which step looks the most different?"
+  },
+  "part3": {
+   "label": "Part 3 · match the sense (Clue 3)",
+   "length": "30–40 s",
+   "want": false,
+   "parts": [
+    {
+     "label": "👂 Match",
+     "tag": "PART 3 GAME",
+     "title": "Match the sense",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "🔊 Sound",
+       "ears"
+      ],
+      [
+       "💡 Light",
+       "eyes"
+      ],
+      [
+       "🌸 Smell",
+       "nose"
+      ],
+      [
+       "〰️ Touch",
+       "feelers"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Match]\nFour Florida animals, four different senses. Read what each one notices, then drag in the sense organ that can pick it up. When all four are done, look across. What stayed the same? Press Listen first."
+  },
+  "explore": {
+   "label": "Part 4 · fix the broken models (Clue 4)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🛠 Broken model",
+     "tag": "PART 4 GAME",
+     "title": "A volunteer drew:",
+     "col": "#C8553D",
+     "body": "An echo bounces off a moth → The bat grabs the moth"
+    },
+    {
+     "label": "▶ Run it",
+     "tag": "HOW TO FIX IT",
+     "title": "Fix, then run",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "1",
+       "Pick what’s wrong"
+      ],
+      [
+       "2",
+       "Drag in the missing step"
+      ],
+      [
+       "3",
+       "Press Run the model"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Broken model]\nOne of the volunteers drew this. An echo bounces off a moth, and the bat grabs it. (Count on your fingers: one, two.) Hmm, only two steps. I notice something’s missing.\n\n[ON SCREEN: Run it]\nIn Part 4, pick what’s wrong, drag in the missing step, then press Run the model and watch the signal go all the way through. There are three broken models: the bat, the eagle and the bear.\n\nPress Listen on the walkie-talkie."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s",
+   "want": false,
+   "parts": [],
+   "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔓 Crack the case",
+     "tag": "TOP OF THE ASSIGNMENT",
+     "title": "What happened at the pond?",
+     "col": "#B9822A",
+     "body": "Pick the answer that fits all four clues."
+    },
+    {
+     "label": "✍️ Your case report",
+     "tag": "WHAT TO WRITE",
+     "title": "Three parts",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "Part B",
+       "Two short answers"
+      ],
+      [
+       "Part C",
+       "Two pathway models + compare them"
+      ],
+      [
+       "CER",
+       "Claim, evidence, reasoning"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nYou made it to the assignment! First, crack the case at the top. Still locked? Tap “Show me where the clues are.” Pick the answer that fits every clue.\n\n[ON SCREEN: Your case report]\nThen three parts. Part B: two short answers. Part C: build two pathway models for two Florida animals that use different senses, then compare them. A sketch is a bonus. And last, your CER.\n\nPress Listen on the walkie-talkie."
+  },
+  "partc": {
+   "label": "Part C · two pathway models",
+   "length": "25–35 s",
+   "want": false,
+   "parts": [
+    {
+     "label": "✏️ Two models",
+     "tag": "PART C",
+     "title": "Build two, then compare",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "1️⃣",
+       "Animal 1: four steps"
+      ],
+      [
+       "2️⃣",
+       "Animal 2: four steps"
+      ],
+      [
+       "🟰",
+       "Alike because…"
+      ],
+      [
+       "↔️",
+       "Different because…"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Two models]\nPick two Florida animals that use different senses, not the bat or the eagle. Maybe an owl that hears and a snake that smells? Write the four steps for each, then tell how they’re alike and different."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💬 The quote",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "A classmate says…",
+     "col": "#C8553D",
+     "body": "“You only need to build one pathway model to understand how all animals respond. Building two is a waste of time.”"
+    },
+    {
+     "label": "⚖ CER",
+     "tag": "REMEMBER CER?",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "C",
+       "Claim: what you think is true."
+      ],
+      [
+       "E",
+       "Evidence: facts from the lesson that prove it."
+      ],
+      [
+       "R",
+       "Reasoning: how the facts prove your claim."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: The quote]\nA classmate says one model is enough to understand every animal. Hmm.\n\nThink back. Would a bat model tell you how a bear finds berries? Or how a crab feels the water?\n\n[ON SCREEN: CER]\nPick your side in the planner, tap two pieces of evidence, then write your reasoning in your own words. Try starting with “This shows that…”\n\nPress Listen for Dr. Reyes."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "30–40 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🦇 Your specimen",
+     "tag": "FIELD NOTEBOOK",
+     "title": "Bat detector printout",
+     "col": "#B9822A",
+     "body": "Finish the checklist to stamp CASE CLOSED."
+    },
+    {
+     "label": "➡ Next week",
+     "tag": "LESSON 13.01",
+     "title": "Like parent, like child",
+     "col": "#2F7A55",
+     "body": "How do Florida plants and animals pass their traits to their young?"
+    }
+   ],
+   "script": "[ON SCREEN: Confetti]\nCase closed! A bat clicked, its ears caught the echoes, and its brain worked out where the moths were. Same four steps as the eagle, just a different sense.\n\n[ON SCREEN: Your specimen]\nCheck every box in What to Turn In, and the bat detector printout goes into your Field Notebook.\n\n[ON SCREEN: Next week]\nNext week: families! Why do baby animals look like their parents?\n\nPress Listen for Dr. Reyes’s last word."
+  }
+ },
+ "pics": {
+  "moth": {
+   "src": "images/12-02-cam6-moth.jpg",
+   "cap": "CAM 6 · 9:41 PM · moths at the porch light"
+  },
+  "empty": {
+   "src": "images/12-02-cam6-empty.jpg",
+   "cap": "CAM 6 · 9:52 PM · no moths"
+  },
+  "detector": {
+   "src": "images/12-02-detector.png",
+   "cap": "Bat detector printout · 9:52 PM"
+  },
+  "bat": {
+   "src": "images/12-02-bat.jpg",
+   "cap": "Florida bonneted bat (Shalana Gray, CC BY-SA 4.0)"
+  },
+  "pathways": {
+   "src": "images/12-02-compare-pathways.png",
+   "cap": "Eagle and bat pathways"
+  }
+ },
+ "other": [
+  {
+   "id": "lesson",
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  {
+   "id": "part2",
+   "label": "Part 2 · two animals, two pathways",
+   "length": "20–30 s"
+  },
+  {
+   "id": "partb",
+   "label": "Part B",
+   "length": "30 s"
+  }
+ ],
+ "redo": []
+}
