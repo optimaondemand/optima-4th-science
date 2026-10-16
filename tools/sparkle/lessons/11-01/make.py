@@ -329,6 +329,7 @@ D = {
     ],
     'tool': {
         'name': 'X-ray viewer', 'icon': '🩻', 'tab': 'assignment', 'after': '#tab-assignment .activity-card', 'key': '11-tool', 'sim': 'xray',
+        'model': 'assets/models/11-01-xray-light-box.glb', 'modelCredit': '3D model made with Meshy AI.',
         'kicker': 'Bonus · Tool of the Week',
         'teaser': 'A light box and two real X-rays: see the internal structures you can’t see from outside.',
         'done': 'You read both X-rays and found the hidden parts. An X-ray sticker is in your Field Notebook.',
