@@ -1,0 +1,251 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: the Big Question was about life cycles (shared with 13.01–14.01)",
+  "old": "Think about this…</div>\n          <div class=\"question\">\"How are the life cycles of Florida plants and animals alike — and how are they different?\"",
+  "new": "Think about this…</div>\n          <div class=\"question\">\"How do Florida’s flowering plants make seeds, and how do those seeds become new plants?\""
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Circle Back repeats the life-cycle Big Question",
+  "old": "Now You Know!</div>\n          <div class=\"question\">\"How are the life cycles of Florida plants and animals alike — and how are they different?\"",
+  "new": "Now You Know!</div>\n          <div class=\"question\">\"How do Florida’s flowering plants make seeds, and how do those seeds become new plants?\""
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: “predict what stages it goes through” is about life cycles",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to look at a Florida plant or animal and predict what stages it goes through from birth to making the next generation.",
+  "new": "Keep this question in mind. By the end, you'll be able to follow a Florida flower all the way from pollen to a brand-new plant."
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: “Complete vs. Incomplete” is about metamorphosis",
+  "old": "<div class=\"info-detail\">Complete vs. Incomplete</div>",
+  "new": "<div class=\"info-detail\">Pollination to germination</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the definition left out self-pollination, which the lesson describes later",
+  "old": " — when pollen moves from the male part of one flower to the female part of another.",
+  "new": ": pollen moves from the male part to the female part of a flower, usually a different flower."
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 13 is Quarter 2",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "“module” → “week”",
+  "old": "Next module, you'll see how cycles like this play out across the seasons in Florida ecosystems.",
+  "new": "Next week, you'll follow Florida plants and animals through their whole lives, and through the seasons."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "Picture a bee landing on a flower in a Florida garden. It crawls inside, gets dusty with yellow powder, then flies off to the next flower. A week later, that first flower has turned into a tiny seed pod. Months later, a new plant is sprouting from a seed that fell to the ground.",
+  "new": "Picture a bee landing on a flower in a Florida garden. It crawls around, gets dusty with yellow powder, then flies to the next flower. Weeks later, that flower is full of seeds."
+ },
+ {
+  "kind": "cut",
+  "why": "the notebook sketch becomes the Pollen pass game and an on-page answer",
+  "old": "In your notebook, sketch the bee on the flower. Add an arrow showing where the bee will go next. Underneath, write ONE sentence guessing what the yellow powder might be.",
+  "new": "<strong>Pollen pass:</strong> be the bee! Fly from flower to flower and watch what the yellow powder does."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "is more than a pretty thing on a stem — it's the part of a plant that MAKES the next generation.",
+  "new": "is more than a pretty thing on a stem. It's the part of a plant that MAKES the next generation."
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "happens — the egg can now grow into a seed.",
+  "new": "happens, and the egg can now grow into a seed."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; “gravity” explained",
+  "old": "seeds travel — by wind, water, animals, or gravity — away from the parent.",
+  "new": "seeds travel away from the parent by wind, water, animals or gravity (falling)."
+ },
+ {
+  "kind": "plain",
+  "why": "“misconception” → plain words",
+  "old": "<p><strong>Common misconception:</strong> Some people think",
+  "new": "<p><strong>Watch out:</strong> Some people think"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "The new plant inherits its traits from BOTH parent flowers — that's why orange tree seeds grow into orange trees, not apple trees. Each step in the cycle keeps the inherited traits moving forward.",
+  "new": "The new plant inherits its traits from its parent flowers. That's why orange seeds grow into orange trees, not apple trees."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (sequencing becomes the Cycle relay; the flower drawing becomes Part C; Seed travelers is Part 4)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: one thinking stop per tab (Stop & Think in Part 1 stays)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the diagram heading becomes Part 3",
+  "old": "margin-top:22px;\">Four Florida Pollinators &amp; Plants</h3>",
+  "new": "margin-top:22px;\">Part 3 · Four Florida Pollinators &amp; Plants</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the oak pollen fact, the bee callout (its count was shaky) and Go Deeper; Part 4 = Seed travelers; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Seed Travelers</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">A seed that lands right under its parent has to share sun and water. So seeds travel. Florida seeds travel in five ways.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 is now number 5",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 is now number 6",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page (the drawing is a bonus)",
+  "old": "In your notebook, draw the FIVE steps of flowering plant reproduction as a cycle \\(a big circle with arrows between each step\\)\\.</p>\\s*<p[^>]*>For EACH step, draw a small picture.*?</p>",
+  "new": "Follow ONE Florida flower through all five steps. Write one sentence for each step, in your own words.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the sketch is a bonus",
+  "old": "A 5-step flowering plant reproduction cycle, drawn as a circle with arrows, with a picture and sentence for each step.",
+  "new": "One sentence for each of the five steps. (A sketch of the cycle is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether flowers really matter, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether flowers matter to the plant, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

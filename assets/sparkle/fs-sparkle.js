@@ -592,8 +592,8 @@
     var after = null;
     $$('p', body).some(function (p) { if (R.afterText && p.textContent.indexOf(R.afterText) > -1) { after = p; return true; } });
     if (!after) { FAILED.push('relay anchor text not found'); return; }
-    var g = gameShell('Send the signal', R.title, R.todo, R.why); g.dataset.mod = 'relay';
-    var relay = el('div', 'fs-relay'); relay.appendChild(el('div', 'fs-relay-wire')); var pulse = el('div', 'fs-relay-pulse'); relay.appendChild(pulse);
+    var g = gameShell(R.kicker || 'Send the signal', R.title, R.todo, R.why); g.dataset.mod = 'relay';
+    var relay = el('div', 'fs-relay n' + R.steps.length); relay.appendChild(el('div', 'fs-relay-wire')); var pulse = el('div', 'fs-relay-pulse'); relay.appendChild(pulse);
     R.steps.forEach(function (s, i) {
       var st = el('div', 'fs-station', '<div class="fs-slot" data-i="' + i + '">' + (i + 1) + '</div><div class="fs-station-n">Step ' + (i + 1) + '</div><div class="fs-station-l"></div>');
       relay.appendChild(st);
@@ -1728,6 +1728,122 @@
     go.addEventListener('click', function () { run(true); });
     at.parentNode.insertBefore(g, at.nextSibling);
     if (store('passiton')) run(false);
+  }
+
+  /* ---------- Warm-Up: "Pollen pass" — fly a bee from flower to flower (13.02) ----------
+     D.pollen = {afterText, kicker, title, todo[], why, bee:{img,alt}, start, flowers:[{id,name,img,alt,kind}], kind, wrongKind, needPollen, done, q, opts, credit, win, clue}
+     the bee starts on flower `start` dusted with pollen; dropping it on another flower of `kind` pollinates it */
+  function buildPollen() {
+    var P = D.pollen; if (!P) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (P.afterText && p.textContent.indexOf(P.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('pollen anchor text not found'); return; }
+    var g = gameShell(P.kicker || 'Warm-Up game', P.title, P.todo, P.why); g.dataset.mod = 'pollen';
+    var field = el('div', 'fs-po-field'), info = el('div', 'fs-hs-card fs-po-info', '<em>' + esc(P.hint || 'Drag the bee to a flower, or tap the bee and then a flower.') + '</em>');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    P.flowers.forEach(function (f) {
+      var c = el('div', 'fs-po-fl', '<div class="fs-po-ph"><img alt="' + esc(f.alt) + '" src="' + esc(f.img) + '"><span class="fs-po-mark"></span></div><div class="fs-po-n">' + esc(f.name) + '</div>');
+      c.dataset.id = f.id; c.setAttribute('role', 'button'); c.tabIndex = 0; field.appendChild(c);
+    });
+    var bee = el('div', 'fs-po-bee', '<img alt="' + esc(P.bee.alt) + '" src="' + esc(P.bee.img) + '"><span class="fs-po-dust"></span>'); bee.setAttribute('role', 'button'); bee.tabIndex = 0;
+    g.appendChild(field); g.appendChild(info); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    if (P.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(P.credit)));
+    var done = {}; try { done = JSON.parse(store('pollen') || '{}'); } catch (e) {}
+    var targets = $$('.fs-po-fl', field), need = P.flowers.filter(function (f) { return f.kind === P.kind && f.id !== P.start; });
+    function fl(id) { return P.flowers.filter(function (f) { return f.id === id; })[0]; }
+    function sitOn(id, animate) {
+      var c = $('.fs-po-fl[data-id="' + id + '"] .fs-po-ph', field); if (!c) return;
+      c.appendChild(bee); bee.classList.add('dusty'); if (animate && !reduceMotion) { bee.classList.remove('land'); void bee.offsetWidth; bee.classList.add('land'); }
+    }
+    function mark(id) { var c = $('.fs-po-fl[data-id="' + id + '"]', field); c.classList.add('done'); $('.fs-po-mark', c).textContent = '🌰'; }
+    function upd() {
+      var n = need.filter(function (f) { return done[f.id]; }).length;
+      count.textContent = '🌼 ' + n + ' of ' + need.length + ' ' + (P.countWord || 'flowers pollinated'); count.classList.toggle('ok', n === need.length);
+      if (n === need.length && !qh.dataset.on) {
+        qh.dataset.on = '1'; chipsQ(qh, P.q, P.opts, function () { store('pollen-q', '1'); finish(); }, miss);
+        if (store('pollen-q')) { var i = P.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]; $$('.fs-in-chip', qh)[i].classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; finish(); }
+      }
+    }
+    function finish() { if (win.classList.contains('show')) return; win.innerHTML = esc(P.win); win.classList.add('show'); SFX.win(); earnClue(P.clue || 'pollen'); }
+    function visit(c) {
+      var f = fl(c.dataset.id); if (!f) return; bee.classList.remove('sel');
+      sitOn(f.id, true); SFX.blip();
+      if (f.kind !== P.kind) { miss.innerHTML = '🔎 ' + esc(f.miss || P.wrongKind); miss.classList.remove('show'); void miss.offsetWidth; miss.classList.add('show'); info.innerHTML = '<span class="fs-hs-n">🐝</span><div><b>' + esc(f.name) + '</b>' + esc(f.t || '') + '</div>'; return; }
+      miss.classList.remove('show');
+      if (f.id === P.start || done[f.id]) { info.innerHTML = '<span class="fs-hs-n">🐝</span><div><b>' + esc(f.name) + '</b>' + esc(f.id === P.start ? P.startLine : P.again) + '</div>'; return; }
+      done[f.id] = 1; store('pollen', JSON.stringify(done)); mark(f.id); SFX.chime();
+      info.innerHTML = '<span class="fs-hs-n">✓</span><div><b>' + esc(f.name) + '</b>' + esc(P.done) + '</div>'; info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash');
+      upd();
+    }
+    /* drag the bee (pointer) or tap bee then flower */
+    var start = null, ghost = null;
+    bee.addEventListener('pointerdown', function (e) { start = { x: e.clientX, y: e.clientY }; bee.setPointerCapture && bee.setPointerCapture(e.pointerId); e.stopPropagation(); });
+    bee.addEventListener('pointermove', function (e) {
+      if (!start) return;
+      if (!ghost && Math.abs(e.clientX - start.x) + Math.abs(e.clientY - start.y) > 8) { ghost = bee.cloneNode(true); ghost.className = 'fs-po-bee ghost dusty'; document.body.appendChild(ghost); }
+      if (ghost) { ghost.style.left = (e.clientX - 28) + 'px'; ghost.style.top = (e.clientY - 28) + 'px';
+        targets.forEach(function (t) { var r = t.getBoundingClientRect(); t.classList.toggle('over', e.clientX > r.left && e.clientX < r.right && e.clientY > r.top && e.clientY < r.bottom); }); }
+    });
+    function end(e) {
+      if (!start) return; start = null;
+      if (ghost) { ghost.remove(); ghost = null; var hit = null; targets.forEach(function (t) { var r = t.getBoundingClientRect(); if (e.clientX > r.left && e.clientX < r.right && e.clientY > r.top && e.clientY < r.bottom) hit = t; t.classList.remove('over'); }); if (hit) visit(hit); }
+      else { bee.classList.toggle('sel'); SFX.blip(); }
+    }
+    bee.addEventListener('pointerup', end); bee.addEventListener('pointercancel', function () { start = null; if (ghost) { ghost.remove(); ghost = null; } });
+    targets.forEach(function (t) {
+      t.addEventListener('click', function (e) { if (bee.contains(e.target)) return; if (bee.classList.contains('sel')) visit(t); });
+      t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); visit(t); } });
+    });
+    Object.keys(done).forEach(function (id) { if (fl(id)) mark(id); });
+    sitOn(P.start, false);
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson: "Bag test" — a fair test: bag some flower heads, leave others open, count seeds (13.02) ----------
+     D.bagtest = {afterText, kicker, title, todo[], why, img, alt, credit, heads:[{id,name}], open:{label,seeds,note}, bag:{label,seeds,note}, total, runBtn, needBoth, q1, opts1, q2, opts2, win, clue}
+     seeds = full seeds per head (out of `total` tiny flowers) — the rest are drawn hollow */
+  function buildBagtest() {
+    var B = D.bagtest; if (!B) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (B.afterText && p.textContent.indexOf(B.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('bagtest anchor text not found'); return; }
+    var g = gameShell(B.kicker || 'Part 2 game', B.title, B.todo, B.why); g.dataset.mod = 'bagtest';
+    if (B.model) g.appendChild(el('div', 'fs-gr-model', '🧪 ' + esc(B.model)));
+    var row = el('div', 'fs-bt-row'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    B.heads.forEach(function (h, i) {
+      var c = el('div', 'fs-bt-head', '<div class="fs-bt-h">' + esc(h.name) + '</div><div class="fs-bt-ph"><img alt="' + esc(B.alt) + '" src="' + esc(B.img) + '"><span class="fs-bt-mesh"></span></div>' +
+        '<div class="fs-bt-pick"><button type="button" class="fs-in-chip on" data-v="open">🐝 ' + esc(B.open.label) + '</button><button type="button" class="fs-in-chip" data-v="bag">🕸 ' + esc(B.bag.label) + '</button></div><div class="fs-bt-res"></div>');
+      c.dataset.i = i; row.appendChild(c);
+      $$('.fs-bt-pick .fs-in-chip', c).forEach(function (b) { b.addEventListener('click', function () {
+        $$('.fs-bt-pick .fs-in-chip', c).forEach(function (x) { x.classList.toggle('on', x === b); }); c.classList.toggle('bagged', b.dataset.v === 'bag'); $('.fs-bt-res', c).innerHTML = ''; c.classList.remove('ran'); SFX.blip(); }); });
+    });
+    var btn = el('button', 'fs-btn fs-bt-go', esc(B.runBtn || '▶ Wait 3 weeks, then count')); btn.type = 'button';
+    g.appendChild(row); g.appendChild(btn); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    if (B.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(B.credit)));
+    var tried = {}; try { tried = JSON.parse(store('bagtest') || '{}'); } catch (e) {}
+    function seeds(n) { var s = ''; for (var k = 0; k < B.total; k++) s += '<i class="' + (k < n ? 'full' : '') + '"></i>'; return s; }
+    function show(c, v, animate) {
+      var r = B[v]; c.classList.add('ran');
+      $('.fs-bt-res', c).innerHTML = '<div class="fs-bt-seeds' + (animate && !reduceMotion ? ' grow' : '') + '">' + seeds(r.seeds) + '</div><b>' + r.seeds + ' full seeds</b> out of ' + B.total + ' tiny flowers<p>' + esc(r.note) + '</p>';
+    }
+    function ask() {
+      if (qh.dataset.on) return; qh.dataset.on = '1';
+      chipsQ(qh, B.q1, B.opts1, function () {
+        store('bagtest-q1', '1');
+        chipsQ(qh, B.q2, B.opts2, function () { store('bagtest-q2', '1'); finish(); }, miss);
+        if (store('bagtest-q2')) restore(1);
+      }, miss);
+      if (store('bagtest-q1')) restore(0);
+    }
+    function restore(k) { var opts = k ? B.opts2 : B.opts1, w = $$('.fs-sv-q', qh)[k]; var i = opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]; $$('.fs-in-chip', w)[i].classList.add('on', 'ok'); w.dataset.done = '1'; if (k === 0) { chipsQ(qh, B.q2, B.opts2, function () { store('bagtest-q2', '1'); finish(); }, miss); if (store('bagtest-q2')) restore(1); } else finish(); }
+    function finish() { if (win.classList.contains('show')) return; win.innerHTML = esc(B.win); win.classList.add('show'); SFX.win(); earnClue(B.clue || 'bagtest'); }
+    btn.addEventListener('click', function () {
+      var vs = $$('.fs-bt-head', row).map(function (c) { var v = $('.fs-bt-pick .on', c).dataset.v; show(c, v, true); tried[v] = 1; return v; });
+      store('bagtest', JSON.stringify(tried)); SFX.sparkle();
+      if (vs.indexOf('open') > -1 && vs.indexOf('bag') > -1) { miss.classList.remove('show'); ask(); }
+      else { miss.innerHTML = '🔎 ' + esc(B.needBoth || 'A fair test compares: bag at least one head and leave at least one open.'); miss.classList.remove('show'); void miss.offsetWidth; miss.classList.add('show'); }
+    });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    if (tried.open && tried.bag) ask();
   }
 
   function buildQuiz() {
@@ -3450,6 +3566,8 @@
     guard('lineup', buildLineup);
     guard('grow', buildGrow);
     guard('passiton', buildPassiton);
+    guard('pollen', buildPollen);
+    guard('bagtest', buildBagtest);
     guard('quiz', buildQuiz);
     guard('solve', buildSolve);
     guard('helpers', buildHelpers);
