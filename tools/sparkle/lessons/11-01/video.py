@@ -7,6 +7,7 @@ pics = {
     'legs': {'src': 'images/11-01-case-legs.jpg', 'cap': 'pg. 5 · the legs'},
     'lagoon': {'src': 'images/11-01-case-flock.jpg', 'cap': 'pg. 6 · where I found it'},
     'gator': {'src': 'images/11-01-gator-hiding.jpg', 'cap': 'An American alligator hiding (CC BY-SA 3.0)'},
+    'xray': {'src': 'images/11-01-vr-xray.jpg', 'cap': 'A frog X-rayed by Arthur Schuster, 1896 (CC BY 4.0)'},
 }
 C_CASE, C_GREEN, C_PURP, C_RED, C_BLUE = '#B9822A', '#2F7A55', '#7A5BB5', '#C8553D', '#2B7BB9'
 S = {}
@@ -52,5 +53,7 @@ S['closing'] = {'label': 'Case closed', 'length': '30–40 s', 'want': True, 'pa
     {'label': '🪶 Your specimen', 'tag': 'FIELD NOTEBOOK', 'title': 'Roseate spoonbill feather', 'col': C_CASE, 'body': 'Finish the checklist to stamp CASE CLOSED.'},
     {'label': '➡ Next time', 'tag': 'LESSON 11.02', 'title': 'Build a model', 'col': C_GREEN, 'body': 'A drawing that explains how a body part does its job.'}],
     'script': 'Case closed! The spoonbill finds food by feeling, not seeing. Every part fits its job.\n\n[ON SCREEN: Your specimen]\nFinish your checklist and a pink spoonbill feather goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next time]\nNext time, you’ll build a model, a drawing that explains how a body part does its job. Bring your clues!\n\nPress Listen for Dr. Reyes’s last word.'}
+# VR activity page (vr-11-01-inside-or-outside.html) uses the same prefix: g4sci-11-1-vr.mp4
+S['vr'] = {'label': 'VR activity · Inside or outside? (separate page)', 'length': '45–55 s', 'want': True, 'parts': [{'kind': 'photo', 'pic': 'xray', 'label': '📷 The X-ray'}, {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': '#2B7BB9', 'rows': [['🥽', 'VR Field Mission: sort 8 frog parts in the Everglades.'], ['🗂', 'No headset? Sort 8 picture cards on your computer.']]}, {'label': '🥇 The badge', 'tag': 'VR ONLY', 'title': 'Gold X-ray Frog badge', 'col': '#B9822A', 'body': 'Save your capture in VR to earn it.'}], 'script': 'Hi, scientists! You cracked the spoonbill case. (Hold up a VR headset, or make goggles with your hands.) Now we’re going in.\n\n[ON SCREEN: The X-ray]\nDr. Reyes clipped a new film onto her light box. It’s a frog, X-rayed in 1896! See the leg bones? They’re hidden inside.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, go into the Everglades and sort eight frog parts into an outside pile and an inside pile. No headset? Sort the picture cards on your computer.\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the gold X-ray frog badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 json.dump({'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part1', 'partb']}, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('wrote video.json', len(S), 'slots')
