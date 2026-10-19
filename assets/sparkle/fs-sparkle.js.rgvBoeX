@@ -1,0 +1,13 @@
+--- assets/sparkle/fs-sparkle.js
++++ assets/sparkle/fs-sparkle.js
+@@ -4084,6 +4350,10 @@
+     guard('passiton', buildPassiton);
+     guard('pollen', buildPollen);
+     guard('bagtest', buildBagtest);
++    guard('nextup', buildNextup);
++    guard('morph', buildMorph);
++    guard('wheel', buildWheel);
++    guard('venn', buildVenn);
+     guard('words', buildWords);
+     guard('layers', buildLayers);
+     guard('tank', buildTank);
