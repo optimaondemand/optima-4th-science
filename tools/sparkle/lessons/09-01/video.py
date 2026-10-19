@@ -2,6 +2,7 @@
 """Writes video.json (Video Studio plan) for 9.01."""
 import json
 pics = {
+    'vrcam': {'src': 'images/09-01-vr-cam-4.jpg', 'cap': 'CAM 4: the hawk at post 7 eats a snake (Everglades NPS, public domain)'},
     'hawk': {'src': 'images/9-01-case-hawk.jpg', 'cap': 'TAG 1 · the hawk at post 7'},
     'pellet': {'src': 'images/9-01-case-pellet.jpg', 'cap': 'TAG 2 · the pellet under the branch'},
     'bones': {'src': 'images/9-01-case-bones.jpg', 'cap': 'TAG 3 · inside the pellet'},
@@ -59,6 +60,8 @@ S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts
 S['partc'] = {'label': 'Part C · your own food chain', 'length': '25–35 s', 'want': False, 'parts': [
     {'label': '🗺️ Your place', 'tag': 'PART C', 'title': 'Pick a Florida place', 'col': C_GREEN, 'rows': [['🏖️', 'A beach'], ['🏡', 'A backyard'], ['🐸', 'A pond'], ['🌲', 'A pine forest']]}],
     'script': '[ON SCREEN: Your place]\nNow it’s your turn. Pick a Florida place you know. Name one producer and two consumers, then show how the energy moves. Want to draw it? The sketch pad is a bonus.'}
+# VR activity page (vr-09-01-energy-line.html) uses the same prefix: g4sci-9-1-vr.mp4
+S['vr'] = {'label': 'VR activity · Follow the Sun’s energy (separate page)', 'length': '45–55 s', 'want': True, 'parts': [{'kind': 'photo', 'pic': 'vrcam', 'label': '📷 Trail camera'}, {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': '#2B7BB9', 'rows': [['🥽', 'VR Field Mission: build the energy line in the Everglades.'], ['🗂', 'No headset? Line up 5 picture cards on your computer.']]}, {'label': '🥇 The badge', 'tag': 'VR ONLY', 'title': 'Golden Sunbeam badge', 'col': '#D9A21B', 'body': 'Save your capture in VR to earn it.'}], 'script': 'Hi, scientists! Remember the hawk at post 7? (Hold up a phone like a camera.) Dr. Reyes left a trail camera on the boardwalk.\n\n[ON SCREEN: Trail camera]\nIt caught four meals in one day. Here’s the last one: the hawk eating a snake! So where did that energy start?\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, go into the Everglades and build an energy line: Sun, sunflower, grasshopper, frog, snake. No headset? Line up the picture cards on your computer.\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the Golden Sunbeam badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part3', 'figure', 'partb']}
 json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('video.json written')
