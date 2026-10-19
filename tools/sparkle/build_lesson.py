@@ -16,16 +16,24 @@ import json, re, sys, os, glob, hashlib, shutil
 
 def die(msg): print('STOP:', msg); sys.exit(1)
 
-if len(sys.argv) < 2 or not re.fullmatch(r'\d{1,2}-\d{2}', sys.argv[1]): die('usage: build_lesson.py <WW-LL>, e.g. 12-02')
-key = sys.argv[1]; W, L = key.split('-'); W = str(int(W)); WW = W.zfill(2)
-here = os.path.join('tools', 'sparkle', 'lessons', f'{WW}-{L}')
+if len(sys.argv) < 2 or not re.fullmatch(r'\d{1,2}-\d{2}|r\d-\d', sys.argv[1]): die('usage: build_lesson.py <WW-LL> (e.g. 12-02) or r<unit>-<day> for a review day (e.g. r4-1)')
+key = sys.argv[1]
+REVIEW = key.startswith('r')
+if REVIEW:  # Review & Lab days: review-unit-<U>-day-<D>.html, kit folder lessons/r<U>-<D>, original.html written by its make_page.py
+    U, Dn = key[1:].split('-'); W, L, WW = key, Dn, key
+    here = os.path.join('tools', 'sparkle', 'lessons', key)
+    cands = glob.glob(f'review-unit-{U}-day-{Dn}.html')
+else:
+    W, L = key.split('-'); W = str(int(W)); WW = W.zfill(2)
+    here = os.path.join('tools', 'sparkle', 'lessons', f'{WW}-{L}')
+    cands = glob.glob(f'lesson-{W}-{L}-*.html')
 if not os.path.isdir(here): die(f'no folder {here}')
-cands = glob.glob(f'lesson-{W}-{L}-*.html')
 if len(cands) != 1: die(f'expected one lesson-{W}-{L}-*.html in the repo root, found {cands}')
 OUT = cands[0]
 orig = os.path.join(here, 'original.html')
 if not os.path.exists(orig):
     cur = open(OUT, encoding='utf-8').read()
+    if REVIEW: die('a review day needs its original.html first: run python3 ' + os.path.join(here, 'make_page.py'))
     if 'id="fs-data"' in cur: die('the lesson is already sparkled and there is no original.html; restore it from git history first')
     shutil.copyfile(OUT, orig); print('saved the untouched lesson to', orig)
 s = open(orig, encoding='utf-8').read()
@@ -75,8 +83,10 @@ if os.path.exists(vj):
     V['other'] = [{'id': k, 'label': ((D.get('slots') or {}).get(k) or {}).get('label', k), 'length': ((D.get('slots') or {}).get(k) or {}).get('length', '')} for k in V.get('other', [])]
     os.makedirs(os.path.join('data', 'videos'), exist_ok=True)
     V['redo'] = list(D.get('videoOff') or [])  # recorded takes that no longer match the page: the studio lists them as Re-record
-    json.dump({'lesson': D['lesson'], 'prefix': D['prefix'], 'manifestKey': D['manifestKey'], 'guide': D['guide'], **V},
-              open(os.path.join('data', 'videos', f'lesson-{WW}-{L}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    print('wrote', os.path.join('data', 'videos', f'lesson-{WW}-{L}.json'))
+    vname = f'lesson-{key}.json' if REVIEW else f'lesson-{WW}-{L}.json'
+    extra = {'page': OUT, 'title': D.get('label', '')} if REVIEW else {}
+    json.dump({'lesson': D['lesson'], **extra, 'prefix': D['prefix'], 'manifestKey': D['manifestKey'], 'guide': D['guide'], **V},
+              open(os.path.join('data', 'videos', vname), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print('wrote', os.path.join('data', 'videos', vname))
 print('built', OUT, 'layer v=' + VER, 'divs', s.count('<div'), '/', s.count('</div>'))
 if s.count('<div') != s.count('</div>'): print('WARNING: <div> and </div> counts differ; check the page structure')

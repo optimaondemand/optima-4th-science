@@ -3,8 +3,11 @@
 Every [ON SCREEN: A · B] token must match a part label (emoji stripped) or a Word Wall word, or be Confetti.
 Every script must be 1 minute or less (at most 120 spoken words). Recommended slots need a hand-off line."""
 import json, re, sys, os, unicodedata
-key = sys.argv[1]; W, L = key.split('-'); WW = str(int(W)).zfill(2)
-here = os.path.join('tools', 'sparkle', 'lessons', f'{WW}-{L}')
+key = sys.argv[1]
+if key.startswith('r'): here = os.path.join('tools', 'sparkle', 'lessons', key)  # review day r<unit>-<day>
+else:
+    W, L = key.split('-'); WW = str(int(W)).zfill(2)
+    here = os.path.join('tools', 'sparkle', 'lessons', f'{WW}-{L}')
 V = json.load(open(os.path.join(here, 'video.json'), encoding='utf-8'))
 orig = open(os.path.join(here, 'original.html'), encoding='utf-8').read() if os.path.exists(os.path.join(here, 'original.html')) else ''
 txt = [t.strip() for t in re.sub(r'<[^>]+>', '\n', re.sub(r'<script.*?</script>|<style.*?</style>', '', orig, flags=re.S)).split('\n') if t.strip()]

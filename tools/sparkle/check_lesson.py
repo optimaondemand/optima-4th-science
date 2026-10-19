@@ -5,9 +5,13 @@ Writes tools/sparkle/out/<WW-LL>/: screenshots of every tab at 1150 and 420 px, 
 and report.txt. Exit code 1 if anything failed. LOOK at the screenshots and READ the text files afterwards."""
 import sys, os, re, json, glob, threading, http.server, functools, socketserver
 from playwright.sync_api import sync_playwright
-key = sys.argv[1]; W, L = key.split('-'); W = str(int(W)); WW = W.zfill(2)
-page_file = glob.glob(f'lesson-{W}-{L}-*.html')[0]
-out = os.path.join('tools', 'sparkle', 'out', f'{WW}-{L}'); os.makedirs(out, exist_ok=True)
+key = sys.argv[1]
+if key.startswith('r'):  # review day r<unit>-<day>
+    U, Dn = key[1:].split('-'); page_file = f'review-unit-{U}-day-{Dn}.html'; out = os.path.join('tools', 'sparkle', 'out', key)
+else:
+    W, L = key.split('-'); W = str(int(W)); WW = W.zfill(2)
+    page_file = glob.glob(f'lesson-{W}-{L}-*.html')[0]; out = os.path.join('tools', 'sparkle', 'out', f'{WW}-{L}')
+os.makedirs(out, exist_ok=True)
 class Quiet(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *a): pass
 class QuietServer(socketserver.ThreadingTCPServer):

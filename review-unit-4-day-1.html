@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Unit 4 Review: The Hole on Main Street</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+    background: #F4F0EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    color: #2B1D12;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap { max-width: 920px; margin: 0 auto; background: #FAF7F3; padding: 0 18px; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0E1C42 0%, #1a1060 60%, #0E1C42 100%);
+    border-bottom: 6px solid #8B6FC0;
+    padding: 22px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #55C8E8, #8B6FC0, #55C8E8);
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .header-logo {
+    width: 52px; height: 52px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header-logo img { width: 48px; height: 38px; }
+  .header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+  .header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+  .header-title {
+    font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(139,111,192,0.4);
+  }
+  .header-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(139,111,192,0.18); border: 1.5px solid rgba(139,111,192,0.4);
+    border-radius: 28px; padding: 6px 16px;
+  }
+  .header-badge span:first-child { font-size: 22px; }
+  .header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+  /* ── Hero Visual ── */
+  .hero-visual {
+    background: linear-gradient(180deg, #06091a 0%, #0d0a2a 60%, #1a0a2e 100%);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #8B6FC0;
+  }
+  .hero-visual svg { display: block; width: 100%; height: auto; }
+
+  /* ── Info Strip ── */
+  .info-strip {
+    display: flex; flex-wrap: wrap; background: #fff;
+    border-bottom: 2px solid #E8DDD2;
+  }
+  .info-item {
+    flex: 1; min-width: 150px; padding: 12px 16px;
+    border-right: 1px solid #E8DDD2;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+  .info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+  /* ── Content Area ── */
+  .content { padding: 24px 28px 36px; }
+
+  /* ── Card System ── */
+  .card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 22px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(43,29,18,0.04);
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 20px; border-bottom: 2px solid;
+  }
+  .card-head-icon {
+    width: 42px; height: 42px; border-radius: 50%; color: #fff;
+    font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+  .card-head-title { font-size: 20px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .card-body { padding: 18px 22px; }
+  .card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  /* ── Color Themes ── */
+  .theme-lava .card-head { background: #FFF0EC; border-color: #F5C4BA; }
+  .theme-lava .card-head-icon { background: #E8636B; }
+  .theme-earth .card-head { background: #FFF7EE; border-color: #F0DCC4; }
+  .theme-earth .card-head-icon { background: #C7922C; }
+  .theme-sky .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+  .theme-sky .card-head-icon { background: #55C8E8; }
+  .theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+  .theme-forest .card-head-icon { background: #34B76F; }
+  .theme-rock .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+  .theme-rock .card-head-icon { background: #8B6FC0; }
+  .theme-magma .card-head { background: #FFF3DC; border-color: #F5E6C8; }
+  .theme-magma .card-head-icon { background: #D4772C; }
+
+  /* ── Activity Cards ── */
+  .activity-card {
+    background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+    margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .activity-card.act-warmup  { border-left: 6px solid #E8636B; }
+  .activity-card.act-lesson  { border-left: 6px solid #D4772C; }
+  .activity-card.act-explore { border-left: 6px solid #55C8E8; }
+  .activity-card.act-practice{ border-left: 6px solid #34B76F; }
+  .activity-card.act-check   { border-left: 6px solid #8B6FC0; }
+
+  .act-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px 14px 18px;
+    border-bottom: 1.5px solid #E8DDD2;
+  }
+  .act-num {
+    width: 38px; height: 38px; border-radius: 14px; color: #fff;
+    font-size: 18px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .act-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+  .act-subtitle { font-size: 12px; color: #9A8E82; }
+  .act-time {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+    margin-left: auto; flex-shrink: 0;
+  }
+  .act-body { padding: 18px 22px 18px 20px; }
+  .act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+  /* ── Callout Boxes ── */
+  .callout {
+    border-radius: 14px; padding: 16px 18px;
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+  .callout-lava   { background: #FFF0EC; border: 2px solid #F5C4BA; }
+  .callout-think  { background: #FFF7EE; border: 2px solid #F0DCC4; }
+  .callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+  .callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+  .callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+  .callout-space  { background: linear-gradient(135deg, #0E1C42, #1a1060); border: 2px solid rgba(139,111,192,0.4); }
+  .callout-space p { color: #fff; }
+
+  /* ── Socratic Questions ── */
+  .socratic-q {
+    background: linear-gradient(135deg, #f0edf6, #e8e2f2);
+    border: 2px solid #C8B8E8;
+    border-radius: 16px; padding: 16px 20px;
+    margin: 16px 0;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+  .socratic-q .label {
+    font-size: 11px; color: #8B6FC0; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+  }
+  .socratic-q .question {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; font-style: italic;
+  }
+
+  /* ── Diagram Containers ── */
+  .diagram-wrap {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-radius: 16px; padding: 16px; margin: 16px 0;
+    text-align: center;
+  }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption {
+    font-size: 13px; color: #9A8E82; margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Key Concept Box ── */
+  .key-concept {
+    background: #F0EDF6; border: 2px solid #D8D0E8;
+    border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+  }
+  .key-concept .kc-label {
+    font-size: 13px; color: #8B6FC0; text-transform: uppercase;
+    letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+  }
+  .key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+  .key-concept p:last-child { margin-bottom: 0; }
+
+  /* ── Practice Questions ── */
+  .pq {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+  }
+  .pq-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    color: #fff; font-weight: 800; font-size: 14px;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+  /* ── Vocab Flashcards ── */
+  .vocab-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin: 14px 0;
+  }
+  .flip-card {
+    perspective: 800px;
+    height: 160px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 18px 20px;
+    text-align: center;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.06);
+  }
+  .flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+  .flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+  .flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #0E1C42; margin-bottom: 6px; }
+  .flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+  .flip-card-back {
+    background: linear-gradient(145deg, #0E1C42, #1a1060);
+    border-color: #0E1C42;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back .fc-def { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .flip-card-back .fc-word-back {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 8px;
+  }
+  .flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; font-weight: 600; }
+  .fc-color-1 .flip-card-front { border-top-color: #8B6FC0; }
+  .fc-color-2 .flip-card-front { border-top-color: #55C8E8; }
+  .fc-color-3 .flip-card-front { border-top-color: #E8636B; }
+  .fc-color-4 .flip-card-front { border-top-color: #D4772C; }
+  .fc-color-5 .flip-card-front { border-top-color: #34B76F; }
+  .fc-color-6 .flip-card-front { border-top-color: #C7922C; }
+
+  /* ── Vocab Tooltips ── */
+  .vtip {
+    position: relative; color: #8B6FC0; font-weight: 700;
+    cursor: help; border-bottom: 2px dotted rgba(139,111,192,0.45);
+    transition: color 0.15s;
+  }
+  .vtip:hover { color: #6B4FA0; }
+  .vtip .vtip-box {
+    position: fixed; background: #0E1C42; color: #fff;
+    padding: 12px 16px; border-radius: 12px;
+    font-size: 14px; font-weight: 600; font-style: normal;
+    line-height: 1.55; width: 250px; text-align: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none; z-index: 9999;
+    box-shadow: 0 6px 24px rgba(14,28,66,0.35);
+    border: 1.5px solid rgba(85,200,232,0.3);
+    transform: translateY(6px);
+  }
+  .vtip .vtip-box::after {
+    content: ''; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent; border-top-color: #0E1C42;
+  }
+  .vtip .vtip-word {
+    font-size: 11px; color: #55C8E8; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+  }
+  .vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* ── Details / Reveal ── */
+  details {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 5px solid #8B6FC0;
+    border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+  }
+  details summary {
+    padding: 12px 18px; font-size: 16px; font-weight: 700;
+    color: #0E1C42; cursor: pointer;
+  }
+  details summary:hover { background: #FAFAF6; }
+  details > div {
+    padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E;
+    line-height: 1.65; border-top: 1.5px solid #E8DDD2;
+  }
+
+  /* ── Go Deeper ── */
+  .go-deeper {
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 16px;
+    margin: 16px 0; overflow: hidden;
+  }
+  .go-deeper summary {
+    padding: 14px 18px; font-size: 16px; font-weight: 800;
+    color: #0E1C42; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; list-style: none;
+  }
+  .go-deeper summary::-webkit-details-marker { display: none; }
+  .go-deeper summary::before { content: '🔭'; font-size: 22px; }
+  .go-deeper summary::after {
+    content: '▸'; margin-left: auto; font-size: 18px; color: #8B6FC0;
+    transition: transform 0.3s;
+  }
+  .go-deeper[open] summary::after { transform: rotate(90deg); }
+  .go-deeper .gd-body {
+    padding: 4px 18px 16px; font-size: 15px;
+    color: #5A4D3E; line-height: 1.7;
+    border-top: 1.5px solid #D8D0E8;
+  }
+  .go-deeper .gd-body p { margin-bottom: 10px; }
+
+  /* ── Mind-Blowing Fact ── */
+  .mind-blow {
+    background: linear-gradient(135deg, #06091a, #1a1060);
+    border: 2px solid rgba(139,111,192,0.4);
+    border-radius: 18px; padding: 18px 22px;
+    margin: 18px 0; display: flex;
+    align-items: flex-start; gap: 14px;
+    position: relative; overflow: hidden;
+  }
+  .mind-blow::before {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,111,192,0.2), transparent);
+  }
+  .mind-blow-icon {
+    font-size: 36px; flex-shrink: 0;
+    animation: mind-blow-bounce 2s ease-in-out infinite;
+  }
+  @keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+  .mind-blow-content { flex: 1; }
+  .mind-blow-label {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+  }
+  .mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+  .mind-blow-text strong { color: #55C8E8; }
+
+  /* ── Diagram Interactive ── */
+  .diagram-interactive { position: relative; }
+  .diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .diagram-interactive .hotspot:hover { opacity: 0.25; }
+  .diagram-interactive .hotspot.active { opacity: 0.35; }
+  .diagram-info-panel {
+    background: #0E1C42; color: #fff;
+    padding: 14px 20px; border-radius: 14px;
+    font-size: 15px; line-height: 1.55; font-weight: 600;
+    text-align: center;
+    border: 1.5px solid rgba(85,200,232,0.3);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    margin: 10px 0 0; display: none;
+  }
+  .diagram-info-panel.visible { display: block; }
+  .diagram-info-panel .dip-word {
+    font-size: 11px; color: #FFD700; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+  }
+
+  /* ── Types Grid ── */
+  .types-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin: 16px 0;
+  }
+  .type-card {
+    border-radius: 16px; padding: 16px; text-align: center;
+    border: 2px solid; position: relative; overflow: hidden;
+  }
+  .type-card svg { display: block; margin: 0 auto 10px; }
+  .type-name { font-size: 16px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+  .type-desc { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+  .tc-mars    { background: #FFF0EC; border-color: #F5C4BA; }
+  .tc-venus   { background: #FFF7EE; border-color: #F0DCC4; }
+  .tc-asteroid{ background: #F0EDF6; border-color: #D8D0E8; }
+
+  /* ── Size Compare ── */
+  .size-compare-wrap {
+    background: linear-gradient(180deg, #06091a, #0d1230);
+    border: 2px solid rgba(85,200,232,0.2); border-radius: 16px;
+    padding: 16px; margin: 16px 0; text-align: center;
+  }
+  .size-compare-wrap svg { max-width: 100%; height: auto; }
+  .size-compare-caption {
+    font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 10px;
+    font-weight: 600; text-align: center;
+  }
+
+  /* ── Mission Steps ── */
+  .mission-step {
+    display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px;
+  }
+  .mission-num {
+    width: 52px; height: 52px; border-radius: 50%; color: #fff;
+    font-size: 13px; font-weight: 900;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(14,28,66,0.3);
+    letter-spacing: 0.5px; line-height: 1.1;
+  }
+  .mission-num .phase-label { font-size: 8px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+  .mission-num .phase-num { font-size: 22px; font-weight: 900; }
+  .mission-body {
+    flex: 1; border-radius: 14px; padding: 14px 16px;
+  }
+
+  /* ── Self-Check Quiz ── */
+  .quiz-card {
+    background: #fff; border: 2px solid #E8DDD2;
+    border-left: 6px solid #8B6FC0;
+    border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(43,29,18,0.04);
+  }
+  .quiz-q {
+    background: #FAFAF6; border: 2px solid #E8DDD2;
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+  }
+  .quiz-q-text {
+    font-size: 17px; color: #2B1D12; font-weight: 700;
+    line-height: 1.6; margin-bottom: 12px;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 16px; border-radius: 12px;
+    border: 2px solid #E8DDD2; background: #fff;
+    font-size: 15px; font-weight: 700; color: #2B1D12;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 10px;
+    user-select: none;
+  }
+  .quiz-opt:hover { background: #F0EDF6; border-color: #8B6FC0; }
+  .quiz-opt.correct { background: #EEF8F0 !important; border-color: #34B76F !important; color: #1a6b35 !important; }
+  .quiz-opt.wrong   { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+  .quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+  .quiz-opt .opt-letter {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #E8DDD2; color: #5A4D3E;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.2s;
+  }
+  .quiz-opt.correct .opt-letter { background: #34B76F; color: #fff; }
+  .quiz-opt.wrong .opt-letter   { background: #E8636B; color: #fff; }
+  .quiz-feedback {
+    font-size: 14px; padding: 10px 14px; border-radius: 10px;
+    margin-top: 10px; display: none; font-weight: 600; line-height: 1.5;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+  .quiz-feedback.fb-wrong   { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+  .quiz-score {
+    text-align: center; padding: 16px;
+    background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+    border: 2px solid #D8D0E8; border-radius: 14px; margin-top: 8px; display: none;
+  }
+  .quiz-score.show { display: block; }
+  .quiz-score-num { font-size: 36px; font-weight: 900; color: #0E1C42; }
+  .quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+  .quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+  /* ── Video System ── */
+  .video-wrap {
+    border-radius: 18px; overflow: hidden;
+    border: 2px solid #E8DDD2;
+    box-shadow: 0 4px 20px rgba(43,29,18,0.08);
+    background: #000; margin: 0 0 22px;
+  }
+  .video-wrap-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #0E1C42, #1a1060);
+    border-bottom: 2px solid rgba(139,111,192,0.3);
+  }
+  .video-wrap-type { font-size: 10px; color: #8B6FC0; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+  .video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+  .video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+  .video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-placeholder {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #06091a, #0E1C42);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
+  }
+  .video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+  .video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+  .video-placeholder-id { font-size: 11px; color: rgba(139,111,192,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+  .video-feedback { display: none; }
+  .video-feedback.show { display: block; }
+
+  /* ── Progress Bar ── */
+  .progress-wrap {
+    position: sticky; top: 0; z-index: 200;
+    background: #06091a; padding: 8px 20px 10px;
+    border-bottom: 2px solid rgba(139,111,192,0.3);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .progress-label { font-size: 12px; color: #8B6FC0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+  .progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+  .progress-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, #8B6FC0, #55C8E8, #FFD700);
+    border-radius: 10px; transition: width 0.4s ease;
+  }
+  .progress-pct { font-size: 13px; color: #FFD700; font-weight: 800; min-width: 36px; text-align: right; }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    position: sticky; top: 44px; z-index: 100;
+    background: #FAF7F3; border-bottom: 3px solid #E8DDD2;
+    display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1; min-width: 130px; padding: 12px 8px 11px;
+    background: transparent; border: none;
+    border-bottom: 4px solid transparent;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+    color: #9A8E82; cursor: pointer; transition: all 0.2s;
+    white-space: nowrap; line-height: 1.3; text-align: center;
+  }
+  .tab-btn:hover { color: #0E1C42; background: #F0EDE8; }
+  .tab-btn.active { color: #0E1C42; border-bottom-color: #8B6FC0; background: #fff; }
+  .tab-btn .tab-check { display: none; font-size: 12px; color: #34B76F; margin-left: 4px; font-weight: 800; }
+  .tab-btn.visited .tab-check { display: inline; }
+
+  /* ── Tab Panels ── */
+  .tab-panel { display: none; padding: 24px 28px 36px; }
+  .tab-panel.active { display: block; }
+  .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* ── Intro 2-col ── */
+  .intro-2col {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; padding: 20px 28px 0;
+  }
+  .intro-2col .card { margin-bottom: 0; }
+  .intro-2col .card .card-head {
+    cursor: pointer; user-select: none; position: relative;
+  }
+  .intro-2col .card .card-head::after {
+    content: '▾'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+  }
+  .intro-2col .card.collapsed .card-head::after {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  .intro-2col .card.collapsed .card-body { display: none; }
+
+  /* ── Need Strip ── */
+  .need-strip {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+    padding: 12px 28px 16px;
+  }
+  .need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+  .need-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #F0EDF6; border: 1.5px solid #D8D0E8;
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 13px; color: #0E1C42; font-weight: 700;
+  }
+
+  /* ── Tab Next Button ── */
+  .tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+  .tab-next-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 30px;
+    background: linear-gradient(135deg, #8B6FC0, #55C8E8);
+    color: #fff; border: none; border-radius: 28px;
+    font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(139,111,192,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(139,111,192,0.5); }
+
+  /* ── Checklist ── */
+  .checklist-item:hover { background: #F0EDE8 !important; }
+  .checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+  .checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+  .checklist-item.checked span:last-child { color: #5A4D3E; }
+
+  /* ── Back to Top ── */
+  .back-to-top {
+    position: fixed; bottom: 28px; right: 28px;
+    height: 44px; padding: 0 18px 0 14px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #8B6FC0, #55C8E8);
+    color: #fff; border: none; font-size: 14px; font-weight: 800;
+    font-family: 'Nunito', sans-serif; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(139,111,192,0.4);
+    display: flex; align-items: center; gap: 6px;
+    opacity: 0; visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+    z-index: 500; letter-spacing: 0.3px;
+  }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { box-shadow: 0 6px 24px rgba(139,111,192,0.6); transform: translateY(-3px); }
+
+  /* ── Confetti ── */
+  #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+  /* ── Footer ── */
+  .footer {
+    background: #06091a; border-top: 4px solid #8B6FC0;
+    padding: 18px 28px; text-align: center;
+  }
+  .footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+  .footer-line1 span { color: #8B6FC0; font-weight: 700; }
+  .footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+  .footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  strong { color: #0E1C42; }
+
+  @media (max-width: 620px) {
+    .intro-2col { grid-template-columns: 1fr; }
+    .types-grid { grid-template-columns: 1fr; }
+    .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 4px; }
+  }
+
+  /* ── Image Suggestion (shown only if /images/[name].png is missing) ── */
+  .lesson-figure { margin: 20px 0; }
+  .lesson-figure-label {
+    font-size: 12px; color: #5A4D3E; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    margin-bottom: 8px;
+  }
+  .lesson-figure img { width: 100%; height: auto; border-radius: 14px; display: block; }
+  .lesson-figure-caption {
+    font-size: 14px; color: #5A4D3E; line-height: 1.6;
+    margin-top: 10px; padding: 10px 14px;
+    background: #FAFAF6; border-left: 4px solid #34B76F;
+    border-radius: 6px;
+  }
+  .lesson-figure-caption strong { color: #1B6F3F; }
+  .image-suggestion {
+    background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+    border: 2.5px dashed #F9A825;
+    border-radius: 16px;
+    padding: 20px 22px;
+    text-align: center;
+  }
+  .image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+  .image-suggestion-label {
+    font-size: 11px; color: #E65100; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .image-suggestion-desc {
+    font-size: 15px; color: #5A4D3E; line-height: 1.65;
+    font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+    text-align: left;
+  }
+  .image-suggestion-file {
+    font-size: 12px; color: #2B1D12; font-family: 'Courier New', monospace;
+    font-weight: 700;
+    background: rgba(0,0,0,0.06); border-radius: 6px;
+    padding: 5px 12px; display: inline-block; margin-top: 4px;
+    user-select: all;
+  }
+
+/* ── Response Textareas ── */
+.response-textarea { width: 100%; min-height: 80px; padding: 10px 12px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #FAFAF6; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B1D12; resize: vertical; line-height: 1.65; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
+.response-textarea:focus { outline: none; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.15); background: #fff; }
+.response-textarea.ta-sm { min-height: 64px; }
+.response-textarea.ta-lg { min-height: 110px; }
+/* ── Gathered Answers ── */
+.gathered-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin: 24px 0; overflow: hidden; box-shadow: 0 2px 12px rgba(43,29,18,0.06); }
+.gathered-header { background: linear-gradient(135deg, #0E1C42, #1A2D5A); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.gathered-header-icon { font-size: 24px; }
+.gathered-header-label { font-size: 10px; color: #55C8E8; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.gathered-header-title { font-size: 18px; color: #fff; font-weight: 800; line-height: 1.2; }
+.gathered-body { padding: 16px 20px 18px; }
+.gathered-intro { font-size: 14px; color: #5A4D3E; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+.gathered-name-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1.5px solid #E8DDD2; }
+.gathered-name-label { font-size: 13px; color: #0E1C42; font-weight: 800; white-space: nowrap; }
+.gathered-name-input { flex: 1; padding: 8px 12px; border: 1.5px solid #D0C8BE; border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: 14px; color: #2B1D12; background: #FAFAF6; }
+.gathered-name-input:focus { outline: none; border-color: #55C8E8; background: #fff; }
+.gathered-output { width: 100%; min-height: 200px; padding: 12px 14px; border: 1.5px solid #D0C8BE; border-radius: 10px; background: #F4F0EB; font-family: 'Courier New', monospace; font-size: 13px; color: #2B1D12; resize: vertical; line-height: 1.6; white-space: pre-wrap; box-sizing: border-box; }
+.gathered-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.gathered-btn { background: #0E1C42; color: #fff; border: none; padding: 9px 18px; border-radius: 10px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.gathered-btn:hover { background: #55C8E8; transform: translateY(-1px); }
+.gathered-btn-download { background: #34B76F; }
+.gathered-copied { display: none; margin-top: 8px; padding: 6px 12px; background: #EEF8F0; color: #1a6b35; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1.5px solid #B8E8CF; }
+.gathered-copied.show { display: block; }
+
+/* ═══ VIDEO PLACEHOLDER ═══ */
+.video-placeholder-wrap {
+  display: none;
+  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
+  border: 2px dashed rgba(139, 111, 192, 0.4);
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+}
+.video-placeholder-inner {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 28px 20px;
+}
+.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
+.video-placeholder-inner .vp-label {
+  font-size: 10px; color: #55C8E8; text-transform: uppercase;
+  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
+}
+.video-placeholder-inner .vp-title {
+  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
+}
+.video-placeholder-inner .vp-slot {
+  font-family: monospace; font-size: 11px; color: #8B6FC0;
+  background: rgba(139,111,192,0.15); padding: 3px 10px; border-radius: 4px;
+}
+.video-placeholder-inner .vp-notes {
+  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
+  margin-top: 10px; text-align: left; padding: 10px 12px;
+  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #8B6FC0;
+}
+</style>
+<!-- Field Station sparkle layer (G4 Science). Lesson content lives in fs-data; the layer is shared. -->
+<script type="application/json" id="fs-data">{"lesson":"17.R1","label":"Unit 4 Review · Day 1","weekLabel":"Unit 4 Review","week":17,"day":1,"guide":"june","prefix":"g4sci-r4-1","manifestKey":"r4-1","paths":{"audio":"assets/audio/guide/","video":"assets/video/teacher/","manifest":"https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json","h2c":"assets/sparkle/vendor/html2canvas.min.js","crew":"assets/crew/","ornaments":"assets/ornaments/"},"crew":{"june":{"name":"June Calloway","role":"geologist (a scientist who studies rocks and the land)","initials":"JC","color":"#9A5B2E","lens":"handlens","voiceId":"8WaMCGQzWsKvf7sGPqjE"}},"expedition":{"num":"U4","title":"The Hole on Main Street"},"ambient":{"icon":"🦗","label":"Field sounds"},"case":{"num":"U4","title":"The Hole on Main Street","style":"tags","hook":"Last week a hurricane dumped 20 inches of rain on our town, Palmetto Springs. Two days later, a hole opened on Main Street and swallowed a sidewalk. Everyone says, “The hurricane did it!” But I pulled a rock sample from under the street. Look at all those holes. I don’t think the storm did it alone.","question":"What really made the hole on Main Street?","how":"Find 4 clues as you work through the review. Then crack the case (solve it) at the top of the Assignment tab.","stills":[{"cam":"Tag 1 · Main Street","time":"two days after the storm","tag":"THE HOLE","kind":"print","img":"images/r4-1-case-hole.jpg","alt":"A sinkhole has swallowed part of a yard and the road in front of a house. Plastic sheets and orange barriers surround it."},{"cam":"Tag 2 · the storm","time":"last week","tag":"STORM","kind":"print","img":"images/r4-1-case-storm.jpg","alt":"Hurricane seawater floods a road and pours over a railing next to a bridge."},{"cam":"Tag 3 · rain gauge","time":"after the storm","tag":"20 IN.","kind":"print","img":"images/r4-1-case-rain.jpg","alt":"A clear plastic rain gauge: a tube with marks that shows how much rain fell."},{"cam":"Tag 4 · rock sample","time":"from under Main Street","tag":"LIMESTONE","kind":"print","img":"images/r4-1-case-rock.jpg","alt":"Pale limestone rock full of holes and hollows."}],"stillsCredit":"Tag 1: Sinkhole near Dover, Florida, after the January 2010 freeze, U.S. Geological Survey (public domain). Tag 2: Hurricane Idalia storm surge on Bayshore Boulevard, Tampa, 2023, Andrew Heneen, via Wikimedia Commons (CC BY 4.0). Tag 3: A 4-inch plastic rain gauge, Famartin, via Wikimedia Commons (CC BY-SA 3.0). Tag 4: Ocala Limestone on the Suwannee River, Lafayette County, Florida, Charlie A. Smith, via Wikimedia Commons (CC BY-SA 3.0). The photos are real; Palmetto Springs and the case are part of the story.","clues":[{"id":"words","icon":"🧩","where":"Warm-Up: Word Rescue","t":"A cause makes something happen; an effect is the change. One effect, like a hole, can have more than one cause."},{"id":"layers","icon":"🌀","where":"The Lesson, Part 1: three layers","t":"A hurricane’s heavy rain can open sinkholes, and one effect on the land ripples into living things and people."},{"id":"photos","icon":"🕳️","where":"The Lesson, Part 2: the Winter Park sinkhole","t":"Sinkholes form where water slowly dissolved the limestone, leaving a hollow. Winter Park’s opened on a dry day, with no storm."},{"id":"judge","icon":"⚖️","where":"The Lesson, Part 3: gain or give up?","t":"Pumping lots of groundwater near Dover opened about 140 sinkholes. People’s choices can make sinkholes more likely."}],"solve":{"title":"What made the hole on Main Street?","q":"Which answer fits all four clues?","options":[{"t":"The storm did it alone. Before the hurricane, the rock under Main Street was solid, with no holes in it at all.","why":"Check Clue 3. Hollows in limestone take years to form, and Winter Park’s sinkhole opened on a dry day. Look at June’s rock sample, too."},{"t":"Water dissolved the limestone under Main Street for years and left a hidden hollow. The storm’s heavy rain was the last push, and the ground on top fell in.","right":true,"why":"Case cracked! The storm was the last push, not the only cause. Now write your case report: it’s the questions below."},{"t":"Sinkholes only happen during hurricanes, so building a tall sea wall along the beach would stop the next one.","why":"Check Clues 3 and 4. Sinkholes can open on dry days, or when people pump too much groundwater. A sea wall stops waves, not holes."}]}},"words":{"afterText":"Before we open her new case","kicker":"Warm-Up game · Clue 1","title":"Word Rescue","todo":["Read a meaning.","Drag the word onto it. Or tap the word, then tap the meaning.","Rescue all 8 words."],"why":{"icon":"🧩","q":"Why start with words?","t":"Every Unit 4 question uses these 8 words. If you know them, the rest is easier."},"words":[{"id":"hazard","icon":"⚠️","t":"Hazard","miss":"A hazard is an EVENT in nature. Find the meaning about harm."},{"id":"cause","icon":"👉","t":"Cause","miss":"A cause comes FIRST. It makes something happen."},{"id":"effect","icon":"💥","t":"Effect","miss":"An effect comes AFTER. It is the change."},{"id":"tradeoff","icon":"⚖️","t":"Tradeoff","miss":"A tradeoff has two sides: one you get, one you lose."},{"id":"envcost","icon":"🌫️","t":"Environmental cost","miss":"Environmental means nature. What does nature lose?"},{"id":"criteria","icon":"✅","t":"Criteria","miss":"Criteria are the goals: what a good plan must DO."},{"id":"constraint","icon":"🚧","t":"Constraint","miss":"A constraint is a limit, like money or time."},{"id":"mitigation","icon":"🛡️","t":"Mitigation","miss":"Mitigation is what people DO to make harm smaller."}],"meanings":[{"id":"hazard","t":"A natural event that can cause harm."},{"id":"cause","t":"What makes something happen."},{"id":"effect","t":"A change that happens because of something."},{"id":"tradeoff","t":"You gain one thing, but you give up another."},{"id":"envcost","t":"What nature loses when people use a resource."},{"id":"criteria","t":"The goals a good solution must meet."},{"id":"constraint","t":"A limit, like money, time, or space."},{"id":"mitigation","t":"Steps that make a hazard’s harm smaller."}],"win":"All 8 words rescued! Clue 1: a cause makes something happen, and one effect can have more than one cause.","clue":"words"},"layers":{"afterText":"Scientists trace a hazard’s effects in three layers","kicker":"Part 1 game · Clue 2","title":"One event, three layers","todo":["Read an effect card.","Drag it to Land, Living things, or People. Or tap the card, then tap a box.","Sort the hurricane, then the wildfire."],"bins":[{"k":"land","icon":"🏝️","t":"Land"},{"k":"life","icon":"🦩","t":"Living things"},{"k":"people","icon":"👨‍👩‍👧","t":"People"}],"events":[{"id":"hurricane","icon":"🌀","name":"Hurricane","cards":[{"t":"Beach sand washes away.","bin":"land","miss":"Sand is part of the ground. Which layer is that?"},{"t":"Heavy rain helps a sinkhole open on a street.","bin":"land","miss":"A hole in the ground changes which layer first?"},{"t":"Salt water floods a freshwater pond, and the fish die.","bin":"life","miss":"Who lived in the pond?"},{"t":"Birds lose the trees they nest in.","bin":"life","miss":"Birds are living things in the ecosystem."},{"t":"The power goes out for five days.","bin":"people","miss":"Who uses the power?"},{"t":"Families leave their homes to stay safe.","bin":"people","miss":"Families are people."}]},{"id":"wildfire","icon":"🔥","name":"Wildfire","cards":[{"t":"Bare, burned ground washes away in the next rain.","bin":"land","miss":"What washes away? The ground."},{"t":"Fire clears the brush, so young longleaf pines get sunlight to grow.","bin":"life","miss":"Pines are plants. Effects aren’t always bad!"},{"t":"Smoke closes a highway.","bin":"people","miss":"Who drives on the highway?"}]}],"q":"A hurricane knocked down trees. Birds lost their nests, and a road was blocked. What does that show?","opts":[{"t":"One effect can ripple into all three layers.","ok":true},{"t":"Hurricanes only change the land.","miss":"Did the birds and the drivers notice the fallen trees?"},{"t":"Trees are not part of an ecosystem.","miss":"Trees are living things. They are part of the ecosystem."}],"win":"Clue 2: a hurricane’s rain can open sinkholes, and one effect ripples into all three layers.","clue":"layers"},"photos":[{"id":"winterpark","afterText":"Look closely at what it swallowed","clue":"photos","kicker":"Part 2 · real photo · Clue 3","short":"Winter Park sinkhole","title":"The Winter Park sinkhole, May 1981","todo":["Tap each number on the photo to read what it shows.","Then match three of them below."],"why":{"icon":"📷","q":"What is this?","t":"A real U.S. Geological Survey photo, taken the morning after. The hole was about 300 feet across (as long as a football field) and about 80 feet deep."},"img":"images/r4-1-winterpark.jpg","alt":"A huge round sinkhole with steep sandy walls. People stand at the edge of a road high above. Broken pipes hang down the wall, and wood and other pieces lie at the bottom.","credit":"Winter Park sinkhole, May 9, 1981, Anthony S. Navoy, U.S. Geological Survey","license":"Public domain","hotspots":[{"n":1,"x":40,"y":12,"label":"The street edge","t":"People stand where the road just ends. The ground under it fell away."},{"n":2,"x":30,"y":32,"label":"Sand and clay walls","t":"This was the “lid” on top of the limestone. It slid down into the hollow below."},{"n":3,"x":42,"y":52,"label":"Broken pipes","t":"Water pipes snapped when the ground fell. That is an effect on people."},{"n":4,"x":26,"y":71,"label":"What fell in","t":"A house, part of a swimming pool, and several cars ended up down here."},{"n":5,"x":47,"y":78,"label":"Water at the bottom","t":"Groundwater: water stored in the limestone deep underground. The hole reached all the way down to it."}],"task":{"q":"Which number shows each one?","items":[{"icon":"🟫","step":"The ground that fell into the hollow","ans":2,"evid":"The sand and clay on top fell into a hollow in the limestone below.","miss":"Look for the walls that slid down."},{"icon":"👨‍👩‍👧","step":"An effect on people","ans":[1,3,4],"evid":"The sinkhole broke pipes, ended a road, and swallowed a house and cars.","miss":"Look for something people built or use."},{"icon":"💧","step":"Water stored underground","ans":5,"evid":"Groundwater sits in the limestone deep under the ground.","miss":"Look at the very bottom."}],"win":"Clue 3! This sinkhole opened on a dry evening, with no storm at all. The hollow had been growing for years."}}],"judge":{"afterText":"Sort each fact below","kicker":"Part 3 game · Clue 4","title":"Gain or give up?","todo":["Read the card.","Drag it to a side, or tap a side.","Sort all 8."],"hint":"Read the card, then drag it to a side, or tap a side.","sides":[{"k":"gain","icon":"🎁","t":"We gain"},{"k":"give","icon":"⚖️","t":"We give up"}],"cards":[{"t":"Spraying water on strawberries kept them from freezing.","side":"gain","why":"The farmers saved their crop. That’s what they gained.","miss":"Was saving the crop good for the farmers?"},{"t":"So much water was pumped that about 140 sinkholes opened.","side":"give","why":"The land and the neighbors paid the price. That’s what was given up.","miss":"Is a sinkhole something anyone wanted?"},{"t":"Limestone from a mine becomes rock for roads and buildings.","side":"gain","why":"People gain building material. That’s a benefit.","miss":"Roads and buildings help people."},{"t":"The mine leaves a big pit where a forest used to be.","side":"give","why":"The forest is lost. That’s an environmental cost.","miss":"What happened to the forest?"},{"t":"A sea wall blocks storm waves from homes.","side":"gain","why":"Safer homes: that’s the gain.","miss":"Are safer homes a good thing?"},{"t":"The beach in front of the sea wall washes away, and turtles lose nesting space.","side":"give","why":"The beach and the turtles pay the price.","miss":"What did the beach and the turtles lose?"},{"t":"Mangroves calm waves and give fish a home.","side":"gain","why":"Two gains at once: protection and habitat.","miss":"Calmer waves and a home for fish: good or bad?"},{"t":"Mangroves take years to grow before they protect the shore.","side":"give","why":"The town gives up protection right away.","miss":"What does the town have to wait for?"}],"win":"Clue 4: every choice has two sides. Pumping groundwater to save crops opened about 140 sinkholes near Dover.","clue":"judge"},"quizKicker":"","quizMiss":{"q1":{"A":"The flood comes after the rain. Which one came first?","C":"A constraint is a limit on a plan. Is rain a limit?"},"q2":{"A":"Florida has almost no earthquakes. What does water do to limestone?","C":"Wind moves sand on the surface. Sinkholes start deep underground."},"q3":{"B":"A criterion is a goal for a plan. What did the town gain AND lose?","C":"Building a wall is a choice people make, not something nature does."}},"flags":{"ans-1":[{"label":"an effect on the land","re":"sand|beach|soil|ground|sinkhole|tree|erod|wash|flood|land|road|mud|dirt"},{"label":"how it affects living things or people","re":"bird|fish|animal|turtle|plant|nest|home|people|famil|road|power|house|kid|school|live"},{"label":"a because or so","re":"because|so |which|that means|this means|then|when"}],"ans-2":[{"label":"limestone","re":"lime ?stone|limstone|limestone"},{"label":"groundwater","re":"ground ?water|groundwater|water underground|underground water"},{"label":"a hollow or empty space","re":"hollow|empty|space|cave|hole|gap|cavit"},{"label":"the ground falls in","re":"fall|fell|collaps|cave in|caves in|sink|drop"}],"cer-4":[{"label":"your claim","re":"agree|disagree|wrong|right|not true|true|not"},{"label":"two pieces of evidence","any":["limestone","dissolv","hollow","winter park|dry day|no storm","dover|strawberr|pump","sample|rock","year","rain","groundwater"],"min":2},{"label":"your reasoning","re":"because|so |this shows|that shows|this means|that means|which means|proves"}]},"minWords":{"ans-1":20,"ans-2":20,"cer-4":30},"hints":{"ans-1":["Pick one card from the three-layers game, like “Beach sand washes away.”","Then ask: who lives there, or who uses it?","Try: A hurricane can ___. This also affects ___ because ___."],"ans-2":["Start deep underground. What is the rock, and what does water do to it?","Then: what is left behind, and what sits on top of it?","Try: Groundwater slowly dissolves the limestone and leaves ___. Then the ___ on top ___."],"cer-4":["First decide: was the storm the only cause?","Think of the Winter Park photo, June’s rock sample, or the Dover farms.","Try: I ___ because ___. One piece of evidence is ___. Another is ___."]},"scholar":{},"planner":{"before":"cer-4","title":"Your claim and two pieces of evidence","rows":[{"label":"1. Pick your side","options":["I agree","I disagree"],"pick":1},{"label":"2. Pick two pieces of evidence from today","pick":2,"options":["Rainwater slowly dissolves limestone and leaves hollows over many years.","The Winter Park sinkhole opened on a dry day, with no storm.","June’s rock sample from under Main Street is full of holes.","Pumping lots of groundwater near Dover opened about 140 sinkholes.","Heavy rain can be the last push that makes the ground fall in."]}],"note":"Tap your side and two facts. Then write your reasoning in your own words."},"videoOff":[],"camera":{"max":8,"huntTitle":"Bonus: can you snap all 4 shots on this list?","missions":["All 8 words rescued (Warm-Up)","Your three layers, all sorted (The Lesson)","The Winter Park sinkhole with a label open (The Lesson)","The answer that cracked the case (Assignment)"]},"sketch":{"tip":"Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.","prompts":["What’s under Main Street","One storm, three layers","A tradeoff scale"],"inline":[{"id":"partc","afterPart":"C","kicker":"Part C · sketch it (optional)","required":false,"minLabels":2,"prompts":["Draw what’s under Main Street: sand and clay on top, limestone below","Draw the hollow in the limestone","Label 2 layers"]}]},"hlCoach":{"title":"Highlight like a scientist","tips":[["🔑","Highlight key words, not whole paragraphs.","If everything is yellow, nothing stands out. Aim for a few words in each paragraph."],["📖","Look for words that are explained.","Bold words, and words followed by a meaning in ( ), are often worth saving."],["🎯","Look for answers to the Big Question.","Ask yourself: does this help me explain how nature changes Florida?"],["🔗","Watch for clue words.","“Because”, “so” and “over many years” show how ideas connect."],["🎨","Use the colors on purpose.","Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."]],"practice":{"q":"Practice: tap the 3 to 5 words that matter most in this sentence.","text":"Over many years, water slowly dissolves the limestone and leaves hollows under the ground.","key":["water","dissolves","limestone","hollows","years"],"small":["Over","many","the","and","under"],"model":"A scientist might highlight “water”, “dissolves”, “limestone” and “hollows”. Those words carry the idea."},"outside":"This works in every subject. When you read anything, save the words that answer your question, and skip the rest."},"specimen":{"kicker":"Specimen collected","stamp":"CASE CLOSED","icon":"🪨","name":"Limestone sample with hollows","line":"You cracked the Main Street case, and June’s limestone sample goes in your Field Notebook. (A specimen is something a scientist collects to study.) Next: the same storm flooded Bay Street. Time to test some fixes!"},"notebookTitle":"Unit 4 · Natural Forces & Safety","notebook":[{"lesson":"16.01"},{"lesson":"16.02"},{"lesson":"17.01"},{"lesson":"17.02"},{"lesson":"17.R1","icon":"🪨","name":"Limestone sample"},{"lesson":"17.R2"}],"rankLine":"Your Field Station ID just updated. Keep going, scientist.","lensWin":"All six words are in focus. You’ll use every one of them today.","tool":{"name":"Ground-penetrating radar","icon":"📡","tab":"assignment","after":"#tab-assignment .activity-card","key":"r4-tool","sim":"gpr","kicker":"Bonus · Tool of the Week","teaser":"Roll a radar cart down Main Street and find the hidden hollows before the road falls in.","done":"You found both hidden hollows. A radar sticker is in your Field Notebook.","why":{"icon":"📡","q":"What is ground-penetrating radar?","t":"A tool that sends radio waves into the ground. The waves bounce back off layers of rock and off empty spaces, and a computer turns the echoes into a picture. Road crews use it to find hollows before a road falls in."},"gpr":{"title":"Scan Main Street","img":"images/r4-1-gpr.jpg","alt":"A worker pushes a ground-penetrating radar cart, a small cart with wheels and a screen, across a grassy field.","todo":["Tap spot 1. The cart rolls there and the radar picture appears below.","Scan all 10 spots.","A bright upside-down U means the waves bounced off a hollow. Tap those spots again to flag them 🚩."],"road":"MAIN STREET · east of the hole","key":"The dark picture shows what is under each spot. Gray wavy lines = layers of sand, clay, and rock. A bright yellow upside-down U = a hollow.","spots":[{},{},{},{"hollow":true,"depth":1},{},{},{"hollow":true,"depth":2},{},{},{}],"q":{"q":"Main Street has two more hidden hollows. What should the town do first?","opts":[{"t":"Fill the hollows and make the road stronger before they fall in.","ok":true,"why":"Yes! Finding hollows early is mitigation: a step that makes a hazard’s harm smaller."},{"t":"Nothing. Hollows never fall in.","why":"Look at Tag 1 in the case file. This one did!"},{"t":"Build a sea wall.","why":"A sea wall stops waves, not holes in the ground."}]},"credit":"Photo: Ground-penetrating radar in use, The Charles Machine Works, via Wikimedia Commons (CC BY-SA 2.0). The radar picture is a model."}},"inputs":[{"id":"tab1","type":"swap","find":{"sel":".tab-btn[data-tab=\"vocab\"]"},"swap":["📚 Vocabulary","🌅 Warm-Up"]},{"id":"fs-warm","type":"list","find":{"sel":".fs-game[data-mod=\"words\"]"},"label":"Warm-Up: two words in my own sentences","q":"Warm-Up: Pick two Unit 4 words. Use each one in a sentence about Florida.","title":"Your turn: pick two words. Use each one in a sentence about Florida.","min":2,"unit":"sentences","addLabel":"+ Add a sentence","ph":["A hazard in Florida is…","A tradeoff is when…"]},{"id":"sw-words","type":"swap","find":{"sel":"p","text":"Tap a card to flip it"},"swap":["<strong>Tap a card to flip it<\/strong> and read what the word means.","<strong>Tap a word<\/strong> to hear it and see what it means."]},{"id":"fs-partc","type":"frame","find":{"sel":"#tab-assignment p","text":"Pick one choice from today"},"label":"Part C: Tradeoff Check","q":"Part C: Tradeoff Check: one choice, what people gain, what is given up, and one way to lower the cost","title":"My Tradeoff Check","fields":[{"t":"The choice","icon":"🤔","ph":"I picked: ___"},{"t":"What people gain","icon":"🎁","ph":"People gain…","long":true},{"t":"What is given up","icon":"⚖️","ph":"Nature or people give up…","long":true},{"t":"One way to lower the cost","icon":"🛡️","ph":"They could…","long":true}]},{"id":"fs-cer","type":"cer","target":"cer-4","find":{"sel":"textarea#cer-4"},"reminder":"Claim = what you think is true. Evidence = facts from today that prove it. Reasoning = how the evidence proves your claim.","parts":[{"k":"C","t":"Claim","ask":"Was the hurricane the only cause of the hole?","ph":"I disagree. The hurricane was not the only cause because…"},{"k":"E","t":"Evidence","ask":"Two facts from today. Tap them in the planner above, or type them.","ph":"One fact is… Another fact is…","rows":3},{"k":"R","t":"Reasoning","ask":"How do those facts prove your claim?","ph":"This shows that…","rows":3}]},{"id":"relabel","type":"relabel","map":{"ans-1":"Part B · Question 1","ans-2":"Part B · Question 2","cer-4":"Use Your Evidence (CER)"}}],"slots":{"welcome":{"label":"Welcome · the hole on Main Street","length":"30–40 s","script":"June here, geologist. That means I study rocks and the land. Something strange happened in our town. After last week’s hurricane, a hole opened right on Main Street. Everybody blames the storm. But I pulled up a rock from under the street, and it’s full of holes. Help me figure out what really happened."},"warmup":{"label":"Warm-Up · Word Rescue (Clue 1)","length":"20–30 s","script":"Oh, my office is a mess! The wind scattered my word cards everywhere. These eight words come up in every Unit 4 question, so let’s get them back where they belong. Read each meaning first, then find the word that fits it."},"vocab":{"label":"Word Wall","length":"30–45 s"},"lesson":{"label":"The Lesson","length":"25–35 s"},"part1":{"label":"Part 1 · three layers (Clue 2)","length":"20–30 s","script":"When I check a town after a storm, I look at three things. What happened to the land? What happened to the living things? What happened to the people? Sort each effect card. Some might surprise you. Not every effect of a wildfire is bad."},"part2":{"label":"Part 2 · the Winter Park sinkhole (Clue 3)","length":"25–35 s","script":"This is one of the most famous holes in Florida. It opened in Winter Park in 1981. Here’s the strange part: it wasn’t raining. Tap each number on the photo. Look at the walls, the bottom, and the edge where people are standing."},"part3":{"label":"Part 3 · gain or give up? (Clue 4)","length":"20–30 s","script":"Every choice people make has two sides. Something we gain, and something we give up. Read each card and decide which side it goes on. Watch the strawberry farmers. Their story is a big clue."},"quiz":{"label":"Self-Check","length":"15–20 s"},"assignment":{"label":"Assignment · crack the case","length":"20–30 s","script":"Do you have all four clues? Then crack the case at the top of this tab: what really made the hole on Main Street? After that, answer two questions, do a tradeoff check, and write your CER. Your answers save as you type."},"partb":{"label":"Part B","length":"30 s"},"partc":{"label":"Part C · tradeoff check","length":"30 s"},"evidence":{"label":"Use your evidence · CER","length":"25–35 s","script":"My neighbor is sure the hurricane made the hole, all by itself. Do you agree? Think about my rock sample, the Winter Park sinkhole, and the farms near Dover. Pick your side, tap two pieces of evidence, then explain how they prove your claim."},"closing":{"label":"Case closed","length":"20–30 s","script":"Case closed! The storm was the last push, but the hollow had been growing for years. Tomorrow, a new problem. The same storm pushed seawater into Bay Street. The town needs a plan, and you’re the engineer."}},"banner":"<svg viewBox=\"0 0 920 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A cut-away view of a rainy street. Under the road, rain soaks down through sand and clay into pale limestone full of holes. Right under a crack in the road, a big hollow has opened in the limestone, with water at its bottom.\">\n<defs><linearGradient id=\"r41sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4E6475\"/><stop offset=\"1\" stop-color=\"#9DB0BC\"/><\/linearGradient>\n<linearGradient id=\"r41sand\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#C9A56A\"/><stop offset=\"1\" stop-color=\"#9C7A4A\"/><\/linearGradient>\n<linearGradient id=\"r41lime\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#E9E1CB\"/><stop offset=\"1\" stop-color=\"#CFC4A6\"/><\/linearGradient>\n<linearGradient id=\"r41water\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4E9CC4\"/><stop offset=\"1\" stop-color=\"#2C6F96\"/><\/linearGradient>\n<radialGradient id=\"r41lamp\"><stop offset=\"0\" stop-color=\"#FFE9A3\" stop-opacity=\".9\"/><stop offset=\"1\" stop-color=\"#FFE9A3\" stop-opacity=\"0\"/><\/radialGradient><\/defs>\n<rect width=\"920\" height=\"200\" fill=\"url(#r41sky)\"/>\n<path d=\"M0 34 Q60 14 130 30 Q200 8 280 28 Q360 6 450 26 Q540 4 630 24 Q720 6 800 26 Q860 12 920 26 L920 0 L0 0z\" fill=\"#3A4C5A\" opacity=\".85\"/>\n<g stroke=\"#DDE7EE\" stroke-width=\"1.6\" opacity=\".55\" stroke-linecap=\"round\"><line x1=\"251\" y1=\"28\" x2=\"245\" y2=\"42\" /><line x1=\"115\" y1=\"40\" x2=\"109\" y2=\"54\" /><line x1=\"500\" y1=\"9\" x2=\"494\" y2=\"23\" /><line x1=\"102\" y1=\"-2\" x2=\"96\" y2=\"12\" /><line x1=\"30\" y1=\"41\" x2=\"24\" y2=\"55\" /><line x1=\"572\" y1=\"27\" x2=\"566\" y2=\"41\" /><line x1=\"829\" y1=\"-3\" x2=\"823\" y2=\"11\" /><line x1=\"237\" y1=\"56\" x2=\"231\" y2=\"70\" /><line x1=\"559\" y1=\"36\" x2=\"553\" y2=\"50\" /><line x1=\"293\" y1=\"12\" x2=\"287\" y2=\"26\" /><line x1=\"856\" y1=\"3\" x2=\"850\" y2=\"17\" /><line x1=\"278\" y1=\"17\" x2=\"272\" y2=\"31\" /><line x1=\"36\" y1=\"23\" x2=\"30\" y2=\"37\" /><line x1=\"829\" y1=\"24\" x2=\"823\" y2=\"38\" /><line x1=\"208\" y1=\"11\" x2=\"202\" y2=\"25\" /><line x1=\"327\" y1=\"27\" x2=\"321\" y2=\"41\" /><line x1=\"652\" y1=\"37\" x2=\"646\" y2=\"51\" /><line x1=\"98\" y1=\"67\" x2=\"92\" y2=\"81\" /><line x1=\"355\" y1=\"39\" x2=\"349\" y2=\"53\" /><line x1=\"528\" y1=\"21\" x2=\"522\" y2=\"35\" /><line x1=\"192\" y1=\"21\" x2=\"186\" y2=\"35\" /><line x1=\"494\" y1=\"25\" x2=\"488\" y2=\"39\" /><line x1=\"101\" y1=\"60\" x2=\"95\" y2=\"74\" /><line x1=\"870\" y1=\"28\" x2=\"864\" y2=\"42\" /><line x1=\"17\" y1=\"27\" x2=\"11\" y2=\"41\" /><line x1=\"596\" y1=\"29\" x2=\"590\" y2=\"43\" /><line x1=\"878\" y1=\"55\" x2=\"872\" y2=\"69\" /><line x1=\"209\" y1=\"42\" x2=\"203\" y2=\"56\" /><line x1=\"443\" y1=\"66\" x2=\"437\" y2=\"80\" /><line x1=\"305\" y1=\"45\" x2=\"299\" y2=\"59\" /><line x1=\"472\" y1=\"10\" x2=\"466\" y2=\"24\" /><line x1=\"248\" y1=\"29\" x2=\"242\" y2=\"43\" /><line x1=\"275\" y1=\"-5\" x2=\"269\" y2=\"9\" /><line x1=\"93\" y1=\"-5\" x2=\"87\" y2=\"9\" /><line x1=\"483\" y1=\"70\" x2=\"477\" y2=\"84\" /><line x1=\"297\" y1=\"56\" x2=\"291\" y2=\"70\" /><line x1=\"557\" y1=\"50\" x2=\"551\" y2=\"64\" /><line x1=\"727\" y1=\"33\" x2=\"721\" y2=\"47\" /><line x1=\"158\" y1=\"15\" x2=\"152\" y2=\"29\" /><line x1=\"78\" y1=\"42\" x2=\"72\" y2=\"56\" /><line x1=\"217\" y1=\"70\" x2=\"211\" y2=\"84\" /><line x1=\"461\" y1=\"25\" x2=\"455\" y2=\"39\" /><line x1=\"198\" y1=\"35\" x2=\"192\" y2=\"49\" /><line x1=\"456\" y1=\"65\" x2=\"450\" y2=\"79\" /><line x1=\"338\" y1=\"61\" x2=\"332\" y2=\"75\" /><line x1=\"213\" y1=\"31\" x2=\"207\" y2=\"45\" /><line x1=\"113\" y1=\"-3\" x2=\"107\" y2=\"11\" /><line x1=\"735\" y1=\"19\" x2=\"729\" y2=\"33\" /><line x1=\"294\" y1=\"64\" x2=\"288\" y2=\"78\" /><line x1=\"640\" y1=\"20\" x2=\"634\" y2=\"34\" /><line x1=\"135\" y1=\"32\" x2=\"129\" y2=\"46\" /><line x1=\"191\" y1=\"27\" x2=\"185\" y2=\"41\" /><line x1=\"480\" y1=\"-7\" x2=\"474\" y2=\"7\" /><line x1=\"53\" y1=\"35\" x2=\"47\" y2=\"49\" /><line x1=\"724\" y1=\"0\" x2=\"718\" y2=\"14\" /><line x1=\"302\" y1=\"31\" x2=\"296\" y2=\"45\" /><line x1=\"28\" y1=\"31\" x2=\"22\" y2=\"45\" /><line x1=\"305\" y1=\"31\" x2=\"299\" y2=\"45\" /><line x1=\"166\" y1=\"42\" x2=\"160\" y2=\"56\" /><line x1=\"892\" y1=\"69\" x2=\"886\" y2=\"83\" /><line x1=\"706\" y1=\"-1\" x2=\"700\" y2=\"13\" /><line x1=\"310\" y1=\"69\" x2=\"304\" y2=\"83\" /><line x1=\"206\" y1=\"46\" x2=\"200\" y2=\"60\" /><line x1=\"309\" y1=\"7\" x2=\"303\" y2=\"21\" /><line x1=\"266\" y1=\"38\" x2=\"260\" y2=\"52\" /><line x1=\"623\" y1=\"10\" x2=\"617\" y2=\"24\" /><line x1=\"349\" y1=\"63\" x2=\"343\" y2=\"77\" /><line x1=\"19\" y1=\"36\" x2=\"13\" y2=\"50\" /><line x1=\"55\" y1=\"48\" x2=\"49\" y2=\"62\" /><line x1=\"183\" y1=\"36\" x2=\"177\" y2=\"50\" /><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 -20;6 30\" dur=\"0.9s\" repeatCount=\"indefinite\"/><\/g>\n<rect x=\"0\" y=\"92\" width=\"920\" height=\"108\" fill=\"url(#r41lime)\"/>\n<rect x=\"0\" y=\"92\" width=\"920\" height=\"40\" fill=\"url(#r41sand)\"/>\n<path d=\"M0 132 Q120 128 240 133 T480 131 T720 134 T920 131\" stroke=\"#8C6B3E\" stroke-width=\"2\" fill=\"none\" opacity=\".6\"/>\n<g><ellipse cx=\"822\" cy=\"175\" rx=\"9\" ry=\"4\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"605\" cy=\"153\" rx=\"11\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"83\" cy=\"151\" rx=\"6\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"641\" cy=\"151\" rx=\"11\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"349\" cy=\"151\" rx=\"5\" ry=\"4\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"812\" cy=\"163\" rx=\"7\" ry=\"5\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"226\" cy=\"157\" rx=\"11\" ry=\"5\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"280\" cy=\"158\" rx=\"7\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"810\" cy=\"157\" rx=\"10\" ry=\"4\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"165\" cy=\"160\" rx=\"4\" ry=\"4\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"598\" cy=\"153\" rx=\"10\" ry=\"2\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"235\" cy=\"177\" rx=\"6\" ry=\"4\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"323\" cy=\"171\" rx=\"11\" ry=\"4\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"854\" cy=\"163\" rx=\"7\" ry=\"4\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"366\" cy=\"162\" rx=\"11\" ry=\"2\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"899\" cy=\"158\" rx=\"7\" ry=\"2\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"703\" cy=\"177\" rx=\"4\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"724\" cy=\"170\" rx=\"11\" ry=\"5\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"784\" cy=\"162\" rx=\"10\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"837\" cy=\"150\" rx=\"7\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"33\" cy=\"169\" rx=\"8\" ry=\"2\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"583\" cy=\"151\" rx=\"7\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"707\" cy=\"169\" rx=\"9\" ry=\"5\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"55\" cy=\"172\" rx=\"5\" ry=\"5\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"594\" cy=\"177\" rx=\"8\" ry=\"3\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"62\" cy=\"161\" rx=\"5\" ry=\"2\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"324\" cy=\"176\" rx=\"9\" ry=\"2\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"107\" cy=\"167\" rx=\"11\" ry=\"5\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"230\" cy=\"175\" rx=\"8\" ry=\"5\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"259\" cy=\"174\" rx=\"11\" ry=\"5\" fill=\"#B9AE92\" opacity=\".8\"/><ellipse cx=\"117\" cy=\"152\" rx=\"5\" ry=\"4\" fill=\"#B9AE92\" opacity=\".8\"/><\/g>\n<path d=\"M392 140 Q380 156 398 176 Q440 196 500 190 Q556 182 560 156 Q562 140 540 136 Q470 126 392 140z\" fill=\"#2B2620\"/>\n<path d=\"M404 178 Q450 192 500 188 Q546 180 552 166 Q520 176 480 176 Q440 176 404 178z\" fill=\"url(#r41water)\"><animate attributeName=\"opacity\" values=\".85;1;.85\" dur=\"3s\" repeatCount=\"indefinite\"/><\/path>\n<path d=\"M465 92 L458 104 L470 112 L462 122 L472 134\" stroke=\"#2B2620\" stroke-width=\"2.5\" fill=\"none\"/><path d=\"M490 92 L496 106 L486 118 L494 134\" stroke=\"#2B2620\" stroke-width=\"2\" fill=\"none\" opacity=\".8\"/>\n<rect x=\"0\" y=\"80\" width=\"920\" height=\"12\" fill=\"#3F4448\"/>\n<path d=\"M0 86 h40 m30 0 h40 m30 0 h40 m30 0 h40 m30 0 h40 m30 0 h40\" stroke=\"#E9D57A\" stroke-width=\"2\"/>\n<path d=\"M600 86 h40 m30 0 h40 m30 0 h40 m30 0 h40\" stroke=\"#E9D57A\" stroke-width=\"2\"/>\n<path d=\"M440 80 L450 92 L462 82 L474 94 L486 80\" stroke=\"#1E2124\" stroke-width=\"3\" fill=\"none\"/>\n\n<g fill=\"#7FB7D6\" opacity=\".9\"><circle cx=\"300\" cy=\"104\" r=\"2.4\"><animate attributeName=\"cy\" values=\"96;126\" dur=\"2.2s\" repeatCount=\"indefinite\"/><\/circle><circle cx=\"620\" cy=\"104\" r=\"2.4\"><animate attributeName=\"cy\" values=\"98;128\" dur=\"2.6s\" repeatCount=\"indefinite\"/><\/circle><circle cx=\"470\" cy=\"104\" r=\"2.4\"><animate attributeName=\"cy\" values=\"96;140\" dur=\"2s\" repeatCount=\"indefinite\"/><\/circle><\/g>\n<g transform=\"translate(150 80)\"><rect x=\"-2\" y=\"-58\" width=\"4\" height=\"58\" fill=\"#4A3424\"/><path d=\"M0 -58 q-26 -4 -40 8 M0 -58 q26 -6 40 6 M0 -58 q-16 -18 -30 -16 M0 -58 q14 -20 30 -18 M0 -58 q-2 -16 4 -24\" stroke=\"#3E7A3A\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><\/g>\n<g transform=\"translate(760 80)\"><rect x=\"-2\" y=\"-52\" width=\"4\" height=\"52\" fill=\"#4A3424\"/><path d=\"M0 -52 q-24 -4 -36 8 M0 -52 q24 -6 36 6 M0 -52 q-14 -16 -26 -14 M0 -52 q12 -18 26 -16\" stroke=\"#3E7A3A\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><\/g>\n<g transform=\"translate(650 80)\"><rect x=\"-1.5\" y=\"-50\" width=\"3\" height=\"50\" fill=\"#2E3438\"/><path d=\"M0 -50 h14\" stroke=\"#2E3438\" stroke-width=\"3\"/><circle cx=\"14\" cy=\"-46\" r=\"16\" fill=\"url(#r41lamp)\"/><circle cx=\"14\" cy=\"-47\" r=\"3.5\" fill=\"#FFE9A3\"/><\/g>\n<g fill=\"#E2A33B\"><path d=\"M402 80 l6 -14 l6 14z\"/><path d=\"M528 80 l6 -14 l6 14z\"/><\/g>\n<\/svg>"}</script>
+<link rel="stylesheet" href="assets/sparkle/fs-sparkle.css?v=2103b447">
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ═══ OPTIMA READ-ALOUD PLAYER ═══ -->
+<div id="optima-read-aloud">
+<style>
+    #optima-read-aloud { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 14px 18px; margin: 0 0 20px 0; }
+    #optima-read-aloud .ora-kicker { font-size: 11px; color: #1B6A94; letter-spacing: 0.4px; margin-bottom: 10px; }
+    #optima-read-aloud .ora-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    #optima-read-aloud .ora-controls button { border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+    #ora-play { background: #0E1C42; color: #FFFFFF; border: 1.5px solid #0E1C42; }
+    #ora-play:hover:enabled { background: #1B2D5E; }
+    #ora-play:disabled { background: #D0D9E8; border-color: #D0D9E8; color: #6b7a99; cursor: default; }
+    #ora-stop { background: #FFFFFF; color: #0E1C42; border: 1.5px solid #D0D9E8; }
+    #ora-stop:hover:enabled { background: #F4F6FA; border-color: #55C8E8; }
+    #ora-stop:disabled { color: #999; border-color: #E4E9F2; cursor: default; }
+    #optima-read-aloud .ora-speed { font-size: 12px; color: #6b7a99; display: flex; align-items: center; gap: 6px; }
+    #ora-rate { font-family: inherit; font-size: 13px; color: #0E1C42; border: 1.5px solid #D0D9E8; border-radius: 6px; padding: 5px 8px; background: #FFFFFF; }
+    #ora-status { font-size: 12px; color: #666; }
+    .ora-highlight { background: #FDF3E3 !important; box-shadow: inset 4px 0 0 #C7922C; border-radius: 4px; transition: background 0.2s; }
+</style>
+    <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
+    <div class="ora-controls">
+        <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
+        <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
+        <label class="ora-speed">Speed
+            <select id="ora-rate" aria-label="Reading speed">
+                <option value="0.8">Slower</option>
+                <option value="1" selected>Normal</option>
+                <option value="1.25">Faster</option>
+            </select>
+        </label>
+        <span id="ora-status" role="status" aria-live="polite"></span>
+    </div>
+<script>
+(function () {
+    "use strict";
+    var playBtn  = document.getElementById("ora-play");
+    var stopBtn  = document.getElementById("ora-stop");
+    var rateSel  = document.getElementById("ora-rate");
+    var statusEl = document.getElementById("ora-status");
+
+    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+        playBtn.disabled = true;
+        rateSel.disabled = true;
+        statusEl.textContent = "Read-aloud is not supported in this browser.";
+        return;
+    }
+
+    var LABEL_PLAY   = "▶️ Listen";
+    var LABEL_PAUSE  = "⏸️ Pause";
+    var LABEL_RESUME = "▶️ Resume";
+    var BLOCK_SEL = "p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, dt, dd, figcaption, div";
+    var SKIP_SEL  = "#optima-read-aloud, [data-ra-skip], button, script, style, select, noscript, iframe";
+
+    var queue = [];
+    var idx = 0;
+    var playing = false, paused = false, stopping = false;
+    var currentBlock = null;
+    var currentUtterance = null;
+
+    var voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    loadVoices();
+    if ("onvoiceschanged" in window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+    function pickVoice() {
+        if (!voices.length) loadVoices();
+        var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
+        return en.filter(function (v) { return /natural/i.test(v.name); })[0]
+            || en.filter(function (v) { return /google us english/i.test(v.name); })[0]
+            || en.filter(function (v) { return v.default; })[0]
+            || en[0] || null;
+    }
+
+    function isVisible(el) {
+        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+    }
+
+    function collectQueue() {
+        var root = document.querySelector("[data-readaloud-root]")
+                || document.querySelector(".canvas-frame")
+                || document.body;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+        var items = [];
+        var node;
+        while ((node = walker.nextNode())) {
+            if (!/\S/.test(node.textContent)) continue;
+            var el = node.parentElement;
+            if (!el || el.closest(SKIP_SEL)) continue;
+            if (!isVisible(el)) continue;
+            var block = el.closest(BLOCK_SEL) || root;
+            var last = items[items.length - 1];
+            if (last && last.el === block) last.text += " " + node.textContent;
+            else items.push({ el: block, text: node.textContent });
+        }
+        var q = [];
+        items.forEach(function (item) {
+            var clean = item.text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}\u{2B55}\u{25A0}-\u{25FF}\u{2702}-\u{27B0}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu, "").replace(/\s+/g, " ").trim();
+            if (!clean) return;
+            var sentences = clean.match(/[^.!?]+[.!?]+["”’')\]]*\s*|[^.!?]+$/g) || [clean];
+            sentences.forEach(function (s) {
+                s = s.trim();
+                if (s) q.push({ el: item.el, text: s });
+            });
+        });
+        return q;
+    }
+
+    function highlight(el) {
+        if (el === currentBlock) return;
+        clearHighlight();
+        currentBlock = el;
+        if (el && el !== document.body) {
+            el.classList.add("ora-highlight");
+            try { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
+        }
+    }
+    function clearHighlight() {
+        if (currentBlock) currentBlock.classList.remove("ora-highlight");
+        currentBlock = null;
+    }
+
+    function speakNext() {
+        if (idx >= queue.length) { finish("Finished reading this page."); return; }
+        var item = queue[idx];
+        highlight(item.el);
+        var u = new SpeechSynthesisUtterance(item.text);
+        u.rate = parseFloat(rateSel.value) || 1;
+        var v = pickVoice();
+        if (v) u.voice = v;
+        u.onend = function () {
+            if (stopping) return;
+            idx++;
+            speakNext();
+        };
+        u.onerror = function (e) {
+            if (stopping || e.error === "canceled" || e.error === "interrupted") return;
+            idx++;
+            speakNext();
+        };
+        currentUtterance = u;
+        window.speechSynthesis.speak(u);
+        statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
+    }
+
+    function finish(message) {
+        playing = false;
+        paused = false;
+        clearHighlight();
+        playBtn.textContent = LABEL_PLAY;
+        stopBtn.disabled = true;
+        statusEl.textContent = message || "";
+        currentUtterance = null;
+    }
+
+    playBtn.addEventListener("click", function () {
+        if (playing && !paused) {
+            window.speechSynthesis.pause();
+            paused = true;
+            playBtn.textContent = LABEL_RESUME;
+            statusEl.textContent = "Paused";
+            return;
+        }
+        if (playing && paused) {
+            window.speechSynthesis.resume();
+            paused = false;
+            playBtn.textContent = LABEL_PAUSE;
+            statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
+            return;
+        }
+        queue = collectQueue();
+        if (!queue.length) { statusEl.textContent = "Nothing to read on this page."; return; }
+        idx = 0;
+        stopping = false;
+        playing = true;
+        paused = false;
+        window.speechSynthesis.cancel();
+        playBtn.textContent = LABEL_PAUSE;
+        stopBtn.disabled = false;
+        speakNext();
+    });
+
+    stopBtn.addEventListener("click", function () {
+        stopping = true;
+        window.speechSynthesis.cancel();
+        finish("");
+    });
+
+    rateSel.addEventListener("change", function () {
+        if (!playing || paused) return;
+        stopping = true;
+        window.speechSynthesis.cancel();
+        setTimeout(function () { stopping = false; speakNext(); }, 60);
+    });
+
+    window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
+})();
+</script>
+</div>
+<!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">🪨 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Review: The Hole on Main Street</div>
+  <div class="header-badge">
+    <span>🪨</span>
+    <span>UNIT 4 REVIEW · DAY 1</span>
+  </div>
+</div>
+
+<!-- ═══ HERO (the sparkle layer draws the banner here) ═══ -->
+<div class="hero-visual"></div>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip">
+  <div class="info-item"><div class="info-icon" style="background:#FFF5E1;">📅</div><div><div class="info-label">Quarter / Week</div><div class="info-value">Q3 · Unit 4 Review</div><div class="info-detail">Natural Forces &amp; Safety</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#EEF8F0;">📖</div><div><div class="info-label">Review Day</div><div class="info-value">Day 1 · Review</div><div class="info-detail">Lessons 16.01–17.02</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#FFF5E1;">🧭</div><div><div class="info-label">Science Focus</div><div class="info-value">Hazards &amp; Tradeoffs</div><div class="info-detail">Land, living things, people</div></div></div>
+  <div class="info-item"><div class="info-icon" style="background:#EEF8F0;">🌿</div><div><div class="info-label">Standards</div><div class="info-value">4-ESS3-1 · 4-ESS3-2</div><div class="info-detail">Earth &amp; Human Activity · TEKS 4.10(B)</div></div></div>
+</div>
+
+<!-- ═══ INTRO 2-COL ═══ -->
+<div class="intro-2col">
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head"><div class="card-head-icon">❓</div><div><div class="card-head-label">Key Question</div><div class="card-head-title">Our Big Question for Today</div></div></div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;"><span class="sq-icon">🤔</span><div><div class="label">Think about this…</div><div class="question">"How do natural events change Florida, and how do we choose the best way to protect it?"</div></div></div>
+      <p>Today you’ll pull together all of Unit 4: hazards, their effects, and the tradeoffs in every choice. Tomorrow, in the lab, you’ll test real ways to protect a town.</p>
+    </div>
+  </div>
+  <div class="card theme-sky scroll-reveal">
+    <div class="card-head"><div class="card-head-icon">🎯</div><div><div class="card-head-label">Objectives</div><div class="card-head-title">I Can Statements</div></div></div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;"><div style="width:34px;height:34px;border-radius:50%;background:#E8636B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> trace how one natural event changes the land, living things, and people.</div></div><div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;"><div style="width:34px;height:34px;border-radius:50%;background:#D4772C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how a sinkhole forms in Florida.</div></div><div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;"><div style="width:34px;height:34px;border-radius:50%;background:#34B76F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><div style="font-size:17px;color:#0E1C42;line-height:1.6;padding-top:4px;"><strong>I can</strong> name what we gain and what we give up when we make a choice (a tradeoff).</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>💻</span>Just this page</span>
+</div>
+
+<!-- ═══ TAB BAR ═══ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ═══ TAB 1: WARM-UP + WORDS ═══ -->
+<div class="tab-panel active" id="tab-vocab">
+<div class="video-placeholder-wrap">
+<!-- slot: r4-1-intro -->
+<div class="video-placeholder-inner">
+  <span class="vp-icon">&#x1F3AC;</span>
+  <div class="vp-label">Introduction Video</div>
+  <div class="vp-title">Optima Academy Online – Unit 4 Review: The Hole on Main Street</div>
+  <div class="vp-slot">r4-1-intro</div>
+  <div class="vp-notes"><strong>Teacher recording notes:</strong> Introduction video for this review day.</div>
+</div>
+</div>
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#E8636B;">1</div>
+      <div style="flex:1;"><div class="act-title">🌅 Warm-Up: The Storm Scattered the Words</div><div class="act-subtitle">Put Unit 4’s big words back together</div></div>
+      <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>Last night’s storm blew through June’s field office. Her Unit 4 word cards are all over the floor! Before we open her new case, help her put each word back with its meaning.</p>
+    </div>
+  </div>
+
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head"><div class="card-head-icon">📚</div><div><div class="card-head-label">Word Wall</div><div class="card-head-title">Words You'll Use Today</div></div></div>
+    <div class="card-body">
+      <p>These six words show up all through today's review. <strong>Tap a card to flip it</strong> and read what the word means.</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⚠️</div><div class="fc-word">Hazard</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Hazard</div><div class="fc-def">A natural event that can hurt people, living things, or property, like a hurricane, flood, wildfire, or sinkhole.</div><div class="fc-tap-back">tap to flip back</div></div></div></div><div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">💥</div><div class="fc-word">Effect</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Effect</div><div class="fc-def">A change caused by something. Heavy rain (the cause) can bring a flood (the effect).</div><div class="fc-tap-back">tap to flip back</div></div></div></div><div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">Ecosystem</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Ecosystem</div><div class="fc-def">All the living and nonliving things in one place, working together, like a wetland or a beach.</div><div class="fc-tap-back">tap to flip back</div></div></div></div><div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🪨</div><div class="fc-word">Limestone</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Limestone</div><div class="fc-def">A rock under most of Florida. Water can slowly dissolve it (wear it away, like sugar in water).</div><div class="fc-tap-back">tap to flip back</div></div></div></div><div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🕳️</div><div class="fc-word">Sinkhole</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Sinkhole</div><div class="fc-def">A hole that opens when the ground falls into an empty space underground.</div><div class="fc-tap-back">tap to flip back</div></div></div></div><div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⚖️</div><div class="fc-word">Tradeoff</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Tradeoff</div><div class="fc-def">When you gain one thing but give up another.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📘 The Lesson →</button></div>
+</div>
+
+<!-- ═══ TAB 2: THE LESSON ═══ -->
+<div class="tab-panel" id="tab-lesson">
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#D4772C;">2</div>
+      <div style="flex:1;"><div class="act-title">📘 Review: How Nature Changes Florida</div><div class="act-subtitle">Effects, sinkholes, and tradeoffs</div></div>
+      <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 1 · One storm, three layers</h3>
+      <p>A hurricane is a natural event. When it causes harm, it is a <strong>hazard</strong>.</p>
+      <p>Scientists trace a hazard’s effects in three layers: the land, the living things (the ecosystem), and the people. One effect often ripples into the next. Fallen trees (land) take away bird nests (living things) and block roads (people).</p>
+      <div class="socratic-q">
+        <span class="sq-icon">🛑</span>
+        <div>
+          <div class="label">Stop &amp; Think</div>
+          <div class="question">"Think of one way a storm changes the land. What living thing does that change next?"</div>
+        </div>
+      </div>
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 2 · What’s under Florida?</h3>
+      <p>Under most of Florida is <strong>limestone</strong>, a rock made long ago from shells and sea animals. Rainwater is a tiny bit acidic (a little like very weak lemon juice). As it soaks down, it slowly dissolves the limestone.</p>
+      <p>Over many years, this leaves hollows (empty spaces) in the rock. Sand and clay sit on top like a lid. If the lid gets too heavy or too wet, or the water underground drains away, the lid falls in. That’s a <strong>sinkhole</strong>.</p>
+      <p>In 1981, a giant sinkhole opened in Winter Park, Florida, on a dry spring evening. There was no storm at all. Look closely at what it swallowed.</p>
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 3 · Every choice is a tradeoff</h3>
+      <p>In January 2010, a hard freeze hit the strawberry farms near Plant City and Dover. To save their plants, farmers sprayed water on them all night. A thin coat of ice kept the berries from freezing solid.</p>
+      <p>They pumped so much <strong>groundwater</strong> (water stored underground, in the limestone) that the water level underground dropped about 60 feet. About 140 sinkholes opened, and more than 750 neighbors’ wells went dry for a while. The farmers saved their crop, but the land and their neighbors paid a cost. That’s a <strong>tradeoff</strong>.</p>
+      <p>Every choice has two sides. Sort each fact below: is it something people gain, or something given up?</p>
+
+      <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TAB 3: SELF-CHECK ═══ -->
+<div class="tab-panel" id="tab-quiz">
+  <div class="quiz-card scroll-reveal">
+    <div style="display:flex;align-items:center;gap:12px;padding:16px 22px;background:linear-gradient(135deg,#FFF6E5,#FFEEC8);border-bottom:2px solid #F0DCC4;">
+      <div style="font-size:28px;">🧠</div>
+      <div><div style="font-size:11px;color:#9A6E10;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;">Quick Self-Check</div><div style="font-size:22px;color:#0E1C42;font-weight:900;">Not graded — just for you!</div></div>
+    </div>
+    <div style="padding:20px 22px;">
+      <div class="quiz-q" data-answer="B">
+        <div class="quiz-q-num">Q1</div>
+        <p class="quiz-q-text">Heavy rain makes a river flood. What is the heavy rain?</p>
+        <div class="quiz-opt" data-val="A" onclick="checkQuiz(this)"><span class="quiz-letter">A</span><span class="quiz-text">The effect</span></div>
+        <div class="quiz-opt" data-val="B" onclick="checkQuiz(this)"><span class="quiz-letter">B</span><span class="quiz-text">The cause</span></div>
+        <div class="quiz-opt" data-val="C" onclick="checkQuiz(this)"><span class="quiz-letter">C</span><span class="quiz-text">A constraint</span></div>
+        <div class="quiz-feedback fb-correct">🌧️ Right! The rain makes the flood happen, so it is the cause. The flood is the effect.</div>
+        <div class="quiz-feedback fb-wrong">A cause makes something happen. Did the rain make the flood happen, or did the flood make the rain?</div>
+      </div>
+      <div class="quiz-q" data-answer="B">
+        <div class="quiz-q-num">Q2</div>
+        <p class="quiz-q-text">How do most Florida sinkholes form?</p>
+        <div class="quiz-opt" data-val="A" onclick="checkQuiz(this)"><span class="quiz-letter">A</span><span class="quiz-text">Earthquakes crack the ground open.</span></div>
+        <div class="quiz-opt" data-val="B" onclick="checkQuiz(this)"><span class="quiz-letter">B</span><span class="quiz-text">Water slowly dissolves limestone and leaves a hollow. Then the ground above falls in.</span></div>
+        <div class="quiz-opt" data-val="C" onclick="checkQuiz(this)"><span class="quiz-letter">C</span><span class="quiz-text">Hurricane winds blow the sand away.</span></div>
+        <div class="quiz-feedback fb-correct">🕳️ Right! The hollow forms slowly, over years. The ground on top falls in later.</div>
+        <div class="quiz-feedback fb-wrong">Think about the rock under Florida and what water does to it over many years.</div>
+      </div>
+      <div class="quiz-q" data-answer="A">
+        <div class="quiz-q-num">Q3</div>
+        <p class="quiz-q-text">A town builds a sea wall. It keeps waves away from homes, but the beach in front washes away and sea turtles lose their nesting spot. This is…</p>
+        <div class="quiz-opt" data-val="A" onclick="checkQuiz(this)"><span class="quiz-letter">A</span><span class="quiz-text">a tradeoff</span></div>
+        <div class="quiz-opt" data-val="B" onclick="checkQuiz(this)"><span class="quiz-letter">B</span><span class="quiz-text">a criterion</span></div>
+        <div class="quiz-opt" data-val="C" onclick="checkQuiz(this)"><span class="quiz-letter">C</span><span class="quiz-text">a natural event</span></div>
+        <div class="quiz-feedback fb-correct">⚖️ Right! The town gains safer homes and gives up its beach. That’s a tradeoff.</div>
+        <div class="quiz-feedback fb-wrong">The town gained something and gave something up. What do we call that?</div>
+      </div>
+
+      <div id="quizScore" class="quiz-score">
+        <div class="quiz-score-num"><span id="quizScoreNum">0</span>/3</div>
+        <div id="quizScoreMsg" class="quiz-score-msg"></div>
+        <div id="quizVideoCorrect" class="video-feedback" style="margin-top:18px;"></div>
+        <div id="quizVideoReview" class="video-feedback" style="margin-top:18px;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button></div>
+</div>
+
+<!-- ═══ TAB 4: ASSIGNMENT ═══ -->
+<div class="tab-panel" id="tab-assignment">
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#34B76F;">4</div>
+      <div style="flex:1;"><div class="act-title">✍️ Assignment: Crack the Case</div><div class="act-subtitle">Show what you remember from Unit 4</div></div>
+      <div class="act-time" style="background:#34B76F;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🌿 Part B &mdash; Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use words from the Word Wall.</p>
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">1</span>
+        <span class="pq-text">Pick ONE effect a hurricane has on the land. Explain how that change also affects living things OR people.</span>
+      </div>
+      <textarea class="response-textarea" id="ans-1" data-label="Part B · Question 1" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#D4772C;">2</span>
+        <span class="pq-text">Explain how a sinkhole forms in Florida. Use the words limestone and groundwater.</span>
+      </div>
+      <textarea class="response-textarea" id="ans-2" data-label="Part B · Question 2" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+
+
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🧭 Part C &mdash; Tradeoff Check</p>
+      <p style="font-size:15px;color:#5A4D3E;margin-bottom:14px;">Pick one choice from today: spraying water to save strawberries, building a sea wall, or mining limestone for roads. Fill in the four boxes.</p>
+
+      <div style="background:#FAF7F3;border:2px solid #8B6FC0;border-radius:16px;padding:22px 24px;margin-bottom:20px;">
+        <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ Use Your Evidence</div>
+        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A neighbor says, <em>“The hurricane made the hole on Main Street. Nothing else had anything to do with it.”</em></p>
+        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Do you agree or disagree? Use <strong>two pieces of evidence</strong> from today.</p>
+        <textarea class="response-textarea ta-lg" id="cer-4" data-label="Use Your Evidence (CER)" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+      </div>
+
+  <!-- OAO-GATHERED-CARD v1 -->
+  <div class="gathered-card">
+    <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">UNIT 4 REVIEW · DAY 1</div><div class="gathered-header-title">Gathered Answers</div></div></div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All your answers in one place. Copy them or download them to turn in on Canvas.</div>
+      <div class="gathered-name-row"><span class="gathered-name-label">Your name:</span><input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" /></div>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions"><button class="gathered-btn" onclick="copyGathered()">📋 Copy to Clipboard</button><button class="gathered-btn gathered-btn-download" onclick="downloadGathered()">⬇ Download as Text</button></div>
+      <div class="gathered-copied" id="copiedMsg">Copied! Paste into your Canvas text box to turn in.</div>
+    </div>
+  </div>
+
+      <div style="background:#fff;border:2px solid #8B6FC0;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border-bottom:2px solid #D8D0E8;">
+          <div style="width:42px;height:42px;border-radius:50%;background:#8B6FC0;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">☀️</div>
+          <div><div style="font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;">Submission Checklist</div><div style="font-size:20px;color:#0E1C42;font-weight:800;line-height:1.2;">What to Turn In</div></div>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="font-size:16px;color:#5A4D3E;line-height:1.65;margin-bottom:14px;">Check each box when that part is done.</p>
+          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Crack the case:</strong> I picked the answer that fits all four clues.</span></div><div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 1 and 2 answered in complete sentences.</span></div><div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> All four Tradeoff Check boxes filled in.</span></div><div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;"><span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span><span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Use Your Evidence:</strong> my claim, two pieces of evidence, and my reasoning.</span></div>
+          <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
+            <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Turn It In</div>
+            <div style="font-size:15px;color:#2B1D12;line-height:1.7;">Your answers save as you type. Copy your Gathered Answers and paste them into the Canvas assignment, or download them and upload the file.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card theme-earth scroll-reveal">
+    <div class="card-head"><div class="card-head-icon">🔄</div><div><div class="card-head-label">Circle Back</div><div class="card-head-title">Back to the Big Question</div></div></div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;"><span class="sq-icon">🤔</span><div><div class="label">Now You Know!</div><div class="question">"How do natural events change Florida, and how do we choose the best way to protect it?"</div></div></div>
+      <div class="callout callout-tip"><span class="callout-icon">⭐</span><p>You traced a storm’s effects, found the real cause of a sinkhole, and weighed tradeoffs. Tomorrow you’ll be the engineer: you’ll test three ways to protect a town’s shoreline.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 3 &middot; Student Lesson Page</div>
+  <div class="footer-line2">Unit 4 Review · Day 1 · The Hole on Main Street</div>
+  <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><span style="font-size:20px;">🪨</span> Back to Top</button>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+// ── Tab System ──
+var TAB_ORDER = ['vocab','lesson','quiz','assignment'];
+var tabsVisited = new Set(['vocab']);
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + tabId);
+  var btn = document.querySelector('[data-tab="' + tabId + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn) { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabsVisited.add(tabId);
+  var pct = Math.round((tabsVisited.size / TAB_ORDER.length) * 100);
+  var fill = document.getElementById('progressFill');
+  var pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c) {
+    if (tabId === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Checklist ──
+document.querySelectorAll('.checklist-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    var icon = this.querySelector('.check-icon');
+    if (this.classList.contains('checked')) { icon.textContent = '🚀'; }
+    else { icon.textContent = '☐'; }
+  });
+});
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel = document.getElementById('diagramPanel');
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h) { h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen = optEl.getAttribute('data-val');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o) {
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    scoreNum.textContent = quizCorrect;
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview = document.getElementById('quizVideoReview');
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '🚀 Perfect! You\'re ready for the mission!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌟 Great job! Almost cleared for launch!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('show', window.pageYOffset > 400);
+  });
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#8B6FC0','#55C8E8','#FFD700','#E8636B','#34B76F','#F5A623','#D4772C','#fff'];
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x, y, count) {
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i) {
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function() {
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Hook confetti to quiz ──
+(function() {
+  var scoreEl = document.getElementById('quizScore');
+  if(!scoreEl) return;
+  new MutationObserver(function(muts) {
+    muts.forEach(function(m) {
+      if(m.target.classList.contains('show') && m.target.id==='quizScore') {
+        if(parseInt(document.getElementById('quizScoreNum').textContent)===3)
+          setTimeout(window.launchConfetti,300);
+      }
+    });
+  }).observe(scoreEl,{attributes:true,attributeFilter:['class']});
+})();
+
+// ── Hook confetti to checklist ──
+(function() {
+  var items = document.querySelectorAll('.checklist-item');
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      setTimeout(function() {
+        if(Array.from(items).every(function(it){ return it.classList.contains('checked'); }))
+          setTimeout(window.launchConfetti, 200);
+      }, 50);
+    });
+  });
+})();
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+document.getElementById('progressFill').style.width = '25%';
+document.getElementById('progressPct').textContent = '25%';
+
+// ── Intro card click-to-toggle ──
+document.querySelectorAll('.intro-2col .card').forEach(function(card) {
+  card.querySelector('.card-head').addEventListener('click', function() {
+    card.classList.toggle('collapsed');
+  });
+});
+
+function refreshGathered() {
+  var out = document.getElementById('gatheredOutput'); if (!out) return;
+  var lines = [];
+  var nameEl = document.getElementById('student-name'); var name = nameEl ? nameEl.value.trim() : '';
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('  OPTIMA ACADEMY ONLINE — 4TH GRADE SCIENCE');
+  lines.push('  Unit 4 Review · Day 1 · The Hole on Main Street');
+  lines.push('  Student: ' + (name || '(add your name above)'));
+  lines.push('═══════════════════════════════════════════════');
+  lines.push('');
+  var textareas = document.querySelectorAll('.response-textarea[data-label]');
+  textareas.forEach(function(ta) {
+    lines.push('--- ' + ta.getAttribute('data-label').toUpperCase() + ' ---');
+    lines.push(ta.value.trim() || '(not yet answered)');
+    lines.push('');
+  });
+  out.value = lines.join('\n');
+}
+function copyGathered() {
+  refreshGathered();
+  var out = document.getElementById('gatheredOutput'); out.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  var msg = document.getElementById('copiedMsg');
+  if (msg) { msg.classList.add('show'); setTimeout(function(){ msg.classList.remove('show'); }, 2400); }
+}
+function downloadGathered() {
+  refreshGathered();
+  var text = document.getElementById('gatheredOutput').value;
+  var blob = new Blob([text], {type: 'text/plain'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'review-unit-4-day-1.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+document.addEventListener('input', function(e) {
+  if (e.target.classList.contains('response-textarea') || e.target.id === 'student-name') {
+    var panel = document.getElementById('tab-assignment');
+    if (panel && panel.classList.contains('active')) refreshGathered();
+  }
+});
+(function(){
+  var origSwitch = window.switchTab;
+  if (origSwitch) {
+    window.switchTab = function(id) { origSwitch(id); if (id === 'assignment') setTimeout(refreshGathered, 50); };
+  }
+})();
+
+/* ───── AUTO-SAVE (persistence patch) ───── */
+var _lessonKey = ('r4-1-' + (document.title || 'science-lesson')).replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
+
+(function(){
+  document.querySelectorAll('textarea.response-textarea').forEach(function(t){
+    if(!t.id) return;
+    /* Restore saved value */
+    try{
+      var v = localStorage.getItem(_lessonKey+'-'+t.id);
+      if(v){ t.value = v; }
+    }catch(e){}
+    /* Save on every keystroke */
+    t.addEventListener('input', function(){
+      try{ localStorage.setItem(_lessonKey+'-'+this.id, this.value); }catch(e){}
+    });
+  });
+})();
+
+/* Warn before leaving if student has typed anything */
+window.addEventListener('beforeunload', function(e){
+  var hasWork = false;
+  document.querySelectorAll('textarea.response-textarea').forEach(function(t){
+    if(t.value && t.value.trim().length > 0){ hasWork = true; }
+  });
+  if(hasWork){
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+
+</script>
+<!-- Video Manifest Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll('.video-placeholder-wrap').forEach(function(wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var temp = document.createElement('div');
+        temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe');
+        if (!iframe) return;
+        iframe.removeAttribute('width');
+        iframe.removeAttribute('height');
+        iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
+        wrap.innerHTML = '';
+        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.appendChild(iframe);
+      });
+    })
+    .catch(function(err) { console.warn('Video manifest load failed:', err); });
+});
+</script>
+
+<!-- OAO-GATHERED-FIX v1 — clipboard + storage resilience (cross-origin iframe safe) -->
+<script>
+(function(){
+  /* ── 1. Storage probe ─────────────────────────────────────────── */
+  var _store = null, _durable = false;
+  try { var _t = '__oao_probe_' + Math.random();
+        localStorage.setItem(_t, '1'); localStorage.removeItem(_t);
+        _store = localStorage; _durable = true;
+  } catch(e) {
+    try { var _t2 = '__oao_probe_' + Math.random();
+          sessionStorage.setItem(_t2, '1'); sessionStorage.removeItem(_t2);
+          _store = sessionStorage;
+    } catch(e2) {
+      _store = { _m:{}, getItem:function(k){return this._m[k]||null;},
+                 setItem:function(k,v){this._m[k]=v;},
+                 removeItem:function(k){delete this._m[k];} };
+    }
+  }
+
+  /* ── 2. Lesson key (match existing convention) ────────────────── */
+  var _lessonKey = (typeof window._lessonKey !== 'undefined') ? window._lessonKey
+                 : document.title.replace(/[^a-zA-Z0-9]/g,'').substring(0,40);
+
+  /* ── 3. Save + restore for textareas / .cell-input ────────────── */
+  function saveField(el){
+    if(!el||!el.id) return;
+    try{ _store.setItem(_lessonKey+'-'+el.id, el.value); }catch(e){}
+  }
+  function restoreField(el){
+    if(!el||!el.id) return;
+    try{
+      var v = _store.getItem(_lessonKey+'-'+el.id);
+      if(v && !el.value){ el.value = v; }
+    }catch(e){}
+  }
+
+  var fields = document.querySelectorAll('textarea, .cell-input, input[type="text"]');
+  fields.forEach(function(el){
+    restoreField(el);
+    el.addEventListener('input', function(){ saveField(this); });
+  });
+
+  /* Student-name field */
+  var nameEl = document.getElementById('student-name');
+  if(nameEl){
+    restoreField(nameEl);
+    nameEl.addEventListener('input', function(){ saveField(this); });
+  }
+
+  /* Periodic sweep every 5 s */
+  setInterval(function(){
+    document.querySelectorAll('textarea, .cell-input, input[type="text"]').forEach(saveField);
+  }, 5000);
+
+  /* ── 4. Detect gathered-output element ────────────────────────── */
+  var _gEl = document.getElementById('gatheredOutput')
+          || document.getElementById('gathered-output')
+          || document.getElementById('gatherBox')
+          || document.getElementById('answersDisplay');
+
+  /* ── 5. Robust copy ───────────────────────────────────────────── */
+  function _getGatheredText(){
+    if(!_gEl) return '';
+    return _gEl.value !== undefined ? _gEl.value : _gEl.textContent;
+  }
+
+  function _robustCopy(){
+    var txt = _getGatheredText();
+    if(!txt || !txt.trim()){
+      alert('Gather your answers first before copying.');
+      return;
+    }
+
+    /* Strategy A: execCommand (works in cross-origin iframes) */
+    if(_gEl && _gEl.select){
+      try{
+        _gEl.select();
+        if(document.execCommand('copy')){
+          _showCopyOK(); return;
+        }
+      }catch(e){}
+    } else {
+      /* For non-textarea elements, use a temp textarea */
+      try{
+        var ta = document.createElement('textarea');
+        ta.value = txt; ta.style.cssText='position:fixed;left:-9999px;';
+        document.body.appendChild(ta); ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if(ok){ _showCopyOK(); return; }
+      }catch(e){}
+    }
+
+    /* Strategy B: Clipboard API (may work if permissions granted) */
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){
+        _showCopyOK();
+      }).catch(function(){
+        _showManualCopy();
+      });
+      return;
+    }
+
+    /* Strategy C: Tell the student to copy manually */
+    _showManualCopy();
+  }
+
+  function _showCopyOK(){
+    /* Try all known success indicators */
+    var m = document.getElementById('copiedMsg')
+         || document.getElementById('copied-msg')
+         || document.getElementById('copyToast')
+         || document.getElementById('gatheredCopied');
+    if(m){
+      if(m.classList) m.classList.add('show');
+      m.style.display = 'block';
+      setTimeout(function(){
+        if(m.classList) m.classList.remove('show');
+        m.style.display = '';
+      }, 2500);
+    } else {
+      /* No existing indicator — make a temp one */
+      var d = document.createElement('div');
+      d.textContent = '✓ Copied! Paste into Canvas now.';
+      d.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);'
+        + 'background:#27ae60;color:#fff;padding:12px 24px;border-radius:8px;'
+        + 'font:bold 15px/1.4 sans-serif;z-index:99999;box-shadow:0 4px 16px rgba(0,0,0,.25);';
+      document.body.appendChild(d);
+      setTimeout(function(){ document.body.removeChild(d); }, 3000);
+    }
+  }
+
+  function _showManualCopy(){
+    /* Select the text so Ctrl+C works */
+    if(_gEl && _gEl.select) _gEl.select();
+    var d = document.createElement('div');
+    d.innerHTML = '<strong style="color:#c0392b;">✗ Auto-copy didn’t work.</strong><br>'
+      + 'Click in the answers box, press <kbd>Ctrl+A</kbd> then <kbd>Ctrl+C</kbd> '
+      + '(or <kbd>⌘+A</kbd> then <kbd>⌘+C</kbd> on Mac).';
+    d.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);'
+      + 'background:#ffeaa7;color:#2d3436;padding:14px 24px;border-radius:8px;'
+      + 'font:14px/1.5 sans-serif;z-index:99999;box-shadow:0 4px 16px rgba(0,0,0,.25);'
+      + 'max-width:420px;text-align:center;';
+    document.body.appendChild(d);
+    setTimeout(function(){ document.body.removeChild(d); }, 8000);
+  }
+
+  /* Override all known copy function names */
+  if(typeof window.copyGathered !== 'undefined' || _gEl){
+    window.copyGathered = _robustCopy;
+  }
+  if(typeof window.copyAnswers !== 'undefined'){
+    window.copyAnswers = _robustCopy;
+  }
+  /* Wire up any copy button that calls these */
+  document.querySelectorAll('[onclick*="copyGathered"],[onclick*="copyAnswers"]').forEach(function(btn){
+    btn.setAttribute('onclick','');
+    btn.addEventListener('click', _robustCopy);
+  });
+
+  /* ── 6. Refresh gathered on load + on typing ──────────────────── */
+  function _triggerGather(){
+    if(typeof window.gatherAnswers === 'function') try{ window.gatherAnswers(); }catch(e){}
+    if(typeof window.refreshGathered === 'function') try{ window.refreshGathered(); }catch(e){}
+  }
+  _triggerGather();
+  document.addEventListener('input', function(e){
+    if(e.target.matches('textarea, .cell-input, input[type="text"], select')){
+      setTimeout(_triggerGather, 50);
+    }
+  });
+
+  /* ── 7. Warning banner when storage isn't durable ─────────────── */
+  if(!_durable && _gEl){
+    var warn = document.createElement('div');
+    warn.innerHTML = '⚠️ <strong>Your answers may not save</strong> between visits. '
+      + 'Copy or download your answers before leaving this page.';
+    warn.style.cssText = 'background:#fff3cd;color:#856404;border:1px solid #ffc107;'
+      + 'border-radius:8px;padding:10px 16px;margin:10px 0;font:14px/1.5 sans-serif;text-align:center;';
+    if(_gEl.parentNode) _gEl.parentNode.insertBefore(warn, _gEl);
+  }
+})();
+</script>
+
+<script src="assets/sparkle/fs-sparkle.js?v=2103b447"></script>
+</body>
+</html>

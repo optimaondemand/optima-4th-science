@@ -1,0 +1,146 @@
+{
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the hole on Main Street",
+   "length": "50–60 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "r41hole",
+     "label": "🕳️ The hole"
+    },
+    {
+     "kind": "photo",
+     "pic": "r41rock",
+     "label": "🪨 The rock sample"
+    },
+    {
+     "label": "🗂 The case question",
+     "tag": "CASE FILE U4",
+     "title": "The Hole on Main Street",
+     "col": "#9A5B2E",
+     "body": "What really made the hole on Main Street?"
+    }
+   ],
+   "script": "Welcome back, scientists! Today we’re reviewing all of Unit 4, and June has a case for us.\n\n[ON SCREEN: The hole]\nAfter a hurricane, this hole opened on Main Street. Everybody says the storm did it.\n\n[ON SCREEN: The rock sample]\nBut June pulled up this rock from under the street. Look at all those holes! Hmm. I wonder if the storm really did it alone.\n\n[ON SCREEN: The case question]\nThat’s our case. Find four clues today. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · Word Rescue",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🧩 Word Rescue",
+     "tag": "WARM-UP",
+     "title": "8 Unit 4 words",
+     "col": "#1F6F78",
+     "body": "Read the meaning first. Then drag the word onto it, or tap the word, then tap the meaning."
+    }
+   ],
+   "script": "Quick warm-up! June’s word cards blew all over her office.\n\n[ON SCREEN: Word Rescue]\nHere’s my tip: read the meaning first, then hunt for the word. If one bounces back, read the hint. It tells you where to look. Every one of these words is on the Unit 4 test, so this is great practice. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "part1": {
+   "label": "Part 1 · three layers",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🏝️ Three layers",
+     "tag": "PART 1",
+     "title": "Three layers",
+     "col": "#D4772C",
+     "body": "Every hazard changes the land, the living things, and the people."
+    }
+   ],
+   "script": "Remember our three layers from lesson 17.01?\n\n[ON SCREEN: Three layers]\nWhen a hurricane hits, scientists ask three questions. What happened to the land? To the living things? To the people? (Point to each one.) One effect usually leads to the next. Sort the hurricane cards, then the wildfire cards. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "part2": {
+   "label": "Part 2 · the Winter Park sinkhole",
+   "length": "45–60 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "r41wp",
+     "label": "🕳️ Winter Park, 1981"
+    },
+    {
+     "label": "🪨 How a sinkhole forms",
+     "tag": "PART 2",
+     "title": "Slowly, then all at once",
+     "col": "#9A5B2E",
+     "body": "1. Water dissolves limestone. 2. A hollow grows for years. 3. The sand and clay on top fall in."
+    }
+   ],
+   "script": "Okay, this one is amazing.\n\n[ON SCREEN: Winter Park, 1981]\nThis sinkhole opened in Winter Park, Florida. It swallowed a house and several cars! And it was a dry evening. No storm.\n\n[ON SCREEN: How a sinkhole forms]\nWater slowly dissolves the limestone under Florida. A hollow grows for years. Then one day, the ground on top falls in. Tap every number on the photo. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "part3": {
+   "label": "Part 3 · gain or give up?",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "⚖️ Tradeoff",
+     "tag": "PART 3",
+     "title": "Gain or give up?",
+     "col": "#B5543A",
+     "body": "Every choice has two sides: what we gain and what we give up."
+    }
+   ],
+   "script": "Let’s talk tradeoffs. (Hold up two hands like a scale.)\n\n[ON SCREEN: Tradeoff]\nWhen we make a choice, we gain something on this side, and we give something up on this side. The strawberry farmers saved their berries. But look what they gave up. Sort all eight cards. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🗂 Crack the case",
+     "tag": "ASSIGNMENT",
+     "title": "Four clues, one answer",
+     "col": "#34B76F",
+     "body": "Pick the answer that fits all four clues. Then Part B, Part C, and your CER."
+    }
+   ],
+   "script": "You made it to the assignment!\n\n[ON SCREEN: Crack the case]\nFirst, use your four clues to crack the case. Pick the answer that fits every clue, not just one. Then answer two questions, do your tradeoff check, and write your CER. Copy your gathered answers into Canvas when you’re done. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "✏️ CER",
+     "tag": "CER",
+     "title": "Was it only the storm?",
+     "col": "#8B6FC0",
+     "body": "Claim: what you think. Evidence: two facts. Reasoning: how they prove it."
+    }
+   ],
+   "script": "June’s neighbor thinks the hurricane made the hole, all by itself.\n\n[ON SCREEN: CER]\nDo you agree? Your claim is your answer. Then pick two facts from today, like the Winter Park photo or the Dover farms. Your reasoning explains how those facts prove you’re right. The real Unit 4 test has a CER too, so this is perfect practice. Press Listen on June’s walkie-talkie, right below me."
+  }
+ },
+ "pics": {
+  "r41hole": {
+   "src": "images/r4-1-case-hole.jpg",
+   "cap": "Tag 1 · the hole (USGS, public domain)"
+  },
+  "r41rock": {
+   "src": "images/r4-1-case-rock.jpg",
+   "cap": "Tag 4 · limestone (Charlie A. Smith, CC BY-SA 3.0)"
+  },
+  "r41wp": {
+   "src": "images/r4-1-winterpark.jpg",
+   "cap": "Winter Park sinkhole, 1981 (USGS, public domain)"
+  }
+ },
+ "other": [
+  "vocab",
+  "lesson",
+  "quiz",
+  "partb",
+  "partc",
+  "closing"
+ ]
+}

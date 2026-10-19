@@ -1,0 +1,177 @@
+{
+ "lesson": "17.R2",
+ "page": "review-unit-4-day-2.html",
+ "title": "Unit 4 Review · Day 2 Lab",
+ "prefix": "g4sci-r4-2",
+ "manifestKey": "r4-2",
+ "guide": "june",
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the flood on Bay Street",
+   "length": "50–60 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "r42storm",
+     "label": "🌊 Storm surge"
+    },
+    {
+     "label": "🗂 Three plans",
+     "tag": "CASE FILE U4 · PART 2",
+     "title": "The Flood on Bay Street",
+     "col": "#1F6F78",
+     "body": "Sea wall $4 million · Living shoreline $1 million · Sand dune $0.5 million. Budget: $2 million."
+    }
+   ],
+   "script": "Welcome to lab day, engineers!\n\n[ON SCREEN: Storm surge]\nRemember storm surge? The hurricane’s wind pushes ocean water onto land. That’s what flooded Bay Street.\n\n[ON SCREEN: Three plans]\nThe town has three plans and only two million dollars. Hmm. Which one would you pick? Today we’ll test them, just like real engineers. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · goal or limit?",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "✅ Goal or limit",
+     "tag": "WARM-UP",
+     "title": "Criteria and constraints",
+     "col": "#1F6F78",
+     "body": "Goal (criteria) = what the plan should DO. Limit (constraint) = what it must stay inside."
+    }
+   ],
+   "script": "Before engineers build anything, they write down two lists.\n\n[ON SCREEN: Goal or limit]\nGoals, also called criteria, are what the plan should do. Limits, also called constraints, are what the plan has to stay inside, like money or time. (Hold your hands up like a box.) Sort the town’s wish list. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "part1": {
+   "label": "Part 1 · the test tank",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "r42mang",
+     "label": "🦪 Living shoreline"
+    },
+    {
+     "label": "🧪 Test tank",
+     "tag": "PART 1",
+     "title": "A model of Bay Street",
+     "col": "#D4772C",
+     "body": "Pick a plan · pick a storm · run it · read the water at the homes."
+    }
+   ],
+   "script": "Time to test!\n\n[ON SCREEN: Test tank]\nOur test tank is a model, a small version of Bay Street. Pick a plan, pick a storm, and run it.\n\n[ON SCREEN: Living shoreline]\nThis is a living shoreline. Mangrove roots and oyster reefs take energy out of the waves. Test all three plans in the big storm and look at your table. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "part2": {
+   "label": "Part 2 · score the plans",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "📋 Scorecard",
+     "tag": "PART 2",
+     "title": "Same rows for every plan",
+     "col": "#D4772C",
+     "body": "Tap ✓ or ✗ for each plan on each row. Watch the limit row!"
+    }
+   ],
+   "script": "Now we make it fair.\n\n[ON SCREEN: Scorecard]\nWe score both plans on the same rows, using your test results. Here’s a secret engineers know: a limit is a must. If a plan breaks a limit, it can’t win, even with lots of check marks. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "part3": {
+   "label": "Part 3 · make it better",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "r42dune",
+     "label": "🏖️ Sand dune"
+    },
+    {
+     "label": "🔁 Revise",
+     "tag": "PART 3",
+     "title": "Test, fix, test again",
+     "col": "#B5543A",
+     "body": "Find the weak spot. Pick a fix. Re-run the big storm."
+    }
+   ],
+   "script": "The winner still has a weak spot.\n\n[ON SCREEN: Revise]\nEngineers revise. They fix the weak spot and test again. Try a fix and re-run the big storm. If it breaks the budget, try another one.\n\n[ON SCREEN: Sand dune]\nHmm, I wonder if two kinds of protection together could work. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🗂 Crack the case",
+     "tag": "ASSIGNMENT",
+     "title": "Your recommendation",
+     "col": "#34B76F",
+     "body": "Pick the plan that fits all four clues. Then Part B, your engineering brief, and your CER."
+    }
+   ],
+   "script": "You’re ready to make your recommendation!\n\n[ON SCREEN: Crack the case]\nUse all four clues to pick the plan Bay Street should build. Then answer two questions and write the town an engineering brief. That’s a short report that helps people decide. Copy your gathered answers into Canvas when you finish. Press Listen on June’s walkie-talkie, right below me."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "✏️ CER",
+     "tag": "CER",
+     "title": "What makes a good solution?",
+     "col": "#8B6FC0",
+     "body": "Claim: what you think. Evidence: two facts from your tests. Reasoning: how they prove it."
+    }
+   ],
+   "script": "Last one, and it’s a big one.\n\n[ON SCREEN: CER]\nWhat makes a good engineering solution? Your claim answers the question. Your evidence comes from your tests, like the sea wall’s price or the dune fix. Your reasoning ties them together. The Unit 4 test asks this exact kind of question, so this is perfect practice. Press Listen on June’s walkie-talkie, right below me."
+  }
+ },
+ "pics": {
+  "r42storm": {
+   "src": "images/r4-1-case-storm.jpg",
+   "cap": "Storm surge, Tampa, 2023 (Andrew Heneen, CC BY 4.0)"
+  },
+  "r42mang": {
+   "src": "images/r4-2-mangroves.jpg",
+   "cap": "Mangrove shoreline, Biscayne National Park (NPS, public domain)"
+  },
+  "r42dune": {
+   "src": "images/r4-2-dune.jpg",
+   "cap": "Sea oats on a Florida dune (Georgialh, CC BY-SA 4.0)"
+  }
+ },
+ "other": [
+  {
+   "id": "vocab",
+   "label": "Word Wall",
+   "length": "30–45 s"
+  },
+  {
+   "id": "lesson",
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  {
+   "id": "quiz",
+   "label": "Self-Check",
+   "length": "15–20 s"
+  },
+  {
+   "id": "partb",
+   "label": "Part B",
+   "length": "30 s"
+  },
+  {
+   "id": "partc",
+   "label": "Part C · engineering brief",
+   "length": "30 s"
+  },
+  {
+   "id": "closing",
+   "label": "Case closed",
+   "length": "20–30 s"
+  }
+ ],
+ "redo": []
+}
