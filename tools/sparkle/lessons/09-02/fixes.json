@@ -1,0 +1,249 @@
+[
+ {
+  "kind": "fix",
+  "why": "repair: the stray </div> after the intro-video slot",
+  "old": "(?<=</div>\\n</div>\\n)\\s*</div>(?=\\s*<div class=\"activity-card act-warmup)",
+  "new": "\n",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook or colored pencils needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>\\s*<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover from 9.01",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "the food web picture has arrows that point the wrong way (and shows a frog the text never draws in); removed. The hawk photo and the missing-link test show the web instead",
+  "old": "\\s*<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">🕸️ Florida Wetland Food Web</div>.*?<div class=\"lesson-figure-caption\">.*?</div>\\s*</div>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Part C was copy-pasted from 9.01 (one producer, two consumers, no missing link); now matches the checklist: three consumers, remove one, predict",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson\\. It can be from a Florida beach, a backyard, a pond, or a pine forest\\. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>\\.</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick a Florida food chain with one producer and <strong>three consumers</strong>. It can be from a beach, a backyard, a pond, or a pine forest. Then remove one link and predict what happens to the living thing it ate and the living thing that ate it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Part C checklist matches the new Part C (typed on the page; the sketch is a bonus)",
+  "old": "A food chain with at least three consumers, plus a second sketch showing what changes when one is removed.",
+  "new": "A Florida food chain with three consumers, one link removed, and what happens to the others."
+ },
+ {
+  "kind": "fix",
+  "why": "next-lesson teaser: 9.03 is a review day and 10.01 is about a fallen oak, not the gopher tortoise",
+  "old": "(?<=back up your prediction with evidence)\\. Next lesson, we'll zoom out to entire ecosystems and the role of the gopher tortoise as a Florida keystone species\\.</p>",
+  "new": ". Coming up: a giant oak falls in a storm, and the whole forest around it changes.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed from the closing line",
+  "old": " disappears — and back up your prediction with evidence",
+  "new": " disappears, and back up your prediction with evidence"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to use evidence to predict what happens when a producer or a consumer is missing from a Florida food chain.",
+  "new": "Keep this question in mind as you work. By the end, you’ll be able to use evidence to predict what happens when a producer or a consumer goes missing from a Florida food chain."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "You’ll use these six words all lesson. <strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up is now the More or fewer? game (no drawing in a notebook)",
+  "old": "<p>In your science notebook, draw three living things in a row.*?</p>\\s*<p>Now imagine the middle one suddenly disappears\\..*?</p>",
+  "new": "<p>Picture a food chain, like <em>grass → rabbit → fox</em>. Now one link suddenly disappears. Will the others have more, or fewer? Make some predictions before we test them in a real Florida marsh.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "clearer subtitle",
+  "old": "Make a prediction before we test it",
+  "new": "More or fewer? Predict first"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "removing one link doesn't always wipe out an ecosystem — animals can sometimes switch",
+  "new": "removing one link doesn't always wipe out an ecosystem (a place where living things and their surroundings work together). Animals can sometimes switch"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; shorter",
+  "old": "Without predators, the prey usually grows quickly <em>at first</em> — then runs out of food and crashes. The system corrects itself, but not gently.",
+  "new": "Without predators, the prey usually grows quickly <em>at first</em>. Then it runs out of food and crashes."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed from the quote (same meaning)",
+  "old": "Who do you think is hit first — the sawgrass, the frogs, or the hawks?",
+  "new": "Who do you think is hit first: the sawgrass, the frogs, or the hawks?"
+ },
+ {
+  "kind": "plain",
+  "why": "“dependencies” is a hard word",
+  "old": "It's a chain of <strong>dependencies</strong>.",
+  "new": "It's a chain of living things that <strong>depend</strong> on each other."
+ },
+ {
+  "kind": "plain",
+  "why": "“misconception” is a hard word",
+  "old": "<strong>Common misconception:</strong> Some people think",
+  "new": "<strong>A common mix-up:</strong> Some people think"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>\\s*<p[^>]*>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: one thinking stop per tab (Stop & Think in Part 1 stays)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the tap diagram becomes the Part 3 missing-link test",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">What If a Link is Missing?</h3>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · What If a Link Is Missing?</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the Yellowstone fact, the python callout and Go Deeper; Part 4 tests the volunteer’s note; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Test the Volunteer’s Note</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">The volunteer made three predictions about the marsh with no frogs. A prediction is <strong>supported</strong> when the evidence agrees with it. Use what you saw in the hawk photo and the missing-link test to stamp each one.</p>\n      <div class=\"diagram-wrap\" id=\"fs-vd-anchor\"></div>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (testing the volunteer’s note is Lesson Part 4)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; the diagram it asked about is gone)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 is now number 5",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 is now number 6",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Reflect (it asked about 9.01’s hawk energy question)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about what happens when a predator disappears, and supported it with two pieces of evidence.",
+  "new": "<strong>CER:</strong> My claim, two pieces of evidence, and my reasoning."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (drops the photo and video options)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed from the quote (same meaning)",
+  "old": "the prey will just keep growing forever and the ecosystem will be fine.",
+  "new": "the prey will just keep growing forever, and the ecosystem will be fine."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with at least <strong>two pieces of evidence</strong> from today’s lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your written answers in one place, so you can copy or download them to turn in on Canvas."
+ }
+]

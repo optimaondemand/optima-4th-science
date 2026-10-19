@@ -1,0 +1,99 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The same sawgrass marsh at night under a full moon. The hawk sleeps on its dead branch, the frog’s lily pad floats empty, and three grasshoppers cling to the sawgrass.">
+  <defs>
+    <linearGradient id="nnSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E1C42"/><stop offset=".6" stop-color="#25386A"/><stop offset="1" stop-color="#3E4F7A"/>
+    </linearGradient>
+    <linearGradient id="nnWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2F4A66"/><stop offset="1" stop-color="#1B2E46"/>
+    </linearGradient>
+    <radialGradient id="nnMoon"><stop offset="0" stop-color="#FFFBE6"/><stop offset=".3" stop-color="#F3EBC6" stop-opacity=".6"/><stop offset="1" stop-color="#F3EBC6" stop-opacity="0"/></radialGradient>
+    <style>
+      .nn-star { animation: nnTw 4s ease-in-out infinite; }
+      .nn-z { animation: nnZ 4.5s ease-in-out infinite; opacity: 0; }
+      .nn-rip { animation: nnRip 5s ease-out infinite; opacity: 0; transform-box: fill-box; transform-origin: center; }
+      @keyframes nnTw { 0%, 100% { opacity: .9; } 50% { opacity: .25; } }
+      @keyframes nnZ { 0% { opacity: 0; transform: translate(0, 0); } 20%, 60% { opacity: .85; } 100% { opacity: 0; transform: translate(10px, -16px); } }
+      @keyframes nnRip { 0% { opacity: .6; transform: scale(.6); } 100% { opacity: 0; transform: scale(1.5); } }
+      @media (prefers-reduced-motion: reduce) { .nn-star { animation: none; opacity: .8; } .nn-z { animation: none; opacity: .8; } .nn-rip { animation: none; opacity: .4; } }
+    </style>
+  </defs>
+  <rect width="920" height="200" fill="url(#nnSky)"/>
+  <!-- stars -->
+  <g fill="#FFF6D8">
+    <circle class="nn-star" cx="190" cy="26" r="1.6"/><circle class="nn-star" cx="270" cy="54" r="1.2" style="animation-delay:1s"/>
+    <circle class="nn-star" cx="330" cy="20" r="1.8" style="animation-delay:2s"/><circle class="nn-star" cx="420" cy="44" r="1.3" style="animation-delay:.5s"/>
+    <circle class="nn-star" cx="498" cy="18" r="1.6" style="animation-delay:1.5s"/><circle class="nn-star" cx="566" cy="60" r="1.2" style="animation-delay:2.5s"/>
+    <circle class="nn-star" cx="640" cy="28" r="1.7" style="animation-delay:3s"/><circle class="nn-star" cx="702" cy="12" r="1.2" style="animation-delay:.8s"/>
+    <circle class="nn-star" cx="860" cy="30" r="1.6" style="animation-delay:1.8s"/><circle class="nn-star" cx="40" cy="96" r="1.2" style="animation-delay:2.2s"/>
+    <circle class="nn-star" cx="900" cy="80" r="1.3" style="animation-delay:1.2s"/>
+  </g>
+  <!-- full moon, upper left (where the Sun rose in 9.01) -->
+  <circle cx="86" cy="52" r="62" fill="url(#nnMoon)"/>
+  <circle cx="86" cy="52" r="22" fill="#F7F0D2"/>
+  <circle cx="80" cy="46" r="4" fill="#E6DCB4"/><circle cx="94" cy="58" r="3" fill="#E6DCB4"/><circle cx="90" cy="44" r="2" fill="#E6DCB4"/>
+  <!-- far tree islands, dark -->
+  <path d="M360,128 Q380,110 402,118 Q420,102 446,114 Q470,100 494,116 Q516,108 534,124 L534,132 L360,132Z" fill="#1E2E3A" opacity=".85"/>
+  <path d="M700,130 Q716,118 734,124 Q752,112 772,124 L772,134 L700,134Z" fill="#1E2E3A" opacity=".75"/>
+  <!-- marsh floor and water -->
+  <rect x="0" y="130" width="920" height="70" fill="#34452E"/>
+  <path d="M0,168 Q160,156 330,166 Q520,178 700,164 Q820,156 920,166 L920,200 L0,200Z" fill="url(#nnWater)"/>
+  <!-- moon path on the water -->
+  <g stroke="#F3EBC6" stroke-width="2" opacity=".45" stroke-linecap="round">
+    <path d="M70,176 h34"/><path d="M80,184 h22"/><path d="M420,186 h40"/><path d="M820,184 h30"/>
+  </g>
+  <!-- sawgrass clumps, moonlit -->
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#3E5A30" stroke-width="3">
+      <path d="M20,172 Q24,140 14,110"/><path d="M30,172 Q36,138 44,104"/><path d="M40,174 Q42,148 60,124"/>
+      <path d="M560,176 Q566,146 556,118"/><path d="M572,176 Q580,150 594,126"/><path d="M548,176 Q544,152 530,132"/>
+      <path d="M880,176 Q884,146 872,116"/><path d="M892,176 Q900,148 912,124"/>
+      <path d="M232,174 Q238,120 226,54"/><path d="M244,174 Q252,124 270,74"/><path d="M220,174 Q214,130 192,90"/>
+      <path d="M340,176 Q346,140 336,104"/><path d="M352,176 Q362,142 380,112"/>
+    </g>
+    <g stroke="#56743E" stroke-width="2.5">
+      <path d="M26,172 Q30,146 26,120"/><path d="M566,176 Q572,152 572,124"/><path d="M886,176 Q890,150 888,122"/>
+      <path d="M660,176 Q664,156 656,136"/><path d="M670,176 Q676,156 686,140"/><path d="M110,174 Q114,152 104,132"/><path d="M118,174 Q126,154 136,138"/>
+      <path d="M238,174 Q246,140 246,96"/>
+    </g>
+  </g>
+  <!-- three grasshoppers on the sawgrass (more of them now) -->
+  <g id="nnHop">
+    <g transform="rotate(-18)">
+      <ellipse cx="0" cy="0" rx="18" ry="5.5" fill="#6E9440"/>
+      <ellipse cx="-16" cy="-1" rx="6" ry="5" fill="#779E46"/>
+      <circle cx="-19" cy="-3" r="1.5" fill="#1A2410"/>
+      <path d="M-21,-5 Q-30,-17 -36,-20" stroke="#4E6A2C" stroke-width="1.2" fill="none"/>
+      <path d="M5,2 L16,-10 L25,7" stroke="#5E8434" stroke-width="2.6" fill="none" stroke-linejoin="round"/>
+      <path d="M-6,4 L-9,12 M0,5 L-1,13" stroke="#4E6A2C" stroke-width="1.6"/>
+    </g>
+  </g>
+  <use href="#nnHop" transform="translate(240,96)"/>
+  <use href="#nnHop" transform="translate(352,126) scale(.9)"/>
+  <use href="#nnHop" transform="translate(574,140) scale(.85)"/>
+  <!-- the empty lily pad where the frog sat, with a slow ripple -->
+  <g transform="translate(510,166)">
+    <ellipse class="nn-rip" cx="0" cy="2" rx="46" ry="9" fill="none" stroke="#9DB4C8" stroke-width="1.5"/>
+    <path d="M-36,2 A36,8 0 1 0 36,2 L4,2 Z" fill="#3E6A3A"/>
+    <path d="M0,2 L4,-2" stroke="#2C4E2A" stroke-width="1.5"/>
+  </g>
+  <!-- the hawk, asleep on its dead branch: head tucked, eye closed -->
+  <g fill="none" stroke="#2E2418" stroke-linecap="round">
+    <path d="M806,176 Q800,120 812,64" stroke-width="7"/>
+    <path d="M808,100 Q780,92 752,96" stroke-width="5"/>
+  </g>
+  <g transform="translate(770,92)">
+    <path d="M-8,0 Q-16,-24 -2,-40 Q14,-46 20,-32 Q24,-14 14,2 Z" fill="#8F826C"/>
+    <path d="M-8,-2 Q-14,-22 -4,-36 Q0,-18 4,0 Z" fill="#5E3A24"/>
+    <g stroke="#73502E" stroke-width="2.2"><path d="M2,-26 h12"/><path d="M0,-18 h14"/><path d="M2,-10 h12"/></g>
+    <path d="M-10,-34 Q-12,-46 -2,-50 Q10,-52 14,-44 Q14,-36 6,-34 Z" fill="#5A3C28"/>
+    <path d="M11,-44 Q16,-42 14,-38 Q12,-40 10,-40 Z" fill="#9C7E2E"/>
+    <path d="M3,-44 Q6,-42 9,-44" stroke="#1A120A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <path d="M-12,-6 Q-30,-2 -34,14 Q-22,10 -6,2 Z" fill="#4A3220"/>
+    <path d="M2,2 v8 M8,2 v8" stroke="#9C7E2E" stroke-width="2.4"/>
+  </g>
+  <g fill="#F3EBC6" font-family="Nunito, sans-serif" font-weight="800">
+    <text class="nn-z" x="790" y="40" font-size="13">z</text>
+    <text class="nn-z" x="800" y="28" font-size="16" style="animation-delay:1.5s">z</text>
+    <text class="nn-z" x="812" y="16" font-size="19" style="animation-delay:3s">Z</text>
+  </g>
+</svg>
