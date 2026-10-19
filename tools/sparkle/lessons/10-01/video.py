@@ -6,6 +6,7 @@ pics = {
     'owl': {'src': 'images/10-01-before-owl.jpg', 'cap': 'BEFORE · barred owl up in the limbs · June'},
     'fallen': {'src': 'images/10-01-after-oak.jpg', 'cap': 'AFTER · the oak knocked over · August'},
     'fungus': {'src': 'images/10-01-after-fungus.jpg', 'cap': 'AFTER · mushrooms on the trunk · October'},
+    'sketch': {'src': 'images/10-01-vr-sketch.jpg', 'cap': 'Dr. Reyes’s notebook sketch · June'},
     'liveoak': {'src': 'images/10-01-live-oak.jpg', 'cap': 'Southern live oak with resurrection ferns (CC0)'},
 }
 C_CASE, C_GREEN, C_PURP, C_RED = '#B9822A', '#2F7A55', '#7A5BB5', '#C8553D'
@@ -53,6 +54,12 @@ S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts
 S['partc'] = {'label': 'Part C · your own ecosystem web', 'length': '25–35 s', 'want': False, 'parts': [
     {'label': '🗺️ Your place', 'tag': 'PART C', 'title': 'Pick a Florida place', 'col': C_GREEN, 'rows': [['🏖️', 'A beach'], ['🏡', 'A backyard'], ['🐸', 'A pond'], ['🌲', 'A pine forest']]}],
     'script': '[ON SCREEN: Your place]\nNow it’s your web. Pick a Florida place you know. Name five living things there, then three connections, each a different kind. Want to draw it? The sketch pad is a bonus.'}
+# VR activity page (vr-10-01.html) uses the same prefix: g4sci-10-1-vr.mp4
+S['vr'] = {'label': 'VR activity · Rebuild the web (separate page)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'kind': 'photo', 'pic': 'sketch', 'label': '📷 The sketch'},
+    {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': '#2B7BB9', 'rows': [['🥽', 'VR Field Mission: build 4 connections around one big tree in Tranquil Forest.'], ['🗂', 'No headset? Place 5 photo cards around the oak on your computer.']]},
+    {'label': '🥇 The badge', 'tag': 'VR ONLY', 'title': 'Golden Acorn badge', 'col': '#B9822A', 'body': 'Save your capture in VR to earn it.'}],
+    'script': 'Hi, scientists! You cracked the case of the fallen oak. (Hold up an acorn, or make goggles with your hands.) Now let’s build it back.\n\n[ON SCREEN: The sketch]\nThis is Dr. Reyes’s last sketch of the oak, from June. See the blank tags? Each one was a neighbor that needed the tree.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, go into the Tranquil Forest, pick the biggest tree, and add food, pollination, shelter and nutrient cycling around it. No headset? Place the photo cards around the oak.\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the Golden Acorn badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part2', 'partb']}
 json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('video.json written')
