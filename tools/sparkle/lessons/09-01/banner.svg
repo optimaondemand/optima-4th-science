@@ -1,0 +1,105 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sawgrass marsh at morning. Glowing dots of sunlight drift from the rising Sun into a sawgrass blade, then along to a grasshopper, a green tree frog, and a red-shouldered hawk on a dead branch." xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <linearGradient id="nbSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7FB8D8"/><stop offset=".55" stop-color="#CFE3DA"/><stop offset="1" stop-color="#F7E2A8"/>
+    </linearGradient>
+    <linearGradient id="nbWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9CC3C4"/><stop offset="1" stop-color="#5E8F8C"/>
+    </linearGradient>
+    <radialGradient id="nbSun"><stop offset="0" stop-color="#FFF4C2"/><stop offset=".35" stop-color="#FFE07A" stop-opacity=".85"/><stop offset="1" stop-color="#FFE07A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="nbDot"><stop offset="0" stop-color="#FFF8D6"/><stop offset=".5" stop-color="#FFD34D" stop-opacity=".9"/><stop offset="1" stop-color="#FFD34D" stop-opacity="0"/></radialGradient>
+    <style>
+      .nb-dot { animation: nbHop 6s ease-in-out infinite; opacity: 0; }
+      .nb-glow { animation: nbGlow 6s ease-in-out infinite; }
+      @keyframes nbHop { 0%, 100% { opacity: 0; } 8%, 18% { opacity: 1; } 30% { opacity: 0; } }
+      @keyframes nbGlow { 0%, 100% { opacity: .15; } 15%, 25% { opacity: .75; } 40% { opacity: .15; } }
+      @media (prefers-reduced-motion: reduce) { .nb-dot { animation: none; opacity: .85; } .nb-glow { animation: none; opacity: .45; } }
+    </style>
+  </defs>
+  <rect width="920" height="200" fill="url(#nbSky)"/>
+  <!-- rising sun, upper left -->
+  <circle cx="86" cy="58" r="74" fill="url(#nbSun)"/>
+  <circle cx="86" cy="58" r="24" fill="#FFE68C"/>
+  <!-- far tree island -->
+  <path d="M360,128 Q380,110 402,118 Q420,102 446,114 Q470,100 494,116 Q516,108 534,124 L534,132 L360,132Z" fill="#5C7F5A" opacity=".75"/>
+  <path d="M700,130 Q716,118 734,124 Q752,112 772,124 L772,134 L700,134Z" fill="#5C7F5A" opacity=".6"/>
+  <!-- marsh floor and water -->
+  <rect x="0" y="130" width="920" height="70" fill="#8FA35C"/>
+  <path d="M0,168 Q160,156 330,166 Q520,178 700,164 Q820,156 920,166 L920,200 L0,200Z" fill="url(#nbWater)"/>
+  <g stroke="#E9F2EE" stroke-width="2" opacity=".55" stroke-linecap="round">
+    <path d="M120,180 h40"/><path d="M420,186 h56"/><path d="M640,178 h36"/><path d="M820,184 h44"/>
+  </g>
+  <!-- sawgrass clumps: long thin blades -->
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#6E8E3E" stroke-width="3">
+      <path d="M20,172 Q24,140 14,110"/><path d="M30,172 Q36,138 44,104"/><path d="M40,174 Q42,148 60,124"/>
+      <path d="M560,176 Q566,146 556,118"/><path d="M572,176 Q580,150 594,126"/><path d="M548,176 Q544,152 530,132"/>
+      <path d="M880,176 Q884,146 872,116"/><path d="M892,176 Q900,148 912,124"/>
+    </g>
+    <g stroke="#88A84C" stroke-width="2.5">
+      <path d="M26,172 Q30,146 26,120"/><path d="M566,176 Q572,152 572,124"/><path d="M886,176 Q890,150 888,122"/>
+      <path d="M660,176 Q664,156 656,136"/><path d="M670,176 Q676,156 686,140"/><path d="M110,174 Q114,152 104,132"/><path d="M118,174 Q126,154 136,138"/>
+    </g>
+  </g>
+  <!-- THE SAWGRASS BLADE that catches the light (tall, center left) -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M232,174 Q238,120 226,54" stroke="#4E7A2E" stroke-width="5"/>
+    <path d="M244,174 Q252,124 270,74" stroke="#5E8C36" stroke-width="4.5"/>
+    <path d="M220,174 Q214,130 192,90" stroke="#5E8C36" stroke-width="4"/>
+    <path d="M238,174 Q246,140 246,96" stroke="#6E9C40" stroke-width="3.5"/>
+    <path d="M232,174 Q238,120 226,54" stroke="#FFE07A" stroke-width="9" class="nb-glow" style="animation-delay:.6s"/>
+  </g>
+  <!-- grasshopper on a blade -->
+  <g transform="translate(352,118)">
+    <path d="M-14,40 Q-10,20 2,4" stroke="#6E8E3E" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g transform="rotate(-18)">
+      <ellipse cx="0" cy="0" rx="22" ry="6.5" fill="#7DB045"/>
+      <ellipse cx="-20" cy="-1" rx="7" ry="6" fill="#86BC4C"/>
+      <circle cx="-23" cy="-3" r="1.8" fill="#2B3A1A"/>
+      <path d="M-25,-5 Q-36,-20 -44,-24" stroke="#5E7C30" stroke-width="1.4" fill="none"/>
+      <path d="M-22,-6 Q-30,-22 -34,-28" stroke="#5E7C30" stroke-width="1.4" fill="none"/>
+      <path d="M6,2 L20,-12 L30,8" stroke="#6E9C3A" stroke-width="3" fill="none" stroke-linejoin="round"/>
+      <path d="M-8,5 L-12,14 M0,6 L-2,15" stroke="#5E7C30" stroke-width="1.8"/>
+      <path d="M-6,-4 Q10,-9 24,-2" stroke="#5E8C36" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+  <!-- green tree frog on a pad (side view, facing right) -->
+  <g transform="translate(510,158)">
+    <ellipse cx="0" cy="10" rx="36" ry="8" fill="#5C8A4A"/>
+    <path d="M-24,8 Q-30,-6 -18,-14 Q-4,-22 12,-18 Q24,-16 28,-6 Q30,2 24,8 Z" fill="#8ACB4C"/>
+    <path d="M-26,4 Q-6,8 26,2" stroke="#F4F1D6" stroke-width="2.6" fill="none"/>
+    <path d="M14,-6 Q22,-2 28,-4" stroke="#4E7A2E" stroke-width="1.4" fill="none"/>
+    <circle cx="14" cy="-17" r="6" fill="#8ACB4C"/><circle cx="15.5" cy="-17.5" r="3.4" fill="#C79A2A"/><circle cx="15.8" cy="-17.6" r="1.8" fill="#1E1A0C"/>
+    <path d="M-20,6 Q-34,6 -30,12 Q-22,12 -14,10" fill="#7DBF44"/>
+    <path d="M18,6 L22,13 M14,7 L14,13" stroke="#7DBF44" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="23" cy="13.5" r="2" fill="#7DBF44"/><circle cx="14" cy="13.5" r="2" fill="#7DBF44"/>
+  </g>
+  <!-- red-shouldered hawk on a dead branch -->
+  <g fill="none" stroke="#5B4632" stroke-linecap="round">
+    <path d="M806,176 Q800,120 812,64" stroke-width="7"/>
+    <path d="M808,100 Q780,92 752,96" stroke-width="5"/>
+  </g>
+  <g transform="translate(770,92)">
+    <path d="M-6,0 Q-14,-26 0,-44 Q14,-50 20,-36 Q24,-16 14,2 Z" fill="#D9C7A8"/>
+    <path d="M-6,-2 Q-12,-24 -2,-40 Q2,-20 6,0 Z" fill="#9C5A34"/>
+    <g stroke="#B8763E" stroke-width="2.2"><path d="M2,-28 h12"/><path d="M0,-20 h14"/><path d="M2,-12 h12"/></g>
+    <path d="M-8,-40 Q-12,-52 -2,-58 Q10,-62 16,-52 Q18,-44 10,-40 Z" fill="#8A5A3A"/>
+    <path d="M14,-52 Q22,-50 20,-44 Q18,-46 15,-46 Z" fill="#E7B53A"/>
+    <circle cx="9" cy="-51" r="2" fill="#241A10"/>
+    <path d="M-10,-6 Q-30,-2 -34,14 Q-22,10 -6,2 Z" fill="#6E4A30"/>
+    <g fill="#3A2A1C"><rect x="-32" y="6" width="10" height="2.5" rx="1"/><rect x="-28" y="11" width="9" height="2.5" rx="1"/></g>
+    <path d="M2,2 v8 M8,2 v8" stroke="#E7B53A" stroke-width="2.4"/>
+  </g>
+  <!-- the energy path: glowing dots hop from the Sun to the sawgrass, the grasshopper, the frog and the hawk -->
+  <path d="M110,70 Q170,60 222,66 Q300,80 340,108 Q430,150 500,144 Q620,120 760,62" stroke="#FFD34D" stroke-width="2" stroke-dasharray="3 9" fill="none" opacity=".55"/>
+  <g>
+    <circle class="nb-dot" cx="150" cy="64" r="9" fill="url(#nbDot)" style="animation-delay:0s"/>
+    <circle class="nb-dot" cx="222" cy="66" r="10" fill="url(#nbDot)" style="animation-delay:.6s"/>
+    <circle class="nb-dot" cx="300" cy="84" r="9" fill="url(#nbDot)" style="animation-delay:1.3s"/>
+    <circle class="nb-dot" cx="346" cy="110" r="10" fill="url(#nbDot)" style="animation-delay:1.9s"/>
+    <circle class="nb-dot" cx="430" cy="148" r="9" fill="url(#nbDot)" style="animation-delay:2.6s"/>
+    <circle class="nb-dot" cx="504" cy="142" r="10" fill="url(#nbDot)" style="animation-delay:3.2s"/>
+    <circle class="nb-dot" cx="636" cy="114" r="9" fill="url(#nbDot)" style="animation-delay:3.9s"/>
+    <circle class="nb-dot" cx="760" cy="62" r="11" fill="url(#nbDot)" style="animation-delay:4.6s"/>
+  </g>
+</svg>

@@ -1650,9 +1650,9 @@
     var maxH = Math.max.apply(null, Object.keys(G.results).map(function (k) { return G.results[k].h; }));
     ['A', 'B'].forEach(function (name, pi) {
       var p = el('div', 'fs-gr-pot');
-      p.innerHTML = '<div class="fs-gr-h">🌱 Pot ' + name + ' <small>' + esc(G.seedLine || 'a seed from the same parent plant') + '</small></div>' +
+      p.innerHTML = '<div class="fs-gr-h">🌱 ' + esc(G.potLabel || 'Pot') + ' ' + name + ' <small>' + esc(G.seedLine || 'a seed from the same parent plant') + '</small></div>' +
         G.dials.map(function (d) { return '<div class="fs-gr-dial" data-k="' + d.k + '"><span>' + esc(d.t) + '</span>' + d.opts.map(function (o, oi) { return '<button type="button" class="fs-in-chip' + (oi === (pi === 0 ? 0 : d.opts.length - 1) ? ' on' : '') + '" data-o="' + o.k + '">' + o.icon + ' ' + esc(o.t) + '</button>'; }).join('') + '</div>'; }).join('') +
-        '<div class="fs-gr-bed"><div class="fs-gr-ruler"></div><div class="fs-gr-plant"><img alt="" src=""></div><div class="fs-gr-seed">🌰</div></div><div class="fs-gr-res"><em>Pick a garden, then press Grow.</em></div>';
+        '<div class="fs-gr-bed"><div class="fs-gr-ruler"></div><div class="fs-gr-plant"><img alt="" src=""></div><div class="fs-gr-seed">🌰</div></div><div class="fs-gr-res"><em>' + esc(G.startLine || 'Pick a garden, then press Grow.') + '</em></div>';
       $$('.fs-gr-dial', p).forEach(function (row) { $$('.fs-in-chip', row).forEach(function (b) { b.addEventListener('click', function () { $$('.fs-in-chip', row).forEach(function (x) { x.classList.toggle('on', x === b); }); SFX.blip(); reset(p); }); }); });
       pots.appendChild(p);
     });
@@ -1673,7 +1673,7 @@
     }
     function upd() {
       var keys = Object.keys(tried);
-      log.innerHTML = keys.length ? '<b>📒 Gardens you tried:</b> ' + keys.map(function (k) { var r = G.results[k]; return '<span class="fs-gr-chip">' + esc(r.label || k) + ': ' + r.h + ' cm, ' + r.flowers + ' 🌼</span>'; }).join(' ') : '';
+      log.innerHTML = keys.length ? '<b>📒 ' + esc(G.logLabel || 'Gardens you tried:') + '</b> ' + keys.map(function (k) { var r = G.results[k]; return '<span class="fs-gr-chip">' + esc(r.label || k) + ': ' + r.h + ' cm, ' + (G.logK ? esc(String(r[G.logK])) : r.flowers + ' 🌼') + '</span>'; }).join(' ') : '';
       if (enough() && !qh.dataset.on) {
         qh.dataset.on = '1';
         chipsQ(qh, G.q, G.opts, function () { store('grow-q', '1'); finish(); }, miss);
@@ -1685,6 +1685,64 @@
       $$('.fs-gr-pot', pots).forEach(function (p) { var k = keyOf(p), r = G.results[k]; if (!r) return; tried[k] = 1; show(p, r, true); });
       store('grow', JSON.stringify(tried)); SFX.sparkle(); upd();
     });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Warm-Up: "Trace your lunch" — pick a food, then step backward until you reach the Sun (9.01) ----------
+     D.trace = {afterText, kicker, title, todo[], why, pick, need, sunLine, arrowNote,
+                foods:[{id, icon, name, steps:[{q, opts:[{t, icon, ok, miss}]}], end}], count, win, clue}
+     each right answer adds its icon to the LEFT of the trail; the last step's right answer is the Sun */
+  function buildTrace() {
+    var T = D.trace; if (!T) return;
+    var at = null; $$('.tab-panel p').some(function (p) { if (T.afterText && p.textContent.indexOf(T.afterText) > -1) { at = p; return true; } });
+    if (!at) { FAILED.push('trace anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Warm-Up game', T.title, T.todo, T.why); g.dataset.mod = 'trace';
+    var picks = el('div', 'fs-tc-picks', '<div class="fs-in-k">' + esc(T.pick || 'Pick a food:') + '</div><div class="fs-in-chips">' + T.foods.map(function (f, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '"><span>' + f.icon + '</span> ' + esc(f.name) + '<em></em></button>'; }).join('') + '</div>');
+    var trail = el('div', 'fs-tc-trail'), note = el('div', 'fs-tc-note', esc(T.arrowNote || 'The arrows show which way the energy moved.'));
+    var stage = el('div', 'fs-tc-stage'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
+    g.appendChild(picks); g.appendChild(trail); g.appendChild(note); g.appendChild(stage); g.appendChild(miss); g.appendChild(count); g.appendChild(win);
+    var done = {}; try { done = JSON.parse(store('trace') || '{}'); } catch (e) {}
+    var need = Math.min(T.need || 2, T.foods.length);
+    function rights(f) { return f.steps.map(function (s) { return s.opts.filter(function (o) { return o.ok; })[0]; }); }
+    function drawTrail(f, n, animate) {
+      var items = rights(f).slice(0, n).reverse().map(function (o) { return { icon: o.icon, t: o.short || o.t }; });
+      items.push({ icon: f.icon, t: f.name, food: true });
+      trail.innerHTML = items.map(function (it, k) {
+        var sun = k === 0 && n === f.steps.length;
+        return (k ? '<span class="fs-tc-arw">→</span>' : '') + '<div class="fs-tc-node' + (it.food ? ' food' : '') + (sun ? ' sun' : '') + (animate && k === 0 && n > 0 ? ' pop' : '') + '"><span>' + it.icon + '</span><b>' + esc(it.t) + '</b></div>';
+      }).join('');
+      if (n === f.steps.length && animate) { trail.classList.remove('glow'); void trail.offsetWidth; trail.classList.add('glow'); }
+    }
+    function upd() {
+      var n = Object.keys(done).length;
+      count.textContent = '☀️ ' + n + ' of ' + need + ' foods traced to the start';
+      count.classList.toggle('ok', n >= need);
+      $$('.fs-in-chip', picks).forEach(function (b) { var ok = !!done[T.foods[+b.dataset.i].id]; b.classList.toggle('done', ok); $('em', b).textContent = ok ? ' ✓' : ''; });
+      if (n >= need && !win.classList.contains('show')) { win.innerHTML = esc(T.win); win.classList.add('show'); SFX.win(); earnClue(T.clue || 'trace'); }
+    }
+    function open(i) {
+      var f = T.foods[i]; SFX.blip(); miss.classList.remove('show');
+      $$('.fs-in-chip', picks).forEach(function (b) { b.classList.toggle('on', +b.dataset.i === i); });
+      stage.innerHTML = '';
+      if (done[f.id]) { drawTrail(f, f.steps.length, false); stage.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">☀️</span><div>' + esc(f.end || T.sunLine) + '</div>')); return; }
+      drawTrail(f, 0, false);
+      (function ask(s) {
+        if (s >= f.steps.length) {
+          done[f.id] = 1; store('trace', JSON.stringify(done)); SFX.sparkle();
+          stage.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">☀️</span><div>' + esc(f.end || T.sunLine) + '</div>'));
+          var nx = T.foods.map(function (o, k) { return done[o.id] ? -1 : k; }).filter(function (k) { return k > -1; })[0];
+          if (nx != null) { var b = el('button', 'fs-btn alt fs-ch-next', 'Trace another food →'); b.type = 'button'; b.addEventListener('click', function () { open(nx); }); stage.appendChild(b); }
+          upd(); return;
+        }
+        var w = chipsQ(stage, f.steps[s].q, f.steps[s].opts, function () {
+          w.classList.add('fs-tc-done'); drawTrail(f, s + 1, true); SFX.whoosh();
+          setTimeout(function () { ask(s + 1); }, reduceMotion ? 0 : 300);
+        }, miss);
+      })(0);
+    }
+    $$('.fs-in-chip', picks).forEach(function (b) { b.addEventListener('click', function () { open(+b.dataset.i); }); });
+    trail.innerHTML = '<div class="fs-tc-empty">' + esc(T.empty || '👆 Pick a food to start your trail.') + '</div>';
     at.parentNode.insertBefore(g, at.nextSibling);
     upd();
   }
@@ -3541,6 +3599,54 @@
     draw();
   };
 
+  /* ----- light meter simulation (9.01): carry the meter to each place, read the number, compare -----
+     T.lightmeter = {title, todo[], unit, places:[{k, icon, name, lux, show, note}], q:{q, opts:[{t, ok, why}]}} */
+  SIMS.lightmeter = function (host, T) {
+    var S = T.lightmeter, MAX = Math.max.apply(null, S.places.map(function (p) { return p.lux; }));
+    host.innerHTML = '<div class="fs-game-k">Try it: a light meter</div><div class="fs-game-t">' + esc(S.title) + '</div>' +
+      '<ul class="fs-todo">' + S.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-lm-tool"><svg viewBox="0 0 150 230" class="fs-lm-svg" role="img" aria-label="A handheld light meter: a gray box with a white light sensor on top and a small screen that shows a number.">' +
+      '<rect x="20" y="40" width="110" height="180" rx="16" fill="#3E4A52" stroke="#24313A" stroke-width="3"/>' +
+      '<rect x="48" y="6" width="54" height="40" rx="8" fill="#5B6870" stroke="#24313A" stroke-width="3"/><ellipse cx="75" cy="18" rx="20" ry="9" fill="#F4F6F2" stroke="#B9C2C6" stroke-width="2"/>' +
+      '<g class="fs-lm-rays"><path d="M75 -14v10M52 -8l6 8M98 -8l-6 8" stroke="#F2B630" stroke-width="3" stroke-linecap="round"/></g>' +
+      '<rect x="34" y="62" width="82" height="44" rx="6" fill="#1D2B22"/><text class="fs-lm-read" x="75" y="92" text-anchor="middle" font-family="Courier New,monospace" font-size="20" font-weight="900" fill="#9EF0A8">0</text>' +
+      '<text x="75" y="122" text-anchor="middle" font-family="Nunito,sans-serif" font-size="12" font-weight="900" fill="#DCE3E6">' + esc(S.unit || 'lux') + '</text>' +
+      '<circle cx="55" cy="160" r="12" fill="#E07B2E"/><circle cx="95" cy="160" r="12" fill="#6E7A82"/><rect x="45" y="190" width="60" height="10" rx="5" fill="#24313A"/></svg>' +
+      '<div class="fs-lm-places">' + S.places.map(function (p, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '"><span>' + p.icon + '</span> ' + esc(p.name) + '<em></em></button>'; }).join('') + '<div class="fs-lm-note"><em>Tap a place to carry the meter there.</em></div></div></div>' +
+      '<div class="fs-lm-bars"></div><div class="fs-sv-q fs-lm-q"></div><div class="fs-miss fs-lm-miss"></div><div class="fs-win fs-lm-win"></div>';
+    var read = $('.fs-lm-read', host), bars = $('.fs-lm-bars', host), noteBox = $('.fs-lm-note', host);
+    var got = {}; try { got = JSON.parse(store('lightmeter') || '{}'); } catch (e) {}
+    function fmt(n) { return n >= 1 ? Math.round(n).toLocaleString('en-US') : String(n); }
+    function count(target) {
+      if (reduceMotion) { read.textContent = fmt(target); return; }
+      var t0 = performance.now(); (function f(t) { var k = Math.min(1, (t - t0) / 900); read.textContent = fmt(target < 1 ? target : target * k * k); if (k < 1) requestAnimationFrame(f); })(t0);
+    }
+    function draw() {
+      bars.innerHTML = S.places.filter(function (p) { return got[p.k]; }).map(function (p) {
+        return '<div class="fs-lm-row"><span class="fs-lm-rl">' + p.icon + ' ' + esc(p.name) + '</span><div class="fs-lm-line"><i style="width:' + Math.max(0.6, 100 * p.lux / MAX) + '%"></i></div><b>' + esc(p.show || fmt(p.lux)) + '</b></div>';
+      }).join('');
+      $$('.fs-lm-places .fs-in-chip', host).forEach(function (b) { var ok = !!got[S.places[+b.dataset.i].k]; b.classList.toggle('done', ok); $('em', b).textContent = ok ? ' ✓' : ''; });
+      if (S.places.every(function (p) { return got[p.k]; })) ask();
+    }
+    function ask() {
+      var q = $('.fs-lm-q', host); if (q.dataset.on) return; q.dataset.on = '1';
+      q.innerHTML = '<div class="fs-in-k">' + esc(S.q.q) + '</div><div class="fs-in-chips">' + S.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', q).forEach(function (c) { c.addEventListener('click', function () { var o = S.q.opts[+c.dataset.i];
+        if (!o.ok) { bounce(c, $('.fs-lm-miss', host), o.why); return; } $('.fs-lm-miss', host).classList.remove('show');
+        c.classList.add('on', 'ok'); var w = $('.fs-lm-win', host); w.innerHTML = esc(o.why); w.classList.add('show'); SFX.win(); store('lightmeter-q', '1'); toolDone(); }); });
+      if (store('lightmeter-q')) { var i = S.q.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]; $$('.fs-in-chip', q)[i].classList.add('on', 'ok'); var w = $('.fs-lm-win', host); w.innerHTML = esc(S.q.opts[i].why); w.classList.add('show'); }
+    }
+    $$('.fs-lm-places .fs-in-chip', host).forEach(function (b) { b.addEventListener('click', function () {
+      var p = S.places[+b.dataset.i];
+      $$('.fs-lm-places .fs-in-chip', host).forEach(function (x) { x.classList.toggle('on', x === b); });
+      host.style.setProperty('--fs-lm-glow', String(Math.max(0.08, Math.pow(p.lux / MAX, 0.35))));
+      read.textContent = '0'; count(p.lux); SFX.blip();
+      noteBox.innerHTML = '<b>' + p.icon + ' ' + esc(p.name) + ': about ' + esc(p.show || fmt(p.lux)) + ' ' + esc(S.unit || 'lux') + '.</b> ' + esc(p.note);
+      setTimeout(function () { SFX.chime(); got[p.k] = 1; store('lightmeter', JSON.stringify(got)); draw(); }, reduceMotion ? 0 : 950);
+    }); });
+    draw();
+  };
+
   /* ----- thermometer simulation ----- */
   /* ----- dip net (14.01): sweep three spots in a pond, look at the catch in a white tray, learn each young animal's life stage, then release ----- 
      T.dipnet = {title, todo[], parts:[{label,t}], spots:[{k,name,icon,where,catch:[critterId,...]}], critters:{id:{name,img,alt,stage,note}}, q:{q,opts:[{t,ok,why}]}, credit} */
@@ -4084,6 +4190,7 @@
     guard('passiton', buildPassiton);
     guard('pollen', buildPollen);
     guard('bagtest', buildBagtest);
+    guard('trace', buildTrace);
     guard('nextup', buildNextup);
     guard('morph', buildMorph);
     guard('wheel', buildWheel);
