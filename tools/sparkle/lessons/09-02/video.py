@@ -2,6 +2,7 @@
 """Writes video.json (Video Studio plan) for 9.02."""
 import json
 pics = {
+    'vrrabbit': {'src': 'images/09-02-vr-rabbit.jpg', 'cap': 'Photo walk post 3: a marsh rabbit (Everglades NPS, public domain)'},
     'hawk': {'src': 'images/9-01-case-hawk.jpg', 'cap': 'TAG 1 · the hawk at post 7'},
     'frog': {'src': 'images/9-01-frog.jpg', 'cap': 'TAG 2 · green tree frog (missing)'},
     'hopper': {'src': 'images/9-01-grasshopper.jpg', 'cap': 'TAG 3 · grasshoppers'},
@@ -49,6 +50,8 @@ S['evidence'] = {'label': 'Use your evidence · CER', 'length': '30–40 s', 'wa
     'script': '[ON SCREEN: The quote]\nSome people say that if the hawk disappears, the prey grows forever. Hmm. Look back at your hawk test. Tap your side in the planner, pick two pieces of evidence, then write your reasoning. Try starting with “This shows that…”'}
 S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts': [],
              'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
+# VR activity page (vr-9-02.html) uses the same prefix: g4sci-9-2-vr.mp4
+S['vr'] = {'label': 'VR activity · The hawk’s backup menu (separate page)', 'length': '45–55 s', 'want': True, 'parts': [{'label': '📌 The note', 'tag': 'CASE 9', 'title': '“No frogs? Then the hawk will starve.”', 'col': '#C2552E', 'body': 'Is the volunteer right?'}, {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to survey', 'col': '#2B7BB9', 'rows': [['🥽', 'VR Field Survey: walk the Everglades and look.'], ['📷', 'No headset? Take the boardwalk photo walk.']]}, {'kind': 'photo', 'pic': 'vrrabbit', 'label': '📷 Field notes'}, {'label': '🪶 The badge', 'tag': 'VR ONLY', 'title': 'Red-Shoulder Feather badge', 'col': '#C2552E', 'body': 'Finish your VR survey to earn it.'}], 'script': 'Hi, scientists! Remember the volunteer’s note? (Hold up a sticky note.) “No frogs? Then the hawk will starve.”\n\n[ON SCREEN: The note]\nToday you’ll find out if she’s right. You won’t build anything. You’ll do a field survey: a careful look at every living thing in one place.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, walk the Everglades in VR. No headset? Take the boardwalk photo walk.\n\n[ON SCREEN: Field notes]\nEither way, write down at least five living things in your field notes, and ask: could a hawk eat this one?\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the Red-Shoulder Feather badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part1', 'partb', 'partc']}
 json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('video.json written')
