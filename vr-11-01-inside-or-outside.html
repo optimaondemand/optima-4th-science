@@ -134,6 +134,31 @@ html.review .vslot-ph.on { display:block; }
 .btn.ghost { background:#fff; color:var(--navy); border:2px solid var(--navy); }
 .copied { font-weight:800; color:#1a6b35; font-size:14px; }
 
+/* help drawer */
+.howto { margin-top:8px; background:#F4F7FD; border:1.5px solid #CBD6EE; border-radius:10px; padding:6px 10px; font-size:15px; color:var(--navy); line-height:1.5; }
+.helpdrawer { margin:14px 0 0; border:2px solid #CBD6EE; border-radius:14px; background:#F8FAFE; overflow:hidden; }
+.helpdrawer summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px; padding:12px 16px; }
+.helpdrawer summary::-webkit-details-marker { display:none; }
+.helpdrawer summary:focus-visible { outline:3px solid var(--gold); outline-offset:-3px; }
+.hd-ic { font-size:26px; }
+.helpdrawer summary b { display:block; color:var(--navy); font-size:16px; }
+.helpdrawer summary small { display:block; color:#5A6B8C; font-size:13.5px; }
+.hd-chev { margin-left:auto; font-size:18px; color:var(--navy); transition: transform .2s; }
+.helpdrawer[open] .hd-chev { transform: rotate(180deg); }
+.hd-body { padding: 0 16px 16px; }
+.hd-video { margin-bottom:12px; }
+.hd-frame { position:relative; width:100%; aspect-ratio:16/9; background:#0E1C42; border-radius:12px; overflow:hidden; }
+.hd-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.hd-cap { font-size:13px; color:#5A6B8C; margin-top:4px; }
+.hd-note { font-size:15px; background:#FFF8E6; border:1.5px solid #F2D58E; border-radius:10px; padding:6px 10px; margin-bottom:12px; }
+.hd-steps { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.hd-step { background:#fff; border:1.5px solid #E2E8F4; border-radius:12px; overflow:hidden; }
+.hd-step img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:#0b0f18; }
+.hd-step > div { padding:8px 10px 10px; }
+.hd-step b { color:var(--navy); font-size:15px; }
+.hd-step p { font-size:14.5px; line-height:1.5; margin:2px 0 0; color:var(--soft); }
+.hd-n { display:inline-flex; width:22px; height:22px; border-radius:50%; background:var(--navy); color:#fff; font-size:12px; font-weight:900; align-items:center; justify-content:center; margin-right:6px; }
+@media (max-width:600px) { .hd-steps { grid-template-columns:1fr; } }
 /* job line + phases */
 .jobline { display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; background:#FFF8E6; border:2px solid #F2D58E; border-radius:14px; padding:10px 14px; margin:0 0 14px; }
 .job-k { font-size:11px; font-weight:900; letter-spacing:1.4px; text-transform:uppercase; color:#7A5F2C; margin-right:4px; }
@@ -398,7 +423,7 @@ footer { text-align:center; font-size:12px; color:#8D7A5C; padding: 0 22px 26px;
       <p style="font-size:15px">Tap the box next to each step when you finish it.</p>
       <ol class="steps" id="vr-steps">
         <li class="phase"><span class="ph-ic">🖥️</span>Before you put on your headset</li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 1 done"></button><div><div class="step-n">Step 1 · Know what to find</div><div class="step-t">Look at the 8 parts you’ll find. In VR, each name starts with <b>Frog Dissection</b>.</div>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 1 done"></button><div><div class="step-n">Step 1 · Know what to find</div><div class="step-t">Look at the 8 parts you’ll find. In VR, each name starts with <b>Frog Dissection</b>. This list is also in VR: open your menu, click <b>Assignments</b>, then click our assignment.</div>
           <div class="parts">
             <div class="part">Head<small>Frog Dissection - Head</small></div>
             <div class="part">Eyes<small>Frog Dissection - Frog Eyes</small></div>
@@ -410,14 +435,22 @@ footer { text-align:center; font-size:12px; color:#8D7A5C; padding: 0 22px 26px;
             <div class="part">Brain<small>Frog Dissection - Brain</small></div>
           </div></div></li>
         <li class="phase"><span class="ph-ic">🥽</span>In VR</li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 2 done"></button><div><div class="step-n">Step 2 · Go in</div><div class="step-t">Put on your headset and open the <b>On-Demand</b> app. In the <b>Rooms</b> tab, pick <b>The Everglades</b>. Start a <b>solo</b> room (a room with just you).</div></div></li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 3 done"></button><div><div class="step-n">Step 3 · Find and place all 8</div><div class="step-t">Open the 3D objects. At the top is a box called <b>Filter objects</b>. That’s the search box. Type <span class="typed">Frog Dissection</span>, then put all 8 parts on the ground.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 2 done"></button><div><div class="step-n">Step 2 · Go in</div><div class="step-t">Put on your headset and open the <b>On-Demand</b> app. Click the <b>Explore</b> tab and find <b>The Everglades</b>. (Typing it in the <b>Filter environments</b> box finds it fast.) Click it, then click <b>Begin Solo</b>.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 3 done"></button><div><div class="step-n">Step 3 · Bring out all 8</div><div class="step-t">Press the <b>top button on your right controller</b> to open your menu. Click the <b>Models</b> tab. In the <b>Filter models</b> box, type <span class="typed">Frog Dissection</span>. Click each part to bring it out.<div class="howto">✋ <b>To move a part:</b> grab it with the <b>palm trigger</b> (the button under your middle finger). Turn and move it with the thumbstick. Grab it with <b>both</b> palm triggers to make it bigger or smaller.</div></div></div></li>
         <li class="step"><button class="chk" type="button" aria-label="Mark step 4 done"></button><div><div class="step-n">Step 4 · Make two piles</div><div class="step-t">Make an <b>outside pile</b> and an <b>inside pile</b>, with a big space between them. For each part, ask: <i>could I see this on a frog sitting on a leaf?</i></div></div></li>
         <li class="step"><button class="chk" type="button" aria-label="Mark step 5 done"></button><div><div class="step-n">Step 5 · Bonus</div><div class="step-t"><span class="bonus-tag">VR only</span>Line up your inside pile from top to bottom, in the order the parts sit inside a frog’s body. Brain at the top! Skip this step if you run out of time.</div></div></li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Save (capture)</div><div class="step-t">Open your menu and choose <b>Capture</b>. In the first drop-down, pick <b>our class</b> (not your own name). In the second, pick <b>11.01 VR · Inside or Outside?</b> Then click <b>Save</b>.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Save (capture)</div><div class="step-t">Open your menu and click the <b>Captures</b> tab, then click <b>Capture</b>. Type a title, like your first name. For <b>Class</b>, pick <b>our class</b> (not <i>No class (personal)</i>). For <b>Assignment</b>, pick <b>11.01 VR · Inside or Outside?</b> Click <b>Save</b>, then look for <b>Submitted</b> at the bottom of the menu.<div class="howto">🔁 Want to fix something? Move the parts and save again. Your new capture takes the place of the old one.</div></div></div></li>
         <li class="phase"><span class="ph-ic">✅</span>After</li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Tell me you’re done</div><div class="step-t">Take off your headset. In the Canvas assignment box, type <span class="typed">VR option submitted</span> and turn it in.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Tell me you’re done</div><div class="step-t">Click <b>Leave</b> in the top right corner of your menu and take off your headset. In the Canvas assignment box, type <span class="typed">VR option submitted</span> and turn it in.</div></div></li>
       </ol>
+      <details class="helpdrawer" id="vr-help">
+        <summary><span class="hd-ic">🛟</span><span><b>Having trouble in VR?</b><small>Steps with pictures, and a how-to video</small></span><span class="hd-chev" aria-hidden="true">▾</span></summary>
+        <div class="hd-body">
+          <div class="hd-video"><div class="hd-frame" data-src="https://www.youtube-nocookie.com/embed/xVzX24ENnqk?rel=0"></div><p class="hd-cap">How-to video: Completing Assignments in Optima On-Demand (2 minutes)</p></div>
+          <p class="hd-note">These pictures come from a space map. Your map will be <b>The Everglades</b>, but the buttons are the same.</p>
+          <ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="images/vr-help-01-explore.jpg" alt="The Explore tab is selected, with a list of maps below it."><div><span class="hd-n">1</span><b>Explore tab</b><p>On your dashboard, click the <b>Explore</b> tab. Scroll with the bar on the right, or type the map’s name in <b>Filter environments</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-02-begin-solo.jpg" alt="A map is selected and the Begin Solo button is circled."><div><span class="hd-n">2</span><b>Begin Solo</b><p>Click the map, then click <b>Begin Solo</b>. Only a solo room (just you) can save your work.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-03-menu.jpg" alt="The menu is open, with its row of tabs circled."><div><span class="hd-n">3</span><b>Open your menu</b><p>Press the <b>top button on your right controller</b>. The menu tabs are <b>Environments, Models, Assignments</b> and <b>Captures</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-04-assignments.jpg" alt="An assignment is open, with its directions circled on the right."><div><span class="hd-n">4</span><b>Read the assignment</b><p>Click <b>Assignments</b>, then click our assignment. What to build shows on the right.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-05-models.jpg" alt="The Models tab and the Filter models box are circled."><div><span class="hd-n">5</span><b>Bring out the models</b><p>Click <b>Models</b>. Type in the <b>Filter models</b> box to find the parts. Click a part to bring it out.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-06-grab.jpg" alt="A controller grabbing a model of the Moon."><div><span class="hd-n">6</span><b>Move and resize</b><p>Grab a part with the <b>palm trigger</b>. Turn and move it with the thumbstick. Use <b>both</b> palm triggers to make it bigger or smaller.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-07-captures.jpg" alt="The Captures tab, with the Capture button circled."><div><span class="hd-n">7</span><b>Capture</b><p>When it looks right, open your menu, click <b>Captures</b>, then click <b>Capture</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-08-save.jpg" alt="The Capture environment box, with Class, Assignment and Save circled."><div><span class="hd-n">8</span><b>Pick the class and assignment</b><p>Type a title. For <b>Class</b>, pick our class, not <i>No class (personal)</i>. For <b>Assignment</b>, pick ours. Click <b>Save</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-09-submitted.jpg" alt="The word Submitted at the bottom of the menu and the Leave button are circled."><div><span class="hd-n">9</span><b>Check, then leave</b><p>Look for <b>Submitted</b> at the bottom of the menu. Then click <b>Leave</b> in the top right corner.</p></div></li></ol>
+        </div>
+      </details>
       <div class="points">⭐ <b>Full points:</b><ul><li>All 8 parts are in your capture.</li><li>Every part is in the right pile.</li></ul></div>
       <div class="done-box" id="vr-done">
         <svg class="medal" viewBox="0 0 120 120" aria-hidden="true"><path d="M38 6 L54 50 L44 56 L26 14Z" fill="#1F6F78"/><path d="M82 6 L66 50 L76 56 L94 14Z" fill="#B5476B"/><circle cx="60" cy="74" r="40" fill="#E9A92B"/><circle cx="60" cy="74" r="40" fill="none" stroke="#B77D12" stroke-width="4"/><circle cx="60" cy="74" r="31" fill="#F5C85A" stroke="#FFF1C7" stroke-width="2" stroke-dasharray="3 4"/><circle cx="60" cy="74" r="24" fill="#1d2430"/><text x="60" y="84" font-size="26" text-anchor="middle">🐸</text></svg>
@@ -597,6 +630,9 @@ footer { text-align:center; font-size:12px; color:#8D7A5C; padding: 0 22px 26px;
       cc.addEventListener('click', function () { setCC(cc.getAttribute('aria-pressed') !== 'true'); });
     });
   })();
+
+  /* ── help drawer: load the video only when opened ── */
+  (function () { var d = $('#vr-help'); if (!d) return; d.addEventListener('toggle', function () { var f = $('.hd-frame', d); if (d.open && f && !f.firstChild) { var i = document.createElement('iframe'); i.src = f.dataset.src; i.title = 'How-to video: Completing Assignments in Optima On-Demand'; i.allow = 'encrypted-media; picture-in-picture; fullscreen'; i.allowFullscreen = true; f.appendChild(i); } }); })();
 
   /* ── path toggle (VR is the default) ── */
   function setPath(p, scroll) {
