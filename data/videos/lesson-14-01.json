@@ -1,0 +1,315 @@
+{
+ "lesson": "14.01",
+ "prefix": "g4sci-14-1",
+ "manifestKey": "14-01",
+ "guide": "lena",
+ "slots": {
+  "welcome": {
+   "label": "Welcome · shells on the cattails",
+   "length": "50–60 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "exuvia",
+     "label": "🫙 Jar 1"
+    },
+    {
+     "kind": "photo",
+     "pic": "nymph",
+     "label": "🫙 Jar 2"
+    },
+    {
+     "kind": "photo",
+     "pic": "chrys",
+     "label": "🌿 The green case"
+    },
+    {
+     "label": "🗂 The case question",
+     "tag": "CASE FILE 14",
+     "title": "Shells on the Cattails",
+     "col": "#B9822A",
+     "body": "Are the shells dead bugs, and what is the green case on the milkweed?"
+    }
+   ],
+   "script": "Welcome, scientists! New week, new case, and this one starts at a pond.\n\n[ON SCREEN: Jar 1]\nDr. Reyes found dozens of these on the cattail stems. Six legs. A split down the back. And they never move.\n\n[ON SCREEN: Jar 2]\nIn the mud, her net caught something with the same shape, but this one swims!\n\n[ON SCREEN: The green case]\nAnd this was hanging under a milkweed leaf.\n\n[ON SCREEN: The case question]\nA volunteer wrote “dead bugs?” on the jar. Are they? Find four clues. Press Listen on Dr. Reyes’s walkie-talkie, right below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · what comes next? (Clue 1)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "egg",
+     "label": "🥚 Egg"
+    },
+    {
+     "kind": "photo",
+     "pic": "cat",
+     "label": "🐛 Caterpillar"
+    },
+    {
+     "label": "👆 How to play",
+     "tag": "WARM-UP GAME",
+     "title": "What comes next?",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "1",
+       "Look at the stage in the Now box."
+      ],
+      [
+       "2",
+       "Drag the next stage into the empty box, or tap it."
+      ],
+      [
+       "3",
+       "Go all the way around the circle."
+      ]
+     ]
+    }
+   ],
+   "script": "(Hold up a closed fist, then slowly open it.) Something small can turn into something amazing.\n\n[ON SCREEN: Egg]\nA monarch starts as an egg this tiny, about the size of a pinhead.\n\n[ON SCREEN: Caterpillar]\nThen this hatches out. Hmm. It sure doesn’t look like a butterfly yet!\n\n[ON SCREEN: How to play]\nIn the game, look at the Now box and pick what comes next. Keep going all the way around. Then list three things that change. Press Listen for Dr. Reyes’s hint."
+  },
+  "part2": {
+   "label": "Part 2 · side by side (Clue 2)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "cat",
+     "label": "🐛 Monarch baby"
+    },
+    {
+     "kind": "photo",
+     "pic": "lubber",
+     "label": "🦗 Grasshopper baby"
+    },
+    {
+     "label": "📅 The slider",
+     "tag": "PART 2 GAME",
+     "title": "Side by side",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "➡",
+       "Drag the slider to make the days go by."
+      ],
+      [
+       "👀",
+       "Stop at each day listed under the slider."
+      ],
+      [
+       "✓ ✗",
+       "Does each baby look like its parent?"
+      ]
+     ]
+    }
+   ],
+   "script": "Two babies, hatched on the same day.\n\n[ON SCREEN: Monarch baby · Grasshopper baby]\nOne is a monarch caterpillar. The other is a baby lubber grasshopper, called a nymph. Which one already looks like a small version of its parents?\n\n[ON SCREEN: The slider]\nDrag the slider and watch them grow up side by side. Stop at each day listed under the slider and read the check marks. One of them is about to disappear into a green case. Press Listen on the walkie-talkie."
+  },
+  "explore": {
+   "label": "Part 4 · alike and different (Clue 4)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "emerged",
+     "label": "🐉 Dragonfly"
+    },
+    {
+     "label": "🧩 Three boxes",
+     "tag": "PART 4 GAME",
+     "title": "Alike and different",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "⬅",
+       "Only the first one"
+      ],
+      [
+       "⬌",
+       "Both (alike)"
+      ],
+      [
+       "➡",
+       "Only the second one"
+      ]
+     ]
+    }
+   ],
+   "script": "(Hold up two different shoes.) How are these alike? How are they different? Scientists compare life cycles the same way.\n\n[ON SCREEN: Dragonfly]\nLook at this dragonfly. Do you see the brown thing right next to it? Hmm, where have we seen that before?\n\n[ON SCREEN: Three boxes]\nPick a pair, then sort each fact into a box. When you finish the monarch and the dragonfly, you’ll have your last clue. Press Listen."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔓 Crack the case",
+     "tag": "TOP OF THE ASSIGNMENT",
+     "title": "Dead bugs?",
+     "col": "#B9822A",
+     "body": "Pick the answer that fits all four clues."
+    },
+    {
+     "label": "✍️ Your case report",
+     "tag": "WHAT TO WRITE",
+     "title": "Four places to write",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "Part B",
+       "Two short answers"
+      ],
+      [
+       "Part C",
+       "One Florida life cycle"
+      ],
+      [
+       "CER",
+       "Claim, evidence, reasoning"
+      ],
+      [
+       "📋",
+       "Copy your Gathered Answers into Canvas"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nYou have four clues. Crack the case at the top of this tab: dead bugs, or something else?\n\n[ON SCREEN: Your case report]\nThen write your case report. Two short answers, one Florida life cycle in Part C, and a CER. Want to draw your life cycle in a circle? That’s a bonus. Stuck? Press Hint under any box. Your answers save as you type. Press Listen."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💬 The claim",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "A classmate says…",
+     "col": "#C8553D",
+     "body": "“A caterpillar and a butterfly are completely different animals. They don’t even look alike.”"
+    },
+    {
+     "label": "🧩 The planner",
+     "tag": "PLAN BEFORE YOU WRITE",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "1",
+       "Tap I agree or I disagree."
+      ],
+      [
+       "2",
+       "Tap two pieces of evidence."
+      ],
+      [
+       "3",
+       "You write the reasoning."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: The claim]\nA classmate says a caterpillar and a butterfly are completely different animals. They don’t even look alike! Do you agree?\n\n[ON SCREEN: The planner]\nRemember CER. Tap your side and two facts from today. Think about that green chrysalis. Then explain how your facts prove your claim. Try starting with “This shows that…” Press Listen."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "30–40 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🫙 Your specimen",
+     "tag": "FIELD NOTEBOOK",
+     "title": "Dragonfly shell in a jar",
+     "col": "#B9822A",
+     "body": "Finish the checklist to stamp CASE CLOSED."
+    },
+    {
+     "label": "➡ Next time",
+     "tag": "LESSON 14.02",
+     "title": "Winter at the pond",
+     "col": "#2F7A55",
+     "body": "How do Florida plants and animals depend on each other, and on the seasons?"
+    }
+   ],
+   "script": "Case closed! No dead bugs: just old dragonfly skins and a monarch getting ready to fly.\n\n[ON SCREEN: Your specimen]\nFinish your checklist and a dragonfly shell goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next time]\nNext time, winter comes to the pond. Where do the dragonflies and monarchs go? Press Listen for Dr. Reyes’s last word."
+  },
+  "part3": {
+   "label": "Part 3 · close the circle (Clue 3)",
+   "length": "30–40 s",
+   "want": false,
+   "parts": [],
+   "script": "Every life cycle is a circle. The first stage is already there. Drag the next one onto the glowing spot until the circle closes, then pick the kind of life cycle. Count the stages! Press Listen."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s",
+   "want": false,
+   "parts": [],
+   "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  }
+ },
+ "pics": {
+  "exuvia": {
+   "src": "images/14-01-exuvia.jpg",
+   "cap": "Jar 1 · an empty shell on a stem (CC BY 2.0)"
+  },
+  "nymph": {
+   "src": "images/14-01-nymph-water.jpg",
+   "cap": "Jar 2 · alive in the pond mud (CC BY-SA 4.0)"
+  },
+  "chrys": {
+   "src": "images/14-01-monarch-chrysalis.jpg",
+   "cap": "The green case on the milkweed (NPS, public domain)"
+  },
+  "egg": {
+   "src": "images/14-01-monarch-egg.jpg",
+   "cap": "Monarch egg (CC BY-SA 2.0)"
+  },
+  "cat": {
+   "src": "images/14-01-monarch-caterpillar.jpg",
+   "cap": "Monarch caterpillar (USFWS, public domain)"
+  },
+  "lubber": {
+   "src": "images/14-01-lubber-nymph.jpg",
+   "cap": "Eastern lubber grasshopper nymph (CC BY 2.0)"
+  },
+  "emerged": {
+   "src": "images/14-01-dragonfly-emerged.jpg",
+   "cap": "A dragonfly just out of its nymph skin (CC BY 4.0)"
+  }
+ },
+ "other": [
+  {
+   "id": "vocab",
+   "label": "Word Wall",
+   "length": "30–45 s"
+  },
+  {
+   "id": "lesson",
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  {
+   "id": "part1",
+   "label": "Part 1 · every living thing has a life cycle",
+   "length": "20–30 s"
+  },
+  {
+   "id": "partb",
+   "label": "Part B",
+   "length": "30 s"
+  },
+  {
+   "id": "partc",
+   "label": "Part C · a Florida life cycle",
+   "length": "30 s"
+  }
+ ],
+ "redo": []
+}

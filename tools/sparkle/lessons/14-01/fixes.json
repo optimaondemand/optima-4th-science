@@ -1,0 +1,253 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for a life-cycle drawing",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🔄 Part C &mdash; A Florida Life Cycle"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page; the circle sketch is a bonus)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one Florida plant or animal (not the monarch). List every stage of its life cycle in order, and tell what kind of life cycle it has.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 14 is Quarter 2",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "the generated figure’s grasshopper “nymph” has full wings and looks like the adult; the real photos in Side by side replace it",
+  "old": "<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"lesson-figure-caption\">.*?</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Q5 pointed to “the diagram”; the four organisms are now the Part 3 game",
+  "old": "Pick one of the four organisms from the diagram (monarch, grasshopper, sea turtle, or sunflower).",
+  "new": "Pick one of the four organisms from Part 3 (monarch, grasshopper, sea turtle, or sunflower)."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to look at a Florida plant or animal and predict what stages it goes through from birth to making the next generation.",
+  "new": "Keep this question in mind. By the end, you'll be able to look at a Florida plant or animal and tell what stages it goes through, from its start to making the next generation."
+ },
+ {
+  "kind": "plain",
+  "why": "answers are made on the page now (the game below); the stage list moves into the game",
+  "old": "A monarch butterfly goes through four very different stages between hatching and laying eggs of its own. In your notebook, write these four stages in the order you think they happen:</p>",
+  "new": "A monarch butterfly goes through four very different stages in its life. <strong>What comes next?</strong> Put its life back in order in the game below.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "the four stage words now live in the game",
+  "old": "\\s*<ul style=\"font-size:16px;color:#2B1D12;line-height:1.7;margin:6px 0 10px 24px;\">\\s*<li><strong>caterpillar</strong></li>.*?</ul>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dashes removed",
+  "old": "You've studied how plants and animals are built and how they sense the world. Today we step back and look at the whole picture: every organism goes through a ",
+  "new": "Today we look at the whole picture: every living thing goes through a "
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "It starts with the beginning — an egg, a seed, or a tiny baby — and ends with the same organism making ",
+  "new": "It starts with an egg, a seed or a tiny baby, and ends with that living thing making "
+ },
+ {
+  "kind": "plain",
+  "why": "one idea per sentence",
+  "old": "A sunflower seed grows into a stem, then a leafy plant, then a flowering plant, then makes new seeds. A monarch butterfly hatches from an egg, eats, changes its body, becomes a butterfly, and lays new eggs.",
+  "new": "A sunflower seed grows into a seedling, then a flowering plant that makes new seeds. A monarch hatches from an egg, eats, changes its body, and becomes a butterfly that lays new eggs."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "</span></span> — a Greek word that means \"change of shape.\"</p>",
+  "new": "</span></span>. It comes from a Greek word that means \"change of shape.\"</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; defines pupa",
+  "old": "metamorphosis</strong> — four <span class=\"vtip\">stages",
+  "new": "metamorphosis</strong> has four <span class=\"vtip\">stages"
+ },
+ {
+  "kind": "plain",
+  "why": "defines pupa",
+  "old": "<em>egg &rarr; larva &rarr; pupa &rarr; adult</em>.",
+  "new": "<em>egg &rarr; larva &rarr; pupa (a resting stage, like a chrysalis) &rarr; adult</em>."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "metamorphosis</strong> — three stages:",
+  "new": "metamorphosis</strong> has three stages:"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "from the start — a Florida bear cub looks like a tiny bear",
+  "new": "from the start. A Florida bear cub looks like a tiny bear"
+ },
+ {
+  "kind": "plain",
+  "why": "plain label; dashes removed",
+  "old": "<strong>Common misconception:</strong> Some people think \"metamorphosis\" means any kind of growing up. It really means a <em>big shape change</em> — like a caterpillar turning into a butterfly.",
+  "new": "<strong>Watch out:</strong> Some people think \"metamorphosis\" means any kind of growing up. It really means a <em>big change in body shape</em>, like a caterpillar turning into a butterfly."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean + wrong fact: remove the whole Explore tab (the comparison chart moves to Part 4 and Part C; the 17-year Florida cicada fact goes with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason pointed at the removed figure (Stop & Think in Part 1 stays)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the diagram heading becomes Part 3 (Close the circle replaces the tap diagram)",
+  "old": "margin-top:22px;\">Four Florida Life Cycles</h3>",
+  "new": "margin-top:22px;\">Part 3 · Four Florida Life Cycles</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean + wrong facts: Observe & Reason, the “turns into liquid” fact, the monarch-route callout and Go Deeper at the end of the Lesson; Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Alike and Different</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Remember the empty shells on Dr. Reyes’s cattails? Scientists compare life cycles side by side. Pick two Florida living things and sort facts about their lives: which facts fit both, and which fit only one?</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the circle sketch is a bonus",
+  "old": "A drawing of one Florida organism's life cycle, in a circle with arrows, every stage labeled, plus the metamorphosis type explained.",
+  "new": "One Florida organism's life cycle: every stage in order, plus its kind of life cycle explained. (A circle sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether a caterpillar and butterfly are the same animal, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether a caterpillar and a butterfly are the same animal, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

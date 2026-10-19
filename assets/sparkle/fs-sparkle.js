@@ -1847,6 +1847,226 @@
     if (tried.open && tried.bag) ask();
   }
 
+  /* ---------- Warm-Up: "What comes next?" — see a stage, pick the next one; the strip fills, the circle closes (14.01) ----------
+     D.nextup = {afterText, kicker, title, todo[], why, name, stages:[{id,t,img,alt}], whys:[one line per step, i -> i+1 (last = adult -> egg)],
+                 hint, q, opts:[{t,ok,miss}], credit, win, clue} */
+  function buildNextup() {
+    var N = D.nextup; if (!N) return;
+    var at = anchorP(N.afterText); if (!at) { FAILED.push('nextup anchor text not found'); return; }
+    var g = gameShell(N.kicker || 'Warm-Up game', N.title, N.todo, N.why); g.dataset.mod = 'nextup';
+    var strip = el('div', 'fs-nu-strip'), stage = el('div', 'fs-nu-stage'), info = el('div', 'fs-hs-card fs-nu-info', '<em>' + esc(N.hint || 'Drag the stage that comes next into the empty box, or tap it.') + '</em>');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(strip); g.appendChild(stage); g.appendChild(info); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    if (N.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(N.credit)));
+    var S = N.stages, n = S.length, step = Math.min(+store('nextup') || 0, n);
+    function card(s, cls) { return '<div class="fs-nu-card ' + (cls || '') + '"><img alt="' + esc(s.alt) + '" src="' + esc(s.img) + '"><span>' + esc(s.t) + '</span></div>'; }
+    function drawStrip(pop) {
+      var h = '';
+      for (var i = 0; i <= Math.min(step, n - 1); i++) h += (i ? '<i class="fs-nu-arr">➜</i>' : '') + card(S[i], i === step && pop ? 'pop' : '');
+      if (step >= n) h += '<i class="fs-nu-arr back">↩</i><div class="fs-nu-loop">' + esc(S[0].t) + ' again</div>';
+      strip.innerHTML = h;
+    }
+    function round() {
+      count.textContent = '🔄 ' + Math.min(step, n) + ' of ' + n + ' steps'; count.classList.toggle('ok', step >= n);
+      if (step >= n) { stage.innerHTML = ''; ask(); return; }
+      var cur = S[step], nextI = (step + 1) % n;
+      var choices = shuffle(S.map(function (s, i) { return i; }).filter(function (i) { return i !== step; }));
+      stage.innerHTML = '<div class="fs-nu-now"><div class="fs-nu-lab">Now</div>' + card(cur) + '</div><i class="fs-nu-arr big">➜</i>' +
+        '<div class="fs-nu-slot" role="button" tabindex="0"><div class="fs-nu-lab">What comes next?</div><div class="fs-nu-q">?</div></div>' +
+        '<div class="fs-nu-pick"><div class="fs-nu-lab">Pick one</div>' + choices.map(function (i) { return '<div class="fs-card fs-nu-ch" data-i="' + i + '"><img alt="' + esc(S[i].alt) + '" src="' + esc(S[i].img) + '"><span>' + esc(S[i].t) + '</span></div>'; }).join('') + '</div>';
+      var slot = $('.fs-nu-slot', stage);
+      function drop(tk) {
+        var i = +tk.dataset.i;
+        if (i !== nextI) { bounce(tk, miss, (S[i].miss && S[i].miss[step]) || N.miss || 'Not yet. Which stage grows out of this one? Look at the pictures in the strip.'); return; }
+        miss.classList.remove('show'); SFX.chime();
+        info.innerHTML = '<span class="fs-hs-n">' + (step + 1) + '</span><div><b>' + esc(cur.t) + ' → ' + esc(S[nextI].t) + '</b>' + esc(N.whys[step]) + '</div>';
+        info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash');
+        step++; store('nextup', String(step)); drawStrip(!reduceMotion); round();
+      }
+      $$('.fs-nu-ch', stage).forEach(function (c) { dragDrop(c, function () { return [slot]; }, drop); });
+      slot.addEventListener('click', function () { var s = $('.sel', stage); if (s) { s.classList.remove('sel'); drop(s); } });
+      slot.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); var s = $('.sel', stage); if (s) { s.classList.remove('sel'); drop(s); } } });
+    }
+    function ask() {
+      if (qh.dataset.on) return; qh.dataset.on = '1';
+      chipsQ(qh, N.q, N.opts, function () { store('nextup-q', '1'); winOnce(win, N.win, N.clue, 'nextup'); }, miss);
+      if (store('nextup-q')) { var ok = N.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qh)[ok]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; winOnce(win, N.win, N.clue, 'nextup'); }
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    drawStrip(false); round();
+  }
+
+  /* ---------- Lesson: "Side by side" — drag the day slider; two young animals grow next to each other (14.01) ----------
+     D.morph = {afterText, kicker, title, todo[], why, unit ('day'), max, lanes:[{name, parent, frames:[{d, img, alt, stage, like (looks like its parent?), note}]}],
+                checks:[d,...] (days the student must visit), q, opts:[{t,ok,miss}], credit, win, clue} */
+  function buildMorph() {
+    var M = D.morph; if (!M) return;
+    var at = anchorP(M.afterText); if (!at) { FAILED.push('morph anchor text not found'); return; }
+    var g = gameShell(M.kicker || 'Lesson game', M.title, M.todo, M.why); g.dataset.mod = 'morph';
+    var lanes = el('div', 'fs-mo-lanes'), ctl = el('div', 'fs-mo-ctl'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    ctl.innerHTML = '<label class="fs-mo-lab">📅 <b class="fs-mo-day"></b></label><input type="range" class="fs-mo-range" min="0" max="' + M.max + '" step="1" value="0" aria-label="Days"><div class="fs-mo-ticks"><span>' + esc(M.start || 'Day 0') + '</span><span>Day ' + M.max + '</span></div><div class="fs-mo-need"></div>';
+    M.lanes.forEach(function (L, li) {
+      var ln = el('div', 'fs-mo-lane', '<div class="fs-mo-name">' + esc(L.name) + '</div><div class="fs-mo-ph"><img alt=""><span class="fs-mo-stage"></span></div><div class="fs-mo-like"></div><div class="fs-mo-note"></div><div class="fs-mo-dots">' + L.frames.map(function (f, k) { return '<i data-k="' + k + '" title="' + esc(f.stage) + '"></i>'; }).join('') + '</div>');
+      lanes.appendChild(ln);
+    });
+    g.appendChild(ctl); g.appendChild(lanes); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    if (M.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(M.credit)));
+    var range = $('.fs-mo-range', ctl), seen = loadJ('morph', {}), checks = M.checks || [];
+    function frameAt(L, d) { var f = L.frames[0], k = 0; L.frames.forEach(function (x, i) { if (x.d <= d) { f = x; k = i; } }); return { f: f, k: k }; }
+    function show(d, fromUser) {
+      $('.fs-mo-day', ctl).textContent = d === 0 ? (M.start || 'Day 0') : 'Day ' + d;
+      $$('.fs-mo-lane', lanes).forEach(function (ln, li) {
+        var L = M.lanes[li], r = frameAt(L, d), img = $('img', ln);
+        if (img.getAttribute('src') !== r.f.img) { img.src = r.f.img; img.alt = r.f.alt; if (!reduceMotion && fromUser) { img.classList.remove('in'); void img.offsetWidth; img.classList.add('in'); } }
+        $('.fs-mo-stage', ln).textContent = r.f.stage;
+        var like = $('.fs-mo-like', ln); like.className = 'fs-mo-like ' + (r.f.like ? 'yes' : 'no');
+        like.textContent = r.f.like == null ? '' : (r.f.like ? '✓ Looks like a small ' + L.parent : '✗ Looks nothing like a ' + L.parent);
+        $('.fs-mo-note', ln).textContent = r.f.note || '';
+        $$('.fs-mo-dots i', ln).forEach(function (dot, k) { dot.classList.toggle('on', k <= r.k); });
+      });
+      checks.forEach(function (c) { if (Math.abs(d - c) <= 2) seen[c] = 1; }); saveJ('morph', seen);
+      var left = checks.filter(function (c) { return !seen[c]; });
+      $('.fs-mo-need', ctl).innerHTML = left.length ? '👀 Slide to ' + left.map(function (c) { return '<b>day ' + c + '</b>'; }).join(', ') + ' and compare.' : '✅ You watched both grow up.';
+      if (!left.length) ask();
+    }
+    var lastBlip = -1;
+    range.addEventListener('input', function () { var d = +range.value; var k = frameAt(M.lanes[0], d).k * 10 + frameAt(M.lanes[1], d).k; if (k !== lastBlip) { lastBlip = k; SFX.blip(); } show(d, true); });
+    function ask() {
+      if (qh.dataset.on) return; qh.dataset.on = '1';
+      chipsQ(qh, M.q, M.opts, function () { store('morph-q', '1'); winOnce(win, M.win, M.clue, 'morph'); }, miss);
+      if (store('morph-q')) { var ok = M.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qh)[ok]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; winOnce(win, M.win, M.clue, 'morph'); }
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    show(0, false);
+  }
+
+  /* ---------- Lesson Part 3: "Close the circle" — put stage photos on a life-cycle wheel, then stamp the kind of cycle (14.01) ----------
+     D.wheel = {replace, kicker, title, todo[], why, kinds:[{k,icon,t}], orgs:[{id,name,icon,stages:[{t,img,alt}], kind, kindMiss, why}], hint, credit, win, clue}
+     stage 0 is placed for the student; the rest go in order around the circle */
+  function buildWheel() {
+    var W = D.wheel; if (!W) return;
+    var wrap = $(W.replace || '#tab-lesson .diagram-wrap'); if (!wrap) { FAILED.push('wheel: nothing to replace'); return; }
+    var g = gameShell(W.kicker || 'Lesson game', W.title, W.todo, W.why); g.dataset.mod = 'wheel';
+    var pv = wrap.previousElementSibling; if (pv && pv.tagName === 'P' && pv.textContent.length < 200) pv.classList.add('fs-hide-on');
+    var tabs = el('div', 'fs-wh-tabs'), board = el('div', 'fs-wh-board'), info = el('div', 'fs-hs-card fs-wh-info', '<em>' + esc(W.hint || 'Drag the next stage onto the glowing spot, or tap the card and then the spot.') + '</em>');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
+    W.orgs.forEach(function (o, i) { var b = el('button', 'fs-in-chip', '<span>' + o.icon + '</span>' + esc(o.name) + '<em></em>'); b.type = 'button'; b.dataset.i = i; tabs.appendChild(b); });
+    g.appendChild(tabs); g.appendChild(board); g.appendChild(info); g.appendChild(miss); g.appendChild(count); g.appendChild(win);
+    if (W.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(W.credit)));
+    var st = loadJ('wheel', {});   // {id: {n: placed count, kind: true}}
+    function done(o) { var s = st[o.id]; return s && s.n >= o.stages.length && s.kind; }
+    function upd() {
+      var n = W.orgs.filter(done).length; count.textContent = '🔄 ' + n + ' of ' + W.orgs.length + ' life cycles closed'; count.classList.toggle('ok', n === W.orgs.length);
+      $$('.fs-in-chip', tabs).forEach(function (b, i) { var ok = done(W.orgs[i]); b.classList.toggle('done', ok); $('em', b).textContent = ok ? ' ✓' : ''; });
+      if (n === W.orgs.length) winOnce(win, W.win, W.clue, 'wheel');
+    }
+    function pos(k, N) { var a = -Math.PI / 2 + k * 2 * Math.PI / N; return { x: 50 + 36 * Math.cos(a), y: 50 + 36 * Math.sin(a) }; }
+    function open(i) {
+      var o = W.orgs[i], N = o.stages.length, s = st[o.id] || (st[o.id] = { n: 1 }); if (s.n < 1) s.n = 1;
+      $$('.fs-in-chip', tabs).forEach(function (b) { b.classList.toggle('on', +b.dataset.i === i); }); SFX.blip();
+      var arcs = '';
+      for (var k = 0; k < N; k++) { var p = pos(k, N), q = pos((k + 1) % N, N); var mx = 50 + 44 * Math.cos(-Math.PI / 2 + (k + .5) * 2 * Math.PI / N), my = 50 + 44 * Math.sin(-Math.PI / 2 + (k + .5) * 2 * Math.PI / N);
+        arcs += '<path class="fs-wh-arc' + (k === N - 1 ? ' last' : '') + '" data-k="' + k + '" d="M' + p.x + ',' + p.y + ' Q' + mx + ',' + my + ' ' + q.x + ',' + q.y + '" marker-end="url(#fsWhHead)"/>'; }
+      board.innerHTML = '<div class="fs-wh-ring"><svg viewBox="0 0 100 100" class="fs-wh-svg" aria-hidden="true"><defs><marker id="fsWhHead" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2E9E5E"/></marker></defs>' + arcs + '</svg>' +
+        o.stages.map(function (x, k) { var p = pos(k, N); return '<div class="fs-wh-spot" data-k="' + k + '" style="left:' + p.x + '%;top:' + p.y + '%"><span class="fs-wh-num">' + (k + 1) + '</span></div>'; }).join('') +
+        '<div class="fs-wh-mid"><b>' + esc(o.name) + '</b><span class="fs-wh-kind"></span></div></div>' +
+        '<div class="fs-wh-side"><div class="fs-lu-lab">Stage cards</div><div class="fs-wh-tray"></div><div class="fs-wh-stamp"></div></div>';
+      var tray = $('.fs-wh-tray', board), spots = $$('.fs-wh-spot', board);
+      shuffle(o.stages.map(function (x, k) { return k; }).filter(function (k) { return k > 0; })).forEach(function (k) {
+        var c = el('div', 'fs-card fs-wh-card', '<img alt="' + esc(o.stages[k].alt) + '" src="' + esc(o.stages[k].img) + '"><span>' + esc(o.stages[k].t) + '</span>'); c.dataset.k = k; tray.appendChild(c);
+      });
+      function paint(animate) {
+        spots.forEach(function (sp, k) {
+          var x = o.stages[k], has = k < s.n;
+          sp.classList.toggle('filled', has); sp.classList.toggle('next', k === s.n);
+          if (has && !$('img', sp)) { sp.insertAdjacentHTML('afterbegin', '<img alt="' + esc(x.alt) + '" src="' + esc(x.img) + '"><span class="fs-wh-t">' + esc(x.t) + '</span>'); if (animate && k === s.n - 1 && !reduceMotion) { sp.classList.remove('pop'); void sp.offsetWidth; sp.classList.add('pop'); } }
+        });
+        $$('.fs-wh-arc', board).forEach(function (a) { var k = +a.dataset.k; a.classList.toggle('on', k < s.n - 1 || (s.n >= N && k === N - 1)); });
+        $$('.fs-wh-card', tray).forEach(function (c) { if (+c.dataset.k < s.n) c.classList.add('placed'); });
+        if (s.n >= N) stamp();
+      }
+      function drop(tk, sp) {
+        var k = +tk.dataset.k, want = s.n;
+        if (sp && +sp.dataset.k !== want) { bounce(tk, miss, 'Fill the spots in order. Find the glowing spot ' + (want + 1) + ' first.'); return; }
+        if (k !== want) { bounce(tk, miss, 'Look at spot ' + want + ': ' + o.stages[want - 1].t + '. Which stage grows out of it?'); return; }
+        miss.classList.remove('show'); s.n++; saveJ('wheel', st); SFX.chime(); paint(true);
+        info.innerHTML = s.n >= N ? '<span class="fs-hs-n">↩</span><div><b>The circle closes</b>The adult makes offspring, and the life cycle starts over.</div>' : '<span class="fs-hs-n">' + s.n + '</span><div><b>' + esc(o.stages[k].t) + '</b>Next: what comes after it?</div>';
+        info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash');
+      }
+      $$('.fs-wh-card', tray).forEach(function (c) { dragDrop(c, function () { return spots.filter(function (x) { return !x.classList.contains('filled'); }); }, drop); });
+      spots.forEach(function (sp) { sp.addEventListener('click', function () { var sel = $('.sel', tray); if (sel) { sel.classList.remove('sel'); drop(sel, sp); } }); });
+      function stamp() {
+        var box = $('.fs-wh-stamp', board); if (box.dataset.on) return; box.dataset.on = '1';
+        box.innerHTML = '<div class="fs-in-k">What kind of life cycle is it?</div><div class="fs-in-chips">' + W.kinds.map(function (x) { return '<button type="button" class="fs-in-chip" data-k="' + x.k + '"><span>' + x.icon + '</span>' + esc(x.t) + '</button>'; }).join('') + '</div>';
+        function mark() { var kd = W.kinds.filter(function (x) { return x.k === o.kind; })[0]; $('.fs-wh-kind', board).textContent = kd.icon + ' ' + kd.t; $$('.fs-in-chip', box).forEach(function (c) { if (c.dataset.k === o.kind) c.classList.add('on', 'ok'); }); }
+        if (s.kind) { mark(); return; }
+        $$('.fs-in-chip', box).forEach(function (c) { c.addEventListener('click', function () {
+          if (s.kind) return;
+          if (c.dataset.k !== o.kind) { bounce(c, miss, o.kindMiss || 'Count the stages. Does the young look like the adult?'); return; }
+          miss.classList.remove('show'); s.kind = true; saveJ('wheel', st); SFX.stamp(); mark();
+          info.innerHTML = '<span class="fs-hs-n">✓</span><div><b>' + esc(o.name) + '</b>' + esc(o.why) + '</div>'; info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash'); upd();
+        }); });
+      }
+      paint(false); upd();
+    }
+    $$('.fs-in-chip', tabs).forEach(function (b) { b.addEventListener('click', function () { open(+b.dataset.i); }); });
+    wrap.parentNode.insertBefore(g, wrap); wrap.classList.add('fs-hide-on');
+    open(0); upd();
+  }
+
+  /* ---------- Lesson Part 4: "Alike and different" — pick a pair, drag facts into Only A / Both / Only B (14.01) ----------
+     D.venn = {afterText, kicker, title, todo[], why, pairs:[{id, a:{name,img,alt}, b:{...}, cards:[{t, z:'a'|'both'|'b', miss}], q, opts:[{t,ok,miss}], done}], credit, win, clue}
+     the clue is earned when any one pair is finished */
+  function buildVenn() {
+    var V = D.venn; if (!V) return;
+    var at = anchorP(V.afterText); if (!at) { FAILED.push('venn anchor text not found'); return; }
+    var g = gameShell(V.kicker || 'Lesson game', V.title, V.todo, V.why); g.dataset.mod = 'venn';
+    var tabs = el('div', 'fs-vn-tabs'), body = el('div', 'fs-vn-body'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    V.pairs.forEach(function (p, i) { var b = el('button', 'fs-in-chip', esc(p.a.name) + ' vs. ' + esc(p.b.name) + '<em></em>'); b.type = 'button'; b.dataset.i = i; tabs.appendChild(b); });
+    g.appendChild(el('div', 'fs-in-k', 'Pick two Florida living things to compare'));
+    g.appendChild(tabs); g.appendChild(body); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    if (V.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(V.credit)));
+    var st = loadJ('venn', {});
+    function upd() { $$('.fs-in-chip', tabs).forEach(function (b, i) { var p = V.pairs[i], s = st[p.id], ok = s && s.q; b.classList.toggle('done', !!ok); $('em', b).textContent = ok ? ' ✓' : ''; }); }
+    function open(i) {
+      var p = V.pairs[i], s = st[p.id] || (st[p.id] = { put: {} });
+      $$('.fs-in-chip', tabs).forEach(function (b) { b.classList.toggle('on', +b.dataset.i === i); }); SFX.blip(); qh.innerHTML = ''; delete qh.dataset.on;
+      body.innerHTML = '<div class="fs-vn-heads"><div class="fs-vn-who"><img alt="' + esc(p.a.alt) + '" src="' + esc(p.a.img) + '"><b>' + esc(p.a.name) + '</b></div><div class="fs-vn-who"><img alt="' + esc(p.b.alt) + '" src="' + esc(p.b.img) + '"><b>' + esc(p.b.name) + '</b></div></div>' +
+        '<div class="fs-vn-zones"><div class="fs-vn-z" data-z="a" role="button" tabindex="0"><div class="fs-vn-zt">Only the ' + esc(p.a.name.toLowerCase()) + '</div><div class="fs-vn-pile"></div></div>' +
+        '<div class="fs-vn-z both" data-z="both" role="button" tabindex="0"><div class="fs-vn-zt">Both (alike)</div><div class="fs-vn-pile"></div></div>' +
+        '<div class="fs-vn-z" data-z="b" role="button" tabindex="0"><div class="fs-vn-zt">Only the ' + esc(p.b.name.toLowerCase()) + '</div><div class="fs-vn-pile"></div></div></div>' +
+        '<div class="fs-lu-lab">Fact cards</div><div class="fs-vn-tray"></div><div class="fs-count fs-vn-n"></div>';
+      var tray = $('.fs-vn-tray', body), zones = $$('.fs-vn-z', body);
+      shuffle(p.cards.map(function (c, k) { return k; })).forEach(function (k) { var c = el('div', 'fs-card fs-vn-card', esc(p.cards[k].t)); c.dataset.k = k; tray.appendChild(c); });
+      function placeK(k, animate) {
+        var c = p.cards[k], z = $('.fs-vn-z[data-z="' + c.z + '"] .fs-vn-pile', body), chip = el('span', 'fs-vn-chip' + (animate && !reduceMotion ? ' pop' : ''), esc(c.t)); z.appendChild(chip);
+        var t = $('.fs-vn-card[data-k="' + k + '"]', tray); if (t) t.remove();
+      }
+      function cnt() {
+        var n = Object.keys(s.put).length; $('.fs-vn-n', body).textContent = '🧩 ' + n + ' of ' + p.cards.length + ' facts sorted'; $('.fs-vn-n', body).classList.toggle('ok', n === p.cards.length);
+        if (n === p.cards.length) ask();
+      }
+      function drop(tk, z) {
+        var k = +tk.dataset.k, c = p.cards[k];
+        if (z.dataset.z !== c.z) { bounce(tk, miss, c.miss || 'Ask: is this true for the ' + p.a.name.toLowerCase() + ', the ' + p.b.name.toLowerCase() + ', or both?'); return; }
+        miss.classList.remove('show'); s.put[k] = 1; saveJ('venn', st); SFX.chime(); placeK(k, true); cnt();
+      }
+      $$('.fs-vn-card', tray).forEach(function (c) { dragDrop(c, function () { return zones; }, drop); });
+      zones.forEach(function (z) { z.addEventListener('click', function () { var sel = $('.sel', tray); if (sel) { sel.classList.remove('sel'); drop(sel, z); } }); });
+      Object.keys(s.put).forEach(function (k) { placeK(+k, false); });
+      function ask() {
+        if (qh.dataset.on) return; qh.dataset.on = '1';
+        chipsQ(qh, p.q, p.opts, function () { s.q = 1; saveJ('venn', st); upd(); var w = el('div', 'fs-hs-card flash', '<span class="fs-hs-n">✓</span><div>' + esc(p.done || '') + '</div>'); qh.appendChild(w); winOnce(win, V.win, V.clue, 'venn'); }, miss);
+        if (s.q) { var ok = p.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qh)[ok]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; }
+      }
+      cnt();
+    }
+    $$('.fs-in-chip', tabs).forEach(function (b) { b.addEventListener('click', function () { open(+b.dataset.i); }); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    open(0); upd();
+    if (V.pairs.some(function (p) { return st[p.id] && st[p.id].q; })) winOnce(win, V.win, V.clue, 'venn');
+  }
+
   function buildQuiz() {
     var qs = $$('#tab-quiz .quiz-q'); if (!qs.length) return;
     var Q = D.quizMiss || {};
@@ -3322,6 +3542,52 @@
   };
 
   /* ----- thermometer simulation ----- */
+  /* ----- dip net (14.01): sweep three spots in a pond, look at the catch in a white tray, learn each young animal's life stage, then release ----- 
+     T.dipnet = {title, todo[], parts:[{label,t}], spots:[{k,name,icon,where,catch:[critterId,...]}], critters:{id:{name,img,alt,stage,note}}, q:{q,opts:[{t,ok,why}]}, credit} */
+  SIMS.dipnet = function (host, T) {
+    var S = T.dipnet, swept = loadJ('dipnet', {}), seen = loadJ('dipnet-seen', {});
+    host.innerHTML = '<div class="fs-game-k">Try it: pond sampling</div><div class="fs-game-t">' + esc(S.title) + '</div>' +
+      '<ul class="fs-todo">' + S.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-dn-parts">' + S.parts.map(function (p, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(p.label) + '</button>'; }).join('') + '</div>' +
+      '<div class="fs-hs-card fs-dn-pinfo"><em>Tap a part of the dip net to learn what it does.</em></div>' +
+      '<div class="fs-in-k">Pick a spot to sweep</div><div class="fs-dn-spots">' + S.spots.map(function (s, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '"><span>' + s.icon + '</span>' + esc(s.name) + '<em></em></button>'; }).join('') + '</div>' +
+      '<div class="fs-dn-pond"><div class="fs-dn-water"><span class="fs-dn-net">🥅</span><div class="fs-dn-where">Pick a spot, then sweep.</div></div><button type="button" class="fs-btn fs-dn-go" disabled>🥅 Sweep the net</button></div>' +
+      '<div class="fs-in-k">The sorting tray</div><div class="fs-dn-tray"><em>Your catch goes here. Tap each animal to find out what it is.</em></div>' +
+      '<div class="fs-hs-card fs-dn-info"><em>Tap an animal in the tray.</em></div><div class="fs-sv-q fs-dn-q"></div><div class="fs-miss fs-dn-miss"></div><div class="fs-win fs-dn-win"></div>' +
+      (S.credit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(S.credit) + '</details>' : '');
+    var pinfo = $('.fs-dn-pinfo', host), info = $('.fs-dn-info', host), tray = $('.fs-dn-tray', host), go = $('.fs-dn-go', host), water = $('.fs-dn-water', host), spot = null;
+    $$('.fs-dn-parts .fs-in-chip', host).forEach(function (c) { c.addEventListener('click', function () { var p = S.parts[+c.dataset.i]; c.classList.add('on'); pinfo.innerHTML = '<span class="fs-hs-n">🥅</span><div><b>' + esc(p.label) + '</b>' + esc(p.t) + '</div>'; SFX.blip(); }); });
+    $$('.fs-dn-spots .fs-in-chip', host).forEach(function (c) { c.addEventListener('click', function () {
+      spot = S.spots[+c.dataset.i]; $$('.fs-dn-spots .fs-in-chip', host).forEach(function (x) { x.classList.toggle('on', x === c); });
+      $('.fs-dn-where', host).textContent = spot.icon + ' ' + spot.where; water.dataset.k = spot.k; go.disabled = false; SFX.blip(); }); });
+    function drawTray() {
+      var ids = []; S.spots.forEach(function (s) { if (swept[s.k]) s.catch.forEach(function (id) { if (ids.indexOf(id) < 0) ids.push(id); }); });
+      if (!ids.length) return;
+      tray.innerHTML = ids.map(function (id) { var c = S.critters[id]; return '<button type="button" class="fs-dn-crit' + (seen[id] ? ' seen' : '') + '" data-id="' + id + '"><img alt="' + esc(c.alt) + '" src="' + esc(c.img) + '"><span>' + (seen[id] ? esc(c.name) : '?') + '</span></button>'; }).join('');
+      $$('.fs-dn-crit', tray).forEach(function (b) { b.addEventListener('click', function () {
+        var c = S.critters[b.dataset.id]; seen[b.dataset.id] = 1; saveJ('dipnet-seen', seen); b.classList.add('seen'); $('span', b).textContent = c.name; SFX.chime();
+        info.innerHTML = '<span class="fs-hs-n">🔎</span><div><b>' + esc(c.name) + ' <span class="fs-dn-stage">' + esc(c.stage) + '</span></b>' + esc(c.note) + '</div>'; info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash'); check(); }); });
+    }
+    function check() {
+      S.spots.forEach(function (s, i) { var c = $$('.fs-dn-spots .fs-in-chip', host)[i]; c.classList.toggle('done', !!swept[s.k]); $('em', c).textContent = swept[s.k] ? ' ✓' : ''; });
+      var all = S.spots.every(function (s) { return swept[s.k]; }) && Object.keys(S.critters).every(function (id) { return seen[id]; });
+      if (all) ask();
+    }
+    go.addEventListener('click', function () {
+      if (!spot) return; go.disabled = true; noise(0.6, 250, 1200, 0.25);
+      water.classList.remove('sweep'); void water.offsetWidth; water.classList.add('sweep');
+      setTimeout(function () { swept[spot.k] = 1; saveJ('dipnet', swept); go.disabled = false; drawTray(); check(); }, reduceMotion ? 0 : 1100);
+    });
+    function ask() {
+      var q = $('.fs-dn-q', host); if (q.dataset.on) return; q.dataset.on = '1';
+      q.innerHTML = '<div class="fs-in-k">' + esc(S.q.q) + '</div><div class="fs-in-chips">' + S.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', q).forEach(function (c) { c.addEventListener('click', function () { var o = S.q.opts[+c.dataset.i];
+        if (!o.ok) { bounce(c, $('.fs-dn-miss', host), o.why); return; } $('.fs-dn-miss', host).classList.remove('show');
+        c.classList.add('on', 'ok'); var w = $('.fs-dn-win', host); w.innerHTML = esc(o.why); w.classList.add('show'); SFX.win(); toolDone(); }); });
+    }
+    drawTray(); check();
+  };
+
   SIMS.thermometer = function (host, T) {
     var S = T.thermo, places = S.places, Fmin = -20, Fmax = 220;
     function yOf(F) { return 330 - (F - Fmin) / (Fmax - Fmin) * 290; }
@@ -3818,6 +4084,10 @@
     guard('passiton', buildPassiton);
     guard('pollen', buildPollen);
     guard('bagtest', buildBagtest);
+    guard('nextup', buildNextup);
+    guard('morph', buildMorph);
+    guard('wheel', buildWheel);
+    guard('venn', buildVenn);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
