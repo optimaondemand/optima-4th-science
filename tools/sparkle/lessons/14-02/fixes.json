@@ -1,0 +1,313 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for a two-region seasonal model",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🗺️ Part C &mdash; A Two-Region Seasonal Model"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page now; the sketch is a bonus)",
+  "old": "<p style=\"font-size:15px;color:#9A8E82;margin-bottom:14px;\">In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "<p style=\"font-size:15px;color:#9A8E82;margin-bottom:14px;\">Pick a season and one region besides Florida (like Maine or Colorado). Describe both places in that season, one food-energy connection in each, and how the regions are connected.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 14 is Quarter 2",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "wrong fact: seasons come from Earth’s tilt, not the water cycle (the water-cycle paragraph is cut; the weather/climate idea stays, shorter)",
+  "old": "<p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;\"><strong>Weather</strong> is what.*?</p>\\s*<p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;\"><strong>The water cycle connects it all\\.</strong>.*?</p>",
+  "new": "<p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;\"><strong>Weather</strong> is what's happening outside <em>right now</em>. <strong>Climate</strong> is the usual weather in a place over many years. Seasons happen because Earth is tilted as it travels around the Sun, so each place gets more sunlight in summer and less in winter.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "the old figure looked AI-made (a two-way food-energy arrow on the chickadee); two real photos replace it",
+  "old": "<div class=\"lesson-figure-label\">🍂 January in Florida vs\\. January in Maine</div>\\s*<img src=\"images/14-02-seasons-comparison\\.png\"\\s*alt=\"[^\"]*\"",
+  "new": "<div class=\"lesson-figure-label\">🍂 Winter in Florida vs. winter up north</div>\n        <img src=\"images/14-02-seasons-real.jpg\"\n             alt=\"Two photos side by side. Left: dozens of manatees crowded in the clear water of a Florida spring in winter. Right: a pond frozen solid and covered with snow, with bare trees behind it.\"",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "caption matches the real photos",
+  "old": "<div class=\"lesson-figure-caption\"><strong>Same month, two regions\\.</strong>.*?</div>",
+  "new": "<div class=\"lesson-figure-caption\"><strong>Same season, two regions.</strong> Florida's water stays open; up north, ponds freeze. Photos: USFWS (CC BY 2.0); Dinohoax1 (CC BY 3.0).</div>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Q5 pointed to “the diagram”; the four stories are now rows in Turn the calendar",
+  "old": "Pick one of the four examples from the diagram (migrating ducks, manatee winter, citrus harvest, or sea turtle nesting).",
+  "new": "Pick one of these seasonal stories from Turn the calendar: migrating ducks, manatees in winter, the orange harvest, or sea turtle nesting."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dashes removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll build a model that compares Florida's seasons to another region's — and shows how plants, animals, and food energy stay connected across the year.",
+  "new": "Keep this question in mind. By the end, you'll build a model that compares Florida's seasons to another region's, and shows how plants, animals and food energy stay connected."
+ },
+ {
+  "kind": "plain",
+  "why": "answers are made on the page now (the game below)",
+  "old": "<p>It's January in Florida\\. What's happening outside\\?.*?</p>\\s*<p>Now imagine the same month in Maine\\..*?</p>",
+  "new": "<p>It's January. In Florida, what's happening outside? Now picture the same month in Maine. <strong>Where would you see each photo?</strong> Sort them in the game below.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dashes removed",
+  "old": "If you visited Maine in January, you'd see snow on the ground, bare trees, and very few animals out in the open. Florida in January looks completely different: green grass, palm trees with leaves, songbirds singing, lizards on fences. Same month — totally different scene.",
+  "new": "In January, Maine has snow on the ground, bare trees and very few animals out in the open. Florida in January has green grass, songbirds and lizards on fences. Same month, totally different scene."
+ },
+ {
+  "kind": "plain",
+  "why": "one idea per sentence",
+  "old": "is mild. Our winters stay warm. Our summers are hot and rainy. Other ",
+  "new": "is mild. Our winters are mild and our summers are hot and rainy. Other "
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed; shorter",
+  "old": "</span></span> — they all need each other. Plants need pollinators to make seeds. Birds need insects to feed their babies. Mammals need plants and animals for food. Every animal — including humans — gets its energy from food, which means the energy was stored in something else first.</p>",
+  "new": "</span></span>: they need each other. Plants need pollinators to make seeds. Birds need insects to feed their babies. Every animal, including you, gets its energy from food.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter bullets",
+  "old": "Most plants keep growing (slower). Many animals stay active. Florida becomes a winter home for birds that ",
+  "new": "Plants keep growing and many animals stay active. Birds "
+ },
+ {
+  "kind": "plain",
+  "why": "shorter bullets",
+  "old": "south to find food.</li>",
+  "new": "here from the north to find food.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter bullets",
+  "old": "Many trees drop their leaves to save energy. Some animals ",
+  "new": "Many trees drop their leaves. Some animals "
+ },
+ {
+  "kind": "plain",
+  "why": "shorter bullets",
+  "old": " (like bears and chipmunks). Other animals — like robins — fly south, sometimes all the way to Florida.</li>",
+  "new": ", like bears. Others, like robins, fly south.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "the plant stored gets passed to them. So when winter comes and plants slow down or die back, every animal in that region has to find food a different way — or move to a place where food is still available.</p>",
+  "new": "the plant stored passes to them. When winter stops the plants, animals must find food another way, or move where food is still growing.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter labels",
+  "old": "<strong>Florida response to mild winters:</strong>",
+  "new": "<strong>Florida's mild winter:</strong>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter labels",
+  "old": "<strong>Maine response to cold winters:</strong>",
+  "new": "<strong>Maine's cold winter:</strong>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "When humans and animals eat plants, the ",
+  "new": "When animals eat plants, the "
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Turn the calendar asks the same question; one calm stop per tab is enough",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "about the INTERDEPENDENCE — who depends on whom?",
+  "new": "about the INTERDEPENDENCE: who depends on whom?"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dashes removed",
+  "old": "<p><strong>Nicely done\\.</strong>.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You can now compare Florida to other <span class=\"vtip\">regions<span class=\"vtip-box\"><span class=\"vtip-word\">Region</span>A large area with its own climate.</span></span> across the seasons and explain how living things depend on each other for food energy. Next lesson: the rocks, water, sunlight and wind that people use as <em>resources</em>.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "plain label; dashes removed; drops the “wet/dry seasons” claim about bird timing",
+  "old": "<p><strong>Common misconception:</strong> Some people think Florida doesn't have seasons\\..*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think Florida doesn't have seasons. It does! They're just <em>milder</em>. Days are shorter in winter and longer in summer here too, and plants flower at different times of year.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean + shaky fact: remove the Explore tab (its model moves to Part 4 and Part C; the “hurricane season is shifting” Go Deeper goes with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason pointed at arrows in the old figure (Stop & Think in Part 1 stays)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the tap diagram becomes Part 3 (the four stories are rows in Turn the calendar)",
+  "old": "margin-top:22px;\">Four Seasonal Stories</h3>",
+  "new": "margin-top:22px;\">Part 3 · The Manatee Water Test</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part 3 intro for the water test",
+  "old": "<p><strong>Tap each card</strong> to see what one Florida species does (or who visits it) across the seasons.</p>",
+  "new": "<p>Every winter, Florida manatees face a test: cold water. Scientists test one thing at a time. Change only the river's temperature and see where the manatees go.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the tap diagram is replaced by the water test (its four stories live in Turn the calendar)",
+  "old": "<div class=\"diagram-wrap diagram-interactive\".*?<div class=\"diagram-info-panel\" id=\"diagramPanel\">.*?</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean + wrong fact: Observe & Reason, the “5 million ducks … more than half the people” fact, the manatee callout and Go Deeper; Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Build a Seasonal Model</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Scientists build models to show connections. Build a model of January in two regions, Florida and Maine. Put a plant, an animal and the weather in each circle. Then show how food energy and migration connect them.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the sketch is a bonus",
+  "old": "A two-region model showing Florida + one other region in the same season, with food-energy arrows in each circle plus one arrow between them.",
+  "new": "Your two-region model: both places in one season, a food-energy connection in each, and how they are connected. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether Florida has seasons, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether Florida has seasons, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

@@ -2125,6 +2125,198 @@
     if (V.pairs.some(function (p) { return st[p.id] && st[p.id].q; })) winOnce(win, V.win, V.clue, 'venn');
   }
 
+  /* ---------- Warm-Up: "Two winters" — sort real January photos into Florida or the cold region (14.02) ----------
+     D.twowinters = {afterText, kicker, title, todo[], why, sides:[{k, icon, t, sub}], cards:[{id, t, img, alt, z, why, miss}], q, opts:[{t,ok,miss}], credit, win, clue} */
+  function buildTwowinters() {
+    var T = D.twowinters; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('twowinters anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Warm-Up game', T.title, T.todo, T.why); g.dataset.mod = 'twowinters';
+    var sides = el('div', 'fs-tw-sides'), tray = el('div', 'fs-tw-tray'), info = el('div', 'fs-hs-card fs-tw-info', '<em>' + esc(T.hint || 'Drag a photo to the place where you would see it in January, or tap the photo and then the place.') + '</em>');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    T.sides.forEach(function (s) { sides.appendChild(el('div', 'fs-tw-side fs-tw-' + s.k, '<div class="fs-tw-head"><span>' + s.icon + '</span><div><b>' + esc(s.t) + '</b><small>' + esc(s.sub || '') + '</small></div></div><div class="fs-tw-pile"></div>')); $$('.fs-tw-side', sides).slice(-1)[0].dataset.z = s.k; });
+    g.appendChild(sides); g.appendChild(el('div', 'fs-lu-lab', 'Photo cards')); g.appendChild(tray); g.appendChild(info); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    if (T.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(T.credit)));
+    var put = loadJ('twowinters', {}), zones = $$('.fs-tw-side', sides);
+    function place(c, animate) {
+      var pile = $('.fs-tw-pile', $('.fs-tw-side[data-z="' + c.z + '"]', sides));
+      pile.appendChild(el('div', 'fs-tw-got' + (animate && !reduceMotion ? ' pop' : ''), '<img alt="' + esc(c.alt) + '" src="' + esc(c.img) + '"><span>' + esc(c.t) + '</span>'));
+      var t = $('.fs-tw-card[data-id="' + c.id + '"]', tray); if (t) t.remove();
+    }
+    function upd() {
+      var n = Object.keys(put).length; count.textContent = '🗂 ' + n + ' of ' + T.cards.length + ' photos sorted'; count.classList.toggle('ok', n === T.cards.length);
+      if (n === T.cards.length) ask();
+    }
+    shuffle(T.cards).forEach(function (c) { if (put[c.id]) return; var k = el('div', 'fs-card fs-tw-card', '<img alt="' + esc(c.alt) + '" src="' + esc(c.img) + '"><span>' + esc(c.t) + '</span>'); k.dataset.id = c.id; tray.appendChild(k); });
+    function drop(tk, z) {
+      var c = T.cards.filter(function (x) { return x.id === tk.dataset.id; })[0];
+      if (z.dataset.z !== c.z) { bounce(tk, miss, c.miss || 'Think about January there. Is the water frozen or open? Are plants growing?'); return; }
+      miss.classList.remove('show'); put[c.id] = 1; saveJ('twowinters', put); SFX.chime(); place(c, true);
+      info.innerHTML = '<span class="fs-hs-n">✓</span><div><b>' + esc(c.t) + '</b>' + esc(c.why) + '</div>'; info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash'); upd();
+    }
+    $$('.fs-tw-card', tray).forEach(function (k) { dragDrop(k, function () { return zones; }, drop); });
+    tapTargets(g, zones, drop);
+    function ask() {
+      if (qh.dataset.on) return; qh.dataset.on = '1';
+      chipsQ(qh, T.q, T.opts, function () { store('twowinters-q', '1'); winOnce(win, T.win, T.clue, 'twowinters'); }, miss);
+      if (store('twowinters-q')) { var ok = T.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qh)[ok]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; winOnce(win, T.win, T.clue, 'twowinters'); }
+    }
+    T.cards.forEach(function (c) { if (put[c.id]) place(c, false); });
+    at.parentNode.insertBefore(g, at.nextSibling); upd();
+  }
+
+  /* ---------- Lesson: "Turn the calendar" — flip through four seasons; each living thing stays, leaves, sleeps or moves, in Florida and the cold region (14.02) ----------
+     D.calendar = {afterText, kicker, title, todo[], why, regions:[{k, icon, t}], seasons:[{k, icon, t, temps:{k:'about 61°F'}, notes:{k:''}}],
+                   rows:[{icon, name, cells:{k:[{s:'here'|'gone'|'sleep'|'warm'|'none'|'busy', t}] one per season}}], q, opts, win, clue} */
+  function buildCalendar() {
+    var K = D.calendar; if (!K) return;
+    var at = anchorP(K.afterText); if (!at) { FAILED.push('calendar anchor text not found'); return; }
+    var g = gameShell(K.kicker || 'Lesson game', K.title, K.todo, K.why); g.dataset.mod = 'calendar';
+    var pages = el('div', 'fs-ca-pages'), board = el('div', 'fs-ca-board'), need = el('div', 'fs-mo-need'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    K.seasons.forEach(function (s, i) { var b = el('button', 'fs-ca-page', '<span class="fs-ca-rings"><i></i><i></i></span><b>' + s.icon + '</b>' + esc(s.t)); b.type = 'button'; b.dataset.i = i; pages.appendChild(b); });
+    var SIC = { here: '✅', gone: '✈️', sleep: '😴', warm: '♨️', none: '—', busy: '🍽', rest: '💤' };
+    g.appendChild(pages); g.appendChild(board); g.appendChild(need); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    if (K.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Credits</summary>' + esc(K.credit)));
+    var seen = loadJ('calendar', {});
+    function show(i, user) {
+      var s = K.seasons[i]; seen[s.k] = 1; saveJ('calendar', seen);
+      $$('.fs-ca-page', pages).forEach(function (b) { b.classList.toggle('on', +b.dataset.i === i); b.classList.toggle('seen', !!seen[K.seasons[+b.dataset.i].k]); });
+      board.innerHTML = '<div class="fs-ca-grid' + (user && !reduceMotion ? ' flip' : '') + '"><div class="fs-ca-corner">' + s.icon + ' ' + esc(s.t) + '</div>' +
+        K.regions.map(function (r) { return '<div class="fs-ca-rh fs-ca-' + r.k + '"><b>' + r.icon + ' ' + esc(r.t) + '</b><span class="fs-ca-temp">🌡 ' + esc(s.temps[r.k]) + '</span><small>' + esc((s.notes || {})[r.k] || '') + '</small></div>'; }).join('') +
+        K.rows.map(function (row) {
+          return '<div class="fs-ca-name"><span>' + row.icon + '</span>' + esc(row.name) + '</div>' + K.regions.map(function (r) { var c = row.cells[r.k][i]; return '<div class="fs-ca-cell s-' + c.s + '"><span class="fs-ca-ic">' + (SIC[c.s] || '') + '</span>' + esc(c.t) + '</div>'; }).join('');
+        }).join('') + '</div><div class="fs-ca-key">' + (K.key || '✅ here and active · ✈️ moved away (migrated) · 😴 hibernating · ♨️ huddled in warm water · 🍽 eating a lot to get ready') + '</div>';
+      if (user) SFX.whoosh();
+      var left = K.seasons.filter(function (x) { return !seen[x.k]; });
+      need.innerHTML = left.length ? '📅 Turn to ' + left.map(function (x) { return '<b>' + esc(x.t) + '</b>'; }).join(', ') + ' too.' : '✅ You turned all four calendar pages.';
+      if (!left.length) ask();
+    }
+    $$('.fs-ca-page', pages).forEach(function (b) { b.addEventListener('click', function () { show(+b.dataset.i, true); }); });
+    function ask() {
+      if (qh.dataset.on) return; qh.dataset.on = '1';
+      chipsQ(qh, K.q, K.opts, function () { store('calendar-q', '1'); winOnce(win, K.win, K.clue, 'calendar'); }, miss);
+      if (store('calendar-q')) { var ok = K.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qh)[ok]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; winOnce(win, K.win, K.clue, 'calendar'); }
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    show(0, false);
+  }
+
+  /* ---------- Lesson: "Manatee water test" — change one thing (the river temperature), run the morning, log where the manatees go (14.02) ----------
+     D.manatee = {replace | afterText, kicker, title, todo[], why, min, max, start, cold, springT, river:{img,alt,t}, spring:{img,alt,t}, cold/warm results {where, t},
+                  q, opts, credit, win, clue}; the student must log at least one cold and one warm morning */
+  function buildManatee() {
+    var M = D.manatee; if (!M) return;
+    var wrap = M.replace ? $(M.replace) : null, at = M.replace ? null : anchorP(M.afterText);
+    if (!wrap && !at) { FAILED.push('manatee: no anchor'); return; }
+    var g = gameShell(M.kicker || 'Lesson game', M.title, M.todo, M.why); g.dataset.mod = 'manatee';
+    if (wrap) { var pv = wrap.previousElementSibling; if (pv && pv.tagName === 'P' && pv.textContent.length < 200) pv.classList.add('fs-hide-on'); }
+    var map = el('div', 'fs-mt-map', '<div class="fs-mt-zone fs-mt-river"><img alt="' + esc(M.river.alt) + '" src="' + esc(M.river.img) + '"><span class="fs-mt-lab">' + esc(M.river.t) + ' · <b class="fs-mt-rt"></b></span></div>' +
+      '<div class="fs-mt-zone fs-mt-spring"><img alt="' + esc(M.spring.alt) + '" src="' + esc(M.spring.img) + '"><span class="fs-mt-lab">' + esc(M.spring.t) + ' · <b>' + M.springT + '°F all year</b></span></div><img class="fs-mt-cow" alt="" aria-hidden="true" src="' + esc(M.token) + '">');
+    var ctl = el('div', 'fs-mo-ctl', '<label class="fs-mo-lab">🌡 River water this morning: <b class="fs-mt-val"></b></label><input type="range" class="fs-mo-range fs-mt-range" min="' + M.min + '" max="' + M.max + '" step="1" aria-label="River water temperature in degrees Fahrenheit"><div class="fs-mo-ticks"><span>' + M.min + '°F (cold)</span><span>' + M.max + '°F (warm)</span></div>' +
+      '<button type="button" class="fs-btn fs-mt-go">▶ Run the morning</button>');
+    var log = el('div', 'fs-mt-log', '<div class="fs-lu-lab">Test log</div><table><thead><tr><th>River water</th><th>Where the manatees went</th></tr></thead><tbody></tbody></table>');
+    var need = el('div', 'fs-mo-need'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(map); g.appendChild(ctl); g.appendChild(log); g.appendChild(need); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    if (M.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(M.credit)));
+    var range = $('.fs-mt-range', ctl), st = loadJ('manatee', { rows: [] }), cow = $('.fs-mt-cow', map);
+    range.value = M.start;
+    function val() { var v = +range.value; $('.fs-mt-val', ctl).textContent = v + '°F'; $('.fs-mt-rt', map).textContent = v + '°F'; map.classList.toggle('cold', v < M.cold); }
+    function row(r) { $('tbody', log).insertAdjacentHTML('beforeend', '<tr class="' + (r.c ? 'c' : 'w') + '"><td>' + r.v + '°F</td><td>' + esc(r.c ? M.coldResult : M.warmResult) + '</td></tr>'); }
+    function check() {
+      var c = st.rows.some(function (r) { return r.c; }), w = st.rows.some(function (r) { return !r.c; });
+      need.innerHTML = c && w ? '✅ You tested a cold morning and a warm morning.' : '🧪 Test ' + (c ? '' : '<b>a cold morning (below ' + M.cold + '°F)</b>') + (!c && !w ? ' and ' : '') + (w ? '' : '<b>a warm morning (' + M.cold + '°F or warmer)</b>') + '.';
+      if (c && w) ask();
+    }
+    range.addEventListener('input', function () { val(); SFX.blip(); });
+    $('.fs-mt-go', ctl).addEventListener('click', function () {
+      var v = +range.value, c = v < M.cold, r = { v: v, c: c };
+      cow.classList.remove('to-spring', 'to-river'); void cow.offsetWidth; cow.classList.add(c ? 'to-spring' : 'to-river');
+      SFX.whoosh(); st.rows.push(r); if (st.rows.length > 6) st.rows.shift(); saveJ('manatee', st);
+      $('tbody', log).innerHTML = ''; st.rows.forEach(row); check();
+    });
+    function ask() {
+      if (qh.dataset.on) return; qh.dataset.on = '1';
+      chipsQ(qh, M.q, M.opts, function () { store('manatee-q', '1'); winOnce(win, M.win, M.clue, 'manatee'); }, miss);
+      if (store('manatee-q')) { var ok = M.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qh)[ok]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; winOnce(win, M.win, M.clue, 'manatee'); }
+    }
+    if (wrap) { wrap.parentNode.insertBefore(g, wrap); wrap.classList.add('fs-hide-on'); } else at.parentNode.insertBefore(g, at.nextSibling);
+    val(); st.rows.forEach(row); if (st.rows.length) cow.classList.add(st.rows[st.rows.length - 1].c ? 'to-spring' : 'to-river'); check();
+  }
+
+  /* ---------- Lesson Part 4: "Build the seasonal model" — fill two region circles, draw food-energy arrows, add the migration arrow; a meter grows (14.02) ----------
+     D.seasonmodel = {afterText, kicker, title, todo[], why, regions:[{k, icon, t}], roles:[{k, t}], cards:[{id, t, img, alt, z ('no' = wrong season), role, miss}],
+                      arrows:{k:[[foodId, eaterId]]}, arrowMiss, migrant:{id, t, img, alt, q, opts}, steps:[3 labels], q, opts, credit, win, clue} */
+  function buildSeasonmodel() {
+    var S = D.seasonmodel; if (!S) return;
+    var at = anchorP(S.afterText); if (!at) { FAILED.push('seasonmodel anchor text not found'); return; }
+    var g = gameShell(S.kicker || 'Lesson game', S.title, S.todo, S.why); g.dataset.mod = 'seasonmodel';
+    var meter = el('div', 'fs-sm-meter', '<div class="fs-sm-bar"><i></i></div><div class="fs-sm-steps">' + S.steps.map(function (t, i) { return '<span data-i="' + i + '">' + (i + 1) + '. ' + esc(t) + '</span>'; }).join('') + '</div>');
+    var stage = el('div', 'fs-sm-stage'), tray = el('div', 'fs-sm-tray'), info = el('div', 'fs-hs-card fs-sm-info', '<em>' + esc(S.hint || 'Drag each card into the right circle, or tap the card and then the circle.') + '</em>');
+    var miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    stage.innerHTML = S.regions.map(function (r, i) {
+      return (i === 1 ? '<div class="fs-sm-mid"><div class="fs-sm-mig" role="button" tabindex="0"><span class="fs-sm-migarr">⟷</span><small>migration arrow</small></div></div>' : '') +
+        '<div class="fs-sm-ring fs-sm-' + r.k + '" data-z="' + r.k + '" role="button" tabindex="0"><div class="fs-sm-rt">' + r.icon + ' ' + esc(r.t) + '</div><div class="fs-sm-need"></div><div class="fs-sm-pile"></div><div class="fs-sm-arrows"></div></div>';
+    }).join('');
+    g.appendChild(meter); g.appendChild(stage); g.appendChild(el('div', 'fs-lu-lab', 'Model cards')); g.appendChild(tray); g.appendChild(info); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    if (S.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(S.credit)));
+    var st = loadJ('seasonmodel', { put: {}, arr: {}, mig: 0 }), rings = $$('.fs-sm-ring', stage), mig = $('.fs-sm-mig', stage), pick = null;
+    function card(id) { return S.cards.filter(function (c) { return c.id === id; })[0]; }
+    function smPic(c) { return c.img ? '<img alt="' + esc(c.alt) + '" src="' + esc(c.img) + '">' : '<b class="fs-sm-ic" aria-hidden="true">' + (c.icon || '🌤') + '</b>'; }
+    function full(k) { return S.roles.every(function (ro) { return S.cards.some(function (c) { return st.put[c.id] && c.z === k && c.role === ro.k; }); }); }
+    function step() { if (!S.regions.every(function (r) { return full(r.k); })) return 0; if (!S.regions.every(function (r) { return (S.arrows[r.k] || []).every(function (a) { return st.arr[a.join('>')]; }); })) return 1; return st.mig ? 3 : 2; }
+    function draw(anim) {
+      var n = step();
+      $('.fs-sm-bar i', meter).style.width = Math.round(n / 3 * 100) + '%';
+      $$('.fs-sm-steps span', meter).forEach(function (s, i) { s.classList.toggle('ok', i < n); s.classList.toggle('now', i === n); });
+      rings.forEach(function (rg) {
+        var k = rg.dataset.z, pile = $('.fs-sm-pile', rg);
+        pile.innerHTML = S.cards.filter(function (c) { return st.put[c.id] && c.z === k; }).map(function (c) { return '<button type="button" class="fs-sm-got' + (pick === c.id ? ' pick' : '') + '" data-id="' + c.id + '">' + smPic(c) + '<span>' + esc(c.t) + '</span></button>'; }).join('');
+        $('.fs-sm-need', rg).innerHTML = S.roles.map(function (ro) { var ok = S.cards.some(function (c) { return st.put[c.id] && c.z === k && c.role === ro.k; }); return '<i class="' + (ok ? 'ok' : '') + '">' + (ok ? '✓ ' : '') + esc(ro.t) + '</i>'; }).join('');
+        $('.fs-sm-arrows', rg).innerHTML = (S.arrows[k] || []).filter(function (a) { return st.arr[a.join('>')]; }).map(function (a) { return '<div class="fs-sm-arrow' + (anim && !reduceMotion ? ' pop' : '') + '">' + esc(card(a[0]).t) + ' <b>➜</b> ' + esc(card(a[1]).t) + '<small>food energy</small></div>'; }).join('');
+        $$('.fs-sm-got', rg).forEach(function (b) { b.addEventListener('click', function (e) { if ($('.sel', tray)) return; e.stopPropagation(); tapArrow(b.dataset.id); }); });
+      });
+      mig.classList.toggle('ready', n >= 2); mig.classList.toggle('done', !!st.mig);
+      if (st.mig) mig.innerHTML = '<img alt="' + esc(S.migrant.alt) + '" src="' + esc(S.migrant.img) + '"><span class="fs-sm-migarr">' + esc(S.migrant.done) + '</span>';
+      var lab = tray.previousSibling; tray.style.display = n >= 1 ? 'none' : ''; if (lab) lab.style.display = n >= 1 ? 'none' : '';
+      if (n === 3) { info.innerHTML = '<span class="fs-hs-n">✓</span><div><b>' + esc(S.doneTitle || 'Your model is complete') + '</b>' + esc(S.doneLine || '') + '</div>'; ask(); } else if (n === 2) setTimeout(migQ, 0);
+    }
+    function tapArrow(id) {
+      if (step() !== 1) { if (step() === 0) { bounce($('.fs-sm-got[data-id="' + id + '"]', stage), miss, 'First fill both circles: each needs a plant, an animal and the weather.'); } return; }
+      var c = card(id);
+      if (!pick) { if (c.role !== 'plant') { bounce($('.fs-sm-got[data-id="' + id + '"]', stage), miss, S.startMiss || 'Food energy starts with a plant. Tap a plant first.'); return; } pick = id; SFX.blip(); miss.classList.remove('show'); draw(false); info.innerHTML = '<span class="fs-hs-n">➜</span><div><b>' + esc(c.t) + '</b>Now tap the animal that gets food energy from it.</div>'; return; }
+      var p = card(pick), key = pick + '>' + id, ok = (S.arrows[p.z] || []).some(function (a) { return a.join('>') === key; });
+      pick = null;
+      if (!ok) { draw(false); bounce($('.fs-sm-got[data-id="' + id + '"]', stage), miss, c.arrowMiss || S.arrowMiss); return; }
+      st.arr[key] = 1; saveJ('seasonmodel', st); SFX.chime(); miss.classList.remove('show');
+      info.innerHTML = '<span class="fs-hs-n">⚡</span><div><b>' + esc(p.t) + ' ➜ ' + esc(c.t) + '</b>' + esc(c.eatWhy || '') + '</div>'; info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash');
+      draw(true);
+      if (step() === 2) info.innerHTML = '<span class="fs-hs-n">↔</span><div><b>Last step</b>' + esc(S.migrant.ask) + '</div>';
+    }
+    shuffle(S.cards).forEach(function (c) { if (st.put[c.id]) return; var k = el('div', 'fs-card fs-sm-card', smPic(c) + '<span>' + esc(c.t) + '</span>'); k.dataset.id = c.id; tray.appendChild(k); });
+    function drop(tk, z) {
+      var c = card(tk.dataset.id);
+      if (c.z === 'no' || z.dataset.z !== c.z) { bounce(tk, miss, c.miss || 'Which place is this true for in January?'); return; }
+      st.put[c.id] = 1; saveJ('seasonmodel', st); SFX.chime(); miss.classList.remove('show'); tk.remove();
+      info.innerHTML = '<span class="fs-hs-n">✓</span><div><b>' + esc(c.t) + '</b>' + esc(c.why || '') + '</div>'; info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash');
+      draw(false);
+      if (step() === 1) info.innerHTML = '<span class="fs-hs-n">⚡</span><div><b>Now draw the food-energy arrows</b>In each circle, tap a plant, then the animal that eats it.</div>';
+    }
+    $$('.fs-sm-card', tray).forEach(function (k) { dragDrop(k, function () { return rings; }, drop); });
+    tapTargets(g, rings, drop);
+    function migQ() {
+      if (st.mig || step() !== 2 || $('.fs-sm-mq', g)) return;
+      var h = el('div', 'fs-sm-mq'); stage.parentNode.insertBefore(h, tray.previousSibling);
+      chipsQ(h, S.migrant.q, S.migrant.opts, function () { st.mig = 1; saveJ('seasonmodel', st); SFX.whoosh(); h.remove(); draw(true); }, miss);
+    }
+    mig.addEventListener('click', function () { if (step() < 2) { bounce(mig, miss, 'Finish the circles and the food-energy arrows first.'); return; } migQ(); });
+    function ask() {
+      if (qh.dataset.on) return; qh.dataset.on = '1';
+      chipsQ(qh, S.q, S.opts, function () { store('seasonmodel-q', '1'); winOnce(win, S.win, S.clue, 'seasonmodel'); }, miss);
+      if (store('seasonmodel-q')) { var ok = S.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; var c = $$('.fs-in-chip', qh)[ok]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; winOnce(win, S.win, S.clue, 'seasonmodel'); }
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    draw(false);
+  }
+
   function buildQuiz() {
     var qs = $$('#tab-quiz .quiz-q'); if (!qs.length) return;
     var Q = D.quizMiss || {};
@@ -4195,6 +4387,10 @@
     guard('morph', buildMorph);
     guard('wheel', buildWheel);
     guard('venn', buildVenn);
+    guard('twowinters', buildTwowinters);
+    guard('calendar', buildCalendar);
+    guard('manatee', buildManatee);
+    guard('seasonmodel', buildSeasonmodel);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
