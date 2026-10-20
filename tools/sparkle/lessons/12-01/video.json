@@ -659,6 +659,49 @@
     }
    ],
    "script": "[ON SCREEN: Case closed · Confetti]\nCase closed! You did it, scientists.\n\nFour animals noticed four different things with four different senses, and each one's brain decided what to do. The four steps solved it.\n\n[ON SCREEN: Before you go]\nTwo last things. Check every box in What to Turn In to earn a heron feather. And download your field journal.\n\n[ON SCREEN: Next time]\nPress Listen. Dr. Reyes has a sneak peek at next time."
+  },
+  "vr": {
+   "label": "VR activity · Sense stations (separate page)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "📻 The radio log",
+     "tag": "CASE 12 FOLLOW-UP",
+     "title": "Static ate the messages",
+     "col": "#2F7A55",
+     "body": "Every message from the panther night is missing steps. Rebuild all four: stimulus, sense organ, brain, response."
+    },
+    {
+     "label": "🧭 Two ways",
+     "tag": "PICK AT THE TOP",
+     "title": "Two ways to do it",
+     "col": "#2B7BB9",
+     "rows": [
+      [
+       "🥽",
+       "VR Field Mission: a panther in the middle, four sense stations around it in Tranquil Forest."
+      ],
+      [
+       "🗂",
+       "No headset? Make three 4-panel comic strips."
+      ]
+     ]
+    },
+    {
+     "kind": "photo",
+     "pic": "vrbear",
+     "label": "📷 The bear strip"
+    },
+    {
+     "label": "🥇 The badge",
+     "tag": "VR ONLY",
+     "title": "Golden Antenna badge",
+     "col": "#B9822A",
+     "body": "Save your capture in VR to earn it."
+    }
+   ],
+   "script": "Hi, scientists! Dr. Reyes has a problem. Her radio log from the panther night is full of static.\n\n[ON SCREEN: The radio log]\nEvery message is missing steps. (Hold up four fingers.) Remember the four: stimulus, sense organ, brain, response.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, put a panther in the Tranquil Forest and build four sense stations around it. Say the four steps out loud at each one.\n\n[ON SCREEN: The bear strip]\nNo headset? You’ll make three comic strips, like this bear sniffing berries, one panel for each step.\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the Golden Antenna badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me."
   }
  },
  "other": [],
@@ -690,6 +733,10 @@
   "pathway": {
    "src": "images/12-01-sense-pathway.png",
    "cap": "An alligator hears a splash: the four-step pathway"
+  },
+  "vrbear": {
+   "src": "images/12-01-vr-bear.jpg",
+   "cap": "A Florida black bear in saw palmettos (FWC, public domain)"
   }
  }
 }
