@@ -282,9 +282,49 @@
     }
    ],
    "script": "Case closed for good! Draft C goes on the sign, because it explains, not just names.\n\n[ON SCREEN: Your specimen]\nFinish your checklist and an annotated spoonbill sketch goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next week]\nNext week: four trail cameras catch four Florida animals reacting at once. Why? Bring your detective eyes!\n\nPress Listen for Dr. Reyes’s last word."
+  },
+  "vr": {
+   "label": "VR activity · Model wall (separate page)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "osprey",
+     "label": "📷 The osprey"
+    },
+    {
+     "label": "🧭 Two ways",
+     "tag": "PICK AT THE TOP",
+     "title": "Two ways to do it",
+     "col": "#2B7BB9",
+     "rows": [
+      [
+       "🥽",
+       "VR Field Mission: build 3 models with Red Ray arrows in Tranquil Forest."
+      ],
+      [
+       "🗂",
+       "No headset? Turn the osprey photo into a model."
+      ]
+     ]
+    },
+    {
+     "label": "🥇 The badge",
+     "tag": "VR ONLY",
+     "title": "Golden Arrow badge",
+     "col": "#B9822A",
+     "body": "Save your capture in VR to earn it."
+    }
+   ],
+   "script": "Hi, scientists! You picked the best draft for the refuge sign. Now the refuge wants a whole model wall!\n\n[ON SCREEN: The osprey]\nLook at this osprey. It’s just a photo right now. (Draw an arrow in the air with your finger.) Add a label, an arrow that shows action, and a caption, and it becomes a model.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, build three models in the Tranquil Forest, each with a Red Ray arrow. No headset? Turn the osprey photo into a model.\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the Golden Arrow badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me."
   }
  },
  "pics": {
+  "osprey": {
+   "src": "images/11-02-vr-osprey.jpg",
+   "cap": "An osprey carrying a fish (Yellowstone NP, public domain)"
+  },
   "draftA": {
    "src": "images/11-02-draft-labels.jpg",
    "cap": "Draft A · a photo with labels"
