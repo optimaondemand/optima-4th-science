@@ -2,6 +2,7 @@
 """Writes video.json (Video Studio plan) for 10.02."""
 import json
 pics = {
+    'hogs': {'src': 'images/10-02-vr-hook.jpg', 'cap': 'Wild hogs at the edge of a Florida forest (USFWS)'},
     'aerial': {'src': 'images/10-02-aerial.jpg', 'cap': 'Manatees from the air · Crystal River (USFWS)'},
     'springs': {'src': 'images/10-02-springs.jpg', 'cap': 'Manatees crowd into a warm spring in winter (USFWS)'},
     'manatee': {'src': 'images/10-02-manatee.jpg', 'cap': 'A Florida manatee (USFWS)'},
@@ -46,6 +47,12 @@ S['part3'] = {'label': 'Part 3 · four Florida stories (Clue 3)', 'length': '25�
     'script': '[ON SCREEN: A Florida manatee]\nFour Florida stories, four case files. Read each one, stamp it Recovering or Out of balance, then find the line that proves it. Careful: some lines are true but don’t prove anything. Press Listen.'}
 S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts': [],
              'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
+# VR activity page (vr-10-02.html) uses the same prefix: g4sci-10-2-vr.mp4
+S['vr'] = {'label': 'VR activity · Two plots (separate page)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'kind': 'photo', 'pic': 'hogs', 'label': '📷 The wild hogs'},
+    {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': '#2B7BB9', 'rows': [['🥽', 'VR Field Mission: build a healthy plot and a hog plot in Tranquil Forest.'], ['🗂', 'No headset? Count both photo plots on your computer.']]},
+    {'label': '🥇 The badge', 'tag': 'VR ONLY', 'title': 'Balance Scale badge', 'col': '#B9822A', 'body': 'Save your capture in VR to earn it.'}],
+    'script': 'Hi, scientists! You cracked the manatee case. Now Dr. Reyes has a new question.\n\n[ON SCREEN: The wild hogs]\nWild hogs moved into the forest across the creek. (Hold up two fingers.) Two patches of forest. Which one is in balance? Remember: count it, don’t feel it.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, go into the Tranquil Forest and build two plots: a healthy one with lots of different living things, and one the hogs took over. No headset? Count both photo plots on your computer.\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the Balance Scale badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part1', 'partb', 'partc']}
 json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('video.json written')

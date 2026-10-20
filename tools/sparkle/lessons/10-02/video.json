@@ -284,9 +284,49 @@
    "want": false,
    "parts": [],
    "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  },
+  "vr": {
+   "label": "VR activity · Two plots (separate page)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "hogs",
+     "label": "📷 The wild hogs"
+    },
+    {
+     "label": "🧭 Two ways",
+     "tag": "PICK AT THE TOP",
+     "title": "Two ways to do it",
+     "col": "#2B7BB9",
+     "rows": [
+      [
+       "🥽",
+       "VR Field Mission: build a healthy plot and a hog plot in Tranquil Forest."
+      ],
+      [
+       "🗂",
+       "No headset? Count both photo plots on your computer."
+      ]
+     ]
+    },
+    {
+     "label": "🥇 The badge",
+     "tag": "VR ONLY",
+     "title": "Balance Scale badge",
+     "col": "#B9822A",
+     "body": "Save your capture in VR to earn it."
+    }
+   ],
+   "script": "Hi, scientists! You cracked the manatee case. Now Dr. Reyes has a new question.\n\n[ON SCREEN: The wild hogs]\nWild hogs moved into the forest across the creek. (Hold up two fingers.) Two patches of forest. Which one is in balance? Remember: count it, don’t feel it.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, go into the Tranquil Forest and build two plots: a healthy one with lots of different living things, and one the hogs took over. No headset? Count both photo plots on your computer.\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the Balance Scale badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me."
   }
  },
  "pics": {
+  "hogs": {
+   "src": "images/10-02-vr-hook.jpg",
+   "cap": "Wild hogs at the edge of a Florida forest (USFWS)"
+  },
   "aerial": {
    "src": "images/10-02-aerial.jpg",
    "cap": "Manatees from the air · Crystal River (USFWS)"
