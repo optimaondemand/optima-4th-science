@@ -1,0 +1,82 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Central Florida from high above at midday: green fields and wetlands, three square blue lakes with bare tan edges where land was dug up, rows of young pine trees, and a solar farm glinting in the sun.">
+  <style>
+    .la-cloud { animation: laCloud 26s linear infinite; }
+    .la-glint { animation: laGlint 3.6s ease-in-out infinite; }
+    .la-glint2 { animation: laGlint 3.6s ease-in-out infinite 1.2s; }
+    .la-ripple { animation: laRipple 5s ease-in-out infinite; }
+    @keyframes laCloud { 0% { transform: translateX(-160px); } 100% { transform: translateX(1000px); } }
+    @keyframes laGlint { 0%,100% { opacity:0; } 45%,55% { opacity:.85; } }
+    @keyframes laRipple { 0%,100% { opacity:.25; } 50% { opacity:.55; } }
+    @media (prefers-reduced-motion: reduce) { .la-cloud, .la-glint, .la-glint2, .la-ripple { animation:none; } .la-cloud { transform: translateX(380px); } }
+  </style>
+  <defs>
+    <linearGradient id="laLake" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3E7FA6"/><stop offset="1" stop-color="#1E4E6E"/>
+    </linearGradient>
+    <linearGradient id="laPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2B3F63"/><stop offset="1" stop-color="#1A2A45"/>
+    </linearGradient>
+    <pattern id="laPines" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#7FA35C"/>
+      <circle cx="7" cy="7" r="5" fill="#2F6B3A"/><circle cx="6" cy="6" r="2.2" fill="#3F8048"/>
+    </pattern>
+    <pattern id="laYoung" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#B9C47E"/>
+      <circle cx="6" cy="6" r="2.6" fill="#4C7E3E"/>
+    </pattern>
+    <pattern id="laGrass" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#8DB36A"/><path d="M1,7 l2,-3 M5,6 l1,-3" stroke="#7AA35A" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <!-- the land: pasture, wetland, fields -->
+  <rect width="920" height="200" fill="url(#laGrass)"/>
+  <path d="M0,0 H210 L190,70 L0,90Z" fill="#9FBF74"/>
+  <path d="M0,150 Q60,128 130,140 Q190,150 230,200 H0Z" fill="#6E9E78"/>
+  <path d="M20,168 Q60,150 110,160 Q150,170 168,200 H30Z" fill="#7FB0A0" opacity=".7"/>
+  <path d="M700,0 H920 V60 Q860,74 790,58 Q740,46 700,0Z" fill="#A7C27A"/>
+  <path d="M760,130 Q820,112 920,120 V200 H740Z" fill="#9CBB70"/>
+  <!-- a winding creek through the wetland -->
+  <path d="M0,118 C60,110 90,130 140,124 C190,118 210,96 250,92" stroke="#5F8FA6" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+  <!-- rows of planted pines: grown on the left, young on the right -->
+  <rect x="236" y="10" width="150" height="86" fill="url(#laPines)" transform="rotate(-3 311 53)"/>
+  <rect x="244" y="112" width="120" height="74" fill="url(#laYoung)" transform="rotate(-3 304 149)"/>
+  <!-- dirt road -->
+  <path d="M0,104 L230,100 L420,96 L920,88" stroke="#D8C7A0" stroke-width="5" fill="none"/>
+  <path d="M410,96 L430,200" stroke="#D8C7A0" stroke-width="4" fill="none"/>
+  <!-- the mine: bare tan ground and square lakes -->
+  <path d="M440,8 H640 L652,92 H448Z" fill="#D6C29A"/>
+  <path d="M470,18 H560 V78 H472Z" fill="url(#laLake)"/>
+  <path d="M572,22 H636 V60 H574Z" fill="url(#laLake)"/>
+  <g class="la-ripple" stroke="#BFE1F0" stroke-width="1.4" fill="none">
+    <path d="M482,36 h26 M494,52 h30 M486,66 h22"/><path d="M584,34 h22 M592,48 h28"/>
+  </g>
+  <path d="M446,104 H600 L606,190 H452Z" fill="#CDB98D"/>
+  <path d="M462,112 H586 V176 H466Z" fill="url(#laLake)"/>
+  <!-- an older pit, replanted: a lake with green banks -->
+  <path d="M624,112 H704 L708,184 H628Z" fill="#7FAE69"/>
+  <path d="M640,124 H692 V170 H642Z" fill="#4C8BA8"/>
+  <g fill="#2F6B3A"><circle cx="632" cy="118" r="4"/><circle cx="700" cy="120" r="4"/><circle cx="634" cy="178" r="4"/><circle cx="700" cy="176" r="4"/></g>
+  <!-- a dragline on the edge of the bare ground -->
+  <g transform="translate(600,94)">
+    <rect x="-10" y="-7" width="20" height="14" fill="#F2F2EE" stroke="#8A8A86" stroke-width="1"/>
+    <path d="M0,0 L-34,-30" stroke="#B8BEC2" stroke-width="2.4"/>
+    <path d="M-34,-30 L-34,-22" stroke="#555" stroke-width="1"/><rect x="-37" y="-23" width="6" height="4" fill="#6B5A3C"/>
+  </g>
+  <!-- the solar farm -->
+  <rect x="726" y="64" width="186" height="60" fill="#B6A983"/>
+  <g fill="url(#laPanel)">
+    <rect x="734" y="70" width="170" height="7"/><rect x="734" y="81" width="170" height="7"/><rect x="734" y="92" width="170" height="7"/>
+    <rect x="734" y="103" width="170" height="7"/><rect x="734" y="114" width="170" height="7"/>
+  </g>
+  <g stroke="#3C5584" stroke-width="1">
+    <path d="M768,70 v51 M802,70 v51 M836,70 v51 M870,70 v51"/>
+  </g>
+  <g fill="#FFFFFF">
+    <rect class="la-glint" x="780" y="81" width="40" height="7" opacity="0"/>
+    <rect class="la-glint2" x="846" y="103" width="36" height="7" opacity="0"/>
+  </g>
+  <!-- a cloud's shadow drifting over the land -->
+  <g class="la-cloud" opacity=".16" fill="#1E2E24">
+    <ellipse cx="0" cy="60" rx="70" ry="26"/><ellipse cx="50" cy="50" rx="46" ry="22"/><ellipse cx="-44" cy="70" rx="40" ry="18"/>
+  </g>
+</svg>

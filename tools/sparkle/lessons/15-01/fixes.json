@@ -1,0 +1,250 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for a renewable / nonrenewable comparison",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "⚖️ Part C &mdash; Compare Two Florida Resources"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page; the chart sketch is a bonus)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one <strong>renewable</strong> and one <strong>nonrenewable</strong> Florida resource. For each one, tell one way people use it and one impact. Then tell which one changes the land, air or water less, and why.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 15 is Quarter 2",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "this is an Earth science lesson (4-ESS3-1), not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Earth Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "Florida makes almost no electricity from wind, so wind is not a Florida example; trees are named as the pine forests they are",
+  "old": "<ul style=\"font-size:16px;color:#2B1D12;line-height:1.7;margin:10px 0 12px 24px;\">\\s*<li><strong>Renewable Florida examples:</strong>.*?</ul>",
+  "new": "<ul style=\"font-size:16px;color:#2B1D12;line-height:1.7;margin:10px 0 12px 24px;\">\n        <li><strong>Renewable Florida examples:</strong> sunlight (for solar panels), fresh water from rain and springs, and pine forests that people replant. Wind is renewable too, but Florida makes almost no electricity from it.</li>\n        <li><strong>Nonrenewable Florida examples:</strong> phosphate rock (dug up to make fertilizer, which is plant food), oil and natural gas, and limestone (used for cement and roads).</li>\n      </ul>\n      <p>How fast is “fast”? Try it: use up five resources, then race time forward.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "the AI-made chart named wind as a Florida resource and called coal “rare in FL” (Florida burns coal for some electricity but doesn’t mine it); the real-photo games replace it",
+  "old": "<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"lesson-figure-caption\">.*?</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact: Arizona, Nevada and other states get more sunny days than Florida (the tap diagram text is replaced by Impact check; fixed anyway)",
+  "old": "Florida gets more sunny days than almost any U.S. state.",
+  "new": "Florida gets strong sunshine all year long."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to tell the difference between resources we can use again and again — and resources that run out — using real Florida examples.",
+  "new": "Keep this question in mind. By the end, you’ll be able to tell resources that come back from resources that run out, using real Florida examples."
+ },
+ {
+  "kind": "plain",
+  "why": "answers are made on the page now (the game below, then three boxes)",
+  "old": "<p>Look around the room\\. Pick one thing.*?</p>\\s*<p>Underneath, list at least three materials.*?</p>",
+  "new": "<p>Everything you use started somewhere on Earth. Some of it grew. Some came from the sky. Some was dug out of the ground. <strong>Take it apart</strong> in the game below: where did each part start?</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed; shorter list",
+  "old": "is anything from Earth that people use to live and work. Water for drinking, sunlight for solar panels, wood for building, oil for fuel, sand for glass, copper for wires — all resources. Florida has a lot of them.</p>",
+  "new": "is anything from Earth that people use to live and work: water to drink, sunlight for solar panels, wood for houses, oil for gasoline. Florida has a lot of resources.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "plain words",
+  "old": "resources take so long to form that once we use them, they're essentially gone.</p>",
+  "new": "resources take millions of years to form. Once we use them up, they’re gone for good.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed; Part 3 starts here; wind example dropped (not a Florida resource)",
+  "old": "<p>Every resource has an <span class=\"vtip\">impact<span class=\"vtip-box\"><span class=\"vtip-word\">Impact</span>An effect, especially on the environment.</span></span> — a way it changes the environment when humans use it. Solar panels need land. Wind turbines can affect birds. Oil drilling can leak. Limestone mining changes the land. Even renewable resources have impacts — scientists work to keep them low.</p>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Every Resource Has an Impact</h3>\n      <p>Every resource has an <span class=\"vtip\">impact<span class=\"vtip-box\"><span class=\"vtip-word\">Impact</span>An effect, especially on the environment.</span></span>: a way it changes the environment when people use it. Solar panels need land. Oil can spill. Mines dig up the land. Scientists work to keep impacts small.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "plain label; shorter",
+  "old": "<p><strong>Common misconception:</strong> Some people think \"renewable\" means \"no impact.\" That's not quite right. Renewable resources come back, but using them still affects the environment. The real question is: <em>how big is the impact, and how can we reduce it?</em></p>",
+  "new": "<p><strong>Watch out:</strong> Renewable doesn’t mean “no impact.” A renewable resource comes back, but using it still changes things. The real question is: <em>how big is the impact, and how can we make it smaller?</em></p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the sources paragraph moves into Part 4 (Two sources, one claim)",
+  "old": "\\s*<p>Good scientists check at least <strong>two <span class=\"vtip\">sources.*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean + shaky fact: remove the whole Explore tab (its comparison chart moves to Part 4 and Part C; the “less than 5% solar” fact goes with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>\\s*<p[^>]*>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason pointed at the removed chart (Stop & Think in Part 1 stays)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the old diagram heading and tap line go (Impact check replaces the tap diagram)",
+  "old": "<h3[^>]*>Four Florida Resources</h3>\\s*<p><strong>Tap a resource</strong>[^<]*</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean + shaky facts: Observe & Reason, the “1 million years per barrel” oil fact, the Florida connection callout and Go Deeper at the end of the Lesson; Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Two Sources, One Claim</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Scientists check at least two <span class=\"vtip\">sources<span class=\"vtip-box\"><span class=\"vtip-word\">Source</span>Where information comes from.</span></span> before making a claim (saying what they think is true), because one source might leave something out. Dr. Reyes found two sources about the phosphate mines.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; Part C covers one resource’s use and impact)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (6 → 5)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the chart sketch is a bonus",
+  "old": "A two-column comparison chart with one renewable and one nonrenewable Florida resource, including uses, environmental impact, and an open question for each.",
+  "new": "One renewable and one nonrenewable Florida resource: a use and an impact for each, and which one has the smaller impact. (A chart sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether all renewables are good and all nonrenewables are bad, and supported it with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether all renewables are good and all nonrenewables are bad, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]
