@@ -7,6 +7,7 @@ pics = {
     'detector': {'src': 'images/12-02-detector.png', 'cap': 'Bat detector printout · 9:52 PM'},
     'bat': {'src': 'images/12-02-bat.jpg', 'cap': 'Florida bonneted bat (Shalana Gray, CC BY-SA 4.0)'},
     'pathways': {'src': 'images/12-02-compare-pathways.png', 'cap': 'Eagle and bat pathways'},
+    'vrmanatee': {'src': 'images/12-02-vr-manatee.jpg', 'cap': 'A Florida manatee (Keith Ramos, USFWS, public domain)'},
 }
 C_CASE, C_GREEN, C_PURP, C_RED = '#B9822A', '#2F7A55', '#7A5BB5', '#C8553D'
 S = {}
@@ -50,5 +51,11 @@ S['closing'] = {'label': 'Case closed', 'length': '30–40 s', 'want': True, 'pa
     {'label': '🦇 Your specimen', 'tag': 'FIELD NOTEBOOK', 'title': 'Bat detector printout', 'col': C_CASE, 'body': 'Finish the checklist to stamp CASE CLOSED.'},
     {'label': '➡ Next week', 'tag': 'LESSON 13.01', 'title': 'Like parent, like child', 'col': C_GREEN, 'body': 'How do Florida plants and animals pass their traits to their young?'}],
     'script': '[ON SCREEN: Confetti]\nCase closed! A bat clicked, its ears caught the echoes, and its brain worked out where the moths were. Same four steps as the eagle, just a different sense.\n\n[ON SCREEN: Your specimen]\nCheck every box in What to Turn In, and the bat detector printout goes into your Field Notebook.\n\n[ON SCREEN: Next week]\nNext week: families! Why do baby animals look like their parents?\n\nPress Listen for Dr. Reyes’s last word.'}
+S['vr'] = {'label': 'VR activity · Twin pathways (separate page)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'label': '🖊 The dive slate', 'tag': 'CASE 12 FOLLOW-UP', 'title': 'The water smudged it', 'col': C_GREEN, 'body': 'Dr. Reyes sketched a dolphin and a hammerhead shark on her dive slate. Rebuild both pathway models side by side.'},
+    {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': '#2B7BB9', 'rows': [['🥽', 'VR Field Mission: two lanes under the sea (Under The Ocean) that end at one model brain.'], ['🗂', 'No headset? Build a manatee lane and a scrub-jay lane, then sort same or different.']]},
+    {'kind': 'photo', 'pic': 'vrmanatee', 'label': '📷 The manatee lane'},
+    {'label': '🥈 The badge', 'tag': 'VR ONLY', 'title': 'Silver Sonar Wave badge', 'col': '#6E7B8C', 'body': 'Save your capture in VR to earn it.'}],
+    'script': 'Hi, scientists! Dr. Reyes saw a dolphin hunt with echoes, just like our bat!\n\n[ON SCREEN: The dive slate]\nShe sketched it next to a hammerhead shark, but the water smudged her slate. Rebuild both pathway models, side by side.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, go under the ocean and build two lanes that end at one model brain. Say each lane’s four steps out loud.\n\n[ON SCREEN: The manatee lane]\nNo headset? Build a lane for this manatee and one for a scrub-jay. What is the same? What is different?\n\n[ON SCREEN: The badge]\nFinish in VR and you earn the Silver Sonar Wave badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 json.dump({'slots': S, 'pics': pics, 'other': ['lesson', 'part2', 'partb']}, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('wrote video.json', len(S), 'slots')
