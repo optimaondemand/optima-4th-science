@@ -1,0 +1,315 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a balance-scale tradeoff",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "⚖️ Part C &mdash; Weigh One Florida Tradeoff"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page now; the scale sketch is a bonus)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one Florida resource use (a solar farm, a rock quarry, citrus farming, a beach rebuild, or water for a city). Weigh it like a scientist: two benefits, two environmental costs, and one protection strategy.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 16 is Quarter 2",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "this is an Earth science lesson (4-ESS3-1), not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Earth Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the balance-scale image was never made (an AI prompt showed instead); the Load the scale game replaces it",
+  "old": "<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"lesson-figure-caption\">.*?</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact: “fertilizes farms in 50 states” can’t be checked; “phosphate dust” isn’t the main water risk (leaking mine waste is)",
+  "old": "BENEFIT: Florida phosphate fertilizes farms in 50 states, helping grow food for millions. Jobs and economic activity in central Florida. ENVIRONMENTAL COST: Mining permanently changes the land. Phosphate dust can pollute water. Mine sites need years to recover.",
+  "new": "BENEFIT: Florida phosphate helps make fertilizer for farms across the country, so they can grow more food. It also brings jobs to central Florida. ENVIRONMENTAL COST: Mining changes the land for good. Mining waste can pollute water if it leaks. Mine sites need years to recover."
+ },
+ {
+  "kind": "fix",
+  "why": "vague line (“sharing the grid”) cut",
+  "old": " Use Florida's sunny days well by sharing the grid.\"",
+  "new": "\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to break down a real Florida resource decision into its three parts: benefit, environmental cost, and protection strategy.",
+  "new": "Keep this question in mind. By the end, you’ll be able to break a real Florida resource choice into three parts: the benefit, the environmental cost, and a protection strategy."
+ },
+ {
+  "kind": "plain",
+  "why": "answers are made on the page now (the game below)",
+  "old": "<p>Think about ONE thing you used this morning\\..*?</p>\\s*<p>Under it, draw two columns\\..*?</p>",
+  "new": "<p>Think about something you did this morning. Every choice has two sides: something you <strong>GAINED</strong> and something you <strong>USED UP</strong>.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "plain words; dash removed; the case is a real-world example",
+  "old": "<p>When a Florida city decides whether to build new homes, mine phosphate, or open a solar farm, it's making a <span class=\"vtip\">tradeoff<span class=\"vtip-box\"><span class=\"vtip-word\">Tradeoff</span>Gaining one thing while giving up another.</span></span> — gaining something and giving up something else. Scientists break tradeoffs into three parts that you can write down:</p>",
+  "new": "<p>When a Florida town decides whether to open a rock quarry, build new homes, or put in a solar farm, it’s making a <span class=\"vtip\">tradeoff<span class=\"vtip-box\"><span class=\"vtip-word\">Tradeoff</span>Gaining one thing while giving up another.</span></span>: it gains one thing and gives up another. Scientists break a tradeoff into three parts:</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "What people GAIN — energy, food, jobs, building materials.",
+  "new": "What people GAIN: energy, food, jobs, building materials."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "What the environment LOSES — clean air, habitat, water, soil.",
+  "new": "What the environment LOSES: clean air, habitat, water, soil."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "What can be done to LOWER the environmental cost — laws, technology, careful planning.",
+  "new": "What people can do to LOWER the environmental cost: laws, technology, careful planning."
+ },
+ {
+  "kind": "plain",
+  "why": "plain words",
+  "old": "Most resource decisions aren't \"do this or don't.\" They're \"how do we do this with the lowest cost?\" That's where",
+  "new": "Most resource choices aren’t just “yes” or “no.” People ask, “How can we do this with the smallest cost?” That’s where"
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "<li><strong>Conservation</strong> — using less",
+  "new": "<li><strong>Conservation</strong>: using less"
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "<li><strong>Restoration</strong> — fixing damage",
+  "new": "<li><strong>Restoration</strong>: fixing damage"
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "<li><strong>Better technology</strong> — finding a smarter way.",
+  "new": "<li><strong>Better technology</strong>: finding a smarter way."
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed; “no-mine zones” said plainly",
+  "old": "<li><strong>Rules and laws</strong> — protecting things people can't protect alone. (Florida's water-use limits, no-mine zones, the Endangered Species Act.)</li>",
+  "new": "<li><strong>Rules and laws</strong>: rules everyone must follow to protect things people can’t protect alone.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "None of these solutions makes the environmental cost ZERO. But the right protection strategy can shift the balance enough that the tradeoff becomes worth it. That's the job of communities, scientists, and engineers — together.",
+  "new": "None of these makes the environmental cost ZERO. But the right protection strategy can tip the balance enough that the tradeoff is worth it."
+ },
+ {
+  "kind": "plain",
+  "why": "the diagram is Part 3 now",
+  "old": "margin-top:22px;\">Four Florida Tradeoffs</h3>",
+  "new": "margin-top:22px;\">Part 3 · Four Florida Tradeoffs</h3>"
+ },
+ {
+  "kind": "plain",
+  "why": "the four tradeoffs are on the diagram in the Lesson",
+  "old": "Pick one of the four Florida tradeoffs from the diagram (gas cars, solar farms, phosphate mining, or irrigation farms).",
+  "new": "Pick one of the four Florida tradeoffs from Part 3 (gas cars, solar farms, phosphate mining, or irrigation farms)."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Watch out box (one idea per paragraph; Part 3 and the CER cover it)",
+  "old": "<p><strong>Common misconception:</strong> Some people think every environmental problem has ONE right answer. Real-world choices usually have several reasonable options, each with different costs and benefits. Comparing them is part of the science.</p>",
+  "new": ""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter: the examples are in the Strategy toolbox right below",
+  "old": " of a resource so it lasts longer. (Shorter showers, energy-saving light bulbs.)</li>",
+  "new": " so it lasts longer.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter: the examples are in the Strategy toolbox",
+  "old": " after a resource is used. (Replanting trees after logging, restoring a wetland after mining.)</li>",
+  "new": " after a resource is used.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter: the examples are in the Strategy toolbox",
+  "old": "finding a smarter way. (Solar panels instead of coal plants. Drip irrigation instead of flooding fields.)</li>",
+  "new": "finding a smarter way.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing",
+  "old": "<p><strong>Nicely done\\.</strong> You can now break down a Florida resource decision into its three parts:.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You can now break a Florida resource choice into three parts: the benefit, the environmental cost and a protection strategy. Next time, you’ll think like an engineer and make a solution even better.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its tradeoff analysis becomes Part C; the electric-car fact and the Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think asks what Load the scale already does (one thinking stop per tab is enough)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 1",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>\\s*<p[^>]*>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason pointed at the image that was never made",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the Amazing Fact, the Florida connection and Go Deeper at the end of the Lesson; Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · The Town Hall</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Tonight Palmetto Springs holds its town hall about the quarry. Six neighbors handed in comment cards. Read each one like a scientist: is it a benefit, an environmental cost, or a protection strategy?</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the scale sketch is a bonus",
+  "old": "A balance-scale tradeoff diagram for one Florida resource, with at least 2 benefits on the left, 2 environmental costs on the right, and 1 protection strategy below.",
+  "new": "One Florida resource use with 2 benefits, 2 environmental costs and 1 protection strategy. (A balance-scale sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether Florida should always choose the option best for the environment, and supported it with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether Florida should always pick what’s best for the environment, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

@@ -1,0 +1,279 @@
+{
+ "lesson": "16.01",
+ "prefix": "g4sci-16-1",
+ "manifestKey": "16-01",
+ "guide": "june",
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the quarry vote",
+   "length": "50–60 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "lakebelt",
+     "label": "🛰 From the air"
+    },
+    {
+     "kind": "photo",
+     "pic": "wetland",
+     "label": "🌾 The wetland"
+    },
+    {
+     "label": "🗂 The case question",
+     "tag": "CASE FILE 16",
+     "title": "The Quarry Vote",
+     "col": "#B9822A",
+     "body": "Should Palmetto Springs say yes to the quarry, and what would make it worth it?"
+    }
+   ],
+   "script": "Welcome to a brand-new unit, scientists! We have a new crew member, too: June Calloway, a geologist.\n\n[ON SCREEN: From the air]\nLook at these square lakes beside the Everglades. They’re rock pits. People dug out limestone here to build roads.\n\n[ON SCREEN: The wetland]\nAnd this is what the land next door looks like: sawgrass growing right on top of the same rock.\n\n[ON SCREEN: The case question]\nJune’s town wants to dig a quarry like that, right beside a wetland. Should they? Find four clues. Press Listen to meet June, right below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · gained or used up? (Clue 1)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "⚖️ Gained or used up?",
+     "tag": "WARM-UP GAME",
+     "title": "Two sides of every choice",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "👍",
+       "GAINED: what you get"
+      ],
+      [
+       "🔋",
+       "USED UP: what is gone after"
+      ]
+     ]
+    }
+   ],
+   "script": "(Hold up a piece of toast.) I made toast this morning. What did I gain? Breakfast! Energy for my body.\n\nBut what did I use up? Bread, and electricity for the toaster.\n\n[ON SCREEN: Gained or used up?]\nIn the game, pick a shower, toast or a car ride. Drag each card to GAINED or USED UP. Then write about something you really did today.\n\nEvery choice has two sides. Press Listen for June’s tip."
+  },
+  "part1": {
+   "label": "Part 1 · load the scale (Clue 2)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "⚖️ Load the scale",
+     "tag": "PART 1 GAME",
+     "title": "Benefits vs. costs",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "1",
+       "Drag each card to a side."
+      ],
+      [
+       "2",
+       "Watch the scale tip."
+      ],
+      [
+       "3",
+       "Add the protection strategies."
+      ]
+     ]
+    },
+    {
+     "kind": "photo",
+     "pic": "wall",
+     "label": "🪨 The rock"
+    }
+   ],
+   "script": "(Hold your hands out like a balance scale.) A tradeoff is like a scale. Benefits on one side. Environmental costs on the other.\n\n[ON SCREEN: Load the scale]\nPut every card on the quarry’s scale. Heavy cards count more, so watch which way it tips. Then add the protection strategies. Does the cost side ever reach zero?\n\n[ON SCREEN: The rock]\nThis is the limestone the quarry wants. Keep it in mind. Press Listen."
+  },
+  "explore": {
+   "label": "Part 4 · the town hall (Clue 4)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🗳️ The town hall",
+     "tag": "PART 4 GAME",
+     "title": "Six comment cards",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "👍",
+       "Benefit"
+      ],
+      [
+       "🌫️",
+       "Cost"
+      ],
+      [
+       "🛡️",
+       "Protection strategy"
+      ]
+     ]
+    },
+    {
+     "kind": "photo",
+     "pic": "oldq",
+     "label": "🏞️ An old quarry"
+    }
+   ],
+   "script": "[ON SCREEN: An old quarry]\nThis quarry in the Florida Keys stopped digging long ago. Water filled the pit, and trees are growing back. But the rock is gone for good.\n\n[ON SCREEN: The town hall]\nNow it’s town hall night in Palmetto Springs. Six neighbors brought comment cards. Stamp each one: benefit, cost or protection strategy. Then match each strategy to the cost it lowers.\n\nThat’s your last clue. Press Listen."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔓 Crack the case",
+     "tag": "TOP OF THE ASSIGNMENT",
+     "title": "Yes to the quarry?",
+     "col": "#B9822A",
+     "body": "Pick the answer that fits all four clues."
+    },
+    {
+     "label": "✍️ Your case report",
+     "tag": "WHAT TO WRITE",
+     "title": "Three places to write",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "Part B",
+       "Two short answers"
+      ],
+      [
+       "Part C",
+       "Weigh one Florida tradeoff"
+      ],
+      [
+       "CER",
+       "Claim, evidence, reasoning"
+      ],
+      [
+       "📋",
+       "Copy your Gathered Answers into Canvas"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nYou have four clues. Crack the case at the top of this tab: should Palmetto Springs say yes to the quarry, and what would make it worth it?\n\n[ON SCREEN: Your case report]\nThen write your case report. Two short answers, a tradeoff scale for one Florida resource in Part C, and a CER. Want to sketch your scale? That’s a bonus. Stuck? Press Hint under any box. Press Listen."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💬 The claim",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "A classmate says…",
+     "col": "#C8553D",
+     "body": "“Every Florida resource decision should choose what’s best for the environment, no matter what.”"
+    },
+    {
+     "label": "🧩 The planner",
+     "tag": "PLAN BEFORE YOU WRITE",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "1",
+       "Tap I agree or I disagree."
+      ],
+      [
+       "2",
+       "Tap two pieces of evidence."
+      ],
+      [
+       "3",
+       "You write the reasoning."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: The claim]\nA classmate says Florida should always pick what’s best for the environment, no matter what. Hmm. What about the roads? The jobs?\n\nThere’s no wrong side here, as long as you prove it.\n\n[ON SCREEN: The planner]\nRemember CER. Tap your side and two facts from today. Then explain how your facts prove your claim. Try starting with “This shows that…” Press Listen."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "30–40 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🗳️ Your specimen",
+     "tag": "FIELD NOTEBOOK",
+     "title": "Town hall comment card",
+     "col": "#B9822A",
+     "body": "Finish the checklist to stamp CASE CLOSED."
+    },
+    {
+     "label": "➡ Next time",
+     "tag": "LESSON 16.02",
+     "title": "Improve a solution",
+     "col": "#2F7A55",
+     "body": "How can we compare solutions, pick the best one, and make it better?"
+    }
+   ],
+   "script": "Case closed! You weighed the benefits and the costs, and you found ways to make the costs smaller.\n\n[ON SCREEN: Your specimen]\nFinish your checklist and a town hall comment card goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next time]\nNext time, we think like engineers. We’ll compare a few solutions, pick the best one, and make it even better. Press Listen for June’s last word."
+  },
+  "part2": {
+   "label": "Part 2 · strategy toolbox (Clue 3)",
+   "length": "30–40 s",
+   "want": false,
+   "parts": [],
+   "script": "There are four kinds of protection strategies: using less, fixing damage afterward, a smarter machine, and rules. Drop each card into its drawer. Round two is the quarry. Press Listen."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s",
+   "want": false,
+   "parts": [],
+   "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  }
+ },
+ "pics": {
+  "lakebelt": {
+   "src": "images/16-01-lake-belt.jpg",
+   "cap": "Rock pits beside the Everglades (USGS, public domain)"
+  },
+  "wall": {
+   "src": "images/16-01-quarry-wall.jpg",
+   "cap": "A limestone wall in a Florida quarry (RealGatba, CC BY-SA 4.0)"
+  },
+  "wetland": {
+   "src": "images/16-01-wetland.jpg",
+   "cap": "Sawgrass growing on limestone, Everglades (public domain)"
+  },
+  "oldq": {
+   "src": "images/16-01-old-quarry.jpg",
+   "cap": "An old quarry on Key Largo (YourWorldExplorer, CC BY 3.0)"
+  }
+ },
+ "other": [
+  {
+   "id": "vocab",
+   "label": "Word Wall",
+   "length": "30–45 s"
+  },
+  {
+   "id": "lesson",
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  {
+   "id": "part3",
+   "label": "part3",
+   "length": ""
+  },
+  {
+   "id": "partb",
+   "label": "Part B",
+   "length": "30 s"
+  },
+  {
+   "id": "partc",
+   "label": "Part C · weigh one tradeoff",
+   "length": "30 s"
+  }
+ ],
+ "redo": []
+}

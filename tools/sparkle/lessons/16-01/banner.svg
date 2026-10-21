@@ -1,0 +1,90 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One layer of limestone runs under the whole scene. On the left, a quarry has cut a deep pit into it, now filled with blue water, with a digger on the rim. In the middle, a new road crosses on a low bank. On the right, a cypress wetland sits on the same rock, with a heron wading in the shallow water.">
+  <style>
+    .qv-cloud { animation: qvCloud 30s linear infinite; }
+    .qv-shine { animation: qvShine 4s ease-in-out infinite; }
+    .qv-shine2 { animation: qvShine 4s ease-in-out infinite 1.6s; }
+    .qv-heron { animation: qvBob 3.2s ease-in-out infinite; transform-origin: 816px 100px; }
+    .qv-drip { animation: qvDrip 2.6s ease-in infinite; }
+    @keyframes qvCloud { 0% { transform: translateX(-180px); } 100% { transform: translateX(1000px); } }
+    @keyframes qvShine { 0%,100% { opacity:.15; } 50% { opacity:.6; } }
+    @keyframes qvBob { 0%,70%,100% { transform: rotate(0deg); } 80% { transform: rotate(14deg); } 90% { transform: rotate(0deg); } }
+    @keyframes qvDrip { 0% { transform: translateY(0); opacity:0; } 20% { opacity:.9; } 100% { transform: translateY(22px); opacity:0; } }
+    @media (prefers-reduced-motion: reduce) { .qv-cloud, .qv-shine, .qv-shine2, .qv-heron, .qv-drip { animation:none; } .qv-cloud { transform: translateX(420px); } }
+  </style>
+  <defs>
+    <linearGradient id="qvSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE0F2"/><stop offset="1" stop-color="#EAF5F0"/></linearGradient>
+    <linearGradient id="qvPit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3C8DB0"/><stop offset="1" stop-color="#1D4E6A"/></linearGradient>
+    <linearGradient id="qvMarsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB3A3"/><stop offset="1" stop-color="#4E8577"/></linearGradient>
+    <pattern id="qvLime" width="26" height="18" patternUnits="userSpaceOnUse">
+      <rect width="26" height="18" fill="#E2D6B4"/>
+      <ellipse cx="6" cy="6" rx="3" ry="2" fill="#B9A97F"/><ellipse cx="18" cy="12" rx="2.4" ry="1.6" fill="#B9A97F"/><circle cx="22" cy="4" r="1.2" fill="#C9BB93"/>
+    </pattern>
+    <pattern id="qvWet" width="26" height="18" patternUnits="userSpaceOnUse">
+      <rect width="26" height="18" fill="#CFC6A6"/>
+      <ellipse cx="6" cy="6" rx="3" ry="2" fill="#6F9DB4"/><ellipse cx="18" cy="12" rx="2.4" ry="1.6" fill="#6F9DB4"/><circle cx="22" cy="4" r="1.2" fill="#8CB3C6"/>
+    </pattern>
+  </defs>
+  <!-- sky and a drifting cloud -->
+  <rect width="920" height="200" fill="url(#qvSky)"/>
+  <g class="qv-cloud" fill="#FFFFFF" opacity=".9"><ellipse cx="0" cy="34" rx="46" ry="13"/><ellipse cx="30" cy="28" rx="30" ry="12"/><ellipse cx="-30" cy="38" rx="26" ry="9"/></g>
+  <!-- far tree line -->
+  <path d="M0,92 Q40,78 80,88 Q120,74 170,86 Q220,76 260,90 L260,100 H0Z" fill="#7FA36A"/>
+  <path d="M600,90 Q650,72 700,86 Q750,70 800,84 Q860,72 920,86 V100 H600Z" fill="#6E9A60"/>
+  <!-- the limestone layer that runs under everything -->
+  <rect x="0" y="100" width="920" height="100" fill="url(#qvLime)"/>
+  <!-- the deepest part: limestone full of water (the aquifer) -->
+  <rect x="0" y="160" width="920" height="40" fill="url(#qvWet)"/>
+  <path d="M0,160 H920" stroke="#8CB3C6" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <!-- LEFT: the quarry pit, cut in steps, filled with water -->
+  <path d="M60,100 L60,116 L84,116 L84,134 L110,134 L110,170 L330,170 L330,134 L356,134 L356,116 L380,116 L380,100Z" fill="#C7B88C"/>
+  <path d="M60,100 L60,116 L84,116 L84,134 L110,134 L110,170 L330,170 L330,134 L356,134 L356,116 L380,116 L380,100" fill="none" stroke="#A8996D" stroke-width="2"/>
+  <path d="M66,104 h10 M90,121 h12 M342,121 h10 M366,106 h8 M120,140 h8 M312,142 h10" stroke="#B3A378" stroke-width="2" stroke-linecap="round"/>
+  <path d="M84,124 L84,134 L110,134 L110,170 L330,170 L330,134 L356,134 L356,124Z" fill="url(#qvPit)"/>
+  <path class="qv-shine" d="M120,134 h60 M210,146 h70 M150,158 h50" stroke="#CFEAF6" stroke-width="2" stroke-linecap="round"/>
+  <path class="qv-shine2" d="M250,132 h50 M300,154 h30" stroke="#CFEAF6" stroke-width="2" stroke-linecap="round"/>
+  <!-- groundwater seeping in from the rock -->
+  <g fill="#6FB0D0"><circle class="qv-drip" cx="94" cy="160" r="2.2"/><circle class="qv-drip" cx="346" cy="158" r="2.2" style="animation-delay:1.3s"/></g>
+  <!-- rock piles and a digger on the rim -->
+  <path d="M8,100 L22,84 L36,100Z" fill="#D9CDA9"/><path d="M412,100 L428,86 L446,100Z" fill="#D9CDA9"/>
+  <g transform="translate(386 82)">
+    <rect x="0" y="6" width="26" height="12" rx="2" fill="#F2B233"/><rect x="4" y="0" width="12" height="8" rx="1.5" fill="#E09A1E"/>
+    <rect x="-2" y="16" width="30" height="5" rx="2.5" fill="#3F3F3F"/>
+    <path d="M2,8 L-16,-6 L-30,4" stroke="#C98A1A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+    <path d="M-34,2 l6,0 l0,6 l-8,0z" fill="#6B5A3C"/>
+  </g>
+  <!-- MIDDLE: a new road on a low bank -->
+  <path d="M440,100 L470,92 L570,92 L600,100Z" fill="#B8A983"/>
+  <rect x="470" y="86" width="100" height="7" fill="#55595C"/>
+  <path d="M476,89.5 h12 M496,89.5 h12 M516,89.5 h12 M536,89.5 h12 M556,89.5 h10" stroke="#F4D35E" stroke-width="1.6"/>
+  <g transform="translate(500 74)"><rect x="0" y="2" width="30" height="10" rx="2" fill="#4F7BA8"/><rect x="22" y="0" width="12" height="12" rx="2" fill="#3D628A"/><path d="M2,2 L8,-4 L20,-4 L22,2Z" fill="#D9CDA9"/><circle cx="6" cy="13" r="3" fill="#2B2B2B"/><circle cx="28" cy="13" r="3" fill="#2B2B2B"/></g>
+  <!-- RIGHT: the cypress wetland on the same rock -->
+  <path d="M600,100 L920,100 L920,112 L600,112Z" fill="url(#qvMarsh)"/>
+  <path class="qv-shine" d="M640,106 h40 M720,108 h50 M840,105 h40" stroke="#D6EEE6" stroke-width="1.6" stroke-linecap="round"/>
+  <g fill="#5E7A3E">
+    <path d="M650,104 l3,-14 l3,14z M664,105 l2,-11 l3,11z M700,104 l3,-15 l3,15z M760,105 l2,-12 l3,12z M880,104 l3,-13 l3,13z M900,105 l2,-10 l3,10z"/>
+  </g>
+  <g>
+    <path d="M676,104 C672,96 674,70 678,40 L684,40 C688,70 690,96 686,104Z" fill="#6B5034"/>
+    <path d="M681,22 L700,62 L662,62Z" fill="#4E7A3A"/><path d="M681,8 L696,42 L666,42Z" fill="#5C8A44"/>
+    <path d="M736,104 C733,98 734,80 737,58 L742,58 C745,80 746,98 743,104Z" fill="#6B5034"/>
+    <path d="M739,40 L756,74 L722,74Z" fill="#4E7A3A"/><path d="M739,28 L752,56 L726,56Z" fill="#5C8A44"/>
+    <path d="M862,104 C858,96 860,72 864,44 L870,44 C874,72 876,96 872,104Z" fill="#6B5034"/>
+    <path d="M867,26 L886,66 L848,66Z" fill="#4E7A3A"/><path d="M867,12 L882,46 L852,46Z" fill="#5C8A44"/>
+    <path d="M700,106 l4,-6 l4,6z M716,107 l3,-5 l3,5z M752,106 l4,-6 l4,6z" fill="#7A5C3C"/>
+  </g>
+  <!-- a great blue heron wading -->
+  <g transform="translate(0 -18)">
+    <path d="M806,110 L804,128 M814,110 L816,128" stroke="#5B6A72" stroke-width="2"/>
+    <ellipse cx="810" cy="104" rx="14" ry="8" fill="#7E93A6"/>
+    <path d="M820,100 L826,98" stroke="#5B6A72" stroke-width="3" stroke-linecap="round"/>
+    <g class="qv-heron">
+      <path d="M816,100 C820,90 812,84 814,74" stroke="#8FA3B4" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="816" cy="72" rx="6" ry="4.5" fill="#EEF1F3"/>
+      <path d="M821,71 L836,73 L821,74Z" fill="#E0A82A"/>
+      <path d="M813,70 l-8,-3" stroke="#2B3640" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="818" cy="71" r="1.1" fill="#1D2329"/>
+    </g>
+  </g>
+  <!-- the same water under both sides -->
+  <path d="M0,182 Q115,176 230,182 T460,182 T690,182 T920,182" stroke="#4E8FB0" stroke-width="2" fill="none" opacity=".55"/>
+</svg>

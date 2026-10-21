@@ -457,7 +457,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -4401,6 +4401,269 @@
 
   /* ----- core drill (15.01): drill three Florida spots, pull up a core of layers, tap each layer to read it, then answer one question -----
      T.coredrill = {title, todo[], parts:[{label, t}], sites:[{k, name, icon, where, layers:[{k, t, from, to, col, note}]}], deepest, need:{site, layer}, q:{q, opts:[{t, ok, why}]}} */
+  /* =================== 16.01: tradeoffs (Gained or used up?, Load the scale, Strategy toolbox, Town hall) =================== */
+
+  /* ---------- Warm-Up: "Gained or used up?" — pick an everyday activity, then sort each card into GAINED or USED UP (16.01) ----------
+     D.twocol = {afterText, kicker, title, todo[], why, cols:[{k, icon, t}], items:[{id, icon, name, chips:[{id, t, side, miss}]}], q, opts, win, clue} */
+  function buildTwocol() {
+    var T = D.twocol; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('twocol anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Warm-Up game', T.title, T.todo, T.why); g.dataset.mod = 'twocol';
+    var st = loadJ('twocol', {}), cur = null;
+    var pick = el('div', 'fs-gu-pick'), tray = el('div', 'fs-gu-tray'), cols = el('div', 'fs-gu-cols'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    T.items.forEach(function (it) { var b = el('button', 'fs-in-chip fs-gu-item', '<span>' + it.icon + '</span>' + esc(it.name) + '<em></em>'); b.type = 'button'; b.dataset.id = it.id; pick.appendChild(b); });
+    T.cols.forEach(function (c) { var z = el('div', 'fs-gu-col', '<div class="fs-gu-h"><span>' + c.icon + '</span>' + esc(c.t) + '</div><ul></ul>'); z.dataset.k = c.k; cols.appendChild(z); });
+    g.appendChild(el('div', 'fs-in-k', '1. Pick something you might do in the morning')); g.appendChild(pick);
+    g.appendChild(el('div', 'fs-in-k fs-gu-k2', '2. Sort each card')); g.appendChild(tray); g.appendChild(cols);
+    g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var zones = $$('.fs-gu-col', cols), total = 0; T.items.forEach(function (it) { total += it.chips.length; });
+    function itemOf(id) { return T.items.filter(function (x) { return x.id === id; })[0]; }
+    function addTo(it, ch, anim) {
+      var li = el('li', anim && !reduceMotion ? 'pop' : '', '<span>' + it.icon + '</span>' + esc(ch.t)); $('ul', $('.fs-gu-col[data-k="' + ch.side + '"]', cols)).appendChild(li);
+    }
+    function show(it) {
+      cur = it; tray.innerHTML = '';
+      $$('.fs-gu-item', pick).forEach(function (b) { b.classList.toggle('on', b.dataset.id === it.id); });
+      shuffle(it.chips).forEach(function (ch) { if (st[it.id + ':' + ch.id]) return; var k = el('div', 'fs-card fs-gu-card', '<span>' + it.icon + '</span> ' + esc(ch.t)); k.dataset.id = ch.id; tray.appendChild(k); dragDrop(k, function () { return zones; }, drop); });
+      if (!tray.children.length) tray.appendChild(el('div', 'fs-gu-done', '✓ All sorted. Pick another one above.'));
+    }
+    function drop(k, z) {
+      if (!cur) return; var ch = cur.chips.filter(function (x) { return x.id === k.dataset.id; })[0]; if (!ch) return;
+      if (ch.side !== z.dataset.k) { bounce(k, miss, ch.miss); return; }
+      miss.classList.remove('show'); st[cur.id + ':' + ch.id] = 1; saveJ('twocol', st); SFX.chime(); k.remove(); addTo(cur, ch, true);
+      if (!$('.fs-gu-card', tray)) { tray.appendChild(el('div', 'fs-gu-done', '✓ All sorted. Pick another one above.')); }
+      upd();
+    }
+    tapTargets(g, zones, drop);
+    $$('.fs-gu-item', pick).forEach(function (b) { b.addEventListener('click', function () { show(itemOf(b.dataset.id)); SFX.blip(); }); });
+    function upd() {
+      var n = Object.keys(st).length;
+      T.items.forEach(function (it) { var done = it.chips.every(function (ch) { return st[it.id + ':' + ch.id]; }); var b = $('.fs-gu-item[data-id="' + it.id + '"]', pick); b.classList.toggle('done', done); $('em', b).textContent = done ? ' ✓' : ''; });
+      count.textContent = '⚖️ ' + n + ' of ' + total + ' cards sorted'; count.classList.toggle('ok', n === total);
+      if (n === total) askOnce(qh, T.q, T.opts, 'twocol-q', win, T.win, T.clue, 'twocol', miss);
+    }
+    T.items.forEach(function (it) { it.chips.forEach(function (ch) { if (st[it.id + ':' + ch.id]) addTo(it, ch, false); }); });
+    tray.appendChild(el('div', 'fs-gu-done', 'Pick one above to start.'));
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson Part 1: "Load the scale" — drag the benefits and costs of one plan onto a balance scale, then add protection strategies and watch the costs shrink (16.01) ----------
+     D.scale = {replace | afterText, kicker, title, todo[], why, sides:{benefit:{icon,t}, cost:{icon,t}}, weights:[{id, icon, t, side, w, miss}], strategies:[{id, icon, t, lowers, to, why}], q, opts, credit, win, clue} */
+  function buildScale() {
+    var S = D.scale; if (!S) return;
+    var wrap = S.replace ? $(S.replace) : null, at = wrap ? null : anchorP(S.afterText);
+    if (!wrap && !at) { FAILED.push('scale: no anchor'); return; }
+    if (at && at.nextElementSibling && at.nextElementSibling.tagName === 'UL') at = at.nextElementSibling;
+    var g = gameShell(S.kicker || 'Lesson game', S.title, S.todo, S.why); g.dataset.mod = 'scale';
+    var st = loadJ('scale', { on: {}, str: {} });
+    var stage = el('div', 'fs-bal-stage', '<div class="fs-bal-post"></div><div class="fs-bal-beam"><i></i></div>' +
+      ['benefit', 'cost'].map(function (k) { return '<div class="fs-bal-pan" data-k="' + k + '"><div class="fs-bal-cord"></div><div class="fs-bal-dish"><div class="fs-bal-h"><span>' + S.sides[k].icon + '</span>' + esc(S.sides[k].t) + '</div><div class="fs-bal-load"><em>Drop here</em></div></div></div>'; }).join('') +
+      '<div class="fs-bal-base"></div>');
+    var tray = el('div', 'fs-bal-tray'), miss = el('div', 'fs-miss'), read = el('div', 'fs-bal-read'), strat = el('div', 'fs-bal-strat'), info = el('div', 'fs-hs-card fs-bal-info'), qh = el('div'), win = el('div', 'fs-win');
+    shuffle(S.weights).forEach(function (w) { var k = el('div', 'fs-card fs-bal-w', '<span>' + w.icon + '</span> ' + esc(w.t) + ' <b class="fs-bal-kg">' + '●'.repeat(w.w) + '</b>'); k.dataset.id = w.id; tray.appendChild(k); });
+    g.appendChild(stage); g.appendChild(read); g.appendChild(tray); g.appendChild(miss); g.appendChild(strat); g.appendChild(info); g.appendChild(qh); g.appendChild(win);
+    if (S.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📚 Where these facts come from</summary>' + esc(S.credit)));
+    var pans = $$('.fs-bal-pan', stage), beam = $('.fs-bal-beam', stage);
+    function wOf(id) { return S.weights.filter(function (x) { return x.id === id; })[0]; }
+    function weightNow(w) { var s = S.strategies.filter(function (x) { return x.lowers === w.id && st.str[x.id]; })[0]; return s ? s.to : w.w; }
+    function sum(side) { return S.weights.filter(function (w) { return w.side === side && st.on[w.id]; }).reduce(function (a, w) { return a + weightNow(w); }, 0); }
+    function draw(anim) {
+      ['benefit', 'cost'].forEach(function (k) {
+        var load = $('.fs-bal-load', $('.fs-bal-pan[data-k="' + k + '"]', stage)), ws = S.weights.filter(function (w) { return w.side === k && st.on[w.id]; });
+        load.innerHTML = ws.length ? ws.map(function (w) { var n = weightNow(w), lowered = n < w.w; return '<div class="fs-bal-blk' + (lowered ? ' low' : '') + '"><span>' + w.icon + '</span> ' + esc(w.t) + ' <b class="fs-bal-kg">' + '●'.repeat(n) + '</b>' + (lowered ? ' <small>🛡️ lowered</small>' : '') + '</div>'; }).join('') : '<em>Drop here</em>';
+      });
+      var b = sum('benefit'), c = sum('cost'), ang = Math.max(-12, Math.min(12, (c - b) * 2.4));
+      beam.style.transform = 'rotate(' + ang + 'deg)';
+      var dy = Math.round(Math.sin(ang * Math.PI / 180) * 150);
+      pans[0].style.transform = 'translateY(' + (-dy) + 'px)'; pans[1].style.transform = 'translateY(' + dy + 'px)';
+      var hmax = Math.max(pans[0].offsetHeight, pans[1].offsetHeight); if (hmax) stage.style.height = (hmax + 33 + Math.abs(dy) + 34) + 'px';
+      var placed = S.weights.every(function (w) { return st.on[w.id]; });
+      read.innerHTML = '<span>👍 ' + esc(S.sides.benefit.t) + ': <b>' + b + '</b></span><span>' + (Math.abs(b - c) < 1 ? '⚖️ About even' : b > c ? '⬅ Tips toward the benefits' : 'Tips toward the costs ➡') + '</span><span>🌫️ ' + esc(S.sides.cost.t) + ': <b>' + c + '</b></span>';
+      if (placed) stepTwo();
+    }
+    function drop(k, z) {
+      var w = wOf(k.dataset.id); if (!w || st.on[w.id]) return;
+      if (w.side !== z.dataset.k) { bounce(k, miss, w.miss); return; }
+      miss.classList.remove('show'); st.on[w.id] = 1; saveJ('scale', st); SFX.thud(); k.remove(); draw(true);
+    }
+    $$('.fs-bal-w', tray).forEach(function (k) { if (st.on[k.dataset.id]) { k.remove(); return; } dragDrop(k, function () { return pans; }, drop); });
+    tapTargets(g, pans, drop);
+    function stepTwo() {
+      if (strat.dataset.on) { upd2(); return; } strat.dataset.on = '1';
+      strat.innerHTML = '<div class="fs-in-k">Now add a protection strategy. Tap each one.</div><div class="fs-in-chips">' + S.strategies.map(function (s) { return '<button type="button" class="fs-in-chip" data-id="' + s.id + '"><span>' + s.icon + '</span> ' + esc(s.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', strat).forEach(function (c) { c.addEventListener('click', function () {
+        var s = S.strategies.filter(function (x) { return x.id === c.dataset.id; })[0]; if (st.str[s.id]) return;
+        st.str[s.id] = 1; saveJ('scale', st); SFX.chime(); show(s, true); draw(true);
+      }); });
+      upd2();
+    }
+    function show(s, anim) { info.innerHTML = '<span class="fs-hs-n">🛡️</span><div><b>' + esc(s.t) + '</b>' + esc(s.why) + '</div>'; if (anim && !reduceMotion) { info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash'); } }
+    function upd2() {
+      $$('.fs-in-chip', strat).forEach(function (c) { c.classList.toggle('on', !!st.str[c.dataset.id]); c.classList.toggle('ok', !!st.str[c.dataset.id]); });
+      if (S.strategies.every(function (s) { return st.str[s.id]; })) askOnce(qh, S.q, S.opts, 'scale-q', win, S.win, S.clue, 'scale', miss);
+    }
+    if (wrap) { wrap.parentNode.insertBefore(g, wrap); wrap.classList.add('fs-hide-on'); } else at.parentNode.insertBefore(g, at.nextSibling);
+    draw(false);
+    var last = S.strategies.filter(function (s) { return st.str[s.id]; }).pop(); if (last) show(last, false);
+    if (window.IntersectionObserver) new IntersectionObserver(function (es) { if (es[0].isIntersecting) draw(false); }).observe(stage);
+  }
+
+  /* ---------- Lesson Part 2: "Strategy toolbox" — drop each real action into the drawer for its kind of protection strategy; round 2 is the case (16.01) ----------
+     D.toolbox = {afterText, kicker, title, todo[], why, kinds:[{k, icon, t, sub}], rounds:[{title, cards:[{id, icon, t, k, why, miss}]}], q, opts, win, clue} */
+  function buildToolbox() {
+    var T = D.toolbox; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('toolbox anchor text not found'); return; }
+    if (at.nextElementSibling && at.nextElementSibling.tagName === 'UL') at = at.nextElementSibling;
+    var g = gameShell(T.kicker || 'Lesson game', T.title, T.todo, T.why); g.dataset.mod = 'toolbox';
+    var st = loadJ('toolbox', {});
+    var box = el('div', 'fs-tb-box'), rh = el('div', 'fs-tb-round'), tray = el('div', 'fs-tb-tray'), miss = el('div', 'fs-miss'), info = el('div', 'fs-hs-card fs-tb-info', '<em>Drop a card in a drawer to learn about it.</em>'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    T.kinds.forEach(function (kd) { var d = el('div', 'fs-tb-drawer', '<div class="fs-tb-h"><span>' + kd.icon + '</span><b>' + esc(kd.t) + '</b><small>' + esc(kd.sub) + '</small></div><ul></ul>'); d.dataset.k = kd.k; box.appendChild(d); });
+    g.appendChild(rh); g.appendChild(tray); g.appendChild(box); g.appendChild(miss); g.appendChild(info); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var drawers = $$('.fs-tb-drawer', box), all = [], r = 0;
+    T.rounds.forEach(function (rd) { all = all.concat(rd.cards); });
+    function cardOf(id) { return all.filter(function (x) { return x.id === id; })[0]; }
+    function put(c, anim) { var li = el('li', anim && !reduceMotion ? 'pop' : '', '<span>' + c.icon + '</span>' + esc(c.t)); $('ul', $('.fs-tb-drawer[data-k="' + c.k + '"]', box)).appendChild(li); }
+    function round() {
+      r = 0; while (r < T.rounds.length && T.rounds[r].cards.every(function (c) { return st[c.id]; })) r++;
+      tray.innerHTML = '';
+      if (r >= T.rounds.length) { rh.innerHTML = '<b>✓ Every card is in its drawer.</b>'; return; }
+      rh.innerHTML = '<span class="fs-tb-rn">Round ' + (r + 1) + ' of ' + T.rounds.length + '</span> ' + esc(T.rounds[r].title);
+      shuffle(T.rounds[r].cards).forEach(function (c) { if (st[c.id]) return; var k = el('div', 'fs-card fs-tb-card', '<span>' + c.icon + '</span> ' + esc(c.t)); k.dataset.id = c.id; tray.appendChild(k); dragDrop(k, function () { return drawers; }, drop); });
+    }
+    function drop(k, d) {
+      var c = cardOf(k.dataset.id); if (!c || st[c.id]) return;
+      if (c.k !== d.dataset.k) { bounce(k, miss, c.miss); return; }
+      miss.classList.remove('show'); st[c.id] = 1; saveJ('toolbox', st); SFX.chime(); k.remove(); put(c, true);
+      var kd = T.kinds.filter(function (x) { return x.k === c.k; })[0];
+      info.innerHTML = '<span class="fs-hs-n">' + kd.icon + '</span><div><b>' + esc(kd.t) + ': ' + esc(c.t) + '</b>' + esc(c.why) + '</div>'; if (!reduceMotion) { info.classList.remove('flash'); void info.offsetWidth; info.classList.add('flash'); }
+      if (!$('.fs-tb-card', tray)) setTimeout(round, reduceMotion ? 0 : 500);
+      upd();
+    }
+    tapTargets(g, drawers, drop);
+    function upd() {
+      var n = all.filter(function (c) { return st[c.id]; }).length;
+      count.textContent = '🧰 ' + n + ' of ' + all.length + ' cards in the toolbox'; count.classList.toggle('ok', n === all.length);
+      if (n === all.length) askOnce(qh, T.q, T.opts, 'toolbox-q', win, T.win, T.clue, 'toolbox', miss);
+    }
+    all.forEach(function (c) { if (st[c.id]) put(c, false); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    round(); upd();
+  }
+
+  /* ---------- Lesson Part 4: "Town hall" — stamp each neighbor's comment as a benefit, a cost or a protection strategy, then match each strategy to the cost it lowers (16.01) ----------
+     D.townhall = {afterText, kicker, title, todo[], why, tags:[{k, icon, t}], comments:[{id, who, icon, t, tag, miss, lowers}], matchQ, q, opts, win, clue} */
+  function buildTownhall() {
+    var T = D.townhall; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('townhall anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Lesson game', T.title, T.todo, T.why); g.dataset.mod = 'townhall';
+    var st = loadJ('townhall', { tag: {}, match: {} });
+    var wall = el('div', 'fs-th2-wall'), miss = el('div', 'fs-miss'), step2 = el('div', 'fs-th2-step2'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    T.comments.forEach(function (c) {
+      var k = el('div', 'fs-th2-card', '<div class="fs-th2-who"><span>' + c.icon + '</span>' + esc(c.who) + '</div><p>“' + esc(c.t) + '”</p><div class="fs-th2-tags">' + T.tags.map(function (tg) { return '<button type="button" class="fs-th2-tag" data-k="' + tg.k + '">' + tg.icon + ' ' + esc(tg.t) + '</button>'; }).join('') + '</div><div class="fs-th2-stamp"></div><div class="fs-th2-fix"></div>');
+      k.dataset.id = c.id; wall.appendChild(k);
+    });
+    g.appendChild(wall); g.appendChild(miss); g.appendChild(count); g.appendChild(step2); g.appendChild(qh); g.appendChild(win);
+    function cOf(id) { return T.comments.filter(function (x) { return x.id === id; })[0]; }
+    function tagOf(k) { return T.tags.filter(function (x) { return x.k === k; })[0]; }
+    function stamp(c, anim) {
+      var k = $('.fs-th2-card[data-id="' + c.id + '"]', wall), tg = tagOf(c.tag); k.classList.add('done', 'is-' + c.tag); if (anim && !reduceMotion) k.classList.add('pop');
+      $('.fs-th2-stamp', k).innerHTML = tg.icon + ' ' + esc(tg.t);
+    }
+    $$('.fs-th2-tag', wall).forEach(function (b) { b.addEventListener('click', function () {
+      var k = b.closest('.fs-th2-card'), c = cOf(k.dataset.id); if (st.tag[c.id]) return;
+      if (b.dataset.k !== c.tag) { bounce(b, miss, c.miss); return; }
+      miss.classList.remove('show'); st.tag[c.id] = 1; saveJ('townhall', st); SFX.chime(); stamp(c, true); upd();
+    }); });
+    var strats = T.comments.filter(function (c) { return c.lowers; });
+    function fixed(s, anim) {
+      var k = $('.fs-th2-card[data-id="' + s.lowers + '"]', wall); $('.fs-th2-fix', k).innerHTML = '🛡️ Lowered by: ' + esc(s.who); k.classList.add('fixed'); if (anim && !reduceMotion) { k.classList.remove('pop'); void k.offsetWidth; k.classList.add('pop'); }
+      var t = $('.fs-th2-s[data-id="' + s.id + '"]', step2); if (t) t.remove();
+    }
+    function drop(t, z) {
+      var s = cOf(t.dataset.id); if (!s || st.match[s.id]) return;
+      if (z.dataset.id !== s.lowers) { var c = cOf(z.dataset.id); bounce(t, miss, c && c.tag !== 'cost' ? 'Drop it on a cost card (the ones stamped 🌫️).' : s.matchMiss); return; }
+      miss.classList.remove('show'); st.match[s.id] = 1; saveJ('townhall', st); SFX.chime(); fixed(s, true); upd();
+    }
+    function showStep2() {
+      if (step2.dataset.on) return; step2.dataset.on = '1';
+      step2.innerHTML = '<div class="fs-in-k">' + esc(T.matchQ) + '</div><div class="fs-th2-tray"></div>';
+      var tray = $('.fs-th2-tray', step2), zones = $$('.fs-th2-card', wall).filter(function (k) { return cOf(k.dataset.id).tag === 'cost'; });
+      strats.forEach(function (s) { if (st.match[s.id]) return; var t = el('div', 'fs-card fs-th2-s', '<span>' + s.icon + '</span> ' + esc(s.who) + ': ' + esc(s.short || s.t)); t.dataset.id = s.id; tray.appendChild(t); dragDrop(t, function () { return zones; }, drop); });
+      tapTargets(g, zones, drop);
+    }
+    function upd() {
+      var nt = Object.keys(st.tag).length, nm = Object.keys(st.match).length;
+      count.textContent = '🗳️ ' + nt + ' of ' + T.comments.length + ' comments stamped' + (nt === T.comments.length ? ' · ' + nm + ' of ' + strats.length + ' strategies matched' : '');
+      count.classList.toggle('ok', nt === T.comments.length && nm === strats.length);
+      if (nt === T.comments.length) showStep2();
+      if (nt === T.comments.length && nm === strats.length) askOnce(qh, T.q, T.opts, 'townhall-q', win, T.win, T.clue, 'townhall', miss);
+    }
+    T.comments.forEach(function (c) { if (st.tag[c.id]) stamp(c, false); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+    strats.forEach(function (s) { if (st.match[s.id]) fixed(s, false); });
+  }
+
+  /* ---------- Tool of the Week: a home water meter (16.01) ----------
+     T.watermeter = {title, todo[], parts:[{label, t}], perTurn, uses:[{k, icon, name, gal, leak, note}], q:{q, opts:[{t, ok, why}]}} */
+  SIMS.watermeter = function (host, T) {
+    var S = T.watermeter, done = loadJ('watermeter', {}), total = 0, busy = false, per = S.perTurn || 10;
+    S.uses.forEach(function (u) { if (done[u.k]) total += u.gal; });
+    var max = Math.max.apply(null, S.uses.map(function (u) { return u.gal; }));
+    host.innerHTML = '<div class="fs-game-k">Try it: a water meter</div><div class="fs-game-t">' + esc(S.title) + '</div>' +
+      '<ul class="fs-todo">' + S.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-dn-parts fs-wm-parts">' + S.parts.map(function (p, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(p.label) + '</button>'; }).join('') + '</div>' +
+      '<div class="fs-hs-card fs-wm-pinfo"><em>Tap a part of the meter to learn what it does.</em></div>' +
+      '<div class="fs-wm-row"><div class="fs-wm-meter"><svg viewBox="0 0 220 220" role="img" aria-label="A water meter: a counter in gallons, a big sweep hand and a small leak triangle.">' +
+        '<circle cx="110" cy="110" r="104" fill="#3B4A52"/><circle cx="110" cy="110" r="94" fill="#F7F4EC" stroke="#9AA7AD" stroke-width="3"/>' +
+        Array.apply(null, Array(10)).map(function (_, i) { var a = i * 36 * Math.PI / 180; return '<line x1="' + (110 + Math.sin(a) * 80) + '" y1="' + (110 - Math.cos(a) * 80) + '" x2="' + (110 + Math.sin(a) * 90) + '" y2="' + (110 - Math.cos(a) * 90) + '" stroke="#55646A" stroke-width="3"/><text x="' + (110 + Math.sin(a) * 68) + '" y="' + (114 - Math.cos(a) * 68) + '" text-anchor="middle" font-size="12" font-weight="800" fill="#55646A">' + i + '</text>'; }).join('') +
+        '<rect x="62" y="54" width="96" height="26" rx="4" fill="#1E2B30"/><text class="fs-wm-odo" x="110" y="73" text-anchor="middle" font-size="17" font-weight="900" fill="#F2F5F6" font-family="monospace">00000</text>' +
+        '<text x="110" y="94" text-anchor="middle" font-size="10" font-weight="900" fill="#55646A">GALLONS</text>' +
+        '<g class="fs-wm-leak" transform="translate(110 150)"><polygon points="0,-11 10,7 -10,7" fill="#D9342B"/></g>' +
+        '<g class="fs-wm-hand"><line x1="110" y1="110" x2="110" y2="30" stroke="#D9342B" stroke-width="4" stroke-linecap="round"/><circle cx="110" cy="110" r="7" fill="#D9342B"/></g>' +
+      '</svg></div><div class="fs-wm-side"><div class="fs-in-k">Run water and watch the meter</div><div class="fs-wm-uses">' +
+        S.uses.map(function (u, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '"><span>' + u.icon + '</span>' + esc(u.name) + '<em></em></button>'; }).join('') + '</div>' +
+        '<div class="fs-hs-card fs-wm-info"><em>Pick one to run it.</em></div></div></div>' +
+      '<div class="fs-in-k">Gallons used</div><div class="fs-wm-bars">' + S.uses.map(function (u) { return '<div class="fs-wm-bar" data-k="' + u.k + '"><span>' + u.icon + ' ' + esc(u.name) + '</span><i><b></b></i><em></em></div>'; }).join('') + '</div>' +
+      '<div class="fs-sv-q fs-wm-q"></div><div class="fs-miss fs-wm-miss"></div><div class="fs-win fs-wm-win"></div>';
+    var odo = $('.fs-wm-odo', host), hand = $('.fs-wm-hand', host), leak = $('.fs-wm-leak', host), info = $('.fs-wm-info', host);
+    function setMeter(g) { odo.textContent = ('00000' + Math.floor(g)).slice(-5); hand.setAttribute('transform', 'rotate(' + ((g % per) / per * 360) + ' 110 110)'); }
+    function bars() { S.uses.forEach(function (u) { var b = $('.fs-wm-bar[data-k="' + u.k + '"]', host); $('b', b).style.width = (done[u.k] ? Math.max(1.5, 100 * Math.sqrt(u.gal / max)) : 0) + '%'; $('em', b).textContent = done[u.k] ? 'about ' + u.gal.toLocaleString() + ' gal' : '—'; }); }
+    $$('.fs-wm-parts .fs-in-chip', host).forEach(function (c) { c.addEventListener('click', function () { var p = S.parts[+c.dataset.i]; c.classList.add('on'); $('.fs-wm-pinfo', host).innerHTML = '<span class="fs-hs-n">🔎</span><div><b>' + esc(p.label) + '</b>' + esc(p.t) + '</div>'; SFX.blip(); }); });
+    $$('.fs-wm-uses .fs-in-chip', host).forEach(function (c) { c.addEventListener('click', function () {
+      if (busy) return; var u = S.uses[+c.dataset.i]; SFX.blip();
+      if (done[u.k]) { $$('.fs-wm-uses .fs-in-chip', host).forEach(function (x) { x.classList.toggle('on', x === c); }); info.innerHTML = '<span class="fs-hs-n">' + u.icon + '</span><div><b>' + esc(u.name) + ': about ' + u.gal.toLocaleString() + ' gallons</b>' + esc(u.note) + '</div>'; return; }
+      busy = true;
+      $$('.fs-wm-uses .fs-in-chip', host).forEach(function (x) { x.classList.toggle('on', x === c); });
+      info.innerHTML = '<span class="fs-hs-n">' + u.icon + '</span><div><b>' + esc(u.name) + '</b>Watch the meter…</div>';
+      leak.classList.add('spin'); var from = total, to = total + u.gal, t0 = performance.now(), dur = reduceMotion ? 0 : 1800;
+      noise(dur / 1000 || .2, 900, 3200, .12);
+      function step(now) {
+        var p = dur ? Math.min(1, (now - t0) / dur) : 1;
+        setMeter(from + u.gal * p);
+        if (p < 1) { requestAnimationFrame(step); return; }
+        leak.classList.remove('spin'); busy = false;
+        done[u.k] = 1; saveJ('watermeter', done); total = to; SFX.chime();
+        setMeter(total); c.classList.add('done'); $('em', c).textContent = ' ✓';
+        info.innerHTML = '<span class="fs-hs-n">' + u.icon + '</span><div><b>' + esc(u.name) + ': about ' + u.gal.toLocaleString() + ' gallons</b>' + esc(u.note) + '</div>';
+        bars(); check();
+      }
+      requestAnimationFrame(step);
+    }); });
+    function check() { if (S.uses.every(function (u) { return done[u.k]; })) ask(); }
+    function ask() {
+      var q = $('.fs-wm-q', host); if (q.dataset.on) return; q.dataset.on = '1';
+      q.innerHTML = '<div class="fs-in-k">' + esc(S.q.q) + '</div><div class="fs-in-chips">' + S.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', q).forEach(function (c) { c.addEventListener('click', function () { var o = S.q.opts[+c.dataset.i];
+        if (!o.ok) { bounce(c, $('.fs-wm-miss', host), o.why); return; } $('.fs-wm-miss', host).classList.remove('show');
+        c.classList.add('on', 'ok'); var w = $('.fs-wm-win', host); w.innerHTML = esc(o.why); w.classList.add('show'); SFX.win(); store('watermeter-q', '1'); toolDone(); }); });
+      if (store('watermeter-q')) { var i = S.q.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]; $$('.fs-in-chip', q)[i].classList.add('on', 'ok'); var w = $('.fs-wm-win', host); w.innerHTML = esc(S.q.opts[i].why); w.classList.add('show'); }
+    }
+    S.uses.forEach(function (u, i) { if (done[u.k]) { var c = $$('.fs-wm-uses .fs-in-chip', host)[i]; c.classList.add('done'); $('em', c).textContent = ' ✓'; } });
+    setMeter(total); bars(); check();
+  };
+
   SIMS.coredrill = function (host, T) {
     var S = T.coredrill, drilled = loadJ('coredrill', {}), read = loadJ('coredrill-read', {}), cur = null, MAXD = S.deepest || 80;
     host.innerHTML = '<div class="fs-game-k">Try it: a core drill</div><div class="fs-game-t">' + esc(S.title) + '</div>' +
@@ -4967,6 +5230,10 @@
     guard('maplayers', buildMaplayers);
     guard('whyhere', buildWhyhere);
     guard('pins', buildPins);
+    guard('twocol', buildTwocol);
+    guard('scale', buildScale);
+    guard('toolbox', buildToolbox);
+    guard('townhall', buildTownhall);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
