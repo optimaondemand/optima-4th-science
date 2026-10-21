@@ -2046,3 +2046,60 @@ html:not(.fs-on) .fs-name-note{display:none!important;}
 .fs-cd-layer small { font:700 11px 'Nunito',sans-serif; color:#3B3426; }
 .fs-cd-layer.on { outline:3px solid var(--fs-gold); outline-offset:-3px; } .fs-cd-layer.seen span::after { content:' ✓'; color:#1E6B3F; }
 @media (prefers-reduced-motion: reduce) { .fs-um-big.split .fs-um-ic, .fs-um-got.pop, .fs-rf-srow.pop .fs-rf-why, .fs-im-card.in, .fs-im-stamp.thump, .fs-ts-got.pop, .fs-cd-ground.drill .fs-cd-bit, .fs-cd-core.in { animation:none; } .fs-rf-row.anim .fs-rf-bar i { transition:none; } }
+
+/* ===== 15.02: Florida map (real shapes), letter case, Guess first, Map layers, Why here?, Test the pins ===== */
+.fs-fl-wrap { position:relative; background:#D7EBF5; border:2px solid #B8D3E0; border-radius:12px; overflow:hidden; }
+.fs-fl-map { display:block; width:100%; height:auto; }
+.fs-fl-sea { fill:#D7EBF5; }
+.fs-fl-land { fill:#F6EEDA; stroke:#B9A577; stroke-width:1.2; }
+.fs-fl-county { fill:none; stroke:#D9C9A2; stroke-width:.6; }
+.fs-fl-layer { opacity:0; transition: opacity .5s; pointer-events:none; } .fs-fl-layer.on { opacity:1; }
+.fs-fl-cities circle { fill:#0E1C42; } .fs-fl-cities text { font:700 11px 'Nunito',sans-serif; fill:#3E4A52; paint-order:stroke; stroke:#F6EEDA; stroke-width:3px; }
+.fs-fl-sym { width:18px; height:18px; vertical-align:-4px; margin-right:4px; flex:none; }
+.fs-letter { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap:16px; margin:8px 0 14px; align-items:start; }
+.fs-letter-paper { background:#FFFDF6; border:1px solid #DCCFB4; padding:12px 16px; box-shadow:0 4px 10px rgba(0,0,0,.15); transform:rotate(-.8deg); font:700 14.5px/1.5 'Segoe Print','Bradley Hand','Comic Sans MS',cursive; color:#2E3B4E; background-image: repeating-linear-gradient(0deg, transparent 0 23px, #E3E9F1 23px 24px); }
+.fs-letter-paper p { margin:0 0 8px; } .fs-letter-to { font-weight:900; margin-bottom:6px; } .fs-letter-sign { text-align:right; font-weight:900; }
+.fs-letter-map { transform:rotate(1deg); background:#fff; padding:6px; box-shadow:0 4px 10px rgba(0,0,0,.15); border-radius:4px; }
+.fs-letter-pins { display:grid; grid-template-columns:1fr 1fr; gap:3px 10px; font:800 12.5px 'Nunito',sans-serif; color:#3E4A52; margin-top:5px; } .fs-letter-pins b { display:inline-block; width:18px; height:18px; line-height:18px; text-align:center; border-radius:50%; background:#C8553D; color:#fff; margin-right:4px; font-size:11px; }
+.fs-pn-head { fill:#C8553D; stroke:#fff; stroke-width:1.5; } .fs-pn-pin text { font:900 11px 'Nunito',sans-serif; fill:#fff; text-anchor:middle; pointer-events:none; }
+@media (max-width:640px) { .fs-letter { grid-template-columns:1fr; } .fs-letter-paper, .fs-letter-map { transform:none; } }
+/* Guess first */
+.fs-gm-chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; }
+.fs-gm-chip.on { background:#FFF4D6; border-color: var(--fs-gold); } .fs-gm-chip.done { border-color:#2E9E5E; }
+.fs-gm-map { max-width:560px; margin:0 auto; cursor:crosshair; }
+.fs-gm-star path { filter: drop-shadow(0 1px 1px rgba(0,0,0,.35)); }
+.fs-gm-line { stroke:#0E1C42; stroke-width:1.6; stroke-dasharray:4 3; }
+.fs-gm-go { display:block; margin:10px auto 0; } .fs-gm-go:disabled { opacity:.45; cursor:not-allowed; }
+.fs-gm-res { margin-top:8px; } .fs-gm-row { display:flex; gap:8px; align-items:center; padding:4px 0; border-bottom:1px dashed #E3E8EA; font:800 14px 'Nunito',sans-serif; color:#0E1C42; } .fs-gm-row span { margin-left:auto; color:#2E7A4E; }
+.fs-gm-keynote { display:flex; flex-wrap:wrap; gap:6px 14px; margin:6px 0; font:800 12.5px 'Nunito',sans-serif; color:#3E4A52; } .fs-gm-keynote span { display:inline-flex; align-items:center; }
+/* Map layers */
+.fs-ml-box { display:grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap:14px; align-items:start; }
+.fs-ml-key { background:#fff; border:2px solid #0E1C42; border-radius:10px; padding:8px 10px; }
+.fs-ml-kh { font:900 15px 'Nunito',sans-serif; color: var(--fs-navy); margin-bottom:4px; }
+.fs-ml-row { border-top:1px dashed #D8E3E6; padding:6px 0; } .fs-ml-row.pop { animation: fsPop .4s; }
+.fs-ml-tog { display:flex; align-items:center; gap:6px; cursor:pointer; font:800 14.5px 'Nunito',sans-serif; color: var(--fs-navy); } .fs-ml-tog input { width:18px; height:18px; accent-color:#2E9E5E; }
+.fs-ml-pat { display:none; flex-wrap:wrap; gap:5px; align-items:center; margin-top:5px; } .fs-ml-row.open .fs-ml-pat { display:flex; }
+.fs-ml-pat .fs-in-chip { padding:4px 9px; font-size:13px; } .fs-ml-q { font:800 12.5px 'Nunito',sans-serif; color:#5A6B72; }
+.fs-ml-note { font-size:13.5px; line-height:1.4; color:#2E7A4E; margin-top:4px; } .fs-ml-note:empty { display:none; }
+@media (max-width:720px) { .fs-ml-box { grid-template-columns:1fr; } }
+/* Why here? */
+.fs-wy-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; }
+.fs-wy-card .fs-fl-wrap { max-width:300px; width:100%; align-self:center; }
+.fs-wy-card { background:#fff; border:2.5px dashed #9FB7BE; border-radius:12px; padding:6px; cursor:pointer; transition: border-color .2s, background .2s; display:flex; flex-direction:column; gap:5px; }
+.fs-wy-card.over { border-color: var(--fs-gold); background:#FFF9E8; } .fs-wy-card.done { border-style:solid; border-color:#2E9E5E; background:#F4FBF6; } .fs-wy-card.pop { animation: fsPop .4s; }
+.fs-wy-h { display:flex; align-items:center; font:900 14px 'Nunito',sans-serif; color: var(--fs-navy); }
+.fs-wy-card .fs-fl-wrap { border-width:1px; border-radius:8px; }
+.fs-wy-slot { min-height:52px; font-size:13px; line-height:1.35; color:#5A6B72; } .fs-wy-slot b { display:block; color:#1E4D30; font-size:13.5px; } .fs-wy-slot span { display:block; margin-top:3px; color:#3E4A52; }
+.fs-wy-tray { display:flex; flex-wrap:wrap; gap:8px; } .fs-wy-cause { margin:0; flex:1 1 220px; } .fs-wy-cause.ghost { position:fixed; z-index:9999; pointer-events:none; opacity:.92; }
+@media (max-width:520px) { .fs-wy-grid { grid-template-columns: 1fr; } }
+/* Test the pins */
+.fs-pn-box { display:grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap:14px; align-items:start; }
+.fs-pn-box .fs-fl-map { transition: none; }
+.fs-pn-pin { cursor:pointer; } .fs-pn-ring { fill:transparent; } .fs-pn-pin.on .fs-pn-ring { fill:rgba(242,182,48,.35); stroke:#F2B630; stroke-width:2; }
+.fs-pn-pin.done .fs-pn-head { fill:#2E7A4E; } .fs-pn-pin.on .fs-pn-head, .fs-pn-pin.on text { opacity:.45; }
+.fs-pn-card { background:#FFFDF6; border:1.5px solid #DCCFB4; border-radius:10px; padding:10px 12px; } .fs-pn-card.in { animation: fsPop .35s; }
+.fs-pn-n { font:900 12px 'Nunito',sans-serif; letter-spacing:1px; color:#C8553D; text-transform:uppercase; } .fs-pn-card > b { display:block; font:900 17px 'Nunito',sans-serif; color: var(--fs-navy); }
+.fs-pn-note { font:700 14px/1.45 'Segoe Print','Bradley Hand','Comic Sans MS',cursive; color:#2E3B4E; margin:4px 0 8px; }
+.fs-pn-q { margin-top:8px; } .fs-pn-back { margin-top:10px; } .fs-pn-hint { color:#5A6B72; font-size:14.5px; }
+@media (max-width:720px) { .fs-pn-box { grid-template-columns:1fr; } }
+@media (prefers-reduced-motion: reduce) { .fs-fl-layer { transition:none; } .fs-ml-row.pop, .fs-wy-card.pop, .fs-pn-card.in { animation:none; } }

@@ -1,0 +1,248 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist asks for a map, a key and an evidence statement",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🗺️ Part C &mdash; Map One Florida Resource"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page; the map sketch is a bonus)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one Florida resource from today’s map. Tell where it is found, describe its pattern, and write an evidence statement about why it’s there.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 15 is Quarter 2",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "this is an Earth science lesson (4-ESS3-1), not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Earth Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the AI map drew Florida’s shape wrong, put limestone in one band (it lies under the whole state), wind turbines down the Atlantic coast (Florida has none) and phosphate too far north; the real-data map games replace it",
+  "old": "<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"lesson-figure-caption\">.*?</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact: Florida mines most of the country’s phosphate, not nearly all (North Carolina, Idaho and Utah mine it too); plain label",
+  "old": "<p><strong>Common misconception:</strong> Some people think a resource is \"everywhere\" just because it's common. Most resources have specific locations — Florida produces nearly all of the country's phosphate but very little iron. Maps make those patterns visible.</p>",
+  "new": "<p><strong>Watch out:</strong> A resource can be common and still be found in only a few places. Florida mines most of the phosphate in the United States, but almost all of it comes from two small areas. Maps make those patterns easy to see.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "matches the real data: Florida’s groves are now mostly in central and south-central Florida (after big freezes in the 1980s, many moved south), including counties next to the Everglades",
+  "old": "\"The map shows citrus groves in a band across <strong>central Florida</strong>, away from the coldest northern areas and the wettest southern Everglades. The pattern is evidence that citrus trees need a specific mix of warmth and well-drained soil.\"",
+  "new": "\"The map shows citrus groves in a band across <strong>central and south-central Florida</strong>, away from the colder north. The pattern is evidence that orange trees need warm winters with few freezes.\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to read a Florida resource map, describe where things are concentrated, and explain why — using evidence from the map.",
+  "new": "Keep this question in mind. By the end, you’ll be able to read a Florida resource map, describe where things are found, and use the map as evidence to explain why."
+ },
+ {
+  "kind": "plain",
+  "why": "answers are made on the page now (the game below)",
+  "old": "<p>Imagine you have a blank outline of Florida in your notebook\\..*?</p>\\s*<ul[^>]*>.*?</ul>",
+  "new": "<p>Where in Florida do you think orange groves, beaches, phosphate mines and springs are found? <strong>Guess first</strong> on the blank map below. No looking anything up!</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; plain words",
+  "old": "</span></span> — the little box that explains what every symbol means.</p>",
+  "new": "</span></span>: the little box that tells what every symbol means.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "plain words; shorter",
+  "old": "When you look at the whole map, you're really asking one question: where are things concentrated, and where are they sparse? That's the",
+  "new": "When you look at the whole map, ask one question: where are things crowded together, and where are there few or none? That’s the"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; Part 3 starts here (Why here?)",
+  "old": "<p>Every resource's <span class=\\\"vtip\\\">location(<span class=\\\"vtip-box\\\">.*?</span>)</span> has a reason — usually related to geology, climate, or access to transportation\\. The <span class=\\\"vtip\\\">availability<span class=\\\"vtip-box\\\">.*?</span></span> of a resource determines who can use it and how\\.</p>",
+  "new": "<p>Every resource’s location has a reason, usually the rock underground (geology), the weather (climate), or the ocean nearby. How much of a resource a place has is its <span class=\"vtip\">availability<span class=\"vtip-box\"><span class=\"vtip-word\">Availability</span>How much is there and how easy it is to get to.</span></span>.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "pretend map, said plainly (Bethany kept this question)",
+  "old": "A new resource map shows wind turbines mostly on Florida's coasts.",
+  "new": "Pretend a new resource map shows wind turbines mostly on Florida's coasts."
+ },
+ {
+  "kind": "plain",
+  "why": "the four resources are now on the map, not a diagram",
+  "old": "Pick one of the four resources from the diagram (citrus, phosphate, springs, or beaches).",
+  "new": "Pick one of the four resources from today’s map (citrus, phosphate, springs, or beaches)."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "plain words; dash removed",
+  "old": "Next module, we'll dig into the tough questions: when we use resources, what tradeoffs do we make — and how do we choose well?",
+  "new": "Next week, we’ll dig into a tough question: when we use a resource, how do we weigh what we gain against what we lose?"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (Map Detective moves to Part 4 and Part C; the “10 million people” fact goes with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>\\s*<p[^>]*>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason pointed at the removed map (Stop & Think in Part 1 stays)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the diagram heading becomes Part 3 (Why here? replaces the tap diagram)",
+  "old": "margin-top:22px;\">Four Florida Resource Patterns</h3>",
+  "new": "margin-top:22px;\">Part 3 · Why Here?</h3>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean + facts: Observe & Reason, the “75%” fact, the springs callout and Go Deeper at the end of the Lesson; Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Test the Pins</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Now use the map like a scientist. Marco put four pins on his map. Check each pin against the map: could he find phosphate there? Your evidence is what the map shows.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7; Map layers teaches the key)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the map sketch is a bonus",
+  "old": "A sketched Florida map with at least 3 resource symbols, a map key, and a one-sentence evidence statement underneath.",
+  "new": "One Florida resource: where it is, its pattern, and an evidence statement. (A map sketch with a key is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether maps count as scientific evidence, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether maps count as scientific evidence, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

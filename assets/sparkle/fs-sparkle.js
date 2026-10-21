@@ -457,7 +457,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -2619,6 +2619,217 @@
     at.parentNode.insertBefore(g, at.nextSibling); upd();
   }
 
+  /* ---------- shared: a real Florida map (U.S. Census shapes, projected at build time) with resource layers (15.02) ----------
+     D.flmap = {viewBox, outline, counties, coast, citrus (paths), perMile, springs, mines, beaches, citrusPts, coastPts (points [x,y]), cities:{name:[x,y]}, pins:{id:[x,y]},
+                layers:{k:{t, icon, kind:'area'|'coast'|'dots', c}}} */
+  var FL_NS = 'http://www.w3.org/2000/svg';
+  function flLayerSVG(k) {
+    var M = D.flmap, L = M.layers[k]; if (!L) return '';
+    var g = '<g class="fs-fl-layer fs-fl-' + k + '" data-k="' + k + '">';
+    if (k === 'citrus') g += '<path d="' + M.citrus + '" fill="' + L.c + '" opacity=".55"/>' + M.citrusPts.map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="5" fill="#F08A1C" stroke="#fff" stroke-width="1.5"/>'; }).join('');
+    else if (k === 'beaches') g += '<path d="' + M.coast + '" fill="none" stroke="' + L.c + '" stroke-width="6" stroke-linejoin="round" opacity=".9"/>' + M.beaches.map(function (p) { return '<rect x="' + (p[0] - 4) + '" y="' + (p[1] - 4) + '" width="8" height="8" rx="2" fill="#E2574C" stroke="#fff" stroke-width="1.5"/>'; }).join('');
+    else if (k === 'phosphate') g += M.mines.map(function (p) { return '<rect x="' + (p[0] - 5) + '" y="' + (p[1] - 5) + '" width="10" height="10" fill="' + L.c + '" stroke="#fff" stroke-width="1.5" transform="rotate(45 ' + p[0] + ' ' + p[1] + ')"/>'; }).join('');
+    else if (k === 'springs') g += M.springs.map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="5.5" fill="' + L.c + '" stroke="#fff" stroke-width="2"/>'; }).join('');
+    return g + '</g>';
+  }
+  function flSymbol(k) {
+    var L = D.flmap.layers[k], c = L.c;
+    var s = k === 'citrus' ? '<rect x="2" y="4" width="16" height="12" rx="2" fill="' + c + '" opacity=".7"/><circle cx="10" cy="10" r="4" fill="#F08A1C" stroke="#fff"/>' :
+      k === 'beaches' ? '<path d="M1 14 Q10 4 19 14" stroke="' + c + '" stroke-width="5" fill="none"/><rect x="7" y="9" width="6" height="6" rx="1" fill="#E2574C"/>' :
+      k === 'phosphate' ? '<rect x="5" y="5" width="10" height="10" fill="' + c + '" transform="rotate(45 10 10)"/>' :
+      '<circle cx="10" cy="10" r="6" fill="' + c + '" stroke="#fff" stroke-width="2"/>';
+    return '<svg class="fs-fl-sym" viewBox="0 0 20 20" aria-hidden="true">' + s + '</svg>';
+  }
+  function flMap(opts) {
+    var M = D.flmap; opts = opts || {};
+    var s = '<svg class="fs-fl-map" viewBox="' + (opts.viewBox || M.viewBox) + '" role="img" aria-label="' + esc(opts.label || 'A map of Florida') + '">' +
+      '<rect class="fs-fl-sea" x="-200" y="-200" width="1000" height="960"/>' +
+      '<path class="fs-fl-land" d="' + M.outline + '"/><path class="fs-fl-county" d="' + M.counties + '"/>' +
+      (opts.layers || []).map(flLayerSVG).join('') +
+      (opts.cities === false ? '' : '<g class="fs-fl-cities">' + Object.keys(M.cities).map(function (n) { var p = M.cities[n]; return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.4"/><text x="' + (p[0] + 5) + '" y="' + (p[1] + 4) + '">' + esc(n) + '</text>'; }).join('') + '</g>') +
+      '<g class="fs-fl-top"></g></svg>';
+    var w = el('div', 'fs-fl-wrap', s);
+    return w;
+  }
+  function flPinsSVG(pins) { var M = D.flmap; return pins.map(function (p) { var xy = M.pins[p.id]; return '<g class="fs-pn-pin" data-id="' + p.id + '"><path d="M' + xy[0] + ' ' + xy[1] + ' l-9 -16 a10 10 0 1 1 18 0z" class="fs-pn-head"/><text x="' + xy[0] + '" y="' + (xy[1] - 19) + '">' + p.n + '</text></g>'; }).join(''); }
+  function flShow(wrap, k, on) { var g = $('.fs-fl-' + k, wrap); if (g) g.classList.toggle('on', on !== false); }
+  function flPoint(svg, e) { var pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; var m = svg.getScreenCTM(); if (!m) return null; var q = pt.matrixTransform(m.inverse()); return [q.x, q.y]; }
+  function flMiles(k, p, svg) {
+    var M = D.flmap, pts = k === 'citrus' ? M.citrusPts : k === 'beaches' ? M.coastPts : k === 'phosphate' ? M.mines : M.springs;
+    if (k === 'citrus' && svg) { var pa = $('.fs-fl-citrus path', svg); try { var sp = svg.createSVGPoint(); sp.x = p[0]; sp.y = p[1]; if (pa && pa.isPointInFill && pa.isPointInFill(sp)) return 0; } catch (e) {} }
+    var best = 1e9; pts.forEach(function (q) { var d = Math.hypot(q[0] - p[0], q[1] - p[1]); if (d < best) best = d; });
+    return Math.round(best / M.perMile);
+  }
+
+  /* ---------- Warm-Up: "Guess first" — drop a star for each resource on a blank Florida map, then reveal the real data (15.02) ----------
+     D.guessmap = {afterText, kicker, title, todo[], why, tokens:[k…], revealBtn, near, far, q, opts, win, clue} */
+  function buildGuessmap() {
+    var G = D.guessmap; if (!G || !D.flmap) return;
+    var at = anchorP(G.afterText); if (!at) { FAILED.push('guessmap anchor text not found'); return; }
+    var g = gameShell(G.kicker || 'Warm-Up game', G.title, G.todo, G.why); g.dataset.mod = 'guessmap';
+    var L = D.flmap.layers, st = loadJ('guessmap', { at: {}, shown: 0 }), cur = null;
+    var chips = el('div', 'fs-gm-chips'), wrap = flMap({ layers: G.tokens, label: 'A blank map of Florida. Tap to place a star.' }), res = el('div', 'fs-gm-res');
+    var btn = el('button', 'fs-btn fs-gm-go', esc(G.revealBtn || '🗺 Show me the real map')); btn.type = 'button';
+    var miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    G.tokens.forEach(function (k) { var b = el('button', 'fs-in-chip fs-gm-chip', flSymbol(k) + ' ' + esc(L[k].t) + '<em></em>'); b.type = 'button'; b.dataset.k = k; chips.appendChild(b); });
+    wrap.classList.add('fs-gm-map');
+    g.appendChild(chips); g.appendChild(wrap); g.appendChild(btn); g.appendChild(res); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    var svg = $('svg', wrap), top = $('.fs-fl-top', svg);
+    function stars() {
+      top.innerHTML = G.tokens.filter(function (k) { return st.at[k]; }).map(function (k) { var p = st.at[k]; return '<g class="fs-gm-star" data-k="' + k + '"><path d="M' + p[0] + ' ' + (p[1] - 11) + ' l3.4 7 7.6 1.1 -5.5 5.3 1.3 7.6 -6.8 -3.6 -6.8 3.6 1.3 -7.6 -5.5 -5.3 7.6 -1.1z" fill="' + L[k].c + '" stroke="#0E1C42" stroke-width="1.6"/></g>'; }).join('') +
+        (st.shown ? G.tokens.map(function (k) { var p = st.at[k]; if (!p) return ''; var M = D.flmap, pts = k === 'citrus' ? M.citrusPts : k === 'beaches' ? M.coastPts : k === 'phosphate' ? M.mines : M.springs, b = null, bd = 1e9; pts.forEach(function (q) { var d = Math.hypot(q[0] - p[0], q[1] - p[1]); if (d < bd) { bd = d; b = q; } }); return b && bd > 6 ? '<line class="fs-gm-line" x1="' + p[0] + '" y1="' + p[1] + '" x2="' + b[0] + '" y2="' + b[1] + '"/>' : ''; }).join('') : '');
+      $$('.fs-gm-chip', chips).forEach(function (b) { var k = b.dataset.k; b.classList.toggle('done', !!st.at[k]); b.classList.toggle('on', cur === k); $('em', b).textContent = st.at[k] ? ' ★' : ''; });
+      btn.disabled = !G.tokens.every(function (k) { return st.at[k]; }) || !!st.shown;
+      btn.style.display = st.shown ? 'none' : '';
+    }
+    $$('.fs-gm-chip', chips).forEach(function (b) { b.addEventListener('click', function () { if (st.shown) return; cur = b.dataset.k; SFX.blip(); stars(); }); });
+    svg.addEventListener('click', function (e) {
+      if (st.shown) return;
+      if (!cur) { cur = G.tokens.filter(function (k) { return !st.at[k]; })[0] || null; if (!cur) return; }
+      var p = flPoint(svg, e); if (!p) return; st.at[cur] = [Math.round(p[0]), Math.round(p[1])]; saveJ('guessmap', st); SFX.pop();
+      cur = G.tokens.filter(function (k) { return !st.at[k]; })[0] || null; stars();
+    });
+    function reveal(anim) {
+      G.tokens.forEach(function (k, i) { if (anim && !reduceMotion) setTimeout(function () { flShow(wrap, k); SFX.chime(); }, 350 * i); else flShow(wrap, k); });
+      res.innerHTML = '<div class="fs-in-k">How close were you?</div>' + G.tokens.map(function (k) {
+        var mi = flMiles(k, st.at[k], svg);
+        return '<div class="fs-gm-row">' + flSymbol(k) + '<b>' + esc(L[k].t) + '</b><span>' + (mi <= (G.near || 25) ? '🎯 Right on it!' : mi <= (G.far || 90) ? '👍 About ' + mi + ' miles off' : '🧭 About ' + mi + ' miles off') + '</span></div>';
+      }).join('') + '<div class="fs-gm-keynote">' + G.tokens.map(function (k) { return '<span>' + flSymbol(k) + esc(L[k].t) + '</span>'; }).join('') + '</div>';
+      stars(); askOnce(qh, G.q, G.opts, 'guessmap-q', win, G.win, G.clue, 'guessmap', miss);
+    }
+    btn.addEventListener('click', function () { st.shown = 1; saveJ('guessmap', st); SFX.whoosh(); reveal(true); });
+    at.parentNode.insertBefore(g, at.nextSibling); stars(); if (st.shown) reveal(false);
+  }
+
+  /* ---------- Lesson: "Map layers" — turn on one layer at a time with the map key, then stamp each pattern (15.02) ----------
+     D.maplayers = {afterText, kicker, title, todo[], why, layers:[k…], patterns:[{k, icon, t}], answer:{k: patternK}, note:{k: t}, miss:{k: t}, q, opts, win, clue} */
+  function buildMaplayers() {
+    var Y = D.maplayers; if (!Y || !D.flmap) return;
+    var at = anchorP(Y.afterText); if (!at) { FAILED.push('maplayers anchor text not found'); return; }
+    var g = gameShell(Y.kicker || 'Lesson game', Y.title, Y.todo, Y.why); g.dataset.mod = 'maplayers';
+    var L = D.flmap.layers, st = loadJ('maplayers', { on: {}, ok: {} });
+    var box = el('div', 'fs-ml-box'), wrap = flMap({ layers: Y.layers, label: 'A map of Florida with resource layers you can turn on.' }), key = el('div', 'fs-ml-key');
+    key.innerHTML = '<div class="fs-ml-kh">🔑 Map key</div>' + Y.layers.map(function (k) {
+      return '<div class="fs-ml-row" data-k="' + k + '"><label class="fs-ml-tog"><input type="checkbox"> ' + flSymbol(k) + '<b>' + esc(L[k].t) + '</b></label>' +
+        '<div class="fs-ml-pat"><span class="fs-ml-q">Pattern:</span>' + Y.patterns.map(function (p) { return '<button type="button" class="fs-in-chip" data-p="' + p.k + '">' + p.icon + ' ' + esc(p.t) + '</button>'; }).join('') + '</div><div class="fs-ml-note"></div></div>';
+    }).join('');
+    box.appendChild(wrap); box.appendChild(key);
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(box); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    $$('.fs-ml-row', key).forEach(function (row) {
+      var k = row.dataset.k, cb = $('input', row);
+      function setOk(anim) { row.classList.add('ok'); $$('.fs-in-chip', row).forEach(function (b) { if (b.dataset.p === Y.answer[k]) b.classList.add('on', 'ok'); }); $('.fs-ml-note', row).textContent = Y.note[k]; if (anim && !reduceMotion) row.classList.add('pop'); }
+      cb.checked = !!st.on[k]; flShow(wrap, k, cb.checked); row.classList.toggle('open', cb.checked);
+      cb.addEventListener('change', function () { st.on[k] = cb.checked ? 1 : 0; saveJ('maplayers', st); flShow(wrap, k, cb.checked); row.classList.toggle('open', cb.checked); SFX.blip(); upd(); });
+      $$('.fs-in-chip', row).forEach(function (b) { b.addEventListener('click', function () {
+        if (row.classList.contains('ok')) return;
+        if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new Event('change')); }
+        if (b.dataset.p !== Y.answer[k]) { bounce(b, miss, Y.miss[k]); return; }
+        miss.classList.remove('show'); st.ok[k] = 1; saveJ('maplayers', st); SFX.chime(); setOk(true); upd();
+      }); });
+      if (st.ok[k]) setOk(false);
+    });
+    function upd() {
+      var n = Y.layers.filter(function (k) { return st.ok[k]; }).length;
+      count.textContent = '🗺 ' + n + ' of ' + Y.layers.length + ' patterns read'; count.classList.toggle('ok', n === Y.layers.length);
+      if (n === Y.layers.length) askOnce(qh, Y.q, Y.opts, 'maplayers-q', win, Y.win, Y.clue, 'maplayers', miss);
+    }
+    at.parentNode.insertBefore(g, at.nextSibling); upd();
+  }
+
+  /* ---------- Lesson Part 3: "Why here?" — each resource's pattern (a small map) gets the cause that explains it (15.02) ----------
+     D.whyhere = {replace, kicker, title, todo[], why, causes:[{id, icon, t}], items:[{k, cause, why, miss}], q, opts, win, clue} */
+  function buildWhyhere() {
+    var W = D.whyhere; if (!W || !D.flmap) return;
+    var wrap = W.replace ? $(W.replace) : null, at = wrap ? null : anchorP(W.afterText);
+    if (!wrap && !at) { FAILED.push('whyhere: no anchor'); return; }
+    var g = gameShell(W.kicker || 'Lesson game', W.title, W.todo, W.why); g.dataset.mod = 'whyhere';
+    if (wrap) { var pv = wrap.previousElementSibling; if (pv && pv.tagName === 'P' && pv.textContent.length < 200) pv.classList.add('fs-hide-on'); }
+    var L = D.flmap.layers, st = loadJ('whyhere', {});
+    var grid = el('div', 'fs-wy-grid'), tray = el('div', 'fs-wy-tray'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    W.items.forEach(function (it) {
+      var c = el('div', 'fs-wy-card', '<div class="fs-wy-h">' + flSymbol(it.k) + '<b>' + esc(L[it.k].t) + '</b></div>');
+      var m = flMap({ layers: [it.k], cities: false, label: 'Where ' + L[it.k].t.toLowerCase() + ' are found in Florida.' }); flShow(m, it.k); c.appendChild(m);
+      c.appendChild(el('div', 'fs-wy-slot', '<em>Drop the reason here</em>')); c.dataset.k = it.k; grid.appendChild(c);
+    });
+    shuffle(W.causes).forEach(function (cz) { if (Object.keys(st).some(function (k) { return st[k] === cz.id; })) return; var k = el('div', 'fs-card fs-wy-cause', '<span>' + cz.icon + '</span> ' + esc(cz.t)); k.dataset.id = cz.id; tray.appendChild(k); });
+    g.appendChild(grid); g.appendChild(el('div', 'fs-lu-lab', 'Reasons (one is a trick)')); g.appendChild(tray); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var zones = $$('.fs-wy-card', grid);
+    function placed(it, anim) {
+      var cz = W.causes.filter(function (x) { return x.id === it.cause; })[0], card = $('.fs-wy-card[data-k="' + it.k + '"]', grid);
+      card.classList.add('done'); $('.fs-wy-slot', card).innerHTML = '<b>' + cz.icon + ' ' + esc(cz.t) + '</b><span>' + esc(it.why) + '</span>'; if (anim && !reduceMotion) card.classList.add('pop');
+      var t = $('.fs-wy-cause[data-id="' + cz.id + '"]', tray); if (t) t.remove();
+    }
+    function drop(tk, z) {
+      var it = W.items.filter(function (x) { return x.k === z.dataset.k; })[0]; if (!it || st[it.k]) return;
+      if (tk.dataset.id !== it.cause) { var dec = W.causes.filter(function (x) { return x.id === tk.dataset.id; })[0]; bounce(tk, miss, (dec && dec.miss) || it.miss); return; }
+      miss.classList.remove('show'); st[it.k] = it.cause; saveJ('whyhere', st); SFX.chime(); placed(it, true); upd();
+    }
+    $$('.fs-wy-cause', tray).forEach(function (k) { dragDrop(k, function () { return zones; }, drop); });
+    tapTargets(g, zones, drop);
+    function upd() {
+      var n = W.items.filter(function (it) { return st[it.k]; }).length;
+      count.textContent = '🧩 ' + n + ' of ' + W.items.length + ' patterns explained'; count.classList.toggle('ok', n === W.items.length);
+      if (n === W.items.length) askOnce(qh, W.q, W.opts, 'whyhere-q', win, W.win, W.clue, 'whyhere', miss);
+    }
+    W.items.forEach(function (it) { if (st[it.k]) placed(it, false); });
+    if (wrap) { wrap.parentNode.insertBefore(g, wrap); wrap.classList.add('fs-hide-on'); } else at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson Part 4: "Test the pins" — check each of the volunteer's map pins against the layers: rule it in or out, then pick the evidence (15.02) ----------
+     D.pins = {afterText, kicker, title, todo[], why, layers:[k…], verdicts:[{k, icon, t}], pins:[{id, n, name, note, verdict, vmiss, q, opts:[{t, ok, miss}], why}], q, opts, win, clue} */
+  function buildPins() {
+    var P = D.pins; if (!P || !D.flmap) return;
+    var at = anchorP(P.afterText); if (!at) { FAILED.push('pins anchor text not found'); return; }
+    var g = gameShell(P.kicker || 'Lesson game', P.title, P.todo, P.why); g.dataset.mod = 'pins';
+    var st = loadJ('pins', {}), M = D.flmap;
+    var box = el('div', 'fs-pn-box'), wrap = flMap({ layers: P.layers, label: 'A map of Florida with resource layers and four numbered pins.' }), side = el('div', 'fs-pn-side');
+    P.layers.forEach(function (k) { flShow(wrap, k); });
+    var svg = $('svg', wrap), top = $('.fs-fl-top', svg);
+    top.innerHTML = P.pins.map(function (p) { var xy = M.pins[p.id]; return '<g class="fs-pn-pin" data-id="' + p.id + '" tabindex="0" role="button" aria-label="Pin ' + p.n + ': ' + esc(p.name) + '"><circle class="fs-pn-ring" cx="' + xy[0] + '" cy="' + xy[1] + '" r="16"/><path d="M' + xy[0] + ' ' + xy[1] + ' l-9 -16 a10 10 0 1 1 18 0z" class="fs-pn-head"/><text x="' + xy[0] + '" y="' + (xy[1] - 19) + '">' + p.n + '</text></g>'; }).join('');
+    box.appendChild(wrap); box.appendChild(side);
+    var keyRow = el('div', 'fs-gm-keynote', P.layers.map(function (k) { return '<span>' + flSymbol(k) + esc(M.layers[k].t) + '</span>'; }).join(''));
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(keyRow); g.appendChild(box); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function zoom(p) {
+      if (!p) { svg.setAttribute('viewBox', M.viewBox); return; }
+      var xy = M.pins[p.id], z = 200; svg.setAttribute('viewBox', (xy[0] - z / 2) + ' ' + (xy[1] - z / 2) + ' ' + z + ' ' + z);
+    }
+    function show(p) {
+      $$('.fs-pn-pin', svg).forEach(function (x) { x.classList.toggle('on', x.dataset.id === p.id); });
+      var s = st[p.id] || {};
+      side.innerHTML = '<div class="fs-pn-card' + (reduceMotion ? '' : ' in') + '"><div class="fs-pn-n">📍 Pin ' + p.n + '</div><b>' + esc(p.name) + '</b><p class="fs-pn-note">“' + esc(p.note) + '”</p>' +
+        '<div class="fs-in-k">1. Could Marco find phosphate here?</div><div class="fs-in-chips fs-pn-v">' + P.verdicts.map(function (v) { return '<button type="button" class="fs-in-chip" data-k="' + v.k + '">' + v.icon + ' ' + esc(v.t) + '</button>'; }).join('') + '</div><div class="fs-pn-q"></div><div class="fs-pn-why"></div>' +
+        '<button type="button" class="fs-btn alt fs-pn-back">🗺 Back to the whole map</button></div>';
+      var vbox = $('.fs-pn-v', side), qbox = $('.fs-pn-q', side), why = $('.fs-pn-why', side);
+      $('.fs-pn-back', side).addEventListener('click', function () { zoom(null); $$('.fs-pn-pin', svg).forEach(function (x) { x.classList.remove('on'); }); side.innerHTML = '<em class="fs-pn-hint">' + esc(P.hint || 'Tap a numbered pin on the map.') + '</em>'; SFX.blip(); });
+      function vDone() { $$('.fs-in-chip', vbox).forEach(function (b) { if (b.dataset.k === p.verdict) b.classList.add('on', 'ok'); }); vbox.dataset.done = '1';
+        if (!qbox.dataset.on) { qbox.dataset.on = '1'; var w = chipsQ(qbox, '2. ' + p.q, p.opts, function () { s.q = 1; st[p.id] = s; saveJ('pins', st); whyOn(true); upd(); }, miss);
+          if (s.q) { var ok = p.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]; $$('.fs-in-chip', w)[ok].classList.add('on', 'ok'); w.dataset.done = '1'; whyOn(false); } } }
+      function whyOn(anim) { why.innerHTML = '<span class="fs-hs-n">' + (p.verdict === 'yes' ? '✅' : '❌') + '</span><div>' + esc(p.why) + '</div>'; why.className = 'fs-pn-why fs-hs-card' + (anim && !reduceMotion ? ' flash' : ''); }
+      $$('.fs-in-chip', vbox).forEach(function (b) { b.addEventListener('click', function () {
+        if (vbox.dataset.done) return;
+        if (b.dataset.k !== p.verdict) { bounce(b, miss, p.vmiss); return; }
+        miss.classList.remove('show'); s.v = 1; st[p.id] = s; saveJ('pins', st); SFX.chime(); vDone();
+      }); });
+      if (s.v) vDone();
+      zoom(p); SFX.whoosh();
+    }
+    $$('.fs-pn-pin', svg).forEach(function (el2) {
+      function go() { show(P.pins.filter(function (x) { return x.id === el2.dataset.id; })[0]); }
+      el2.addEventListener('click', go); el2.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+    function upd() {
+      var n = P.pins.filter(function (p) { return st[p.id] && st[p.id].q; }).length;
+      count.textContent = '📍 ' + n + ' of ' + P.pins.length + ' pins tested'; count.classList.toggle('ok', n === P.pins.length);
+      $$('.fs-pn-pin', svg).forEach(function (x) { var s = st[x.dataset.id]; x.classList.toggle('done', !!(s && s.q)); });
+      if (n === P.pins.length) askOnce(qh, P.q, P.opts, 'pins-q', win, P.win, P.clue, 'pins', miss);
+    }
+    side.innerHTML = '<em class="fs-pn-hint">' + esc(P.hint || 'Tap a numbered pin on the map.') + '</em>';
+    at.parentNode.insertBefore(g, at.nextSibling); upd();
+  }
+
   function buildQuiz() {
     var qs = $$('#tab-quiz .quiz-q'); if (!qs.length) return;
     var Q = D.quizMiss || {};
@@ -4752,6 +4963,10 @@
     guard('refill', buildRefill);
     guard('impact', buildImpact);
     guard('twosources', buildTwosources);
+    guard('guessmap', buildGuessmap);
+    guard('maplayers', buildMaplayers);
+    guard('whyhere', buildWhyhere);
+    guard('pins', buildPins);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
