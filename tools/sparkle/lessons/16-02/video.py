@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+"""Writes video.json (Video Studio plan) for 16.02."""
+import json
+pics = {
+    'l8': {'src': 'images/16-02-l8-reservoir.jpg', 'cap': 'The L-8 Reservoir, an old rock mine (USGS, public domain)'},
+    'lakebelt': {'src': 'images/16-01-lake-belt.jpg', 'cap': 'Rock pits beside the Everglades (USGS, public domain)'},
+}
+C_CASE, C_GREEN, C_PURP, C_RED, C_BLUE = '#B9822A', '#2F7A55', '#7A5BB5', '#C8553D', '#2D7AA6'
+S = {}
+S['welcome'] = {'label': 'Welcome · the last pit', 'length': '50–60 s', 'want': True, 'parts': [
+    {'kind': 'photo', 'pic': 'lakebelt', 'label': '🛰 Old rock pits'},
+    {'label': '📐 Three designs', 'tag': 'CASE FILE 16 · PART 2', 'title': 'The Last Pit', 'col': C_CASE, 'rows': [['🦢', 'A bird lake park'], ['💧', 'A water reservoir'], ['☀️', 'A floating solar farm']]}],
+    'script': 'Welcome back, engineers! Remember the quarry vote in Palmetto Springs?\n\n[ON SCREEN: Old rock pits]\nWhen a quarry finishes digging, it leaves a pit like these, full of water. So what should a pit become?\n\n[ON SCREEN: Three designs]\nJune has three designs on her drafting table: a bird lake, a water reservoir, or a floating solar farm. Which is best? And could the best one get even better? Press Listen on June’s walkie-talkie, right below me.'}
+S['warmup'] = {'label': 'Warm-Up · limit or goal? (Clue 1)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '🚧 Limit or goal?', 'tag': 'WARM-UP GAME', 'title': 'Two kinds of rules', 'col': C_GREEN, 'rows': [['🚧', 'LIMIT: pass or fail'], ['⭐', 'GOAL: score it, more is better']]}],
+    'script': '(Hold up a ruler.) Say I need a pencil that fits in my pencil box. That’s a limit. It fits, or it doesn’t.\n\n(Hold up two pencils.) But I also want one that writes smoothly. That’s a goal. One pencil can be better than another.\n\n[ON SCREEN: Limit or goal?]\nIn the game, sort the town’s plan for the last pit. Is each card a limit or a goal? Then tell us which city water idea you like. Press Listen.'}
+S['part2'] = {'label': 'Part 2 · build the matrix (Clues 2 and 3)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '📊 Build the matrix', 'tag': 'PART 2 GAME', 'title': 'Score every box', 'col': C_BLUE, 'rows': [['1', 'Tap a ? box and read the evidence.'], ['2', 'Give it 1, 2 or 3 stars.'], ['3', 'Check the budget.']]},
+    {'label': '🔧 Make it better', 'tag': 'PART 2 GAME', 'title': 'Borrow a feature', 'col': C_GREEN, 'body': 'Every goal at least ⭐⭐, and stay inside the budget.'}],
+    'script': '[ON SCREEN: Build the matrix]\nA decision matrix is a chart that scores every design on every goal. Tap each box, read the evidence, and give it stars. Then check the budget. Watch what happens to the solar farm!\n\n[ON SCREEN: Make it better]\nTwo designs will tie. So be an engineer: pick one, and borrow a feature from another design to make it better, without going over the budget. Press Listen.'}
+S['explore'] = {'label': 'Part 4 · test it small (Clue 4)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'kind': 'photo', 'pic': 'l8', 'label': '🛰 A real reservoir'},
+    {'label': '🧪 Test it small', 'tag': 'PART 4 GAME', 'title': 'Test, revise, test again', 'col': C_PURP, 'rows': [['🌧️', 'A week of heavy rain'], ['☀️', 'A long dry spell']]}],
+    'script': '[ON SCREEN: A real reservoir]\nThis is real! Florida’s L-8 Reservoir used to be a rock mine. Now it stores water for the Everglades.\n\n[ON SCREEN: Test it small]\nBefore building the real thing, engineers test a small model. Run each test on June’s model and watch the water. If something goes wrong, pick the revision that fixes it, then test again. That’s your last clue. Press Listen.'}
+S['assignment'] = {'label': 'Assignment · crack the case', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '🔓 Crack the case', 'tag': 'TOP OF THE ASSIGNMENT', 'title': 'What should the last pit become?', 'col': C_CASE, 'body': 'Pick the answer that fits all four clues.'},
+    {'label': '✍️ Your case report', 'tag': 'WHAT TO WRITE', 'title': 'Three places to write', 'col': C_GREEN, 'rows': [['Part B', 'Two short answers'], ['Part C', 'Your own decision matrix'], ['CER', 'Claim, evidence, reasoning'], ['📋', 'Copy your Gathered Answers into Canvas']]}],
+    'script': '[ON SCREEN: Crack the case]\nYou have four clues. Crack the case at the top of this tab: what should the last pit become, and how can the town make it better?\n\n[ON SCREEN: Your case report]\nThen write your case report. Two short answers, your own decision matrix in Part C, and a CER. Stuck? Press Hint under any box. Your answers save as you type. Press Listen.'}
+S['evidence'] = {'label': 'Use your evidence · CER', 'length': '35–45 s', 'want': True, 'parts': [
+    {'label': '💬 The claim', 'tag': 'USE YOUR EVIDENCE', 'title': 'A classmate says…', 'col': C_RED, 'body': '“If we just pick the smartest scientist’s first idea, we’ll always get the best solution.”'},
+    {'label': '🧩 The planner', 'tag': 'PLAN BEFORE YOU WRITE', 'title': 'Claim · Evidence · Reasoning', 'col': C_PURP, 'rows': [['1', 'Tap I agree or I disagree.'], ['2', 'Tap two pieces of evidence.'], ['3', 'You write the reasoning.']]}],
+    'script': '[ON SCREEN: The claim]\nA classmate says we should just pick the smartest scientist’s first idea. Hmm. Did the first designs win today? What happened when you tested the model?\n\n[ON SCREEN: The planner]\nRemember CER. Tap your side and two facts from today. Then explain how your facts prove your claim. Try starting with “This shows that…” Press Listen.'}
+S['closing'] = {'label': 'Case closed', 'length': '30–40 s', 'want': True, 'parts': [
+    {'label': '📐 Your specimen', 'tag': 'FIELD NOTEBOOK', 'title': 'Blueprint of the last pit', 'col': C_CASE, 'body': 'Finish the checklist to stamp CASE CLOSED.'},
+    {'label': '➡ Next time', 'tag': 'LESSON 17.01', 'title': 'Forces of change', 'col': C_GREEN, 'body': 'How do natural events change Florida’s land, ecosystems and people?'}],
+    'script': 'Case closed, engineers! You compared, improved and tested, and you wrapped up the whole quarter.\n\n[ON SCREEN: Your specimen]\nFinish your checklist and the blueprint of the last pit goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next time]\nNext week, a new kind of problem: what happens to Florida’s land, animals and people when a big storm hits? Press Listen for June’s last word.'}
+S['part3'] = {'label': 'Part 3 · four Florida challenges', 'length': '30–40 s', 'want': False, 'parts': [],
+    'script': 'Florida engineers face lots of challenges like ours. Tap each one to see the solutions and the revision an engineer might try. Notice how often the best idea combines two solutions. Press Listen.'}
+S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts': [],
+    'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
+V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part1', 'partb', 'partc']}
+json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print('video.json written')

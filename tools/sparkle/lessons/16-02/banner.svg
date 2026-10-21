@@ -1,0 +1,95 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The same land years later: the quarry pit is now a calm lake with a gently sloped, planted edge where a heron wades, a spillway pipe to the canal, faint blueprint grid lines, a measuring line across the pit, and three small design sketches floating in the sky. The cypress wetland is still on the right.">
+  <style>
+    .qv-cloud { animation: qvCloud 30s linear infinite; }
+    .qv-shine { animation: qvShine 4s ease-in-out infinite; }
+    .qv-shine2 { animation: qvShine 4s ease-in-out infinite 1.6s; }
+    .qv-heron { animation: qvBob 3.2s ease-in-out infinite; transform-origin: 816px 100px; }
+    .qv-cards { animation: qvFloat 5s ease-in-out infinite; }
+    @keyframes qvCloud { 0% { transform: translateX(-180px); } 100% { transform: translateX(1000px); } }
+    @keyframes qvShine { 0%,100% { opacity:.15; } 50% { opacity:.6; } }
+    @keyframes qvBob { 0%,70%,100% { transform: rotate(0deg); } 80% { transform: rotate(14deg); } 90% { transform: rotate(0deg); } }
+    @keyframes qvFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @media (prefers-reduced-motion: reduce) { .qv-cloud, .qv-shine, .qv-shine2, .qv-heron, .qv-cards { animation:none; } .qv-cloud { transform: translateX(420px); } }
+  </style>
+  <defs>
+    <linearGradient id="qvSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE0F2"/><stop offset="1" stop-color="#EAF5F0"/></linearGradient>
+    <linearGradient id="qvPit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3C8DB0"/><stop offset="1" stop-color="#1D4E6A"/></linearGradient>
+    <linearGradient id="qvMarsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB3A3"/><stop offset="1" stop-color="#4E8577"/></linearGradient>
+    <pattern id="qvLime" width="26" height="18" patternUnits="userSpaceOnUse">
+      <rect width="26" height="18" fill="#E2D6B4"/>
+      <ellipse cx="6" cy="6" rx="3" ry="2" fill="#B9A97F"/><ellipse cx="18" cy="12" rx="2.4" ry="1.6" fill="#B9A97F"/><circle cx="22" cy="4" r="1.2" fill="#C9BB93"/>
+    </pattern>
+    <pattern id="qvWet" width="26" height="18" patternUnits="userSpaceOnUse">
+      <rect width="26" height="18" fill="#CFC6A6"/>
+      <ellipse cx="6" cy="6" rx="3" ry="2" fill="#6F9DB4"/><ellipse cx="18" cy="12" rx="2.4" ry="1.6" fill="#6F9DB4"/><circle cx="22" cy="4" r="1.2" fill="#8CB3C6"/>
+    </pattern>
+  </defs>
+  <!-- sky and a drifting cloud -->
+  <rect width="920" height="200" fill="url(#qvSky)"/>
+  <g class="qv-cloud" fill="#FFFFFF" opacity=".9"><ellipse cx="0" cy="34" rx="46" ry="13"/><ellipse cx="30" cy="28" rx="30" ry="12"/><ellipse cx="-30" cy="38" rx="26" ry="9"/></g>
+  <!-- far tree line -->
+  <path d="M0,92 Q40,78 80,88 Q120,74 170,86 Q220,76 260,90 L260,100 H0Z" fill="#7FA36A"/>
+  <path d="M600,90 Q650,72 700,86 Q750,70 800,84 Q860,72 920,86 V100 H600Z" fill="#6E9A60"/>
+  <!-- the limestone layer that runs under everything -->
+  <rect x="0" y="100" width="920" height="100" fill="url(#qvLime)"/>
+  <!-- the deepest part: limestone full of water (the aquifer) -->
+  <rect x="0" y="160" width="920" height="40" fill="url(#qvWet)"/>
+  <path d="M0,160 H920" stroke="#8CB3C6" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <!-- LEFT: the quarry pit, cut in steps, filled with water -->
+  <path d="M40,100 L110,150 L110,170 L330,170 L330,134 L356,134 L356,116 L380,116 L380,100Z" fill="#C7B88C"/>
+  <path d="M40,100 L110,150 L110,170 L330,170 L330,134 L356,134 L356,116 L380,116 L380,100" fill="none" stroke="#A8996D" stroke-width="2"/>
+  <path d="M48,106 L110,150 L110,170 L330,170 L330,134 L356,134 L356,116 L380,116 L380,106Z" fill="url(#qvPit)"/>
+  <g fill="#4E8A3C"><path d="M54,108 l3,-13 l3,13z M66,116 l3,-13 l3,13z M78,124 l3,-12 l3,12z M90,132 l3,-11 l3,11z"/></g>
+  <rect x="378" y="103" width="34" height="6" rx="2" fill="#7A8A90"/>
+  <path class="qv-shine" d="M130,124 h60 M210,138 h70 M150,156 h50" stroke="#CFEAF6" stroke-width="2" stroke-linecap="round"/>
+  <path class="qv-shine2" d="M250,122 h50 M300,150 h30" stroke="#CFEAF6" stroke-width="2" stroke-linecap="round"/>
+  <!-- rock piles on the rim -->
+  <path d="M8,100 L22,84 L36,100Z" fill="#D9CDA9"/><path d="M412,100 L428,86 L446,100Z" fill="#D9CDA9"/>
+  <!-- MIDDLE: a new road on a low bank -->
+  <path d="M440,100 L470,92 L570,92 L600,100Z" fill="#B8A983"/>
+  <rect x="470" y="86" width="100" height="7" fill="#55595C"/>
+  <path d="M476,89.5 h12 M496,89.5 h12 M516,89.5 h12 M536,89.5 h12 M556,89.5 h10" stroke="#F4D35E" stroke-width="1.6"/>
+  <!-- RIGHT: the cypress wetland on the same rock -->
+  <path d="M600,100 L920,100 L920,112 L600,112Z" fill="url(#qvMarsh)"/>
+  <path class="qv-shine" d="M640,106 h40 M720,108 h50 M840,105 h40" stroke="#D6EEE6" stroke-width="1.6" stroke-linecap="round"/>
+  <g fill="#5E7A3E">
+    <path d="M650,104 l3,-14 l3,14z M664,105 l2,-11 l3,11z M700,104 l3,-15 l3,15z M760,105 l2,-12 l3,12z M880,104 l3,-13 l3,13z M900,105 l2,-10 l3,10z"/>
+  </g>
+  <g>
+    <path d="M676,104 C672,96 674,70 678,40 L684,40 C688,70 690,96 686,104Z" fill="#6B5034"/>
+    <path d="M681,22 L700,62 L662,62Z" fill="#4E7A3A"/><path d="M681,8 L696,42 L666,42Z" fill="#5C8A44"/>
+    <path d="M736,104 C733,98 734,80 737,58 L742,58 C745,80 746,98 743,104Z" fill="#6B5034"/>
+    <path d="M739,40 L756,74 L722,74Z" fill="#4E7A3A"/><path d="M739,28 L752,56 L726,56Z" fill="#5C8A44"/>
+    <path d="M862,104 C858,96 860,72 864,44 L870,44 C874,72 876,96 872,104Z" fill="#6B5034"/>
+    <path d="M867,26 L886,66 L848,66Z" fill="#4E7A3A"/><path d="M867,12 L882,46 L852,46Z" fill="#5C8A44"/>
+    <path d="M700,106 l4,-6 l4,6z M716,107 l3,-5 l3,5z M752,106 l4,-6 l4,6z" fill="#7A5C3C"/>
+  </g>
+  <!-- a great blue heron wading -->
+  <g transform="translate(0 -18)">
+    <path d="M806,110 L804,128 M814,110 L816,128" stroke="#5B6A72" stroke-width="2"/>
+    <ellipse cx="810" cy="104" rx="14" ry="8" fill="#7E93A6"/>
+    <path d="M820,100 L826,98" stroke="#5B6A72" stroke-width="3" stroke-linecap="round"/>
+    <g class="qv-heron">
+      <path d="M816,100 C820,90 812,84 814,74" stroke="#8FA3B4" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="816" cy="72" rx="6" ry="4.5" fill="#EEF1F3"/>
+      <path d="M821,71 L836,73 L821,74Z" fill="#E0A82A"/>
+      <path d="M813,70 l-8,-3" stroke="#2B3640" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="818" cy="71" r="1.1" fill="#1D2329"/>
+    </g>
+  </g>
+  <g transform="translate(-735 -4)"><path d="M806,110 L804,124 M814,110 L816,124" stroke="#5B6A72" stroke-width="2"/><ellipse cx="810" cy="104" rx="12" ry="7" fill="#7E93A6"/><path d="M816,100 C820,90 812,84 814,76" stroke="#8FA3B4" stroke-width="4.5" fill="none" stroke-linecap="round"/><ellipse cx="816" cy="74" rx="5.5" ry="4" fill="#EEF1F3"/><path d="M821,73 L834,75 L821,76Z" fill="#E0A82A"/></g>
+  <!-- blueprint overlay: the land under test -->
+  <g stroke="#2B6CB0" stroke-width=".6" opacity=".18">
+    <path d="M0,20 H920 M0,40 H920 M0,60 H920 M0,80 H920 M0,100 H920 M0,120 H920 M0,140 H920 M0,160 H920 M0,180 H920"/>
+    <path d="M40,0 V200 M120,0 V200 M200,0 V200 M280,0 V200 M360,0 V200 M440,0 V200 M520,0 V200 M600,0 V200 M680,0 V200 M760,0 V200 M840,0 V200"/>
+  </g>
+  <g stroke="#1F4E79" stroke-width="1.4" fill="none"><path d="M110,180 H330"/><path d="M110,175 v10 M330,175 v10"/></g>
+  <rect x="196" y="174" width="48" height="12" rx="3" fill="#1F4E79"/><text x="220" y="183" text-anchor="middle" font-size="8.5" font-weight="800" fill="#FFFFFF" font-family="Nunito,sans-serif">TEST 1</text>
+  <g class="qv-cards">
+    <g transform="translate(470 18) rotate(-4)"><rect width="62" height="40" rx="3" fill="#1F4E79"/><path d="M8,14 L20,26 H42 L54,14" stroke="#FFFFFF" stroke-width="1.4" fill="none"/><path d="M14,18 h34" stroke="#9FD3F0" stroke-dasharray="3 2"/><text x="31" y="36" text-anchor="middle" font-size="7" fill="#FFFFFF" font-family="Nunito,sans-serif">A · bird lake</text></g>
+    <g transform="translate(548 12) rotate(2)"><rect width="62" height="40" rx="3" fill="#1F4E79"/><path d="M12,12 L14,28 H48 L50,12" stroke="#FFFFFF" stroke-width="1.4" fill="none"/><path d="M14,16 h34" stroke="#9FD3F0" stroke-dasharray="3 2"/><text x="31" y="36" text-anchor="middle" font-size="7" fill="#FFFFFF" font-family="Nunito,sans-serif">B · reservoir</text></g>
+    <g transform="translate(626 20) rotate(-2)"><rect width="62" height="40" rx="3" fill="#1F4E79"/><path d="M12,12 L14,28 H48 L50,12" stroke="#FFFFFF" stroke-width="1.4" fill="none"/><path d="M16,12 l8,-4 M28,12 l8,-4 M40,12 l8,-4" stroke="#FFFFFF" stroke-width="1.4"/><text x="31" y="36" text-anchor="middle" font-size="7" fill="#FFFFFF" font-family="Nunito,sans-serif">C · solar</text></g>
+  </g>
+  <!-- the same water under both sides -->
+  <path d="M0,182 Q115,176 230,182 T460,182 T690,182 T920,182" stroke="#4E8FB0" stroke-width="2" fill="none" opacity=".55"/>
+</svg>

@@ -2188,3 +2188,63 @@ html:not(.fs-on) .fs-name-note{display:none!important;}
 .fs-wm-bar em { font-style:normal; color:#5C6F75; font-size:12.5px; }
 @media (max-width:560px) { .fs-wm-row { grid-template-columns: 1fr; } .fs-wm-meter { max-width:200px; margin:0 auto; } .fs-wm-bar { grid-template-columns: 1fr 90px; } .fs-wm-bar i { grid-column: 1 / -1; grid-row: 2; } }
 @media (prefers-reduced-motion: reduce) { .fs-bal-beam, .fs-bal-pan { transition:none; } .fs-gu-col li.pop, .fs-tb-drawer li.pop, .fs-th2-card.pop { animation:none; } .fs-wm-leak.spin polygon { animation:none; } .fs-wm-bar b { transition:none; } }
+
+/* ===== 16.02: blueprint case, Limit or goal?, Build the matrix, Make it better, Test it small ===== */
+.fs-bp { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin:10px 0 12px; }
+.fs-bp-card { background:#1F4E79; border-radius:8px; padding:8px 9px 9px; color:#E8F1FA; box-shadow:0 3px 6px rgba(0,0,0,.2);
+  background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px); background-size: 14px 14px; }
+.fs-bp-tag { font:900 11px 'Nunito',sans-serif; letter-spacing:1.2px; text-transform:uppercase; color:#BFD8EE; }
+.fs-bp-svg svg { width:100%; height:auto; display:block; margin:4px 0 6px; }
+.fs-bp-card b { display:block; font:900 15px 'Nunito',sans-serif; color:#FFFFFF; }
+.fs-bp-card ul { list-style:none; margin:4px 0 0; padding:0; font-size:13px; line-height:1.4; } .fs-bp-card li { border-top:1px dashed rgba(255,255,255,.25); padding:3px 0; }
+.fs-bp-card li span { color:#BFD8EE; font-weight:800; }
+@media (max-width:640px) { .fs-bp { grid-template-columns: 1fr; } }
+
+.fs-lq-deck { min-height:70px; display:flex; justify-content:center; margin:6px 0 10px; }
+.fs-lq-card { max-width:420px; width:100%; font-size:16px; text-align:center; padding:12px 14px; margin:0; }
+.fs-lq-card small { display:block; font-size:11px; color:#7C8C92; letter-spacing:.6px; text-transform:uppercase; margin-bottom:3px; }
+.fs-lq-card.in { animation: fsPop .35s; }
+.fs-lq-done { font-weight:900; color:#1a6b35; padding:14px; }
+.fs-lq-board { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.fs-lq-zone { border:2.5px dashed #9FB7BE; border-radius:12px; padding:8px; min-height:120px; cursor:pointer; transition: border-color .2s, background .2s; }
+.fs-lq-zone[data-k="limit"] { background:#FFF4EE; border-color:#E5B184; } .fs-lq-zone[data-k="goal"] { background:#F2FAF4; border-color:#8CC9A2; }
+.fs-lq-zone.over { border-color: var(--fs-gold); background:#FFF9E8; }
+.fs-lq-h { text-align:center; } .fs-lq-h span { display:block; font-size:24px; } .fs-lq-h b { display:block; font-size:15px; color: var(--fs-navy); } .fs-lq-h small { display:block; font-size:12.5px; color:#5C6F75; line-height:1.3; }
+.fs-lq-zone ul { list-style:none; margin:6px 0 0; padding:0; } .fs-lq-zone li { font-size:13px; font-weight:700; background:#fff; border-radius:7px; padding:4px 6px; margin:3px 0; display:flex; gap:5px; line-height:1.3; } .fs-lq-zone li.pop { animation: fsPop .4s; }
+
+.fs-mx-wrap { overflow-x:auto; }
+.fs-mx { width:100%; border-collapse:separate; border-spacing:4px; font-size:14px; }
+.fs-mx th { font:900 13px 'Nunito',sans-serif; color: var(--fs-navy); text-align:center; padding:4px; vertical-align:bottom; }
+.fs-mx thead th span, .fs-mx tbody th span { display:block; font-size:20px; }
+.fs-mx tbody th { text-align:left; font-size:12.5px; background:#F4F7F8; border-radius:8px; padding:6px 8px; vertical-align:middle; } .fs-mx tbody th span { display:inline; font-size:16px; margin-right:4px; }
+.fs-mx td { text-align:center; padding:0; }
+.fs-mx-cell { width:100%; min-height:42px; border:2px dashed #9FB7BE; background:#F7FBFC; border-radius:9px; font:900 17px 'Nunito',sans-serif; color:#7C8C92; cursor:pointer; }
+.fs-mx-cell.on { border-color: var(--fs-gold); border-style:solid; background:#FFF9E8; }
+.fs-mx-cell.done { border-style:solid; border-color:#9AD3B0; background:#F1FAF4; font-size:14px; color:#000; }
+.fs-mx-tot td, .fs-mx-tot th { font-weight:900; color: var(--fs-navy); background:#EEF3F5; border-radius:8px; padding:6px; }
+.fs-mx-limrow td { font-size:12.5px; font-weight:800; border-radius:8px; padding:5px; } .fs-mx-limrow td.ok { background:#EAF7EF; color:#1a6b35; } .fs-mx-limrow td.out { background:#FDECEA; color:#A23B2A; } .fs-mx-limrow td b { display:block; font-size:12px; letter-spacing:1px; }
+.fs-mx th.out, .fs-mx td.out .fs-mx-cell, .fs-mx-tot td.out { opacity:.45; text-decoration: line-through; }
+.fs-mx-panel { margin-top:8px; background: var(--fs-kraft); border:1.5px solid var(--fs-kraft-edge); border-radius:12px; padding:10px 12px; min-height:44px; font-size:15px; } .fs-mx-panel.flash { animation: fsPop .35s; }
+.fs-mx-ev b { display:block; color: var(--fs-navy); } .fs-mx-ev p { margin:4px 0 8px; line-height:1.45; } .fs-mx-got { font-weight:900; color:#1a6b35; }
+.fs-mx-panel .fs-in-chips { display:flex; flex-wrap:wrap; gap:8px; }
+.fs-mx-lim { margin-top:10px; }
+
+.fs-mb-pick .fs-in-chips, .fs-mb-list { display:flex; flex-wrap:wrap; gap:8px; } .fs-mb-pick .fs-in-chip.on { background:#E3F1FA; border-color:#2B7BB9; }
+.fs-mb-board { margin:10px 0; background:#F7FBFC; border:2px solid #D8E7EA; border-radius:12px; padding:10px 12px; }
+.fs-mb-title { font:900 16px 'Nunito',sans-serif; color: var(--fs-navy); margin-bottom:6px; } .fs-mb-title small { color:#1a6b35; }
+.fs-mb-row { display:flex; justify-content:space-between; gap:8px; font-size:14px; font-weight:800; padding:4px 6px; border-radius:7px; } .fs-mb-row b i { font-style:normal; color:#C9D6DA; }
+.fs-mb-row.up { background:#EAF7EF; } .fs-mb-row.low { background:#FFF4EE; }
+.fs-mb-cost { display:grid; grid-template-columns: 70px 1fr auto; gap:8px; align-items:center; margin-top:8px; font-size:13.5px; font-weight:800; }
+.fs-mb-cost i { position:relative; display:block; height:14px; background:#EEF3F5; border-radius:7px; } .fs-mb-cost i b { display:block; height:100%; background:#2E9E5E; border-radius:7px; transition: width .5s; }
+.fs-mb-cost i em { position:absolute; top:-4px; bottom:-4px; width:3px; background:#A23B2A; border-radius:2px; }
+.fs-mb-cost.over i b { background:#D9534F; } .fs-mb-cost.over strong { color:#A23B2A; }
+.fs-mb-tot { margin-top:6px; font-size:14px; font-weight:800; color:#5C6F75; } .fs-mb-tot b { color: var(--fs-navy); }
+.fs-mb-add.on { background:#E3F5EA; border-color:#2E9E5E; } .fs-mb-add small { font-size:11.5px; color:#7A5F2C; }
+@media (max-width:560px) { .fs-mb-cost { grid-template-columns: 1fr; } }
+
+.fs-pt-stage { background:#fff; border:2px solid #D8E7EA; border-radius:12px; padding:6px; margin:6px 0; }
+.fs-pt-svg { width:100%; height:auto; display:block; max-width:620px; margin:0 auto; }
+.fs-pt-runs .fs-in-chips, .fs-pt-fix { display:flex; flex-wrap:wrap; gap:8px; }
+.fs-pt-runs .fs-in-chip[disabled] { opacity:.45; cursor:not-allowed; }
+@media (prefers-reduced-motion: reduce) { .fs-lq-card.in, .fs-lq-zone li.pop, .fs-mx-panel.flash { animation:none; } .fs-mb-cost i b { transition:none; } }
+@media (max-width:560px) { .fs-mx { table-layout:fixed; border-spacing:3px; } .fs-mx thead th:first-child, .fs-mx tbody th { width:30%; } .fs-mx tbody th { font-size:11px; padding:5px 4px; line-height:1.25; } .fs-mx tbody th span { display:block; margin:0 0 2px; } .fs-mx thead th { font-size:11px; } .fs-mx-cell { font-size:12px; min-height:38px; padding:0 2px; } .fs-mx-cell.done { font-size:11px; letter-spacing:-1px; } .fs-mx-limrow td { font-size:11px; padding:4px 2px; } }

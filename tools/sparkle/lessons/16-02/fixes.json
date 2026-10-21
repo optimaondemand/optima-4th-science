@@ -1,0 +1,254 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a decision matrix",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "📊 Part C &mdash; Build a Decision Matrix"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page now)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one of the four Florida challenges from Part 3 (or one you make up). Compare two solutions like an engineer: name the goals and a limit, score each solution, choose one, and suggest a way to make it better.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: this lesson closes out Quarter 2 (the page says so)",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "this is an Earth science lesson (4-ESS3-1), not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Earth Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "Florida has no offshore wind turbines; a real Florida option instead",
+  "old": "(B) Build offshore wind turbines",
+  "new": "(B) Put solar panels on school and store rooftops"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to compare at least two solutions for one Florida resource problem, choose one, and propose a way to improve it.",
+  "new": "Keep this question in mind. By the end, you’ll be able to compare two or more solutions to a Florida problem, choose one, and make it better."
+ },
+ {
+  "kind": "plain",
+  "why": "plain words",
+  "old": "Imagine the Florida city you live in needs more clean drinking water. Engineers and city leaders have to pick a way to get it. Three possible ideas are on the table:",
+  "new": "Imagine your Florida city needs more clean drinking water. Engineers and city leaders have to pick a way to get it. Here are three ideas:"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; plain words",
+  "old": "<p>Engineers don't just look for \"the best idea.\" They define what \"best\" even means — and what they can't change.",
+  "new": "<p>Engineers don’t just look for “the best idea.” First they decide what “best” means, and what they can’t change."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter examples",
+  "old": "<li><strong>Criteria</strong> = the goals. (Examples: \"Provide enough water for 10,000 people,\" \"Cost less than $50 million,\" \"Don't pollute the springs.\")</li>",
+  "new": "<li><strong>Criteria</strong> = the goals. A goal can be met well, just OK, or poorly. (Example: “Provide enough water for 10,000 people.”)</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter examples",
+  "old": "<li><strong>Constraints</strong> = the limits. (Examples: \"Must finish in 3 years,\" \"Can't use new land,\" \"Must follow Florida water laws.\")</li>",
+  "new": "<li><strong>Constraints</strong> = the limits. A limit is pass or fail. (Example: “Must cost less than $50 million.”)</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "</span></span> side by side. The tool they often use is called a <em>decision matrix</em> — a chart that scores each",
+  "new": "</span></span> side by side. They often use a <em>decision matrix</em>: a chart that scores each"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "Engineers don't stop at \"pick one.\" They look at the gaps and figure out how to make the chosen solution stronger. Maybe by combining ideas, adding a protection strategy, or trying a small test first.</p>",
+  "new": "Engineers look at the gaps and make the chosen solution stronger, maybe by combining ideas or testing a small model first.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "the diagram is Part 3 now",
+  "old": "margin-top:22px;\">Four Engineering Challenges</h3>",
+  "new": "margin-top:22px;\">Part 3 · Four Florida Challenges</h3>"
+ },
+ {
+  "kind": "plain",
+  "why": "the challenges are in Part 3 of the Lesson",
+  "old": "Pick one of the four engineering challenges from the diagram (city water, clean electricity, beach erosion, or plastic waste).",
+  "new": "Pick one of the four Florida challenges from Part 3 (city water, clean electricity, beach erosion, or plastic waste)."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; dash removed",
+  "old": "<p><strong>You\\'ve closed out Quarter 2\\.</strong> You can now define.*?</p>",
+  "new": "<p><strong>You’ve closed out Quarter 2.</strong> You can now set criteria and constraints, compare solutions, and revise the winner. That’s real engineering. Next week: what happens to Florida’s land when a big storm hits?</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its matrix becomes Part C; the facts and Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think repeats the warm-up game",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception box repeats the revise paragraph",
+  "old": "<p><strong>Common misconception:</strong> Some people think real engineering is about coming up with one perfect idea\\..*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>\\s*<p[^>]*>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason asks what Make it better does",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the Amazing Fact, the Florida connection and Go Deeper at the end of the Lesson; Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Test It Small</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Engineers rarely build the real thing first. They test a small model, because a problem is much cheaper to fix on a model. June built a model of the improved pit. Run each test, see what goes wrong, and revise it.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page",
+  "old": "A decision matrix comparing 2 solutions against 2 criteria, with star ratings, a chosen winner, and a revision suggestion.",
+  "new": "Two solutions compared with 2 criteria and a limit, star scores, a winner, and a way to make it better."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether the first idea is always the best, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether the first idea is always the best, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]
