@@ -310,9 +310,56 @@
     }
    ],
    "script": "[ON SCREEN: Confetti]\nCase closed! Same parent, different gardens. The flower color and the leaves came from the parent. The sun did the rest.\n\n[ON SCREEN: Your specimen]\nCheck every box in What to Turn In, and a seed packet goes into your Field Notebook.\n\n[ON SCREEN: Next lesson]\nNext time: how did one flower make all those seeds?\n\nPress Listen for Dr. Reyes’s last word."
+  },
+  "vr": {
+   "label": "VR activity · Family reunion (separate page)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "📋 The intake form",
+     "tag": "CASE 13 FOLLOW-UP",
+     "title": "Will the chicks have it?",
+     "col": "#2F7A55",
+     "body": "A volunteer left the last column blank on a wood stork’s check-up form. Help Dr. Reyes finish it."
+    },
+    {
+     "label": "🧭 Two ways",
+     "tag": "PICK AT THE TOP",
+     "title": "Two ways to do it",
+     "col": "#2B7BB9",
+     "rows": [
+      [
+       "🥽",
+       "VR Field Mission: a family reunion in The Countryside, with a bear, deer and barn owl family."
+      ],
+      [
+       "🗂",
+       "No headset? Send the stork’s 10 traits through the pass-it-down gate."
+      ]
+     ]
+    },
+    {
+     "kind": "photo",
+     "pic": "vrstork",
+     "label": "📷 The stork family"
+    },
+    {
+     "label": "🥇 The badge",
+     "tag": "VR ONLY",
+     "title": "Golden Paw badge",
+     "col": "#B9822A",
+     "body": "Save your capture in VR to earn it."
+    }
+   ],
+   "script": "Hi, scientists! Dr. Reyes needs help finishing a form.\n\n[ON SCREEN: The intake form]\nA wood stork came in for a check-up. The last column asks: will the chicks have it? It’s blank.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, set up a family reunion in the countryside. Make each baby by shrinking a copy of its parent! Then say one inherited trait and one from the environment.\n\n[ON SCREEN: The stork family]\nNo headset? Send this stork’s traits through the pass-it-down gate.\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Golden Paw badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me."
   }
  },
  "pics": {
+  "vrstork": {
+   "src": "images/13-01-vr-stork.jpg",
+   "cap": "Wood stork parent with chicks (Mary Ellen Urbanski, USFWS, public domain)"
+  },
   "parent": {
    "src": "images/13-01-case-parent.jpg",
    "cap": "Tag P · the wild parent plant on the dunes"

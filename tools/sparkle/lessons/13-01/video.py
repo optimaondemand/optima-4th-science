@@ -2,6 +2,7 @@
 """Writes video.json (Video Studio plan) for 13.01."""
 import json
 pics = {
+    'vrstork': {'src': 'images/13-01-vr-stork.jpg', 'cap': 'Wood stork parent with chicks (Mary Ellen Urbanski, USFWS, public domain)'},
     'parent': {'src': 'images/13-01-case-parent.jpg', 'cap': 'Tag P · the wild parent plant on the dunes'},
     'sun': {'src': 'images/13-01-case-sun.jpg', 'cap': 'Pot A · sunny dune garden'},
     'shade': {'src': 'images/13-01-case-shade.jpg', 'cap': 'Pot B · shady courtyard'},
@@ -51,5 +52,11 @@ S['closing'] = {'label': 'Case closed', 'length': '30–40 s', 'want': True, 'pa
     {'label': '🌻 Your specimen', 'tag': 'FIELD NOTEBOOK', 'title': 'Beach sunflower seed packet', 'col': C_CASE, 'body': 'Finish the checklist to stamp CASE CLOSED.'},
     {'label': '➡ Next lesson', 'tag': 'LESSON 13.02', 'title': 'Where do seeds come from?', 'col': C_GREEN, 'body': 'How did one beach sunflower make all those seeds?'}],
     'script': '[ON SCREEN: Confetti]\nCase closed! Same parent, different gardens. The flower color and the leaves came from the parent. The sun did the rest.\n\n[ON SCREEN: Your specimen]\nCheck every box in What to Turn In, and a seed packet goes into your Field Notebook.\n\n[ON SCREEN: Next lesson]\nNext time: how did one flower make all those seeds?\n\nPress Listen for Dr. Reyes’s last word.'}
+S['vr'] = {'label': 'VR activity · Family reunion (separate page)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'label': '📋 The intake form', 'tag': 'CASE 13 FOLLOW-UP', 'title': 'Will the chicks have it?', 'col': C_GREEN, 'body': 'A volunteer left the last column blank on a wood stork’s check-up form. Help Dr. Reyes finish it.'},
+    {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': '#2B7BB9', 'rows': [['🥽', 'VR Field Mission: a family reunion in The Countryside, with a bear, deer and barn owl family.'], ['🗂', 'No headset? Send the stork’s 10 traits through the pass-it-down gate.']]},
+    {'kind': 'photo', 'pic': 'vrstork', 'label': '📷 The stork family'},
+    {'label': '🥇 The badge', 'tag': 'VR ONLY', 'title': 'Golden Paw badge', 'col': C_CASE, 'body': 'Save your capture in VR to earn it.'}],
+    'script': 'Hi, scientists! Dr. Reyes needs help finishing a form.\n\n[ON SCREEN: The intake form]\nA wood stork came in for a check-up. The last column asks: will the chicks have it? It’s blank.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, set up a family reunion in the countryside. Make each baby by shrinking a copy of its parent! Then say one inherited trait and one from the environment.\n\n[ON SCREEN: The stork family]\nNo headset? Send this stork’s traits through the pass-it-down gate.\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Golden Paw badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 json.dump({'slots': S, 'pics': pics, 'other': ['lesson', 'part1', 'partb', 'figure']}, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('wrote video.json', len(S), 'slots')
