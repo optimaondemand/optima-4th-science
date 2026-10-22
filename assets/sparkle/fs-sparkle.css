@@ -2377,3 +2377,58 @@ html:not(.fs-on) .fs-name-note{display:none!important;}
 .fs-rg-total { margin:8px 0; font-size:16px; font-weight:800; color:var(--fs-navy); }
 @media (max-width:560px) { .fs-rg-row { grid-template-columns: 1fr; } .fs-rg-gauge { max-width:150px; margin:0 auto; } }
 @media (prefers-reduced-motion: reduce) { .fs-sn-pin.new .fs-sn-ring, .fs-bn-dev.on .fs-bn-led, .fs-bn-slot.pop, .fs-stc-call.in, .fs-stc2-in.drop, .fs-stc2-twc.in { animation:none; } .fs-stc-map { transition:none; } }
+
+/* =================== 17.02 The House That Stood: mitigation shelves (fs-mk), build it then storm it (fs-bh), fix the town (fs-fxt), building-permit case =================== */
+.fs-case-permit .fs-notice { background:#F7FBFF; border-color:#9DB7D3; box-shadow:0 3px 0 #C9D8E8; }
+.fs-case-permit .fs-notice-h { color:#1F4F82; }
+.fs-case-permit .fs-notice::after { content:'NEEDS A PLAN'; position:absolute; right:12px; top:10px; transform:rotate(8deg); border:3px solid #C62828; color:#C62828; font:900 12px 'Courier New',monospace; letter-spacing:1px; padding:2px 8px; border-radius:6px; opacity:.85; }
+.fs-mk-deck { display:grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap:8px; margin:8px 0 12px; }
+.fs-mk-card { padding:6px; display:flex; flex-direction:column; gap:5px; cursor:grab; }
+.fs-mk-ph { display:block; aspect-ratio:4/3; border-radius:6px; overflow:hidden; background:#E8EEF1; }
+.fs-mk-ph img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+.fs-mk-ic { display:flex; align-items:center; justify-content:center; aspect-ratio:4/3; border-radius:6px; background:#F2F7F8; font-size:40px; }
+.fs-mk-t { font-size:13px; line-height:1.35; font-weight:800; }
+.fs-mk-done { grid-column:1/-1; font-weight:900; color:#1a6b35; }
+.fs-mk-shelves { display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; }
+.fs-mk-shelf { border:2px dashed #C9D6DA; border-radius:12px; background:#FAFCFD; padding:8px; min-height:120px; }
+.fs-mk-shelf.over { border-color:var(--fs-gold); background:#FFF8E1; }
+.fs-mk-h { display:flex; flex-wrap:wrap; gap:4px 6px; align-items:baseline; margin-bottom:6px; color:var(--fs-navy); }
+.fs-mk-h span { font-size:20px; } .fs-mk-h b { font-size:15px; } .fs-mk-h small { flex-basis:100%; font-size:12px; color:#5C6F75; font-weight:700; }
+.fs-mk-in { display:flex; flex-direction:column; gap:6px; }
+.fs-mk-got { display:grid; grid-template-columns: 54px 1fr; gap:6px; align-items:center; background:#fff; border:1.5px solid #2E9E5E; border-radius:8px; padding:4px; }
+.fs-mk-got .fs-mk-ph, .fs-mk-got .fs-mk-ic { aspect-ratio:4/3; font-size:22px; }
+.fs-mk-got .fs-mk-t { font-size:12px; }
+.fs-mk-got.pop { animation: fsPop .4s; }
+.fs-bh-row { display:grid; grid-template-columns: 1fr 1.1fr; gap:14px; align-items:start; }
+.fs-bh-part { margin-bottom:8px; }
+.fs-bh-part .fs-in-chips { display:flex; flex-wrap:wrap; gap:6px; }
+.fs-bh-part .fs-in-chip { font-size:14px; padding:5px 12px; }
+.fs-bh-part .fs-in-chip em { font-style:normal; color:#B9822A; font-size:11px; letter-spacing:1px; }
+.fs-bh-part .fs-in-chip.on { background:#E3F1FA; border-color:#2B7BB9; }
+.fs-bh-budget { display:grid; grid-template-columns: auto 1fr; gap:4px 10px; align-items:center; margin:10px 0; }
+.fs-bh-budget .fs-in-k { margin:0; }
+.fs-bh-budget i { display:block; height:14px; background:#EEF3F5; border-radius:7px; overflow:hidden; }
+.fs-bh-budget b { display:block; height:100%; width:0; background:#2E9E5E; border-radius:7px; transition: width .4s ease; }
+.fs-bh-budget em { grid-column: 1 / -1; font-style:normal; font-size:13px; font-weight:800; color:#41566B; }
+.fs-bh-budget.over b { background:#D9342B; } .fs-bh-budget.over em { color:#B3261E; }
+.fs-bh-run[disabled] { opacity:.5; }
+.fs-bh-svg { width:100%; height:auto; display:block; border-radius:10px; border:2px solid #D8E7EA; }
+.fs-bh-res { display:grid; gap:6px; margin-top:10px; }
+.fs-bh-r { display:flex; gap:8px; align-items:flex-start; border-radius:10px; padding:6px 10px; font-size:14px; line-height:1.4; }
+.fs-bh-r b { display:block; color:var(--fs-navy); }
+.fs-bh-r.ok { background:#EEF8F1; border:1.5px solid #B8E0C4; } .fs-bh-r.no { background:#FFF1F0; border:1.5px solid #F2C2BE; }
+.fs-fxt-row { display:grid; grid-template-columns: 1.2fr 1fr; gap:12px; align-items:start; }
+.fs-fxt-map { background:#16233F; border-radius:10px; padding:5px; }
+.fs-fxt-list { display:flex; flex-direction:column; gap:6px; }
+.fs-fxt-item { text-align:left; display:grid; grid-template-columns: 28px 1fr; gap:0 6px; background:#fff; border:2px solid #C9D6DA; border-radius:10px; padding:6px 8px; cursor:pointer; font:inherit; }
+.fs-fxt-item span { grid-row: span 3; font-size:20px; }
+.fs-fxt-item b { font-size:14px; color:var(--fs-navy); } .fs-fxt-item small { font-size:12.5px; color:#41566B; line-height:1.35; } .fs-fxt-item em { font-style:normal; font-size:12px; color:#1a6b35; font-weight:800; }
+.fs-fxt-item.on { border-color:#2B7BB9; background:#E3F1FA; } .fs-fxt-item.done { border-color:#2E9E5E; background:#F1FAF4; }
+.fs-fxt-panel { margin-top:10px; background: var(--fs-kraft); border:1.5px solid var(--fs-kraft-edge); border-radius:12px; padding:10px 12px; font-size:15px; }
+.fs-fxt-panel.flash { animation: fsPop .3s; }
+.fs-fxt-panel p { margin:6px 0 0; line-height:1.5; }
+.fs-fxt-h { margin-bottom:6px; } .fs-fxt-h b { color:var(--fs-navy); }
+.fs-fxt-panel .fs-in-chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
+.fs-fxt-chosen { font-weight:900; color:#1a6b35; margin-bottom:6px; } .fs-fxt-chosen em { font-style:normal; color:#41566B; }
+@media (max-width:700px) { .fs-bh-row, .fs-fxt-row { grid-template-columns: 1fr; } .fs-bh-view { order:-1; } .fs-mk-shelves { grid-template-columns: 1fr; } .fs-mk-deck { grid-template-columns: repeat(2, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .fs-mk-got.pop, .fs-fxt-panel.flash { animation:none; } .fs-bh-budget b { transition:none; } }

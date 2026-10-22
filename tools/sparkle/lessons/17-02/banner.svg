@@ -1,0 +1,55 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Palmetto Springs the week after the storm: a sunny sky, a new house raised high on tall pilings with storm shutters and roof straps, a builder's ladder, fresh sea oats planted on a new dune, cabbage palms standing straight, and a heron back at the calm bay.">
+  <style>
+    .rb-cloud { animation: rbCloud 34s linear infinite; }
+    .rb-sun { animation: rbSun 6s ease-in-out infinite; transform-origin: 820px 44px; }
+    .rb-oats { animation: rbOats 3.4s ease-in-out infinite; transform-origin: 560px 160px; }
+    .rb-heron { animation: rbBob 3.2s ease-in-out infinite; transform-origin: 862px 150px; }
+    .rb-wave { animation: rbWave 4s ease-in-out infinite; }
+    @keyframes rbCloud { from { transform: translateX(-200px); } to { transform: translateX(1000px); } }
+    @keyframes rbSun { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+    @keyframes rbOats { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(3deg); } }
+    @keyframes rbBob { 0%,70%,100% { transform: rotate(0); } 82% { transform: rotate(12deg); } }
+    @keyframes rbWave { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-10px); } }
+    @media (prefers-reduced-motion: reduce) { .rb-cloud, .rb-sun, .rb-oats, .rb-heron, .rb-wave { animation:none; } .rb-cloud { transform: translateX(300px); } }
+  </style>
+  <defs>
+    <linearGradient id="rbSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FD3F2"/><stop offset="1" stop-color="#E9F6FB"/></linearGradient>
+    <linearGradient id="rbBay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FA3CF"/><stop offset="1" stop-color="#2C6E9E"/></linearGradient>
+  </defs>
+  <rect width="920" height="200" fill="url(#rbSky)"/>
+  <g class="rb-sun"><circle cx="820" cy="44" r="24" fill="#FFD866"/><circle cx="820" cy="44" r="34" fill="#FFE9A0" opacity=".45"/></g>
+  <g class="rb-cloud" fill="#fff" opacity=".9"><path d="M60 50q16-18 40-8 14-16 38 0 26-4 26 16H58z"/><path d="M380 34q14-14 34-6 12-12 32 0 22-2 22 14H378z"/></g>
+  <!-- the bay -->
+  <path d="M600 158Q680 152 760 156T920 154V200H600Z" fill="url(#rbBay)"/>
+  <g class="rb-wave" fill="none" stroke="#CFE6F7" stroke-width="2" stroke-linecap="round" opacity=".8"><path d="M630 170q10-5 20 0t20 0"/><path d="M720 180q10-5 20 0t20 0"/><path d="M800 168q10-5 20 0t20 0"/></g>
+  <!-- land + new dune -->
+  <path d="M0 172Q150 164 300 170T600 160V200H0Z" fill="#E8D9AE"/>
+  <path d="M500 168Q560 140 640 162" fill="#F1E3BD"/>
+  <g class="rb-oats" stroke="#6E8F4E" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M530 162q-2-18 4-30M545 160q2-20-4-34M560 158q-1-22 6-36M575 158q3-18-2-30M590 158q-2-16 5-28M605 160q2-14-3-24"/>
+    <g fill="#C9A85A" stroke="none"><ellipse cx="534" cy="131" rx="2.5" ry="5"/><ellipse cx="541" cy="126" rx="2.5" ry="5"/><ellipse cx="566" cy="122" rx="2.5" ry="5"/><ellipse cx="573" cy="128" rx="2.5" ry="5"/><ellipse cx="595" cy="130" rx="2.5" ry="5"/></g>
+  </g>
+  <!-- the new house on tall pilings -->
+  <g>
+    <g fill="#8C7B5A"><rect x="286" y="104" width="8" height="70"/><rect x="330" y="104" width="8" height="70"/><rect x="376" y="104" width="8" height="70"/><rect x="420" y="104" width="8" height="70"/></g>
+    <path d="M290 150l40-30M334 150l40-30M380 150l40-30" stroke="#A9967A" stroke-width="3"/>
+    <rect x="276" y="56" width="160" height="50" fill="#F4EBD6" stroke="#6B5A3E" stroke-width="2"/>
+    <path d="M268 58L356 22L444 58z" fill="#2F6F8F" stroke="#21506A" stroke-width="2"/>
+    <g fill="#9AA7AD" stroke="#55646A" stroke-width="1"><rect x="290" y="50" width="5" height="14"/><rect x="417" y="50" width="5" height="14"/></g>
+    <g><rect x="294" y="68" width="30" height="24" fill="#BFE0F2" stroke="#6B5A3E" stroke-width="2"/><g fill="#5E7356"><rect x="294" y="68" width="30" height="4"/><rect x="294" y="74" width="30" height="4"/><rect x="294" y="80" width="30" height="4"/><rect x="294" y="86" width="30" height="4"/></g></g>
+    <rect x="392" y="68" width="30" height="24" fill="#BFE0F2" stroke="#6B5A3E" stroke-width="2"/><path d="M394 70h26v20h-26z" fill="none" stroke="#2B7BB9" stroke-width="2"/>
+    <rect x="345" y="70" width="24" height="36" fill="#8C6A44"/>
+    <path d="M369 106l40 64" stroke="#8C6A44" stroke-width="5"/><path d="M372 116h8M378 126h8M384 136h8M390 146h8M396 156h8" stroke="#8C6A44" stroke-width="3"/>
+    <!-- ladder leaning on the house -->
+    <g stroke="#D69E2E" stroke-width="3"><path d="M244 172l26-112M262 172l26-112"/><path d="M248 156h18M252 140h18M256 124h18M260 108h18M264 92h18M268 76h18"/></g>
+    <!-- a floor-height marker -->
+    <path d="M454 106v66" stroke="#1F6FB2" stroke-width="2" stroke-dasharray="5 4"/><text x="460" y="140" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#1F4F82">10 ft up</text>
+  </g>
+  <!-- cabbage palms standing straight again -->
+  <g><path d="M120 172q-4-50 4-92" stroke="#7A6345" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <g fill="#3F7A4A" stroke="#2A5534" stroke-width="1"><path d="M124 80q-36-6-58 12 28-6 58-8z"/><path d="M124 80q36-6 58 12-28-6-58-8z"/><path d="M124 80q-22-24-50-24 30 8 50 28z"/><path d="M124 80q22-24 50-24-30 8-50 28z"/><path d="M124 80q-4-30 4-44 0 22-2 44z"/></g></g>
+  <g><path d="M190 172q2-38 -4-70" stroke="#7A6345" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <g fill="#3F7A4A" stroke="#2A5534" stroke-width="1"><path d="M186 102q-30-4-48 10 22-6 48-6z"/><path d="M186 102q30-4 48 10-22-6-48-6z"/><path d="M186 102q-18-20-40-20 24 6 40 22z"/><path d="M186 102q18-20 40-20-24 6-40 22z"/></g></g>
+  <!-- a heron back at the bay -->
+  <g class="rb-heron" transform="translate(850 122)" fill="#5B6E86"><path d="M0 26q-6-16 6-24 10-6 12 4 2 12-8 20z"/><path d="M10 2q2-12 10-12l12 2-12 2q-5 1-5 8z"/><path d="M2 26l-2 18M10 26l1 18" stroke="#5B6E86" stroke-width="1.8"/></g>
+</svg>

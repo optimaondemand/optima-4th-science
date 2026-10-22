@@ -1,0 +1,277 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a mitigation plan",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🛡️ Part C &mdash; Design a Mitigation Plan"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page now; a sketch is a bonus)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one Florida hazard (hurricane wind, wildfire, urban flooding or coastal erosion). Plan like an engineer: criteria, a constraint, one built and one natural solution, the winner and a revision.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the header: week 17 is Quarter 2",
+  "old": "<div class=\"info-value\">Q3 &middot; Week 17</div>",
+  "new": "<div class=\"info-value\">Q2 &middot; Week 17</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 17 is Quarter 2",
+  "old": "Science &middot; Quarter 3 &middot;",
+  "new": "Science &middot; Quarter 2 &middot;"
+ },
+ {
+  "kind": "fix",
+  "why": "this is an Earth science lesson (4-ESS3), not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Earth Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "wrong quarter in the closing: this is the last Unit 4 lesson (review days next), not the end of Quarter 3",
+  "old": "<p><strong>You've closed out Quarter 3.</strong>",
+  "new": "<p><strong>You’ve finished the Unit 4 lessons.</strong>"
+ },
+ {
+  "kind": "fix",
+  "why": "wrong caption: the image shows the seawall winning on safety, so mangroves don’t win “across all three criteria”",
+  "old": "The decision matrix shows that the smaller natural solution actually scores higher across all three criteria — then a revision adds a backup for the slowest one.",
+  "new": "The natural solution scores higher overall, even though the seawall wins on safety. Then a revision adds a backup while the mangroves grow."
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact: “wind-buffer trees” don’t protect homes in a hurricane; the safer advice is wind-resistant trees planted away from the house",
+  "old": "SOLUTION B: Plant wind-buffer trees and improve neighborhood landscaping.",
+  "new": "SOLUTION B: Plant wind-resistant trees (like live oaks and sabal palms) away from the house, and trim dead branches before storm season."
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact (same diagram, the revision line)",
+  "old": "with wind-buffer landscaping (natural) so homes are protected by both.",
+  "new": "with wind-resistant trees planted away from the house (natural) so homes are protected by both."
+ },
+ {
+  "kind": "fix",
+  "why": "plain and accurate: wetlands are protected by law, so you can’t just fill one in",
+  "old": "(you can't bulldoze a wetland, for example)",
+  "new": "(you can’t just fill in a protected wetland, for example)"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; dash removed",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to compare two ways to protect a Florida community from one natural hazard — and choose and revise the best plan.",
+  "new": "Keep this question in mind. By the end, you’ll be able to compare two ways to protect a Florida town from a natural hazard, then choose and revise the best plan."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "A small Florida coastal town keeps getting hit by hurricane storm surge — ocean water pushing inland and flooding streets and homes. Engineers have two ideas for what to do:",
+  "new": "A small Florida coastal town keeps getting hit by storm surge: ocean water pushed onto land by hurricanes, flooding streets and homes. Engineers have two ideas:"
+ },
+ {
+  "kind": "plain",
+  "why": "a lead-in line for the photo game (the warm-up looks at real houses first)",
+  "old": "<li><strong>Idea B:</strong> Restore the mangrove forests and dunes that used to protect this coastline.</li>\n      </ul>",
+  "new": "<li><strong>Idea B:</strong> Restore the mangrove forests and dunes that used to protect this coastline.</li>\n      </ul>\n      <p>Before you choose for a whole town, look at what a real storm did to real houses.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; shorter",
+  "old": "Mitigation isn't about stopping nature — you can't stop a hurricane. It's about lowering the harm by being ready: stronger buildings, better drainage, smarter rules, healthy natural barriers. Florida communities use a mix of all of these.",
+  "new": "Mitigation isn’t about stopping nature. You can’t stop a hurricane! It’s about lowering the harm by being ready. Florida towns use a mix of three kinds:"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "mangrove forests, sand dunes, healthy wetlands — they all absorb storm energy.",
+  "new": "mangrove forests, sand dunes and healthy wetlands soak up the energy of storm waves."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "<li><strong>Compare solutions</strong> in a decision matrix — same as the resource lessons.</li>",
+  "new": "<li><strong>Compare solutions</strong> in a decision matrix, like the one below.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "the diagram is Part 3 now",
+  "old": "margin-top:22px;\">Four Hazard Mitigation Challenges</h3>",
+  "new": "margin-top:22px;\">Part 3 · Four Hazard Mitigation Challenges</h3>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; points to the review days",
+  "old": "That's real engineering — and it's the same thinking you'll bring to bigger and bigger problems as you move through the year.</p>",
+  "new": "That’s real engineering. Next come two review days, starting with a mystery on Main Street.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the shelves game is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Watch out box (the CER asks the same question)",
+  "old": "<p><strong>Common misconception:</strong> Some people think the bigger.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 1",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>\\s*<p[^>]*>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason (one thinking stop per tab)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its matrix task becomes Part C; the 72-hour fact and the 100-year flood Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the mangrove fact, the Andrew callout and Go Deeper at the end of the Lesson (the first two had shaky numbers); Part 4 = the old Explore; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Fix the Whole Town</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">The Riveras have a plan. Now the town council asks June: what about everything else that broke on Storm Night? Open each problem on the map and pick the fix that would help most.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; Part C asks for criteria and a constraint)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (6 → 5)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the sketch is a bonus",
+  "old": "A hazard mitigation plan with a decision matrix (1 built + 1 natural solution), criteria, constraints, a winner, and a revision suggestion.",
+  "new": "A mitigation plan for one Florida hazard: criteria, a constraint, a built and a natural solution, the winner and a revision. (A matrix sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether the tallest wall is the only protection, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether the tallest wall is the only way to protect a town, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]
