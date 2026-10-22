@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natural Forces & Safety Engineering Unit Guide · 4th Grade Science · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --rose-bg:#FDEEEE; --teal:#1A8A7D; --teal-bg:#E2F4F1;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+a{color:#1F6FA8;font-weight:700;}
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#1d3b2e center/cover no-repeat;min-height:250px;}
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.small{font-size:16px;color:var(--muted);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.b-rose{background:var(--rose-bg);} .b-rose .box-label{color:#A8434A;}
+.b-teal{background:var(--teal-bg);} .b-teal .box-label{color:#14695F;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+.story{background:var(--navy);color:#DCE6F7;border:none;}
+.story h2,.story strong{color:#fff;}
+.story .box{background:rgba(255,255,255,.08);color:#DCE6F7;}
+.story .box-label{color:#F2C46B;}
+.rhythm{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px;}
+.rhythm div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center;font-size:16px;}
+.rhythm b{display:block;font-family:"Lora",Georgia,serif;font-size:18px;color:var(--navy);}
+.routines{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;}
+.routines li{padding-left:30px;position:relative;font-size:17px;}
+.routines li span{position:absolute;left:0;top:0;}
+.cer{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px;}
+.cer div{border-radius:12px;padding:12px 14px;font-size:16px;}
+.cer b{display:block;font-family:"Lora",Georgia,serif;font-size:20px;color:var(--navy);}
+.weeks{display:grid;gap:14px;}
+.wk{display:grid;grid-template-columns:96px 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.wk-n{background:var(--navy);color:#fff;text-align:center;padding:14px 6px;display:flex;flex-direction:column;justify-content:center;}
+.wk-n b{font-family:"Lora",Georgia,serif;font-size:30px;line-height:1;}
+.wk-n span{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-top:4px;}
+.wk-body{padding:14px 18px;}
+.wk-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px;}
+.wk-ch{font-weight:900;color:var(--navy);font-size:18px;}
+.theme{font-size:14px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#1F8452;background:var(--green-bg);border-radius:999px;padding:2px 10px;}
+.theme.new{color:#6A4FA3;background:var(--plum-bg);}
+.wk-sum{margin:2px 0 10px;}
+.lp{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ls{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:16px;}
+.ls .lt{font-weight:900;color:var(--navy);display:block;font-size:17px;}
+.ls .ln{font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.ls .bq{display:block;font-family:"Lora",Georgia,serif;font-style:italic;color:var(--navy);margin:4px 0;}
+.ls .wd{display:block;margin-top:6px;font-size:15px;color:var(--muted);}
+.ls .wd b{color:var(--ink);}
+.home{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;}
+.home>div{border-radius:12px;padding:10px 14px;font-size:16px;}
+.home .box-label{font-size:13px;}
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.dont li::before{content:"✗";color:#C0545C;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .grid2,.grid3,.words,.routines,.howto ul,.lp,.home,.cer{grid-template-columns:1fr;}
+  .rhythm{grid-template-columns:1fr 1fr;}
+  .wk{grid-template-columns:1fr;}
+  .wk-n{flex-direction:row;gap:8px;align-items:baseline;justify-content:flex-start;padding:8px 16px;}
+  .wk-n b{font-size:22px;}
+  .wk-n span{order:-1;margin-top:0;}
+  .card{padding:18px 16px;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card,.wk,.howto{break-inside:avoid;}
+  .card{margin-top:12px;padding:14px 16px;}
+  .hero,.story,.wk-n{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade Science</div>
+      <h1>Unit 5: Energy, Motion &amp; Collisions</h1>
+      <div class="sub">Weeks 18–24 · The tools scientists use to observe, and how energy moves, bumps, changes form and travels as sound and heat</div>
+      <div class="chips">
+        <span class="chip">7 weeks</span>
+        <span class="chip">14 lessons + 2 review days</span>
+        <span class="chip">1 unit assessment</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('images/18-01-bee-wing.jpg');" role="img" aria-label="A honey bee wing up close, showing its veins and tiny hairs"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Tabs, in order, left to right.</strong> Each lesson starts with a Warm-Up (or Vocabulary) tab and ends with the Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>🧠</span><strong>Self-Check is 3 quick questions.</strong> It isn’t graded. It shows your student what to look at again before the Assignment.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📋</span><strong>Everything is gathered at the end.</strong> The bottom of the Assignment tab collects every typed answer. <strong>Copy</strong> or <strong>Download</strong> it and turn it in on Canvas.</li>
+      <li><span>🔊</span><strong>Listen</strong> at the top reads the page aloud, with a speed control. Field Station lessons also have short audio clips from the unit’s scientist, and the page lights up to show what the scientist is talking about.</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="card">
+    <div class="card-head"><span class="ico">⚙️</span><h2>About This Unit</h2></div>
+    <p>This unit starts with <strong>tools</strong>. In week 18, your student learns that scientists pick a tool to fit the question: a hand lens or microscope for things too small to see, a telescope for things too far away. Every tool has a <strong>limitation</strong>, something it can’t do.</p>
+    <p>Then the unit turns to <strong>energy</strong>. Your student finds out that moving things carry energy (and faster things carry more), that energy can <strong>transfer</strong> from one place to another, that <strong>collisions</strong> hand energy from one object to another, and that devices <strong>convert</strong> energy from one form to another. The last weeks look at sound, wind and water power, and how heat flows from warm to cool.</p>
+    <p>By the end, your student should be able to <strong>pick the right tool</strong> and explain why, <strong>connect speed and energy</strong> with evidence from fair tests, and <strong>trace where energy goes</strong> in a collision or a device.</p>
+    <p class="quote">“Energy doesn’t disappear. It moves, or it changes form.”<small>The big idea that runs through Unit 5</small></p>
+  </section>
+
+  <!-- HOW A WEEK WORKS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🗓️</span><h2>How a Week Works</h2></div>
+    <p>Each week has <strong>two lessons</strong> on one topic. Often the first explains an idea and the second is an <strong>investigation</strong> or <strong>engineering challenge</strong>, where your student plans a fair test, runs trials or designs something. Each lesson follows the same path:</p>
+    <div class="rhythm">
+      <div><b>🌅 Warm-Up</b>A quick start and the day’s six words</div>
+      <div><b>📘 The Lesson</b>Reading, pictures and short games or activities</div>
+      <div><b>🧠 Self-Check</b>3 quick questions, not graded</div>
+      <div><b>✍️ Assignment</b>Show what you know, then turn it in</div>
+    </div>
+    <ul class="routines">
+      <li><span>❓</span><strong>A Big Question</strong> at the top that the lesson answers by the end</li>
+      <li><span>✏️</span><strong>Part B:</strong> short answers in complete sentences</li>
+      <li><span>🔬</span><strong>Part C:</strong> a bigger task, like describing what three tools would show or planning a test</li>
+      <li><span>🗣️</span><strong>Use Your Evidence:</strong> agree or disagree with a claim, with two pieces of evidence</li>
+      <li><span>📬</span><strong>Turn-in checklist</strong> at the bottom, ending with submitting in Canvas</li>
+    </ul>
+  </section>
+
+  <!-- CER -->
+  <section class="card">
+    <div class="card-head"><span class="ico">⚖️</span><h2>Claim, Evidence, Reasoning</h2><span class="tag">Used all year</span></div>
+    <p>Every lesson ends with a short argument. A “classmate” says something like <em>“You should always use the most powerful tool you can find,”</em> or <em>“When two cars crash, all the energy just disappears,”</em> and your student decides whether they agree, then proves it. Scientists call this <strong>CER</strong>:</p>
+    <div class="cer">
+      <div class="b-sky"><b>Claim</b>What I think. One sentence.</div>
+      <div class="b-green"><b>Evidence</b>Facts from the lesson that show it. Two pieces.</div>
+      <div class="b-gold"><b>Reasoning</b>Why that evidence proves the claim.</div>
+    </div>
+    <p class="small" style="margin-top:12px;">In this unit, the best evidence often comes from a test: a measurement, or a pattern across several trials. A helpful question at home: <strong>“What did the test show?”</strong></p>
+  </section>
+
+  <!-- FIELD STATION -->
+  <section class="card story">
+    <div class="card-head"><span class="ico">🔍</span><h2>The Field Station: Meet Sam Park</h2></div>
+    <p>In <strong>Field Station</strong> lessons, science becomes a field expedition with a <strong>mystery</strong> to solve. This unit’s scientist is <strong>Sam Park</strong>, an engineer (someone who designs and builds things to solve problems) who works in the same made-up town as Unit 4, Palmetto Springs. In 18.01, dead fish wash up on Palmetto Beach and swimmers are coughing. A lifeguard brings Sam a jar of the water. What is hiding in it, and which tool can find it? More of Sam’s cases arrive as each week of the unit is finished.</p>
+    <div class="grid3">
+      <div class="box"><div class="box-label">Short videos</div>As they’re recorded, quick videos from your student’s teacher walk through each part of the page.</div>
+      <div class="box"><div class="box-label">Four clues</div>Each game your student finishes unlocks a clue. With all four, they crack the case.</div>
+      <div class="box"><div class="box-label">Answers on the page</div>Everything is typed or dragged right on the page and gathered at the end. No separate notebook needed.</div>
+    </div>
+    <p style="margin-top:12px;">Sam and Palmetto Springs are made up, but the photos and science are real. Ask your student: <strong>“Did you crack the case? What were the clues?”</strong></p>
+  </section>
+
+  <!-- WEEK BY WEEK -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🗺️</span><h2>The Unit, Week by Week</h2></div>
+    <p class="small" style="margin-bottom:14px;">Each week shows both lessons, the words your student will use, and two easy ways to keep the science going at home.</p>
+    <div class="weeks">
+      <div class="wk"><div class="wk-n"><b>18</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Every tool has limits, so pick the one that fits the question.</span><span class="theme">Tools for seeing</span> <span class="theme new">Field Station · new</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 18.01</span><span class="lt">Tech Tools: Microscopic Things</span><span class="bq">“How do tools help us observe things that are too small to see clearly?”</span>Meets Sam Park and solves Case 18, “The Red Water Sample”: dead fish wash up at Palmetto Beach and swimmers are coughing. Hears a beach health alert, turns a “zoom machine” from their eyes to a hand lens, a light microscope and an electron microscope (all real photos), sorts tiny things by the tool that can show them, picks the right tool for four lab requests, then focuses a virtual microscope, counts red tide cells and checks the count against the real chart Florida scientists use. Bonus: focuses a hand lens at 2x, 5x and 10x.<span class="wd"><b>Words:</b> microscope, hand lens, magnify, limitation, observe, detail</span></div><div class="ls"><span class="ln">Lesson 18.02</span><span class="lt">Tech Tools: Telescopes &amp; Large Things</span><span class="bq">“How do tools help us observe things that are too FAR AWAY to see clearly?”</span>Flips the question: binoculars, backyard telescopes and space telescopes, and what each one can and can’t show about the Moon, planets and stars.<span class="wd"><b>Words:</b> telescope, distant, light-year, limitation, observe, image</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>After 18.01: “What was hiding in the water at Palmetto Beach, and which tool found it?” (Listen for: red tide, tiny living cells; a light microscope can count them alive, but an electron microscope needs dried samples.) After 18.02: “Why do scientists put some telescopes in space?” (Listen for: Earth’s air blurs and blocks some of the light.) “Is the strongest tool always the best?” (Listen for: no, the best tool fits the question.)</div><div class="b-teal"><div class="box-label">Try at home</div>Look at a leaf, a fingertip or a grain of sand with a magnifying glass (or a phone camera zoomed in). What detail shows up that your eyes missed? At night, look at the Moon with binoculars if you have them.</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>19</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">The faster something moves, the more energy it carries.</span><span class="theme">Speed and energy</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 19.01</span><span class="lt">Motion and Energy</span><span class="bq">“How are an object’s speed and its energy connected?”</span>Compares soft and hard hits, learns that every moving object carries energy, and builds a speed-and-energy chart.<span class="wd"><b>Words:</b> energy, motion, speed, evidence, observe, kinetic</span></div><div class="ls"><span class="ln">Lesson 19.02</span><span class="lt">Investigation: Why Faster Objects Have More Energy</span><span class="bq">“What evidence — from carefully measured trials — shows that faster objects carry more energy?”</span>Plans a fair test with a ramp and a rolling ball, runs several trials and measures how far its push moves a target.<span class="wd"><b>Words:</b> trial, distance, speed, time, controlled, measurement</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>After 19.01: “If two balls hit a block, which one pushes it farther?” (Listen for: the faster one, because it carries more energy.) After 19.02: “Why run more than one trial?” (Listen for: one try can be a fluke; several trials show a pattern.)</div><div class="b-teal"><div class="box-label">Try at home</div>Roll a ball slowly, then quickly, into an empty box or a stack of paper cups. Which roll moves it farther? Try each speed three times.</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>20</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Energy can move from place to place, and you can prove it moved.</span><span class="theme">Energy transfer</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 20.01</span><span class="lt">How Does Energy Move?</span><span class="bq">“How can energy move from one place to another — and how do we know it actually moved?”</span>Finds four ways energy travels: heat, light, sound and electricity, each with a source and a place it ends up.<span class="wd"><b>Words:</b> transfer, heat, light, sound, electrical, source</span></div><div class="ls"><span class="ln">Lesson 20.02</span><span class="lt">Investigation: Observing Energy Moving</span><span class="bq">“What evidence can YOU collect to show that energy moved between two places?”</span>Sets up energy “stations” and collects observations and measurements as evidence.<span class="wd"><b>Words:</b> transfer, station, receiver, evidence, measurement, source</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>After 20.01: “Name a way energy moves without anything touching.” (Listen for: sunlight, sound through the air, heat from a stove burner.) After 20.02: “How can you prove energy moved?” (Listen for: measure a change, like something getting warmer, louder or moving.)</div><div class="b-teal"><div class="box-label">Try at home</div>Go on an energy hunt in the kitchen: find one thing that gives off light, one that makes sound and one that gives off heat. Where does each one’s energy go?</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>21</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">When objects bump, energy moves from one to the other.</span><span class="theme">Collisions</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 21.01</span><span class="lt">What Happens When Objects Collide?</span><span class="bq">“What happens to the motion and energy when two objects bump into each other?”</span>Looks at collisions as energy handoffs and the ways motion can change (speed up, slow down, change direction).<span class="wd"><b>Words:</b> transfer, collision, motion change, prediction, before/after, source</span></div><div class="ls"><span class="ln">Lesson 21.02</span><span class="lt">Investigation: Predicting Collisions</span><span class="bq">“How can YOU use multiple trials to test predictions about collisions and find a pattern?”</span>Writes predictions first, then tests collisions in several trials and looks for a pattern.<span class="wd"><b>Words:</b> trial, collision, outcome, prediction, pattern, variable</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>After 21.01: “When two cars bump, does the energy disappear?” (Listen for: no, it moves into the other car, sound and a little heat.) After 21.02: “Why predict before you test?” (Listen for: so you can check your thinking against what really happens.)</div><div class="b-teal"><div class="box-label">Try at home</div>Flick one coin across a table into another coin. Predict first: which way will the second coin go, and how far? Try it a few times.</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>22</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Energy can change from one form into another.</span><span class="theme">Energy conversion</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 22.01</span><span class="lt">Energy Conversion</span><span class="bq">“How can energy change from one form into a totally different form?”</span>Traces devices from input energy to output energy, like a toaster turning electrical energy into heat and light.<span class="wd"><b>Words:</b> input energy, output energy, transformation, device, convert, useful energy</span></div><div class="ls"><span class="ln">Lesson 22.02</span><span class="lt">Engineering: Design a Device That Converts Energy</span><span class="bq">“How can YOU design a working device that converts one form of energy into another?”</span>Follows the engineering design cycle: criteria and constraints, a first prototype, a test and a redesign.<span class="wd"><b>Words:</b> criteria, constraint, prototype, device, redesign, test</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>After 22.01: “Does a toaster make heat out of nothing?” (Listen for: no, it changes electrical energy into heat and light.) After 22.02: “Do engineers get it right on the first try?” (Listen for: no, they test and redesign.)</div><div class="b-teal"><div class="box-label">Try at home</div>Pick three things at home that plug in or use batteries. For each one, say what energy goes in and what comes out (a lamp: electrical in, light and heat out).</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>23</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Sound is a vibration, and moving air and water can do work.</span><span class="theme">Sound, wind and water</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 23.01</span><span class="lt">How Does Sound Happen?</span><span class="bq">“What is sound, really — and why do high notes sound different from low ones?”</span>Learns that sound starts with a vibration and travels as a wave, and that faster vibrations make higher sounds.<span class="wd"><b>Words:</b> vibration, sound, wave, device, frequency, amplitude</span></div><div class="ls"><span class="ln">Lesson 23.02</span><span class="lt">Moving Air and Water Energy</span><span class="bq">“How can moving air or water do WORK — turning a wheel, spinning a fan, or lighting up a town?”</span>Sees how wind and moving water push blades and wheels, and tests a pinwheel.<span class="wd"><b>Words:</b> wind energy, water energy, motion, device, renewable, observation</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>After 23.01: “What makes a sound high or low?” (Listen for: faster vibrations make higher sounds.) After 23.02: “How can wind make electricity?” (Listen for: it pushes the blades of a turbine, and the turning makes electricity.)</div><div class="b-teal"><div class="box-label">Try at home</div>Hum with your hand on your throat and feel the vibration. Then stretch a rubber band over an open box and pluck it, tighter and looser. Which makes the higher sound?</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>24</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Heat flows from warm to cool, and some materials carry it faster.</span><span class="theme">Heat and data</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Lesson 24.01</span><span class="lt">Energy Moves Between Objects</span><span class="bq">“How does heat move between objects — and why does a metal spoon feel cold but a wooden spoon doesn’t?”</span>Learns that heat flows from warmer to cooler objects, and sorts materials into conductors and insulators.<span class="wd"><b>Words:</b> heat, conductor, insulator, device, transfer, temperature</span></div><div class="ls"><span class="ln">Lesson 24.02</span><span class="lt">Data Task: Energy Changes Form</span><span class="bq">“How can we use evidence to show that energy CHANGED from one form to another?”</span>Reads evidence cards and names each system’s starting and resulting energy.<span class="wd"><b>Words:</b> starting energy, resulting energy, evidence, device, claim, energy change</span></div></div>
+        <div class="home"><div class="b-gold"><div class="box-label">Ask at dinner</div>After 24.01: “Why does a metal spoon feel colder than a wooden one?” (Listen for: metal is a conductor, so it carries heat out of your hand faster.) “Does cold flow into your hand from an ice cube?” (Listen for: no, heat flows out of your hand into the ice.) After 24.02: “Where did the energy in a flashlight start?” (Listen for: in the battery.)</div><div class="b-teal"><div class="box-label">Try at home</div>With an adult, put a metal spoon and a wooden spoon in a mug of warm (not hot) water. After a minute, touch each handle. Which one carried the heat?</div></div>
+      </div></div>
+      <div class="wk"><div class="wk-n"><b>R</b><span>Review</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Two review days before the unit assessment.</span><span class="theme">Unit 5 review</span></div>
+        <div class="lp"><div class="ls"><span class="ln">Review Days 1 and 2</span><span class="lt">Coming soon</span>Two review and lab days pull the unit together before the assessment. This guide will describe them when they’re ready.</div></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- KEY WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Ten Words That Carry the Unit</h2></div>
+    <div class="words">
+      <div class="word"><b>Magnify</b><span>To make something look bigger than it really is.</span></div>
+      <div class="word"><b>Limitation</b><span>Something a tool can’t do. Every tool has some.</span></div>
+      <div class="word"><b>Energy</b><span>The ability to cause change, like making something move, warm up, light up or make a sound.</span></div>
+      <div class="word"><b>Speed</b><span>How fast something moves. Faster objects carry more energy.</span></div>
+      <div class="word"><b>Trial</b><span>One run of a test. Scientists run several to find a pattern.</span></div>
+      <div class="word"><b>Transfer</b><span>When energy moves from one place or object to another.</span></div>
+      <div class="word"><b>Collision</b><span>When two objects bump into each other and energy moves between them.</span></div>
+      <div class="word"><b>Convert</b><span>To change energy from one form into another, like electrical energy into light.</span></div>
+      <div class="word"><b>Vibration</b><span>A quick back-and-forth motion. Every sound starts with one.</span></div>
+      <div class="word"><b>Conductor / insulator</b><span>A conductor carries heat easily (like metal). An insulator slows it down (like wood or foam).</span></div>
+    </div>
+  </section>
+
+  <!-- HOW LEARNING IS CHECKED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📋</span><h2>How Learning Is Checked</h2></div>
+    <div class="grid2">
+      <div class="box b-sky"><div class="box-label">Every lesson</div>Short answers, a bigger Part C task, and a short claim with evidence, submitted in Canvas. The Self-Check isn’t graded.</div>
+      <div class="box b-gold"><div class="box-label">End of unit</div><strong>Unit 5 Assessment: Energy, Motion &amp; Collisions</strong> (take it slow): pick the right tool for a job; use ramp data and a fair test to connect speed and energy; explain what happens in a collision; trace energy conversions, sound, and wind and water energy; sort conductors and insulators; and write a claim with evidence.</div>
+    </div>
+    <p class="small" style="margin-top:12px;"><strong>It isn’t a memory test.</strong> The questions ask your student to <em>use</em> what they learned in Lessons 18.01 to 24.02. Answers are typed and submitted in Canvas.</p>
+  </section>
+
+  <!-- GOOD TO KNOW -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💛</span><h2>Good to Know Ahead of Time</h2></div>
+    <div class="grid2">
+      <div class="box b-plum"><div class="box-label">Weeks 19–21 · Hands-on tests</div>Several lessons ask your student to roll a ball down a ramp, bump objects together or run a simple station. A book propped on a few others, a ball or marble and a small box are all they need. Safe, small and on a table or floor works best.</div>
+      <div class="box b-teal"><div class="box-label">Week 24 · Heat</div>The heat investigation pours warm tap water into three kinds of cups. Please help with the pouring, and keep it warm, not hot.</div>
+    </div>
+  </section>
+
+  <!-- HOW TO HELP -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🤝</span><h2>How to Help (Without Doing It for Them)</h2></div>
+    <div class="grid2">
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;">Try this</h3>
+        <ul class="check">
+          <li>Ask “How do you know?” or “What did the test show?”</li>
+          <li>When something moves, bumps or warms up at home, ask: “Where did the energy come from, and where did it go?”</li>
+          <li>Use the “Ask at dinner” questions above. Talking first makes the writing easier.</li>
+          <li>Encourage more than one try. Scientists run several trials before they trust a result.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;">Try to avoid</h3>
+        <ul class="check dont">
+          <li>Wording answers for them. Teachers need to see your student’s own thinking.</li>
+          <li>Looking up answers online. The questions ask for evidence from the lesson.</li>
+          <li>Skipping the submit step. Work isn’t turned in until it’s in Canvas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEE IT -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📍</span><h2>See It in Florida</h2><span class="tag">Optional</span></div>
+    <div class="grid3">
+      <div class="box b-teal"><div class="box-label">Sarasota</div><strong>Mote Marine Laboratory &amp; Aquarium.</strong> Mote scientists study red tide, the same tiny cells your student counts in Lesson 18.01.</div>
+      <div class="box b-teal"><div class="box-label">Merritt Island</div><strong>Kennedy Space Center Visitor Complex.</strong> Rockets, space telescopes and a lot of energy changing form.</div>
+      <div class="box b-teal"><div class="box-label">Orlando</div><strong>Orlando Science Center.</strong> Hands-on exhibits, plus an observatory with telescopes on some evenings.</div>
+    </div>
+    <p class="small" style="margin-top:12px;">Check hours before you go. A playground works too: a slide, a swing and a seesaw are full of motion and energy.</p>
+  </section>
+
+  <p class="foot">Next: Unit 6, Motion, Waves, Matter &amp; Magnets<br><br>Optima Academy Online · 4th Grade Science · Unit 5 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+
+</body>
+</html>
