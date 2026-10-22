@@ -1,0 +1,77 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Palmetto Springs on a stormy night: dark clouds and slanted rain, two cabbage palms bending in the wind, a house with a glowing window where a weather radio sits, and the dock's tide gauge with waves rising up its marks.">
+  <style>
+    .sn-rain { animation: snRain .7s linear infinite; }
+    .sn-rain2 { animation: snRain .9s linear infinite; }
+    .sn-cloud { animation: snCloud 26s linear infinite; }
+    .sn-palm { animation: snSway 2.6s ease-in-out infinite; transform-origin: 112px 168px; }
+    .sn-palm2 { animation: snSway 2.2s ease-in-out infinite .5s; transform-origin: 214px 172px; }
+    .sn-flash { animation: snFlash 9s linear infinite; }
+    .sn-wave { animation: snWave 3s ease-in-out infinite; }
+    .sn-glow { animation: snGlow 2.4s ease-in-out infinite; }
+    @keyframes snRain { from { transform: translate(0,0); } to { transform: translate(-24px,60px); } }
+    @keyframes snCloud { from { transform: translateX(0); } to { transform: translateX(-460px); } }
+    @keyframes snSway { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(-11deg); } }
+    @keyframes snFlash { 0%,90%,93%,100% { opacity:0; } 91% { opacity:.35; } 92% { opacity:.08; } 92.5% { opacity:.25; } }
+    @keyframes snWave { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes snGlow { 0%,100% { opacity:.55; } 50% { opacity:.9; } }
+    @media (prefers-reduced-motion: reduce) { .sn-rain, .sn-rain2, .sn-cloud, .sn-palm, .sn-palm2, .sn-flash, .sn-wave, .sn-glow { animation:none; } .sn-palm, .sn-palm2 { transform: rotate(-7deg); } }
+  </style>
+  <defs>
+    <linearGradient id="snSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1428"/><stop offset=".7" stop-color="#22324F"/><stop offset="1" stop-color="#34465F"/></linearGradient>
+    <linearGradient id="snBay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A4A66"/><stop offset="1" stop-color="#132638"/></linearGradient>
+    <radialGradient id="snWin" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#FFE7A3"/><stop offset="1" stop-color="#F5B83D"/></radialGradient>
+  </defs>
+  <rect width="920" height="200" fill="url(#snSky)"/>
+  <!-- clouds (two copies so the drift loops) -->
+  <g class="sn-cloud" fill="#3B4C68" opacity=".85">
+    <path d="M20 46q30-30 70-12 20-26 60-10 40-18 66 12 34 4 30 24H20z"/><path d="M300 30q24-22 60-8 26-20 58 0 40-6 44 22H296z"/><path d="M560 52q30-26 70-10 30-22 66 4 36 0 34 22H556z"/>
+    <path d="M480 46q30-30 70-12 20-26 60-10 40-18 66 12 34 4 30 24H480z"/><path d="M760 30q24-22 60-8 26-20 58 0 40-6 44 22H756z"/><path d="M1020 52q30-26 70-10 30-22 66 4 36 0 34 22h-174z"/>
+  </g>
+  <rect class="sn-flash" width="920" height="200" fill="#DDE6FF" opacity="0"/>
+  <!-- the bay -->
+  <path d="M430 150Q520 140 600 148T760 144T920 146V200H430Z" fill="url(#snBay)"/>
+  <g class="sn-wave" fill="none" stroke="#7FA6C6" stroke-width="2.5" stroke-linecap="round" opacity=".8">
+    <path d="M450 160q14-8 28 0t28 0 28 0"/><path d="M560 170q14-8 28 0t28 0 28 0"/><path d="M700 158q14-8 28 0t28 0 28 0"/><path d="M820 172q14-8 28 0t28 0"/>
+  </g>
+  <!-- the land -->
+  <path d="M0 168Q120 158 240 166T440 156V200H0Z" fill="#1F2E25"/>
+  <!-- the house with its lit window and the weather radio -->
+  <g>
+    <rect x="300" y="106" width="104" height="58" fill="#3A4051"/>
+    <path d="M292 108l60-34 60 34z" fill="#2A2F3C"/>
+    <rect x="316" y="122" width="34" height="26" rx="2" fill="url(#snWin)" class="sn-glow"/>
+    <path d="M333 122v26M316 135h34" stroke="#3A4051" stroke-width="2"/>
+    <rect x="322" y="138" width="20" height="10" rx="2" fill="#2A2F3C"/><circle cx="328" cy="143" r="3" fill="#5A6170"/><rect x="333" y="140" width="7" height="5" fill="#B9E3A6"/><path d="M340 138l4-9" stroke="#2A2F3C" stroke-width="2"/>
+    <rect x="364" y="128" width="22" height="36" fill="#2A2F3C"/>
+    <ellipse cx="333" cy="135" rx="40" ry="26" fill="#FFE7A3" opacity=".08"/>
+  </g>
+  <!-- two cabbage palms bending in the wind -->
+  <g class="sn-palm">
+    <path d="M112 168q-4-50 10-96" stroke="#5B4A36" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <g fill="#2F5D3A" stroke="#1E3D27" stroke-width="1"><path d="M122 72q-40-6-66 14 30-6 66-10z"/><path d="M122 72q-30-20-60-14 34 4 60 18z"/><path d="M122 72q-10-30-34-40 18 18 30 42z"/><path d="M122 72q-48 10-62 40 22-24 62-36z"/><path d="M122 72q10-26 0-46 0 22-4 46z"/><path d="M122 72q-22 18-28 50 12-26 30-46z"/></g>
+  </g>
+  <g class="sn-palm2">
+    <path d="M214 172q-2-38 8-72" stroke="#5B4A36" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <g fill="#2F5D3A" stroke="#1E3D27" stroke-width="1"><path d="M222 100q-34-4-56 12 26-6 56-8z"/><path d="M222 100q-26-16-50-10 28 4 50 14z"/><path d="M222 100q-8-26-28-34 14 16 24 36z"/><path d="M222 100q-40 8-52 34 18-20 52-30z"/><path d="M222 100q8-22 0-38 0 18-4 38z"/></g>
+  </g>
+  <!-- the dock and its tide gauge -->
+  <rect x="470" y="138" width="130" height="7" fill="#5A4430"/>
+  <rect x="482" y="140" width="6" height="40" fill="#4A3826"/><rect x="540" y="140" width="6" height="40" fill="#4A3826"/><rect x="592" y="140" width="6" height="40" fill="#4A3826"/>
+  <rect x="610" y="96" width="14" height="88" fill="#F2F2F2" stroke="#1E2618" stroke-width="1.5"/>
+  <g stroke="#1E2618" stroke-width="2"><path d="M610 108h9M610 120h6M610 132h9M610 144h6M610 156h9M610 168h6"/></g>
+  <g font-family="Nunito,sans-serif" font-size="8" font-weight="900" fill="#1E2618"><text x="620" y="111">8</text><text x="620" y="135">6</text><text x="620" y="159">4</text></g>
+  <path class="sn-wave" d="M600 150q8-6 16 0t16 0 16 0" stroke="#BFD8EC" stroke-width="3" fill="none"/>
+  <!-- rain -->
+  <g class="sn-rain" stroke="#9FB7D6" stroke-width="1.6" opacity=".55" stroke-linecap="round">
+    <path d="M40 0l-8 20M120 -20l-8 20M200 10l-8 20M280 -10l-8 20M360 0l-8 20M440 -20l-8 20M520 10l-8 20M600 -10l-8 20M680 0l-8 20M760 -20l-8 20M840 10l-8 20M920 -10l-8 20"/>
+    <path d="M70 60l-8 20M150 40l-8 20M230 70l-8 20M310 50l-8 20M390 60l-8 20M470 40l-8 20M550 70l-8 20M630 50l-8 20M710 60l-8 20M790 40l-8 20M870 70l-8 20"/>
+    <path d="M20 120l-8 20M100 100l-8 20M180 130l-8 20M260 110l-8 20M340 120l-8 20M420 100l-8 20M500 130l-8 20M580 110l-8 20M660 120l-8 20M740 100l-8 20M820 130l-8 20M900 110l-8 20"/>
+  </g>
+  <g class="sn-rain2" stroke="#C9D8EE" stroke-width="1.2" opacity=".4" stroke-linecap="round">
+    <path d="M55 30l-6 16M135 10l-6 16M215 40l-6 16M295 20l-6 16M375 30l-6 16M455 10l-6 16M535 40l-6 16M615 20l-6 16M695 30l-6 16M775 10l-6 16M855 40l-6 16"/>
+    <path d="M85 90l-6 16M165 70l-6 16M245 100l-6 16M325 80l-6 16M405 90l-6 16M485 70l-6 16M565 100l-6 16M645 80l-6 16M725 90l-6 16M805 70l-6 16M885 100l-6 16"/>
+    <path d="M45 150l-6 16M125 170l-6 16M205 150l-6 16M445 160l-6 16M525 150l-6 16M685 160l-6 16M765 150l-6 16M845 170l-6 16"/>
+  </g>
+  <!-- a heron hunkered on the far shore (still here, waiting it out) -->
+  <g transform="translate(820 128)" fill="#1A2533"><path d="M0 18q-4-14 6-20 8-4 10 4 2 10-6 16z"/><path d="M8 -2q2-8 8-8l10 2-10 1q-4 1-4 6z"/><path d="M2 18l-2 14M8 18l1 14" stroke="#1A2533" stroke-width="1.6"/></g>
+</svg>

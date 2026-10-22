@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""Writes video.json (Video Studio plan) for 17.01 · Storm Night."""
+import json
+pics = {
+    'before': {'src': 'images/17-01-mexico-before.jpg', 'cap': 'Mexico Beach, Florida, April 2017 (NOAA, public domain)'},
+    'after': {'src': 'images/17-01-mexico-after.jpg', 'cap': 'Mexico Beach the day after Hurricane Michael, Oct. 11, 2018 (NOAA, public domain)'},
+}
+C_CASE, C_GREEN, C_PURP, C_RED, C_BLUE = '#B9822A', '#2F7A55', '#7A5BB5', '#C8553D', '#2D7AA6'
+S = {}
+S['welcome'] = {'label': 'Welcome · storm night', 'length': '50–60 s', 'want': True, 'parts': [
+    {'label': '🗺️ The town map', 'tag': 'CASE FILE 17', 'title': 'Palmetto Springs tonight', 'col': C_CASE, 'rows': [['🔴', 'The red zone by the bay must evacuate by 6 PM'], ['📏', 'The tide gauge on the dock'], ['🌾', 'Cypress Slough, the wetland']]},
+    {'label': '🗂 The case question', 'tag': 'CASE FILE 17', 'title': 'Storm Night', 'col': C_CASE, 'body': 'What did the storm change in Palmetto Springs, and was all of it bad?'}],
+    'script': '(Hold up a flashlight and a bottle of water.) If a hurricane were coming tonight, what would you grab first?\n\n[ON SCREEN: The town map]\nA hurricane is heading for Palmetto Springs, June’s town. Look at the red zone by the bay. Those families have to leave before the storm.\n\n[ON SCREEN: The case question]\nTonight you’ll stay up with June, hour by hour. In the morning, you’ll figure out what the storm changed, and whether all of it was bad. Press Listen to hear from June, right below me.'}
+S['warmup'] = {'label': 'Warm-Up · the weather radio (Clue 1)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '📻 The weather radio', 'tag': 'WARM-UP GAME', 'title': 'Find the three dangers', 'col': C_RED, 'rows': [['💨', 'Strong wind'], ['🌧️', 'Heavy rain'], ['🌊', 'Storm surge']]}],
+    'script': '(Make an alarm sound: beep, beep, beep!) That’s what a weather radio sounds like. It wakes up when dangerous weather is coming.\n\n[ON SCREEN: The weather radio]\nPress Play and listen to the warning. Then tap the three dangers the storm is bringing. Careful: a place or a time is not a danger.\n\nThen write three things the storm might change in town. Think beyond buildings! Press Listen for June’s tip.'}
+S['part1'] = {'label': 'Part 1 · the storm clock (Clue 2)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'label': '🕛 The storm clock', 'tag': 'PART 1 GAME', 'title': 'One night, two hours at a time', 'col': C_BLUE, 'rows': [['▶', 'Press the button to move the clock'], ['☎️', 'A call comes in'], ['💨🌧️🌊', 'Drag the cause onto the call']]},
+    {'label': '🌊 The tide gauge', 'tag': 'WATCH THIS', 'title': 'How high is the bay?', 'col': C_BLUE, 'body': 'Normal high tide is about 2 feet. Watch what happens at midnight.'}],
+    'script': '(Push one domino with your finger, or tap one block into another.) A cause makes something happen. The effect is what changes.\n\n[ON SCREEN: The storm clock]\nPress the button to move through the night. When a call comes in, drag the danger that caused it onto the call.\n\n[ON SCREEN: The tide gauge]\nKeep your eye on the tide gauge. Normal high tide is about two feet. What happens at midnight? Press Listen.'}
+S['explore'] = {'label': 'Part 4 · trace the chain (Clue 4)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'kind': 'photo', 'pic': 'after', 'label': '🛩️ The morning after'},
+    {'label': '🔗 Trace the chain', 'tag': 'PART 4 GAME', 'title': 'Cause → Land → Ecosystem → People', 'col': C_PURP, 'body': 'Follow the storm surge. Two cards come from a different danger.'}],
+    'script': '[ON SCREEN: The morning after]\nThis is a real Florida town the morning after Hurricane Michael. You stamped what changed: the land, the ecosystem and the people.\n\n[ON SCREEN: Trace the chain]\nNow let’s link it all together, like dominoes. Follow the storm surge: the cause, then the land, the ecosystem and the people. Two cards don’t belong. Then press June’s last reading. I think it will surprise you! Press Listen.'}
+S['assignment'] = {'label': 'Assignment · crack the case', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '🔓 Crack the case', 'tag': 'TOP OF THE ASSIGNMENT', 'title': 'What did the storm change?', 'col': C_CASE, 'body': 'Pick the answer that fits all four clues.'},
+    {'label': '✍️ Your case report', 'tag': 'WHAT TO WRITE', 'title': 'Three places to write', 'col': C_GREEN, 'rows': [['Part B', 'Two short answers'], ['Part C', 'Trace a chain for any Florida natural event'], ['CER', 'Claim, evidence, reasoning'], ['📋', 'Copy your Gathered Answers into Canvas']]}],
+    'script': '[ON SCREEN: Crack the case]\nYou have four clues. Crack the case at the top of this tab: what did the storm change, and was all of it bad?\n\n[ON SCREEN: Your case report]\nThen write your case report: two short answers, a cause-and-effect chain for any Florida natural event in Part C, and a CER. Want to sketch your chain? That’s a bonus. Stuck? Press Hint under any box. Press Listen.'}
+S['evidence'] = {'label': 'Use your evidence · CER', 'length': '35–45 s', 'want': True, 'parts': [
+    {'label': '💬 The claim', 'tag': 'USE YOUR EVIDENCE', 'title': 'A classmate says…', 'col': C_RED, 'body': '“All natural events are disasters. The fewer of them we have, the better.”'},
+    {'label': '🧩 The planner', 'tag': 'PLAN BEFORE YOU WRITE', 'title': 'Claim · Evidence · Reasoning', 'col': C_PURP, 'rows': [['1', 'Tap I agree or I disagree.'], ['2', 'Tap two pieces of evidence.'], ['3', 'You write the reasoning.']]}],
+    'script': '[ON SCREEN: The claim]\nA classmate says all natural events are disasters. Hmm. Think about Bay Street. Now think about June’s spring.\n\nThere’s no wrong side, as long as you prove it.\n\n[ON SCREEN: The planner]\nRemember CER. Tap your side and two facts from today. Then explain how your facts prove your claim. Try starting with “This shows that…” Press Listen.'}
+S['closing'] = {'label': 'Case closed', 'length': '30–40 s', 'want': True, 'parts': [
+    {'label': '📈 Your specimen', 'tag': 'FIELD NOTEBOOK', 'title': 'Storm-night tide gauge chart', 'col': C_CASE, 'body': 'Finish the checklist to stamp CASE CLOSED.'},
+    {'label': '➡ Next time', 'tag': 'LESSON 17.02', 'title': 'Building for safety', 'col': C_GREEN, 'body': 'How can engineers help a town stay safer in the next storm?'}],
+    'script': 'Case closed! You stayed up all night with June, and you traced one storm through the land, the ecosystem and the people. You even found the good side.\n\n[ON SCREEN: Your specimen]\nFinish your checklist, and the tide gauge chart goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next time]\nRemember the houses still standing in Mexico Beach? Next time, we think like engineers: how can a town stay safer in the next storm? Press Listen for June’s last word.'}
+S['part2'] = {'label': 'Part 2 · the morning flyover (Clue 3)', 'length': '30–40 s', 'want': False, 'parts': [
+    {'kind': 'photo', 'pic': 'before', 'label': '🏖️ Before'}, {'kind': 'photo', 'pic': 'after', 'label': '🛩️ After'}],
+    'script': '[ON SCREEN: Before]\nThis is Mexico Beach, a real Florida town, before Hurricane Michael.\n\n[ON SCREEN: After]\nAnd this is the same spot the next day. Drag the slider, tap each number and stamp it: land, ecosystem or people. Press Listen.'}
+S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts': [],
+    'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
+V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part3', 'partb', 'partc']}
+json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print('video.json written')
