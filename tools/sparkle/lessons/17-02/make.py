@@ -23,8 +23,6 @@ fx('fix', 'copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean
    r'<div class="socratic-q">\s*<span class="sq-icon">🤔</span>\s*<div>\s*<div class="label">Reflect</div>.*?</div>\s*</div>\s*</div>\s*', '', True)
 fx('fix', 'supply list: “a sunny window” is a copy-paste leftover', r'\s*<span class="need-chip"><span>🔆</span>A sunny window or memory of one</span>', '', True)
 fx('fix', 'supply list: no notebook needed (answers are typed on the page)', r'\s*<span class="need-chip"><span>📓</span>Science notebook</span>', '', True)
-fx('fix', 'quarter label in the header: week 17 is Quarter 2', '<div class="info-value">Q3 &middot; Week 17</div>', '<div class="info-value">Q2 &middot; Week 17</div>')
-fx('fix', 'quarter label in the footer: week 17 is Quarter 2', 'Science &middot; Quarter 3 &middot;', 'Science &middot; Quarter 2 &middot;')
 fx('fix', 'this is an Earth science lesson (4-ESS3), not life science', '<div class="info-detail">Life Science</div>', '<div class="info-detail">Earth Science</div>')
 fx('fix', 'wrong quarter in the closing: this is the last Unit 4 lesson (review days next), not the end of Quarter 3',
    "<p><strong>You've closed out Quarter 3.</strong>", "<p><strong>You’ve finished the Unit 4 lessons.</strong>")

@@ -35,18 +35,6 @@
  },
  {
   "kind": "fix",
-  "why": "quarter label in the header: week 17 is Quarter 2",
-  "old": "<div class=\"info-value\">Q3 &middot; Week 17</div>",
-  "new": "<div class=\"info-value\">Q2 &middot; Week 17</div>"
- },
- {
-  "kind": "fix",
-  "why": "quarter label in the footer: week 17 is Quarter 2",
-  "old": "Science &middot; Quarter 3 &middot;",
-  "new": "Science &middot; Quarter 2 &middot;"
- },
- {
-  "kind": "fix",
   "why": "this is an Earth science lesson (4-ESS3), not life science",
   "old": "<div class=\"info-detail\">Life Science</div>",
   "new": "<div class=\"info-detail\">Earth Science</div>"
