@@ -3,7 +3,7 @@
     .rb-cloud { animation: rbCloud 34s linear infinite; }
     .rb-sun { animation: rbSun 6s ease-in-out infinite; transform-origin: 820px 44px; }
     .rb-oats { animation: rbOats 3.4s ease-in-out infinite; transform-origin: 560px 160px; }
-    .rb-heron { animation: rbBob 3.2s ease-in-out infinite; transform-origin: 862px 150px; }
+    .rb-heron { animation: rbBob 3.2s ease-in-out infinite; transform-origin: 8px 26px; }
     .rb-wave { animation: rbWave 4s ease-in-out infinite; }
     @keyframes rbCloud { from { transform: translateX(-200px); } to { transform: translateX(1000px); } }
     @keyframes rbSun { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
@@ -51,5 +51,5 @@
   <g><path d="M190 172q2-38 -4-70" stroke="#7A6345" stroke-width="6" fill="none" stroke-linecap="round"/>
     <g fill="#3F7A4A" stroke="#2A5534" stroke-width="1"><path d="M186 102q-30-4-48 10 22-6 48-6z"/><path d="M186 102q30-4 48 10-22-6-48-6z"/><path d="M186 102q-18-20-40-20 24 6 40 22z"/><path d="M186 102q18-20 40-20-24 6-40 22z"/></g></g>
   <!-- a heron back at the bay -->
-  <g class="rb-heron" transform="translate(850 122)" fill="#5B6E86"><path d="M0 26q-6-16 6-24 10-6 12 4 2 12-8 20z"/><path d="M10 2q2-12 10-12l12 2-12 2q-5 1-5 8z"/><path d="M2 26l-2 18M10 26l1 18" stroke="#5B6E86" stroke-width="1.8"/></g>
+  <g transform="translate(850 122)"><g class="rb-heron" fill="#5B6E86"><path d="M0 26q-6-16 6-24 10-6 12 4 2 12-8 20z"/><path d="M10 2q2-12 10-12l12 2-12 2q-5 1-5 8z"/><path d="M2 26l-2 18M10 26l1 18" stroke="#5B6E86" stroke-width="1.8"/></g></g>
 </svg>
