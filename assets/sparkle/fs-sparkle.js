@@ -177,7 +177,58 @@
     '<rect x="16" y="52" width="50" height="26" rx="4" fill="#B9E3A6" stroke="#1E2618" stroke-width="2"/>' +
     '<g class="fs-bars" fill="#24451C"><rect x="21" y="70" width="4" height="4"/><rect x="27" y="70" width="4" height="4"/><rect x="33" y="70" width="4" height="4"/><rect x="39" y="70" width="4" height="4"/><rect x="45" y="70" width="4" height="4"/><rect x="51" y="70" width="4" height="4"/><rect x="57" y="70" width="4" height="4"/></g>' +
     '<g class="fs-grille"><circle cx="41" cy="106" r="17" fill="#2C3622"/><g fill="#47563A"><circle cx="35" cy="100" r="2"/><circle cx="41" cy="100" r="2"/><circle cx="47" cy="100" r="2"/><circle cx="35" cy="106" r="2"/><circle cx="41" cy="106" r="2"/><circle cx="47" cy="106" r="2"/><circle cx="35" cy="112" r="2"/><circle cx="41" cy="112" r="2"/><circle cx="47" cy="112" r="2"/></g></g></svg>';
-  function makeRadio(info, who, src, demo) {
+  /* ---------- Spotlight: page parts light up, pop, point and reveal exactly when the crew voice names them (PowerPoint-style) ----------
+     D.cues = { <slot>: [ {at: 'regex for the spoken word (first match after the previous cue)', sel: 'CSS selector', fx: 'glow'|'pop'|'point'|'reveal'|'wiggle'|'trace',
+                           tag: 'optional short label shown on the part', scroll: true (bring it on screen if it is off screen), all: true (every match, not just the first)} ] }
+     D.cueWords = { <slot>: [[start, end, 'word'], …] } (optional: word times from a transcription of the clip; without them the layer estimates from the clip length)
+     Works for the real clip and the teacher's ▶ Demo (computer voice). Everything is off under reduced motion except a static highlight. */
+  function cueRunner(id, script) {
+    var C = (D.cues || {})[id]; if (!C || !C.length) return null;
+    var toks = String(script || '').split(/\s+/).filter(Boolean);
+    var from = 0, beats = [];
+    C.forEach(function (c) {
+      var re = new RegExp(c.at, 'i'), k = from;
+      while (k < toks.length && !re.test(toks[k].replace(/^[^\w’']+|[^\w’']+$/g, ''))) k++;
+      if (k >= toks.length) { FAILED.push('cue "' + c.at + '" not found in the ' + id + ' script'); return; }
+      beats.push({ c: c, k: k }); from = k + 1;
+    });
+    var W = (D.cueWords || {})[id], fired = -1, live = [], timers = [];
+    /* with a transcript: find each cue word in the transcript itself (same order), so the timing is exact */
+    if (W && W.length) { var wf = 0; beats.forEach(function (b) { var re = new RegExp(b.c.at, 'i'), j = wf; while (j < W.length && !re.test(String(W[j][2]).replace(/^[^\w’']+|[^\w’']+$/g, ''))) j++; if (j < W.length) { b.t = W[j][0]; wf = j + 1; } }); }
+    function els(c) { var a = $$(c.sel); if (c.i != null) return a[c.i] ? [a[c.i]] : []; return c.all ? a : a.slice(0, 1); }
+    function timeOf(k, dur) {
+      if (W && W.length) { var j = Math.min(W.length - 1, Math.round(k * W.length / Math.max(1, toks.length))); return W[j][0]; }
+      var wt = function (t) { return t.length + 2 + (/[.!?]$/.test(t) ? 7 : /[,;:]$/.test(t) ? 3 : 0); };
+      var tot = toks.reduce(function (n, t) { return n + wt(t); }, 0), before = 0;
+      for (var i = 0; i < k; i++) before += wt(toks[i]);
+      return Math.max(0, before / tot * (dur || 30) - 0.15);
+    }
+    function clearNow() { live.forEach(function (e) { e.classList.remove('fs-cue-now', 'fs-cue-pop', 'fs-cue-wiggle', 'fs-cue-point', 'fs-cue-trace'); var t = $('.fs-cue-tag', e); if (t) t.remove(); }); live = []; }
+    function fire(i) {
+      var b = beats[i]; if (!b) return; clearNow();
+      els(b.c).forEach(function (e) {
+        e.classList.remove('fs-cue-wait'); e.classList.add('fs-cue-lit', 'fs-cue-now');
+        var fx = b.c.fx || 'glow'; if (fx !== 'glow' && fx !== 'reveal' && !reduceMotion) { void e.offsetWidth; e.classList.add('fs-cue-' + fx); }
+        if ((b.c.tag || b.c.fx === 'point') && getComputedStyle(e).position === 'static') e.classList.add('fs-cue-rel');
+        if (b.c.tag) { var t = el('span', 'fs-cue-tag', esc(b.c.tag)); t.setAttribute('aria-hidden', 'true'); e.appendChild(t); }
+        if (b.c.scroll) { var r = e.getBoundingClientRect(); if (r.bottom < 60 || r.top > innerHeight - 60) e.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' }); }
+        live.push(e);
+      });
+    }
+    return {
+      start: function () { fired = -1; beats.forEach(function (b) { if ((b.c.fx || '') === 'reveal') els(b.c).forEach(function (e) { if (!e.classList.contains('fs-cue-lit')) e.classList.add('fs-cue-wait'); }); }); document.documentElement.classList.add('fs-cueing'); },
+      atTime: function (t, dur) { var n = -1; beats.forEach(function (b, i) { if (t >= (b.t != null ? b.t - 0.1 : timeOf(b.k, dur))) n = i; }); while (fired < n) { fired++; fire(fired); } },
+      atWord: function (k) { var n = -1; beats.forEach(function (b, i) { if (k >= b.k) n = i; }); while (fired < n) { fired++; fire(fired); } },
+      stop: function (done) {
+        document.documentElement.classList.remove('fs-cueing');
+        $$('.fs-cue-wait').forEach(function (e) { e.classList.remove('fs-cue-wait'); });
+        timers.push(setTimeout(clearNow, done ? 1600 : 0));
+      }
+    };
+  }
+
+  function makeRadio(info, who, src, demo, slotId) {
+    var cue = cueRunner(slotId, info.script);
     var words = String(info.script || '').split(/(\s+)/);
     var row = el('div', 'fs-radio fs-radio2' + (demo ? ' demo' : ''));
     row.innerHTML = '<div class="fs-radio-dev"><div class="fs-av-slot"></div>' + WALKIE + '</div><div class="fs-radio-body">' +
@@ -197,11 +248,16 @@
       bars.forEach(function (r, i) { var h = 4 + Math.round((amp * (0.55 + 0.45 * Math.sin(Date.now() / 90 + i * 1.3) ** 2)) * 16); r.setAttribute('height', h); r.setAttribute('y', 74 - h); });
       if (grille) grille.setAttribute('transform', 'translate(41 106) scale(' + (1 + amp * 0.08) + ') translate(-41 -106)');
       row.style.setProperty('--amp', amp.toFixed(2));
-      if (audio && audio.duration) setWord(Math.floor(audio.currentTime / audio.duration * wordEls.length));
+      if (audio && audio.duration) {
+        var CW = (D.cueWords || {})[slotId];
+        if (CW && CW.length === wordEls.length) { var t = audio.currentTime, k = -1; for (var q = 0; q < CW.length; q++) if (CW[q][0] <= t + 0.05) k = q; setWord(k); }
+        else setWord(Math.floor(audio.currentTime / audio.duration * wordEls.length));
+      }
+      if (cue && audio && audio.duration) cue.atTime(audio.currentTime, audio.duration);
       if (playing) raf = requestAnimationFrame(frame);
     }
-    function start() { playing = true; row.classList.add('playing'); tr.classList.add('open'); b.textContent = '❚❚ Pause'; if (!reduceMotion) raf = requestAnimationFrame(frame); }
-    function stop(done) { playing = false; row.classList.remove('playing'); cancelAnimationFrame(raf); b.textContent = done ? '▶ Play again' : '▶ ' + (info.audioLabel || 'Listen'); bars.forEach(function (r) { r.setAttribute('height', 4); r.setAttribute('y', 70); }); if (done) { setWord(wordEls.length); setTimeout(SFX.crackle, 100); } }
+    function start() { if (cue) cue.start(); playing = true; row.classList.add('playing'); tr.classList.add('open'); b.textContent = '❚❚ Pause'; if (!reduceMotion) raf = requestAnimationFrame(frame); }
+    function stop(done) { if (cue) cue.stop(done); playing = false; row.classList.remove('playing'); cancelAnimationFrame(raf); b.textContent = done ? '▶ Play again' : '▶ ' + (info.audioLabel || 'Listen'); bars.forEach(function (r) { r.setAttribute('height', 4); r.setAttribute('y', 70); }); if (done) { setWord(wordEls.length); setTimeout(SFX.crackle, 100); } }
     var audio = null;
     /* opened as a local file (file://), the browser mutes audio routed through the bar-meter analyser, so local previews skip it */
     if (src) {
@@ -210,6 +266,7 @@
         if (!an && location.protocol !== 'file:') { try { var c = ac(); var node = c.createMediaElementSource(audio); an = c.createAnalyser(); an.fftSize = 128; buf = new Uint8Array(an.frequencyBinCount); node.connect(an); an.connect(c.destination); } catch (e) { an = null; } }
         start();
       });
+      audio.addEventListener('timeupdate', function () { if (cue && reduceMotion && audio.duration) cue.atTime(audio.currentTime, audio.duration); });
       audio.addEventListener('pause', function () { stop(false); });
       audio.addEventListener('ended', function () { stop(true); SFX.roger(); });
       b.addEventListener('click', function () { if (audio.paused) { SFX.keyup(); setTimeout(function () { audio.play(); }, 380); } else audio.pause(); });
@@ -220,7 +277,7 @@
         if (playing) { ss.cancel(); stop(false); return; }
         var u = new SpeechSynthesisUtterance(info.script || ''); u.rate = 0.95;
         var starts = []; var pos = 0; words.forEach(function (w, i) { if (!/^\s+$/.test(w)) starts.push([pos, i]); pos += w.length; });
-        u.onboundary = function (e) { level = 0.9; var k = 0; for (var j = 0; j < starts.length; j++) if (starts[j][0] <= e.charIndex) k = j; setWord(k); };
+        u.onboundary = function (e) { level = 0.9; var k = 0; for (var j = 0; j < starts.length; j++) if (starts[j][0] <= e.charIndex) k = j; setWord(k); if (cue) cue.atWord(k); };
         u.onend = function () { stop(true); };
         u.onend = function () { stop(true); SFX.roger(); };
         ss.cancel(); SFX.keyup(); setTimeout(function () { ss.speak(u); }, 380); start(); setWord(0);
@@ -298,12 +355,12 @@
     });
     if (info.script) probe(afile, 'audio', function (ok) {
       if (!ok) return;
-      box.classList.remove('fs-empty'); live.appendChild(makeRadio(info, who, afile, false));
+      box.classList.remove('fs-empty'); live.appendChild(makeRadio(info, who, afile, false, id));
     });
     if (info.script) { // teacher view: demo the walkie-talkie with the computer's voice
       var demoBtn = el('button', 'fs-demo', '▶ Demo the radio'); demoBtn.type = 'button';
       $('.fs-ms-ph > div', box).appendChild(demoBtn);
-      demoBtn.addEventListener('click', function () { var r = makeRadio(info, who, null, true); demoBtn.replaceWith(r); $('.fs-play', r).click(); });
+      demoBtn.addEventListener('click', function () { var r = makeRadio(info, who, null, true, id); demoBtn.replaceWith(r); $('.fs-play', r).click(); });
     }
     return box;
   }
@@ -5397,7 +5454,7 @@
     }
     function upd() {
       var n = B.dangers.filter(function (d) { return st[d.id]; }).length;
-      count.textContent = '⚠️ ' + n + ' of ' + B.dangers.length + ' dangers found'; count.classList.toggle('ok', n === B.dangers.length);
+      count.textContent = (B.countIcon || '⚠️') + ' ' + n + ' of ' + B.dangers.length + ' ' + (B.countWord || 'dangers found'); count.classList.toggle('ok', n === B.dangers.length);
       if (n === B.dangers.length) winOnce(win, B.win, B.clue, 'bulletin');
     }
     $$('.fs-bn-w', tape).forEach(function (w) { w.addEventListener('click', function () {
@@ -5691,6 +5748,7 @@
     var g = gameShell(M.kicker || 'Part 1 game', M.title, M.todo, M.why); g.dataset.mod = 'mitsort';
     var st = loadJ('mitsort', {});
     var deck = el('div', 'fs-mk-deck'), shelves = el('div', 'fs-mk-shelves'), miss = el('div', 'fs-miss'), info = el('div', 'fs-hs-card fs-mk-info', '<em>' + esc(M.startLine || 'Drag a card onto a shelf (or tap a card, then a shelf).') + '</em>'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    if (M.cols) shelves.style.setProperty('--mk-cols', M.cols);
     M.shelves.forEach(function (s) { var d = el('div', 'fs-mk-shelf', '<div class="fs-mk-h"><span>' + s.icon + '</span><b>' + esc(s.t) + '</b><small>' + esc(s.sub || '') + '</small></div><div class="fs-mk-in"></div>'); d.dataset.k = s.k; shelves.appendChild(d); });
     g.appendChild(deck); g.appendChild(shelves); g.appendChild(miss); g.appendChild(info); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
     if (M.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(M.credit)));
@@ -5863,6 +5921,330 @@
     upd();
   }
 
+  /* =================== 18.01: The Red Water Sample (zoom machine, tool pick, virtual microscope + lab report, hand lens) =================== */
+
+  /* ---------- Warm-Up: "The zoom machine" — turn the dial from your eyes to a hand lens, a light microscope and an electron microscope; at each stop, tap the new detail you can see (18.01) ----------
+     D.zoom = {afterText | afterSel, kicker, title, todo[], why, stops:[{k, icon, tool, power, img, alt, see, hint, spot:{x, y, r, t}}], lockLine, q, opts, credit, win, clue} */
+  function buildZoom() {
+    var Z = D.zoom; if (!Z) return;
+    var at = Z.afterSel ? $(Z.afterSel) : anchorP(Z.afterText); if (!at) { FAILED.push('zoom anchor not found'); return; }
+    var g = gameShell(Z.kicker || 'Warm-Up game', Z.title, Z.todo, Z.why); g.dataset.mod = 'zoom';
+    var st = loadJ('zoom', {}), cur = 0, misses = 0;
+    var dial = el('div', 'fs-zm-dial');
+    Z.stops.forEach(function (s, i) {
+      var b = el('button', 'fs-zm-stop', '<span class="fs-zm-ic">' + s.icon + '</span><b>' + esc(s.tool) + '</b><small>' + esc(s.power) + '</small><i class="fs-zm-lock">🔒</i>');
+      b.type = 'button'; b.dataset.i = i; dial.appendChild(b);
+      if (i < Z.stops.length - 1) dial.appendChild(el('span', 'fs-zm-arrow', '›'));
+    });
+    var view = el('div', 'fs-zm-view', '<div class="fs-zm-lens"><img alt=""><button type="button" class="fs-zm-spot" aria-label="Tap the new detail"></button><span class="fs-zm-pow"></span></div>');
+    var info = el('div', 'fs-hs-card fs-zm-info'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(dial); g.appendChild(view); g.appendChild(info); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    if (Z.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(Z.credit)));
+    var lens = $('.fs-zm-lens', view), img = $('img', view), spot = $('.fs-zm-spot', view), pow = $('.fs-zm-pow', view);
+    function open(i) { return i === 0 || !!st[Z.stops[i - 1].k]; }
+    function paintDial() {
+      $$('.fs-zm-stop', dial).forEach(function (b, i) {
+        b.classList.toggle('on', i === cur); b.classList.toggle('done', !!st[Z.stops[i].k]); b.classList.toggle('locked', !open(i));
+      });
+    }
+    function show(i, anim) {
+      var s = Z.stops[i]; cur = i; misses = 0; paintDial();
+      img.src = s.img; img.alt = s.alt; pow.textContent = s.icon + ' ' + s.power;
+      spot.style.left = s.spot.x + '%'; spot.style.top = s.spot.y + '%'; spot.style.width = spot.style.height = (s.spot.r || 18) + '%';
+      spot.classList.toggle('found', !!st[s.k]); spot.classList.remove('hint');
+      if (anim && !reduceMotion) { lens.classList.remove('zoomin'); void lens.offsetWidth; lens.classList.add('zoomin'); }
+      if (st[s.k]) info.innerHTML = '<span class="fs-hs-n">' + s.icon + '</span><div><b>' + esc(s.spot.t) + '</b>' + esc(s.see) + '</div>';
+      else info.innerHTML = '<span class="fs-hs-n">🔎</span><div><b>' + esc(s.tool + ' · ' + s.power) + '</b>' + esc(s.ask || 'Look closely. Tap the new detail you can see now.') + '</div>';
+      miss.classList.remove('show');
+    }
+    $$('.fs-zm-stop', dial).forEach(function (b) { b.addEventListener('click', function () {
+      var i = +b.dataset.i;
+      if (!open(i)) { bounce(b, miss, Z.lockLine || 'Find the new detail at this stop first. Then turn the dial.'); return; }
+      SFX.whoosh(); show(i, true);
+    }); });
+    spot.addEventListener('click', function (e) {
+      e.stopPropagation(); var s = Z.stops[cur]; if (st[s.k]) return;
+      st[s.k] = 1; saveJ('zoom', st); SFX.chime(); spot.classList.add('found'); spot.classList.remove('hint'); show(cur, false); upd();
+      var nx = $$('.fs-zm-stop', dial)[cur + 1]; if (nx && !reduceMotion) { nx.classList.remove('nudge'); void nx.offsetWidth; nx.classList.add('nudge'); }
+    });
+    lens.addEventListener('click', function () {
+      var s = Z.stops[cur]; if (st[s.k]) return; misses++;
+      bounce(lens, miss, s.hint); if (misses >= 2) spot.classList.add('hint');
+    });
+    function upd() {
+      var n = Z.stops.filter(function (s) { return st[s.k]; }).length;
+      count.textContent = '🔍 ' + n + ' of ' + Z.stops.length + ' zoom stops explored'; count.classList.toggle('ok', n === Z.stops.length);
+      paintDial();
+      if (n === Z.stops.length) askOnce(qh, Z.q, Z.opts, 'zoom-q', win, Z.win, Z.clue, 'zoom', miss);
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    show(0, false); upd();
+  }
+
+  /* ---------- Lesson Part 3: "Pick the right tool" — lab requests (real photos); drag the tool that fits each question onto its request (18.01) ----------
+     D.bench = {afterText, replace (selector removed), kicker, title, todo[], why, tools:[{k, icon, t, power}], jobs:[{id, img, alt, t, k, why, miss:{toolKey: text}}], q, opts, credit, win, clue} */
+  function buildBench() {
+    var B = D.bench; if (!B) return;
+    var at = anchorP(B.afterText); if (!at) { FAILED.push('bench anchor text not found'); return; }
+    if (B.replace) $$(B.replace).forEach(function (x) { x.classList.add('fs-replaced'); });
+    var g = gameShell(B.kicker || 'Part 3 game', B.title, B.todo, B.why); g.dataset.mod = 'bench';
+    var st = loadJ('bench', {});
+    var tools = el('div', 'fs-tp-tools'), jobs = el('div', 'fs-tp-jobs'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    B.tools.forEach(function (t) { var k = el('div', 'fs-card fs-tp-tool', '<span class="fs-tp-ti">' + t.icon + '</span><b>' + esc(t.t) + '</b><small>' + esc(t.power) + '</small>'); k.dataset.k = t.k; tools.appendChild(k); });
+    B.jobs.forEach(function (j, i) {
+      var c = el('div', 'fs-tp-job', '<div class="fs-tp-ph"><img alt="' + esc(j.alt) + '" src="' + esc(j.img) + '"></div><div class="fs-tp-body"><div class="fs-tp-no">LAB REQUEST #' + (i + 1) + '</div><p>' + esc(j.t) + '</p><div class="fs-tp-drop">' + esc(B.dropHere || 'Drop a tool here') + '</div></div>');
+      c.dataset.id = j.id; jobs.appendChild(c);
+    });
+    g.appendChild(el('div', 'fs-in-k', esc(B.toolsLabel || 'Sam’s tools'))); g.appendChild(tools); g.appendChild(jobs); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    if (B.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(B.credit)));
+    var zones = $$('.fs-tp-job', jobs);
+    function tool(k) { return B.tools.filter(function (t) { return t.k === k; })[0]; }
+    function stamp(j, anim) {
+      var c = zones.filter(function (z) { return z.dataset.id === j.id; })[0], t = tool(j.k);
+      c.classList.add('done'); if (anim && !reduceMotion) c.classList.add('pop');
+      $('.fs-tp-drop', c).outerHTML = '<div class="fs-tp-ok"><span class="fs-tp-stamp">' + t.icon + ' ' + esc(t.t) + '</span><small>' + esc(j.why) + '</small></div>';
+    }
+    function drop(k, z) {
+      var j = B.jobs.filter(function (x) { return x.id === z.dataset.id; })[0]; if (!j || st[j.id]) return;
+      if (k.dataset.k !== j.k) { bounce(k, miss, (j.miss && j.miss[k.dataset.k]) || 'Think about how small it is, and what the question asks you to do.'); z.classList.remove('shake'); void z.offsetWidth; z.classList.add('shake'); return; }
+      miss.classList.remove('show'); st[j.id] = 1; saveJ('bench', st); SFX.chime(); stamp(j, true); upd();
+    }
+    $$('.fs-tp-tool', tools).forEach(function (k) { dragDrop(k, function () { return zones.filter(function (z) { return !z.classList.contains('done'); }); }, drop); });
+    tapTargets(g, zones, drop);
+    function upd() {
+      var n = B.jobs.filter(function (j) { return st[j.id]; }).length;
+      count.textContent = '🧪 ' + n + ' of ' + B.jobs.length + ' lab requests done'; count.classList.toggle('ok', n === B.jobs.length);
+      if (n === B.jobs.length) askOnce(qh, B.q, B.opts, 'bench-q', win, B.win, B.clue, 'bench', miss);
+    }
+    B.jobs.forEach(function (j) { if (st[j.id]) stamp(j, false); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    upd();
+  }
+
+  /* ---------- Lesson Part 4: "Sam's microscope" — put the slide on, turn to 40x, focus, count the cells in the square; then fill in the lab report and match the real FWC level chart (18.01) ----------
+     D.scope = {afterText, kicker, title, todo[], why, eyepiece, objectives:[{x, focus}], target (cells in the square), steps[], slideBtn, lines:{...},
+                rule:{t}, report:{head, sub, rows:[{k, label, q, opts:[{t, ok, miss}]}], levelQ, levels:[{k, t, range, eff}], level, stamp, sign}, photo:{img, alt, cap}, credit, win, clue}
+     The field of view is a MODEL drawn in SVG (cell shapes, not a photo); D.scope.photo is the real electron-microscope photo of one cell. */
+  function buildScope() {
+    var S = D.scope; if (!S) return;
+    var at = anchorP(S.afterText); if (!at) { FAILED.push('scope anchor text not found'); return; }
+    var g = gameShell(S.kicker || 'Part 4 game', S.title, S.todo, S.why); g.dataset.mod = 'scope';
+    var st = loadJ('scope', { n: [] }); if (!st.n) st.n = [];
+    var L = S.lines || {}, objs = S.objectives, ep = S.eyepiece || 10, N = S.target || 12;
+    var obj = st.obj != null ? st.obj : 0, foc = 10;
+    /* ---- the slide: seeded cells. 12 inside the square (±65), the rest around it; a pattern fills the far parts of the slide ---- */
+    var seed = 18011; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+    var cells = [], tries = 0;
+    function free(x, y, d) { return cells.every(function (c) { return (c.x - x) * (c.x - x) + (c.y - y) * (c.y - y) > d * d; }); }
+    while (cells.filter(function (c) { return c.inq; }).length < N && tries++ < 5000) { var x = -56 + rnd() * 112, y = -56 + rnd() * 112; if (free(x, y, 25)) cells.push({ x: x, y: y, a: rnd() * 180, inq: true }); }
+    tries = 0;
+    while (cells.length < N + 46 && tries++ < 8000) { var x2 = -150 + rnd() * 300, y2 = -150 + rnd() * 300; if (Math.abs(x2) < 76 && Math.abs(y2) < 76) continue; if (x2 * x2 + y2 * y2 > 158 * 158) continue; if (free(x2, y2, 25)) cells.push({ x: x2, y: y2, a: rnd() * 180 }); }
+    cells.forEach(function (c, i) { c.id = i; });
+    function cellSVG(c, cls) {
+      return '<g class="' + (cls || 'fs-vm-cell') + '" data-id="' + c.id + '" transform="translate(' + c.x.toFixed(1) + ' ' + c.y.toFixed(1) + ') rotate(' + c.a.toFixed(0) + ')">' +
+        (cls ? '' : '<circle r="13" fill="#000" fill-opacity="0"/>') + '<ellipse rx="10" ry="8.2" fill="#D9A441" fill-opacity=".82" stroke="#8C5A14" stroke-width="1.3"/>' +
+        '<path d="M-9 1 Q0 -3 9 1" fill="none" stroke="#8C5A14" stroke-width="1.1"/><circle cx="-3" cy="2.5" r="2.4" fill="#A86E1E" opacity=".75"/></g>';
+    }
+    var pat = '';
+    for (var pi = 0; pi < 14; pi++) { pat += cellSVG({ x: rnd() * 150, y: rnd() * 150, a: rnd() * 180, id: 'p' + pi }, 'fs-vm-pc'); }
+    var diatoms = [{ x: 22, y: -30, a: 30 }, { x: -110, y: 70, a: -20 }, { x: 95, y: 105, a: 70 }];
+    var field = '<svg class="fs-vm-svg" viewBox="-150 -150 300 300" role="img" aria-label="' + esc(L.fieldAlt || 'The view through the microscope: a circle of light with tiny golden cells.') + '">' +
+      '<defs><clipPath id="fsVmClip"><circle r="148"/></clipPath><filter id="fsVmBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter>' +
+      '<pattern id="fsVmPat" width="150" height="150" patternUnits="userSpaceOnUse">' + pat + '</pattern>' +
+      '<radialGradient id="fsVmLight"><stop offset="0" stop-color="#FFF8E6"/><stop offset=".8" stop-color="#F3E3BC"/><stop offset="1" stop-color="#C9B68C"/></radialGradient></defs>' +
+      '<g clip-path="url(#fsVmClip)"><rect x="-150" y="-150" width="300" height="300" fill="url(#fsVmLight)"/>' +
+      '<g class="fs-vm-slide" filter="url(#fsVmBlur)"><g class="fs-vm-zoom">' +
+      '<rect x="-1500" y="-1500" width="3000" height="3000" fill="url(#fsVmPat)"/><rect x="-162" y="-162" width="324" height="324" fill="#F6EACB"/>' +
+      diatoms.map(function (d, i) { return '<g class="fs-vm-dia" data-i="' + i + '" transform="translate(' + d.x + ' ' + d.y + ') rotate(' + d.a + ')"><rect x="-22" y="-4" width="44" height="8" rx="4" fill="#B9C98E" stroke="#6E7F45" stroke-width="1.2"/><path d="M-16 -4v8M-8 -4v8M0 -4v8M8 -4v8M16 -4v8" stroke="#6E7F45" stroke-width=".8"/></g>'; }).join('') +
+      cells.map(function (c) { return cellSVG(c); }).join('') +
+      '</g></g><g class="fs-vm-sq"><rect x="-65" y="-65" width="130" height="130" fill="none" stroke="#1F4F82" stroke-width="2" stroke-dasharray="6 4"/><rect x="-65" y="-80" width="78" height="13" rx="3" fill="#FFFFFF" fill-opacity=".85"/><text x="-61" y="-70" font-size="9.5" font-weight="900" fill="#1F4F82">COUNT SQUARE</text></g>' +
+      '<g class="fs-vm-marks"></g></g><circle r="148" fill="none" stroke="#1B222C" stroke-width="5"/></svg>';
+    var scopeArt = '<svg class="fs-vm-art" viewBox="0 0 160 230" role="img" aria-label="A light microscope: an eyepiece on top, a turret with three objective lenses, a stage that holds the slide, a focus knob and a light underneath.">' +
+      '<rect x="20" y="206" width="120" height="16" rx="6" fill="#33475B"/><path d="M100 206 V96 Q100 70 78 62" stroke="#33475B" stroke-width="16" fill="none" stroke-linecap="round"/>' +
+      '<rect x="56" y="14" width="22" height="34" rx="4" fill="#4A6178" transform="rotate(-18 67 31)"/><rect x="50" y="8" width="26" height="10" rx="3" fill="#2A3A4A" transform="rotate(-18 63 13)"/>' +
+      '<rect x="52" y="50" width="34" height="26" rx="6" fill="#4A6178"/>' +
+      '<g class="fs-vm-objs"><rect data-o="0" x="54" y="76" width="8" height="12" rx="2"/><rect data-o="1" x="65" y="76" width="8" height="18" rx="2"/><rect data-o="2" x="76" y="76" width="8" height="24" rx="2"/></g>' +
+      '<rect x="34" y="128" width="78" height="9" rx="2" fill="#2A3A4A"/><rect class="fs-vm-slidepic" x="44" y="123" width="58" height="6" rx="1" fill="#E9F3F7" stroke="#8FA7B4"/><circle class="fs-vm-drop" cx="73" cy="126" r="5" fill="#C48A2C" opacity=".85"/>' +
+      '<circle cx="70" cy="168" r="9" fill="#FFE9A6" stroke="#B88B2A" stroke-width="2"/><g class="fs-vm-knob"><circle cx="112" cy="150" r="14" fill="#5D7285" stroke="#2A3A4A" stroke-width="2"/><rect x="110.5" y="137" width="3" height="10" rx="1.5" fill="#FFD866"/></g></svg>';
+    var row = el('div', 'fs-vm-row',
+      '<div class="fs-vm-left">' + scopeArt + '<button type="button" class="fs-btn fs-vm-place">' + esc(S.slideBtn || '🧫 Put the slide on the stage') + '</button>' +
+      '<div class="fs-in-k">' + esc(L.objLabel || 'Objective lens') + '</div><div class="fs-in-chips fs-vm-ob">' + objs.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + o.x + 'x</button>'; }).join('') + '</div>' +
+      '<label class="fs-vm-fk"><span>' + esc(L.focusLabel || 'Focus knob') + '</span><input type="range" min="0" max="100" value="10" aria-label="' + esc(L.focusLabel || 'Focus knob') + '"></label></div>' +
+      '<div class="fs-vm-right"><div class="fs-vm-eye">' + field + '<div class="fs-vm-empty">' + esc(L.empty || 'No slide yet') + '</div></div><div class="fs-vm-read"></div></div>');
+    var steps = el('ol', 'fs-vm-steps', S.steps.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join(''));
+    var msg = el('div', 'fs-hs-card fs-vm-msg'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), after = el('div', 'fs-vm-after'), win = el('div', 'fs-win');
+    g.appendChild(steps); g.appendChild(row); g.appendChild(msg); g.appendChild(miss); g.appendChild(count); g.appendChild(after); g.appendChild(win);
+    if (S.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo and data credits</summary>' + esc(S.credit)));
+    var svg = $('.fs-vm-svg', row), zoom = $('.fs-vm-zoom', row), blur = $('feGaussianBlur', row), marks = $('.fs-vm-marks', row), sq = $('.fs-vm-sq', row), eye = $('.fs-vm-eye', row), read = $('.fs-vm-read', row), range = $('input', row), knob = $('.fs-vm-knob', row);
+    function stage() { return !st.slide ? 0 : obj !== objs.length - 1 ? 1 : !focused() ? 2 : st.n.length < N ? 3 : 4; }
+    function focused() { return Math.abs(foc - objs[obj].focus) <= 4; }
+    function say(icon, b, t) { msg.innerHTML = '<span class="fs-hs-n">' + icon + '</span><div><b>' + esc(b) + '</b>' + esc(t || '') + '</div>'; }
+    function paint() {
+      var o = objs[obj], s = o.x / objs[objs.length - 1].x, d = Math.abs(foc - o.focus), sd = Math.min(7, d / 3.2);
+      zoom.setAttribute('transform', 'scale(' + s + ')'); blur.setAttribute('stdDeviation', d <= 4 ? 0 : sd.toFixed(2));
+      eye.classList.toggle('noslide', !st.slide); sq.style.display = (st.slide && obj === objs.length - 1) ? '' : 'none';
+      knob.setAttribute('transform', 'rotate(' + (foc * 3.2).toFixed(0) + ' 112 150)');
+      $$('.fs-vm-objs rect', row).forEach(function (r, i) { r.setAttribute('fill', i === obj ? '#E0A92E' : '#8FA2B4'); });
+      $$('.fs-vm-ob .fs-in-chip', row).forEach(function (c, i) { c.classList.toggle('on', i === obj); });
+      $('.fs-vm-slidepic', row).style.display = $('.fs-vm-drop', row).style.display = st.slide ? '' : 'none';
+      read.innerHTML = st.slide ? '<b>' + ep + 'x</b> eyepiece × <b>' + o.x + 'x</b> lens = <b>' + (ep * o.x) + 'x</b>' + (focused() ? ' <span class="fs-vm-sharp">✓ in focus</span>' : ' <span class="fs-vm-fuzzy">blurry</span>') : '';
+      $$('li', steps).forEach(function (li, i) { li.classList.toggle('done', i < stage()); li.classList.toggle('now', i === stage()); });
+      var n = st.n.length; count.textContent = '🔢 ' + n + ' of ' + N + ' cells counted in the square'; count.classList.toggle('ok', n === N);
+    }
+    function guide() {
+      var s = stage();
+      if (s === 0) say('🧫', L.s0 || 'Step 1', L.s0t || 'Put Sam’s slide on the stage.');
+      else if (s === 1) say('🔭', L.s1 || 'Step 2', L.s1t || 'Turn to the strongest objective lens.');
+      else if (s === 2) say('🌀', L.s2 || 'Step 3', L.s2t || 'Turn the focus knob slowly until the cells look sharp.');
+      else if (s === 3) say('👆', L.s3 || 'Step 4', L.s3t || 'Tap each red tide cell inside the square. Cells touching the line count only if most of the cell is inside.');
+    }
+    $('.fs-vm-place', row).addEventListener('click', function (e) { if (st.slide) return; st.slide = 1; saveJ('scope', st); SFX.pop(); placed(); paint(); guide(); });
+    function placed() { var b = $('.fs-vm-place', row); b.disabled = true; b.textContent = L.placed || '✓ The slide is on the stage'; }
+    if (st.slide) placed();
+    $$('.fs-vm-ob .fs-in-chip', row).forEach(function (c, i) { c.addEventListener('click', function () {
+      if (!st.slide) { bounce(c, miss, L.noSlide || 'Put the slide on the stage first.'); return; }
+      obj = i; st.obj = i; saveJ('scope', st); SFX.blip(); paint(); miss.classList.remove('show');
+      if (i < objs.length - 1) say('🔭', objs[i].x + 'x lens: ' + (ep * objs[i].x) + 'x in all', (i === 0 ? L.low : L.mid) || 'The cells look like tiny specks. Too small to count. Try a stronger lens.'); else guide();
+    }); });
+    range.addEventListener('input', function () { foc = +range.value; paint(); if (stage() >= 3 && !st.focusSaid) { st.focusSaid = 1; SFX.chime(); guide(); } });
+    range.addEventListener('change', function () { if (st.slide && obj === objs.length - 1 && !focused()) say('🌀', L.blurTitle || 'Still blurry', L.blurT || 'Keep turning the knob, slowly. Watch the edges of the cells get sharp.'); });
+    function mark(c, anim) { var m = document.createElementNS('http://www.w3.org/2000/svg', 'g'); m.setAttribute('class', 'fs-vm-mk' + (anim && !reduceMotion ? ' pop' : '')); m.setAttribute('transform', 'translate(' + c.x.toFixed(1) + ' ' + c.y.toFixed(1) + ')'); m.innerHTML = '<circle r="12" fill="none" stroke="#1F7A3A" stroke-width="2.4"/><text y="-14" text-anchor="middle" font-size="11" font-weight="900" fill="#1F7A3A">' + (st.n.indexOf(c.id) + 1) + '</text>'; marks.appendChild(m); }
+    svg.addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target.closest('.fs-vm-cell, .fs-vm-dia') : null;
+      if (stage() < 3) { if (st.slide) bounce(eye, miss, stage() === 1 ? (L.needLens || 'These cells are too small to count at this power. Turn to the 40x lens.') : (L.needFocus || 'It’s too blurry to count. Turn the focus knob first.')); return; }
+      if (!t) return;
+      if (t.classList.contains('fs-vm-dia')) { bounce(eye, miss, L.diatom || 'That long, striped shape is a diatom, a different tiny living thing. Count only the round golden red tide cells.'); return; }
+      var c = cells[+t.dataset.id]; if (!c) return;
+      if (!c.inq) { bounce(eye, miss, L.outside || 'That cell is outside the square. Count only the cells inside the dashed square.'); return; }
+      if (st.n.indexOf(c.id) > -1) { bounce(eye, miss, L.twice || 'You already counted that one. Look for a cell without a green circle.'); return; }
+      miss.classList.remove('show'); st.n.push(c.id); saveJ('scope', st); SFX.blip(); mark(c, true); paint();
+      if (st.n.length === N) { SFX.chime(); say('✅', L.doneTitle || 'All counted!', L.doneT || ''); report(); }
+    });
+    /* ---- the lab report ---- */
+    function report() {
+      if (after.dataset.on) return; after.dataset.on = '1'; var R = S.report;
+      if (!st.r) st.r = {};
+      after.innerHTML = (S.rule ? '<div class="fs-hs-card fs-vm-rule"><span class="fs-hs-n">🧮</span><div><b>' + esc(S.rule.head || 'Sam’s rule') + '</b>' + esc(S.rule.t) + '</div></div>' : '') +
+        '<div class="fs-lr"><div class="fs-lr-head"><b>' + esc(R.head) + '</b><small>' + esc(R.sub || '') + '</small></div><dl class="fs-lr-form">' +
+        R.rows.map(function (r) { return '<dt>' + esc(r.label) + '</dt><dd data-k="' + r.k + '">' + (r.fixed ? '<span class="fs-lr-val">' + esc(r.fixed) + '</span>' : '<span class="fs-lr-blank">________</span>') + '</dd>'; }).join('') +
+        '<dt>' + esc(R.levelLabel || 'Red tide level') + '</dt><dd data-k="level"><span class="fs-lr-blank">________</span></dd></dl><div class="fs-lr-ask"></div><div class="fs-lr-stamp" aria-hidden="true"></div>' +
+        (R.sign ? '<div class="fs-lr-sign">' + esc(R.sign) + '</div>' : '') + '</div>' +
+        (S.photo ? '<figure class="fs-vm-photo"><img alt="' + esc(S.photo.alt) + '" src="' + esc(S.photo.img) + '"><figcaption>' + esc(S.photo.cap) + '</figcaption></figure>' : '');
+      var ask = $('.fs-lr-ask', after);
+      function fill(k, v, anim) { var dd = $('dd[data-k="' + k + '"]', after); dd.innerHTML = '<span class="fs-lr-val' + (anim && !reduceMotion ? ' pop' : '') + '">' + esc(v) + '</span>'; }
+      function next() {
+        var r = R.rows.filter(function (x) { return !x.fixed && !st.r[x.k]; })[0];
+        if (r) {
+          ask.innerHTML = '';
+          chipsQ(ask, r.q, r.opts, function (o) { st.r[r.k] = 1; saveJ('scope', st); fill(r.k, o.fill || o.t, true); setTimeout(next, reduceMotion ? 0 : 500); }, miss);
+          return;
+        }
+        if (!st.r.level) { levels(); return; }
+        done(false);
+      }
+      function levels() {
+        ask.innerHTML = '<div class="fs-in-k">' + esc(R.levelQ) + '</div><table class="fs-lr-chart"><thead><tr><th>' + esc(R.colLevel || 'Level') + '</th><th>' + esc(R.colRange || 'Cells in 1 liter') + '</th><th>' + esc(R.colEff || 'What can happen') + '</th></tr></thead><tbody>' +
+          R.levels.map(function (lv) { return '<tr tabindex="0" data-k="' + lv.k + '"><td><b>' + esc(lv.t) + '</b></td><td>' + esc(lv.range) + '</td><td>' + esc(lv.eff) + '</td></tr>'; }).join('') + '</tbody></table>' + (R.chartSrc ? '<div class="fs-lr-src">' + esc(R.chartSrc) + '</div>' : '');
+        $$('tbody tr', ask).forEach(function (tr) {
+          function pick() {
+            if (st.r.level) return; var lv = R.levels.filter(function (x) { return x.k === tr.dataset.k; })[0];
+            if (lv.k !== R.level) { bounce(tr, miss, lv.miss || 'Find your number in the middle column. Is it bigger or smaller than this row?'); return; }
+            miss.classList.remove('show'); st.r.level = 1; saveJ('scope', st); tr.classList.add('ok'); SFX.chime(); done(true);
+          }
+          tr.addEventListener('click', pick); tr.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+        });
+      }
+      function done(anim) {
+        var lv = R.levels.filter(function (x) { return x.k === R.level; })[0]; fill('level', lv.t, anim);
+        var stp = $('.fs-lr-stamp', after); stp.textContent = R.stamp || lv.t; stp.classList.add('on'); if (anim && !reduceMotion) stp.classList.add('thunk');
+        if (anim && $$('tbody tr', ask).length) { $$('tbody tr', ask).forEach(function (tr) { tr.classList.toggle('ok', tr.dataset.k === R.level); }); }
+        else ask.innerHTML = '';
+        winOnce(win, S.win, S.clue, 'scope');
+      }
+      R.rows.forEach(function (r) { if (st.r[r.k]) { var o = r.opts.filter(function (x) { return x.ok; })[0]; fill(r.k, o.fill || o.t, false); } });
+      next();
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    st.n.forEach(function (id) { if (cells[id]) mark(cells[id], false); });
+    if (st.n.length === N) { foc = objs[objs.length - 1].focus; range.value = foc; obj = objs.length - 1; }
+    paint(); guide();
+    if (st.n.length === N) { say('✅', L.doneTitle || 'All counted!', L.doneT || ''); report(); }
+  }
+
+  /* ---------- Tool of the Week: a hand lens — drag the lens over a real photo, pick 2x / 5x / 10x, move it closer or farther until it's sharp, log the details you find (18.01) ----------
+     T.handlens = {title, todo[], objects:[{k, t, img, alt, w (% of the table), details:[{x, y (0-1), t, power}]}], powers:[{x, f (cm)}], logBtn, q:{q, opts}} */
+  SIMS.handlens = function (host, T) {
+    var H = T.handlens, st = loadJ('handlens', { f: {}, d: {} }), ob = H.objects[0], pw = H.powers[0], dist = 15;
+    if (!st.f) st.f = {}; if (!st.d) st.d = {};
+    host.innerHTML = '<div class="fs-game-k">Try it: a hand lens</div><div class="fs-game-t">' + esc(H.title) + '</div>' +
+      '<ul class="fs-todo">' + H.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-in-chips fs-lz-objs">' + H.objects.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>' +
+      '<div class="fs-lz-table"><img class="fs-lz-obj" alt=""><div class="fs-lz-lens" aria-hidden="true"><div class="fs-lz-glass"></div></div><div class="fs-lz-tip">' + esc(H.dragTip || 'Drag the lens (or tap where you want it).') + '</div></div>' +
+      '<div class="fs-lz-ctl"><div><div class="fs-in-k">Lens power</div><div class="fs-in-chips fs-lz-pw">' + H.powers.map(function (p, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + p.x + 'x</button>'; }).join('') + '</div></div>' +
+      '<label class="fs-lz-d"><span>' + esc(H.distLabel || 'How far the lens is from the object') + ': <b></b></span><input type="range" min="1" max="15" step="0.5" value="15"></label></div>' +
+      '<div class="fs-lz-read"></div><button type="button" class="fs-btn fs-lz-log">' + esc(H.logBtn || '📝 Log what I see') + '</button>' +
+      '<div class="fs-lz-logs"></div><div class="fs-sv-q fs-lz-q"></div><div class="fs-miss fs-lz-miss"></div><div class="fs-win fs-lz-win"></div>' +
+      (H.credit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(H.credit) + '</details>' : '');
+    var table = $('.fs-lz-table', host), oimg = $('.fs-lz-obj', host), lens = $('.fs-lz-lens', host), glass = $('.fs-lz-glass', host), range = $('.fs-lz-d input', host), read = $('.fs-lz-read', host), miss = $('.fs-lz-miss', host);
+    var cx = null, cy = null;
+    function R() { return lens.offsetWidth / 2 || 70; }
+    function focused() { return Math.abs(dist - pw.f) <= 0.5; }
+    function paint() {
+      var tr = table.getBoundingClientRect(), or = oimg.getBoundingClientRect(), r = R();
+      if (cx == null) { cx = or.left - tr.left + or.width * 0.5; cy = or.top - tr.top + or.height * 0.45; }
+      cx = Math.max(r * 0.4, Math.min(tr.width - r * 0.4, cx)); cy = Math.max(r * 0.4, Math.min(tr.height - r * 0.4, cy));
+      lens.style.left = (cx - r) + 'px'; lens.style.top = (cy - r) + 'px';
+      var u = (cx - (or.left - tr.left)) / or.width, v = (cy - (or.top - tr.top)) / or.height, bw = or.width * pw.x, bh = or.height * pw.x;
+      glass.style.backgroundImage = 'url("' + ob.img + '")'; glass.style.backgroundSize = bw + 'px ' + bh + 'px';
+      glass.style.backgroundPosition = (r - u * bw) + 'px ' + (r - v * bh) + 'px';
+      var d = Math.abs(dist - pw.f); glass.style.filter = d <= 0.5 ? 'none' : 'blur(' + Math.min(9, d * 1.6).toFixed(1) + 'px)';
+      $('.fs-lz-d b', host).textContent = dist + ' cm';
+      $$('.fs-lz-pw .fs-in-chip', host).forEach(function (c, i) { c.classList.toggle('on', H.powers[i] === pw); c.classList.toggle('done', !!st.f[H.powers[i].x]); });
+      $$('.fs-lz-objs .fs-in-chip', host).forEach(function (c, i) { c.classList.toggle('on', H.objects[i] === ob); });
+      read.innerHTML = focused() ? '<span class="fs-vm-sharp">✓ Sharp at ' + pw.x + 'x</span>' : '<span class="fs-vm-fuzzy">Blurry. Move the lens ' + (dist > pw.f ? 'closer' : 'farther') + '.</span>';
+      return { u: u, v: v };
+    }
+    function logs() {
+      var fp = H.powers.map(function (p) { return '<li class="' + (st.f[p.x] ? 'ok' : '') + '">' + p.x + 'x: ' + (st.f[p.x] ? 'sharp at ' + p.f + ' cm ✓' : '—') + '</li>'; }).join('');
+      var dp = H.objects.map(function (o) { return o.details.map(function (d, i) { var k = o.k + i; return '<li class="' + (st.d[k] ? 'ok' : '') + '">' + (st.d[k] ? '✓ ' + esc(d.t) : '❓ ' + esc(o.t) + ': a detail to find') + '</li>'; }).join(''); }).join('');
+      $('.fs-lz-logs', host).innerHTML = '<div><div class="fs-in-k">Where each lens gets sharp</div><ul>' + fp + '</ul></div><div><div class="fs-in-k">Details logged</div><ul>' + dp + '</ul></div>';
+    }
+    function all() { return H.powers.every(function (p) { return st.f[p.x]; }) && H.objects.every(function (o) { return o.details.every(function (d, i) { return st.d[o.k + i]; }); }); }
+    function check() {
+      if (!all()) return; var q = $('.fs-lz-q', host); if (q.dataset.on) return; q.dataset.on = '1';
+      q.innerHTML = '<div class="fs-in-k">' + esc(H.q.q) + '</div><div class="fs-in-chips">' + H.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      function ok(i) { $$('.fs-in-chip', q)[i].classList.add('on', 'ok'); var w = $('.fs-lz-win', host); w.innerHTML = esc(H.q.opts[i].why); w.classList.add('show'); }
+      $$('.fs-in-chip', q).forEach(function (c) { c.addEventListener('click', function () { var o = H.q.opts[+c.dataset.i]; if (!o.ok) { bounce(c, miss, o.why); return; } miss.classList.remove('show'); ok(+c.dataset.i); SFX.win(); store('handlens-q', '1'); toolDone(); }); });
+      if (store('handlens-q')) ok(H.q.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]);
+    }
+    function setObj(i) { ob = H.objects[i]; oimg.src = ob.img; oimg.alt = ob.alt; oimg.style.width = (ob.w || 36) + '%'; cx = null; }
+    oimg.addEventListener('load', function () { paint(); });
+    var drag = false;
+    function at(e) { var tr = table.getBoundingClientRect(); cx = e.clientX - tr.left; cy = e.clientY - tr.top; paint(); }
+    table.addEventListener('pointerdown', function (e) { drag = true; table.setPointerCapture && table.setPointerCapture(e.pointerId); at(e); e.preventDefault(); });
+    table.addEventListener('pointermove', function (e) { if (drag) at(e); });
+    table.addEventListener('pointerup', function () { drag = false; });
+    table.addEventListener('pointercancel', function () { drag = false; });
+    $$('.fs-lz-objs .fs-in-chip', host).forEach(function (c, i) { c.addEventListener('click', function () { setObj(i); SFX.blip(); }); });
+    $$('.fs-lz-pw .fs-in-chip', host).forEach(function (c, i) { c.addEventListener('click', function () { pw = H.powers[i]; SFX.blip(); paint(); }); });
+    range.addEventListener('input', function () {
+      dist = +range.value; paint();
+      if (focused() && !st.f[pw.x]) { st.f[pw.x] = 1; saveJ('handlens', st); SFX.chime(); logs(); check(); }
+    });
+    $('.fs-lz-log', host).addEventListener('click', function (e) {
+      var p = paint(), b = e.currentTarget;
+      if (!focused()) { bounce(b, miss, 'It’s too blurry to see details. Move the lens closer or farther first.'); return; }
+      var near = null;
+      ob.details.forEach(function (d, i) { var du = (d.x - p.u), dv = (d.y - p.v), reach = 0.55 / pw.x + 0.03; if (du * du + dv * dv < reach * reach && !near) near = { d: d, k: ob.k + i }; });
+      if (!near) { bounce(b, miss, H.nothing || 'Nothing new right under the lens. Slide it around the object, slowly.'); return; }
+      if (st.d[near.k]) { bounce(b, miss, 'You already logged that one. Look somewhere else on the object.'); return; }
+      if (pw.x < near.d.power) { bounce(b, miss, 'Something is there, but it’s too small to make out. Try a stronger lens.'); return; }
+      miss.classList.remove('show'); st.d[near.k] = 1; saveJ('handlens', st); SFX.chime(); logs(); check();
+    });
+    window.addEventListener('resize', function () { if (host.offsetParent) paint(); });
+    setObj(0); logs(); check();
+  };
+
   function init() {
     if (/[?&]review\b/.test(location.search)) html.classList.add('fs-review');
     guard('tabs', trackTabs);
@@ -5928,6 +6310,9 @@
     guard('mitsort', buildMitsort);
     guard('buildhouse', buildBuildhouse);
     guard('fixtown', buildFixtown);
+    guard('zoom', buildZoom);
+    guard('bench', buildBench);
+    guard('scope', buildScope);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);

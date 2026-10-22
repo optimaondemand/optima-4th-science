@@ -1,0 +1,77 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sam Park's lab at dusk: through the window, the sun sets over the Gulf and red-brown streaks color the waves. On the desk, a microscope, a jar of brown water labeled Sample 18-A, and a clipboard. A glowing circle shows what the microscope sees: tiny golden cells.">
+  <style>
+    .sl-wave { animation: slWave 5s ease-in-out infinite; }
+    .sl-streak { animation: slStreak 7s ease-in-out infinite; }
+    .sl-glow { animation: slGlow 3.2s ease-in-out infinite; transform-origin: 812px 70px; }
+    .sl-drift { animation: slDrift 9s ease-in-out infinite; }
+    .sl-bub { animation: slBub 3.6s ease-in infinite; }
+    .sl-bub2 { animation: slBub 4.4s 1.2s ease-in infinite; }
+    .sl-sun { animation: slSun 6s ease-in-out infinite; transform-origin: 250px 112px; }
+    @keyframes slWave { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-14px); } }
+    @keyframes slStreak { 0%,100% { opacity:.55; transform: translateX(0); } 50% { opacity:.85; transform: translateX(10px); } }
+    @keyframes slGlow { 0%,100% { transform: scale(1); opacity:.55; } 50% { transform: scale(1.06); opacity:.9; } }
+    @keyframes slDrift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(5px,-4px); } }
+    @keyframes slBub { 0% { transform: translateY(0); opacity:0; } 15% { opacity:.9; } 100% { transform: translateY(-34px); opacity:0; } }
+    @keyframes slSun { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    @media (prefers-reduced-motion: reduce) { .sl-wave, .sl-streak, .sl-glow, .sl-drift, .sl-bub, .sl-bub2, .sl-sun { animation:none; } }
+  </style>
+  <defs>
+    <linearGradient id="slWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D4A52"/><stop offset="1" stop-color="#16363D"/></linearGradient>
+    <linearGradient id="slSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B3A78"/><stop offset=".55" stop-color="#E9805A"/><stop offset="1" stop-color="#FFC874"/></linearGradient>
+    <linearGradient id="slSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4B6E7A"/><stop offset="1" stop-color="#2E4E5A"/></linearGradient>
+    <linearGradient id="slDesk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A6440"/><stop offset="1" stop-color="#6A4A2E"/></linearGradient>
+    <radialGradient id="slEye"><stop offset="0" stop-color="#FFF7DF"/><stop offset=".75" stop-color="#F3DFAE"/><stop offset="1" stop-color="#C8A766"/></radialGradient>
+    <radialGradient id="slLamp" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#FFE7A3" stop-opacity=".55"/><stop offset="1" stop-color="#FFE7A3" stop-opacity="0"/></radialGradient>
+    <clipPath id="slWin"><rect x="70" y="22" width="360" height="132" rx="6"/></clipPath>
+    <clipPath id="slEyeClip"><circle cx="812" cy="70" r="50"/></clipPath>
+  </defs>
+  <rect width="920" height="200" fill="url(#slWall)"/>
+  <!-- window: sunset over the Gulf, red tide streaks -->
+  <g clip-path="url(#slWin)">
+    <rect x="70" y="22" width="360" height="132" fill="url(#slSky)"/>
+    <g class="sl-sun"><circle cx="250" cy="112" r="22" fill="#FFE08A"/><circle cx="250" cy="112" r="34" fill="#FFD27A" opacity=".35"/></g>
+    <rect x="70" y="112" width="360" height="42" fill="url(#slSea)"/>
+    <g class="sl-streak"><path d="M60 122 Q140 116 210 124 T360 120 T450 126" stroke="#9A4A2C" stroke-width="6" fill="none" opacity=".75"/><path d="M60 138 Q160 132 240 140 T450 136" stroke="#A85A30" stroke-width="5" fill="none" opacity=".6"/></g>
+    <g class="sl-wave" fill="none" stroke="#F6D9B8" stroke-width="2" stroke-linecap="round" opacity=".8"><path d="M90 130q10-5 20 0t20 0"/><path d="M230 146q10-5 20 0t20 0"/><path d="M330 128q10-5 20 0t20 0"/><path d="M400 144q10-5 20 0t20 0"/></g>
+    <!-- a cabbage palm on the shore -->
+    <path d="M380 154 q-3-40 6-70" stroke="#2A2230" stroke-width="5" fill="none"/>
+    <g fill="#2A2230"><path d="M386 84q-26-4-42 8 20-4 42-6z"/><path d="M386 84q26-4 42 8-20-4-42-6z"/><path d="M386 84q-14-18-34-18 20 6 34 20z"/><path d="M386 84q14-18 34-18-20 6-34 20z"/></g>
+  </g>
+  <rect x="70" y="22" width="360" height="132" rx="6" fill="none" stroke="#E7D7B8" stroke-width="7"/>
+  <path d="M250 22 V154 M70 88 H430" stroke="#E7D7B8" stroke-width="4"/>
+  <!-- lamp -->
+  <path d="M560 0 V26" stroke="#2A3A4A" stroke-width="3"/><path d="M540 26 h40 l10 16 h-60 z" fill="#E0A92E"/>
+  <path d="M530 42 L470 176 H690 L590 42 z" fill="url(#slLamp)"/>
+  <!-- desk -->
+  <rect x="0" y="164" width="920" height="36" fill="url(#slDesk)"/><rect x="0" y="160" width="920" height="6" fill="#A57B52"/>
+  <!-- clipboard -->
+  <g transform="translate(460 118) rotate(-6)"><rect width="56" height="44" rx="3" fill="#C89B62"/><rect x="5" y="6" width="46" height="35" fill="#FFFEF5"/><rect x="18" y="-3" width="20" height="7" rx="2" fill="#7A8A96"/><path d="M10 15h32M10 22h28M10 29h34M10 36h20" stroke="#8B8B8B" stroke-width="1.6"/><text x="26" y="13" font-family="Nunito,sans-serif" font-size="5" font-weight="900" fill="#14504C" text-anchor="middle">LAB REPORT</text></g>
+  <!-- the jar -->
+  <g transform="translate(560 102)">
+    <rect x="0" y="0" width="44" height="60" rx="8" fill="#DCEFF2" opacity=".55" stroke="#9DBAC2" stroke-width="2"/>
+    <rect x="2" y="16" width="40" height="42" rx="6" fill="#9A5A2E" opacity=".78"/>
+    <rect x="-2" y="-8" width="48" height="10" rx="3" fill="#4B6178"/>
+    <rect x="6" y="26" width="32" height="16" rx="2" fill="#FFFEF5"/><text x="22" y="33" font-family="Nunito,sans-serif" font-size="5.5" font-weight="900" fill="#14504C" text-anchor="middle">SAMPLE</text><text x="22" y="40" font-family="Nunito,sans-serif" font-size="6" font-weight="900" fill="#B3261E" text-anchor="middle">18-A</text>
+    <g class="sl-bub"><circle cx="12" cy="54" r="2" fill="#F3D6B8"/></g><g class="sl-bub2"><circle cx="32" cy="52" r="1.6" fill="#F3D6B8"/></g>
+  </g>
+  <!-- microscope -->
+  <g transform="translate(650 40)">
+    <rect x="14" y="114" width="92" height="12" rx="5" fill="#2F4256"/>
+    <path d="M78 114 V60 Q78 38 58 32" stroke="#2F4256" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <rect x="34" y="4" width="16" height="30" rx="3" fill="#4A6178" transform="rotate(-20 42 19)"/>
+    <rect x="34" y="28" width="28" height="22" rx="5" fill="#4A6178"/>
+    <rect x="38" y="50" width="6" height="11" rx="2" fill="#8FA2B4"/><rect x="46" y="50" width="6" height="16" rx="2" fill="#E0A92E"/><rect x="54" y="50" width="6" height="12" rx="2" fill="#8FA2B4"/>
+    <rect x="22" y="78" width="62" height="7" rx="2" fill="#2A3A4A"/><rect x="30" y="74" width="44" height="5" rx="1" fill="#E9F3F7"/><circle cx="52" cy="76.5" r="3" fill="#B87C2A"/>
+    <circle cx="50" cy="98" r="6" fill="#FFE9A6"/><circle cx="88" cy="88" r="10" fill="#5D7285" stroke="#2A3A4A" stroke-width="2"/>
+  </g>
+  <!-- what the microscope sees -->
+  <path d="M690 56 Q740 40 762 60" stroke="#FFE7A3" stroke-width="2" stroke-dasharray="4 4" fill="none" opacity=".7"/>
+  <circle class="sl-glow" cx="812" cy="70" r="62" fill="#FFE7A3" opacity=".6"/>
+  <circle cx="812" cy="70" r="50" fill="url(#slEye)"/>
+  <g clip-path="url(#slEyeClip)"><g class="sl-drift" fill="#D9A441" fill-opacity=".85" stroke="#8C5A14" stroke-width="1.4">
+    <ellipse cx="790" cy="56" rx="11" ry="9"/><ellipse cx="826" cy="48" rx="10" ry="8" transform="rotate(30 826 48)"/><ellipse cx="808" cy="84" rx="11" ry="9" transform="rotate(-20 808 84)"/><ellipse cx="840" cy="80" rx="10" ry="8"/><ellipse cx="780" cy="92" rx="9" ry="7"/><ellipse cx="846" cy="104" rx="9" ry="7"/>
+    <path d="M780 57 Q790 52 800 57 M816 49 Q826 44 836 49 M798 85 Q808 80 818 85 M831 81 Q840 76 849 81" fill="none"/>
+  </g></g>
+  <circle cx="812" cy="70" r="50" fill="none" stroke="#1B222C" stroke-width="6"/>
+  <text x="812" y="140" font-family="Nunito,sans-serif" font-size="12" font-weight="900" fill="#FFE7A3" text-anchor="middle">400x</text>
+</svg>

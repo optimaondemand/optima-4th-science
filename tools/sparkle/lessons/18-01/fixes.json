@@ -1,0 +1,303 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a three-view sketch",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🔬 Part C &mdash; Three Views of One Small Thing"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page now; a sketch is a bonus)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one small Florida thing (a leaf, a shell, a grain of sand, an ant). Tell what you’d see with your eyes, with a hand lens and with a microscope. Then pick the best tool for one question about it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "unit label under the week: “Ecosystems & Energy” is a leftover; week 18 starts Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "this is a Nature of Science lesson (tools, SC.4.N.1.1 / SC.4.E.6.5), not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Nature of Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the electron microscope needs a dried, prepared sample; the lesson said “carefully prepared” only once, and the case turns on it",
+  "old": "Can show the bumps on a single virus. Most schools don't have one, but universities and research labs do.",
+  "new": "It can show the bumps on a single virus. But the sample must be dried and specially coated first, so nothing on it can be alive. Most schools don't have one."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll know which tool to grab when something is too small for your eyes — and why scientists trust the evidence those tools give them.",
+  "new": "Keep this question in mind. By the end, you’ll know which tool to grab when something is too small for your eyes, and why."
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up is the beach alert and the zoom machine now; answers are made on the page",
+  "old": "<p>Hold your hand out in front of you\\..*?</p>\\s*<p>In your notebook, draw what you can see\\..*?</p>",
+  "new": "<p>Something strange is happening at Palmetto Beach. Listen to the alert. Then look closer with Sam’s zoom machine.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up title matches the new warm-up",
+  "old": "🌅 Warm-Up: What's on the Tip of Your Finger?",
+  "new": "🌅 Warm-Up: Something in the Water"
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up subtitle; dash removed",
+  "old": "Look — really look — at something tiny",
+  "new": "Listen, then zoom in"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "“like seeing 10 inches in 1 inch” confuses more than it helps",
+  "old": "A 10x hand lens magnifies an object 10 times — like seeing 10 inches in 1 inch.",
+  "new": "A 10x hand lens makes things look 10 times bigger."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; shorter",
+  "old": "Every tool has limitations — that's why scientists use more than one.",
+  "new": "Every tool has limitations. That's why scientists use more than one."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "Scientists deal with this by using tools that",
+  "new": "Scientists use tools that"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "</span></span> — they make small things look bigger so you can",
+  "new": "</span></span>. These tools make small things look bigger, so you can"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter: the electron microscope’s limit is now in its list item",
+  "old": " An electron microscope can see almost anything tiny — but only on things that have been carefully prepared.",
+  "new": ""
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "Part 1 · Your Eyes Are Powerful — But Limited",
+  "new": "Part 1 · Your Eyes Are Powerful, but Limited"
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed; plain words",
+  "old": "Shows things invisible to the eye — plant cells, blood cells, the tiny moving life in a drop of pond water.",
+  "new": "Shows things too small for your eyes: plant cells, blood cells and the tiny moving life in a drop of pond water."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": " You can't see the tiny scales on a moth's wing.",
+  "new": ""
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed",
+  "old": "Same drop of pond water — three completely different pictures.",
+  "new": "Same drop of pond water, three very different pictures."
+ },
+ {
+  "kind": "plain",
+  "why": "dash removed from the claim",
+  "old": "the most powerful tool you can find — the more magnification, the better.",
+  "new": "the most powerful tool you can find. The more magnification, the better."
+ },
+ {
+  "kind": "plain",
+  "why": "misconception kept (it is the CER) but plain, no dash",
+  "old": "<p><strong>Common misconception:</strong> Some people think a more powerful tool is always better\\..*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think a more powerful tool is always better. But a hand lens is the right tool for a leaf. A 1,000x microscope would show only a tiny, confusing piece of it. The best tool is the one that fits the question.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "the tool bench is Part 3 now",
+  "old": "margin-top:22px;\">Pick the Right Tool</h3>",
+  "new": "margin-top:22px;\">Part 3 · Pick the Right Tool</h3>"
+ },
+ {
+  "kind": "plain",
+  "why": "the bench replaces the tap diagram",
+  "old": "<p><strong>Tap a tiny Florida thing</strong> to see which tool works best — and why.</p>",
+  "new": "<p>Sam’s lab got four requests this morning. Each one needs the right tool.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; points to 18.02",
+  "old": "<p><strong>Nicely done\\.</strong> You can now pick the right tool.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You found what was hiding in Palmetto’s water, and you picked the right tool for each job. Next time, you’ll flip the question: how do tools help us see things that are very far away, like the Moon, stars and planets?</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the size ladder is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Key Concept box repeats Part 2",
+  "old": "<div style=\"background:#FFF6E5;border:2.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>\\s*<p[^>]*>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Reason (the picture speaks; the bench is the next thinking stop)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its three-view notebook page becomes Part C)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the Amazing Fact, the Florida red tide note (it becomes the case) and Go Deeper (the two lenses are in Part 4’s why card); Part 4 = Sam’s microscope; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Count the Cells</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Back to Sam’s sample. A light microscope can count living red tide cells. Florida scientists count them this way to warn people at the beach.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; the bench already asks it)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (6 → 5)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the sketch is a bonus",
+  "old": "A three-view sketch (eye, hand lens, microscope) of one small Florida thing, with labeled details in each circle plus a tool-choice sentence.",
+  "new": "Three views of one small Florida thing (eyes, hand lens, microscope), plus the best tool for one question. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether the most powerful tool is always best, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether the most powerful tool is always best, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]
