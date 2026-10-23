@@ -1,0 +1,248 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a slow/medium/fast data table",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "📏 Part C &mdash; My Speed and Energy Table"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (now the data table from Part 4, typed on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Fill in your table from Part 4: how far the hay bale slid from the Low, Middle and High starts. Then write what your numbers show.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "speed and energy is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard: 4-PS3-1 is the speed-and-energy standard (4-ESS3-1 is about energy resources)",
+  "old": "<div class=\"info-value\">4-ESS3-1 · TEKS 4.8(A), 4.7(A)</div>",
+  "new": "<div class=\"info-value\">4-PS3-1 · TEKS 4.8(A), 4.7(A)</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard detail matches 4-PS3-1",
+  "old": "<div class=\"info-detail\">Energy Forms & Gravity Affects Motion</div>",
+  "new": "<div class=\"info-detail\">Speed and Energy</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the hailstone example was wrong (big hailstones fall faster, not slower); same idea with a true example, no dashes",
+  "old": "<p><strong>Common misconception:</strong> Some people think energy is only about how big or heavy something is\\..*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think energy is only about how big or heavy something is. Size matters. But for two objects that are the same, the faster one ALWAYS has more energy. And speed counts a lot: a small baseball thrown fast can crack a window. A big beach ball rolling slowly just bumps it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "the misleading AI picture (the FAST car flies off a ramp that ends in mid-air; the arrows measure the gap, not how far the block slid) and the boxes that lean on it are gone; Pinball power replaces them and the tap diagram. Also lean: Key Concept (repeats Part 2), Stop & Reason, Observe & Reason, the Amazing Fact (hurricane wind is about 60 times walking speed, not 25), the Florida Highway Patrol note and Go Deeper. Part 3 = a real NASA slow-motion crash, Part 4 = the old Explore (Build Dune Hill); next button goes to Self-Check",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">⚡ Same Ball, Three Speeds, Three Effects</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · A Crash in Slow Motion</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">NASA scientists study crashes, too. They fire a small ball at a target at up to 15,000 miles per hour, then film it with a super-fast camera.</p>\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Build Dune Hill</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Sam needs evidence for his hay bale plan. Draw a track from each start (Low, Middle and High), and measure how far the car pushes the bale.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to use evidence — what you can see and measure — to explain why a fast-moving object carries more energy than a slow one.",
+  "new": "Keep this question in mind. By the end, you’ll use evidence (what you can see and measure) to explain why a fast object carries more energy than a slow one."
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up is the flour crater test now (Bethany’s hook); answers are made on the page",
+  "old": "<p>Tap your finger gently on your desk\\..*?</p>\\s*<p>In your notebook, write down:.*?</p>",
+  "new": "<p>Here’s a test with a marble and a pan of flour. Drop the marble gently. Then throw it down fast. Which crater is bigger?</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up title matches the new warm-up",
+  "old": "🌅 Warm-Up: Soft Hit vs. Hard Hit",
+  "new": "🌅 Warm-Up: The Flour Crater Test"
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up subtitle; dash removed",
+  "old": "Tap a finger on the desk — then tap harder",
+  "new": "Drop it gently, then throw it fast"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no “go back to Lesson 9.01”; the meaning is given right here",
+  "old": "Way back in Lesson 9.01, you learned that <span class=\"vtip\">energy",
+  "new": "<span class=\"vtip\">Energy"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; lightning is mostly electrical energy, so a clearer example",
+  "old": "A walking person, a falling raindrop, a Florida lightning bolt — all of them have kinetic energy.",
+  "new": "A walking person, a falling raindrop and a rolling marble all have kinetic energy."
+ },
+ {
+  "kind": "plain",
+  "why": "dashes removed",
+  "old": "Same ball — different speed — different energy.",
+  "new": "Same ball, different speed, different energy."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: this paragraph repeats the rule (Pinball power is the next thinking stop)",
+  "old": "\\s*<p>Scientists call this the relationship between speed and energy\\..*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; points to 19.02",
+  "old": "<p><strong>Nicely done\\.</strong> You can now describe how.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You showed that the faster something moves, the more energy it carries, and the bigger the change it can cause. Next time, Sam runs a fair test at Dune Hill: one change at a time, and lots of tries.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (Scrub the replay is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its ramp test becomes Part 4, Build Dune Hill; its chart becomes Part C)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; it pointed at the old tap diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (6 → 5)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page",
+  "old": "A three-row data table showing slow/medium/fast trials with the target distance, sketches, and an evidence statement.",
+  "new": "My speed and energy table (Low, Middle and High starts) and what the numbers show. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether speed matters for energy, and supported it with two pieces of evidence from the lesson or my test.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether speed matters for energy, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]
