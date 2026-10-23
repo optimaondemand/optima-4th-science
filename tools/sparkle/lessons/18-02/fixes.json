@@ -1,0 +1,254 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a three-view sky sketch",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🔭 Part C &mdash; Three Views of One Far-Away Thing"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (typed on the page now; a sketch is a bonus)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one far-away thing in the sky: the Moon, a planet, a star or a galaxy. Tell what you’d see with your eyes, with binoculars and with a backyard telescope. Then pick the best tool for it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "a tools lesson is Nature of Science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Nature of Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the misconception box said “the bigger part is just the side effect of zooming in”, which is muddled: a telescope gathers light AND magnifies",
+  "old": "<p><strong>Common misconception:</strong> Some people think a telescope makes things look bigger like a microscope does\\..*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think a telescope just makes things look bigger. It does two jobs. It gathers much more light than your eye, so dim things show up. And it magnifies them (makes them look bigger).</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "space telescopes can be turned to point anywhere; “can’t be moved” is wrong",
+  "old": "Space telescopes cost billions of dollars and can't be moved.",
+  "new": "Space telescopes cost billions of dollars and are very hard to fix once they’re up there."
+ },
+ {
+  "kind": "fix",
+  "why": "the misleading AI picture (Saturn, the Moon and a bright spiral galaxy in one 200x view) and the boxes that lean on it are gone; Find it in the sky replaces them and the tap diagram",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">🔭 Same Night Sky, Three Views</div>.*?<h3[^>]*>Pick the Right Telescope</h3>\\s*<p>.*?</p>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Find It in the Sky</h3>\n      <p>Sam set up two tools on the beach: binoculars and a backyard telescope. Which one shows each kid’s wish best?</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 5 pointed at “the diagram”, which Find it in the sky replaced (same question, same objects)",
+  "old": "Pick ONE of the four objects from the diagram (Moon, Saturn, far stars, or galaxies).",
+  "new": "Pick ONE of these from the lesson: the Moon, Saturn, far stars or galaxies."
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 5 label (Gathered Answers) matches the question",
+  "old": "data-label=\"Pick ONE of the four objects from the diagram (Moo...\"",
+  "new": "data-label=\"Pick ONE of these from the lesson: the Moon, Satu...\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to name which tool a scientist would use to see different far-away things — and explain how telescopes collect light to reveal what your eyes alone can't.",
+  "new": "Keep this question in mind. By the end, you’ll know which tool to use for things far away, and how a telescope helps your eyes."
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up is Race the light now (Bethany’s hook: “the starlight you see tonight is older than you”); answers are made on the page",
+  "old": "<p>The next clear Florida night, look up at the sky.*?</p>\\s*<p>Now think: what big things in space.*?</p>",
+  "new": "<p>Here’s a surprising claim: the starlight you see tonight is older than you are. True or false? Let’s race the light and find out.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up subtitle matches the new warm-up",
+  "old": "What can you see in the night sky?",
+  "new": "How old is the light you see?"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; shorter",
+  "old": "The more light it collects, the more detail you can see — even if the thing itself is thousands of miles, or millions of light-years, away.",
+  "new": "The more light it collects, the more you can see, even if the thing is millions of miles away."
+ },
+ {
+  "kind": "plain",
+  "why": "plain words",
+  "old": "Instead of making things look bigger from a few inches away, a telescope COLLECTS light from far away and focuses it.",
+  "new": "A telescope COLLECTS light from far away and focuses it."
+ },
+ {
+  "kind": "plain",
+  "why": "plain words",
+  "old": "Portable and easy to hold.",
+  "new": "Easy to carry."
+ },
+ {
+  "kind": "plain",
+  "why": "define atmosphere in place",
+  "old": "Sits in space ABOVE Earth's atmosphere so air can't blur the view.",
+  "new": "Sits in space, ABOVE Earth’s atmosphere (the air around Earth), so air can’t blur the view."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "Scientists pick tools based on <em>how far away</em> the object is and how much detail they want:",
+  "new": "Scientists pick a tool by <em>how far away</em> something is and how much detail they need:"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; points to week 19",
+  "old": "<p><strong>Nicely done\\.</strong> You can now pick the right tool.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You picked the right tool for every wish, from the Moon to the farthest galaxies. Next week, Sam’s tools get a new job: how does energy make things move?</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (Open wider is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its three-view page becomes Part C; its “one object, three tools” idea becomes Part 4)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason, the Amazing Fact (Sirius’s 8.6 years is in Race the light), the Florida connection (wrong about Webb, which launched from French Guiana; Hubble’s Florida launch is the TV report) and Go Deeper; Part 3 = the TV report, Part 4 = Stare at nothing; next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · A Telescope Above the Air</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Sam found an old TV news report from Florida. It shows how one famous telescope got above the air.</p>\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Stare at Nothing</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Jordan wants the farthest thing anyone has ever seen. Scientists found it by aiming a giant telescope at a tiny patch of sky that looked empty.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page; the sketch is a bonus",
+  "old": "A three-tool sky sketch (eye, binoculars, backyard telescope) of one distant object, with labeled details in each circle plus a tool-choice sentence.",
+  "new": "Three views of one far-away thing (eyes, binoculars, backyard telescope), plus the best tool for it. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether we still need space telescopes, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether we still need space telescopes, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

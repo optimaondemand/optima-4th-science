@@ -1,0 +1,3226 @@
+{
+ "lesson": "18.02",
+ "week": 18,
+ "day": 2,
+ "guide": "sam",
+ "prefix": "g4sci-18-2",
+ "manifestKey": "18-02",
+ "paths": {
+  "audio": "assets/audio/guide/",
+  "video": "assets/video/teacher/",
+  "manifest": "https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json",
+  "h2c": "assets/sparkle/vendor/html2canvas.min.js",
+  "crew": "assets/crew/",
+  "ornaments": "assets/ornaments/"
+ },
+ "crew": {
+  "sam": {
+   "name": "Sam Park",
+   "role": "engineer (someone who designs and builds things to solve problems)",
+   "initials": "SP",
+   "color": "#1F7F86",
+   "lens": "blueprint",
+   "voiceId": "s3TPKV1kjDlVtZbl4Ksh"
+  }
+ },
+ "expedition": {
+  "num": 18,
+  "title": "The Star Party Wish List"
+ },
+ "ambient": {
+  "icon": "🌊",
+  "label": "Ocean sounds"
+ },
+ "case": {
+  "num": 18,
+  "title": "The Star Party Wish List",
+  "style": "party",
+  "hook": "Good news: the red tide is gone, and Palmetto Beach is open again! To celebrate, the town is having a star party (a night when people look at the sky together). Four kids sent me their wishes. The town can rent just ONE tool. Can we make every wish come true?",
+  "notice": {
+   "head": "Palmetto Beach · Star Party Night",
+   "title": "Saturday, 8 PM, on the beach",
+   "rows": [
+    [
+     "Budget",
+     "The town can rent ONE tool."
+    ],
+    [
+     "Sam’s job",
+     "Pick what to bring so every kid gets their wish."
+    ]
+   ],
+   "line": "The kids’ wish cards are below."
+  },
+  "wishes": [
+   {
+    "icon": "🌕",
+    "t": "I want to see the craters on the Moon!",
+    "who": "MAYA, age 9"
+   },
+   {
+    "icon": "🪐",
+    "t": "Saturn’s rings, PLEASE!!",
+    "who": "LEO, age 10"
+   },
+   {
+    "icon": "✨",
+    "t": "The Seven Sisters stars my grandma told me about.",
+    "who": "AVA, age 9"
+   },
+   {
+    "icon": "🚀",
+    "t": "The FARTHEST thing anybody has ever seen.",
+    "who": "JORDAN, age 10"
+   }
+  ],
+  "stills": [],
+  "question": "What should Sam bring so every wish comes true?",
+  "how": "Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.",
+  "clues": [
+   {
+    "id": "racelight",
+    "icon": "✨",
+    "where": "Warm-Up: race the light",
+    "t": "Things in space are SO far away that their light is old. The Moon’s light left it about 1 second ago. Andromeda’s light left it 2.5 million years ago."
+   },
+   {
+    "id": "openwide",
+    "icon": "⭕",
+    "where": "The Lesson, Part 1: open wider",
+    "t": "Far things look dim because only a little of their light reaches you. A bigger opening gathers more light. Zooming in alone doesn’t help."
+   },
+   {
+    "id": "skyhunt",
+    "icon": "🔭",
+    "where": "The Lesson, Part 2: find it in the sky",
+    "t": "A backyard telescope shows the Moon’s craters and Saturn’s rings. Binoculars are best for the wide Seven Sisters star cluster."
+   },
+   {
+    "id": "deepfield",
+    "icon": "🌌",
+    "where": "The Lesson, Part 4: stare at nothing",
+    "t": "The farthest things need a space telescope. Webb stared at one “empty” speck for 12.5 hours and found thousands of galaxies."
+   }
+  ],
+  "solve": {
+   "title": "What should Sam bring?",
+   "q": "Which plan fits all four clues?",
+   "options": [
+    {
+     "t": "Rent a space telescope for the beach, so every wish comes true.",
+     "why": "Check Clue 4. Where do space telescopes work? Could anyone bring one to a beach?"
+    },
+    {
+     "t": "Just bring binoculars. They are easy to carry and show everything.",
+     "why": "Check Clue 3. Can binoculars show Saturn’s rings?"
+    },
+    {
+     "t": "Rent a backyard telescope for the Moon and Saturn. Bring binoculars for the Seven Sisters. Show Webb’s picture for the farthest thing.",
+     "right": true,
+     "why": "Case cracked! The right tool for each wish. Now fill in Sam’s star party permit, just below."
+    }
+   ]
+  }
+ },
+ "racelight": {
+  "afterText": "Let’s race the light and find out",
+  "kicker": "Warm-Up game",
+  "title": "Race the light",
+  "todo": [
+   "Guess first: drag each sky object onto how long ago you think its light left it (or tap a card, then a spot).",
+   "Press Send the light. Watch each light race to you."
+  ],
+  "why": {
+   "icon": "💡",
+   "q": "Why can light be “old”?",
+   "t": "Light is the fastest thing there is, but space is huge. Light from far away has been traveling a long time when it reaches your eyes."
+  },
+  "trayLabel": "Drag each one onto your guess:",
+  "marks": [
+   {
+    "k": "s",
+    "t": "about 1 second ago"
+   },
+   {
+    "k": "m",
+    "t": "about 8 minutes ago"
+   },
+   {
+    "k": "y",
+    "t": "about 9 years ago"
+   },
+   {
+    "k": "my",
+    "t": "2.5 MILLION years ago"
+   }
+  ],
+  "objs": [
+   {
+    "id": "moon",
+    "name": "The Moon",
+    "img": "images/18-02-moon.jpg",
+    "alt": "The full Moon, gray with dark patches",
+    "mark": "s",
+    "left": "Left about 1 second ago",
+    "dist": "about 240,000 miles away"
+   },
+   {
+    "id": "sun",
+    "name": "The Sun",
+    "img": "images/18-02-sun.jpg",
+    "alt": "The Sun, glowing orange",
+    "mark": "m",
+    "left": "Left about 8 minutes ago",
+    "dist": "about 93 million miles away"
+   },
+   {
+    "id": "sirius",
+    "name": "Sirius, a bright star",
+    "img": "images/18-02-sirius.jpg",
+    "alt": "The bright star Sirius, a white glow with light spikes",
+    "mark": "y",
+    "left": "Left about 9 years ago",
+    "dist": "about 8.6 light-years away"
+   },
+   {
+    "id": "andromeda",
+    "name": "The Andromeda Galaxy",
+    "img": "images/18-02-andromeda.jpg",
+    "alt": "The Andromeda Galaxy, a huge glowing oval of stars",
+    "mark": "my",
+    "left": "Left 2.5 million years ago",
+    "dist": "about 2.5 million light-years away"
+   }
+  ],
+  "sendBtn": "Send the light",
+  "earth": "🌎 Your eyes",
+  "q": "Which light has been traveling the longest to reach you?",
+  "opts": [
+   {
+    "t": "The Sun’s light",
+    "miss": "Look at your stamps. 8 minutes is not very long. Which one says millions?"
+   },
+   {
+    "t": "The Moon’s light",
+    "miss": "The Moon is the closest. Its light takes about 1 second."
+   },
+   {
+    "t": "Andromeda’s light",
+    "ok": true
+   }
+  ],
+  "credit": "Full Moon: NASA Goddard / Lunar Reconnaissance Orbiter (public domain). The Sun: NASA Solar Dynamics Observatory (public domain). Sirius (the bright star) and its tiny partner star: NASA, ESA, H. Bond and M. Barstow, Hubble Space Telescope (public domain). The Andromeda Galaxy: Andy Weeks (CC0, no rights reserved). All via Wikimedia Commons. Palmetto Beach, the kids and the star party are made up for this lesson.",
+  "win": "True! Starlight is old. The farther away something is, the longer its light travels, and the dimmer it looks. That’s a clue.",
+  "clue": "racelight"
+ },
+ "openwide": {
+  "afterText": "COLLECTS light from far away and focuses it",
+  "kicker": "Part 1 game",
+  "title": "Open wider",
+  "todo": [
+   "This is a model of the sky over Palmetto Beach. Drag the gold dot outward to open the light opening wider (or press Open wider).",
+   "Watch the star count. Then press Zoom only and compare."
+  ],
+  "why": {
+   "icon": "⭕",
+   "q": "Why does the opening matter?",
+   "t": "Your eye catches light through a small dark circle (the pupil). A bigger opening catches more light, like a bigger bucket catches more rain."
+  },
+  "stops": [
+   {
+    "k": "eye",
+    "icon": "👁️",
+    "name": "Your eye",
+    "size": "opening: about 7 mm (in the dark)",
+    "r": 0,
+    "limit": 0.3,
+    "gain": "Your eye",
+    "note": "In the dark, your pupil opens to about 7 millimeters, about as wide as a pencil. Only the brightest stars send enough light."
+   },
+   {
+    "k": "owl",
+    "icon": "🦉",
+    "name": "A barred owl",
+    "img": "images/18-02-owl.jpg",
+    "alt": "A barred owl with big, dark eyes",
+    "size": "big eyes, wide-open pupils",
+    "r": 22,
+    "limit": 0.4,
+    "gain": "An owl gathers more light",
+    "note": "Owls have huge eyes for their size. Their wide pupils let in more light, so owls can hunt at night. A few more stars appear."
+   },
+   {
+    "k": "bino",
+    "icon": "🔭",
+    "name": "Binoculars",
+    "size": "opening: 50 mm",
+    "r": 55,
+    "limit": 0.62,
+    "gain": "About 50 times more light than your eye",
+    "note": "Each binocular lens is about 50 millimeters wide. Many more stars pop out of the dark."
+   },
+   {
+    "k": "scope",
+    "icon": "🪞",
+    "name": "Backyard telescope",
+    "img": "images/18-02-telescope.jpg",
+    "alt": "A white backyard telescope on the grass, pointed at the sky",
+    "size": "mirror: about 200 mm (8 inches)",
+    "r": 100,
+    "limit": 1.0,
+    "gain": "About 800 times more light than your eye",
+    "note": "Its big mirror gathers about 800 times more light than your eye. Now even a faint, fuzzy galaxy shows up."
+   }
+  ],
+  "galaxyAt": 3,
+  "needZoom": true,
+  "zoomBtn": "Zoom only",
+  "zoomNote": "Zooming in made the stars look bigger, but no NEW stars appeared. They even got dimmer! Zoom spreads out the same light. Only a bigger opening gathers more.",
+  "tryZoom": "Now press Zoom only. Does zooming in show you any NEW stars?",
+  "q": "What makes a telescope show MORE stars than your eye?",
+  "opts": [
+   {
+    "t": "Its big mirror gathers much more light.",
+    "ok": true
+   },
+   {
+    "t": "It makes the stars bigger.",
+    "miss": "Try Zoom only again. Bigger didn’t show any new stars, did it?"
+   },
+   {
+    "t": "It brings the stars closer to Earth.",
+    "miss": "The stars don’t move at all. What changed when you opened wider?"
+   }
+  ],
+  "credit": "Barred owl: Mara Koenig / U.S. Fish and Wildlife Service (public domain). Backyard (Dobsonian) telescope: James Stewart (public domain). All via Wikimedia Commons. Palmetto Beach, the kids and the star party are made up for this lesson. The sky is a model drawn for this lesson, not a photo.",
+  "win": "Far things look dim because only a little of their light reaches you. A bigger opening gathers more of it. That’s a clue.",
+  "clue": "openwide"
+ },
+ "skyhunt": {
+  "afterText": "Sam set up two tools on the beach",
+  "replace": "#tab-lesson .diagram-wrap",
+  "kicker": "Part 2 game",
+  "title": "Find it in the sky",
+  "todo": [
+   "Pick a tool. Then drag the circle across the sky (or tap a spot) to aim it.",
+   "Look at each one with BOTH tools. Then pick the best tool for it."
+  ],
+  "why": {
+   "icon": "🔭",
+   "q": "Why is the telescope circle so small?",
+   "t": "A telescope zooms in a lot, so it sees only a tiny piece of sky at a time. Binoculars zoom in less, so they see a much wider piece."
+  },
+  "tools": [
+   {
+    "k": "bino",
+    "icon": "🔭",
+    "t": "Binoculars",
+    "power": "10x · wide view",
+    "r": 120,
+    "hit": 46
+   },
+   {
+    "k": "scope",
+    "icon": "🪞",
+    "t": "Backyard telescope",
+    "power": "150x · tiny view",
+    "r": 34,
+    "hit": 28
+   }
+  ],
+  "emptyLine": "Just dark sky. Move the circle onto something.",
+  "listLabel": "Your sky list",
+  "targets": [
+   {
+    "id": "moon",
+    "name": "The Moon",
+    "icon": "🌕",
+    "x": 170,
+    "y": 170,
+    "draw": "moon",
+    "views": {
+     "bino": {
+      "img": "images/18-02-moon.jpg",
+      "size": "74%",
+      "pos": "center",
+      "note": "The whole Moon fits. You can see dark patches and some big craters."
+     },
+     "scope": {
+      "img": "images/18-02-moon.jpg",
+      "size": "380%",
+      "pos": "32% 70%",
+      "note": "So close! Craters inside craters, and mountains. The Moon is too big to fit all at once."
+     }
+    },
+    "q": "Maya wants the Moon’s craters. Best tool?",
+    "opts": [
+     {
+      "t": "Binoculars",
+      "miss": "Binoculars show some craters. Which tool showed craters inside craters?"
+     },
+     {
+      "t": "Backyard telescope",
+      "ok": true
+     }
+    ]
+   },
+   {
+    "id": "pleiades",
+    "name": "Seven Sisters",
+    "icon": "✨",
+    "x": 430,
+    "y": 110,
+    "draw": "cluster",
+    "views": {
+     "bino": {
+      "img": "images/18-02-pleiades.jpg",
+      "size": "120%",
+      "pos": "center",
+      "note": "The whole cluster fits, sparkling blue-white. Your eyes alone see about 6 or 7 stars here. Binoculars show dozens."
+     },
+     "scope": {
+      "img": "images/18-02-pleiades.jpg",
+      "size": "900%",
+      "pos": "55% 45%",
+      "note": "Too close! You see only one or two stars. The cluster is much wider than the telescope’s tiny view."
+     }
+    },
+    "q": "Ava wants the Seven Sisters. Best tool?",
+    "opts": [
+     {
+      "t": "Binoculars",
+      "ok": true
+     },
+     {
+      "t": "Backyard telescope",
+      "miss": "How many of the sisters fit in the telescope’s tiny view?"
+     }
+    ]
+   },
+   {
+    "id": "jupiter",
+    "name": "Jupiter",
+    "icon": "🟠",
+    "x": 650,
+    "y": 330,
+    "draw": "bright",
+    "views": {
+     "bino": {
+      "html": "<i class=\"fs-sh-dot\" style=\"width:9px;height:9px;left:46%;top:47%\"></i><i class=\"fs-sh-dot\" style=\"width:3px;height:3px;left:36%;top:49%\"></i><i class=\"fs-sh-dot\" style=\"width:3px;height:3px;left:41%;top:48%\"></i><i class=\"fs-sh-dot\" style=\"width:3px;height:3px;left:57%;top:50%\"></i><i class=\"fs-sh-dot\" style=\"width:3px;height:3px;left:63%;top:49%\"></i>",
+      "note": "A tiny round dot with up to four tiny moons in a line beside it. (This view is a drawing.)"
+     },
+     "scope": {
+      "img": "images/18-02-jupiter.jpg",
+      "size": "42%",
+      "pos": "center",
+      "note": "Now Jupiter is a round world with stripes of clouds. (Real photo from the Hubble Space Telescope; a backyard view is smaller and less sharp.)"
+     }
+    },
+    "q": "To see Jupiter’s cloud stripes, which tool?",
+    "opts": [
+     {
+      "t": "Binoculars",
+      "miss": "Binoculars showed a dot. Where did you see stripes?"
+     },
+     {
+      "t": "Backyard telescope",
+      "ok": true
+     }
+    ]
+   },
+   {
+    "id": "saturn",
+    "name": "Saturn",
+    "icon": "🪐",
+    "x": 860,
+    "y": 220,
+    "draw": "dot",
+    "views": {
+     "bino": {
+      "html": "<i class=\"fs-sh-dot\" style=\"width:9px;height:6px;left:47%;top:48%;background:#F3D9A0;box-shadow:0 0 5px #F3D9A0\"></i>",
+      "note": "Just a tiny yellow dot, maybe a little oval. No rings yet. (This view is a drawing.)"
+     },
+     "scope": {
+      "img": "images/18-02-saturn.jpg",
+      "size": "56%",
+      "pos": "center",
+      "note": "RINGS! At about 100x or more, Saturn’s rings are easy to see. (Real photo from the Hubble Space Telescope; a backyard view is smaller.)"
+     }
+    },
+    "q": "Leo wants Saturn’s rings. Best tool?",
+    "opts": [
+     {
+      "t": "Binoculars",
+      "miss": "Look again with binoculars. Can you see any rings?"
+     },
+     {
+      "t": "Backyard telescope",
+      "ok": true
+     }
+    ]
+   }
+  ],
+  "credit": "Full Moon: NASA Goddard / Lunar Reconnaissance Orbiter (public domain). The Seven Sisters star cluster (Pleiades): NASA, ESA, AURA/Caltech, Palomar Observatory (public domain). Jupiter: NASA, ESA and the Hubble Heritage Team (public domain). Saturn: NASA / Hubble Space Telescope, 2018 (public domain). All via Wikimedia Commons. Palmetto Beach, the kids and the star party are made up for this lesson. The sky, the dots and the binocular views of Jupiter and Saturn are drawings.",
+  "win": "Binoculars show wide things, like a star cluster. A backyard telescope shows small, far details, like Saturn’s rings. That’s a clue.",
+  "clue": "skyhunt"
+ },
+ "tv": {
+  "afterText": "Sam found an old TV news report",
+  "kicker": "Breaking news · 1990",
+  "title": "A telescope leaves Florida",
+  "todo": [
+   "Press Watch the report. Turn on your sound.",
+   "Then answer one question."
+  ],
+  "channel": "NEWS 1990",
+  "live": "LIVE",
+  "headline": "HUBBLE SPACE TELESCOPE LAUNCHES",
+  "place": "Kennedy Space Center, Florida",
+  "date": "April 24, 1990",
+  "slides": [
+   {
+    "img": "images/18-02-launch.jpg",
+    "alt": "A space shuttle rises on a column of fire and smoke beside launch towers by the water.",
+    "cap": "Discovery lifts off from Kennedy Space Center, Florida, with Hubble inside. Another shuttle, Columbia, waits on the next pad."
+   },
+   {
+    "img": "images/18-02-liftoff.jpg",
+    "alt": "A space shuttle climbing into a blue sky on a bright flame.",
+    "cap": "Liftoff, April 24, 1990."
+   },
+   {
+    "img": "images/18-02-hubble.jpg",
+    "alt": "The Hubble Space Telescope, a silver tube with wing-like solar panels, floating above Earth.",
+    "cap": "Hubble in space, high above the air. (Photo from 2009.)"
+   }
+  ],
+  "lineSlides": [
+   0,
+   1,
+   1,
+   2,
+   2
+  ],
+  "audio": "tv",
+  "lines": [
+   "This is a special report from Kennedy Space Center, Florida.",
+   "Moments ago, the space shuttle Discovery blasted off, carrying the Hubble Space Telescope.",
+   "Tomorrow, astronauts will set Hubble free, more than three hundred miles above Earth.",
+   "Up there, it will be above the blurry, wobbly air that makes stars twinkle.",
+   "Scientists say its giant mirror will see farther and sharper than any telescope on the ground."
+  ],
+  "ticker": "HUBBLE SPACE TELESCOPE · LAUNCHED APRIL 24, 1990 · KENNEDY SPACE CENTER, FLORIDA · MIRROR: ABOUT 8 FEET WIDE · ORBIT: MORE THAN 300 MILES UP · ",
+  "playBtn": "Watch the report",
+  "againBtn": "Watch it again",
+  "q": "Why did scientists put Hubble in space?",
+  "opts": [
+   {
+    "t": "To get above the blurry air",
+    "ok": true
+   },
+   {
+    "t": "To get closer to the stars",
+    "miss": "Hubble is about 300 miles up. The stars are trillions of miles away. What did the report say about the air?"
+   },
+   {
+    "t": "Because it was too big for Florida",
+    "miss": "Listen again. What does the air do to starlight?"
+   }
+  ],
+  "credit": "Discovery lifts off with Hubble, April 24, 1990: NASA (public domain). STS-31 liftoff: NASA (public domain). Hubble in orbit, 2009: NASA, STS-125 crew (public domain). All via Wikimedia Commons. Palmetto Beach, the kids and the star party are made up for this lesson. The report is read by a voice actor for this lesson.",
+  "win": "Right! Earth’s air blurs starlight and makes stars twinkle. Above the air, Hubble’s pictures are sharp."
+ },
+ "deepfield": {
+  "afterText": "Jordan wants the farthest thing anyone has ever seen",
+  "kicker": "Part 4 game",
+  "title": "Stare at nothing",
+  "todo": [
+   "Look at the tiny square of “empty” sky with each tool, in order.",
+   "With Webb, press and HOLD the shutter button until 12.5 hours have passed.",
+   "Then tap three galaxy shapes."
+  ],
+  "why": {
+   "icon": "🌌",
+   "q": "How tiny is this speck?",
+   "t": "Hold a grain of sand at arm’s length. That’s how much sky this picture shows. To your eyes, it looks empty."
+  },
+  "tools": [
+   {
+    "k": "eye",
+    "icon": "👁️",
+    "t": "Your eyes",
+    "view": "empty",
+    "note": "Nothing. Just dark sky and a few stars around the speck."
+   },
+   {
+    "k": "bino",
+    "icon": "🔭",
+    "t": "Binoculars",
+    "view": "empty",
+    "note": "Still nothing in the speck. It looks empty."
+   },
+   {
+    "k": "scope",
+    "icon": "🪞",
+    "t": "Backyard telescope",
+    "view": "smudge",
+    "note": "Two very faint, fuzzy smudges. Something is there, but it’s too dim to see."
+   },
+   {
+    "k": "webb",
+    "icon": "🛰️",
+    "t": "Webb space telescope",
+    "view": "webb",
+    "note": "Webb is a space telescope about a million miles from Earth. Its mirror is about 21 feet wide. Press and hold to open its shutter."
+   }
+  ],
+  "hold": {
+   "btn": "Press and HOLD to open Webb’s shutter",
+   "hours": 12.5,
+   "ms": 6500,
+   "label": "Shutter open",
+   "letGo": "You let go, so the shutter closed. Press and hold again to keep collecting light."
+  },
+  "doneNote": "Webb collected light for 12.5 hours. Almost every speck and swirl here is a galaxy, each with billions of stars. Some of this light traveled for more than 13 billion years.",
+  "img": "images/18-02-deepfield.jpg",
+  "alt": "Webb’s First Deep Field: thousands of glowing galaxies on black, some round, some spiral, some stretched into curved arcs, and a few stars with long spikes.",
+  "findLabel": "Tap three galaxy shapes:",
+  "shapes": [
+   {
+    "k": "round",
+    "t": "A big round glow",
+    "x": 52,
+    "y": 51.5,
+    "r": 6,
+    "found": "A big round galaxy! It’s part of a giant group of galaxies."
+   },
+   {
+    "k": "spiral",
+    "t": "A spiral (pinwheel)",
+    "x": 85.5,
+    "y": 38.5,
+    "r": 5,
+    "found": "A spiral galaxy, shaped like a pinwheel, like our own Milky Way."
+   },
+   {
+    "k": "arc",
+    "t": "A stretched curve",
+    "x": 60.5,
+    "y": 26.5,
+    "r": 5,
+    "found": "A stretched, bent galaxy! Its light was bent on the way here by the giant group of galaxies in front of it."
+   }
+  ],
+  "star": {
+   "x": 42.5,
+   "y": 38,
+   "r": 4,
+   "t": "That one is a star in our own galaxy, much closer. The long spikes give it away. Find a galaxy shape instead."
+  },
+  "hint": "Look for a big round glow in the middle, a pinwheel on the right, and a curved streak near the top.",
+  "lockLine": "Look through the tool before this one first.",
+  "q": "Why could Webb see these galaxies when the backyard telescope couldn’t?",
+  "opts": [
+   {
+    "t": "Its huge mirror gathered light for hours, out in space.",
+    "ok": true
+   },
+   {
+    "t": "It flew close to the galaxies.",
+    "miss": "Webb is about a million miles from Earth. These galaxies are billions of light-years away. What did it do for 12.5 hours?"
+   },
+   {
+    "t": "It zoomed in more.",
+    "miss": "Remember Open wider: zoom alone doesn’t show new things. What does Webb’s mirror gather?"
+   }
+  ],
+  "credit": "Webb’s First Deep Field: NASA, ESA, CSA and STScI (public domain). All via Wikimedia Commons. Palmetto Beach, the kids and the star party are made up for this lesson. The views through your eyes, binoculars and the backyard telescope are drawings.",
+  "win": "The farthest things need the biggest light-gatherer, out in space, looking for a long time. That’s your last clue.",
+  "clue": "deepfield"
+ },
+ "exploreMod": "deepfield",
+ "permit": {
+  "kicker": "Case closed · Sam’s permit",
+  "title": "The star party permit",
+  "todo": [
+   "Tap the best place for a star party on this real photo of Florida at night.",
+   "Then pick why. The town stamps your permit!"
+  ],
+  "head": "TOWN OF PALMETTO BEACH · EVENT PERMIT",
+  "sub": "Star Party Night · Saturday, 8 PM",
+  "rows": [
+   [
+    "Tools",
+    "Backyard telescope (rented), binoculars, Webb’s deep field picture"
+   ],
+   [
+    "Host",
+    "Sam Park, engineer"
+   ]
+  ],
+  "placeLabel": "Place",
+  "whyLabel": "Why there",
+  "mapQ": "Where are the stars easiest to see? Tap the darkest spot.",
+  "img": "images/18-02-florida-night.jpg",
+  "alt": "Florida at night from space: bright city lights along the coasts and around Orlando, and a big dark area in the south.",
+  "spots": [
+   {
+    "k": "miami",
+    "t": "Miami",
+    "x": 77,
+    "y": 72,
+    "side": "r",
+    "miss": "Miami is one of the brightest places in the photo. City lights hide faint stars."
+   },
+   {
+    "k": "tampa",
+    "t": "Tampa Bay",
+    "x": 35,
+    "y": 60,
+    "side": "l",
+    "miss": "Look at all those lights around Tampa Bay. Find a darker spot."
+   },
+   {
+    "k": "orlando",
+    "t": "Orlando",
+    "x": 43,
+    "y": 47,
+    "miss": "Orlando glows at night. Look south for a dark place."
+   },
+   {
+    "k": "cypress",
+    "t": "Big Cypress",
+    "x": 66,
+    "y": 79,
+    "side": "l",
+    "ok": true,
+    "why": "Big Cypress National Preserve is so dark that it is an official Dark Sky Park. Sam will take the star party bus there!"
+   }
+  ],
+  "whyQ": "Why does a dark place help?",
+  "whyOpts": [
+   {
+    "t": "City lights wash out faint stars.",
+    "ok": true,
+    "fill": "Big Cypress is dark. City lights wash out faint stars."
+   },
+   {
+    "t": "The stars are closer there.",
+    "miss": "The stars are just as far away everywhere in Florida. What is different about the ground there?"
+   },
+   {
+    "t": "It’s warmer there.",
+    "miss": "Warm or cool, what makes stars hard to see? Look at the photo again."
+   }
+  ],
+  "stamp": "APPROVED",
+  "sign": "Approved for Sam Park · Town of Palmetto Beach",
+  "lockLine": "Crack the case first. Then Sam’s permit opens.",
+  "ps": {
+   "head": "P.S. from Sam: telescopes look down, too!",
+   "img": "images/18-02-florida-satellite.jpg",
+   "alt": "Florida from space in daytime: green land, white clouds, and bright blue-green water swirling along the Gulf coast.",
+   "t": "This is a real NASA satellite photo of Florida, taken from more than 400 miles up. Scientists watch the water’s color from space to spot blooms like the red tide from last time. On this day, most of the blue-green swirls were mud stirred up by a storm, with some tiny living things too. That’s why scientists still take water samples, like we did!",
+   "credit": "Florida’s coast from NASA’s Terra satellite (MODIS), Feb. 14, 2023: NASA (public domain). Via Wikimedia Commons."
+  },
+  "credit": "Florida at night from the International Space Station, Oct. 13, 2014: NASA Johnson Space Center (public domain). Via Wikimedia Commons. Big Cypress National Preserve became an International Dark Sky Park in 2016."
+ },
+ "quizKicker": "",
+ "quizMiss": {
+  "q1": {
+   "B": "Bacteria are tiny and close. That’s a microscope’s job. What does a telescope collect?",
+   "C": "Close-up insects need a hand lens or microscope. What does a telescope do with far-away light?"
+  },
+  "q2": {
+   "A": "Saturn looks like a bright dot to your eyes. Which tool showed the rings in Find it in the sky?",
+   "C": "A hand lens is for close things. Saturn is about 900 million miles away!"
+  },
+  "q3": {
+   "A": "Space telescopes cost billions of dollars! What did the TV report say about the air?",
+   "B": "Telescopes collect light, not sound. What blurs the view from the ground?"
+  }
+ },
+ "flags": {
+  "ans-1": [
+   {
+    "label": "one far-away thing",
+    "re": "moon|saturn|star|galax|jupiter|andromeda|seven sisters|pleiades|planet"
+   },
+   {
+    "label": "the best tool",
+    "re": "telescope|binocular|hubble|webb|space"
+   },
+   {
+    "label": "why",
+    "re": "because|so |since|it can|it shows|to see|ring|crater|light|far|dim|wide|tiny|detail"
+   }
+  ],
+  "ans-3": [
+   {
+    "label": "the word image",
+    "re": "image"
+   },
+   {
+    "label": "above the air",
+    "re": "air|atmosph|blur|twinkl|wobbl|space|above|sharp|clear"
+   },
+   {
+    "label": "a detail or example",
+    "re": "hubble|webb|galax|deep field|12|hours|mirror|far|faint|dim|light"
+   }
+  ],
+  "cer-4": [
+   {
+    "label": "your claim",
+    "re": "agree|disagree|not true|wrong|right|true|false|we do need|still need|need space"
+   },
+   {
+    "label": "two pieces of evidence",
+    "any": [
+     "air",
+     "atmosph",
+     "blur",
+     "twinkl",
+     "wobbl",
+     "hubble",
+     "webb",
+     "mirror",
+     "light",
+     "galax",
+     "deep field",
+     "hours",
+     "12",
+     "zoom",
+     "bigger",
+     "dim",
+     "faint",
+     "mountain",
+     "space"
+    ],
+    "min": 2
+   },
+   {
+    "label": "your reasoning",
+    "re": "because|so |this shows|that shows|this means|that means|which means|proves|since"
+   }
+  ]
+ },
+ "minWords": {
+  "ans-1": 15,
+  "ans-3": 15,
+  "cer-4": 30
+ },
+ "hints": {
+  "ans-1": [
+   "Pick one: the Moon, Saturn, far stars or galaxies.",
+   "Think about Find it in the sky and Stare at nothing. Which tool showed it best?",
+   "Try: The best tool for ___ is ___ because ___."
+  ],
+  "ans-3": [
+   "Think about the TV report. What does Earth’s air do to starlight?",
+   "Then think about Webb’s deep field. What did its image show?",
+   "Try: Space telescopes are better because ___. For example, Webb’s image ___."
+  ],
+  "cer-4": [
+   "First decide: can a taller telescope on Earth do what a space telescope does?",
+   "Think about the blurry air in the TV report, and Zoom only in Open wider.",
+   "Try: I ___ because ___. One piece of evidence is ___. Another is ___."
+  ]
+ },
+ "scholar": {},
+ "planner": {
+  "before": "cer-4",
+  "title": "Your claim and two pieces of evidence",
+  "rows": [
+   {
+    "label": "1. Pick your side",
+    "options": [
+     "I agree",
+     "I disagree"
+    ],
+    "pick": 1
+   },
+   {
+    "label": "2. Pick two pieces of evidence from the lesson",
+    "pick": 2,
+    "options": [
+     "Earth’s air blurs starlight. Hubble sits above the air, so its pictures are sharp.",
+     "Zooming in only made stars bigger and dimmer. It didn’t show any new stars.",
+     "Webb gathered light for 12.5 hours from space and found thousands of galaxies in an “empty” speck.",
+     "Even a tall telescope on Earth still looks up through the air."
+    ]
+   }
+  ],
+  "note": "Tap your side and two facts. Then write your reasoning in your own words."
+ },
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the star party",
+   "length": "30–40 s",
+   "script": "Great news! The red tide is gone, and Palmetto Beach is open again. So the town is throwing a star party, a night when everyone looks at the sky together. Four kids sent me their wish cards. Read them! The town can rent just one tool. Can we make every wish come true?"
+  },
+  "warmup": {
+   "label": "Warm-Up · race the light (Clue 1)",
+   "length": "20–30 s",
+   "script": "Here’s a wild claim: the starlight you see tonight is older than you. Let’s test it. Drag each picture onto your guess. How long ago did its light leave? Then press Send the light and watch it race to Earth."
+  },
+  "vocab": {
+   "label": "Word Wall",
+   "length": "30–45 s",
+   "notes": "Hold a paper towel tube to your eye for “telescope”; walk to the far side of the room for “distant”."
+  },
+  "lesson": {
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  "part1": {
+   "label": "Part 1 · open wider (Clue 2)",
+   "length": "20–30 s",
+   "script": "Your eye is a light catcher. Drag the gold dot to open the opening wider. First an owl’s eye, then binoculars, then a telescope mirror. Watch the star count climb! Then try Zoom only. Do you see any new stars?"
+  },
+  "part2": {
+   "label": "Part 2 · find it in the sky (Clue 3)",
+   "length": "20–30 s",
+   "script": "I set up two tools on the beach. Pick the binoculars or the telescope, then drag the circle across the sky. Look at every wish with both tools. The telescope sees more detail, but its view is tiny!"
+  },
+  "part3": {
+   "label": "Part 3 · the TV report",
+   "length": "20–30 s",
+   "notes": "Optional video. The TV report itself is voiced by the news voice."
+  },
+  "explore": {
+   "label": "Part 4 · stare at nothing (Clue 4)",
+   "length": "25–35 s",
+   "script": "Jordan wants the farthest thing ever. Look at this tiny square of sky with each tool. Your eyes, binoculars, then the telescope. Then use Webb! Press and hold the shutter button. Keep holding until twelve and a half hours pass. Then tap three galaxy shapes."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s"
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "20–30 s",
+   "script": "Do you have all four clues? Crack the case at the top of this tab. Then fill in my star party permit and find the darkest place on the map. After that, answer two questions, write three views for Part C, and finish your C-E-R."
+  },
+  "partb": {
+   "label": "Part B",
+   "length": "30 s"
+  },
+  "partc": {
+   "label": "Part C · three views",
+   "length": "30 s"
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "25–35 s",
+   "script": "A classmate says we don’t need space telescopes. Just build them taller on Earth! Hmm. Think about the blurry air from the TV report. Think about Zoom only. Pick your side, tap two pieces of evidence in the planner, then explain how they prove your claim."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "20–30 s",
+   "notes": "Celebrate; tease week 19 (motion and energy).",
+   "script": "Case closed! Every kid gets their wish, because you picked the right tool for each one. Binoculars, a backyard telescope, and a space telescope. Next week my tools get a new job. How does energy make things move?"
+  }
+ },
+ "videoOff": [],
+ "camera": {
+  "max": 8,
+  "huntTitle": "Bonus: can you snap all 4 shots on this list?",
+  "missions": [
+   "Your four stamped light cards (Warm-Up)",
+   "The sky with the most stars (The Lesson)",
+   "Saturn through the telescope (The Lesson)",
+   "Webb’s deep field after 12.5 hours (The Lesson)"
+  ]
+ },
+ "sketch": {
+  "tip": "Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.",
+  "prompts": [
+   "Three views of one far-away thing",
+   "Saturn through a telescope",
+   "The star party"
+  ],
+  "inline": [
+   {
+    "id": "partc",
+    "afterPart": "C",
+    "kicker": "Part C · sketch it (optional)",
+    "required": false,
+    "minLabels": 3,
+    "prompts": [
+     "Draw three circles in a row: eyes, binoculars, telescope",
+     "Draw what you’d see in each circle",
+     "Label one detail in each circle"
+    ]
+   }
+  ]
+ },
+ "hlCoach": {
+  "title": "Highlight like a scientist",
+  "tips": [
+   [
+    "🔑",
+    "Highlight key words, not whole paragraphs.",
+    "If everything is yellow, nothing stands out. Aim for a few words in each paragraph."
+   ],
+   [
+    "📖",
+    "Look for words that are explained.",
+    "Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."
+   ],
+   [
+    "🎯",
+    "Look for answers to the Big Question.",
+    "Ask yourself: does this help me explain how tools help us see things too far away?"
+   ],
+   [
+    "🔗",
+    "Watch for clue words.",
+    "“Because”, “so” and “first … then” show how ideas connect."
+   ],
+   [
+    "🎨",
+    "Use the colors on purpose.",
+    "Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."
+   ]
+  ],
+  "practice": {
+   "q": "Practice: tap the 3 to 5 words that matter most in this sentence.",
+   "text": "A telescope’s big mirror gathers much more light than your eye.",
+   "key": [
+    "telescope’s",
+    "big",
+    "mirror",
+    "gathers",
+    "more",
+    "light"
+   ],
+   "small": [
+    "A",
+    "than",
+    "your"
+   ],
+   "model": "A scientist might highlight “big mirror”, “gathers” and “more light”. Those words tell how a telescope works. Small words like “a” and “than” don’t carry the idea."
+  },
+  "outside": "This works in every subject. When you read anything, save the words that answer your question, and skip the rest."
+ },
+ "specimen": {
+  "kicker": "Specimen collected",
+  "stamp": "CASE CLOSED",
+  "icon": "🎟️",
+  "name": "Star party ticket",
+  "line": "You cracked Case 18 part 2, and your star party ticket goes in your Field Notebook. (A specimen is something a scientist collects to keep.) Next week: energy and motion."
+ },
+ "notebookTitle": "Unit 5 · Energy, Motion & Collisions",
+ "notebook": [
+  {
+   "lesson": "18.01",
+   "icon": "🧫",
+   "name": "Red tide sample slide"
+  },
+  {
+   "lesson": "18.02",
+   "icon": "🎟️",
+   "name": "Star party ticket"
+  },
+  {
+   "lesson": "19.01"
+  },
+  {
+   "lesson": "19.02"
+  },
+  {
+   "lesson": "20.01"
+  },
+  {
+   "lesson": "20.02"
+  },
+  {
+   "lesson": "21.01"
+  },
+  {
+   "lesson": "21.02"
+  },
+  {
+   "lesson": "22.01"
+  },
+  {
+   "lesson": "22.02"
+  },
+  {
+   "lesson": "23.01"
+  },
+  {
+   "lesson": "23.02"
+  },
+  {
+   "lesson": "24.01"
+  },
+  {
+   "lesson": "24.02"
+  }
+ ],
+ "rankLine": "Your Field Station ID just updated. Keep going, scientist.",
+ "lensWin": "All six words are in focus. You’ll use every one of them at the star party.",
+ "inputs": [
+  {
+   "id": "tab1",
+   "type": "swap",
+   "find": {
+    "sel": ".tab-btn[data-tab=\"vocab\"]"
+   },
+   "swap": [
+    "📚 Vocabulary",
+    "🌅 Warm-Up"
+   ]
+  },
+  {
+   "id": "fs-warm",
+   "type": "list",
+   "find": {
+    "sel": ".fs-game[data-mod=\"racelight\"]"
+   },
+   "label": "Warm-Up: three things I can see in the night sky",
+   "q": "Warm-Up: Three things I can see in the night sky with just my eyes",
+   "title": "Your turn: name three things you can see in the night sky with just your eyes.",
+   "min": 3,
+   "unit": "things",
+   "addLabel": "+ Add another",
+   "ph": [
+    "The Moon",
+    "Bright stars",
+    "Something else…"
+   ]
+  },
+  {
+   "id": "sw-words",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap a card to flip it"
+   },
+   "swap": [
+    "<strong>Tap a card to flip it</strong> and read what the word means.",
+    "<strong>Tap a word</strong> to hear it and see what it means."
+   ]
+  },
+  {
+   "id": "hide-nw",
+   "type": "hide",
+   "find": {
+    "sel": ".act-warmup .socratic-q",
+    "text": "Notice"
+   }
+  },
+  {
+   "id": "hide-tip",
+   "type": "hide",
+   "find": {
+    "sel": ".act-warmup .callout",
+    "text": "Microscopes magnify tiny things"
+   }
+  },
+  {
+   "id": "fs-partc",
+   "type": "frame",
+   "find": {
+    "sel": "#tab-assignment p",
+    "text": "Pick one far-away thing in the sky"
+   },
+   "label": "Part C: Three views of one far-away thing",
+   "q": "Part C: One far-away thing seen three ways, and the best tool for it",
+   "title": "Three views of my far-away thing",
+   "fields": [
+    {
+     "t": "My far-away thing",
+     "icon": "🌌",
+     "ph": "I picked…"
+    },
+    {
+     "t": "With my EYES, I see…",
+     "icon": "👁️",
+     "ph": "With my eyes, I see…",
+     "long": true
+    },
+    {
+     "t": "With BINOCULARS, I’d see…",
+     "icon": "🔭",
+     "ph": "With binoculars, I’d see…",
+     "long": true
+    },
+    {
+     "t": "With a BACKYARD TELESCOPE, I’d see…",
+     "icon": "🪞",
+     "ph": "With a backyard telescope, I’d see…",
+     "long": true
+    },
+    {
+     "t": "The best tool for it, and why",
+     "icon": "🎯",
+     "ph": "The best tool is ___ because…",
+     "long": true
+    }
+   ]
+  },
+  {
+   "id": "fs-cer",
+   "type": "cer",
+   "target": "cer-4",
+   "find": {
+    "sel": "textarea#cer-4"
+   },
+   "reminder": "Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.",
+   "parts": [
+    {
+     "k": "C",
+     "t": "Claim",
+     "ask": "Do we still need telescopes in space?",
+     "ph": "I agree / I disagree because…"
+    },
+    {
+     "k": "E",
+     "t": "Evidence",
+     "ask": "Two facts from the lesson. Tap them in the planner above, or type them.",
+     "ph": "One fact is… Another fact is…",
+     "rows": 3
+    },
+    {
+     "k": "R",
+     "t": "Reasoning",
+     "ask": "How do those facts prove your claim?",
+     "ph": "This shows that…",
+     "rows": 3
+    }
+   ]
+  },
+  {
+   "id": "relabel",
+   "type": "relabel",
+   "map": {
+    "ans-1": "Part B · Question 5",
+    "ans-3": "Part B · Question 6",
+    "cer-4": "Use Your Evidence (CER)"
+   }
+  },
+  {
+   "id": "sw-check",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap to toggle"
+   },
+   "swap": [
+    " Tap to toggle.",
+    ""
+   ]
+  },
+  {
+   "id": "sw-circle",
+   "type": "swap",
+   "find": {
+    "sel": ".card-head-title",
+    "text": "Revisit Our Key Question"
+   },
+   "swap": [
+    "Revisit Our Key Question",
+    "Back to the Big Question"
+   ]
+  }
+ ],
+ "cues": {
+  "welcome": [
+   {
+    "at": "^gone",
+    "sel": ".fs-casecard .fs-case-k",
+    "fx": "glow"
+   },
+   {
+    "at": "^star$",
+    "sel": ".fs-casecard .fs-notice",
+    "fx": "pop",
+    "tag": "Saturday, 8 PM"
+   },
+   {
+    "at": "^wish",
+    "sel": ".fs-casecard .fs-wishes",
+    "fx": "reveal"
+   },
+   {
+    "at": "^Read",
+    "sel": ".fs-casecard .fs-wish",
+    "all": true,
+    "fx": "wiggle"
+   },
+   {
+    "at": "^one$",
+    "sel": ".fs-casecard .fs-notice dl",
+    "fx": "trace"
+   },
+   {
+    "at": "^every",
+    "sel": ".fs-casecard .fs-case-ask",
+    "fx": "pop"
+   }
+  ],
+  "warmup": [
+   {
+    "at": "^older",
+    "sel": ".fs-game[data-mod=\"racelight\"] .fs-why",
+    "fx": "glow",
+    "scroll": true
+   },
+   {
+    "at": "^Drag",
+    "sel": ".fs-rl-tray",
+    "fx": "glow"
+   },
+   {
+    "at": "^guess",
+    "sel": ".fs-rl-rib",
+    "fx": "pop"
+   },
+   {
+    "at": "^Send",
+    "sel": ".fs-rl-send",
+    "fx": "point"
+   },
+   {
+    "at": "^race",
+    "sel": ".fs-rl-track",
+    "fx": "glow",
+    "tag": "✨ Light speed!"
+   }
+  ],
+  "part1": [
+   {
+    "at": "^catcher",
+    "sel": ".fs-ow-ap",
+    "fx": "glow",
+    "scroll": true
+   },
+   {
+    "at": "^gold",
+    "sel": ".fs-ow-apsvg",
+    "fx": "pop",
+    "tag": "Drag the gold dot"
+   },
+   {
+    "at": "^owl",
+    "sel": ".fs-ow-who",
+    "fx": "wiggle",
+    "tag": "🦉"
+   },
+   {
+    "at": "^star$",
+    "sel": ".fs-ow-n",
+    "fx": "pop"
+   },
+   {
+    "at": "^Zoom",
+    "sel": ".fs-ow-zoom",
+    "fx": "point"
+   }
+  ],
+  "part2": [
+   {
+    "at": "^two$",
+    "sel": ".fs-sh-tools",
+    "fx": "glow",
+    "scroll": true
+   },
+   {
+    "at": "^binoculars",
+    "sel": ".fs-sh-tool[data-k=\"bino\"]",
+    "fx": "pop"
+   },
+   {
+    "at": "^telescope",
+    "sel": ".fs-sh-tool[data-k=\"scope\"]",
+    "i": 0,
+    "fx": "pop"
+   },
+   {
+    "at": "^drag",
+    "sel": ".fs-sh-sky",
+    "fx": "glow"
+   },
+   {
+    "at": "^wish",
+    "sel": ".fs-sh-list",
+    "fx": "reveal"
+   },
+   {
+    "at": "^tiny",
+    "sel": ".fs-sh-eye",
+    "fx": "wiggle",
+    "tag": "Tiny view!"
+   }
+  ],
+  "explore": [
+   {
+    "at": "^farthest",
+    "sel": ".fs-game[data-mod=\"deepfield\"] .fs-why",
+    "fx": "glow",
+    "scroll": true
+   },
+   {
+    "at": "^square",
+    "sel": ".fs-df-view",
+    "fx": "pop"
+   },
+   {
+    "at": "^eyes",
+    "sel": ".fs-df-tools",
+    "fx": "glow"
+   },
+   {
+    "at": "^Webb",
+    "sel": ".fs-df-tool[data-i=\"3\"]",
+    "fx": "wiggle",
+    "tag": "🛰️"
+   },
+   {
+    "at": "^hold",
+    "sel": ".fs-df-hold",
+    "fx": "point"
+   },
+   {
+    "at": "^galaxy",
+    "sel": ".fs-df-view",
+    "fx": "glow"
+   }
+  ],
+  "assignment": [
+   {
+    "at": "^clues",
+    "sel": ".fs-board",
+    "fx": "glow"
+   },
+   {
+    "at": "^Crack",
+    "sel": ".fs-solve",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^permit",
+    "sel": ".fs-pm-form",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^darkest",
+    "sel": ".fs-pm-photo",
+    "fx": "glow"
+   },
+   {
+    "at": "^two$",
+    "sel": "#tab-assignment .pq",
+    "fx": "glow",
+    "all": true,
+    "scroll": true
+   },
+   {
+    "at": "^CER$|^C$",
+    "sel": "#tab-assignment .fs-cer",
+    "fx": "glow",
+    "scroll": true
+   }
+  ],
+  "evidence": [
+   {
+    "at": "^classmate",
+    "sel": "#tab-assignment .act-body > div:has(> .fs-plan) > p",
+    "i": 0,
+    "fx": "trace"
+   },
+   {
+    "at": "^blurry",
+    "sel": ".fs-plan .fs-opt",
+    "i": 2,
+    "fx": "glow"
+   },
+   {
+    "at": "^Zoom",
+    "sel": ".fs-plan .fs-opt",
+    "i": 3,
+    "fx": "glow"
+   },
+   {
+    "at": "^side",
+    "sel": ".fs-plan .fs-plan-row",
+    "i": 0,
+    "fx": "pop"
+   },
+   {
+    "at": "^evidence",
+    "sel": ".fs-plan .fs-plan-row",
+    "i": 1,
+    "fx": "glow"
+   },
+   {
+    "at": "^explain",
+    "sel": ".fs-cer .fs-cer-row",
+    "i": 2,
+    "fx": "glow",
+    "scroll": true
+   }
+  ],
+  "closing": [
+   {
+    "at": "^closed",
+    "sel": ".fs-specimen",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^Next",
+    "sel": "#tab-assignment .callout-tip",
+    "fx": "glow"
+   }
+  ]
+ },
+ "cueWords": {
+  "welcome": [
+   [
+    0.16,
+    0.4,
+    "Great"
+   ],
+   [
+    0.48,
+    1.12,
+    "news!"
+   ],
+   [
+    1.28,
+    1.36,
+    "The"
+   ],
+   [
+    1.44,
+    1.6,
+    "red"
+   ],
+   [
+    1.68,
+    1.92,
+    "tide"
+   ],
+   [
+    2.04,
+    2.16,
+    "is"
+   ],
+   [
+    2.24,
+    2.76,
+    "gone,"
+   ],
+   [
+    2.88,
+    2.96,
+    "and"
+   ],
+   [
+    3.04,
+    3.36,
+    "Palmetto"
+   ],
+   [
+    3.44,
+    3.68,
+    "Beach"
+   ],
+   [
+    3.76,
+    4,
+    "is"
+   ],
+   [
+    4.08,
+    4.24,
+    "open"
+   ],
+   [
+    4.32,
+    4.84,
+    "again."
+   ],
+   [
+    5.04,
+    5.12,
+    "So"
+   ],
+   [
+    5.2,
+    5.28,
+    "the"
+   ],
+   [
+    5.4,
+    5.52,
+    "town"
+   ],
+   [
+    5.6,
+    5.76,
+    "is"
+   ],
+   [
+    5.84,
+    6.08,
+    "throwing"
+   ],
+   [
+    6.16,
+    6.24,
+    "a"
+   ],
+   [
+    6.4,
+    6.56,
+    "star"
+   ],
+   [
+    6.64,
+    7.2,
+    "party,"
+   ],
+   [
+    7.28,
+    7.32,
+    "a"
+   ],
+   [
+    7.36,
+    7.52,
+    "night"
+   ],
+   [
+    7.68,
+    7.84,
+    "when"
+   ],
+   [
+    7.92,
+    8.32,
+    "everyone"
+   ],
+   [
+    8.4,
+    8.48,
+    "looks"
+   ],
+   [
+    8.52,
+    8.56,
+    "at"
+   ],
+   [
+    8.64,
+    8.68,
+    "the"
+   ],
+   [
+    8.72,
+    8.96,
+    "sky"
+   ],
+   [
+    9.04,
+    9.84,
+    "together."
+   ],
+   [
+    9.96,
+    10.08,
+    "Four"
+   ],
+   [
+    10.16,
+    10.32,
+    "kids"
+   ],
+   [
+    10.4,
+    10.48,
+    "sent"
+   ],
+   [
+    10.56,
+    10.64,
+    "me"
+   ],
+   [
+    10.72,
+    10.8,
+    "their"
+   ],
+   [
+    10.88,
+    10.96,
+    "wish"
+   ],
+   [
+    11.04,
+    11.6,
+    "cards."
+   ],
+   [
+    11.72,
+    11.84,
+    "Read"
+   ],
+   [
+    11.96,
+    12.48,
+    "them!"
+   ],
+   [
+    12.56,
+    12.64,
+    "The"
+   ],
+   [
+    12.76,
+    12.88,
+    "town"
+   ],
+   [
+    12.96,
+    13.04,
+    "can"
+   ],
+   [
+    13.12,
+    13.36,
+    "rent"
+   ],
+   [
+    13.52,
+    13.68,
+    "just"
+   ],
+   [
+    13.76,
+    14,
+    "one"
+   ],
+   [
+    14.16,
+    14.8,
+    "tool."
+   ],
+   [
+    14.93,
+    14.96,
+    "Can"
+   ],
+   [
+    15.04,
+    15.12,
+    "we"
+   ],
+   [
+    15.2,
+    15.44,
+    "make"
+   ],
+   [
+    15.6,
+    15.76,
+    "every"
+   ],
+   [
+    15.88,
+    16,
+    "wish"
+   ],
+   [
+    16.08,
+    16.16,
+    "come"
+   ],
+   [
+    16.24,
+    16.8,
+    "true?"
+   ]
+  ],
+  "warmup": [
+   [
+    0,
+    0.2,
+    "Here’s"
+   ],
+   [
+    0.24,
+    0.28,
+    "a"
+   ],
+   [
+    0.32,
+    0.72,
+    "wild"
+   ],
+   [
+    0.8,
+    1.68,
+    "claim:"
+   ],
+   [
+    1.72,
+    1.76,
+    "the"
+   ],
+   [
+    1.84,
+    2.24,
+    "starlight"
+   ],
+   [
+    2.32,
+    2.4,
+    "you"
+   ],
+   [
+    2.48,
+    2.56,
+    "see"
+   ],
+   [
+    2.68,
+    3.04,
+    "tonight"
+   ],
+   [
+    3.28,
+    3.52,
+    "is"
+   ],
+   [
+    3.6,
+    3.84,
+    "older"
+   ],
+   [
+    3.92,
+    4.08,
+    "than"
+   ],
+   [
+    4.16,
+    4.76,
+    "you."
+   ],
+   [
+    5.04,
+    5.2,
+    "Let’s"
+   ],
+   [
+    5.28,
+    5.52,
+    "test"
+   ],
+   [
+    5.6,
+    5.84,
+    "it."
+   ],
+   [
+    6.24,
+    6.56,
+    "Drag"
+   ],
+   [
+    6.64,
+    6.8,
+    "each"
+   ],
+   [
+    6.88,
+    7.28,
+    "picture"
+   ],
+   [
+    7.36,
+    7.6,
+    "onto"
+   ],
+   [
+    7.68,
+    7.76,
+    "your"
+   ],
+   [
+    7.96,
+    8.4,
+    "guess."
+   ],
+   [
+    8.64,
+    8.8,
+    "How"
+   ],
+   [
+    8.88,
+    8.96,
+    "long"
+   ],
+   [
+    9.04,
+    9.28,
+    "ago"
+   ],
+   [
+    9.36,
+    9.44,
+    "did"
+   ],
+   [
+    9.52,
+    9.6,
+    "its"
+   ],
+   [
+    9.68,
+    9.84,
+    "light"
+   ],
+   [
+    10,
+    10.64,
+    "leave?"
+   ],
+   [
+    10.72,
+    10.96,
+    "Then"
+   ],
+   [
+    11.2,
+    11.44,
+    "press"
+   ],
+   [
+    11.68,
+    11.84,
+    "Send"
+   ],
+   [
+    11.92,
+    11.96,
+    "the"
+   ],
+   [
+    12,
+    12.32,
+    "light"
+   ],
+   [
+    12.48,
+    12.64,
+    "and"
+   ],
+   [
+    12.72,
+    12.96,
+    "watch"
+   ],
+   [
+    13.04,
+    13.12,
+    "it"
+   ],
+   [
+    13.28,
+    13.52,
+    "race"
+   ],
+   [
+    13.56,
+    13.6,
+    "to"
+   ],
+   [
+    13.68,
+    14.24,
+    "Earth."
+   ]
+  ],
+  "part1": [
+   [
+    0,
+    0.24,
+    "Your"
+   ],
+   [
+    0.32,
+    0.64,
+    "eye"
+   ],
+   [
+    0.72,
+    0.8,
+    "is"
+   ],
+   [
+    0.88,
+    0.96,
+    "a"
+   ],
+   [
+    1.04,
+    1.2,
+    "light"
+   ],
+   [
+    1.28,
+    1.76,
+    "catcher."
+   ],
+   [
+    2.24,
+    2.48,
+    "Drag"
+   ],
+   [
+    2.56,
+    2.64,
+    "the"
+   ],
+   [
+    2.72,
+    2.96,
+    "gold"
+   ],
+   [
+    3.04,
+    3.28,
+    "dot"
+   ],
+   [
+    3.36,
+    3.44,
+    "to"
+   ],
+   [
+    3.52,
+    3.68,
+    "open"
+   ],
+   [
+    3.76,
+    3.84,
+    "the"
+   ],
+   [
+    3.92,
+    4.24,
+    "opening"
+   ],
+   [
+    4.32,
+    5,
+    "wider."
+   ],
+   [
+    5.28,
+    5.52,
+    "First"
+   ],
+   [
+    5.6,
+    5.68,
+    "an"
+   ],
+   [
+    5.76,
+    6,
+    "owl’s"
+   ],
+   [
+    6.08,
+    6.64,
+    "eye,"
+   ],
+   [
+    6.72,
+    6.8,
+    "then"
+   ],
+   [
+    6.88,
+    8,
+    "binoculars,"
+   ],
+   [
+    8.12,
+    8.24,
+    "then"
+   ],
+   [
+    8.32,
+    8.4,
+    "a"
+   ],
+   [
+    8.48,
+    8.96,
+    "telescope"
+   ],
+   [
+    9.04,
+    9.36,
+    "mirror."
+   ],
+   [
+    9.84,
+    10.08,
+    "Watch"
+   ],
+   [
+    10.16,
+    10.24,
+    "the"
+   ],
+   [
+    10.32,
+    10.56,
+    "star"
+   ],
+   [
+    10.64,
+    10.88,
+    "count"
+   ],
+   [
+    10.96,
+    11.72,
+    "climb!"
+   ],
+   [
+    12,
+    12.24,
+    "Then"
+   ],
+   [
+    12.48,
+    12.72,
+    "try"
+   ],
+   [
+    12.8,
+    13.04,
+    "Zoom"
+   ],
+   [
+    13.12,
+    13.72,
+    "only."
+   ],
+   [
+    14,
+    14.04,
+    "Do"
+   ],
+   [
+    14.08,
+    14.16,
+    "you"
+   ],
+   [
+    14.24,
+    14.32,
+    "see"
+   ],
+   [
+    14.4,
+    14.48,
+    "any"
+   ],
+   [
+    14.56,
+    14.64,
+    "new"
+   ],
+   [
+    14.72,
+    15.52,
+    "stars?"
+   ]
+  ],
+  "part2": [
+   [
+    0,
+    0.08,
+    "I"
+   ],
+   [
+    0.16,
+    0.29,
+    "set"
+   ],
+   [
+    0.32,
+    0.44,
+    "up"
+   ],
+   [
+    0.48,
+    0.67,
+    "two"
+   ],
+   [
+    0.72,
+    1.06,
+    "tools"
+   ],
+   [
+    1.12,
+    1.24,
+    "on"
+   ],
+   [
+    1.28,
+    1.35,
+    "the"
+   ],
+   [
+    1.36,
+    1.76,
+    "beach."
+   ],
+   [
+    1.84,
+    2.4,
+    "Pick"
+   ],
+   [
+    2.44,
+    2.48,
+    "the"
+   ],
+   [
+    2.6,
+    3.28,
+    "binoculars"
+   ],
+   [
+    3.36,
+    3.44,
+    "or"
+   ],
+   [
+    3.48,
+    3.52,
+    "the"
+   ],
+   [
+    3.6,
+    4.56,
+    "telescope,"
+   ],
+   [
+    4.68,
+    4.8,
+    "then"
+   ],
+   [
+    4.96,
+    5.12,
+    "drag"
+   ],
+   [
+    5.16,
+    5.2,
+    "the"
+   ],
+   [
+    5.28,
+    5.6,
+    "circle"
+   ],
+   [
+    5.68,
+    6.08,
+    "across"
+   ],
+   [
+    6.16,
+    6.2,
+    "the"
+   ],
+   [
+    6.24,
+    6.92,
+    "sky."
+   ],
+   [
+    7.2,
+    7.36,
+    "Look"
+   ],
+   [
+    7.48,
+    7.6,
+    "at"
+   ],
+   [
+    7.68,
+    7.92,
+    "every"
+   ],
+   [
+    8,
+    8.24,
+    "wish"
+   ],
+   [
+    8.32,
+    8.56,
+    "with"
+   ],
+   [
+    8.68,
+    8.8,
+    "both"
+   ],
+   [
+    8.88,
+    9.76,
+    "tools."
+   ],
+   [
+    9.84,
+    9.92,
+    "The"
+   ],
+   [
+    9.96,
+    10.4,
+    "telescope"
+   ],
+   [
+    10.44,
+    10.64,
+    "sees"
+   ],
+   [
+    10.76,
+    10.88,
+    "more"
+   ],
+   [
+    11.12,
+    11.6,
+    "detail,"
+   ],
+   [
+    11.64,
+    11.68,
+    "but"
+   ],
+   [
+    11.76,
+    11.84,
+    "its"
+   ],
+   [
+    11.92,
+    12.08,
+    "view"
+   ],
+   [
+    12.16,
+    12.4,
+    "is"
+   ],
+   [
+    12.68,
+    13.28,
+    "tiny!"
+   ]
+  ],
+  "explore": [
+   [
+    0,
+    0.4,
+    "Jordan"
+   ],
+   [
+    0.48,
+    0.72,
+    "wants"
+   ],
+   [
+    0.76,
+    0.8,
+    "the"
+   ],
+   [
+    1.04,
+    1.44,
+    "farthest"
+   ],
+   [
+    1.56,
+    1.68,
+    "thing"
+   ],
+   [
+    1.84,
+    2.48,
+    "ever."
+   ],
+   [
+    2.72,
+    2.8,
+    "Look"
+   ],
+   [
+    2.88,
+    2.92,
+    "at"
+   ],
+   [
+    2.96,
+    3.12,
+    "this"
+   ],
+   [
+    3.2,
+    3.6,
+    "tiny"
+   ],
+   [
+    3.68,
+    3.92,
+    "square"
+   ],
+   [
+    3.96,
+    4,
+    "of"
+   ],
+   [
+    4.08,
+    4.4,
+    "sky"
+   ],
+   [
+    4.48,
+    4.56,
+    "with"
+   ],
+   [
+    4.64,
+    4.8,
+    "each"
+   ],
+   [
+    4.88,
+    5.4,
+    "tool."
+   ],
+   [
+    5.6,
+    5.76,
+    "Your"
+   ],
+   [
+    5.84,
+    6.36,
+    "eyes,"
+   ],
+   [
+    6.48,
+    7.44,
+    "binoculars,"
+   ],
+   [
+    7.56,
+    7.68,
+    "then"
+   ],
+   [
+    7.72,
+    7.76,
+    "the"
+   ],
+   [
+    7.84,
+    8.64,
+    "telescope."
+   ],
+   [
+    8.88,
+    9.04,
+    "Then"
+   ],
+   [
+    9.12,
+    9.28,
+    "use"
+   ],
+   [
+    9.36,
+    9.76,
+    "Webb!"
+   ],
+   [
+    10.16,
+    10.48,
+    "Press"
+   ],
+   [
+    10.56,
+    10.64,
+    "and"
+   ],
+   [
+    10.72,
+    10.96,
+    "hold"
+   ],
+   [
+    11,
+    11.04,
+    "the"
+   ],
+   [
+    11.12,
+    11.36,
+    "shutter"
+   ],
+   [
+    11.44,
+    11.76,
+    "button."
+   ],
+   [
+    12.16,
+    12.4,
+    "Keep"
+   ],
+   [
+    12.48,
+    12.8,
+    "holding"
+   ],
+   [
+    12.88,
+    13.12,
+    "until"
+   ],
+   [
+    13.2,
+    13.44,
+    "twelve"
+   ],
+   [
+    13.52,
+    13.6,
+    "and"
+   ],
+   [
+    13.64,
+    13.68,
+    "a"
+   ],
+   [
+    13.76,
+    13.84,
+    "half"
+   ],
+   [
+    14,
+    14.32,
+    "hours"
+   ],
+   [
+    14.4,
+    14.8,
+    "pass."
+   ],
+   [
+    15.28,
+    15.52,
+    "Then"
+   ],
+   [
+    15.76,
+    15.92,
+    "tap"
+   ],
+   [
+    16.08,
+    16.32,
+    "three"
+   ],
+   [
+    16.4,
+    16.8,
+    "galaxy"
+   ],
+   [
+    16.88,
+    17.52,
+    "shapes."
+   ]
+  ],
+  "assignment": [
+   [
+    0,
+    0.16,
+    "Do"
+   ],
+   [
+    0.2,
+    0.24,
+    "you"
+   ],
+   [
+    0.32,
+    0.48,
+    "have"
+   ],
+   [
+    0.56,
+    0.64,
+    "all"
+   ],
+   [
+    0.72,
+    0.88,
+    "four"
+   ],
+   [
+    0.96,
+    1.6,
+    "clues?"
+   ],
+   [
+    1.84,
+    2.08,
+    "Crack"
+   ],
+   [
+    2.12,
+    2.16,
+    "the"
+   ],
+   [
+    2.24,
+    2.56,
+    "case"
+   ],
+   [
+    2.6,
+    2.64,
+    "at"
+   ],
+   [
+    2.72,
+    2.8,
+    "the"
+   ],
+   [
+    2.88,
+    3.04,
+    "top"
+   ],
+   [
+    3.12,
+    3.16,
+    "of"
+   ],
+   [
+    3.2,
+    3.36,
+    "this"
+   ],
+   [
+    3.52,
+    4.16,
+    "tab."
+   ],
+   [
+    4.28,
+    4.4,
+    "Then"
+   ],
+   [
+    4.72,
+    4.8,
+    "fill"
+   ],
+   [
+    4.88,
+    4.96,
+    "in"
+   ],
+   [
+    5,
+    5.04,
+    "my"
+   ],
+   [
+    5.12,
+    5.36,
+    "star"
+   ],
+   [
+    5.44,
+    5.68,
+    "party"
+   ],
+   [
+    5.88,
+    6.08,
+    "permit"
+   ],
+   [
+    6.2,
+    6.32,
+    "and"
+   ],
+   [
+    6.44,
+    6.56,
+    "find"
+   ],
+   [
+    6.6,
+    6.64,
+    "the"
+   ],
+   [
+    6.8,
+    7.2,
+    "darkest"
+   ],
+   [
+    7.36,
+    7.52,
+    "place"
+   ],
+   [
+    7.56,
+    7.6,
+    "on"
+   ],
+   [
+    7.68,
+    7.72,
+    "the"
+   ],
+   [
+    7.76,
+    8.56,
+    "map."
+   ],
+   [
+    8.72,
+    8.88,
+    "After"
+   ],
+   [
+    9,
+    9.44,
+    "that,"
+   ],
+   [
+    9.52,
+    9.84,
+    "answer"
+   ],
+   [
+    9.92,
+    10,
+    "two"
+   ],
+   [
+    10.08,
+    10.88,
+    "questions,"
+   ],
+   [
+    11.04,
+    11.2,
+    "write"
+   ],
+   [
+    11.32,
+    11.44,
+    "three"
+   ],
+   [
+    11.52,
+    11.76,
+    "views"
+   ],
+   [
+    11.8,
+    11.84,
+    "for"
+   ],
+   [
+    11.92,
+    12.16,
+    "Part"
+   ],
+   [
+    12.24,
+    12.8,
+    "C,"
+   ],
+   [
+    12.92,
+    13.04,
+    "and"
+   ],
+   [
+    13.2,
+    13.36,
+    "finish"
+   ],
+   [
+    13.44,
+    13.6,
+    "your"
+   ],
+   [
+    13.68,
+    15.04,
+    "C-E-R."
+   ]
+  ],
+  "evidence": [
+   [
+    0,
+    0.08,
+    "A"
+   ],
+   [
+    0.16,
+    0.56,
+    "classmate"
+   ],
+   [
+    0.64,
+    0.88,
+    "says"
+   ],
+   [
+    1.12,
+    1.2,
+    "we"
+   ],
+   [
+    1.24,
+    1.36,
+    "don’t"
+   ],
+   [
+    1.52,
+    1.76,
+    "need"
+   ],
+   [
+    1.92,
+    2.08,
+    "space"
+   ],
+   [
+    2.16,
+    2.96,
+    "telescopes."
+   ],
+   [
+    3.12,
+    3.28,
+    "Just"
+   ],
+   [
+    3.36,
+    3.52,
+    "build"
+   ],
+   [
+    3.6,
+    3.68,
+    "them"
+   ],
+   [
+    3.76,
+    4.08,
+    "taller"
+   ],
+   [
+    4.16,
+    4.24,
+    "on"
+   ],
+   [
+    4.32,
+    4.72,
+    "Earth!"
+   ],
+   [
+    5.28,
+    5.84,
+    "Hmm."
+   ],
+   [
+    6.4,
+    6.56,
+    "Think"
+   ],
+   [
+    6.64,
+    6.8,
+    "about"
+   ],
+   [
+    6.84,
+    6.88,
+    "the"
+   ],
+   [
+    6.96,
+    7.36,
+    "blurry"
+   ],
+   [
+    7.44,
+    7.68,
+    "air"
+   ],
+   [
+    7.76,
+    7.84,
+    "from"
+   ],
+   [
+    7.88,
+    7.92,
+    "the"
+   ],
+   [
+    8,
+    8.32,
+    "TV"
+   ],
+   [
+    8.4,
+    9.08,
+    "report."
+   ],
+   [
+    9.36,
+    9.44,
+    "Think"
+   ],
+   [
+    9.52,
+    9.76,
+    "about"
+   ],
+   [
+    9.84,
+    10.16,
+    "Zoom"
+   ],
+   [
+    10.24,
+    10.72,
+    "only."
+   ],
+   [
+    11.28,
+    11.44,
+    "Pick"
+   ],
+   [
+    11.52,
+    11.6,
+    "your"
+   ],
+   [
+    11.68,
+    12.32,
+    "side,"
+   ],
+   [
+    12.44,
+    12.56,
+    "tap"
+   ],
+   [
+    12.64,
+    12.8,
+    "two"
+   ],
+   [
+    12.88,
+    13.12,
+    "pieces"
+   ],
+   [
+    13.2,
+    13.28,
+    "of"
+   ],
+   [
+    13.36,
+    13.68,
+    "evidence"
+   ],
+   [
+    13.72,
+    13.76,
+    "in"
+   ],
+   [
+    13.84,
+    13.88,
+    "the"
+   ],
+   [
+    13.92,
+    14.64,
+    "planner,"
+   ],
+   [
+    14.72,
+    14.96,
+    "then"
+   ],
+   [
+    15.2,
+    15.6,
+    "explain"
+   ],
+   [
+    15.68,
+    15.76,
+    "how"
+   ],
+   [
+    15.84,
+    16,
+    "they"
+   ],
+   [
+    16.12,
+    16.24,
+    "prove"
+   ],
+   [
+    16.32,
+    16.4,
+    "your"
+   ],
+   [
+    16.56,
+    17.04,
+    "claim."
+   ]
+  ],
+  "closing": [
+   [
+    0.28,
+    0.32,
+    "Case"
+   ],
+   [
+    0.48,
+    1.12,
+    "closed!"
+   ],
+   [
+    1.44,
+    1.68,
+    "Every"
+   ],
+   [
+    1.84,
+    2,
+    "kid"
+   ],
+   [
+    2.08,
+    2.24,
+    "gets"
+   ],
+   [
+    2.32,
+    2.4,
+    "their"
+   ],
+   [
+    2.48,
+    3.12,
+    "wish,"
+   ],
+   [
+    3.24,
+    3.36,
+    "because"
+   ],
+   [
+    3.52,
+    3.68,
+    "you"
+   ],
+   [
+    3.76,
+    3.84,
+    "picked"
+   ],
+   [
+    3.92,
+    4,
+    "the"
+   ],
+   [
+    4.16,
+    4.32,
+    "right"
+   ],
+   [
+    4.4,
+    4.64,
+    "tool"
+   ],
+   [
+    4.72,
+    4.88,
+    "for"
+   ],
+   [
+    4.96,
+    5.12,
+    "each"
+   ],
+   [
+    5.28,
+    5.52,
+    "one."
+   ],
+   [
+    5.92,
+    6.88,
+    "Binoculars,"
+   ],
+   [
+    6.92,
+    6.96,
+    "a"
+   ],
+   [
+    7.04,
+    7.36,
+    "backyard"
+   ],
+   [
+    7.44,
+    8.24,
+    "telescope,"
+   ],
+   [
+    8.36,
+    8.48,
+    "and"
+   ],
+   [
+    8.56,
+    8.64,
+    "a"
+   ],
+   [
+    8.72,
+    9.04,
+    "space"
+   ],
+   [
+    9.12,
+    9.68,
+    "telescope."
+   ],
+   [
+    10.24,
+    10.48,
+    "Next"
+   ],
+   [
+    10.56,
+    10.8,
+    "week"
+   ],
+   [
+    11.04,
+    11.2,
+    "my"
+   ],
+   [
+    11.36,
+    11.52,
+    "tools"
+   ],
+   [
+    11.6,
+    11.68,
+    "get"
+   ],
+   [
+    11.73,
+    11.79,
+    "a"
+   ],
+   [
+    11.84,
+    11.92,
+    "new"
+   ],
+   [
+    12.08,
+    12.72,
+    "job."
+   ],
+   [
+    13.04,
+    13.12,
+    "How"
+   ],
+   [
+    13.2,
+    13.36,
+    "does"
+   ],
+   [
+    13.52,
+    13.92,
+    "energy"
+   ],
+   [
+    14,
+    14.16,
+    "make"
+   ],
+   [
+    14.24,
+    14.4,
+    "things"
+   ],
+   [
+    14.48,
+    15.12,
+    "move?"
+   ]
+  ]
+ }
+}
