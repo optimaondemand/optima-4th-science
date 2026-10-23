@@ -2770,3 +2770,41 @@ html:not(.fs-on) .fs-name-note{display:none!important;}
 .fs-pm-spot.l span, .fs-pm-spot.r span { position:absolute; top:50%; transform:translateY(-50%); }
 .fs-pm-spot.r span { left:28px; } .fs-pm-spot.l span { right:28px; }
 @media (max-width:700px) { .fs-tv-play { font-size:14px; padding:7px 14px; top:38%; } .fs-tv-lower { padding:3px 10px; bottom:22px; } .fs-tv-lower span { font-size:10.5px; } .fs-tv-crawl { height:22px; line-height:22px; font-size:11px; } .fs-tv-bug { top:6px; left:6px; } }
+
+/* =================== 18.02: night-sky page, clue constellation, star chart =================== */
+html.fs-on.fs-night body { background: linear-gradient(180deg, #040818 0%, #0B1634 55%, #1A2550 100%) fixed !important; }
+.fs-ns { position:fixed; inset:0; z-index:0; pointer-events:none; }
+.fs-ns svg { display:block; }
+.fs-ns-tw { animation: fsNsTw 4.5s ease-in-out infinite; }
+@keyframes fsNsTw { 0%,100% { opacity:.95; } 50% { opacity:.15; } }
+html.fs-night .page-wrap { position:relative; z-index:1; background: rgba(9,17,44,.55); box-shadow: 0 0 60px rgba(120,150,255,.12); }
+html.fs-night .footer, html.fs-night .footer * { color:#AFC0E8 !important; background:transparent !important; }
+html.fs-night .tab-next-wrap { position:relative; z-index:1; }
+.fs-ns-shoot { position:fixed; z-index:2; width:160px; height:2px; pointer-events:none; border-radius:2px; background: linear-gradient(90deg, rgba(255,255,255,0), #FFF6DA 70%, #fff); box-shadow:0 0 8px #FFF6DA; transform: rotate(18deg); animation: fsNsShoot 1.3s ease-out forwards; }
+@keyframes fsNsShoot { 0% { opacity:0; margin-left:0; margin-top:0; } 15% { opacity:1; } 100% { opacity:0; margin-left:340px; margin-top:110px; } }
+@media (prefers-reduced-motion: reduce) { .fs-ns-tw { animation:none; } .fs-ns-shoot { display:none; } }
+/* the clue constellation in the 🗂 My clues bar */
+.fs-board-dots .fs-cn { width:104px; height:36px; vertical-align:middle; background:#0B1634; border-radius:8px; }
+.fs-cn line { stroke:#3A4A7A; stroke-width:1; stroke-dasharray:2 2; }
+.fs-cn line.on { stroke:#FFE7A3; stroke-width:1.4; stroke-dasharray:none; }
+.fs-cn circle { fill:#5C6B8A; }
+.fs-cn circle.on { fill:#FFF6DA; filter: drop-shadow(0 0 2px #FFE7A3); }
+.fs-cn text { font:900 6px 'Nunito',sans-serif; fill:#FFE7A3; letter-spacing:.6px; }
+.fs-cn.whole circle.on { animation: fsCnPulse 2.4s ease-in-out infinite; }
+@keyframes fsCnPulse { 50% { filter: drop-shadow(0 0 5px #FFE7A3); } }
+.fs-cn-card { display:flex; gap:12px; align-items:center; background:#0B1634; color:#DCE6FF; border-radius:12px; padding:8px 12px; margin-bottom:8px; }
+.fs-cn-card .fs-cn { width:200px; height:68px; flex-shrink:0; }
+.fs-cn-card p { margin:0; font-size:14px; line-height:1.45; } .fs-cn-card b { color:#FFE7A3; }
+@media (max-width:560px) { .fs-cn-card { flex-direction:column; align-items:flex-start; } .fs-board-dots .fs-cn { width:88px; height:30px; } }
+@media (prefers-reduced-motion: reduce) { .fs-cn.whole circle.on { animation:none; } }
+/* bonus star chart */
+.fs-sc2-teaser { margin:0 0 10px; font-size:15px; }
+.fs-sc2-row { display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:start; }
+.fs-sc2-svg { width:100%; height:auto; display:block; }
+.fs-sc2-svg .lb, .fs-sc2 .lb { font:700 11px 'Nunito',sans-serif; fill:#fff; } .fs-sc2-svg .lb.pl { fill:#F3D27A; }
+.fs-sc2-svg .dir { font:900 13px 'Nunito',sans-serif; fill: var(--fs-navy); text-anchor:middle; }
+.fs-sc2-when { text-align:center; font-size:13px; font-weight:800; color:#5C6F75; margin-top:4px; }
+.fs-sc2-list { list-style:none; margin:0 0 10px; padding:0; } .fs-sc2-list li { margin:4px 0; font-size:15px; } .fs-sc2-list input { width:18px; height:18px; vertical-align:-3px; accent-color:#1F6F78; }
+.fs-sc2-how { font-size:14px; line-height:1.5; background: var(--fs-kraft); border-radius:10px; padding:8px 10px; margin-bottom:10px; }
+.fs-sc2-note { font-size:13px; color:#5C6F75; margin-top:8px; line-height:1.45; }
+@media (max-width:700px) { .fs-sc2-row { grid-template-columns: 1fr; } }

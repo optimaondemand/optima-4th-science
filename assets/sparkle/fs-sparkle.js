@@ -468,6 +468,7 @@
     store('clue-' + id, '1'); drawBoard();
     var n = cluesFound().length;
     pushToast(c.icon, 'Clue ' + n + ' of ' + C.clues.length + ' found!', c.t, 5200);
+    shootStar(false);
     unlockSolve();
   }
   function drawBoard() {
@@ -481,6 +482,7 @@
       return '<li class="' + (have ? 'on' : '') + '"><span>' + (have ? c.icon : '🔒') + '</span><div><b>Clue ' + (i + 1) + '</b> ' + (have ? esc(c.t) : '<em>' + esc(c.where) + '</em> <button type="button" class="fs-goclue" data-id="' + esc(c.id) + '">Go there →</button>') + '</div></li>';
     }).join('');
     $$('.fs-goclue', list).forEach(function (btn) { btn.addEventListener('click', function (e) { e.stopPropagation(); goToClue(btn.dataset.id); }); });
+    if (D.constellation) paintConstellation();
   }
   function scrollToEl(t) {
     var bar = $('#tabBar'), off = bar ? bar.getBoundingClientRect().height + 12 : 12;
@@ -554,7 +556,7 @@
         var o = S.options[+b.dataset.i];
         if (!o.right) { bounce(b, miss, o.why); return; }
         b.classList.add('right'); store('solved', '1'); miss.classList.remove('show');
-        win.innerHTML = esc(o.why); win.classList.add('show'); SFX.win(); drawBoard(); try { document.dispatchEvent(new Event('fs:solved')); } catch (e) {}
+        win.innerHTML = esc(o.why); win.classList.add('show'); SFX.win(); drawBoard(); shootStar(true); try { document.dispatchEvent(new Event('fs:solved')); } catch (e) {}
       });
     });
     if (store('solved')) { var r = S.options.map(function (o, i) { return o.right ? i : -1; }).filter(function (i) { return i > -1; })[0]; $$('.fs-solve-o', g)[r].classList.add('right'); win.innerHTML = esc(S.options[r].why); win.classList.add('show'); }
@@ -5923,6 +5925,93 @@
 
   /* =================== 18.01: The Red Water Sample (zoom machine, tool pick, virtual microscope + lab report, hand lens) =================== */
 
+  /* ---------- Night sky page (18.02): the lesson sits under a slow, twinkling sky; a shooting star crosses on every clue. D.nightsky = {stars, shoot:true} ---------- */
+  function buildNightSky() {
+    var N = D.nightsky; if (!N) return;
+    html.classList.add('fs-night');
+    var seed = 4242, s = '', tw = '';
+    function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+    for (var i = 0; i < (N.stars || 260); i++) {
+      var x = (rnd() * 100).toFixed(2), y = (rnd() * 100).toFixed(2), r = (0.4 + Math.pow(rnd(), 3) * 1.6).toFixed(2), o = (0.35 + rnd() * 0.6).toFixed(2);
+      if (i % 9 === 0) tw += '<circle class="fs-ns-tw" style="animation-delay:-' + (rnd() * 6).toFixed(1) + 's" cx="' + x + '%" cy="' + y + '%" r="' + (+r + 0.4) + '"/>';
+      else s += '<circle cx="' + x + '%" cy="' + y + '%" r="' + r + '" opacity="' + o + '"/>';
+    }
+    var sky = fsOnly(el('div', 'fs-ns', '<svg width="100%" height="100%" aria-hidden="true"><defs><radialGradient id="fsNsMw" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#9FB4FF" stop-opacity=".16"/><stop offset="1" stop-color="#9FB4FF" stop-opacity="0"/></radialGradient></defs>' +
+      '<ellipse cx="50%" cy="40%" rx="70%" ry="12%" fill="url(#fsNsMw)" transform="rotate(-24)" style="transform-origin:50% 40%"/><g fill="#fff">' + s + '</g><g fill="#FFF6DA">' + tw + '</g></svg>'));
+    sky.setAttribute('aria-hidden', 'true');
+    document.body.insertBefore(sky, document.body.firstChild);
+  }
+  function shootStar(big) {
+    if (!D.nightsky || reduceMotion) return;
+    var n = big ? 3 : 1;
+    for (var i = 0; i < n; i++) (function (k) {
+      setTimeout(function () {
+        var m = fsOnly(el('i', 'fs-ns-shoot'));
+        m.style.top = (6 + Math.random() * 30) + 'vh'; m.style.left = (8 + Math.random() * 50) + 'vw';
+        document.body.appendChild(m); setTimeout(function () { m.remove(); }, 1800);
+      }, k * 380);
+    })(i);
+  }
+
+  /* ---------- Clue constellation (18.02): the 🗂 My clues dots become stars that join into a real constellation when the case cracks.
+     D.constellation = {name, meaning, note, stars:[{x, y}] (one per clue, viewBox 0 0 120 40), lines:[[i, j]]} ---------- */
+  function constellationSVG(found, solved, big) {
+    var K = D.constellation, S = K.stars;
+    var lines = K.lines.map(function (l) { var a = S[l[0]], b = S[l[1]], on = found[l[0]] && found[l[1]]; return '<line x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" class="' + (on ? 'on' : '') + '"/>'; }).join('');
+    var stars = S.map(function (p, i) { return '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + (found[i] ? 3.4 : 2.2) + '" class="' + (found[i] ? 'on' : '') + '"/>'; }).join('');
+    return '<svg viewBox="0 0 120 40" class="fs-cn' + (solved ? ' whole' : '') + (big ? ' big' : '') + '" role="img" aria-label="' + esc((solved ? 'The constellation ' + K.name : 'Your clue stars') + ': ' + found.filter(Boolean).length + ' of ' + S.length + ' lit') + '">' + lines + stars + (solved ? '<text x="60" y="38" text-anchor="middle">' + esc(K.name) + '</text>' : '') + '</svg>';
+  }
+  function paintConstellation() {
+    var K = D.constellation, C = D.case, b = $('.fs-board'); if (!K || !C || !b) return;
+    var ids = cluesFound().map(function (c) { return c.id; }), found = C.clues.map(function (c) { return ids.indexOf(c.id) > -1; }), solved = !!store('solved');
+    $('.fs-board-dots', b).innerHTML = constellationSVG(found, solved, false);
+    var more = $('.fs-board-more', b), card = $('.fs-cn-card', b);
+    if (!card) { card = el('div', 'fs-cn-card'); more.insertBefore(card, more.firstChild); }
+    card.innerHTML = constellationSVG(found, solved, true) + '<p>' + (solved ? '<b>' + esc(K.name) + '</b> ' + esc(K.meaning) + ' ' + esc(K.note) : esc(K.hint || 'Each clue you find lights a star. Find all four and see what they draw.')) + '</p>';
+  }
+
+  /* ---------- Bonus: my star party sky chart (18.02) — a real chart of the Florida sky (positions computed offline), with the student's name; print it.
+     D.starchart = {after, kicker, title, teaser, when, where, how, pts:[{t, x, y, mag, kind:'star'|'planet'|'cluster'|'galaxy', label}], lines:[[a, b]] (point indexes), dirs, checks[], note, btn, printTitle} ---------- */
+  function chartSVG(cls) {
+    var C = D.starchart, R = 200, pts = C.pts;
+    var dir = C.dirs || { N: 'NORTH', S: 'SOUTH', E: 'EAST', W: 'WEST' };
+    var s = '<svg viewBox="-26 -26 452 452" class="' + cls + '" role="img" aria-label="' + esc(C.alt || 'A round sky chart') + '"><defs><radialGradient id="fsScG"><stop offset="0" stop-color="#1B2D63"/><stop offset="1" stop-color="#0A1330"/></radialGradient></defs>' +
+      '<circle cx="200" cy="200" r="' + R + '" fill="url(#fsScG)" stroke="#C9B489" stroke-width="3"/>' +
+      [30, 60].map(function (a) { return '<circle cx="200" cy="200" r="' + ((90 - a) / 90 * R) + '" fill="none" stroke="#2E4078" stroke-dasharray="3 5"/>'; }).join('');
+    s += C.lines.map(function (l) { var a = pts[l[0]], b = pts[l[1]]; return '<line x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" stroke="#8FA6E8" stroke-width="1.2" opacity=".7"/>'; }).join('');
+    s += pts.map(function (p) {
+      var r = Math.max(1.4, 5 - p.mag * 1.3);
+      var g = p.kind === 'planet' ? '<circle cx="' + p.x + '" cy="' + p.y + '" r="5.5" fill="#F3D27A" stroke="#fff" stroke-width="1.5"/>' :
+        p.kind === 'galaxy' ? '<ellipse cx="' + p.x + '" cy="' + p.y + '" rx="9" ry="3.5" fill="#C9B9FF" opacity=".8" transform="rotate(-30 ' + p.x + ' ' + p.y + ')"/>' :
+        p.kind === 'cluster' ? [[0, 0], [4, -2], [-3, 2], [2, 4], [-2, -4], [5, 3]].map(function (d) { return '<circle cx="' + (p.x + d[0]) + '" cy="' + (p.y + d[1]) + '" r="1.4" fill="#CFE3FF"/>'; }).join('') :
+        '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + r.toFixed(1) + '" fill="#fff"/>';
+      return g + (p.label ? '<text x="' + (p.x + (p.lx || 7)) + '" y="' + (p.y + (p.ly || 4)) + '"' + (p.anchor ? ' text-anchor="' + p.anchor + '"' : '') + ' class="lb' + (p.kind === 'planet' ? ' pl' : '') + '">' + esc(p.label) + '</text>' : '');
+    }).join('');
+    s += '<text x="200" y="-8" class="dir">' + dir.N + '</text><text x="200" y="420" class="dir">' + dir.S + '</text><text x="-12" y="200" class="dir" transform="rotate(-90 -12 200)">' + dir.E + '</text><text x="412" y="200" class="dir" transform="rotate(90 412 200)">' + dir.W + '</text></svg>';
+    return s;
+  }
+  function buildStarchart() {
+    var C = D.starchart; if (!C) return;
+    var at = $(C.after); if (!at) { FAILED.push('starchart: anchor not found'); return; }
+    var g = gameShell(C.kicker || 'Bonus', C.title, null, C.why); g.dataset.mod = 'starchart'; g.classList.add('fs-sc2');
+    g.innerHTML += '<p class="fs-sc2-teaser">' + esc(C.teaser) + '</p><div class="fs-sc2-row"><div class="fs-sc2-chart">' + chartSVG('fs-sc2-svg') + '<div class="fs-sc2-when">🕗 ' + esc(C.when) + ' · ' + esc(C.where) + '</div></div>' +
+      '<div class="fs-sc2-side"><div class="fs-in-k">' + esc(C.checkLabel || 'Can you find…') + '</div><ul class="fs-sc2-list">' + C.checks.map(function (c, i) { return '<li><label><input type="checkbox" data-i="' + i + '"> ' + esc(c) + '</label></li>'; }).join('') + '</ul>' +
+      '<div class="fs-sc2-how">' + esc(C.how) + '</div><button type="button" class="fs-btn fs-sc2-print">🖨️ ' + esc(C.btn || 'Print my star chart') + '</button><div class="fs-sc2-note">' + esc(C.note) + '</div></div></div>' +
+      (C.credit ? '<details class="fs-credit fs-credit-fold"><summary>🔭 Where these positions come from</summary>' + esc(C.credit) + '</details>' : '');
+    var st = loadJ('starchart', {});
+    $$('.fs-sc2-list input', g).forEach(function (b) { b.checked = !!st[b.dataset.i]; b.addEventListener('change', function () { st[b.dataset.i] = b.checked ? 1 : 0; saveJ('starchart', st); if (b.checked) { SFX.sparkle(); shootStar(false); } }); });
+    $('.fs-sc2-print', g).addEventListener('click', function () {
+      var name = getName(), w = window.open('', '_blank');
+      if (!w) { showMiss(miss, C.blocked || 'Your browser blocked the print window. Allow pop-ups for this page, then try again.'); return; }
+      w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>' + esc(C.printTitle || 'My star chart') + '</title><style>body{font-family:Nunito,Arial,sans-serif;color:#0E1C42;margin:24px;text-align:center}h1{margin:0 0 2px;font-size:26px}h2{margin:0 0 10px;font-size:15px;color:#5C6F75;font-weight:700}svg{width:520px;max-width:100%;height:auto}.lb{font:700 11px Arial;fill:#fff}.lb.pl{fill:#F3D27A}.dir{font:800 13px Arial;fill:#0E1C42;text-anchor:middle}ul{display:inline-block;text-align:left;font-size:15px;line-height:1.8;margin:10px 0}p{font-size:13px;color:#555;max-width:560px;margin:6px auto}@media print{button{display:none}}</style></head><body>' +
+        '<h1>⭐ ' + esc(name ? name + '’s star party sky' : (C.printTitle || 'My star party sky')) + '</h1><h2>' + esc(C.when) + ' · ' + esc(C.where) + '</h2>' + chartSVG('') +
+        '<p><b>How to use it:</b> ' + esc(C.how) + '</p><ul>' + C.checks.map(function (c) { return '<li>☐ ' + esc(c) + '</li>'; }).join('') + '</ul><p>' + esc(C.note) + '</p><p style="font-size:11px">' + esc(C.credit || '') + '</p><button onclick="print()">🖨️ Print</button></body></html>');
+      w.document.close(); setTimeout(function () { try { w.focus(); w.print(); } catch (e) {} }, 400); SFX.chime();
+    });
+    var miss = el('div', 'fs-miss'); g.appendChild(miss);
+    at.parentNode.insertBefore(g, at.nextSibling);
+  }
+
   /* ---------- Warm-Up: "Race the light" — guess how long ago each sky object's light left it, then send the light home and see (18.02) ----------
      D.racelight = {afterText, kicker, title, todo[], why, marks:[{k, t}], objs:[{id, name, img, alt, mark, left, dist}], sendBtn, earth, q, opts, credit, win, clue} */
   function buildRacelight() {
@@ -6661,6 +6750,7 @@
     guard('zoom', buildZoom);
     guard('bench', buildBench);
     guard('scope', buildScope);
+    guard('nightsky', buildNightSky);
     guard('racelight', buildRacelight);
     guard('openwide', buildOpenwide);
     guard('skyhunt', buildSkyhunt);
@@ -6674,6 +6764,7 @@
     guard('quiz', buildQuiz);
     guard('solve', buildSolve);
     guard('permit', buildPermit);
+    guard('starchart', buildStarchart);
     guard('helpers', buildHelpers);
     guard('inputs', buildInputs);
     guard('specimen', buildSpecimen);

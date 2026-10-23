@@ -445,6 +445,30 @@ D['cues'] = {
     'closing': [{'at': '^closed', 'sel': '.fs-specimen', 'fx': 'pop', 'scroll': True},
                 {'at': '^Next', 'sel': '#tab-assignment .callout-tip', 'fx': 'glow'}],
 }
+
+# ---------------------------------------------------------------- stars everywhere (Bethany, 22 Oct 2026: "make it beautiful and awe inspiring")
+D['nightsky'] = {'stars': 260}
+# Telescopium ("the telescope"), a real constellation; one star per clue (eps, alpha, zeta, iota Tel), simplified shape from their RA/Dec, east on the left
+D['constellation'] = {'name': 'TELESCOPIUM', 'meaning': 'means “the telescope.” It’s a real constellation!',
+    'note': 'A French astronomer, Nicolas-Louis de Lacaille, named it in the 1750s. He also named Microscopium, the microscope. From South Florida you can spot it low in the southern sky on summer nights.',
+    'hint': 'Each clue you find lights a star. Find all four and see what they draw.',
+    'stars': [{'x': 108, 'y': 8.5}, {'x': 89.7, 'y': 8.7}, {'x': 87.7, 'y': 29.5}, {'x': 12, 'y': 23}],
+    'lines': [[0, 1], [1, 2], [2, 3]]}
+CH = json.load(open('chart.json', encoding='utf-8'))
+D['starchart'] = {'after': '.fs-game[data-mod="permit"]', 'kicker': 'Bonus · for a real night out', 'title': 'My star party sky chart',
+    'why': {'icon': '🗺️', 'q': 'Is this the real sky?', 't': 'Yes. These are the real places of the stars and Saturn over Florida in mid-January at about 8 PM, worked out by a computer. The lines show the shape of Orion, the hunter.'},
+    'teaser': 'Take the star party home. Print your own chart and see how many you can find from your yard.',
+    'when': 'Mid-January, about 8 PM', 'where': 'anywhere in Florida',
+    'alt': 'A round chart of the night sky over Florida in mid-January at 8 PM, with Orion, Sirius, the Seven Sisters, Saturn and the North Star marked.',
+    'how': 'Hold the chart up over your head. Turn it until NORTH on the chart points north. When you look up, east really is on your left!',
+    'pts': CH['pts'], 'lines': CH['lines'],
+    'dirs': {'N': 'NORTH', 'S': 'SOUTH', 'E': 'EAST', 'W': 'WEST'},
+    'checkLabel': 'Can you find…',
+    'checks': ['Orion’s belt: three stars in a row', 'Sirius, the brightest star (its light left about 9 years ago!)', 'The Seven Sisters, almost straight up', 'Saturn: golden and steady, in the southwest', 'The North Star, low in the north', 'Bonus, from a dark place: the Andromeda Galaxy, a faint fuzzy smudge'],
+    'note': 'The Moon moves to a new spot every night, so it isn’t on the chart. Jupiter rises in the east around 8 PM and is very bright later in the evening. Go out with a grown-up!',
+    'btn': 'Print my star chart', 'printTitle': 'My star party sky',
+    'credit': 'Star and Saturn positions worked out for Orlando, Florida, on January 14, 2027, at 8 PM, with the PyEphem astronomy program. The chart is close for any night in mid-January and anywhere in Florida.'}
+D['cues']['closing'].insert(1, {'at': '^Binoculars', 'sel': '.fs-game[data-mod="starchart"]', 'fx': 'glow', 'scroll': True})
 D['cueWords'] = json.load(open('cuewords.json', encoding='utf-8')) if os.path.exists('cuewords.json') else {}
 json.dump(D, open('data.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 json.dump(F, open('fixes.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
