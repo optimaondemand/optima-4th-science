@@ -117,10 +117,10 @@ D = {
     'ambient': {'icon': '🌊', 'label': 'Ocean sounds'},
     'case': {
         'num': 18, 'title': 'The Star Party Wish List', 'style': 'party',
-        'hook': 'Good news: the red tide is gone, and Palmetto Beach is open again! To celebrate, the town is having a star party (a night when people look at the sky together). Four kids sent me their wishes. The town can rent just ONE tool. Can we make every wish come true?',
+        'hook': 'Great news: the red tide is gone! To celebrate, Palmetto Beach is having a star party (a night of looking at the sky together). Four kids sent me wishes, but the town can rent just ONE tool.',
         'notice': {'head': 'Palmetto Beach · Star Party Night', 'title': 'Saturday, 8 PM, on the beach',
                    'rows': [['Budget', 'The town can rent ONE tool.'], ['Sam’s job', 'Pick what to bring so every kid gets their wish.']],
-                   'line': 'The kids’ wish cards are below.'},
+                   'line': ''},
         'wishes': [
             {'icon': '🌕', 't': 'I want to see the craters on the Moon!', 'who': 'MAYA, age 9'},
             {'icon': '🪐', 't': 'Saturn’s rings, PLEASE!!', 'who': 'LEO, age 10'},
@@ -130,9 +130,9 @@ D = {
         'question': 'What should Sam bring so every wish comes true?',
         'how': 'Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.',
         'clues': [
-            {'id': 'racelight', 'icon': '✨', 'where': 'Warm-Up: race the light', 't': 'Things in space are SO far away that their light is old. The Moon’s light left it about 1 second ago. Andromeda’s light left it 2.5 million years ago.'},
-            {'id': 'openwide', 'icon': '⭕', 'where': 'The Lesson, Part 1: open wider', 't': 'Far things look dim because only a little of their light reaches you. A bigger opening gathers more light. Zooming in alone doesn’t help.'},
-            {'id': 'skyhunt', 'icon': '🔭', 'where': 'The Lesson, Part 2: find it in the sky', 't': 'A backyard telescope shows the Moon’s craters and Saturn’s rings. Binoculars are best for the wide Seven Sisters star cluster.'},
+            {'id': 'racelight', 'icon': '✨', 'where': 'Warm-Up: race the light', 't': 'Things in space are so far away that their light is old. Andromeda’s light left it 2.5 million years ago.'},
+            {'id': 'openwide', 'icon': '⭕', 'where': 'The Lesson, Part 1: open wider', 't': 'Far things look dim. A bigger opening gathers more light. Zooming in alone doesn’t help.'},
+            {'id': 'skyhunt', 'icon': '🔭', 'where': 'The Lesson, Part 2: find it in the sky', 't': 'A backyard telescope shows Moon craters and Saturn’s rings. Binoculars fit the wide Seven Sisters.'},
             {'id': 'deepfield', 'icon': '🌌', 'where': 'The Lesson, Part 4: stare at nothing', 't': 'The farthest things need a space telescope. Webb stared at one “empty” speck for 12.5 hours and found thousands of galaxies.'},
         ],
         'solve': {
@@ -146,8 +146,8 @@ D = {
     },
     'racelight': {
         'afterText': 'Let’s race the light and find out', 'kicker': 'Warm-Up game', 'title': 'Race the light',
-        'todo': ['Guess first: drag each sky object onto how long ago you think its light left it (or tap a card, then a spot).', 'Press Send the light. Watch each light race to you.'],
-        'why': {'icon': '💡', 'q': 'Why can light be “old”?', 't': 'Light is the fastest thing there is, but space is huge. Light from far away has been traveling a long time when it reaches your eyes.'},
+        'todo': ['Guess first: drag each picture onto when you think its light left (or tap a card, then a spot).', 'Press Send the light. Watch each light race to you.'],
+        'why': {'icon': '💡', 'q': 'Why can light be “old”?', 't': 'Light is the fastest thing there is, but space is huge. Light from far away has traveled a long time.'},
         'trayLabel': 'Drag each one onto your guess:',
         'marks': [{'k': 's', 't': 'about 1 second ago'}, {'k': 'm', 't': 'about 8 minutes ago'}, {'k': 'y', 't': 'about 9 years ago'}, {'k': 'my', 't': '2.5 MILLION years ago'}],
         'objs': [
@@ -166,14 +166,14 @@ D = {
     'openwide': {
         'afterText': 'COLLECTS light from far away and focuses it', 'kicker': 'Part 1 game', 'title': 'Open wider',
         'todo': ['This is a model of the sky over Palmetto Beach. Drag the gold dot outward to open the light opening wider (or press Open wider).', 'Watch the star count. Then press Zoom only and compare.'],
-        'why': {'icon': '⭕', 'q': 'Why does the opening matter?', 't': 'Your eye catches light through a small dark circle (the pupil). A bigger opening catches more light, like a bigger bucket catches more rain.'},
+        'why': {'icon': '⭕', 'q': 'Why does the opening matter?', 't': 'Light gets into your eye through the pupil (the dark circle). A bigger opening catches more light, like a bigger bucket catches more rain.'},
         'stops': [
-            {'k': 'eye', 'icon': '👁️', 'name': 'Your eye', 'size': 'opening: about 7 mm (in the dark)', 'r': 0, 'limit': 0.3, 'gain': 'Your eye', 'note': 'In the dark, your pupil opens to about 7 millimeters, about as wide as a pencil. Only the brightest stars send enough light.'},
-            {'k': 'owl', 'icon': '🦉', 'name': 'A barred owl', 'img': I('owl'), 'alt': 'A barred owl with big, dark eyes', 'size': 'big eyes, wide-open pupils', 'r': 22, 'limit': 0.4, 'gain': 'An owl gathers more light', 'note': 'Owls have huge eyes for their size. Their wide pupils let in more light, so owls can hunt at night. A few more stars appear.'},
-            {'k': 'bino', 'icon': '🔭', 'name': 'Binoculars', 'size': 'opening: 50 mm', 'r': 55, 'limit': 0.62, 'gain': 'About 50 times more light than your eye', 'note': 'Each binocular lens is about 50 millimeters wide. Many more stars pop out of the dark.'},
-            {'k': 'scope', 'icon': '🪞', 'name': 'Backyard telescope', 'img': I('telescope'), 'alt': 'A white backyard telescope on the grass, pointed at the sky', 'size': 'mirror: about 200 mm (8 inches)', 'r': 100, 'limit': 1.0, 'gain': 'About 800 times more light than your eye', 'note': 'Its big mirror gathers about 800 times more light than your eye. Now even a faint, fuzzy galaxy shows up.'}],
+            {'k': 'eye', 'icon': '👁️', 'name': 'Your eye', 'size': 'opening: about 7 mm (in the dark)', 'r': 0, 'limit': 0.3, 'gain': 'Your eye', 'note': 'In the dark, your pupil opens to about 7 mm. Only the brightest stars send enough light.'},
+            {'k': 'owl', 'icon': '🦉', 'name': 'A barred owl', 'img': I('owl'), 'alt': 'A barred owl with big, dark eyes', 'size': 'big eyes, wide-open pupils', 'r': 22, 'limit': 0.4, 'gain': 'An owl gathers more light', 'note': 'Owls have huge eyes that let in more light, so they can hunt at night.'},
+            {'k': 'bino', 'icon': '🔭', 'name': 'Binoculars', 'size': 'opening: 50 mm', 'r': 55, 'limit': 0.62, 'gain': 'About 50 times more light than your eye', 'note': 'Each lens is about 50 mm wide. Many more stars pop out.'},
+            {'k': 'scope', 'icon': '🪞', 'name': 'Backyard telescope', 'img': I('telescope'), 'alt': 'A white backyard telescope on the grass, pointed at the sky', 'size': 'mirror: about 200 mm (8 inches)', 'r': 100, 'limit': 1.0, 'gain': 'About 800 times more light than your eye', 'note': 'Its mirror gathers about 800 times more light than your eye. Even a faint galaxy shows up.'}],
         'galaxyAt': 3, 'needZoom': True, 'zoomBtn': 'Zoom only',
-        'zoomNote': 'Zooming in made the stars look bigger, but no NEW stars appeared. They even got dimmer! Zoom spreads out the same light. Only a bigger opening gathers more.',
+        'zoomNote': 'Zoom made the stars bigger and dimmer, but no NEW stars appeared. Only a bigger opening gathers more light.',
         'tryZoom': 'Now press Zoom only. Does zooming in show you any NEW stars?',
         'q': 'What makes a telescope show MORE stars than your eye?',
         'opts': [{'t': 'Its big mirror gathers much more light.', 'ok': True},
@@ -185,7 +185,7 @@ D = {
     'skyhunt': {
         'afterText': 'Sam set up two tools on the beach', 'replace': '#tab-lesson .diagram-wrap', 'kicker': 'Part 2 game', 'title': 'Find it in the sky',
         'todo': ['Pick a tool. Then drag the circle across the sky (or tap a spot) to aim it.', 'Look at each one with BOTH tools. Then pick the best tool for it.'],
-        'why': {'icon': '🔭', 'q': 'Why is the telescope circle so small?', 't': 'A telescope zooms in a lot, so it sees only a tiny piece of sky at a time. Binoculars zoom in less, so they see a much wider piece.'},
+        'why': {'icon': '🔭', 'q': 'Why is the telescope circle so small?', 't': 'A telescope zooms in a lot, so it sees a tiny piece of sky. Binoculars see a much wider piece.'},
         'tools': [{'k': 'bino', 'icon': '🔭', 't': 'Binoculars', 'power': '10x · wide view', 'r': 120, 'hit': 46},
                   {'k': 'scope', 'icon': '🪞', 't': 'Backyard telescope', 'power': '150x · tiny view', 'r': 34, 'hit': 28}],
         'emptyLine': 'Just dark sky. Move the circle onto something.',
@@ -193,19 +193,19 @@ D = {
         'targets': [
             {'id': 'moon', 'name': 'The Moon', 'icon': '🌕', 'x': 170, 'y': 170, 'draw': 'moon',
              'views': {'bino': {'img': I('moon'), 'size': '74%', 'pos': 'center', 'note': 'The whole Moon fits. You can see dark patches and some big craters.'},
-                       'scope': {'img': I('moon'), 'size': '380%', 'pos': '32% 70%', 'note': 'So close! Craters inside craters, and mountains. The Moon is too big to fit all at once.'}},
+                       'scope': {'img': I('moon'), 'size': '380%', 'pos': '32% 70%', 'note': 'Craters inside craters! The Moon is too big to fit all at once.'}},
              'q': 'Maya wants the Moon’s craters. Best tool?', 'opts': [{'t': 'Binoculars', 'miss': 'Binoculars show some craters. Which tool showed craters inside craters?'}, {'t': 'Backyard telescope', 'ok': True}]},
             {'id': 'pleiades', 'name': 'Seven Sisters', 'icon': '✨', 'x': 430, 'y': 110, 'draw': 'cluster',
-             'views': {'bino': {'img': I('pleiades'), 'size': '120%', 'pos': 'center', 'note': 'The whole cluster fits, sparkling blue-white. Your eyes alone see about 6 or 7 stars here. Binoculars show dozens.'},
-                       'scope': {'img': I('pleiades'), 'size': '900%', 'pos': '55% 45%', 'note': 'Too close! You see only one or two stars. The cluster is much wider than the telescope’s tiny view.'}},
+             'views': {'bino': {'img': I('pleiades'), 'size': '120%', 'pos': 'center', 'note': 'The whole cluster fits. Your eyes see about 6 or 7 stars; binoculars show dozens.'},
+                       'scope': {'img': I('pleiades'), 'size': '900%', 'pos': '55% 45%', 'note': 'Too close! Only one or two stars fit in the tiny view.'}},
              'q': 'Ava wants the Seven Sisters. Best tool?', 'opts': [{'t': 'Binoculars', 'ok': True}, {'t': 'Backyard telescope', 'miss': 'How many of the sisters fit in the telescope’s tiny view?'}]},
             {'id': 'jupiter', 'name': 'Jupiter', 'icon': '🟠', 'x': 650, 'y': 330, 'draw': 'bright',
-             'views': {'bino': {'html': '<i class="fs-sh-dot" style="width:9px;height:9px;left:46%;top:47%"></i><i class="fs-sh-dot" style="width:3px;height:3px;left:36%;top:49%"></i><i class="fs-sh-dot" style="width:3px;height:3px;left:41%;top:48%"></i><i class="fs-sh-dot" style="width:3px;height:3px;left:57%;top:50%"></i><i class="fs-sh-dot" style="width:3px;height:3px;left:63%;top:49%"></i>', 'note': 'A tiny round dot with up to four tiny moons in a line beside it. (This view is a drawing.)'},
-                       'scope': {'img': I('jupiter'), 'size': '42%', 'pos': 'center', 'note': 'Now Jupiter is a round world with stripes of clouds. (Real photo from the Hubble Space Telescope; a backyard view is smaller and less sharp.)'}},
+             'views': {'bino': {'html': '<i class="fs-sh-dot" style="width:9px;height:9px;left:46%;top:47%"></i><i class="fs-sh-dot" style="width:3px;height:3px;left:36%;top:49%"></i><i class="fs-sh-dot" style="width:3px;height:3px;left:41%;top:48%"></i><i class="fs-sh-dot" style="width:3px;height:3px;left:57%;top:50%"></i><i class="fs-sh-dot" style="width:3px;height:3px;left:63%;top:49%"></i>', 'note': 'A tiny dot with up to four tiny moons in a line. (A drawing.)'},
+                       'scope': {'img': I('jupiter'), 'size': '42%', 'pos': 'center', 'note': 'A round world with cloud stripes. (Real Hubble photo; a backyard view is smaller.)'}},
              'q': 'To see Jupiter’s cloud stripes, which tool?', 'opts': [{'t': 'Binoculars', 'miss': 'Binoculars showed a dot. Where did you see stripes?'}, {'t': 'Backyard telescope', 'ok': True}]},
             {'id': 'saturn', 'name': 'Saturn', 'icon': '🪐', 'x': 860, 'y': 220, 'draw': 'dot',
-             'views': {'bino': {'html': '<i class="fs-sh-dot" style="width:9px;height:6px;left:47%;top:48%;background:#F3D9A0;box-shadow:0 0 5px #F3D9A0"></i>', 'note': 'Just a tiny yellow dot, maybe a little oval. No rings yet. (This view is a drawing.)'},
-                       'scope': {'img': I('saturn'), 'size': '56%', 'pos': 'center', 'note': 'RINGS! At about 100x or more, Saturn’s rings are easy to see. (Real photo from the Hubble Space Telescope; a backyard view is smaller.)'}},
+             'views': {'bino': {'html': '<i class="fs-sh-dot" style="width:9px;height:6px;left:47%;top:48%;background:#F3D9A0;box-shadow:0 0 5px #F3D9A0"></i>', 'note': 'A tiny yellow dot. No rings yet. (A drawing.)'},
+                       'scope': {'img': I('saturn'), 'size': '56%', 'pos': 'center', 'note': 'RINGS! At 100x or more they’re easy to see. (Real Hubble photo; a backyard view is smaller.)'}},
              'q': 'Leo wants Saturn’s rings. Best tool?', 'opts': [{'t': 'Binoculars', 'miss': 'Look again with binoculars. Can you see any rings?'}, {'t': 'Backyard telescope', 'ok': True}]}],
         'credit': cr('moon', 'pleiades', 'jupiter', 'saturn') + ' The sky, the dots and the binocular views of Jupiter and Saturn are drawings.',
         'win': 'Binoculars show wide things, like a star cluster. A backyard telescope shows small, far details, like Saturn’s rings. That’s a clue.',
@@ -235,15 +235,15 @@ D = {
     'deepfield': {
         'afterText': 'Jordan wants the farthest thing anyone has ever seen', 'kicker': 'Part 4 game', 'title': 'Stare at nothing',
         'todo': ['Look at the tiny square of “empty” sky with each tool, in order.', 'With Webb, press and HOLD the shutter button until 12.5 hours have passed.', 'Then tap three galaxy shapes.'],
-        'why': {'icon': '🌌', 'q': 'How tiny is this speck?', 't': 'Hold a grain of sand at arm’s length. That’s how much sky this picture shows. To your eyes, it looks empty.'},
+        'why': {'icon': '🌌', 'q': 'How tiny is this speck?', 't': 'Hold a grain of sand at arm’s length. That’s how much sky this is, and it looks empty.'},
         'tools': [
             {'k': 'eye', 'icon': '👁️', 't': 'Your eyes', 'view': 'empty', 'note': 'Nothing. Just dark sky and a few stars around the speck.'},
             {'k': 'bino', 'icon': '🔭', 't': 'Binoculars', 'view': 'empty', 'note': 'Still nothing in the speck. It looks empty.'},
             {'k': 'scope', 'icon': '🪞', 't': 'Backyard telescope', 'view': 'smudge', 'note': 'Two very faint, fuzzy smudges. Something is there, but it’s too dim to see.'},
-            {'k': 'webb', 'icon': '🛰️', 't': 'Webb space telescope', 'view': 'webb', 'note': 'Webb is a space telescope about a million miles from Earth. Its mirror is about 21 feet wide. Press and hold to open its shutter.'}],
+            {'k': 'webb', 'icon': '🛰️', 't': 'Webb space telescope', 'view': 'webb', 'note': 'Webb is a space telescope with a mirror about 21 feet wide. Press and hold to open its shutter.'}],
         'hold': {'btn': 'Press and HOLD to open Webb’s shutter', 'hours': 12.5, 'ms': 6500, 'label': 'Shutter open',
                  'letGo': 'You let go, so the shutter closed. Press and hold again to keep collecting light.'},
-        'doneNote': 'Webb collected light for 12.5 hours. Almost every speck and swirl here is a galaxy, each with billions of stars. Some of this light traveled for more than 13 billion years.',
+        'doneNote': 'After 12.5 hours, almost every speck is a galaxy with billions of stars. Some of this light traveled over 13 billion years.',
         'img': I('deepfield'), 'alt': 'Webb’s First Deep Field: thousands of glowing galaxies on black, some round, some spiral, some stretched into curved arcs, and a few stars with long spikes.',
         'findLabel': 'Tap three galaxy shapes:',
         'shapes': [
@@ -263,7 +263,7 @@ D = {
     'exploreMod': 'deepfield',
     'permit': {
         'kicker': 'Case closed · Sam’s permit', 'title': 'The star party permit',
-        'todo': ['Tap the best place for a star party on this real photo of Florida at night.', 'Then pick why. The town stamps your permit!'],
+        'todo': ['Tap the darkest place on this real photo of Florida at night. Then pick why.'],
         'head': 'TOWN OF PALMETTO BEACH · EVENT PERMIT', 'sub': 'Star Party Night · Saturday, 8 PM',
         'rows': [['Tools', 'Backyard telescope (rented), binoculars, Webb’s deep field picture'], ['Host', 'Sam Park, engineer']],
         'placeLabel': 'Place', 'whyLabel': 'Why there',
@@ -281,7 +281,7 @@ D = {
         'stamp': 'APPROVED', 'sign': 'Approved for Sam Park · Town of Palmetto Beach',
         'lockLine': 'Crack the case first. Then Sam’s permit opens.',
         'ps': {'head': 'P.S. from Sam: telescopes look down, too!', 'img': I('florida-satellite'), 'alt': 'Florida from space in daytime: green land, white clouds, and bright blue-green water swirling along the Gulf coast.',
-               't': 'This is a real NASA satellite photo of Florida, taken from more than 400 miles up. Scientists watch the water’s color from space to spot blooms like the red tide from last time. On this day, most of the blue-green swirls were mud stirred up by a storm, with some tiny living things too. That’s why scientists still take water samples, like we did!',
+               't': 'A real NASA satellite photo of Florida from more than 400 miles up. Scientists watch the water’s color from space to spot blooms like red tide. On this day, most of the blue-green swirls were mud stirred up by a storm. That’s why scientists still take water samples, like we did!', 'tease': 'See Florida from more than 400 miles up.',
                'credit': C['modis'] + '. Via Wikimedia Commons.'},
         'credit': C['flnight'] + '. Via Wikimedia Commons. Big Cypress National Preserve became an International Dark Sky Park in 2016.'},
     'quizKicker': '',
@@ -450,14 +450,14 @@ D['cues'] = {
 D['nightsky'] = {'stars': 260}
 # Telescopium ("the telescope"), a real constellation; one star per clue (eps, alpha, zeta, iota Tel), simplified shape from their RA/Dec, east on the left
 D['constellation'] = {'name': 'TELESCOPIUM', 'meaning': 'means “the telescope.” It’s a real constellation!',
-    'note': 'A French astronomer, Nicolas-Louis de Lacaille, named it in the 1750s. He also named Microscopium, the microscope. From South Florida you can spot it low in the southern sky on summer nights.',
+    'note': 'A French astronomer named it in the 1750s. He also named Microscopium, the microscope!',
     'hint': 'Each clue you find lights a star. Find all four and see what they draw.',
     'stars': [{'x': 108, 'y': 8.5}, {'x': 89.7, 'y': 8.7}, {'x': 87.7, 'y': 29.5}, {'x': 12, 'y': 23}],
     'lines': [[0, 1], [1, 2], [2, 3]]}
 CH = json.load(open('chart.json', encoding='utf-8'))
 D['starchart'] = {'after': '.fs-game[data-mod="permit"]', 'kicker': 'Bonus · for a real night out', 'title': 'My star party sky chart',
-    'why': {'icon': '🗺️', 'q': 'Is this the real sky?', 't': 'Yes. These are the real places of the stars and Saturn over Florida in mid-January at about 8 PM, worked out by a computer. The lines show the shape of Orion, the hunter.'},
-    'teaser': 'Take the star party home. Print your own chart and see how many you can find from your yard.',
+    'why': {'icon': '🗺️', 'q': 'Is this the real sky?', 't': 'Yes! A computer worked out where the stars and Saturn are over Florida in mid-January at 8 PM. The lines show Orion, the hunter.'},
+    'teaser': '',
     'when': 'Mid-January, about 8 PM', 'where': 'anywhere in Florida',
     'alt': 'A round chart of the night sky over Florida in mid-January at 8 PM, with Orion, Sirius, the Seven Sisters, Saturn and the North Star marked.',
     'how': 'Hold the chart up over your head. Turn it until NORTH on the chart points north. When you look up, east really is on your left!',
@@ -465,10 +465,12 @@ D['starchart'] = {'after': '.fs-game[data-mod="permit"]', 'kicker': 'Bonus · fo
     'dirs': {'N': 'NORTH', 'S': 'SOUTH', 'E': 'EAST', 'W': 'WEST'},
     'checkLabel': 'Can you find…',
     'checks': ['Orion’s belt: three stars in a row', 'Sirius, the brightest star (its light left about 9 years ago!)', 'The Seven Sisters, almost straight up', 'Saturn: golden and steady, in the southwest', 'The North Star, low in the north', 'Bonus, from a dark place: the Andromeda Galaxy, a faint fuzzy smudge'],
-    'note': 'The Moon moves to a new spot every night, so it isn’t on the chart. Jupiter rises in the east around 8 PM and is very bright later in the evening. Go out with a grown-up!',
+    'note': 'The Moon moves every night, so it isn’t on the chart. Bright Jupiter rises in the east around 8 PM. Go out with a grown-up!',
     'btn': 'Print my star chart', 'printTitle': 'My star party sky',
     'credit': 'Star and Saturn positions worked out for Orlando, Florida, on January 14, 2027, at 8 PM, with the PyEphem astronomy program. The chart is close for any night in mid-January and anywhere in Florida.'}
 D['cues']['closing'].insert(1, {'at': '^Binoculars', 'sel': '.fs-game[data-mod="starchart"]', 'fx': 'glow', 'scroll': True})
+D['fold'] = {'tv': {'icon': '📺', 'tease': 'Watch a real 1990 news report: a famous telescope leaves Florida for space.', 'open': 'Watch'},
+             'starchart': {'icon': '🗺️', 'tease': 'Print a real map of the January night sky over Florida, with your name on it.', 'open': 'Open'}}
 D['cueWords'] = json.load(open('cuewords.json', encoding='utf-8')) if os.path.exists('cuewords.json') else {}
 json.dump(D, open('data.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 json.dump(F, open('fixes.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

@@ -2808,3 +2808,25 @@ html.fs-night .tab-next-wrap { position:relative; z-index:1; }
 .fs-sc2-how { font-size:14px; line-height:1.5; background: var(--fs-kraft); border-radius:10px; padding:8px 10px; margin-bottom:10px; }
 .fs-sc2-note { font-size:13px; color:#5C6F75; margin-top:8px; line-height:1.45; }
 @media (max-width:700px) { .fs-sc2-row { grid-template-columns: 1fr; } }
+/* folded extras: calm, inviting, one click */
+.fs-game.fs-folded { padding:0; border-left-width:6px; overflow:hidden; }
+.fs-fold > summary { list-style:none; }
+.fs-fold > summary::-webkit-details-marker { display:none; }
+.fs-fold-s { display:flex; align-items:center; gap:12px; padding:14px 16px; cursor:pointer; background: linear-gradient(90deg, #F7F3E8, #fff 60%); }
+.fs-fold-s:hover { background: linear-gradient(90deg, #F2EBD8, #fff 60%); }
+.fs-fold-s:focus-visible { outline:3px solid var(--fs-gold); outline-offset:-3px; }
+.fs-fold-ic { font-size:30px; flex-shrink:0; width:48px; height:48px; border-radius:50%; background:#0E1C42; display:flex; align-items:center; justify-content:center; box-shadow: inset 0 0 0 2px #2E4078; }
+.fs-fold-tx { flex:1; display:flex; flex-direction:column; gap:1px; }
+.fs-fold-tx small { font:900 11px 'Nunito',sans-serif; letter-spacing:1.2px; text-transform:uppercase; color: var(--fs-marsh); }
+.fs-fold-tx b { font-size:18px; color: var(--fs-navy); }
+.fs-fold-tx em { font-style:normal; font-size:14.5px; color:#5A4D3E; line-height:1.4; }
+.fs-fold-go { flex-shrink:0; background: var(--fs-navy); color:#FFE7A3; font:900 14px 'Nunito',sans-serif; border-radius:999px; padding:7px 14px; }
+.fs-fold[open] .fs-fold-go { background:#fff; color: var(--fs-navy); border:2px solid #D0D9E8; }
+.fs-fold[open] .fs-fold-go::before { content:'Close '; }
+.fs-fold[open] .fs-fold-go { font-size:0; } .fs-fold[open] .fs-fold-go::before { font-size:14px; }
+.fs-fold-b { padding: 4px 16px 18px; }
+.fs-pm-ps { margin-top:14px; border:2px solid #E4D6B4; border-radius:14px; overflow:hidden; }
+.fs-pm-ps .fs-fold-b { padding-top:10px; }
+@media (max-width:560px) { .fs-fold-s { flex-wrap:wrap; } .fs-fold-ic { width:40px; height:40px; font-size:24px; } .fs-fold-go { margin-left:58px; } }
+.fs-pm-ps { padding:0 !important; background:#fff; }
+details.fs-fold { border:0 !important; margin:0 !important; padding:0 !important; background:none !important; border-radius:0 !important; box-shadow:none !important; }

@@ -5925,6 +5925,21 @@
 
   /* =================== 18.01: The Red Water Sample (zoom machine, tool pick, virtual microscope + lab report, hand lens) =================== */
 
+  /* ---------- Fold extras (18.02): an optional piece starts closed as a calm, inviting card. D.fold = {mod: {icon, tease, open}} ---------- */
+  function foldExtras() {
+    var Fo = D.fold; if (!Fo) return;
+    Object.keys(Fo).forEach(function (k) {
+      var g = $('.fs-game[data-mod="' + k + '"]'); if (!g || g.querySelector('.fs-fold')) return;
+      var f = Fo[k], kick = $('.fs-game-k', g), title = $('.fs-game-t', g);
+      var d = el('details', 'fs-fold'), sm = el('summary', 'fs-fold-s', '<span class="fs-fold-ic">' + (f.icon || '✨') + '</span><span class="fs-fold-tx"><small>' + esc(kick ? kick.textContent : '') + '</small><b>' + esc(title ? title.textContent : '') + '</b><em>' + esc(f.tease || '') + '</em></span><span class="fs-fold-go">' + esc(f.open || 'Open') + ' ▸</span>');
+      d.appendChild(sm); var body = el('div', 'fs-fold-b'); d.appendChild(body);
+      Array.prototype.slice.call(g.childNodes).forEach(function (n) { if (n !== kick && n !== title) body.appendChild(n); });
+      if (kick) kick.remove(); if (title) title.remove();
+      g.appendChild(d); g.classList.add('fs-folded');
+      d.addEventListener('toggle', function () { if (d.open) SFX.blip(); });
+    });
+  }
+
   /* ---------- Night sky page (18.02): the lesson sits under a slow, twinkling sky; a shooting star crosses on every clue. D.nightsky = {stars, shoot:true} ---------- */
   function buildNightSky() {
     var N = D.nightsky; if (!N) return;
@@ -6334,10 +6349,10 @@
       '<dt>' + esc(P.placeLabel || 'Place') + '</dt><dd class="fs-pm-place">______</dd><dt>' + esc(P.whyLabel || 'Why there') + '</dt><dd class="fs-pm-why">______</dd></dl><div class="fs-pm-stamp">' + esc(P.stamp || 'APPROVED') + '</div><div class="fs-pm-sign"></div></div>');
     var map = el('div', 'fs-pm-map', '<div class="fs-in-k">' + esc(P.mapQ) + '</div><div class="fs-pm-photo"><img alt="' + esc(P.alt) + '" src="' + esc(P.img) + '">' + P.spots.map(function (s) { return '<button type="button" class="fs-pm-spot' + (s.side ? ' ' + s.side : '') + '" data-k="' + s.k + '" style="left:' + s.x + '%;top:' + s.y + '%"><i></i><span>' + esc(s.t) + '</span></button>'; }).join('') + '</div>');
     var lock = el('div', 'fs-lock', '🔒 <span>' + esc(P.lockLine || 'Crack the case first. Then Sam’s permit opens.') + '</span>');
-    var qh = el('div'), miss = el('div', 'fs-miss'), ps = el('div', 'fs-pm-ps fs-kraft');
+    var qh = el('div'), miss = el('div', 'fs-miss'), ps = el('div', 'fs-pm-ps');
     g.appendChild(lock); g.appendChild(form); g.appendChild(map); g.appendChild(qh); g.appendChild(miss); g.appendChild(ps);
     if (P.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(P.credit)));
-    if (P.ps) ps.innerHTML = '<div class="fs-pm-psh">✉️ ' + esc(P.ps.head) + '</div><div class="fs-pm-psrow"><img alt="' + esc(P.ps.alt) + '" src="' + esc(P.ps.img) + '"><p>' + esc(P.ps.t) + '</p></div>' + (P.ps.credit ? '<div class="fs-credit">' + esc(P.ps.credit) + '</div>' : '');
+    if (P.ps) ps.innerHTML = '<details class="fs-fold"><summary class="fs-fold-s"><span class="fs-fold-ic">✉️</span><span class="fs-fold-tx"><small>' + esc(P.ps.kicker || 'One more thing') + '</small><b>' + esc(P.ps.head) + '</b><em>' + esc(P.ps.tease || '') + '</em></span><span class="fs-fold-go">Open ▸</span></summary><div class="fs-fold-b"><div class="fs-pm-psrow"><img alt="' + esc(P.ps.alt) + '" src="' + esc(P.ps.img) + '"><p>' + esc(P.ps.t) + '</p></div>' + (P.ps.credit ? '<div class="fs-credit">' + esc(P.ps.credit) + '</div>' : '') + '</div></details>';
     function spot(k) { return P.spots.filter(function (s) { return s.k === k; })[0]; }
     function paint(anim) {
       var open = !!store('solved'); g.classList.toggle('locked', !open);
@@ -6765,6 +6780,7 @@
     guard('solve', buildSolve);
     guard('permit', buildPermit);
     guard('starchart', buildStarchart);
+    guard('fold', foldExtras);
     guard('helpers', buildHelpers);
     guard('inputs', buildInputs);
     guard('specimen', buildSpecimen);
