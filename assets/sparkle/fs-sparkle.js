@@ -516,7 +516,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -5440,7 +5440,9 @@
     var paper = B.lines.map(function (ln) {
       return '<p>' + esc(ln).replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, function (m, id, t) { return '<button type="button" class="fs-bn-w" data-id="' + esc(id) + '">' + t + '</button>'; }) + '</p>';
     }).join('');
-    var dev = el('div', 'fs-bn-dev',
+    var dev = B.skin === 'phone' ? el('div', 'fs-bn-dev fs-bn-ph', '<div class="fs-bn-phone" aria-hidden="true"><div class="fs-bn-ph-scr"><span class="fs-bn-led"></span><b>' + esc(B.device || 'Voicemail') + '</b><small>' + esc(B.deviceSub || '') + '</small><i class="fs-bn-ph-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></i></div></div>' +
+      '<div class="fs-bn-side"><button type="button" class="fs-btn fs-bn-play">▶ ' + esc(B.playBtn || 'Play') + '</button><div class="fs-bn-st">' + esc(B.station || '') + '</div></div>') :
+      el('div', 'fs-bn-dev',
       '<div class="fs-bn-radio" aria-hidden="true"><div class="fs-bn-ant"></div><div class="fs-bn-body"><div class="fs-bn-grille"></div><div class="fs-bn-screen"><span class="fs-bn-led"></span><span class="fs-bn-scr">' + esc(B.device || 'WEATHER RADIO') + '</span></div></div></div>' +
       '<div class="fs-bn-side"><button type="button" class="fs-btn fs-bn-play">▶ ' + esc(B.playBtn || 'Play the bulletin') + '</button><div class="fs-bn-st">' + esc(B.station || '') + '</div></div>');
     var tape = el('div', 'fs-bn-paper', '<div class="fs-bn-head">⚠️ ' + esc(B.paperHead || 'HURRICANE WARNING') + '</div>' + paper);
@@ -5474,7 +5476,7 @@
     }
     playB.addEventListener('click', function () {
       if (busy) { if (audio) audio.pause(); if (window.speechSynthesis) speechSynthesis.cancel(); done(); return; }
-      busy = true; dev.classList.add('on'); playB.textContent = '❚❚ Stop'; if (B.tone === 'start') { [0, 0.55, 1.1].forEach(function (t, i) { tone(i < 2 ? 587 : 1175, t, i < 2 ? 0.28 : 0.6, 'square', 0.03); }); } else if (B.tone !== 'none') alertTone();
+      busy = true; dev.classList.add('on'); playB.textContent = '❚❚ Stop'; if (B.tone === 'ring') { [0, 0.45, 1.2, 1.65].forEach(function (t) { tone(440, t, 0.35, 'sine', 0.04); tone(480, t, 0.35, 'sine', 0.04); }); } else if (B.tone === 'start') { [0, 0.55, 1.1].forEach(function (t, i) { tone(i < 2 ? 587 : 1175, t, i < 2 ? 0.28 : 0.6, 'square', 0.03); }); } else if (B.tone !== 'none') alertTone();
       var src = (D.paths && D.paths.audio || 'assets/audio/guide/') + (D.guide || 'crew') + '/' + D.prefix + '-' + (B.audio || 'bulletin') + '.mp3';
       setTimeout(function () {
         if (!busy) return;
@@ -6417,6 +6419,258 @@
     pick(0); logs(); raf = requestAnimationFrame(loop);
   };
 
+  /* =================== 19.02: The Rematch (stopwatch, lock it down, dot plot drop, data detective, bullseye derby) =================== */
+
+  /* ---------- Warm-Up: "The stopwatch race" — a derby car rolls between two flags in exactly the same time every run (a model);
+     the student times it with Start/Stop 3 times and sees their own times differ (reaction time). Then a chip question (19.02) ----------
+     D.stopwatch = {afterText, kicker, title, todo[], why, alt, model, real (seconds), tries, goBtn, tapBtn, flagA, flagB, early, missLine, logLabel, realLine, q, opts, win, clue} */
+  function buildStopwatch() {
+    var S = D.stopwatch; if (!S) return;
+    var at = anchorP(S.afterText); if (!at) { FAILED.push('stopwatch anchor text not found'); return; }
+    var g = gameShell(S.kicker || 'Warm-Up game', S.title, S.todo, S.why); g.dataset.mod = 'stopwatch';
+    var st = loadJ('stopwatch', { t: [] }), N = S.tries || 3, AX = 150, BX = 470, X0 = 30, X1 = 600, real = S.real || 2.5;
+    var spd = (BX - AX) / real; /* px per second, constant (a model with no friction between the flags) */
+    var stage = el('div', 'fs-sw-stage');
+    stage.innerHTML = '<svg viewBox="0 0 640 170" class="fs-sw-svg" role="img" aria-label="' + esc(S.alt || 'A model: a derby car rolling past two flags on a flat track') + '">' +
+      '<rect width="640" height="170" fill="#EAF4FB"/><rect y="120" width="640" height="50" fill="#E9D8A6"/><line x1="0" y1="120" x2="640" y2="120" stroke="#B9A06A" stroke-width="3"/>' +
+      [[AX, S.flagA || 'START'], [BX, S.flagB || 'STOP']].map(function (f, i) { return '<g class="fs-sw-flag"><line x1="' + f[0] + '" y1="120" x2="' + f[0] + '" y2="52" stroke="#5B7A99" stroke-width="3"/><path d="M' + f[0] + ' 52 l30 8 l-30 8z" fill="' + (i ? '#E8636B' : '#34B76F') + '"/><text x="' + f[0] + '" y="44" text-anchor="middle">' + esc(f[1]) + '</text><line x1="' + f[0] + '" y1="120" x2="' + f[0] + '" y2="160" stroke="#8A7A50" stroke-dasharray="4 4"/></g>'; }).join('') +
+      '<g class="fs-sw-car"><path d="M-22 -9 Q-18 -22 0 -22 Q18 -22 24 -9 Z" fill="#E8636B" stroke="#7A2A30" stroke-width="2"/><circle cx="-13" cy="-4" r="6" fill="#333"/><circle cx="14" cy="-4" r="6" fill="#333"/></g>' +
+      '<text x="14" y="160" class="fs-sw-model">' + esc(S.model || 'a model') + '</text></svg>' +
+      '<div class="fs-sw-watch"><div class="fs-sw-face"><span class="fs-sw-num">0.00</span><small>s</small></div><button type="button" class="fs-btn fs-sw-tap">⏱ ' + esc(S.tapBtn || 'Start') + '</button></div>';
+    var go = el('button', 'fs-btn alt fs-sw-go', '▶ ' + esc(S.goBtn || 'Roll the car')); go.type = 'button';
+    var log = el('div', 'fs-sw-log'), miss = el('div', 'fs-miss'), info = el('div', 'fs-hs-card fs-sw-info'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(stage); g.appendChild(go); g.appendChild(log); g.appendChild(miss); g.appendChild(info); g.appendChild(qh); g.appendChild(win);
+    var car = $('.fs-sw-car', stage), num = $('.fs-sw-num', stage), tap = $('.fs-sw-tap', stage), running = false, t0 = null, x = X0, startAt = null, raf = null, phase = 0;
+    info.style.display = 'none';
+    function place() { car.setAttribute('transform', 'translate(' + x.toFixed(1) + ' 120)'); }
+    function paintLog() {
+      log.innerHTML = '<div class="fs-in-k">' + esc(S.logLabel || 'Your times') + '</div><div class="fs-sw-rows">' + Array.apply(null, Array(N)).map(function (_, i) { var v = st.t[i]; return '<span class="' + (v != null ? 'ok' : '') + '"><b>' + esc((S.tryWord || 'Try') + ' ' + (i + 1)) + '</b>' + (v != null ? v.toFixed(2) + ' s' : '—') + '</span>'; }).join('') + '</div>';
+      if (st.t.length >= N) {
+        info.style.display = ''; info.innerHTML = '<span class="fs-hs-n">📡</span><div><b>' + esc((S.realWord || 'Laser timer') + ': ' + real.toFixed(2) + ' s ' + (S.everyWord || 'every time')) + '</b>' + esc(S.realLine || '') + '</div>';
+        go.style.display = 'none'; askOnce(qh, S.q, S.opts, 'stopwatch-q', win, S.win, S.clue, 'stopwatch', miss);
+      }
+    }
+    function frame(ts) {
+      if (!running) return; var dt = t0 == null ? 0 : (ts - t0) / 1000; t0 = ts; x += spd * dt; place();
+      if (phase === 1) num.textContent = ((ts - startAt) / 1000).toFixed(2);
+      if (x > X1) { running = false; if (phase !== 2) { showMiss(miss, S.missLine || 'The car got away! Roll it again and press Start at the green flag, Stop at the red flag.'); reset(); } return; }
+      raf = requestAnimationFrame(frame);
+    }
+    function reset() { phase = 0; tap.textContent = '⏱ ' + (S.tapBtn || 'Start'); tap.disabled = true; go.disabled = st.t.length >= N; }
+    go.addEventListener('click', function () {
+      if (running || st.t.length >= N) return; miss.classList.remove('show'); x = X0; place(); num.textContent = '0.00'; running = true; t0 = null; phase = 0; tap.disabled = false; go.disabled = true; SFX.whoosh();
+      raf = requestAnimationFrame(frame);
+    });
+    function press() {
+      if (!running || tap.disabled) return;
+      if (phase === 0) { phase = 1; startAt = performance.now(); tap.textContent = '⏹ ' + (S.stopBtn || 'Stop'); SFX.blip(); if (x < AX - 60) showMiss(miss, S.early || 'That was early! The car hadn’t reached the green flag yet. It still counts. Real scientists make small timing errors too.'); return; }
+      if (phase === 1) { phase = 2; var t = (performance.now() - startAt) / 1000; num.textContent = t.toFixed(2); st.t.push(+t.toFixed(2)); saveJ('stopwatch', st); SFX.chime(); tap.disabled = true; paintLog(); setTimeout(function () { if (st.t.length < N) go.disabled = false; }, 200); }
+    }
+    tap.addEventListener('click', press);
+    stage.addEventListener('keydown', function (e) { if (e.key === ' ') { e.preventDefault(); press(); } });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    x = X0; place(); reset(); go.disabled = st.t.length >= N; paintLog();
+  }
+
+  /* ---------- Lesson Part 1: "Lock it down" — Coach Dee's two runs changed several things at once; lock every row except the one being tested,
+     the stamp flips UNFAIR → FAIR; run her test and the fair test (a model) (19.02) ----------
+     D.lockdown = {afterText, kicker, title, todo[], why, runA, runB, rows:[{k, icon, t, a, b}], testK, testMiss, stampFair, stampUnfair, deeBtn, deeResult:{a,b,t}, fairBtn, fairResult:{a,b,t}, unit, q, opts, win, clue} */
+  function buildLockdown() {
+    var L = D.lockdown; if (!L) return;
+    var at = anchorP(L.afterText); if (!at) { FAILED.push('lockdown anchor text not found'); return; }
+    var g = gameShell(L.kicker || 'Part 1 game', L.title, L.todo, L.why); g.dataset.mod = 'lockdown';
+    var st = loadJ('lockdown', { lock: {}, dee: 0, fair: 0 });
+    var panel = el('div', 'fs-ld-panel'), stamp = el('div', 'fs-ld-stamp'), btns = el('div', 'fs-ld-btns'), race = el('div', 'fs-ld-race'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(panel); g.appendChild(stamp); g.appendChild(btns); g.appendChild(race); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    function same(r) { return r.a === r.b || st.lock[r.k]; }
+    function fair() { return L.rows.every(function (r) { return r.k === L.testK || same(r); }); }
+    function paint() {
+      panel.innerHTML = '<div class="fs-ld-h"><span></span><b>' + esc(L.runA) + '</b><b>' + esc(L.runB) + '</b><span></span></div>' + L.rows.map(function (r) {
+        var s = same(r), test = r.k === L.testK;
+        return '<div class="fs-ld-row' + (s ? ' same' : ' diff') + (test ? ' test' : '') + '" data-k="' + r.k + '"><span class="fs-ld-t">' + r.icon + ' ' + esc(r.t) + (test ? ' <em>' + esc(L.testTag || 'what we test') + '</em>' : '') + '</span><span class="fs-ld-v">' + esc(r.a) + '</span><span class="fs-ld-v">' + esc(st.lock[r.k] ? r.a : r.b) + '</span>' +
+          '<button type="button" class="fs-ld-lk' + (test ? ' tst' : '') + '" aria-label="' + esc(test ? r.t + ': this is what we test' : (s ? 'Locked: ' : 'Lock ') + r.t) + '">' + (test ? '🎯' : (s ? '🔒' : '🔓')) + '</button></div>';
+      }).join('');
+      $$('.fs-ld-lk', panel).forEach(function (b) { b.addEventListener('click', function () {
+        var r = L.rows.filter(function (x) { return x.k === b.closest('.fs-ld-row').dataset.k; })[0];
+        if (same(r)) return;
+        if (r.k === L.testK) { bounce(b, miss, L.testMiss); return; }
+        st.lock[r.k] = 1; saveJ('lockdown', st); miss.classList.remove('show'); SFX.stamp(); paint();
+        var row = $('.fs-ld-row[data-k="' + r.k + '"]', panel); if (row && !reduceMotion) row.classList.add('pop');
+      }); });
+      var f = fair(); stamp.className = 'fs-ld-stamp ' + (f ? 'fair' : 'unfair'); stamp.textContent = f ? (L.stampFair || 'FAIR TEST') : (L.stampUnfair || 'UNFAIR TEST');
+      btns.innerHTML = '<button type="button" class="fs-btn alt fs-ld-dee">▶ ' + esc(L.deeBtn) + '</button><button type="button" class="fs-btn fs-ld-fair"' + (f ? '' : ' disabled') + '>▶ ' + esc(L.fairBtn) + '</button>';
+      $('.fs-ld-dee', btns).addEventListener('click', function () { run(L.deeResult, 'dee'); });
+      $('.fs-ld-fair', btns).addEventListener('click', function () { if (!fair()) return; run(L.fairResult, 'fair'); });
+    }
+    function bars(R, anim) {
+      var mx = Math.max(R.a, R.b, 1);
+      race.innerHTML = '<div class="fs-ld-lane"><b>' + esc(L.runA) + '</b><div class="fs-ld-track"><i style="width:' + (anim ? 0 : R.a / 30 * 100) + '%"></i></div><span>' + R.a + ' ' + esc(L.unit || 'in') + '</span></div>' +
+        '<div class="fs-ld-lane"><b>' + esc(L.runB) + '</b><div class="fs-ld-track"><i style="width:' + (anim ? 0 : R.b / 30 * 100) + '%"></i></div><span>' + R.b + ' ' + esc(L.unit || 'in') + '</span></div><p>' + esc(R.t) + '</p>';
+      if (anim) setTimeout(function () { var w = $$('.fs-ld-track i', race); w[0].style.width = (R.a / 30 * 100) + '%'; w[1].style.width = (R.b / 30 * 100) + '%'; }, 40);
+    }
+    function run(R, k) { st[k] = 1; saveJ('lockdown', st); SFX.whoosh(); bars(R, !reduceMotion); race.className = 'fs-ld-race on ' + k; if (k === 'fair') askOnce(qh, L.q, L.opts, 'lockdown-q', win, L.win, L.clue, 'lockdown', miss); }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    paint(); if (st.fair) { bars(L.fairResult, false); race.className = 'fs-ld-race on fair'; askOnce(qh, L.q, L.opts, 'lockdown-q', win, L.win, L.clue, 'lockdown', miss); }
+  }
+
+  /* ---------- Lesson Part 2: "Dot plot drop" — each trial drops a dot on a number line; drag the gold marker to the middle of the dots (19.02) ----------
+     D.dotplot = {afterText, kicker, title, todo[], why, min, max, step, unit, trials[], need, runBtn, markerLabel, tol, trust:[{n, t}], checkLine, q, opts, win, clue} */
+  function buildDotplot() {
+    var P = D.dotplot; if (!P) return;
+    var at = anchorP(P.afterText); if (!at) { FAILED.push('dotplot anchor text not found'); return; }
+    var g = gameShell(P.kicker || 'Part 2 game', P.title, P.todo, P.why); g.dataset.mod = 'dotplot';
+    var st = loadJ('dotplot', { n: 0, m: null, ok: 0 }), W = 600, L0 = 40, L1 = 560, Y = 150;
+    function xOf(v) { return L0 + (v - P.min) / (P.max - P.min) * (L1 - L0); }
+    function vOf(x) { return P.min + (x - L0) / (L1 - L0) * (P.max - P.min); }
+    var ticks = ''; for (var v = P.min; v <= P.max; v += (P.step || 1)) ticks += '<line x1="' + xOf(v) + '" y1="' + Y + '" x2="' + xOf(v) + '" y2="' + (Y + ((v % 5) ? 6 : 12)) + '"/>' + ((v % 5) ? '' : '<text x="' + xOf(v) + '" y="' + (Y + 28) + '">' + v + '</text>');
+    var box = el('div', 'fs-dpl-box', '<svg viewBox="0 0 ' + W + ' 200" class="fs-dpl-svg" role="img" aria-label="' + esc(P.alt || 'A number line of inches with dots for each trial and a gold marker') + '"><line x1="' + L0 + '" y1="' + Y + '" x2="' + L1 + '" y2="' + Y + '" class="fs-dpl-axis"/><g class="fs-dpl-ticks">' + ticks + '</g><text x="' + ((L0 + L1) / 2) + '" y="196" class="fs-dpl-unit">' + esc(P.unit || 'inches') + '</text><g class="fs-dpl-dots"></g><g class="fs-dpl-mk"><line y1="20" y2="' + (Y + 4) + '"/><path d="M-10 6 L10 6 L0 20 Z"/><text y="0" text-anchor="middle">' + esc(P.markerLabel || 'middle') + '</text></g></svg>');
+    var ctl = el('div', 'fs-dpl-ctl', '<button type="button" class="fs-btn fs-dpl-run">▶ ' + esc(P.runBtn || 'Run a trial') + '</button><span class="fs-dpl-n"></span>');
+    var trust = el('div', 'fs-hs-card fs-dpl-trust'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(box); g.appendChild(ctl); g.appendChild(trust); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    var svg = $('svg', box), dots = $('.fs-dpl-dots', box), mk = $('.fs-dpl-mk', box), run = $('.fs-dpl-run', ctl);
+    function data() { return P.trials.slice(0, st.n); }
+    function median(a) { var s = a.slice().sort(function (x, y) { return x - y; }), h = Math.floor(s.length / 2); return s.length % 2 ? s[h] : (s[h - 1] + s[h]) / 2; }
+    function paint(newest) {
+      var cnt = {}; dots.innerHTML = data().map(function (v, i) { cnt[v] = (cnt[v] || 0) + 1; return '<circle class="' + (i === newest && !reduceMotion ? 'drop' : '') + '" cx="' + xOf(v) + '" cy="' + (Y - 10 - (cnt[v] - 1) * 18) + '" r="8"/>'; }).join('');
+      var m = st.m == null ? (P.markerStart != null ? P.markerStart : P.min + 2) : st.m; mk.setAttribute('transform', 'translate(' + xOf(m) + ' 0)'); $('text', mk).textContent = (P.markerLabel || 'middle') + ': ' + Math.round(m);
+      $('.fs-dpl-n', ctl).textContent = st.n + ' ' + (st.n === 1 ? (P.trialWord || 'trial') : (P.trialsWord || 'trials'));
+      var tr = null; (P.trust || []).forEach(function (x) { if (st.n >= x.n) tr = x; }); trust.innerHTML = tr ? '<span class="fs-hs-n">' + (tr.icon || '🔎') + '</span><div><b>' + esc(tr.head || '') + '</b>' + esc(tr.t) + '</div>' : '<span class="fs-hs-n">🔎</span><div>' + esc(P.startLine || 'Run the first trial.') + '</div>';
+      run.disabled = st.n >= P.trials.length;
+      mk.classList.toggle('ok', !!st.ok);
+    }
+    function judge() {
+      if (st.n < P.need) { if (st.m != null) showMiss(miss, (P.moreLine || 'Run at least {n} trials first. One or two dots can fool you.').replace('{n}', P.need)); return; }
+      var md = median(data());
+      if (Math.abs(st.m - md) <= (P.tol || 1)) { st.ok = 1; saveJ('dotplot', st); miss.classList.remove('show'); SFX.chime(); paint(); askOnce(qh, P.q, P.opts, 'dotplot-q', win, P.win, P.clue, 'dotplot', miss); }
+      else { st.ok = 0; showMiss(miss, st.m < md ? (P.lowLine || 'Most dots are to the right of your marker. Slide it toward the middle of the pile.') : (P.highLine || 'Most dots are to the left of your marker. Slide it toward the middle of the pile.')); paint(); }
+    }
+    run.addEventListener('click', function () { if (st.n >= P.trials.length) return; st.n++; st.ok = 0; saveJ('dotplot', st); tone(300 + P.trials[st.n - 1] * 30, 0, 0.15, 'triangle', 0.05); paint(st.n - 1); if (st.m != null && st.n >= P.need) judge(); });
+    var drag = false;
+    function setX(e) { var r = svg.getBoundingClientRect(), x = (e.clientX - r.left) * W / r.width; st.m = Math.max(P.min, Math.min(P.max, Math.round(vOf(x) * 2) / 2)); paint(); }
+    svg.addEventListener('pointerdown', function (e) { drag = true; svg.setPointerCapture && svg.setPointerCapture(e.pointerId); setX(e); e.preventDefault(); });
+    svg.addEventListener('pointermove', function (e) { if (drag) setX(e); });
+    svg.addEventListener('pointerup', function () { if (!drag) return; drag = false; saveJ('dotplot', st); judge(); });
+    at.parentNode.insertBefore(g, at.nextSibling);
+    paint(); if (st.ok) askOnce(qh, P.q, P.opts, 'dotplot-q', win, P.win, P.clue, 'dotplot', miss);
+  }
+
+  /* ---------- Lesson Part 4: "Data detective" — Coach Dee's 9-trial notebook; tap the odd number, pick keep / throw out / check and redo;
+     check plays a replay that shows what went wrong (the fluke), redo gives a new number, averages snap into bars (19.02) ----------
+     D.detective = {afterText, kicker, title, todo[], why, head, sub, note, unit, rows:[{k, t, trials:[]}], fluke:{row, i, redo}, fitLine, choiceQ, choices:[{k, t, ok, miss}],
+                    replay:{alt, cap, line}, redoBtn, avgLabel, q, opts, win, clue} */
+  function buildDetective() {
+    var T = D.detective; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('detective anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Part 4 game', T.title, T.todo, T.why); g.dataset.mod = 'detective';
+    var st = loadJ('detective', { found: 0, checked: 0, redo: 0 }), F = T.fluke, U = T.unit || 'in';
+    var book = el('div', 'fs-dt-book'), act = el('div', 'fs-dt-act'), rep = el('div', 'fs-dt-rep'), avg = el('div', 'fs-dt-avg'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(book); g.appendChild(act); g.appendChild(rep); g.appendChild(avg); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    function val(r, i) { return (r.k === F.row && i === F.i && st.redo) ? F.redo : r.trials[i]; }
+    function mean(r) { var s = 0; r.trials.forEach(function (_, i) { s += val(r, i); }); return Math.round(s / r.trials.length); }
+    function paintBook() {
+      book.innerHTML = '<div class="fs-dt-head">' + esc(T.head) + '</div><div class="fs-dt-sub">' + esc(T.sub || '') + '</div><table><tr><th>' + esc(T.colStart || 'Start') + '</th>' + T.rows[0].trials.map(function (_, i) { return '<th>' + esc((T.trialWord || 'Trial') + ' ' + (i + 1)) + '</th>'; }).join('') + '</tr>' +
+        T.rows.map(function (r) { return '<tr><td>' + esc(r.t) + '</td>' + r.trials.map(function (_, i) { var fl = r.k === F.row && i === F.i; return '<td><button type="button" class="fs-dt-cell' + (fl && st.found ? ' found' : '') + (fl && st.redo ? ' redone' : '') + '" data-r="' + r.k + '" data-i="' + i + '">' + (fl && st.redo ? '<s>' + r.trials[i] + '</s> ' : '') + val(r, i) + ' ' + esc(U) + '</button></td>'; }).join('') + '</tr>'; }).join('') + '</table>' + (T.note ? '<div class="fs-dt-note">' + esc(T.note) + '</div>' : '');
+      $$('.fs-dt-cell', book).forEach(function (c) { c.addEventListener('click', function () {
+        if (st.found) return; var fl = c.dataset.r === F.row && +c.dataset.i === F.i;
+        if (!fl) { bounce(c, miss, T.fitLine || 'That number fits with the others in its row. Look for one that doesn’t.'); return; }
+        st.found = 1; saveJ('detective', st); miss.classList.remove('show'); SFX.chime(); paintBook(); paintAct();
+      }); });
+    }
+    function paintAct() {
+      if (!st.found) { act.innerHTML = ''; return; }
+      if (act.dataset.on) return; act.dataset.on = '1';
+      act.innerHTML = '<div class="fs-in-k">' + esc(T.choiceQ) + '</div><div class="fs-in-chips">' + T.choices.map(function (c, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(c.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', act).forEach(function (b) { b.addEventListener('click', function () {
+        if (st.checked) return; var c = T.choices[+b.dataset.i];
+        if (!c.ok) { bounce(b, miss, c.miss); return; }
+        b.classList.add('on', 'ok'); st.checked = 1; saveJ('detective', st); miss.classList.remove('show'); SFX.chime(); replay(true);
+      }); });
+      if (st.checked) { var k = T.choices.map(function (c, i) { return c.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; $$('.fs-in-chip', act)[k].classList.add('on', 'ok'); }
+    }
+    function replay(anim) {
+      var R = T.replay;
+      rep.innerHTML = '<div class="fs-in-k">' + esc(R.head || 'Replay of the odd trial') + '</div><div class="fs-dt-screen"><svg viewBox="0 0 600 160" role="img" aria-label="' + esc(R.alt) + '"><rect width="600" height="160" fill="#1B2430"/><rect y="112" width="600" height="48" fill="#3A3226"/><path d="M0 112 L120 112 Q150 112 170 100 L40 40 L0 40 Z" fill="#4A4032" opacity=".9"/>' +
+        '<g class="fs-dt-sock" transform="translate(300 112)"><path d="M-14 -2 Q-14 -12 -4 -12 L6 -12 L6 -20 L16 -20 L16 -2 Z" fill="#F4F4F4" stroke="#999" stroke-width="1.5"/><path d="M-14 -5 H6" stroke="#E8636B" stroke-width="3"/></g>' +
+        '<g class="fs-dt-car"><path d="M-22 -9 Q-18 -22 0 -22 Q18 -22 24 -9 Z" fill="#E8636B" stroke="#7A2A30" stroke-width="2"/><circle cx="-13" cy="-4" r="6" fill="#ddd"/><circle cx="14" cy="-4" r="6" fill="#ddd"/></g>' +
+        '<text x="12" y="20" class="fs-dt-rec">● ' + esc(R.rec || 'REPLAY · TRIAL 6') + '</text></svg></div><div class="fs-hs-card fs-dt-cap"><span class="fs-hs-n">🧦</span><div>' + esc(R.cap) + '</div></div>' +
+        '<button type="button" class="fs-btn fs-dt-redo">🔁 ' + esc(T.redoBtn || 'Redo the trial') + '</button>';
+      var car = $('.fs-dt-car', rep), cap = $('.fs-dt-cap', rep), redo = $('.fs-dt-redo', rep), sock = $('.fs-dt-sock', rep);
+      cap.style.visibility = 'hidden'; redo.style.display = st.redo ? 'none' : '';
+      var x = 40, y = 40, t0 = null, D1 = reduceMotion || !anim ? 1 : 2200;
+      function pos(p) { /* down the slope (0-0.35), along the track to the sock (0.35-1), stopping there */ if (p < 0.35) { var q = p / 0.35; return [40 + 130 * q, 40 + 72 * q * q]; } var r = (p - 0.35) / 0.65, e = 1 - Math.pow(1 - r, 2.2); return [170 + (276 - 170) * e, 112]; }
+      function step(ts) { if (t0 == null) t0 = ts; var p = Math.min(1, (ts - t0) / D1), xy = pos(p); car.setAttribute('transform', 'translate(' + xy[0].toFixed(1) + ' ' + xy[1].toFixed(1) + ')'); if (p < 1) requestAnimationFrame(step); else { cap.style.visibility = ''; sock.classList.add('hit'); if (anim) SFX.thud(); } }
+      requestAnimationFrame(step);
+      redo.addEventListener('click', function () { st.redo = 1; saveJ('detective', st); SFX.sparkle(); sock.style.display = 'none'; redo.style.display = 'none'; paintBook(); averages(true); });
+    }
+    function averages(anim) {
+      var mx = Math.max.apply(null, T.rows.map(mean)) || 1;
+      avg.innerHTML = '<div class="fs-in-k">' + esc(T.avgLabel || 'Averages (the typical push for each start)') + '</div><div class="fs-dt-bars">' + T.rows.map(function (r) { return '<div class="fs-dt-col"><div class="fs-dt-area"><i style="height:' + (anim ? 0 : mean(r) / 30 * 100) + '%"><b>' + mean(r) + '</b></i></div><small>' + esc(r.t) + '</small></div>'; }).join('') + '</div>';
+      if (anim) setTimeout(function () { $$('.fs-dt-area i', avg).forEach(function (b, i) { b.style.height = (mean(T.rows[i]) / 30 * 100) + '%'; }); }, 60);
+      askOnce(qh, T.q, T.opts, 'detective-q', win, T.win, T.clue, 'detective', miss);
+    }
+    at.parentNode.insertBefore(g, at.nextSibling);
+    paintBook(); paintAct(); if (st.checked) replay(false); if (st.redo) averages(false);
+  }
+
+  /* ---------- Bonus after the case: "Bullseye Derby" — pick a start height so the car rolls out and stops on the bullseye (a model:
+     the rollout distance grows with the start height; rougher ground stops it sooner). 3 levels, stars, best score saved (19.02) ----------
+     D.bullseye = {kicker, title, todo[], why, after, hMin, hMax, hStep, levels:[{name, surface, k, target, tip}], unit, goBtn, nextBtn, lockLine, lines:{…}, credit} */
+  function buildBullseye() {
+    var B = D.bullseye; if (!B) return;
+    var sv = $(B.after || '.fs-solve'); if (!sv) { FAILED.push('bullseye: anchor not found'); return; }
+    var g = gameShell(B.kicker || 'Bonus game', B.title, B.todo, B.why); g.dataset.mod = 'bullseye'; g.classList.add('fs-bx');
+    var st = loadJ('bullseye', { lv: 0, stars: {}, best: 0 }), Lz = B.lines || {}, U = B.unit || 'ft';
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(B.lockLine || 'Crack the case first. Then the game opens.') + '</span>');
+    var hud = el('div', 'fs-bx-hud'), stage = el('div', 'fs-bx-stage'), ctl = el('div', 'fs-bx-ctl'), msg = el('div', 'fs-hs-card fs-bx-msg');
+    g.appendChild(lock); g.appendChild(hud); g.appendChild(stage); g.appendChild(ctl); g.appendChild(msg);
+    var W = 640, H = 220, GY = 180, HX = 120, PX = 4.6; /* PX = pixels per foot of rollout */
+    var h = Math.round((B.hMin + B.hMax) / 2), busy = false;
+    function lv() { return B.levels[Math.min(st.lv, B.levels.length - 1)]; }
+    function hy(hh) { return GY - hh * 13; }
+    function total() { var s = 0; Object.keys(st.stars).forEach(function (k) { s += st.stars[k]; }); return s; }
+    function draw() {
+      var L = lv(), tx = HX + L.target * PX, surf = L.surface === 'sand' ? '#E9D8A6' : (L.surface === 'grass' ? '#9CCB7A' : '#A9B1BA');
+      stage.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" class="fs-bx-svg" role="img" aria-label="' + esc(B.alt || 'A hill on the left, a flat track and a bullseye target') + '"><rect width="' + W + '" height="' + H + '" fill="#EAF4FB"/>' +
+        '<rect x="' + HX + '" y="' + GY + '" width="' + (W - HX) + '" height="' + (H - GY) + '" fill="' + surf + '"/><path d="M0 ' + GY + ' L0 ' + hy(B.hMax + 1) + ' L' + HX + ' ' + GY + ' Z" fill="#C9B48A"/>' +
+        '<g class="fs-bx-target" transform="translate(' + tx + ' ' + (GY + 14) + ')"><ellipse rx="30" ry="9" fill="#fff"/><ellipse rx="21" ry="6.3" fill="#E8636B"/><ellipse rx="12" ry="3.6" fill="#fff"/><ellipse rx="5" ry="1.6" fill="#E8636B"/></g>' +
+        [0, 20, 40, 60, 80, 100].map(function (f) { var x = HX + f * PX; return x > W - 10 ? '' : '<line x1="' + x + '" y1="' + GY + '" x2="' + x + '" y2="' + (GY + 6) + '" stroke="#555"/><text x="' + x + '" y="' + (GY + 34) + '" class="fs-bx-tk">' + f + '</text>'; }).join('') +
+        '<g class="fs-bx-start"><line x1="0" y1="' + hy(h) + '" x2="' + (HX - (HX * (hy(h) - hy(B.hMax + 1)) / (GY - hy(B.hMax + 1)))) + '" y2="' + hy(h) + '" stroke="#E8636B" stroke-dasharray="4 4"/></g>' +
+        '<g class="fs-bx-car"><path d="M-16 -7 Q-13 -16 0 -16 Q13 -16 17 -7 Z" fill="#2D7AA6" stroke="#123" stroke-width="1.5"/><circle cx="-9" cy="-3" r="4.5" fill="#333"/><circle cx="10" cy="-3" r="4.5" fill="#333"/></g>' +
+        '<g class="fs-bx-puff"></g><text x="' + (W - 10) + '" y="20" text-anchor="end" class="fs-bx-model">' + esc(B.model || 'a model') + '</text></svg>';
+      var c = $('.fs-bx-car', stage); var sx = HX * (1 - (GY - hy(h)) / (GY - hy(B.hMax + 1))); c.setAttribute('transform', 'translate(' + Math.max(14, sx) + ' ' + hy(h) + ')');
+      hud.innerHTML = '<span><b>' + esc((Lz.level || 'Level') + ' ' + (st.lv + 1) + ' of ' + B.levels.length) + '</b> ' + esc(L.name) + '</span><span>🎯 ' + esc((Lz.target || 'Target') + ': ' + L.target + ' ' + U) + '</span><span>⭐ ' + total() + ' / ' + (B.levels.length * 3) + (st.best ? ' · ' + esc(Lz.best || 'best') + ' ' + st.best : '') + '</span>';
+    }
+    function paintCtl() {
+      ctl.innerHTML = '<label class="fs-bx-h"><span>' + esc(Lz.height || 'Start height') + ': <b>' + h + ' ' + esc(U) + '</b></span><input type="range" min="' + B.hMin + '" max="' + B.hMax + '" step="' + (B.hStep || 1) + '" value="' + h + '"></label><button type="button" class="fs-btn fs-bx-go">🏁 ' + esc(B.goBtn || 'Let it roll') + '</button>';
+      var r = $('input', ctl); r.addEventListener('input', function () { if (busy) return; h = +r.value; $('b', ctl).textContent = h + ' ' + U; draw(); });
+      $('.fs-bx-go', ctl).addEventListener('click', roll);
+    }
+    function roll() {
+      if (busy || !store('solved')) return; busy = true; var L = lv(), d = L.k * h, carEl = $('.fs-bx-car', stage), t0 = null;
+      var sx0 = Math.max(14, HX * (1 - (GY - hy(h)) / (GY - hy(B.hMax + 1)))), y0 = hy(h), endX = Math.min(W - 14, HX + d * PX), D1 = reduceMotion ? 1 : 700, D2 = reduceMotion ? 1 : 900 + d * 22;
+      SFX.whoosh();
+      function down(ts) { if (t0 == null) t0 = ts; var p = Math.min(1, (ts - t0) / D1), q = p * p; carEl.setAttribute('transform', 'translate(' + (sx0 + (HX - sx0) * q).toFixed(1) + ' ' + (y0 + (GY - y0) * q).toFixed(1) + ')'); if (p < 1) requestAnimationFrame(down); else { t0 = null; requestAnimationFrame(out); } }
+      function out(ts) { if (t0 == null) t0 = ts; var p = Math.min(1, (ts - t0) / D2), e = 1 - Math.pow(1 - p, 2); carEl.setAttribute('transform', 'translate(' + (HX + (endX - HX) * e).toFixed(1) + ' ' + GY + ')'); if (p < 1) requestAnimationFrame(out); else land(d); }
+      requestAnimationFrame(down);
+    }
+    function land(d) {
+      busy = false; var L = lv(), off = Math.abs(d - L.target), s = off <= 1 ? 3 : off <= 3 ? 2 : off <= 6 ? 1 : 0;
+      var line = s ? (Lz['s' + s] || '') : (d < L.target ? (Lz.short || 'Too slow! Not enough energy to reach the target. Start higher.') : (Lz.long || 'Too fast! Too much energy. It blasted past the target. Start lower.'));
+      if (!s && d > L.target) { var pf = $('.fs-bx-puff', stage); pf.innerHTML = '<circle cx="' + Math.min(W - 20, HX + d * PX) + '" cy="' + (GY - 6) + '" r="14" fill="#F2E3B8"/>'; tone(90, 0, 0.3, 'sine', 0.1); }
+      else if (s) SFX.win(); else SFX.thud();
+      if (s > (st.stars[st.lv] || 0)) { st.stars[st.lv] = s; } var tt = total(); if (tt > st.best) st.best = tt; saveJ('bullseye', st);
+      msg.innerHTML = '<span class="fs-hs-n">' + (s ? s + '⭐' : '🎯') + '</span><div><b>' + esc((Lz.stopped || 'It stopped at') + ' ' + Math.round(d) + ' ' + U + ' (' + (Lz.target || 'target') + ' ' + L.target + ' ' + U + ')') + '</b>' + esc(line) + (L.tip && s ? ' ' + esc(L.tip) : '') + '</div>';
+      msg.classList.remove('flash'); void msg.offsetWidth; msg.classList.add('flash');
+      hud.innerHTML = hud.innerHTML; draw(); $('.fs-bx-car', stage).setAttribute('transform', 'translate(' + Math.min(W - 14, HX + d * PX) + ' ' + GY + ')');
+      if (s && st.lv < B.levels.length - 1) { var nb = el('button', 'fs-btn alt fs-bx-next', '➡ ' + esc(B.nextBtn || 'Next level')); nb.type = 'button'; msg.appendChild(nb); nb.addEventListener('click', function () { st.lv++; saveJ('bullseye', st); h = Math.round((B.hMin + B.hMax) / 2); paintCtl(); draw(); msg.innerHTML = '<span class="fs-hs-n">🏁</span><div>' + esc(lv().tip0 || '') + '</div>'; }); }
+      else if (s && st.lv === B.levels.length - 1) { msg.appendChild(el('div', 'fs-bx-done', esc(Lz.done || 'You beat every level!'))); var again = el('button', 'fs-btn alt', '🔁 ' + esc(Lz.again || 'Play again for more stars')); again.type = 'button'; msg.appendChild(again); again.addEventListener('click', function () { st.lv = 0; saveJ('bullseye', st); paintCtl(); draw(); }); }
+    }
+    function gate() { g.classList.toggle('locked', !store('solved')); }
+    sv.parentNode.insertBefore(g, sv.nextSibling);
+    document.addEventListener('fs:solved', gate);
+    paintCtl(); draw(); gate(); msg.innerHTML = '<span class="fs-hs-n">🏁</span><div>' + esc(lv().tip0 || '') + '</div>';
+  }
+
   /* ---------- Fold extras (18.02): an optional piece starts closed as a calm, inviting card. D.fold = {mod: {icon, tease, open}} ---------- */
   function foldExtras() {
     var Fo = D.fold; if (!Fo) return;
@@ -7268,6 +7522,10 @@
     guard('pinball', buildPinball);
     guard('slowmo', buildSlowmo);
     guard('drawpath', buildDrawpath);
+    guard('stopwatch', buildStopwatch);
+    guard('lockdown', buildLockdown);
+    guard('dotplot', buildDotplot);
+    guard('detective', buildDetective);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
@@ -7276,6 +7534,7 @@
     guard('quiz', buildQuiz);
     guard('solve', buildSolve);
     guard('permit', buildPermit);
+    guard('bullseye', buildBullseye);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

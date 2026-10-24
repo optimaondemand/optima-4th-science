@@ -1,0 +1,253 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a 9-trial data table",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "📏 Part C &mdash; My 9-Trial Table"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (now the 9-trial table, typed on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Run 3 trials from each start with a ramp at home, or use Coach Dee’s fixed numbers. Fill in your table, find each average, and write a claim with numbers.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "speed and energy is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard: 4-PS3-1 is the speed-and-energy standard (4-ESS3-1 is about energy resources)",
+  "old": "<div class=\"info-value\">4-ESS3-1 · TEKS 4.8(A)</div>",
+  "new": "<div class=\"info-value\">4-PS3-1 · TEKS 4.8(A)</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the warm-up’s imagined trials (7, 9, 8, 8, 10) become the student’s own stopwatch times, so the page and the game match",
+  "old": "<p>Imagine you roll a marble down a ramp ONE time.*?</p>\\s*<p>Now imagine you roll the marble FIVE times\\..*?</p>",
+  "new": "<p>Can you time a race perfectly? The derby car rolls between two flags. Time it three times with the stopwatch. Will your times match?</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "the AI table picture (its arrow measures the gap between the ramp and the block, not how far the block moved; cm ramp heights mixed with inch distances) and the boxes that lean on it are gone; Dot plot drop replaces them and the tap diagram. Also lean: Key Concept (repeats Part 1), Stop & Reason, Observe & Reason, the Amazing Fact, the Florida connection (an FSU sports-lab claim we could not verify) and Go Deeper. Part 4 = Data detective (the old Explore was a copy of 19.01’s); next button goes to Self-Check",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">📊 A Real Investigation Data Table</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Data Detective</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Coach Dee ran 9 trials after all! But one number in her notebook looks strange. Can you find it?</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll run a small controlled investigation, collect data across multiple trials, and write a claim backed by numbers — not just observations.",
+  "new": "Keep this question in mind. By the end, you’ll run a fair test with many trials and back up your claim with numbers."
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up title matches the new warm-up",
+  "old": "🌅 Warm-Up: Two Tests Are Better Than One",
+  "new": "🌅 Warm-Up: The Stopwatch Race"
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up subtitle",
+  "old": "Why scientists never trust just one try",
+  "new": "Can you time the same race three times?"
+ },
+ {
+  "kind": "plain",
+  "why": "no dashes; shorter",
+  "old": "Real scientists run their tests many times — those are called TRIALS — so they don't accidentally trust a lucky or unlucky result. Today you'll plan an investigation, run trials, and let the DATA do the talking.",
+  "new": "Real scientists run a test many times. Each run is called a TRIAL. That way, one lucky or unlucky try can’t fool them."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Real proof needs a fair test — what scientists call a <span class=\"vtip\">controlled",
+  "new": "Real proof needs a fair test, which scientists call a <span class=\"vtip\">controlled"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "\"the energy was bigger because of the speed!\" — you can't be sure.",
+  "new": "“the energy was bigger because of the speed!” You can’t be sure."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "</span></span> — usually at least 3, but more if you can.",
+  "new": "</span></span>, usually at least 3, and more if you can."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "measured with a ruler — how far did the target move?",
+  "new": "measured with a ruler. How far did the target move?"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "measured with a stopwatch — how long did the ball take to reach the bottom of the ramp?",
+  "new": "measured with a stopwatch. How long did the ball take to reach the bottom of the ramp?"
+ },
+ {
+  "kind": "plain",
+  "why": "misconception kept, plain, no dash",
+  "old": "<p><strong>Common misconception:</strong> Some people think one trial is enough if it \"looks right\\.\"[^<]*</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think one trial is enough if it “looks right.” Real scientists run many trials, so their answer comes from a pattern, not one lucky moment.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; points to week 20",
+  "old": "<p><strong>Nicely done\\.</strong> You can now design a.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You ran a fair test, used many trials and caught a fluke. Next week, Sam follows the energy: how does it MOVE from one place to another?</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (Lock it down is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (a copy of 19.01’s; Part 4 is Data detective now)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; it pointed at the removed diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (6 → 5)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page",
+  "old": "A data table with at least 9 trials (3 trials at each of 3 speeds), full measurements, and an evidence-based claim.",
+  "new": "My 9-trial table (3 trials from each start), the averages and a claim with numbers. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether one trial is enough for a real investigation, and supported it with two pieces of evidence from the lesson.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether one trial is enough, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

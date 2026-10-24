@@ -1,0 +1,56 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dune Hill under test: three derby lanes run down a sandy hill to hay bales, with numbered trial flags, a tape measure, and a brown pelican watching from a post">
+  <defs>
+    <linearGradient id="b192sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FD0F2"/><stop offset="1" stop-color="#DDF2FB"/></linearGradient>
+    <linearGradient id="b192sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3FA0C8"/><stop offset="1" stop-color="#2A7EA6"/></linearGradient>
+    <linearGradient id="b192sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3DFA8"/><stop offset="1" stop-color="#E2C27E"/></linearGradient>
+  </defs>
+  <rect width="920" height="200" fill="url(#b192sky)"/>
+  <circle cx="440" cy="34" r="20" fill="#FFF3B0"/>
+  <g fill="#fff" opacity=".85"><g><animateTransform attributeName="transform" type="translate" values="0 0;24 0;0 0" dur="30s" repeatCount="indefinite"/><ellipse cx="200" cy="34" rx="34" ry="9"/><ellipse cx="226" cy="28" rx="22" ry="9"/><ellipse cx="560" cy="48" rx="40" ry="9"/><ellipse cx="590" cy="42" rx="22" ry="8"/></g></g>
+  <rect x="0" y="118" width="920" height="30" fill="url(#b192sea)"/>
+  <g stroke="#CDEBF7" stroke-width="2" fill="none" opacity=".7"><g><animateTransform attributeName="transform" type="translate" values="0 0;12 0;0 0" dur="5s" repeatCount="indefinite"/><path d="M420 128 q14 -4 28 0 t28 0"/><path d="M640 136 q14 -4 28 0 t28 0"/><path d="M820 126 q14 -4 28 0 t28 0"/></g></g>
+  <!-- the dune hill and the flat beach -->
+  <path d="M0 200 L0 38 Q60 30 120 56 L380 160 L920 160 L920 200 Z" fill="url(#b192sand)"/>
+  <path d="M0 200 L0 160 L920 160 L920 200 Z" fill="#E8CF92"/>
+  <!-- three lanes down the hill -->
+  <g fill="none" stroke-width="3" stroke-linecap="round">
+    <path d="M20 46 Q80 44 130 70 L392 162 L640 162" stroke="#E8636B"/>
+    <path d="M60 84 Q110 86 160 100 L392 172 L640 172" stroke="#F5B83D"/>
+    <path d="M100 122 Q140 124 190 136 L392 182 L640 182" stroke="#34B76F"/>
+  </g>
+  <!-- start flags 1 2 3 -->
+  <g font-family="Nunito, Arial, sans-serif" font-weight="900" font-size="12" fill="#fff" text-anchor="middle">
+    <line x1="20" y1="46" x2="20" y2="18" stroke="#5B4A2E" stroke-width="2.5"/><path d="M20 18 l22 6 l-22 6z" fill="#E8636B"/><text x="29" y="28">3</text>
+    <line x1="60" y1="84" x2="60" y2="58" stroke="#5B4A2E" stroke-width="2.5"/><path d="M60 58 l22 6 l-22 6z" fill="#F5B83D"/><text x="69" y="68">2</text>
+    <line x1="100" y1="122" x2="100" y2="96" stroke="#5B4A2E" stroke-width="2.5"/><path d="M100 96 l22 6 l-22 6z" fill="#34B76F"/><text x="109" y="106">1</text>
+  </g>
+  <!-- hay bales at the finish -->
+  <g stroke="#9A7420" stroke-width="1.5">
+    <rect x="652" y="146" width="44" height="20" rx="3" fill="#E2B84A"/><rect x="652" y="166" width="44" height="20" rx="3" fill="#D8AE40"/>
+    <rect x="700" y="146" width="44" height="20" rx="3" fill="#E2B84A"/><rect x="700" y="166" width="44" height="20" rx="3" fill="#D8AE40"/>
+    <rect x="676" y="126" width="44" height="20" rx="3" fill="#E9C25A"/>
+  </g>
+  <!-- a tape measure along the finish lane -->
+  <g><rect x="420" y="188" width="226" height="7" fill="#F5D33D" stroke="#9A7A10"/>
+    <g stroke="#5B4A10" stroke-width="1.2"><line x1="440" y1="188" x2="440" y2="192"/><line x1="470" y1="188" x2="470" y2="194"/><line x1="500" y1="188" x2="500" y2="192"/><line x1="530" y1="188" x2="530" y2="194"/><line x1="560" y1="188" x2="560" y2="192"/><line x1="590" y1="188" x2="590" y2="194"/><line x1="620" y1="188" x2="620" y2="192"/></g>
+    <rect x="402" y="182" width="20" height="16" rx="4" fill="#E8636B" stroke="#7A2A30"/></g>
+  <!-- the derby car on the top lane -->
+  <g><animateTransform attributeName="transform" type="translate" values="0 0;6 2;0 0" dur="1.4s" repeatCount="indefinite"/>
+    <g transform="translate(250 112) rotate(20)"><path d="M-16 -7 Q-13 -17 0 -17 Q13 -17 18 -7 Z" fill="#2D7AA6" stroke="#123" stroke-width="1.5"/><circle cx="-9" cy="-3" r="4.5" fill="#333"/><circle cx="10" cy="-3" r="4.5" fill="#333"/></g>
+  </g>
+  <g stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".9"><line x1="206" y1="86" x2="226" y2="94"/><line x1="200" y1="96" x2="220" y2="104"/></g>
+  <!-- the brown pelican on a post, watching -->
+  <rect x="800" y="118" width="12" height="62" fill="#7A5A3A"/>
+  <g transform="translate(806 118)">
+    <g><animateTransform attributeName="transform" type="rotate" values="0;-4;0;0;0" dur="6s" repeatCount="indefinite"/>
+      <ellipse cx="0" cy="-16" rx="18" ry="13" fill="#7E6B57"/>
+      <path d="M-18 -16 Q-30 -6 -24 4 L-6 -6 Z" fill="#5A4A3A"/>
+      <path d="M6 -26 Q10 -42 4 -50" stroke="#6B4A2E" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <ellipse cx="4" cy="-52" rx="8" ry="7" fill="#F4EBD3"/>
+      <circle cx="6" cy="-54" r="1.6" fill="#1A1A1A"/>
+      <path d="M10 -54 L44 -47 L44 -45 L10 -49 Z" fill="#C9A55A"/>
+      <path d="M12 -49 Q28 -40 43 -45 Z" fill="#9C7A3E"/>
+      <path d="M-4 -4 L-6 2 M4 -4 L6 2" stroke="#4A3C30" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
