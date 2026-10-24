@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""Writes video.json (Video Studio plan) for 20.01 · 9:41 PM."""
+import json
+pics = {
+    'strike': {'src': 'images/20-01-storm-3.jpg', 'cap': 'Lightning hits a metal mast at Kennedy Space Center, Florida (NASA, public domain)'},
+    'storm': {'src': 'images/20-01-storm-2.jpg', 'cap': 'Lightning over the ocean at Kennedy Space Center, Florida (NASA, public domain)'},
+}
+C_CASE, C_GREEN, C_PURP, C_RED, C_BLUE = '#1F7F86', '#2F7A55', '#7A5BB5', '#C8553D', '#2D7AA6'
+S = {}
+S['welcome'] = {'label': 'Welcome · 9:41 PM', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '📈 Sam’s strip chart', 'tag': 'CASE FILE 20', 'title': '9:41 PM', 'col': C_CASE, 'rows': [['💡', 'Light: JUMPED'], ['🔊', 'Sound: JUMPED'], ['🌡️', 'Heat: JUMPED'], ['🔌', 'Power to the lamp: OFF']]},
+    {'label': '🔎 The case question', 'tag': 'NOBODY WAS THERE', 'title': 'What happened on the pier?', 'col': C_RED, 'body': 'Nobody touched anything. So how did energy reach all four sensors at once?'}],
+    'script': '(Flick the classroom light off, then on.) Did you notice that? Something changed, and nobody touched you.\n\n[ON SCREEN: Sam’s strip chart]\nLast night, all four of Sam’s sensors on the pier jumped at the same moment. Then the lamp went dark.\n\n[ON SCREEN: The case question]\nBut nobody was there! Let’s find out how. Press Listen on Sam’s walkie-talkie, right below me.'}
+S['warmup'] = {'label': 'Warm-Up · feel it, rate it (Clue 1)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '🙌 Do it with me', 'tag': 'LIVE DEMO', 'title': 'You are the source', 'col': C_PURP, 'rows': [['🙌', 'Rub your hands, then touch your cheeks'], ['🎵', 'Hum with fingers on your throat'], ['👀', 'Cover your eyes, then look at a light']]}],
+    'script': '(Rub your hands together fast, then press them on your cheeks.) Ooh, warm! Where did that warmth go?\n\n[ON SCREEN: Do it with me]\nRub your hands with me. Now hum with your fingers on your throat. Feel the buzz? You are the energy source today! Do all three moves, rate each one, then pick where the energy went. Press Listen.'}
+S['part1'] = {'label': 'Part 1 · block the path (Clue 2)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '🚧 Block the path', 'tag': 'PART 1 GAME', 'title': 'What’s in the gap?', 'col': C_BLUE, 'rows': [['🔥 → 🙌', 'Campfire to hands'], ['☀️ → 🌿', 'Sun to leaf'], ['🥁 → 👂', 'Drum to ear'], ['🔋 → 💡', 'Battery to bulb']]}],
+    'script': '(Hold your hand near a warm mug without touching it.) I’m not touching it, but my hand feels warm. How?\n\n[ON SCREEN: Block the path]\nTap each gap and see what’s in there. Then block it and watch the receiver. If blocking it stops the change, energy was traveling through that gap. Press Listen.'}
+S['part2'] = {'label': 'Part 2 · which way does heat go? (Clue 3)', 'length': '30–40 s', 'want': False, 'parts': [
+    {'label': '🌡️ Which way does heat go?', 'tag': 'PART 2 GAME', 'title': 'Iced lemonade on a hot porch', 'col': C_RED, 'body': 'Does heat move IN, or does cold move OUT? Pick an arrow, then wait one hour.'}],
+    'script': '(Hold an ice cube or a cold can.) My hand feels cold. Is cold moving into my hand?\n\n[ON SCREEN: Which way does heat go?]\nPick your arrow, then watch the thermometers. Press Listen.'}
+S['explore'] = {'label': 'Part 4 · storm watch (Clue 4)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'kind': 'photo', 'pic': 'storm', 'label': '⚡ A real Florida storm'},
+    {'label': '⏱️ Count with me', 'tag': 'FLASH, THEN BOOM', 'title': 'Every 5 seconds = about 1 mile', 'col': C_BLUE, 'rows': [['⚡', 'Start counting at the flash'], ['🔊', 'Stop at the boom'], ['➗', 'Divide by 5 for miles']]}],
+    'script': '(Clap once, then wait, then stomp.) Flash… one, two, three… BOOM!\n\n[ON SCREEN: A real Florida storm]\nThese are real lightning photos from Kennedy Space Center, here in Florida.\n\n[ON SCREEN: Count with me]\nTap when you see the flash and again when you hear the boom. The gap tells you how far away it hit. Turn your sound on and press Listen.'}
+S['assignment'] = {'label': 'Assignment · crack the case', 'length': '35–45 s', 'want': True, 'parts': [
+    {'label': '🔓 Crack the case', 'tag': 'TOP OF THE ASSIGNMENT', 'title': 'What happened at 9:41 PM?', 'col': C_CASE, 'body': 'Pick the answer that fits all four clues.'},
+    {'label': '✍️ Your case report', 'tag': 'WHAT TO WRITE', 'title': 'Three places to write', 'col': C_GREEN, 'rows': [['Part B', 'Two short answers'], ['Part C', 'Your energy hunt'], ['CER', 'Claim, evidence, reasoning']]}],
+    'script': '[ON SCREEN: Crack the case]\nYou have four clues. Crack the case at the top of this tab.\n\n[ON SCREEN: Your case report]\nThen write your case report: two short answers, your energy hunt and your CER. For the hunt, find one heat, light, sound and electrical example at home. Press Listen.'}
+S['evidence'] = {'label': 'Use your evidence · CER', 'length': '35–45 s', 'want': True, 'parts': [
+    {'label': '💬 The claim', 'tag': 'USE YOUR EVIDENCE', 'title': 'A classmate says…', 'col': C_RED, 'body': '“Energy can’t really move through the air. You have to TOUCH things to transfer energy.”'},
+    {'label': '🧩 The planner', 'tag': 'PLAN BEFORE YOU WRITE', 'title': 'Claim · Evidence · Reasoning', 'col': C_PURP, 'rows': [['1', 'Tap I agree or I disagree.'], ['2', 'Tap two pieces of evidence.'], ['3', 'You write the reasoning.']]}],
+    'script': '[ON SCREEN: The claim]\nDo you have to touch something to get its energy? Hmm. Think about the campfire, the Sun and the thunder.\n\nThere’s no wrong side, as long as you prove it.\n\n[ON SCREEN: The planner]\nTap your side and two facts, then explain how they prove your claim. Try starting with “This shows that…” Press Listen.'}
+S['closing'] = {'label': 'Case closed', 'length': '30–40 s', 'want': True, 'parts': [
+    {'kind': 'photo', 'pic': 'strike', 'label': '⚡ What really happened'},
+    {'label': '💡 Your specimen', 'tag': 'FIELD NOTEBOOK', 'title': 'The burnt-out pier bulb', 'col': C_CASE, 'body': 'Finish the checklist to stamp CASE CLOSED.'},
+    {'label': '➡ Next time', 'tag': 'LESSON 20.02', 'title': 'Energy stations', 'col': C_BLUE, 'body': 'Set up four stations and collect your own evidence.'}],
+    'script': '[ON SCREEN: What really happened]\nCase closed! Lightning hit the metal lamp post, and its energy reached every sensor through the air.\n\n[ON SCREEN: Your specimen]\nFinish your checklist, and the burnt-out pier bulb goes in your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next time]\nNext time, you set up energy stations and collect your own evidence. Press Listen for Sam’s last word.'}
+S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts': [],
+    'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
+V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'partb', 'partc']}
+json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print('video.json written')

@@ -1,0 +1,261 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a four-row energy chart",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🔎 Part C &mdash; My Energy Hunt"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (now the four-row energy hunt, typed on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Find one example of each way energy moves at home or at school. For each one, name the source, the receiver and your evidence that energy moved.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "energy transfer is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard: 4-PS3-2 is “energy can be transferred by sound, light, heat and electric currents” (4-ESS3-1 is about energy resources)",
+  "old": "<div class=\"info-value\">4-ESS3-1 · TEKS 4.8(B), 4.8(C)</div>",
+  "new": "<div class=\"info-value\">4-PS3-2 · TEKS 4.8(B), 4.8(C)</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "contradiction: the box said electricity “can’t jump through the air”, then the page featured lightning. Plain, true version; the box is trimmed (lean)",
+  "old": "<p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;\">Electrical energy needs a path to travel.*?</p>\\s*<p[^>]*>Not every material.*?</p>\\s*<p[^>]*>Think about the lamp.*?</p>",
+  "new": "<p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;\">Electrical energy needs a path of metal, like a wire. That path is called a <strong>circuit</strong>. If the path is broken, no energy flows.</p>\n        <p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;\">Materials that let electricity flow easily, like copper, aluminum and steel, are called <strong>conductors</strong>. That’s why wires are made of metal! Materials that block it, like rubber, plastic and glass, are called <strong>insulators</strong>. The plastic coating on a power cord keeps the electricity safely inside the wire.</p>\n        <p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;\">Air usually blocks electricity, too. Lightning is the giant exception: its push is so strong that it forces a path right through the air.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "the four-panel AI picture and the Key Concept that leans on it are gone; Which way does heat go? replaces them and the tap diagram",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">🔥 Four Ways Energy Moves Around You</div>.*?(?=<div style=\"background:#EAF8FD;)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "the tap diagram (its 4 Florida scenes are now the cards in Which way does heat go?), Stop & Reason, Observe & Reason, the muddy Sun-and-heat fact, the Florida lightning callout (the checked number now lives in Storm watch) and Go Deeper are gone (lean). Part 4 = Storm watch (the old Explore); next button goes to Self-Check",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Storm Watch</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">A summer storm is rolling toward Palmetto Beach. When you see a flash, start counting. When you hear the boom, stop. What does the gap tell you?</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to name four ways energy moves between places — and spot the source and the receiver in any everyday example.",
+  "new": "Keep this question in mind. By the end, you’ll name four ways energy moves and find the source and the receiver every time."
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up now starts with the student as the source; the list stays (typed on the page)",
+  "old": "<p>Sit still for a moment\\. Look around the room\\..*?</p>",
+  "new": "<p>Today YOU are the energy source. Try each move in the game below for real. Then list three places where energy is moving around you <em>right now</em>.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Heat, light, sound, electrical — each with a source and a receiver",
+  "new": "Heat, light, sound and electrical, each with a source and a receiver"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Energy doesn't just exist — it MOVES.",
+  "new": "Energy doesn't just sit there. It MOVES."
+ },
+ {
+  "kind": "plain",
+  "why": "receiver gets its own meaning in context",
+  "old": "(where the energy came from) and a receiver (where the energy went).",
+  "new": "(where the energy comes from) and a <strong>receiver</strong> (where the energy goes)."
+ },
+ {
+  "kind": "plain",
+  "why": "plain, no dash",
+  "old": "There are four big forms you'll see every day — even in a regular Florida classroom:",
+  "new": "There are four big ways you'll see every day, even in a Florida classroom:"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; shorter",
+  "old": "A warmed cup, a lit-up room, a vibrating eardrum, a glowing bulb — all are evidence that energy traveled from a source to a receiver.",
+  "new": "A warmed cup, a lit-up room, a shaking eardrum, a glowing bulb: each one is evidence that energy traveled from a source to a receiver."
+ },
+ {
+  "kind": "plain",
+  "why": "misconception kept, plain, no dash",
+  "old": "<p><strong>Common misconception:</strong> Some people think these are four different KINDS of energy.*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think these are four different KINDS of energy, like four flavors. They are really four different WAYS energy can travel.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "no dash, no “&”",
+  "old": "⚡ Conductors, Insulators & Simple Circuits",
+  "new": "⚡ Paths for Electricity"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "\"Energy can't actually move through the air — you have to TOUCH things to transfer energy.\"",
+  "new": "“Energy can’t really move through the air. You have to TOUCH things to transfer energy.”"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; points to 20.02",
+  "old": "<p><strong>Nicely done\\.</strong> You can now spot four ways.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You found four ways energy moves and proved it moved, even through the air. Next time, you set up energy stations and collect your own evidence.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (Block the path is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (the home hunt moves to Part C; Part 4 is Storm watch; its whale fact, hummingbird question and conductor Go Deeper go too)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; it pointed at the removed diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (6 → 5)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page",
+  "old": "A four-row chart showing one Florida example for each form (heat / light / sound / electrical) with source, receiver, and evidence.",
+  "new": "One example each of heat, light, sound and electrical energy, with the source, the receiver and my evidence. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether touch is required for energy transfer, and supported it with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether energy needs touch to move, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

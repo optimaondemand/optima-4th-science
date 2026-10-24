@@ -785,6 +785,9 @@
   background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #8B6FC0;
 }
 </style>
+<!-- Field Station sparkle layer (G4 Science). Lesson content lives in fs-data; the layer is shared. -->
+<script type="application/json" id="fs-data">{"lesson":"20.01","week":20,"day":1,"guide":"sam","prefix":"g4sci-20-1","manifestKey":"20-01","paths":{"audio":"assets/audio/guide/","video":"assets/video/teacher/","manifest":"https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json","h2c":"assets/sparkle/vendor/html2canvas.min.js","crew":"assets/crew/","ornaments":"assets/ornaments/"},"crew":{"sam":{"name":"Sam Park","role":"engineer (someone who designs and builds things to solve problems)","initials":"SP","color":"#1F7F86","lens":"blueprint","voiceId":"s3TPKV1kjDlVtZbl4Ksh"}},"expedition":{"num":20,"title":"9:41 PM"},"ambient":{"icon":"🌧️","label":"Rain sounds"},"case":{"num":20,"title":"9:41 PM","style":"strip","hook":"I put four sensors on the Palmetto Beach pier to watch a summer storm. (A sensor is a tool that measures something and records it.) At 9:41 PM, all four jumped at the same moment, and the pier lamp went dark.","strip":{"head":"PIER DATA LOGGER · STATION 3","sub":"Friday night · one reading per minute","markLabel":"9:41 PM","mark":6,"every":2,"alt":"A strip chart with four lines from 9:35 to 9:47 PM. At 9:41 the light, sound and heat lines all spike, and the power line to the pier lamp drops to zero.","times":["9:35","9:36","9:37","9:38","9:39","9:40","9:41","9:42","9:43","9:44","9:45","9:46","9:47"],"traces":[{"icon":"💡","t":"Light","sub":"how bright it is","c":"#D99A00","vals":[0.3,0.32,0.3,0.31,0.3,0.32,1,0.05,0.06,0.05,0.05,0.06,0.05]},{"icon":"🔊","t":"Sound","sub":"how loud it is","c":"#3D5A99","vals":[0.25,0.3,0.22,0.28,0.26,0.3,1,0.3,0.24,0.28,0.22,0.26,0.24]},{"icon":"🌡️","t":"Heat","sub":"sensor on the lamp post","c":"#E8636B","vals":[0.2,0.2,0.2,0.2,0.2,0.2,0.95,0.7,0.5,0.38,0.3,0.25,0.22]},{"icon":"🔌","t":"Power","sub":"to the pier lamp","c":"#7A4FC0","vals":[0.75,0.75,0.75,0.75,0.75,0.75,0.9,0,0,0,0,0,0]}],"note":"Nobody was on the pier. Nobody touched the lamp post. So how did energy reach all four sensors at once? (Sam)"},"stills":[],"question":"What happened on the pier at 9:41 PM, when nobody was there?","how":"Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.","clues":[{"id":"rateit","icon":"🙌","where":"Warm-Up: feel it, rate it","t":"You were the source three times. Each time, you knew energy moved because the receiver CHANGED: it warmed up, buzzed or squinted. A spike on a sensor is a receiver changing too."},{"id":"blockpath","icon":"🚧","where":"The Lesson, Part 1: block the path","t":"Heat, light and sound crossed empty air with nothing touching. Electricity needed a path, and plastic in the wire stopped it."},{"id":"heatflow","icon":"🌡️","where":"The Lesson, Part 2: which way does heat go?","t":"Heat always moves from warmer to cooler. And lightning is a giant electric current that rushes from a cloud into whatever it hits."},{"id":"stormwatch","icon":"⚡","where":"The Lesson, Part 4: storm watch","t":"Light arrives first and sound comes later. The shorter the gap, the closer the strike. At 9:41 the boom came only a split second after the flash."}],"solve":{"title":"What happened at 9:41 PM?","q":"Which answer fits all four clues?","options":[{"t":"Someone sneaked onto the pier and switched off the lamp.","why":"Check the note and Clue 2. Nobody was there, and energy can cross the air without anyone touching anything."},{"t":"Cold storm air moved into the lamp post and froze the lamp.","why":"Check Clue 3. Cold doesn’t travel, heat does. And the heat line went UP."},{"t":"Lightning struck the metal lamp post, right at the pier. Its electrical energy rushed down the post and burned out the lamp, and the bolt sent light, sound and heat through the air to every sensor.","right":true,"why":"Case cracked! The flash, the boom a split second later, the hot post and the dead lamp all point to a lightning strike right at the pier. Sam is putting up a lightning rod (a metal rod that gives lightning a safe path into the ground)."},{"t":"A big wave crashed over the sensors.","why":"Check Clues 1 and 4. Can a wave make a bright flash and a heat spike?"}]}},"rateit":{"afterText":"Today YOU are the energy source","kicker":"Warm-Up game","title":"Feel it, rate it","todo":["Pick a move and really do it.","Slide the meter: how much did the receiver change?","Then pick where the energy went. Do all 3 moves."],"why":{"icon":"🙌","q":"What is a receiver?","t":"The place the energy goes. You can’t see energy fly by, but you can feel or see the receiver change."},"doneBtn":"I did it!","zeroLine":"Nothing yet? Try it again a little longer, then slide the meter.","scale":["😐 Nothing","🙂 A little","😮 Some","🤩 A lot"],"tallyLabel":"Energy you sent","moves":[{"id":"rub","icon":"🙌","t":"Rub your hands","do":"Rub your palms together fast for 10 seconds. Then press them gently on your cheeks.","rate":"How much did your cheeks warm up?","recQ":"Where did the heat go?","recs":[{"t":"Into my cheeks","ok":true},{"t":"Into the ceiling","miss":"What did you FEEL warm up?"},{"t":"Nowhere. It disappeared.","miss":"Energy doesn’t disappear. Something got warmer. What was it?"}],"form":"Heat","formIcon":"🔥","path":"palms → cheeks","why":"Rubbing made your palms warm. Then heat moved from your warm palms into your cooler cheeks."},{"id":"hum","icon":"🎵","t":"Hum","do":"Put your fingertips gently on the front of your throat. Hum one long note.","rate":"How much buzz did your fingertips feel?","recQ":"Where did the sound energy go?","recs":[{"t":"Into my fingertips and my ears","ok":true},{"t":"It stayed inside my throat","miss":"Did your fingertips feel it? Could you hear it?"},{"t":"Into the lights","miss":"Sound is shaking. What shook, besides your throat?"}],"form":"Sound","formIcon":"🔊","path":"voice → fingertips and ears","why":"Your voice box shook (vibrated). The shaking traveled into your fingertips and through the air to your ears."},{"id":"look","icon":"👀","t":"Look at a light","do":"Cover your eyes with your hands for 10 seconds. Then uncover them and look toward a window or a lamp. (Never look at the Sun.)","rate":"How bright did it seem when you uncovered your eyes?","recQ":"Where did the light energy go?","recs":[{"t":"Into my eyes","ok":true},{"t":"Into my hands","miss":"Your hands were in the way. What happened when you moved them?"},{"t":"It went nowhere","miss":"It seemed bright! What part of you did the light reach?"}],"form":"Light","formIcon":"💡","path":"window or lamp → eyes","why":"Light traveled across the room into your eyes. Your eyes changed: you squinted, and the dark centers of your eyes got smaller."}],"q":"How did you know energy moved each time?","opts":[{"t":"Something at the other end changed. It warmed up, buzzed or squinted.","ok":true},{"t":"I saw the energy flying through the air.","miss":"You can’t see heat or sound flying by. What changed instead?"},{"t":"The page told me.","miss":"You felt it yourself! What changed in your cheeks, fingertips and eyes?"}],"win":"You were the source three times, and a receiver changed every time. Clue 1!"},"blockpath":{"afterText":"In every transfer","kicker":"Part 1 game","title":"Block the path","todo":["Tap each gap. What is between the source and the receiver?","Drag a blocker into the gap (or tap a blocker, then the gap).","Watch the receiver. Did it stop changing?"],"why":{"icon":"🚧","q":"Why block it?","t":"If blocking the gap stops the change, then energy really was traveling through that gap."},"gapBtn":"Tap the gap","tapFirst":"First tap the gap. What is in there, between the source and the receiver?","trayLabel":"Blockers (drag one into a gap, or tap it and then a gap)","blockers":[{"k":"board","icon":"🪵","t":"Wooden board"},{"k":"umbrella","icon":"☂️","t":"Umbrella"},{"k":"earmuffs","icon":"🎧","t":"Earmuffs"},{"k":"plastic","icon":"🧩","t":"Plastic piece"}],"scenes":[{"id":"fire","form":"Heat","formIcon":"🔥","c":"#E8636B","fx":"warm","src":{"icon":"🔥","t":"Campfire"},"rec":{"icon":"🙌","t":"Your hands"},"gap":"Only air! The fire never touches your hands, but they still get warm.","on":"Your hands are warming up.","off":"Your hands cool down. So the heat WAS crossing the air.","ok":["board"],"miss":{"umbrella":"Never hold an umbrella near a fire! Try something solid and thick.","earmuffs":"Earmuffs block sound, not the heat from a fire.","plastic":"That little plastic piece fits inside a wire. Try something big and solid."}},{"id":"sun","form":"Light","formIcon":"💡","c":"#D99A00","fx":"glow","src":{"icon":"☀️","t":"The Sun"},"rec":{"icon":"🌿","t":"A leaf"},"gap":"Only air and empty space! The Sun is 93 million miles away, and its light still reaches the leaf.","on":"The leaf is soaking up sunlight.","off":"Shade! The light is blocked. So the light WAS crossing the air.","ok":["umbrella","board"],"miss":{"earmuffs":"Earmuffs go on ears, not leaves!","plastic":"That little plastic piece fits inside a wire. Try something big that makes shade."}},{"id":"drum","form":"Sound","formIcon":"🔊","c":"#3D5A99","fx":"buzz","src":{"icon":"🥁","t":"School band drum"},"rec":{"icon":"👂","t":"Your ear"},"gap":"Only air! The drum is across the room, but the air carries its shaking to your ear.","on":"Your eardrum is shaking with the beat.","off":"Much quieter! So the sound WAS traveling through the air.","ok":["earmuffs"],"miss":{"board":"A board helps a little, but sound bends around it. Try something right on your ears.","umbrella":"Sound goes right around an umbrella. What covers your ears?","plastic":"That little plastic piece fits inside a wire. What covers your ears?"}},{"id":"wire","form":"Electrical","formIcon":"⚡","c":"#7A4FC0","fx":"lit","src":{"icon":"🔋","t":"Battery"},"rec":{"icon":"💡","t":"Bulb"},"gap":"A wire! Here the energy needs a metal path. It can’t just cross the air.","on":"The bulb is lit.","off":"Plastic doesn’t carry electricity, so the path is broken and the bulb goes dark.","ok":["plastic"],"missAny":"The energy here travels inside the wire. Put something that blocks electricity INTO the wire."}],"q":"What did blocking the paths prove?","opts":[{"t":"Energy really was traveling across each gap, even through air with nothing touching.","ok":true},{"t":"Energy only moves when things touch.","miss":"Look at the gaps you tapped. Was anything touching the fire, the Sun or the drum?"},{"t":"The blockers made new energy.","miss":"Blockers stop energy. They don’t make it."}],"win":"Heat, light and sound crossed the air. Electricity needed its wire. Clue 2!"},"heatflow":{"afterText":"four different WAYS energy can travel","kicker":"Part 2 game","title":"Which way does heat go?","todo":["A glass of iced lemonade sits on a hot porch. Pick the arrow you think is true.","Press Wait one hour. Watch both thermometers.","Then drag the right way onto each Florida scene."],"why":{"icon":"🌡️","q":"What does a thermometer show?","t":"How warm something is. If its number goes up, energy moved in. If it goes down, energy moved out."},"alt":"A model: a glass of iced lemonade on a sunny porch, a thermometer in the porch air and a thermometer in the lemonade.","model":"a model","airT":90,"drinkT":38,"endT":80,"airLabel":"Porch air","drinkLabel":"Lemonade","arrowQ":"Which way does the energy go?","arrows":[{"k":"in","t":"🔥 Heat moves from the warm air INTO the lemonade","ok":true},{"k":"out","t":"❄️ Cold moves from the lemonade OUT into the air"}],"runBtn":"Wait one hour","againBtn":"Run it again","timeLabel":"Minutes","rightHead":"Heat moved IN.","rightAfter":"Heat always moves from warmer to cooler. The warm porch air sent heat into the cold drink, so the ice melted. The air hardly changed because there is so much of it.","wrongHead":"Look at the lemonade thermometer.","wrongAfter":"If cold were leaving the drink, the drink would get colder. But it got WARMER and the ice melted. Cold doesn’t travel. Pick the other arrow.","cardsHead":"Now name the way energy travels in each Florida scene","dropHere":"Drop the way here","forms":[{"k":"heat","icon":"🔥","t":"Heat","c":"#E8636B"},{"k":"light","icon":"💡","t":"Light","c":"#D99A00"},{"k":"sound","icon":"🔊","t":"Sound","c":"#3D5A99"},{"k":"elec","icon":"⚡","t":"Electrical","c":"#7A4FC0"}],"cards":[{"id":"sidewalk","src":{"icon":"☀️","t":"The Sun"},"rec":{"icon":"🛣️","t":"Sidewalk"},"form":"light","why":"Light traveled from the Sun. The sidewalk soaked it up and got hot enough to hurt bare feet.","miss":{"heat":"The sidewalk does get hot in the end! But what traveled all the way from the Sun?"}},{"id":"band","src":{"icon":"🎺","t":"School band"},"rec":{"icon":"👂","t":"Your ears"},"form":"sound","why":"The instruments shake the air. The shaking travels to your ears."},{"id":"bolt","src":{"icon":"🌩️","t":"Storm cloud"},"rec":{"icon":"🌳","t":"A tree"},"form":"elec","why":"A giant electric current crashed through the air into the tree. It made light, sound and heat, too!","miss":{"light":"You SEE the flash, but what rushed from the cloud INTO the tree?","heat":"The tree gets scorched, but what rushed from the cloud INTO the tree?"}},{"id":"stove","src":{"icon":"♨️","t":"Hot burner"},"rec":{"icon":"🍳","t":"Pan and eggs"},"form":"heat","why":"The burner is hotter than the pan, so heat moves into the pan and then into the eggs.","miss":{"elec":"Electricity runs the burner. But between the hot burner and the pan, what moves from warmer to cooler?"}}],"q":"Ice makes your drink cold. What is really happening?","opts":[{"t":"Heat moves from the warm drink into the colder ice.","ok":true},{"t":"Cold moves out of the ice into the drink.","miss":"Remember the lemonade. Which way does energy travel: warmer to cooler, or cooler to warmer?"},{"t":"Nothing moves.","miss":"The ice melts! Something moved into it."}],"win":"Heat moves from warmer to cooler, every time. And you named all four ways energy travels. Clue 3!"},"stormwatch":{"afterText":"When you see a flash, start counting","kicker":"Part 4 game","title":"Storm watch","todo":["Press Start watching and keep your eyes on the sky.","Tap I SAW the flash as soon as it flashes.","Tap I HEARD the thunder when the boom comes. Turn your sound on!"],"why":{"icon":"⚡","q":"What is thunder?","t":"Lightning heats the air so fast that the air bursts outward with a BOOM. The flash and the boom start at the same moment."},"strikes":[{"img":"images/20-01-storm-1.jpg","alt":"Lightning bolts branch across a stormy night sky over Kennedy Space Center, Florida.","gap":10,"far":"about 2 miles away"},{"img":"images/20-01-storm-2.jpg","alt":"Lightning bolts hit the ocean and a tall metal mast at Kennedy Space Center, Florida.","gap":5,"far":"about 1 mile away"},{"img":"images/20-01-storm-3.jpg","alt":"A lightning bolt hits the top of a tall metal mast at Kennedy Space Center, Florida.","gap":2,"far":"less than half a mile away. Get inside!"}],"startBtn":"Start watching","nextBtn":"Next strike","seeBtn":"I SAW the flash","hearBtn":"I HEARD the thunder","strikeWord":"Strike","readyLine":"Press Start watching, then keep your eyes on the sky.","waitLine":"Watch the sky…","countLine":"Counting… now listen for the boom!","earlyLine":"No flash yet! Wait until the sky lights up.","lateLine":"Not yet! Listen. Tap when you HEAR the boom.","mileLine":"{s} seconds ÷ 5 = {far}","logLabel":"Your storm log (every 5 seconds = about 1 mile)","youWord":"You:","realWord":"Real:","safetyHead":"When thunder roars, go indoors!","safety":"If you can hear thunder, lightning is close enough to strike you. Go inside a building or a hard-topped car, and wait 30 minutes after the last boom.","credit":"Lightning at Kennedy Space Center, Florida: “Lightning Above the STS-8 Launch Pad” (NASA, 1983), “Lightning Strikes at Pad 39B” (NASA, May 2011) and “Lightning Strikes at Pad 39B” (NASA, August 2019). All public domain, via Wikimedia Commons.","q":"Why did you SEE each flash before you HEARD the thunder?","opts":[{"t":"Light travels almost a million times faster than sound.","ok":true},{"t":"The thunder happened later.","miss":"The flash and the boom happen at the same moment. Which one travels faster?"},{"t":"My ears are slower than my eyes.","miss":"Your ears work fast! The sound itself was slow getting to you."}],"win":"Flash first, boom later. The shorter the gap, the closer the strike. Clue 4!"},"exploreMod":"stormwatch","bulletin":{"afterText":"When you see a flash, start counting","kicker":"Bonus · Radio call","title":"The night guard’s call","skin":"radio","tone":"squelch","todo":["Press Play and listen. You can read along.","Tap the 4 signs that energy arrived."],"device":"CH 7","deviceSub":"PIER GATE","station":"Ray, the pier night guard · 9:41 PM","playBtn":"Play the radio call","againBtn":"Play it again","audio":"radio","paperHead":"RADIO LOG · CHANNEL 7 · 9:41 PM","lines":["Base, this is Ray at the pier gate. It’s 9:41.","I saw a [[light|huge white flash]] at the end of the pier, and right away a [[sound|BOOM so loud I felt it in my chest]].","Now the [[power|pier lamp is dark]], and there’s a [[heat|burnt smell by the metal post]].","[[x:Good to know for the case! But this isn’t a sign that energy arrived. Look for something that changed.|Nobody is out there]]. I’m staying inside the gate house. Over."],"foundLabel":"Signs that energy arrived","dangerWord":"Sign","countIcon":"⚡","countWord":"signs found","dangers":[{"id":"light","icon":"💡","t":"Light","does":"a huge flash"},{"id":"sound","icon":"🔊","t":"Sound","does":"a boom right away"},{"id":"power","icon":"⚡","t":"Electrical","does":"the lamp burned out"},{"id":"heat","icon":"🔥","t":"Heat","does":"a burnt smell"}],"win":"Four ways energy arrived, all at 9:41. Ray stayed inside. Smart!"},"tool":{"name":"Circuit tester","icon":"🔌","tab":"assignment","after":"#tab-assignment .activity-card","key":"20-tool","sim":"circuittester","kicker":"Bonus · Tool of the Week","teaser":"Test a spoon, a key, a pencil and more. Which ones let electricity through?","done":"You tested every object. A circuit tester sticker is in your Field Notebook.","why":{"icon":"🔌","q":"What does a circuit tester do?","t":"It has a small battery and a bulb. Touch both tips to something. If electricity can flow through it, the path is complete and the bulb lights."},"circuittester":{"title":"Conductor or insulator?","todo":["Drag a thing onto the tester (or tap it).","Predict: will the bulb light?","Test all 7. (A real tester uses a small battery. Never test a wall outlet.)"],"model":"a model","dropHere":"Drop a thing on the tester","predictQ":"Predict: will the bulb light?","yes":"It will light","no":"It won’t light","yesWord":"CONDUCTOR. It lit up!","noWord":"INSULATOR. No light.","rightPre":"Your prediction was right. ","wrongPre":"Surprise! ","logLabel":"Your test log","colYes":"Conductors (lit up)","colNo":"Insulators (no light)","objects":[{"k":"spoon","icon":"🥄","t":"Steel spoon","c":true,"note":"Steel is a metal. Metals let electricity flow."},{"k":"key","icon":"🔑","t":"House key","c":true,"note":"Keys are made of metal, like brass."},{"k":"coin","icon":"🪙","t":"Coin","c":true,"note":"Coins are made of metals like copper and nickel."},{"k":"pencil","icon":"✏️","t":"Pencil lead","c":true,"note":"Pencil “lead” is really graphite, a kind of carbon. It lets some electricity through, so the bulb glows."},{"k":"eraser","icon":"⬜","t":"Rubber eraser","c":false,"note":"Rubber blocks electricity. That’s why tool handles and boots for electricians use it."},{"k":"straw","icon":"🥤","t":"Plastic straw","c":false,"note":"Plastic blocks electricity, like the coating on a power cord."},{"k":"stick","icon":"🪵","t":"Wooden craft stick","c":false,"note":"Dry wood blocks electricity."}],"q":{"q":"Sam is putting a lightning rod on the pier. What should it be made of?","opts":[{"t":"Metal, like copper. It’s a great conductor.","ok":true,"why":"Right! A copper or aluminum rod gives lightning an easy path down a cable into the ground, away from the lamp and the people."},{"t":"Plastic. It’s strong.","why":"Plastic is an insulator. Lightning needs a path it can travel through."},{"t":"Wood. It’s natural.","why":"Wood is an insulator, and it can catch fire. Which things lit your bulb?"}]}}},"quizKicker":"","quizMiss":{"q1":{"A":"Energy can’t be made from nothing. What did it do in Block the path?","B":"Energy can’t be destroyed. Where did it go in the Warm-Up?"},"q2":{"B":"A shout doesn’t warm your ear much. What did your fingertips feel when you hummed?","C":"There’s no wire between you and your friend. What travels through the air as shaking?"},"q3":{"A":"The bulb is where the energy ends up. That makes it the receiver.","C":"The button opens and closes the path. Where does the energy come FROM?"}},"flags":{"ans-2":[{"label":"source","re":"source|comes from|starts|start"},{"label":"receiver","re":"receiver|goes to|ends|end up|gets it|recei"},{"label":"a Florida example","re":"sun|beach|sand|sidewalk|lightning|storm|band|drum|stove|fire|campfire|lamp|light|ocean|pier|thunder|heat|hot|air condition|flashlight|battery|florida|leaf|plant"}],"ans-3":[{"label":"two forms","any":["light","sound","heat","electric","thunder","flash","boom","hot","bright","loud"],"min":2},{"label":"evidence","re":"see|saw|hear|heard|feel|felt|burn|scorch|smell|bright|loud|boom|flash|evidence|because"}],"cer-4":[{"label":"your claim","re":"agree|disagree|not true|wrong|right|true|false|don.?t have to|do not have to|can move|can travel"},{"label":"two pieces of evidence","any":["sun","light","fire","campfire","drum","sound","thunder","lightning","flash","boom","air","board","umbrella","earmuffs","block","gap","leaf","hands","ear","wire","lemonade","heat"],"min":2},{"label":"your reasoning","re":"because|so |this shows|that shows|this means|that means|which means|proves|since"}]},"minWords":{"ans-2":15,"ans-3":15,"cer-4":30},"hints":{"ans-2":["Think about Block the path. Which end was the source? Which was the receiver?","A Florida example: the Sun and the sidewalk, or a storm cloud and a tree.","Try: The source is where ___. The receiver is where ___. For example, ___."],"ans-3":["Think about Storm watch. What did you see? What did you hear?","Evidence is something you notice: a flash, a boom, a burnt smell.","Try: One form is ___, and my evidence is ___. Another form is ___, and my evidence is ___."],"cer-4":["First decide: does energy need touch to move?","Think about the campfire, the Sun and the thunder.","Try: I ___ because ___. One piece of evidence is ___. Another is ___."]},"scholar":{},"planner":{"before":"cer-4","title":"Your claim and two pieces of evidence","rows":[{"label":"1. Pick your side","options":["I agree","I disagree"],"pick":1},{"label":"2. Pick two pieces of evidence from the lesson","pick":2,"options":["The campfire warmed my hands across the air. When the board blocked it, my hands cooled.","Sunlight crossed 93 million miles of space to reach the leaf.","The drum’s sound crossed the room through the air to my ear.","I saw lightning flash and heard thunder from miles away. Nothing touched me.","Electricity needed a wire. Plastic in the wire stopped it."]}],"note":"Tap your side and two facts. Then write your reasoning in your own words."},"slots":{"welcome":{"label":"Welcome · 9:41 PM","length":"30–40 s","script":"Hi, it’s Sam. Something strange happened on the Palmetto Beach pier last night. At 9:41, all four of my sensors jumped at once, and the pier lamp went dark. But nobody was there! Look at my strip chart. Find the red line. What could reach every sensor at the same moment?"},"warmup":{"label":"Warm-Up · feel it, rate it (Clue 1)","length":"20–30 s","script":"Today, you are the energy source! Read the first card and really do it. Rub your hands, hum, and look at a light. After each one, slide the meter to show how much changed. Then pick where the energy went."},"vocab":{"label":"Word Wall","length":"30–45 s","notes":"Rub your hands for “heat”; hum for “sound”; flick a flashlight for “light”."},"lesson":{"label":"The Lesson","length":"25–35 s"},"part1":{"label":"Part 1 · block the path (Clue 2)","length":"20–30 s","script":"Here are four energy paths. Tap each gap first. What’s in there? Then drag a blocker into the gap, like the umbrella or the earmuffs. Watch the receiver. Did it stop changing?"},"part2":{"label":"Part 2 · which way does heat go? (Clue 3)","length":"20–30 s","script":"Iced lemonade on a hot porch! Pick an arrow. Does heat move in, or does cold move out? Press Wait one hour, and watch both thermometers. Then drag the right way onto each Florida scene."},"explore":{"label":"Part 4 · storm watch (Clue 4)","length":"25–35 s","script":"A storm is rolling in. Turn your sound on and press Start watching. When the sky flashes, tap I saw the flash. When you hear the boom, tap I heard the thunder. Your storm log turns the seconds into miles."},"quiz":{"label":"Self-Check","length":"15–20 s"},"assignment":{"label":"Assignment · crack the case","length":"20–30 s","script":"Do you have all four clues? Crack the case at the top of this tab. Then answer two questions, fill in your energy hunt, and finish your C-E-R."},"partb":{"label":"Part B","length":"30 s"},"partc":{"label":"Part C · my energy hunt","length":"30 s"},"evidence":{"label":"Use your evidence · CER","length":"25–35 s","script":"A classmate says energy only moves when things touch. Hmm. Think about the gaps you blocked and the thunder you counted. Pick your side, tap two pieces of evidence, then explain how they prove your claim."},"closing":{"label":"Case closed","length":"20–30 s","notes":"Celebrate; tease 20.02 (energy stations).","script":"Case closed! Lightning hit the pier lamp, and its energy reached every sensor through the air. Now I’m adding a lightning rod. Next time, you set up your own energy stations and collect evidence."}},"videoOff":[],"camera":{"max":8,"huntTitle":"Bonus: can you snap all 4 shots on this list?","missions":["Your list of energy you sent, all 3 moves (Warm-Up)","A blocked path (The Lesson)","The two thermometers after one hour (The Lesson)","Your storm log (The Lesson)"]},"sketch":{"tip":"Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.","prompts":["The pier at 9:41 PM","Four energy paths in my house","Heat moving into my lemonade"],"inline":[{"id":"partc","afterPart":"C","kicker":"Part C · sketch it (optional)","required":false,"minLabels":3,"prompts":["Draw one of your energy paths","Label the source and the receiver","Draw an arrow the way the energy moves"]}]},"hlCoach":{"title":"Highlight like a scientist","tips":[["🔑","Highlight key words, not whole paragraphs.","If everything is yellow, nothing stands out. Aim for a few words in each paragraph."],["📖","Look for words that are explained.","Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."],["🎯","Look for answers to the Big Question.","Ask yourself: does this help me explain how energy moves, and how we know it moved?"],["🔗","Watch for clue words.","“Because”, “so” and “first … then” show how ideas connect."],["🎨","Use the colors on purpose.","Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."]],"practice":{"q":"Practice: tap the 3 to 5 words that matter most in this sentence.","text":"Energy moves from a source to a receiver, even through the air.","key":["energy","moves","source","receiver","air"],"small":["a","to","the"],"model":"A scientist might highlight “energy moves”, “source”, “receiver” and “through the air”. Those words hold the big idea. Small words like “a” and “the” don’t carry the idea."},"outside":"This works in every subject. When you read anything, save the words that answer your question, and skip the rest."},"specimen":{"kicker":"Specimen collected","stamp":"CASE CLOSED","icon":"💡","name":"The burnt-out pier bulb","line":"You cracked Case 20, and the burnt-out pier bulb goes in your Field Notebook. (A specimen is something a scientist collects to keep.) Next time: energy stations."},"notebookTitle":"Unit 5 · Energy, Motion & Collisions","notebook":[{"lesson":"18.01","icon":"🧫","name":"Red tide sample slide"},{"lesson":"18.02","icon":"🎟️","name":"Star party ticket"},{"lesson":"19.01","icon":"🏁","name":"Derby checkered flag"},{"lesson":"19.02","icon":"🧦","name":"The fluke sock"},{"lesson":"20.01","icon":"💡","name":"The burnt-out pier bulb"},{"lesson":"20.02"},{"lesson":"21.01"},{"lesson":"21.02"},{"lesson":"22.01"},{"lesson":"22.02"},{"lesson":"23.01"},{"lesson":"23.02"},{"lesson":"24.01"},{"lesson":"24.02"}],"rankLine":"Your Field Station ID just updated. Keep going, scientist.","lensWin":"All six words are in focus. You’re ready to follow the energy.","inputs":[{"id":"tab1","type":"swap","find":{"sel":".tab-btn[data-tab=\"vocab\"]"},"swap":["📚 Vocabulary","🌅 Warm-Up"]},{"id":"fs-warm","type":"list","find":{"sel":".fs-game[data-mod=\"rateit\"]"},"label":"Warm-Up: three places energy is moving right now","q":"Warm-Up: Three places where energy is moving from one place to another right now","title":"Your turn: list three places where energy is moving around you right now. Name the source and the receiver.","min":3,"unit":"places","addLabel":"+ Add another","ph":["Light from the window to my desk","Sound from ___ to ___","Something else…"]},{"id":"hide-hints","type":"hide","find":{"sel":".act-warmup p","text":"Hints: heat from a window"}},{"id":"sw-words","type":"swap","find":{"sel":"p","text":"Tap a card to flip it"},"swap":["<strong>Tap a card to flip it<\/strong> and read what the word means.","<strong>Tap a word<\/strong> to hear it and see what it means."]},{"id":"hide-nw","type":"hide","find":{"sel":".act-warmup .socratic-q","text":"Notice"}},{"id":"fs-partc","type":"frame","find":{"sel":"#tab-assignment p","text":"Find one example of each way energy moves"},"label":"Part C: My energy hunt","q":"Part C: One example of each way energy moves, with its source, receiver and evidence","title":"My energy hunt (source → receiver, and my evidence)","fields":[{"t":"HEAT","icon":"🔥","ph":"Source: ___ → Receiver: ___. My evidence: ___"},{"t":"LIGHT","icon":"💡","ph":"Source: ___ → Receiver: ___. My evidence: ___"},{"t":"SOUND","icon":"🔊","ph":"Source: ___ → Receiver: ___. My evidence: ___"},{"t":"ELECTRICAL","icon":"⚡","ph":"Source: ___ → Receiver: ___. My evidence: ___"}]},{"id":"fs-cer","type":"cer","target":"cer-4","find":{"sel":"textarea#cer-4"},"reminder":"Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.","parts":[{"k":"C","t":"Claim","ask":"Do you have to touch things to transfer energy?","ph":"I agree / I disagree because…"},{"k":"E","t":"Evidence","ask":"Two facts from the lesson. Tap them in the planner above, or type them.","ph":"One fact is… Another fact is…","rows":3},{"k":"R","t":"Reasoning","ask":"How do those facts prove your claim?","ph":"This shows that…","rows":3}]},{"id":"relabel","type":"relabel","map":{"ans-2":"Part B · Question 5","ans-3":"Part B · Question 6","cer-4":"Use Your Evidence (CER)"}},{"id":"sw-check","type":"swap","find":{"sel":"p","text":"Tap to toggle"},"swap":[" Tap to toggle.",""]},{"id":"sw-circle","type":"swap","find":{"sel":".card-head-title","text":"Revisit Our Key Question"},"swap":["Revisit Our Key Question","Back to the Big Question"]}],"cues":{"welcome":[{"at":"^pier$","sel":".fs-casecard .fs-case-t","fx":"glow"},{"at":"^sensors","sel":".fs-casecard .fs-strip-svg","fx":"pop"},{"at":"^dark","sel":".fs-casecard .fs-strip-note","fx":"trace"},{"at":"^chart","sel":".fs-casecard .fs-strip","fx":"glow"},{"at":"^red$","sel":".fs-casecard .fs-strip-mk","fx":"pop","tag":"9:41 PM"},{"at":"^moment","sel":".fs-casecard .fs-case-ask","fx":"trace"}],"warmup":[{"at":"^source","sel":".fs-game[data-mod=\"rateit\"] .fs-why","fx":"glow","scroll":true},{"at":"^card","sel":".fs-rt-card","fx":"pop"},{"at":"^hum","sel":".fs-rt-tab","all":true,"fx":"wiggle"},{"at":"^meter","sel":".fs-rt-card","fx":"point","tag":"Slide the meter"},{"at":"^went","sel":".fs-rt-tally","fx":"glow"}],"part1":[{"at":"^paths","sel":".fs-blk-grid","fx":"glow","scroll":true},{"at":"^gap$","sel":".fs-blk-gap","all":true,"fx":"pop"},{"at":"^blocker","sel":".fs-blk-tray","fx":"glow"},{"at":"^umbrella","sel":".fs-blk-item","i":1,"fx":"point"},{"at":"^earmuffs","sel":".fs-blk-item","i":2,"fx":"point"},{"at":"^receiver","sel":".fs-blk-rec","all":true,"fx":"wiggle"}],"part2":[{"at":"^lemonade","sel":".fs-hf-svg","fx":"glow","scroll":true},{"at":"^arrow","sel":".fs-hf-ask","fx":"pop"},{"at":"^Wait","sel":".fs-hf-run","fx":"point"},{"at":"^thermometers","sel":".fs-hf-th","all":true,"fx":"glow"},{"at":"^scene","sel":".fs-game[data-mod=\"heatflow\"] .fs-todo li","i":2,"fx":"trace"}],"explore":[{"at":"^storm$","sel":".fs-stw-view","fx":"glow","scroll":true},{"at":"^Start","sel":".fs-stw-start","fx":"point"},{"at":"^saw","sel":".fs-stw-see","fx":"pop"},{"at":"^heard","sel":".fs-stw-hear","fx":"pop"},{"at":"^log","sel":".fs-stw-log","fx":"glow"},{"at":"^miles","sel":".fs-game[data-mod=\"stormwatch\"] .fs-in-k","fx":"trace"}],"assignment":[{"at":"^clues","sel":".fs-board","fx":"glow"},{"at":"^Crack","sel":".fs-solve","fx":"pop","scroll":true},{"at":"^two$","sel":"#tab-assignment .pq","fx":"glow","all":true,"scroll":true},{"at":"^hunt","sel":"#tab-assignment .fs-in-frame","fx":"pop","scroll":true},{"at":"^C-E-R$","sel":"#tab-assignment .fs-cer","fx":"glow","scroll":true}],"evidence":[{"at":"^classmate","sel":"#tab-assignment .act-body > div:has(> .fs-plan) > p","i":0,"fx":"trace"},{"at":"^blocked","sel":".fs-plan .fs-opt","i":2,"fx":"glow"},{"at":"^thunder","sel":".fs-plan .fs-opt","i":5,"fx":"glow"},{"at":"^side","sel":".fs-plan .fs-plan-row","i":0,"fx":"pop"},{"at":"^explain","sel":".fs-cer .fs-cer-row","i":2,"fx":"glow","scroll":true}],"closing":[{"at":"^closed","sel":".fs-specimen","fx":"pop","scroll":true},{"at":"^Lightning","sel":".fs-solve","fx":"glow"},{"at":"^rod","sel":".fs-tool","fx":"wiggle"},{"at":"^Next","sel":"#tab-assignment .callout-tip","fx":"glow"}]},"fold":{"bulletin":{"icon":"📻","tease":"Ray, the pier night guard, radioed in at 9:41. Can you catch the 4 signs that energy arrived?","open":"Listen"}},"cueWords":{"welcome":[[0,0.48,"Hi,"],[0.56,0.68,"it’s"],[0.72,1.12,"Sam."],[1.6,1.92,"Something"],[2,2.48,"strange"],[2.52,2.8,"happened"],[2.88,2.92,"on"],[2.96,3,"the"],[3.04,3.44,"Palmetto"],[3.52,3.68,"Beach"],[3.84,4,"pier"],[4.08,4.32,"last"],[4.4,4.72,"night."],[5.12,5.28,"At"],[5.36,6.56,"9:41,"],[6.72,6.88,"all"],[6.96,7.12,"four"],[7.2,7.24,"of"],[7.28,7.36,"my"],[7.44,7.84,"sensors"],[8,8.24,"jumped"],[8.32,8.4,"at"],[8.48,9.04,"once,"],[9.08,9.12,"and"],[9.16,9.2,"the"],[9.28,9.44,"pier"],[9.52,9.76,"lamp"],[9.84,9.92,"went"],[10,10.64,"dark."],[10.88,10.96,"But"],[11.12,11.44,"nobody"],[11.52,11.6,"was"],[11.68,12.08,"there!"],[12.64,12.72,"Look"],[12.8,12.84,"at"],[12.88,12.96,"my"],[13.08,13.2,"strip"],[13.28,13.6,"chart."],[14,14.16,"Find"],[14.24,14.32,"the"],[14.4,14.56,"red"],[14.64,14.96,"line."],[15.44,15.52,"What"],[15.6,15.76,"could"],[15.88,16,"reach"],[16.16,16.4,"every"],[16.56,16.96,"sensor"],[17.04,17.12,"at"],[17.16,17.2,"the"],[17.36,17.52,"same"],[17.6,18.32,"moment?"]],"warmup":[[0,0.72,"Today,"],[0.8,1.12,"you"],[1.2,1.28,"are"],[1.32,1.36,"the"],[1.44,1.76,"energy"],[1.84,2.52,"source!"],[2.8,2.96,"Read"],[3.04,3.12,"the"],[3.2,3.44,"first"],[3.52,3.84,"card"],[3.96,4.08,"and"],[4.16,4.48,"really"],[4.64,4.72,"do"],[4.8,5.36,"it."],[5.44,5.52,"Rub"],[5.6,5.68,"your"],[5.76,6.4,"hands,"],[6.48,7.04,"hum,"],[7.12,7.2,"and"],[7.28,7.36,"look"],[7.44,7.48,"at"],[7.52,7.56,"a"],[7.6,8.4,"light."],[8.56,8.72,"After"],[8.8,8.96,"each"],[9.04,9.52,"one,"],[9.6,9.92,"slide"],[9.96,10,"the"],[10.08,10.32,"meter"],[10.4,10.48,"to"],[10.56,10.64,"show"],[10.72,10.88,"how"],[10.96,11.12,"much"],[11.2,12.08,"changed."],[12.2,12.32,"Then"],[12.72,12.88,"pick"],[12.96,13.04,"where"],[13.08,13.12,"the"],[13.2,13.52,"energy"],[13.6,14.16,"went."]],"part1":[[0,0.16,"Here"],[0.24,0.48,"are"],[0.56,0.8,"four"],[0.88,1.2,"energy"],[1.28,1.88,"paths."],[2.08,2.32,"Tap"],[2.48,2.64,"each"],[2.72,2.96,"gap"],[3.04,3.64,"first."],[3.84,4.04,"What’s"],[4.08,4.16,"in"],[4.28,4.64,"there?"],[4.88,5.12,"Then"],[5.36,5.6,"drag"],[5.64,5.68,"a"],[5.76,6.16,"blocker"],[6.24,6.48,"into"],[6.52,6.56,"the"],[6.64,7.12,"gap,"],[7.24,7.36,"like"],[7.4,7.44,"the"],[7.52,8,"umbrella"],[8.08,8.24,"or"],[8.32,8.36,"the"],[8.4,9.16,"earmuffs."],[9.36,9.6,"Watch"],[9.64,9.68,"the"],[9.76,10.44,"receiver."],[10.64,10.8,"Did"],[10.84,10.88,"it"],[10.96,11.12,"stop"],[11.2,11.92,"changing?"]],"part2":[[0,0.32,"Iced"],[0.48,0.96,"lemonade"],[1,1.04,"on"],[1.12,1.2,"a"],[1.28,1.52,"hot"],[1.6,2.44,"porch!"],[2.72,2.8,"Pick"],[2.88,2.96,"an"],[3.16,3.6,"arrow."],[3.84,4,"Does"],[4.08,4.24,"heat"],[4.32,4.48,"move"],[4.64,5.2,"in,"],[5.24,5.28,"or"],[5.36,5.44,"does"],[5.52,5.84,"cold"],[5.92,6.08,"move"],[6.24,6.56,"out?"],[7.04,7.28,"Press"],[7.44,7.68,"Wait"],[7.76,7.92,"one"],[8,8.4,"hour,"],[8.48,8.56,"and"],[8.64,8.88,"watch"],[8.96,9.2,"both"],[9.28,10.16,"thermometers."],[10.4,10.64,"Then"],[10.88,11.12,"drag"],[11.2,11.28,"the"],[11.36,11.52,"right"],[11.6,11.84,"way"],[11.92,12.16,"onto"],[12.24,12.4,"each"],[12.56,12.88,"Florida"],[12.96,13.52,"scene."]],"explore":[[0,0.16,"A"],[0.36,0.56,"storm"],[0.64,0.72,"is"],[0.8,1.12,"rolling"],[1.2,1.92,"in."],[2.04,2.16,"Turn"],[2.24,2.32,"your"],[2.48,2.64,"sound"],[2.8,2.96,"on"],[3.04,3.12,"and"],[3.24,3.36,"press"],[3.52,3.76,"Start"],[3.92,4.8,"watching."],[4.84,4.88,"When"],[4.96,5,"the"],[5.04,5.28,"sky"],[5.36,6.16,"flashes,"],[6.32,6.48,"tap"],[6.72,6.88,"I"],[6.96,7.12,"saw"],[7.16,7.2,"the"],[7.28,8.16,"flash."],[8.24,8.32,"When"],[8.36,8.4,"you"],[8.48,8.56,"hear"],[8.64,8.72,"the"],[8.8,9.52,"boom,"],[9.68,9.84,"tap"],[10.08,10.16,"I"],[10.32,10.48,"heard"],[10.56,10.64,"the"],[10.72,11.52,"thunder."],[11.6,11.68,"Your"],[11.76,12,"storm"],[12.08,12.32,"log"],[12.44,12.6,"turns"],[12.64,12.72,"the"],[12.8,13.28,"seconds"],[13.36,13.6,"into"],[13.76,14.56,"miles."]],"assignment":[[0,0.16,"Do"],[0.2,0.24,"you"],[0.32,0.48,"have"],[0.56,0.64,"all"],[0.72,0.88,"four"],[0.96,1.6,"clues?"],[1.84,2.08,"Crack"],[2.16,2.24,"the"],[2.32,2.56,"case"],[2.64,2.72,"at"],[2.8,2.88,"the"],[3,3.12,"top"],[3.2,3.24,"of"],[3.28,3.44,"this"],[3.64,4.08,"tab."],[4.32,4.56,"Then"],[4.8,5.04,"answer"],[5.12,5.28,"two"],[5.36,6.16,"questions,"],[6.24,6.4,"fill"],[6.48,6.52,"in"],[6.56,6.64,"your"],[6.72,6.96,"energy"],[7.04,7.52,"hunt,"],[7.56,7.6,"and"],[7.76,8.08,"finish"],[8.16,8.24,"your"],[8.4,9.84,"C-E-R."]],"evidence":[[0,0.08,"A"],[0.16,0.56,"classmate"],[0.64,0.96,"says"],[1.28,1.68,"energy"],[1.84,2.08,"only"],[2.16,2.48,"moves"],[2.56,2.64,"when"],[2.72,2.96,"things"],[3.04,3.52,"touch."],[4,4.68,"Hmm."],[4.96,5.12,"Think"],[5.24,5.36,"about"],[5.4,5.44,"the"],[5.52,5.84,"gaps"],[5.88,5.92,"you"],[6,6.4,"blocked"],[6.48,6.56,"and"],[6.64,6.72,"the"],[6.8,7.12,"thunder"],[7.16,7.2,"you"],[7.28,8,"counted."],[8.24,8.4,"Pick"],[8.48,8.56,"your"],[8.64,9.28,"side,"],[9.36,9.6,"tap"],[9.68,9.76,"two"],[9.84,10.08,"pieces"],[10.16,10.24,"of"],[10.32,11.12,"evidence,"],[11.2,11.28,"then"],[11.52,11.76,"explain"],[11.84,12,"how"],[12.08,12.16,"they"],[12.24,12.48,"prove"],[12.56,12.64,"your"],[12.72,13.36,"claim."]],"closing":[[0,0.24,"Case"],[0.4,0.96,"closed!"],[1.36,1.68,"Lightning"],[1.76,1.84,"hit"],[1.88,1.92,"the"],[2,2.24,"pier"],[2.4,2.64,"lamp,"],[2.68,2.72,"and"],[2.84,2.96,"its"],[3.04,3.36,"energy"],[3.4,3.76,"reached"],[3.84,4.08,"every"],[4.24,4.56,"sensor"],[4.64,4.72,"through"],[4.8,4.88,"the"],[4.96,5.68,"air."],[5.76,6.08,"Now"],[6.16,6.24,"I’m"],[6.32,6.48,"adding"],[6.52,6.56,"a"],[6.64,6.88,"lightning"],[6.96,7.68,"rod."],[7.76,7.92,"Next"],[8.04,8.56,"time,"],[8.64,8.72,"you"],[8.8,8.88,"set"],[8.96,9.04,"up"],[9.16,9.28,"your"],[9.36,9.52,"own"],[9.68,9.84,"energy"],[9.92,10.32,"stations"],[10.4,10.48,"and"],[10.56,10.8,"collect"],[10.88,11.68,"evidence."]]},"banner":"<svg viewBox=\"0 0 920 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"One beach, four paths: sunlight reaching the sand, sound rings rolling out of a band shell, heat shimmering off a grill, and a power line carrying electricity to a lifeguard tower, with palm trees and a brown pelican on a post\">\n  <style>\n    .b201ray { animation: b201ray 2.6s ease-in-out infinite; }\n    .b201ring { fill:none; stroke:#3D5A99; stroke-width:3; opacity:0; animation: b201ring 2.4s ease-out infinite; transform-box: fill-box; transform-origin: center; }\n    .b201ring.r2 { animation-delay:.8s; } .b201ring.r3 { animation-delay:1.6s; }\n    .b201heat { animation: b201heat 1.8s ease-in-out infinite; }\n    .b201heat.h2 { animation-delay:.6s; } .b201heat.h3 { animation-delay:1.2s; }\n    .b201spark { animation: b201spark 2.2s linear infinite; }\n    .b201wave { animation: b201wave 6s ease-in-out infinite; }\n    .b201lamp { animation: b201lamp 2.2s ease-in-out infinite; }\n    @keyframes b201ray { 50% { opacity:.45; } }\n    @keyframes b201ring { 0% { opacity:.9; transform: scale(.4); } 100% { opacity:0; transform: scale(1.6); } }\n    @keyframes b201heat { 0% { opacity:0; transform: translateY(6px); } 40% { opacity:.8; } 100% { opacity:0; transform: translateY(-14px); } }\n    @keyframes b201spark { 0% { offset-distance:0%; opacity:0; } 8% { opacity:1; } 92% { opacity:1; } 100% { offset-distance:100%; opacity:0; } }\n    @keyframes b201wave { 50% { transform: translateX(12px); } }\n    @keyframes b201lamp { 50% { opacity:.55; } }\n    @media (prefers-reduced-motion: reduce) { .b201ray, .b201ring, .b201heat, .b201spark, .b201wave, .b201lamp { animation:none; } .b201ring { opacity:.5; } .b201heat { opacity:.7; } .b201spark { offset-distance:55%; opacity:1; } }\n  <\/style>\n  <defs>\n    <linearGradient id=\"b201sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#7EC8EE\"/><stop offset=\"1\" stop-color=\"#E4F5FC\"/><\/linearGradient>\n    <linearGradient id=\"b201sea\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#3FA0C8\"/><stop offset=\"1\" stop-color=\"#2A7EA6\"/><\/linearGradient>\n    <linearGradient id=\"b201sand\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#F5E3B0\"/><stop offset=\"1\" stop-color=\"#E4C47F\"/><\/linearGradient>\n    <radialGradient id=\"b201sun\" cx=\".5\" cy=\".5\" r=\".5\"><stop offset=\"0\" stop-color=\"#FFF6C8\"/><stop offset=\".6\" stop-color=\"#FFD54A\"/><stop offset=\"1\" stop-color=\"#FFC233\"/><\/radialGradient>\n  <\/defs>\n  <rect width=\"920\" height=\"200\" fill=\"url(#b201sky)\"/>\n  <!-- the Sun, and light reaching the sand -->\n  <circle cx=\"92\" cy=\"40\" r=\"26\" fill=\"url(#b201sun)\"/>\n  <g stroke=\"#FFD54A\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-dasharray=\"2 9\">\n    <line class=\"b201ray\" x1=\"110\" y1=\"62\" x2=\"168\" y2=\"150\"/>\n    <line class=\"b201ray\" x1=\"98\" y1=\"68\" x2=\"120\" y2=\"156\" style=\"animation-delay:.5s\"/>\n    <line class=\"b201ray\" x1=\"118\" y1=\"56\" x2=\"214\" y2=\"146\" style=\"animation-delay:1s\"/>\n  <\/g>\n  <rect x=\"0\" y=\"112\" width=\"920\" height=\"30\" fill=\"url(#b201sea)\"/>\n  <g stroke=\"#CDEBF7\" stroke-width=\"2\" fill=\"none\" opacity=\".7\"><g class=\"b201wave\"><path d=\"M300 122 q14 -4 28 0 t28 0\"/><path d=\"M520 130 q14 -4 28 0 t28 0\"/><path d=\"M700 121 q14 -4 28 0 t28 0\"/><\/g><\/g>\n  <path d=\"M0 140 Q230 130 460 138 T920 136 L920 200 L0 200 Z\" fill=\"url(#b201sand)\"/>\n  <ellipse cx=\"170\" cy=\"156\" rx=\"46\" ry=\"7\" fill=\"#FFF2C4\" opacity=\".9\"/>\n  <!-- palm trees -->\n  <g><path d=\"M38 182 Q34 140 46 108\" stroke=\"#8A6A44\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/>\n    <g fill=\"#3E8E4E\"><path d=\"M46 108 Q20 96 6 110 Q26 100 46 110Z\"/><path d=\"M46 108 Q66 90 88 98 Q66 98 46 110Z\"/><path d=\"M46 108 Q40 84 54 74 Q48 92 47 108Z\"/><path d=\"M46 108 Q74 108 84 124 Q66 112 46 110Z\"/><\/g><\/g>\n  <g><path d=\"M884 184 Q890 150 878 120\" stroke=\"#8A6A44\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/>\n    <g fill=\"#3E8E4E\"><path d=\"M878 120 Q852 110 840 124 Q858 114 878 122Z\"/><path d=\"M878 120 Q898 104 918 112 Q898 112 878 122Z\"/><path d=\"M878 120 Q872 98 886 88 Q880 106 879 120Z\"/><\/g><\/g>\n  <!-- the band shell, and sound rings rolling out -->\n  <g>\n    <path d=\"M300 176 L300 128 A44 44 0 0 1 388 128 L388 176 Z\" fill=\"#F7F1E3\" stroke=\"#B9A57A\" stroke-width=\"2\"/>\n    <path d=\"M310 176 L310 132 A34 34 0 0 1 378 132 L378 176 Z\" fill=\"#D9C79E\"/>\n    <g transform=\"translate(344 160)\"><ellipse rx=\"14\" ry=\"6\" fill=\"#E8636B\"/><rect x=\"-14\" y=\"0\" width=\"28\" height=\"12\" fill=\"#C8453D\"/><ellipse cy=\"12\" rx=\"14\" ry=\"6\" fill=\"#A8352F\"/><\/g>\n    <g transform=\"translate(398 140)\"><circle class=\"b201ring\" r=\"14\"/><circle class=\"b201ring r2\" r=\"14\"/><circle class=\"b201ring r3\" r=\"14\"/><\/g>\n  <\/g>\n  <!-- the grill, and heat shimmering up -->\n  <g>\n    <path d=\"M500 150 h56 a28 18 0 0 1 -56 0 Z\" fill=\"#2E3A4A\"/>\n    <line x1=\"508\" y1=\"164\" x2=\"500\" y2=\"184\" stroke=\"#2E3A4A\" stroke-width=\"4\"/><line x1=\"548\" y1=\"164\" x2=\"556\" y2=\"184\" stroke=\"#2E3A4A\" stroke-width=\"4\"/>\n    <rect x=\"502\" y=\"146\" width=\"52\" height=\"5\" rx=\"2\" fill=\"#E8636B\"/>\n    <g stroke=\"#FF8A4D\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\">\n      <path class=\"b201heat\" d=\"M512 140 q-5 -8 0 -16 t0 -16\"/><path class=\"b201heat h2\" d=\"M528 140 q-5 -8 0 -16 t0 -16\"/><path class=\"b201heat h3\" d=\"M544 140 q-5 -8 0 -16 t0 -16\"/>\n    <\/g>\n  <\/g>\n  <!-- the power line to the lifeguard tower -->\n  <g>\n    <rect x=\"640\" y=\"88\" width=\"6\" height=\"92\" fill=\"#7A5A3A\"/><rect x=\"628\" y=\"92\" width=\"30\" height=\"4\" fill=\"#7A5A3A\"/>\n    <path id=\"b201wire\" d=\"M656 94 Q700 116 744 110\" stroke=\"#2B2F36\" stroke-width=\"2.5\" fill=\"none\"/>\n    <circle class=\"b201spark\" r=\"4\" fill=\"#B48CFF\" style=\"offset-path: path('M656 94 Q700 116 744 110');\"/>\n    <g>\n      <rect x=\"738\" y=\"104\" width=\"52\" height=\"34\" fill=\"#E8636B\" stroke=\"#A8352F\" stroke-width=\"2\"/>\n      <path d=\"M732 104 L764 86 L796 104 Z\" fill=\"#F7F1E3\" stroke=\"#B9A57A\" stroke-width=\"2\"/>\n      <rect x=\"746\" y=\"112\" width=\"16\" height=\"12\" fill=\"#BFE6F7\"/>\n      <circle class=\"b201lamp\" cx=\"782\" cy=\"112\" r=\"5\" fill=\"#FFE066\"/>\n      <line x1=\"742\" y1=\"138\" x2=\"736\" y2=\"184\" stroke=\"#8A6A44\" stroke-width=\"4\"/><line x1=\"786\" y1=\"138\" x2=\"792\" y2=\"184\" stroke=\"#8A6A44\" stroke-width=\"4\"/>\n      <line x1=\"740\" y1=\"160\" x2=\"788\" y2=\"160\" stroke=\"#8A6A44\" stroke-width=\"3\"/>\n    <\/g>\n  <\/g>\n  <!-- a brown pelican on a post, watching -->\n  <rect x=\"826\" y=\"134\" width=\"11\" height=\"50\" fill=\"#7A5A3A\"/>\n  <g transform=\"translate(831 134)\">\n    <ellipse cx=\"0\" cy=\"-14\" rx=\"16\" ry=\"11\" fill=\"#7E6B57\"/>\n    <path d=\"M-16 -14 Q-27 -5 -21 4 L-5 -5 Z\" fill=\"#5A4A3A\"/>\n    <path d=\"M5 -22 Q9 -36 3 -43\" stroke=\"#6B4A2E\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/>\n    <ellipse cx=\"3\" cy=\"-45\" rx=\"7\" ry=\"6\" fill=\"#F4EBD3\"/>\n    <circle cx=\"5\" cy=\"-47\" r=\"1.5\" fill=\"#1A1A1A\"/>\n    <path d=\"M9 -47 L38 -41 L38 -39 L9 -42 Z\" fill=\"#C9A55A\"/>\n    <path d=\"M10 -42 Q24 -35 37 -39 Z\" fill=\"#9C7A3E\"/>\n  <\/g>\n<\/svg>\n"}</script>
+<link rel="stylesheet" href="assets/sparkle/fs-sparkle.css?v=46eee99f">
 </head>
 <body>
 <div class="page-wrap">
@@ -1153,7 +1156,7 @@
     <div>
       <div class="info-label">Quarter / Week</div>
       <div class="info-value">Q3 &middot; Week 20</div>
-      <div class="info-detail">Ecosystems &amp; Energy</div>
+      <div class="info-detail">Energy, Motion &amp; Collisions</div>
     </div>
   </div>
   <div class="info-item">
@@ -1161,7 +1164,7 @@
     <div>
       <div class="info-label">Lesson</div>
       <div class="info-value">Lesson 20.01</div>
-      <div class="info-detail">Life Science</div>
+      <div class="info-detail">Physical Science</div>
     </div>
   </div>
   <div class="info-item">
@@ -1176,7 +1179,7 @@
     <div class="info-icon" style="background:#EEF8F0;">🌿</div>
     <div>
       <div class="info-label">Standards</div>
-      <div class="info-value">4-ESS3-1 · TEKS 4.8(B), 4.8(C)</div>
+      <div class="info-value">4-PS3-2 · TEKS 4.8(B), 4.8(C)</div>
       <div class="info-detail">Energy Transfer & Electrical Conductors</div>
     </div>
   </div>
@@ -1200,7 +1203,7 @@
           <div class="question">"How can energy move from one place to another — and how do we know it actually moved?"</div>
         </div>
       </div>
-      <p>Hold this question in your head as you work. By the end of the lesson, you'll be able to name four ways energy moves between places — and spot the source and the receiver in any everyday example.</p>
+      <p>Keep this question in mind. By the end, you’ll name four ways energy moves and find the source and the receiver every time.</p>
     </div>
   </div>
 
@@ -1231,16 +1234,13 @@
 
 <div class="need-strip">
   <span class="need-strip-label">🎒 You'll need:</span>
-  <span class="need-chip"><span>📓</span>Science notebook</span>
   <span class="need-chip"><span>✏️</span>Colored pencils</span>
-  <span class="need-chip"><span>🔆</span>A sunny window or memory of one</span>
 </div>
 
 <!-- ═══ TAB BAR ═══ -->
 <div class="tab-bar" id="tabBar">
   <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
-  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
 </div>
@@ -1266,7 +1266,7 @@
 </div>
 
 
-</div>
+
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#E8636B;">1</div>
@@ -1277,7 +1277,7 @@
       <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
     </div>
     <div class="act-body">
-      <p>Sit still for a moment. Look around the room. In your notebook, list at least <strong>three places</strong> where energy is moving from one place to another <em>right now</em>.</p>
+      <p>Today YOU are the energy source. Try each move in the game below for real. Then list three places where energy is moving around you <em>right now</em>.</p>
 
       <p>Hints: heat from a window or vent? Light from a lamp? Sound from someone's voice? Electricity flowing through a wire?</p>
 
@@ -1305,7 +1305,7 @@
       </div>
     </div>
     <div class="card-body">
-      <p>These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.</p>
+      <p><strong>Tap a card to flip it</strong> and read what the word means.</p>
       <div class="vocab-grid">
         <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">➡️</div><div class="fc-word">Transfer</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Transfer</div><div class="fc-def">When energy moves from one place to another. A campfire transfers heat to your hands; a lamp transfers light to a leaf.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
         <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🔥</div><div class="fc-word">Heat</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Heat</div><div class="fc-def">Energy that moves from a warmer place to a cooler place. You feel it when you touch a hot mug or stand near a fire.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
@@ -1332,27 +1332,19 @@
       <div class="act-num" style="background:#D4772C;">2</div>
       <div style="flex:1;">
         <div class="act-title">📘 The Lesson: Four Ways Energy Moves</div>
-        <div class="act-subtitle">Heat, light, sound, electrical — each with a source and a receiver</div>
+        <div class="act-subtitle">Heat, light, sound and electrical, each with a source and a receiver</div>
       </div>
       <div class="act-time" style="background:#D4772C;">⏱ 15 min</div>
     </div>
     <div class="act-body">
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · Energy Travels Between Things</h3>
-      <p>Energy doesn't just exist — it MOVES. When you put your hand near a campfire, energy moves from the fire to your skin. When sunlight hits a leaf, energy moves from the Sun to the plant. When you yell to a friend, energy moves from your voice to their ear.</p>
+      <p>Energy doesn't just sit there. It MOVES. When you put your hand near a campfire, energy moves from the fire to your skin. When sunlight hits a leaf, energy moves from the Sun to the plant. When you yell to a friend, energy moves from your voice to their ear.</p>
 
-      <p>Scientists call this <span class="vtip">transfer<span class="vtip-box"><span class="vtip-word">Transfer</span>When energy moves from one place to another.</span></span>. In every transfer, there's a <span class="vtip">source<span class="vtip-box"><span class="vtip-word">Source</span>Where energy comes from.</span></span> (where the energy came from) and a receiver (where the energy went). Spotting both is the start of understanding any energy transfer.</p>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🛑</span>
-        <div>
-          <div class="label">Stop &amp; Think</div>
-          <div class="question">"Pick something happening right now — a lamp glowing, a heater running, music playing, your phone charging. What's the SOURCE? What's the RECEIVER?"</div>
-        </div>
-      </div>
+      <p>Scientists call this <span class="vtip">transfer<span class="vtip-box"><span class="vtip-word">Transfer</span>When energy moves from one place to another.</span></span>. In every transfer, there's a <span class="vtip">source<span class="vtip-box"><span class="vtip-word">Source</span>Where energy comes from.</span></span> (where the energy comes from) and a <strong>receiver</strong> (where the energy goes). Spotting both is the start of understanding any energy transfer.</p>
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 2 · Four Ways Energy Moves</h3>
-      <p>Energy doesn't all transfer the same way. There are four big forms you'll see every day — even in a regular Florida classroom:</p>
+      <p>Energy doesn't all transfer the same way. There are four big ways you'll see every day, even in a Florida classroom:</p>
 
       <ul style="font-size:16px;color:#2B1D12;line-height:1.7;margin:10px 0 12px 24px;">
         <li><strong><span class="vtip">Heat<span class="vtip-box"><span class="vtip-word">Heat</span>Energy from warmer to cooler.</span></span>:</strong> moves from a warmer place to a cooler place. A hot mug warms your cold hand. A campfire warms your face.</li>
@@ -1361,217 +1353,18 @@
         <li><strong><span class="vtip">Electrical<span class="vtip-box"><span class="vtip-word">Electrical energy</span>Tiny moving charges through a wire.</span></span> energy:</strong> moves through wires as tiny charges flowing. A battery powers a flashlight. A wall outlet powers a lamp.</li>
       </ul>
 
-      <p>You can't see most of these energies directly. But you can see what they DO. A warmed cup, a lit-up room, a vibrating eardrum, a glowing bulb — all are evidence that energy traveled from a source to a receiver.</p>
+      <p>You can't see most of these energies directly. But you can see what they DO. A warmed cup, a lit-up room, a shaking eardrum, a glowing bulb: each one is evidence that energy traveled from a source to a receiver.</p>
 
-      <p><strong>Common misconception:</strong> Some people think these are four different KINDS of energy — like four flavors. They're really four different WAYS energy can travel. The energy is the same idea (the ability to cause change), but it can move in any of these forms depending on the source.</p>
-      <div class="lesson-figure scroll-reveal">
-        <div class="lesson-figure-label">🔥 Four Ways Energy Moves Around You</div>
-        <img src="images/20-01-energy-forms.png"
-             alt="Four-panel infographic showing energy transfer. HEAT: a campfire transferring heat to a kid's hands. LIGHT: the Sun transferring light to a leaf. SOUND: a drum transferring sound to an ear. ELECTRICAL: a battery transferring electrical energy through wires to a lit lightbulb."
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
-        <div class="image-suggestion" style="display:none;">
-          <div class="image-suggestion-icon">🖼️</div>
-          <div class="image-suggestion-label">Suggested Image — Generate This</div>
-          <div class="image-suggestion-desc">A wide horizontal infographic with FOUR panels in a row, each showing one form of energy transfer. PANEL 1 labeled "HEAT" — a small campfire on the left, a kid's hand held out toward it on the right, with curved orange/red arrows showing heat moving from fire to hand. PANEL 2 labeled "LIGHT" — a bright sun in the top-left, a green leaf in the bottom-right, with yellow straight-line arrows showing light traveling from sun to leaf. PANEL 3 labeled "SOUND" — a drum on the left, a friendly ear on the right, with curved blue wavy lines showing sound vibrations traveling from drum to ear. PANEL 4 labeled "ELECTRICAL" — a battery on the left, a lit lightbulb on the right, connected by black wires with small electric spark icons traveling through them. Each panel has a clear SOURCE label on the left and RECEIVER label on the right, plus a small directional arrow between them. Use Optima palette: navy text/labels, coral/amber/forest-green/sky-blue accents for the four panels. Cream/transparent background. Title at top: "Four Ways Energy Travels." 16:9 ratio. Friendly cartoon-illustration style, 4th-grade-appropriate.</div>
-          <div class="image-suggestion-file">Save as: images/20-01-energy-forms.png</div>
-        </div>
-        <div class="lesson-figure-caption"><strong>Same idea — energy moving from a source to a receiver — four different forms.</strong> Once you spot the source and receiver, the rest of the science makes sense.</div>
-      </div>
-
-      <div style="background:#FFF6E5;border:2.5px solid #F0C97A;border-radius:14px;padding:18px 20px;margin:18px 0;">
-        <div style="font-size:12px;color:#9A6E10;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:6px;">⭐ Key Concept</div>
-        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin:0;line-height:1.6;">Every energy transfer has a SOURCE and a RECEIVER. Heat, light, sound, and electrical energy all move from one to the other — just in different ways.</p>
-      </div>
-
+      <p><strong>Watch out:</strong> Some people think these are four different KINDS of energy, like four flavors. They are really four different WAYS energy can travel.</p>
       <div style="background:#EAF8FD;border:2px solid #B8E0F8;border-radius:14px;padding:16px 20px;margin:16px 0;">
-        <p style="font-size:16px;color:#0E1C42;font-weight:800;margin:0 0 8px;">⚡ Conductors, Insulators & Simple Circuits</p>
-        <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;">Electrical energy needs a path to travel — it can't jump through the air the way light and sound can. That path is called a <strong>circuit</strong>. A simple circuit has four parts: an energy source (like a battery), a wire to carry the electricity, a load (like a light bulb), and a switch to open or close the path. If any part is missing or disconnected, the circuit is "open" and no energy flows.</p>
-        <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;">Not every material lets electricity pass through. Materials that let electrical energy flow easily — like copper, aluminum, and steel — are called <strong>conductors</strong>. That's why wires are made of metal! Materials that block electrical energy — like rubber, plastic, and glass — are called <strong>insulators</strong>. The rubber coating on a power cord is an insulator that keeps the electricity safely inside the conductor.</p>
-        <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Think about the lamp on your desk: electricity flows from the outlet (source) through the copper wire (conductor), past the switch, into the bulb (load), and back again in a loop. The plastic cord coating (insulator) keeps you safe the whole time.</p>
+        <p style="font-size:16px;color:#0E1C42;font-weight:800;margin:0 0 8px;">⚡ Paths for Electricity</p>
+        <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;">Electrical energy needs a path of metal, like a wire. That path is called a <strong>circuit</strong>. If the path is broken, no energy flows.</p>
+        <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;">Materials that let electricity flow easily, like copper, aluminum and steel, are called <strong>conductors</strong>. That’s why wires are made of metal! Materials that block it, like rubber, plastic and glass, are called <strong>insulators</strong>. The plastic coating on a power cord keeps the electricity safely inside the wire.</p>
+        <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">Air usually blocks electricity, too. Lightning is the giant exception: its push is so strong that it forces a path right through the air.</p>
       </div>
 
-      <div class="socratic-q">
-        <span class="sq-icon">🧠</span>
-        <div>
-          <div class="label">Stop &amp; Reason</div>
-          <div class="question">"Look at the four panels above. Pick TWO. For each, name the SOURCE (where energy starts) and the RECEIVER (where it ends up). Are they always the same kind of object, or different?"</div>
-        </div>
-      </div>
-
-      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Spot the Energy Transfer</h3>
-      <p><strong>Tap a Florida scene</strong> to find the form of energy, the source, and the receiver.</p>
-
-      <div class="diagram-wrap diagram-interactive" style="background:linear-gradient(135deg,#FFE5C0,#F0BE7A);border-radius:14px;padding:14px;">
-        <div style="font-size:13px;color:#7A4014;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;text-align:center;">
-          🔥 Tap an energy transfer scene
-        </div>
-        <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;width:100%;height:auto;" role="img" aria-label="Four Florida energy transfer scenes">
-
-          <rect x="0"   y="0"   width="360" height="160" fill="#F0CCB5" opacity="0.6"/>
-          <rect x="360" y="0"   width="360" height="160" fill="#F0E0B5" opacity="0.6"/>
-          <rect x="0"   y="160" width="360" height="160" fill="#C5DCE5" opacity="0.6"/>
-          <rect x="360" y="160" width="360" height="160" fill="#E5C8B0" opacity="0.6"/>
-
-          <line x1="360" y1="0"   x2="360" y2="320" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-          <line x1="0"   y1="160" x2="720" y2="160" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-
-          <text x="180" y="90" text-anchor="middle" font-size="56">☀️</text>
-          <rect x="100" y="125" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="180" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#8A4118">SUN ON SIDEWALK</text>
-
-          <text x="540" y="90" text-anchor="middle" font-size="56">🎺</text>
-          <rect x="460" y="125" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="540" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#7A5414">SCHOOL BAND</text>
-
-          <text x="180" y="250" text-anchor="middle" font-size="56">⚡</text>
-          <rect x="100" y="285" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="180" y="305" text-anchor="middle" font-size="14" font-weight="900" fill="#1B4A6F">LIGHTNING TO TREE</text>
-
-          <text x="540" y="250" text-anchor="middle" font-size="56">🍳</text>
-          <rect x="460" y="285" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="540" y="305" text-anchor="middle" font-size="14" font-weight="900" fill="#7A4014">STOVE COOKING EGGS</text>
-
-          <rect class="hotspot" x="0" y="0" width="360" height="160"
-                fill="#E89A30"
-                data-part="Sun warming a sidewalk"
-                data-info="FORM: LIGHT (which becomes HEAT when absorbed). SOURCE: the Sun. RECEIVER: the concrete sidewalk. EVIDENCE: in summer Florida, that sidewalk gets hot enough to burn bare feet by midafternoon. The light energy traveled millions of miles, then turned into heat energy when it hit the surface."/>
-          <rect class="hotspot" x="360" y="0" width="360" height="160"
-                fill="#D4A017"
-                data-part="School band rehearsal"
-                data-info="FORM: SOUND. SOURCE: the band's instruments (trumpets, drums, etc.). RECEIVERS: every ear in the room — and the walls and chairs. EVIDENCE: you can hear the music, and at loud volumes you might feel the floor or chair vibrate. Sound moves as vibrations through the air."/>
-          <rect class="hotspot" x="0" y="160" width="360" height="160"
-                fill="#2D7AA6"
-                data-part="Lightning striking a tree"
-                data-info="FORM: ELECTRICAL (which becomes HEAT, LIGHT, and SOUND). SOURCE: storm clouds full of charged particles. RECEIVER: the tree (and the ground). EVIDENCE: the flash you see (light), the BOOM you hear (sound, called thunder), and sometimes a scorched mark on the tree (heat). One transfer becomes several forms."/>
-          <rect class="hotspot" x="360" y="160" width="360" height="160"
-                fill="#B05428"
-                data-part="Stove cooking eggs"
-                data-info="FORM: HEAT (with ELECTRICAL traveling in first). SOURCE: the electric burner (which got its energy from electrical wires in your home). RECEIVER: the pan, then the eggs. EVIDENCE: the eggs cook — they change from runny to firm and start to brown. The electrical energy from the wall became heat in the burner, which transferred to the pan, then to the eggs."/>
-        </svg>
-
-        <div class="diagram-info-panel" id="diagramPanel">
-          <span class="dip-word" id="diagramWord"></span>
-          <span id="diagramInfo"></span>
-        </div>
-      </div>
-      
-      
-      <div class="socratic-q">
-        <span class="sq-icon">👀</span>
-        <div>
-          <div class="label">Observe &amp; Reason</div>
-          <div class="question">"Pick TWO scenes from the diagram. For each, name the energy FORM, the SOURCE, and the RECEIVER. Which form transfers fastest? Which one transfers the slowest?"</div>
-        </div>
-      </div>
-
-      <div class="mind-blow">
-        <span class="mind-blow-icon">🤯</span>
-        <div class="mind-blow-content">
-          <div class="mind-blow-label">Amazing Florida Fact</div>
-          <div class="mind-blow-text">Light from the Sun reaches Earth in about <strong>8 minutes</strong> — even though the Sun is 93 million miles away. That's because light travels about 186,000 MILES per second. Heat from the same Sun takes longer to warm a surface, because heat moves differently than light.</div>
-        </div>
-      </div>
-      <div class="callout callout-info" style="margin-top:18px;">
-        <span class="callout-icon">🌴</span>
-        <p><strong>Florida connection:</strong> Florida lightning storms are some of the most powerful in the U.S. — over 1 million strikes per year. Each bolt transfers electrical energy from cloud to ground in a fraction of a second, becoming light (the flash) and sound (the thunder) at the same time.</p>
-      </div>
-
-      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
-        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · Can energy change form during a transfer?</summary>
-        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
-          Yes — and that happens all the time. A lightning bolt is electrical energy, but you experience the flash (light), the boom (sound), and the heat all at once. A toaster turns electrical energy into heat AND light. Energy transfers and energy transformations work together in real life.
-        </div>
-      </details>
-
-      <div class="tab-next-wrap">
-        <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- TAB 3: GUIDED EXPLORATION          -->
-<!-- ═══════════════════════════════════ -->
-<div class="tab-panel" id="tab-explore">
-
-  <div class="activity-card act-explore scroll-reveal">
-    <div class="act-head">
-      <div class="act-num" style="background:#55C8E8;">3</div>
-      <div style="flex:1;">
-        <div class="act-title">🔬 Explore: Trace Four Energy Transfers</div>
-        <div class="act-subtitle">Find the source and receiver in real Florida moments</div>
-      </div>
-      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
-    </div>
-    <div class="act-body">
-
-      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Walk around your home or school for two minutes (with permission). Find ONE example of each energy form: heat, light, sound, and electrical. By step 4 you'll have a four-row chart showing the source, the receiver, and your evidence for each.</p>
-      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFF5E1;border:2px solid #F0C97A;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#F5A623,#D4772C);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#9A6E10;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 1</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Set up your chart</div>
-            <p style="color:#2B1D12;margin:0;">In your notebook, draw a chart with FOUR rows (HEAT, LIGHT, SOUND, ELECTRICAL) and THREE columns (Source, Receiver, Evidence).</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#EEF8F0;border:2px solid #B7DDC3;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#34B76F,#1F9252);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#1F6E3F;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 2</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Find a HEAT example</div>
-            <p style="color:#2B1D12;margin:0;">Look for one heat transfer (a hot mug, a sunny window, a running oven). Note the source, the receiver, and your evidence the heat moved.</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFEDEF;border:2px solid #F0B4B8;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#E8636B,#D04450);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#9A1B22;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 3</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Find LIGHT and SOUND examples</div>
-            <p style="color:#2B1D12;margin:0;">Find one light transfer (a lamp, sunlight) and one sound transfer (a voice, a fan, music). For each, record the source, receiver, and evidence.</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#F0EDF6;border:2px solid #C9BFE0;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8B6FC0,#6E4FA8);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#5A3B92;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 4</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Find an ELECTRICAL example + reflect</div>
-            <p style="color:#2B1D12;margin:0;">Find one electrical transfer (a charging phone, a plugged-in clock). Complete your chart. Then write one sentence: "Energy transfers always need a ___ and a ___."</p>
-          </div>
-        </div>
-
-      </div>
-      
-      
-      
-      <div class="mind-blow" style="margin-top:22px;">
-        <span class="mind-blow-icon">🤯</span>
-        <div class="mind-blow-content">
-          <div class="mind-blow-label">Amazing Florida Fact</div>
-          <div class="mind-blow-text">Sound travels about <strong>4 times faster in water</strong> than in air. That's why whales can hear each other across oceans — sound energy moves more easily through dense materials than through gas.</div>
-        </div>
-      </div>
-      <div class="socratic-q">
-        <span class="sq-icon">🧪</span>
-        <div>
-          <div class="label">Think like a scientist</div>
-          <div class="question">"A Florida scientist watches a hummingbird hovering in front of a feeder. Name TWO different energy transfers happening in that one moment. What's the source and receiver for each?"</div>
-        </div>
-      </div>
-
-      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
-        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · What is a CONDUCTOR?</summary>
-        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
-          A conductor is a material that lets energy travel through it easily. Metal is a great heat conductor — that's why frying pans are made of metal. Copper is a great electrical conductor — that's why most wires are made of it. The opposite of a conductor is an insulator (wood, plastic, air), which slows energy down.
-        </div>
-      </details>
-
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 4 · Storm Watch</h3>
+      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">A summer storm is rolling toward Palmetto Beach. When you see a flash, start counting. When you hear the boom, stop. What does the gap tell you?</p>
       <div class="tab-next-wrap">
         <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
       </div>
@@ -1660,62 +1453,28 @@
     </div>
     <div class="act-body">
 
-      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Transfer, Heat, Source, Electrical energy</strong></p>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">1</span>
-        <span class="pq-text">When energy moves from one place to another: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">2</span>
-        <span class="pq-text">Energy that moves from a warmer place to a cooler one: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">3</span>
-        <span class="pq-text">Where energy comes from — like the Sun or a battery: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">4</span>
-        <span class="pq-text">Energy carried through wires as tiny moving charges: ___________</span>
-      </div>
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🌿 Part B &mdash; Short Answer</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use vocabulary words from today's lesson.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">5</span>
-        <span class="pq-text">Pick ONE scene from the diagram (sun on sidewalk, school band, lightning, or stove). Name the FORM of energy, the SOURCE, and the RECEIVER.</span>
-      </div>
-      <textarea class="response-textarea" id="ans-1" data-label="Pick ONE scene from the diagram (sun on sidewalk, ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#D4772C;">6</span>
         <span class="pq-text">What's the difference between a SOURCE and a RECEIVER? Use a Florida example.</span>
       </div>
       <textarea class="response-textarea" id="ans-2" data-label="What&#x27;s the difference between a SOURCE and a RECEI..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
       <div class="pq">
-        <span class="pq-num" style="background:#D4772C;">7</span>
+        <span class="pq-num" style="background:#D4772C;">6</span>
         <span class="pq-text">A single lightning bolt transfers more than one form of energy at once. Name two forms you would notice — and the evidence for each.</span>
       </div>
       <textarea class="response-textarea" id="ans-3" data-label="A single lightning bolt transfers more than one fo..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use colors. Label every part.</p>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Reflect</div>
-          <div class="question">"What was the trickiest part of figuring out where the energy in a hawk really comes from? Write 2–3 sentences about something you learned today that you didn't know before."</div>
-        </div>
-      </div>
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🔎 Part C &mdash; My Energy Hunt</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Find one example of each way energy moves at home or at school. For each one, name the source, the receiver and your evidence that energy moved.</p>
 
       <div style="background:#FAF7F3;border:2px solid #8B6FC0;border-radius:16px;padding:22px 24px;margin-bottom:20px;">
         <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ Use Your Evidence</div>
-        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A classmate says, <em>"Energy can't actually move through the air — you have to TOUCH things to transfer energy."</em></p>
-        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.</p>
+        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A classmate says, <em>“Energy can’t really move through the air. You have to TOUCH things to transfer energy.”</em></p>
+        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson.</p>
         <textarea class="response-textarea ta-lg" id="cer-4" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
       </div>
 
@@ -1730,7 +1489,7 @@
       </div>
     </div>
     <div class="gathered-body">
-      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-intro">All your answers in one place. Copy or download them to turn in on Canvas.</div>
       <div class="gathered-name-row">
         <span class="gathered-name-label">Your name:</span>
         <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
@@ -1757,32 +1516,21 @@
 
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A:</strong> All four blanks filled in using words from the bank.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5 and 6 answered in complete sentences using lesson vocabulary.</span>
           </div>
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5, 6, and 7 answered in complete sentences using lesson vocabulary.</span>
-          </div>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
-            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> A four-row chart showing one Florida example for each form (heat / light / sound / electrical) with source, receiver, and evidence.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> One example each of heat, light, sound and electrical energy, with the source, the receiver and my evidence. (A sketch is a bonus.)</span>
           </div>
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Key Question Response:</strong> 2–3 sentences answering the big question using at least three vocabulary words.</span>
-          </div>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
-            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Evidence Response:</strong> I made a claim about whether touch is required for energy transfer, and supported it with two pieces of evidence.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Use Your Evidence:</strong> My claim about whether energy needs touch to move, with two pieces of evidence.</span>
           </div>
 
           <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
             <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
             <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
-              Submit your work however works best for you:<br/><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.</span><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> — Take a clear photo of your handwritten work and upload it.</span><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> — Record a short video explaining your food chain.</span>
+              Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.
             </div>
           </div>
         </div>
@@ -1807,10 +1555,9 @@
           <div class="question">"How can energy move from one place to another — and how do we know it actually moved?"</div>
         </div>
       </div>
-      <p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong> to this question in your science notebook. Use at least <strong>three vocabulary words</strong> from today.</p>
       <div class="callout callout-tip">
         <span class="callout-icon">⭐</span>
-        <p><strong>Nicely done.</strong> You can now spot four ways energy <span class="vtip">transfers<span class="vtip-box"><span class="vtip-word">Transfer</span>Moves between places.</span></span> — <span class="vtip">heat<span class="vtip-box"><span class="vtip-word">Heat</span>Warm to cool.</span></span>, <span class="vtip">light<span class="vtip-box"><span class="vtip-word">Light</span>From a source like the Sun.</span></span>, <span class="vtip">sound<span class="vtip-box"><span class="vtip-word">Sound</span>Vibrations.</span></span>, <span class="vtip">electrical<span class="vtip-box"><span class="vtip-word">Electrical energy</span>Charges through a wire.</span></span> — and find the <span class="vtip">source<span class="vtip-box"><span class="vtip-word">Source</span>Where energy comes from.</span></span> and receiver in any of them. Next lesson, you'll watch energy transfer in action by running your own observation stations.</p>
+        <p><strong>Nicely done.</strong> You found four ways energy moves and proved it moved, even through the air. Next time, you set up energy stations and collect your own evidence.</p>
       </div>
     </div>
   </div>
@@ -1833,7 +1580,7 @@
 
 <script>
 // ── Tab System ──
-var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var TAB_ORDER = ['vocab','lesson','quiz','assignment'];
 var tabsVisited = new Set(['vocab']);
 
 function switchTab(tabId) {
@@ -2126,7 +1873,7 @@ window.addEventListener('beforeunload', function(e){
 <!-- Video Manifest Loader -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('https://raw.githubusercontent.com/bbirchum1/optima-4th-science/main/video-manifest.json?v=' + Date.now())
+  fetch('https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json?v=' + Date.now())
     .then(function(r) { return r.json(); })
     .then(function(data) {
       var manifest = data.videos || data;
@@ -2335,5 +2082,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<script src="assets/sparkle/fs-sparkle.js?v=46eee99f"></script>
 </body>
 </html>
