@@ -6,6 +6,7 @@ pics = {
     'shade': {'src': 'images/13-01-case-shade.jpg', 'cap': 'Pot B · shady courtyard'},
     'bee': {'src': 'images/13-02-bee.jpg', 'cap': 'A native bee on a beach sunflower (Bob Peterson, CC BY-SA 2.0)'},
     'head': {'src': 'images/13-02-head.jpg', 'cap': 'A beach sunflower head: hundreds of tiny flowers'},
+    'vrwm': {'src': 'images/13-02-vr-wm-young.jpg', 'cap': 'A female watermelon flower with a baby watermelon behind it (Pollinator, CC BY-SA 3.0)'},
 }
 C_CASE, C_GREEN, C_PURP, C_RED = '#B9822A', '#2F7A55', '#7A5BB5', '#C8553D'
 S = {}
@@ -46,5 +47,11 @@ S['closing'] = {'label': 'Case closed', 'length': '30–40 s', 'want': True, 'pa
     {'label': '🕸 Your specimen', 'tag': 'FIELD NOTEBOOK', 'title': 'Mesh pollinator bag', 'col': C_CASE, 'body': 'Finish the checklist to stamp CASE CLOSED.'},
     {'label': '➡ Next week', 'tag': 'WEEK 14', 'title': 'Circle of life', 'col': C_GREEN, 'body': 'Follow Florida plants and animals through their whole lives, and through the seasons.'}],
     'script': '[ON SCREEN: Confetti]\nCase closed! No bees, no pollen moving, no seeds. Pollination comes first.\n\n[ON SCREEN: Your specimen]\nCheck every box in What to Turn In, and a mesh pollinator bag goes into your Field Notebook.\n\n[ON SCREEN: Next week]\nNext week, we’ll follow Florida plants and animals through their whole lives.\n\nPress Listen for Dr. Reyes’s last word.'}
+S['vr'] = {'label': 'VR activity · Seed to seed (separate page)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'label': '✉️ The seed envelope', 'tag': 'CASE 13 FOLLOW-UP', 'title': 'Can you grow these into new seeds?', 'col': C_CASE, 'body': 'Dr. Reyes saved Pot A’s seeds. She wants proof you know the whole circle, from seed to seed.'},
+    {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': '#2B7BB9', 'rows': [['🥽', 'VR Field Mission: grow a sunflower circle and a pumpkin circle in Farm Town.'], ['🗂', 'No headset? Follow a watermelon, a pumpkin and a tomato from flower to seed.']]},
+    {'kind': 'photo', 'pic': 'vrwm', 'label': '📷 A baby watermelon'},
+    {'label': '🥇 The badge', 'tag': 'VR ONLY', 'title': 'Golden Seed badge', 'col': C_GREEN, 'body': 'Save your capture in VR to earn it.'}],
+    'script': 'Hi, scientists! Dr. Reyes saved some of Pot A’s seeds, and she has a question.\n\n[ON SCREEN: The seed envelope]\nCan you grow these into NEW seeds? Show her the whole circle.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, grow two full circles in Farm Town: seeds, four stages, and a bee to close the ring. Then tell each story out loud.\n\n[ON SCREEN: A baby watermelon]\nNo headset? Watch three flowers turn into fruit. See this tiny bump behind the flower? That’s a baby watermelon!\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Golden Seed badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 json.dump({'slots': S, 'pics': pics, 'other': ['lesson', 'part3', 'partb', 'figure']}, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('wrote video.json', len(S), 'slots')
