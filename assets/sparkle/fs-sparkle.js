@@ -516,7 +516,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -5433,14 +5433,15 @@
                    lines:["text with [[id|phrase]] marks; id 'x:hint' marks a decoy phrase"], dangers:[{id, icon, t, does}], waitLine, win, clue} */
   function buildBulletin() {
     var B = D.bulletin; if (!B) return;
-    var at = anchorP(B.afterText); if (!at) { FAILED.push('bulletin anchor text not found'); return; }
+    var at = B.afterSel ? $(B.afterSel) : anchorP(B.afterText); if (!at) { FAILED.push('bulletin anchor text not found'); return; }
     var g = gameShell(B.kicker || 'Warm-Up game', B.title, B.todo, B.why); g.dataset.mod = 'bulletin';
     var st = loadJ('bulletin', {});
     var mark = /\[\[([^|\]]+)\|([^\]]+)\]\]/g;
     var paper = B.lines.map(function (ln) {
       return '<p>' + esc(ln).replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, function (m, id, t) { return '<button type="button" class="fs-bn-w" data-id="' + esc(id) + '">' + t + '</button>'; }) + '</p>';
     }).join('');
-    var dev = B.skin === 'radio' ? el('div', 'fs-bn-dev fs-bn-wt', '<div class="fs-bn-wt-set" aria-hidden="true"><i class="fs-bn-wt-ant"></i><div class="fs-bn-wt-body"><div class="fs-bn-wt-lcd"><span class="fs-bn-led"></span><b>' + esc(B.device || 'CH 7') + '</b><small>' + esc(B.deviceSub || '') + '</small></div><div class="fs-bn-wt-grille"></div><i class="fs-bn-wt-ptt"></i></div></div>' +
+    var dev = B.skin === 'mic' ? el('div', 'fs-bn-dev fs-bn-mic', '<div class="fs-bn-mic-set" aria-hidden="true"><i class="fs-bn-mic-head"></i><i class="fs-bn-mic-neck"></i><div class="fs-bn-mic-pod"><span class="fs-bn-led"></span><b>' + esc(B.device || 'TOWN HALL') + '</b><small>' + esc(B.deviceSub || '') + '</small></div></div>' +
+      '<div class="fs-bn-side"><button type="button" class="fs-btn fs-bn-play">▶ ' + esc(B.playBtn || 'Play') + '</button><div class="fs-bn-st">' + esc(B.station || '') + '</div></div>') : B.skin === 'radio' ? el('div', 'fs-bn-dev fs-bn-wt', '<div class="fs-bn-wt-set" aria-hidden="true"><i class="fs-bn-wt-ant"></i><div class="fs-bn-wt-body"><div class="fs-bn-wt-lcd"><span class="fs-bn-led"></span><b>' + esc(B.device || 'CH 7') + '</b><small>' + esc(B.deviceSub || '') + '</small></div><div class="fs-bn-wt-grille"></div><i class="fs-bn-wt-ptt"></i></div></div>' +
       '<div class="fs-bn-side"><button type="button" class="fs-btn fs-bn-play">▶ ' + esc(B.playBtn || 'Play the call') + '</button><div class="fs-bn-st">' + esc(B.station || '') + '</div></div>') : B.skin === 'phone' ? el('div', 'fs-bn-dev fs-bn-ph', '<div class="fs-bn-phone" aria-hidden="true"><div class="fs-bn-ph-scr"><span class="fs-bn-led"></span><b>' + esc(B.device || 'Voicemail') + '</b><small>' + esc(B.deviceSub || '') + '</small><i class="fs-bn-ph-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></i></div></div>' +
       '<div class="fs-bn-side"><button type="button" class="fs-btn fs-bn-play">▶ ' + esc(B.playBtn || 'Play') + '</button><div class="fs-bn-st">' + esc(B.station || '') + '</div></div>') :
       el('div', 'fs-bn-dev',
@@ -5477,7 +5478,7 @@
     }
     playB.addEventListener('click', function () {
       if (busy) { if (audio) audio.pause(); if (window.speechSynthesis) speechSynthesis.cancel(); done(); return; }
-      busy = true; dev.classList.add('on'); playB.textContent = '❚❚ Stop'; if (B.tone === 'squelch') { SFX.keyup(); } else if (B.tone === 'ring') { [0, 0.45, 1.2, 1.65].forEach(function (t) { tone(440, t, 0.35, 'sine', 0.04); tone(480, t, 0.35, 'sine', 0.04); }); } else if (B.tone === 'start') { [0, 0.55, 1.1].forEach(function (t, i) { tone(i < 2 ? 587 : 1175, t, i < 2 ? 0.28 : 0.6, 'square', 0.03); }); } else if (B.tone !== 'none') alertTone();
+      busy = true; dev.classList.add('on'); playB.textContent = '❚❚ Stop'; if (B.tone === 'squelch') { SFX.keyup(); } else if (B.tone === 'gavel') { [0, 0.28].forEach(function (t) { tone(180, t, 0.12, 'square', 0.06); tone(90, t, 0.18, 'sine', 0.12); }); } else if (B.tone === 'ring') { [0, 0.45, 1.2, 1.65].forEach(function (t) { tone(440, t, 0.35, 'sine', 0.04); tone(480, t, 0.35, 'sine', 0.04); }); } else if (B.tone === 'start') { [0, 0.55, 1.1].forEach(function (t, i) { tone(i < 2 ? 587 : 1175, t, i < 2 ? 0.28 : 0.6, 'square', 0.03); }); } else if (B.tone !== 'none') alertTone();
       var src = (D.paths && D.paths.audio || 'assets/audio/guide/') + (D.guide || 'crew') + '/' + D.prefix + '-' + (B.audio || 'bulletin') + '.mp3';
       setTimeout(function () {
         if (!busy) return;
@@ -5485,7 +5486,7 @@
         audio.addEventListener('ended', done);
         audio.addEventListener('error', function () { if (busy) speakIt(); });
         var p = audio.play(); if (p && p.catch) p.catch(function () { if (busy) speakIt(); });
-      }, B.tone === 'squelch' ? 450 : 1600);
+      }, B.tone === 'squelch' || B.tone === 'gavel' ? 650 : 1600);
     });
     led.title = 'on air';
     at.parentNode.insertBefore(g, at.nextSibling);
@@ -7759,6 +7760,318 @@
     return '<div class="fs-strip"><div class="fs-strip-h"><b>' + esc(S.head) + '</b><small>' + esc(S.sub || '') + '</small></div><svg viewBox="0 0 ' + W + ' ' + H + '" class="fs-strip-svg" role="img" aria-label="' + esc(S.alt || S.head) + '">' + grid + rows + tl + mk + '</svg>' + (S.note ? '<div class="fs-strip-note">' + esc(S.note) + '</div>' : '') + '</div>';
   }
 
+  /* =================== 20.02: Prove It to the Council (doubter, station kit, proof meter, station run, council, speed round, print card) =================== */
+  function afterBlock(at) { var n = at.nextElementSibling; return (n && /^(UL|OL)$/.test(n.tagName)) ? n : at; }
+  function placeAfter(g, at) { var ref = afterBlock(at); ref.parentNode.insertBefore(g, ref.nextSibling); }
+
+  /* ---------- Warm-Up: "Convince the doubter" — for each claim, pick the evidence that would convince a doubter; her face reacts
+     (eyebrow for "I just know", a small smile for an observation, a grin for a number); every claim needs its strongest card (20.02) ----------
+     D.doubter = {afterText, kicker, title, todo[], why, name, faces[3], hello, claims:[{id, icon, t, opts:[{t, lvl (0|1|2), react}]}], q, opts, win, clue} */
+  function buildDoubter() {
+    var B = D.doubter; if (!B) return;
+    var at = anchorP(B.afterText); if (!at) { FAILED.push('doubter anchor text not found'); return; }
+    var g = gameShell(B.kicker || 'Warm-Up game', B.title, B.todo, B.why); g.dataset.mod = 'doubter';
+    var st = loadJ('doubter', { ok: {} }), cur = 0, faces = B.faces || ['🤨', '🙂', '😃'];
+    var wrap = el('div', 'fs-dbt-wrap'), who = el('div', 'fs-dbt-who', '<div class="fs-dbt-face" aria-hidden="true">' + faces[0] + '</div><div class="fs-dbt-name">' + esc(B.name || 'The doubter') + '</div><div class="fs-dbt-say">' + esc(B.hello || 'Prove it!') + '</div>');
+    var right = el('div', 'fs-dbt-right'), tabs = el('div', 'fs-in-chips fs-dbt-tabs'), card = el('div', 'fs-dbt-card');
+    B.claims.forEach(function (c, i) { var b = el('button', 'fs-in-chip fs-dbt-tab', c.icon + ' ' + esc(c.short || c.t)); b.type = 'button'; b.dataset.i = i; tabs.appendChild(b); });
+    right.appendChild(tabs); right.appendChild(card); wrap.appendChild(who); wrap.appendChild(right);
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(wrap); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function react(lvl, t) {
+      var f = $('.fs-dbt-face', who); f.textContent = faces[lvl] || faces[0]; $('.fs-dbt-say', who).textContent = t;
+      if (!reduceMotion) { f.classList.remove('bob'); void f.offsetWidth; f.classList.add('bob'); }
+    }
+    function paint() {
+      $$('.fs-dbt-tab', tabs).forEach(function (b, i) { b.classList.toggle('on', i === cur); b.classList.toggle('ok', !!st.ok[B.claims[i].id]); });
+      var c = B.claims[cur];
+      card.innerHTML = '<div class="fs-dbt-claim"><span>' + c.icon + '</span><div><small>' + esc(B.claimWord || 'The claim') + '</small><b>' + esc(c.t) + '</b></div></div><div class="fs-in-k">' + esc(B.pickQ || 'Which evidence would convince her?') + '</div><div class="fs-dbt-opts">' +
+        c.opts.map(function (o, j) { return '<button type="button" class="fs-dbt-opt' + (st.ok[c.id] && o.lvl === 2 ? ' ok' : '') + '" data-j="' + j + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      $$('.fs-dbt-opt', card).forEach(function (b) { b.addEventListener('click', function () {
+        if (st.ok[c.id]) return; var o = c.opts[+b.dataset.j];
+        react(o.lvl, o.react);
+        if (o.lvl < 2) { bounce(b, miss, o.lvl === 1 ? (B.halfLine || 'That’s real evidence! But she wants something she can check herself. Try another card.') : (B.zeroLine || 'She doesn’t buy it. Pick evidence she could check.')); return; }
+        st.ok[c.id] = 1; saveJ('doubter', st); b.classList.add('ok'); miss.classList.remove('show'); SFX.chime(); upd(); paint();
+        var nx = -1; B.claims.some(function (cc, k) { if (!st.ok[cc.id]) { nx = k; return true; } }); if (nx > -1) setTimeout(function () { cur = nx; paint(); }, reduceMotion ? 0 : 1300);
+      }); });
+    }
+    function upd() {
+      var n = B.claims.filter(function (c) { return st.ok[c.id]; }).length;
+      count.textContent = '😃 ' + n + ' of ' + B.claims.length + ' ' + (B.countWord || 'claims proven'); count.classList.toggle('ok', n === B.claims.length);
+      if (n === B.claims.length) askOnce(qh, B.q, B.opts, 'doubter-q', win, B.win, B.clue, 'doubter', miss);
+    }
+    $$('.fs-dbt-tab', tabs).forEach(function (b) { b.addEventListener('click', function () { cur = +b.dataset.i; SFX.blip(); miss.classList.remove('show'); paint(); }); });
+    placeAfter(g, at);
+    B.claims.some(function (c, k) { if (!st.ok[c.id]) { cur = k; return true; } }); paint(); upd();
+    if (B.claims.every(function (c) { return st.ok[c.id]; })) react(2, B.doneSay || 'Okay, okay. Numbers I can check. I believe you!');
+  }
+
+  /* ---------- Lesson Part 1: "Build-a-station kit" — four lab mats with Source / Receiver / Evidence tool slots; drag (or tap, then tap a slot)
+     each part onto its mat; decoys bounce; a mat with a source and receiver but no tool shows NOT READY (20.02) ----------
+     D.stationkit = {afterText, kicker, title, todo[], why, roles:[{k, icon, t}], stations:[{id, icon, t}], parts:[{id, icon, t, st, role, miss}], trayLabel, ready, notReady, empty, q, opts, win, clue} */
+  function buildStationkit() {
+    var K = D.stationkit; if (!K) return;
+    var at = anchorP(K.afterText); if (!at) { FAILED.push('stationkit anchor text not found'); return; }
+    var g = gameShell(K.kicker || 'Part 1 game', K.title, K.todo, K.why); g.dataset.mod = 'stationkit';
+    var st = loadJ('stationkit', { p: {} });
+    var mats = el('div', 'fs-kit-mats'), tray = el('div', 'fs-kit-tray'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    K.stations.forEach(function (s) {
+      var m = el('div', 'fs-kit-mat', '<div class="fs-kit-h"><span>' + s.icon + '</span><b>' + esc(s.t) + '</b><em class="fs-kit-tag"></em></div><div class="fs-kit-slots">' +
+        K.roles.map(function (r) { return '<div class="fs-kit-slot" data-st="' + s.id + '" data-role="' + r.k + '"><small>' + r.icon + ' ' + esc(r.t) + '</small><span class="fs-kit-in"></span></div>'; }).join('') + '</div>');
+      m.dataset.st = s.id; mats.appendChild(m);
+    });
+    tray.innerHTML = '<div class="fs-in-k">' + esc(K.trayLabel || 'Parts (drag one onto a mat, or tap it and then a slot)') + '</div><div class="fs-kit-parts">' + K.parts.map(function (p) { return '<button type="button" class="fs-kit-part" data-id="' + p.id + '"><span>' + p.icon + '</span>' + esc(p.t) + '</button>'; }).join('') + '</div>';
+    g.appendChild(mats); g.appendChild(tray); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function part(id) { return K.parts.filter(function (p) { return p.id === id; })[0]; }
+    function role(k) { return K.roles.filter(function (r) { return r.k === k; })[0]; }
+    function paint(anim) {
+      K.stations.forEach(function (s) {
+        var m = $('.fs-kit-mat[data-st="' + s.id + '"]', mats), have = {};
+        K.parts.forEach(function (p) { if (st.p[p.id] && p.st === s.id) have[p.role] = p; });
+        $$('.fs-kit-slot', m).forEach(function (sl) { var p = have[sl.dataset.role]; $('.fs-kit-in', sl).innerHTML = p ? p.icon + ' ' + esc(p.t) : ''; sl.classList.toggle('full', !!p); });
+        var full = K.roles.every(function (r) { return have[r.k]; }), noTool = have.src && have.rec && !have.tool;
+        var tag = $('.fs-kit-tag', m); tag.textContent = full ? (K.ready || 'READY ✓') : noTool ? (K.notReady || 'NOT READY: no way to collect evidence') : ''; tag.className = 'fs-kit-tag' + (full ? ' ok' : noTool ? ' warn' : '');
+        m.classList.toggle('done', full);
+      });
+      $$('.fs-kit-part', tray).forEach(function (b) { var p = part(b.dataset.id); b.classList.toggle('placed', !!st.p[p.id]); b.style.display = st.p[p.id] ? 'none' : ''; });
+      var n = K.stations.filter(function (s) { return K.roles.every(function (r) { return K.parts.some(function (p) { return st.p[p.id] && p.st === s.id && p.role === r.k; }); }); }).length;
+      count.textContent = '🧪 ' + n + ' of ' + K.stations.length + ' ' + (K.countWord || 'stations ready'); count.classList.toggle('ok', n === K.stations.length);
+      if (n === K.stations.length) askOnce(qh, K.q, K.opts, 'stationkit-q', win, K.win, K.clue, 'stationkit', miss);
+    }
+    function drop(item, slot) {
+      item.classList.remove('sel'); var p = part(item.dataset.id); if (!p || st.p[p.id]) return;
+      if (p.st === 'x') { bounce(item, miss, p.miss || 'That part doesn’t belong at any station today.'); return; }
+      if (p.st !== slot.dataset.st) { bounce(item, miss, p.miss || 'That part belongs at a different station.'); return; }
+      if (p.role !== slot.dataset.role) { bounce(item, miss, (K.roleMiss || 'Right station! But this is the {is}, not the {slot}.').replace('{is}', role(p.role).t.toLowerCase()).replace('{slot}', role(slot.dataset.role).t.toLowerCase())); return; }
+      st.p[p.id] = 1; saveJ('stationkit', st); miss.classList.remove('show'); SFX.chime(); paint(true);
+      if (!reduceMotion) { slot.classList.remove('pop'); void slot.offsetWidth; slot.classList.add('pop'); }
+    }
+    $$('.fs-kit-part', tray).forEach(function (it) { dragDrop(it, function () { return $$('.fs-kit-slot', mats); }, drop); });
+    tapTargets(g, $$('.fs-kit-slot', mats), drop);
+    placeAfter(g, at); paint();
+  }
+
+  /* ---------- Lesson Part 2: "Hands lie + upgrade" — the three-bowls trick (hot / room / cold water: the same middle bowl feels cool to one hand
+     and warm to the other; a thermometer settles it), then upgrade a weak claim with evidence cards until a meter reads PROVEN (20.02) ----------
+     D.proofmeter = {afterText, kicker, title, todo[], why, bowls:{hot, room, cold:{t, temp}}, steps:[btn texts], left, right, thermo, trickWhy, claim, levels[5], need,
+                     pieces:[{id, icon, t, pts, why}], dropHere, q, opts, win, clue} */
+  function buildProofmeter() {
+    var P = D.proofmeter; if (!P) return;
+    var at = anchorP(P.afterText); if (!at) { FAILED.push('proofmeter anchor text not found'); return; }
+    var g = gameShell(P.kicker || 'Part 2 game', P.title, P.todo, P.why); g.dataset.mod = 'proofmeter';
+    var st = loadJ('proofmeter', { step: 0, got: {} }), B = P.bowls; if (st.step === 2) st.step = 3;
+    var bowls = el('div', 'fs-prf-bowls'), btn = el('button', 'fs-btn fs-prf-go'), say = el('div', 'fs-prf-say'), part2 = el('div', 'fs-prf-p2'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    btn.type = 'button';
+    bowls.innerHTML = ['hot', 'room', 'cold'].map(function (k) { var b = B[k]; return '<div class="fs-prf-bowl b-' + k + '" data-k="' + k + '"><div class="fs-prf-hands"></div><div class="fs-prf-water"><span>' + (k === 'hot' ? '♨️' : k === 'cold' ? '🧊' : '💧') + '</span></div><b>' + esc(b.t) + '</b><small class="fs-prf-temp"></small></div>'; }).join('');
+    g.appendChild(el('div', 'fs-lu-lab', esc(P.part1Head || '1. Can your hands be fooled?'))); g.appendChild(bowls); g.appendChild(btn); g.appendChild(say); g.appendChild(part2); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    function hands(k, html) { $('.fs-prf-bowl[data-k="' + k + '"] .fs-prf-hands', bowls).innerHTML = html || ''; }
+    function paintTrick() {
+      ['hot', 'room', 'cold'].forEach(function (k) { hands(k, ''); $('.fs-prf-bowl[data-k="' + k + '"] .fs-prf-temp', bowls).textContent = ''; });
+      var s = st.step;
+      if (s >= 1 && s <= 3) { hands('hot', '<span class="fs-prf-hand">✋<small>' + esc(P.leftWord || 'left hand') + '</small></span>'); hands('cold', '<span class="fs-prf-hand">🤚<small>' + esc(P.rightWord || 'right hand') + '</small></span>'); }
+      if (s >= 4) hands('room', '<span class="fs-prf-hand">✋<small>' + esc(P.left) + '</small></span><span class="fs-prf-hand">🤚<small>' + esc(P.right) + '</small></span>');
+      if (s >= 5) ['hot', 'room', 'cold'].forEach(function (k) { $('.fs-prf-bowl[data-k="' + k + '"] .fs-prf-temp', bowls).textContent = '🌡️ ' + B[k].temp + '°F'; });
+      btn.style.display = s >= 5 ? 'none' : ''; btn.textContent = (s === 2 ? '⏳ ' : '▶ ') + (P.steps[s] || ''); btn.disabled = s === 2;
+      say.innerHTML = s >= 5 ? '<div class="fs-hs-card"><span class="fs-hs-n">🌡️</span><div><b>' + esc(P.thermo) + '</b>' + esc(P.trickWhy) + '</div></div>' : (s === 4 ? '<div class="fs-hs-card"><span class="fs-hs-n">🤯</span><div><b>' + esc(P.sameBowl || 'Same water. Two different answers!') + '</b>' + esc(P.trickAsk || 'Which hand is right?') + '</div></div>' : '');
+      if (s >= 5) paint2();
+    }
+    btn.addEventListener('click', function () {
+      if (st.step === 1) { st.step = 2; saveJ('proofmeter', st); paintTrick(); setTimeout(function () { st.step = 3; saveJ('proofmeter', st); SFX.blip(); paintTrick(); }, reduceMotion ? 300 : 2200); return; }
+      if (st.step === 2) return;
+      st.step++; saveJ('proofmeter', st); if (st.step === 4) SFX.pop(); else if (st.step === 5) SFX.chime(); else SFX.blip(); paintTrick();
+    });
+    function score() { var n = 0; P.pieces.forEach(function (p) { if (st.got[p.id]) n += p.pts; }); return Math.min(n, P.levels.length - 1); }
+    function paint2() {
+      if (!part2.dataset.on) {
+        part2.dataset.on = '1';
+        part2.innerHTML = '<div class="fs-lu-lab">' + esc(P.part2Head || '2. Upgrade the evidence') + '</div><div class="fs-prf-row"><div class="fs-prf-claim"><small>' + esc(P.claimWord || 'Claim') + '</small><b>' + esc(P.claim) + '</b><ul class="fs-prf-list"></ul><div class="fs-prf-drop">' + esc(P.dropHere || 'Drop evidence here') + '</div></div>' +
+          '<div class="fs-prf-meter"><div class="fs-prf-bar"><i></i></div><div class="fs-prf-lv"></div></div></div><div class="fs-prf-pieces">' +
+          P.pieces.map(function (p) { return '<button type="button" class="fs-prf-piece" data-id="' + p.id + '"><span>' + p.icon + '</span>' + esc(p.t) + '</button>'; }).join('') + '</div>';
+        var claim = $('.fs-prf-claim', part2);
+        function drop(item) {
+          item.classList.remove('sel'); var p = P.pieces.filter(function (x) { return x.id === item.dataset.id; })[0]; if (!p || st.got[p.id]) return;
+          if (!p.pts) { bounce(item, miss, p.why); return; }
+          st.got[p.id] = 1; saveJ('proofmeter', st); miss.classList.remove('show'); tone(500 + score() * 120, 0, 0.18, 'triangle', 0.05); paintMeter(true);
+        }
+        $$('.fs-prf-piece', part2).forEach(function (it) { dragDrop(it, function () { return [claim]; }, drop); it.addEventListener('click', function () { if (it.classList.contains('sel')) drop(it); }); });
+        claim.addEventListener('click', function () { var s = $('.fs-prf-piece.sel', part2); if (s) drop(s); });
+      }
+      paintMeter(false);
+    }
+    function paintMeter(anim) {
+      var s = score(), top = P.levels.length - 1;
+      $('.fs-prf-bar i', part2).style.height = (s / top * 100) + '%'; $('.fs-prf-lv', part2).textContent = P.levels[s];
+      $('.fs-prf-meter', part2).classList.toggle('max', s >= top);
+      $('.fs-prf-list', part2).innerHTML = P.pieces.filter(function (p) { return st.got[p.id]; }).map(function (p) { return '<li><span>' + p.icon + '</span>' + esc(p.t) + '<em>' + esc(p.why) + '</em></li>'; }).join('');
+      $$('.fs-prf-piece', part2).forEach(function (b) { b.style.display = st.got[b.dataset.id] ? 'none' : ''; });
+      if (s >= top) askOnce(qh, P.q, P.opts, 'proofmeter-q', win, P.win, P.clue, 'proofmeter', miss);
+    }
+    placeAfter(g, at); paintTrick();
+  }
+
+  /* ---------- Lesson Part 4: "Run the stations" — four virtual stations (a model); pick a condition, then read the real tool by tapping the
+     matching number (thermometer, ruler under a light spot, a rice-jump ruler, a light meter); readings fill a station log (20.02) ----------
+     D.stationrun = {afterText, kicker, title, todo[], why, model, readQ, logLabel, near, stations:[{id, icon, t, kind ('therm'|'ruler'|'vruler'|'meter'), safety,
+                     src, rec, obs, unit, min, max, step, tol, conds:[{k, btn, val, note}]}], q, opts, win, clue} */
+  function buildStationrun() {
+    var R = D.stationrun; if (!R) return;
+    var at = anchorP(R.afterText); if (!at) { FAILED.push('stationrun anchor text not found'); return; }
+    var g = gameShell(R.kicker || 'Part 4 game', R.title, R.todo, R.why); g.dataset.mod = 'stationrun';
+    var st = loadJ('stationrun', { r: {} }), cur = 0, cond = null;
+    var tabs = el('div', 'fs-in-chips fs-srn-tabs'), panel = el('div', 'fs-srn-panel'), log = el('div', 'fs-srn-log'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    R.stations.forEach(function (s, i) { var b = el('button', 'fs-in-chip fs-srn-tab', s.icon + ' ' + esc(s.t)); b.type = 'button'; b.dataset.i = i; tabs.appendChild(b); });
+    g.appendChild(tabs); g.appendChild(panel); g.appendChild(miss); g.appendChild(log); g.appendChild(qh); g.appendChild(win);
+    function key(s, c) { return s.id + ':' + c.k; }
+    function view(s, c) {
+      var v = c ? c.val : null, W = 320, H = 200, out = '<svg viewBox="0 0 ' + W + ' ' + H + '" class="fs-srn-svg" role="img" aria-label="' + esc(s.t + ': ' + (c ? c.btn : '')) + '">';
+      if (s.kind === 'therm') {
+        var y = function (t) { return 170 - (t - s.min) / (s.max - s.min) * 150; };
+        out += '<path d="M60 150 h80 l-6 40 h-68 z" fill="#E9F4FB" stroke="#8FB3C8" stroke-width="3"/><path d="M64 160 h72 l-4 28 h-64z" fill="' + (c && c.k === 'b' ? '#CFE6F5' : '#F8D9B5') + '"/>';
+        out += '<rect x="196" y="15" width="22" height="160" rx="11" fill="#fff" stroke="#8A9AA8" stroke-width="2"/><circle cx="207" cy="182" r="14" fill="#E8636B"/>';
+        if (v != null) out += '<rect x="202" y="' + y(v) + '" width="10" height="' + (182 - y(v)) + '" rx="5" fill="#E8636B"/>';
+        for (var t = s.min; t <= s.max; t += 2) { var yy = y(t); out += '<line x1="218" x2="' + (t % 10 ? 226 : 232) + '" y1="' + yy + '" y2="' + yy + '" stroke="#5B6B78"/>' + (t % 10 ? '' : '<text x="238" y="' + (yy + 4) + '" class="fs-srn-tk">' + t + '°</text>'); }
+        out += '<line x1="140" y1="140" x2="200" y2="110" stroke="#8A9AA8" stroke-width="2" stroke-dasharray="3 3"/>';
+      } else if (s.kind === 'ruler') {
+        var px = 22;
+        out += '<rect x="10" y="20" width="300" height="110" fill="#fff" stroke="#C9D6E0"/><text x="16" y="36" class="fs-srn-tk">paper</text>';
+        if (v != null) out += '<circle cx="' + (20 + v * px / 2) + '" cy="75" r="' + (v * px / 2) + '" fill="#FFF0A8" opacity="' + (c.k === 'b' ? 0.55 : 0.95) + '" stroke="#E0B000"/>';
+        out += '<rect x="10" y="140" width="300" height="40" fill="#F7E7B5" stroke="#B8A060"/>';
+        for (var cm = 0; cm <= 13; cm++) out += '<line x1="' + (20 + cm * px) + '" x2="' + (20 + cm * px) + '" y1="140" y2="' + (cm % 5 ? 152 : 158) + '" stroke="#5B4A20"/><text x="' + (20 + cm * px) + '" y="172" text-anchor="middle" class="fs-srn-tk">' + cm + '</text>';
+        if (v != null) out += '<line x1="20" x2="20" y1="75" y2="140" stroke="#B8A060" stroke-dasharray="3 3"/><line x1="' + (20 + v * px) + '" x2="' + (20 + v * px) + '" y1="75" y2="140" stroke="#B8A060" stroke-dasharray="3 3"/>';
+      } else if (s.kind === 'vruler') {
+        var by = 160, pc = 22;
+        out += '<ellipse cx="120" cy="' + by + '" rx="80" ry="12" fill="#C8453D"/><rect x="40" y="' + by + '" width="160" height="30" fill="#A8352F"/><ellipse cx="120" cy="' + by + '" rx="80" ry="12" fill="#F3E9D2" stroke="#C8B48A"/>';
+        if (v != null) out += '<g class="fs-srn-rice"><ellipse cx="105" cy="' + (by - 4 - v * pc) + '" rx="5" ry="2.6" fill="#fff" stroke="#BBB"/><ellipse cx="128" cy="' + (by - 6 - v * pc * 0.9) + '" rx="5" ry="2.6" fill="#fff" stroke="#BBB" transform="rotate(30 128 ' + (by - 6 - v * pc * 0.9) + ')"/><ellipse cx="140" cy="' + (by - 3 - v * pc) + '" rx="5" ry="2.6" fill="#fff" stroke="#BBB"/></g>';
+        out += '<rect x="230" y="20" width="36" height="' + (by - 20) + '" fill="#F7E7B5" stroke="#B8A060"/>';
+        for (var h = 0; h <= 6; h += 0.5) { var hy = by - 4 - h * pc; out += '<line x1="230" x2="' + (h % 1 ? 240 : 246) + '" y1="' + hy + '" y2="' + hy + '" stroke="#5B4A20"/>' + (h % 1 ? '' : '<text x="252" y="' + (hy + 4) + '" class="fs-srn-tk">' + h + '</text>'); }
+        if (v != null) out += '<line x1="145" x2="230" y1="' + (by - 4 - v * pc) + '" y2="' + (by - 4 - v * pc) + '" stroke="#B8A060" stroke-dasharray="3 3"/>';
+      } else {
+        var lit = v > 0, ang = function (x) { return -150 + (x - s.min) / (s.max - s.min) * 120; };
+        out += '<circle cx="70" cy="70" r="26" fill="' + (lit ? '#FFE066' : '#E9EDF2') + '" stroke="#9AA5B1" stroke-width="2"/>' + (lit ? '<circle cx="70" cy="70" r="44" fill="#FFE066" opacity=".3"/>' : '') + '<rect x="62" y="94" width="16" height="14" fill="#9AA5B1"/>';
+        out += '<rect x="20" y="130" width="70" height="34" rx="6" fill="#2E3A4A"/><text x="55" y="152" text-anchor="middle" class="fs-srn-bt">1.5 V</text><path d="M62 108 C62 120 40 120 40 130 M78 108 C78 125 80 125 80 130" stroke="#C0392B" stroke-width="3" fill="none"/>' + (c && c.k === 'b' ? '<g><line x1="74" y1="118" x2="96" y2="104" stroke="#C0392B" stroke-width="3"/><text x="100" y="104" class="fs-srn-tk">unhooked</text></g>' : '');
+        out += '<g transform="translate(225 120)"><rect x="-80" y="-80" width="160" height="110" rx="14" fill="#2E3A4A"/><path d="M-60 0 A60 60 0 0 1 60 0" fill="none" stroke="#B9C2CC" stroke-width="2"/>';
+        for (var m = s.min; m <= s.max; m += s.step) { var a = ang(m) * Math.PI / 180, x1 = Math.cos(a) * 60, y1 = Math.sin(a) * 60; out += '<line x1="' + x1 * 0.85 + '" y1="' + y1 * 0.85 + '" x2="' + x1 + '" y2="' + y1 + '" stroke="#fff"/>' + (m % (s.major || 100) ? '' : '<text x="' + x1 * 1.18 + '" y="' + (y1 * 1.18 + 4) + '" text-anchor="middle" class="fs-srn-tkw">' + m + '</text>'); }
+        if (v != null) { var a2 = ang(v) * Math.PI / 180; out += '<line x1="0" y1="0" x2="' + Math.cos(a2) * 54 + '" y2="' + Math.sin(a2) * 54 + '" stroke="#FF6B5B" stroke-width="3" stroke-linecap="round"/>'; }
+        out += '<circle r="5" fill="#fff"/><text y="22" text-anchor="middle" class="fs-srn-tkw">' + esc(s.unit) + '</text></g>';
+      }
+      return out + '<text x="6" y="196" class="fs-srn-model">' + esc(R.model || 'a model') + '</text></svg>';
+    }
+    function paint() {
+      var s = R.stations[cur];
+      $$('.fs-srn-tab', tabs).forEach(function (b, i) { var ss = R.stations[i]; b.classList.toggle('on', i === cur); b.classList.toggle('ok', ss.conds.every(function (c) { return st.r[key(ss, c)] != null; })); });
+      var c = cond ? s.conds.filter(function (x) { return x.k === cond; })[0] : null;
+      var vals = []; for (var x = s.min; x <= s.max + 1e-9; x += s.step) vals.push(Math.round(x * 10) / 10);
+      panel.innerHTML = '<div class="fs-srn-top"><div class="fs-srn-vis">' + view(s, c) + '</div><div class="fs-srn-side"><div class="fs-srn-parts"><span>📤 <b>' + esc(s.src) + '</b></span><span>📥 <b>' + esc(s.rec) + '</b></span></div>' +
+        '<div class="fs-in-k">' + esc(R.condQ || 'Run it:') + '</div><div class="fs-srn-conds">' + s.conds.map(function (cc) { var got = st.r[key(s, cc)]; return '<button type="button" class="fs-btn alt fs-srn-cond' + (cc.k === cond ? ' on' : '') + (got != null ? ' ok' : '') + '" data-k="' + cc.k + '">' + esc(cc.btn) + (got != null ? ' ✓' : '') + '</button>'; }).join('') + '</div>' +
+        (c ? '<div class="fs-srn-note">' + esc(c.note) + '</div>' : '') + '<div class="fs-srn-safe">⚠️ ' + esc(s.safety) + '</div></div></div>' +
+        (c ? '<div class="fs-in-k">' + esc((R.readQ || 'Read the tool. Tap the number it shows ({unit}).').replace('{unit}', s.unit)) + '</div><div class="fs-srn-read">' + vals.map(function (x) { return '<button type="button" class="fs-srn-n" data-v="' + x + '">' + x + '</button>'; }).join('') + '</div>' : '<div class="fs-srn-hint">' + esc(R.pickLine || 'Press a button above to run the station.') + '</div>');
+      $$('.fs-srn-cond', panel).forEach(function (b) { b.addEventListener('click', function () { cond = b.dataset.k; miss.classList.remove('show'); SFX.whoosh(); paint(); }); });
+      $$('.fs-srn-n', panel).forEach(function (b) { b.addEventListener('click', function () {
+        var x = +b.dataset.v; if (!c) return;
+        if (Math.abs(x - c.val) > (s.tol || 0) + 1e-9) { bounce(b, miss, (x < c.val ? (R.lowLine || 'A little low. Look again where the tool points.') : (R.highLine || 'A little high. Look again where the tool points.'))); return; }
+        st.r[key(s, c)] = x; saveJ('stationrun', st); miss.classList.remove('show'); SFX.chime(); b.classList.add('ok');
+        var nx = s.conds.filter(function (cc) { return st.r[key(s, cc)] == null; })[0];
+        cond = nx ? nx.k : null; setTimeout(function () { paint(); paintLog(); }, reduceMotion ? 0 : 450);
+      }); });
+    }
+    function paintLog() {
+      log.innerHTML = '<div class="fs-in-k">' + esc(R.logLabel || 'My station log') + '</div><table class="fs-srn-table"><tr><th>' + esc(R.colSt || 'Station') + '</th><th>' + esc(R.colObs || 'What I observed') + '</th><th>' + esc(R.colMeas || 'What I measured') + '</th></tr>' +
+        R.stations.map(function (s) { var done = s.conds.every(function (c) { return st.r[key(s, c)] != null; });
+          return '<tr class="' + (done ? 'ok' : '') + '"><td>' + s.icon + ' ' + esc(s.t) + '</td><td>' + (done ? esc(s.obs) : '—') + '</td><td>' + s.conds.map(function (c) { var v = st.r[key(s, c)]; return v != null ? esc(c.btn) + ': <b>' + v + ' ' + esc(s.unit) + '</b>' : ''; }).filter(Boolean).join('<br>') + '</td></tr>'; }).join('') + '</table>';
+      if (R.stations.every(function (s) { return s.conds.every(function (c) { return st.r[key(s, c)] != null; }); })) askOnce(qh, R.q, R.opts, 'stationrun-q', win, R.win, R.clue, 'stationrun', miss);
+    }
+    $$('.fs-srn-tab', tabs).forEach(function (b) { b.addEventListener('click', function () { cur = +b.dataset.i; cond = null; SFX.blip(); miss.classList.remove('show'); paint(); }); });
+    placeAfter(g, at); paint(); paintLog();
+  }
+
+  /* ---------- After the case: "Present to the council" — the doubter raises one objection per station; answer with your observation or your
+     measurement (the measurement wins); her belief meter fills, then stamp the work order APPROVED, with a real photo (20.02) ----------
+     D.council = {after, kicker, title, todo[], lockLine, name, icon, meter[5], objections:[{id, icon, t, obs, meas, weak, strong}], order:{head, rows:[[k,v]], stampBtn, stamp, sign, img, alt, cap, credit}, win} */
+  function buildCouncil() {
+    var C = D.council; if (!C) return;
+    var host = $(C.after || '.fs-solve'); if (!host) { FAILED.push('council: no anchor'); return; }
+    var g = gameShell(C.kicker || 'After the case', C.title, C.todo, C.why); g.dataset.mod = 'council';
+    var st = loadJ('council', { ok: {}, stamped: 0 });
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(C.lockLine || 'Crack the case first. Then the council meets.') + '</span>');
+    var body = el('div', 'fs-cnl-body'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(miss); g.appendChild(win);
+    host.parentNode.insertBefore(g, host.nextSibling);
+    function n() { return C.objections.filter(function (o) { return st.ok[o.id]; }).length; }
+    function paint() {
+      var solved = !!store('solved'); g.classList.toggle('locked', !solved); lock.style.display = solved ? 'none' : ''; body.style.display = solved ? '' : 'none'; if (!solved) return;
+      var k = n(), top = C.meter.length - 1, lvl = Math.round(k / C.objections.length * top), o = C.objections.filter(function (x) { return !st.ok[x.id]; })[0];
+      body.innerHTML = '<div class="fs-cnl-top"><div class="fs-cnl-who"><span class="fs-cnl-ic">' + (C.icon || '🏛️') + '</span><b>' + esc(C.name) + '</b></div><div class="fs-cnl-meter"><div class="fs-cnl-track"><i style="width:' + (lvl / top * 100) + '%"></i></div><div class="fs-cnl-lv">' + esc(C.meter[lvl]) + '</div></div></div>' +
+        (o ? '<div class="fs-cnl-ob"><span>' + o.icon + '</span><p>“' + esc(o.t) + '”</p></div><div class="fs-in-k">' + esc(C.answerQ || 'Answer her with evidence from your station log:') + '</div><div class="fs-cnl-cards"><button type="button" class="fs-cnl-card" data-w="obs"><small>👀 ' + esc(C.obsWord || 'What I observed') + '</small>' + esc(o.obs) + '</button><button type="button" class="fs-cnl-card" data-w="meas"><small>📏 ' + esc(C.measWord || 'What I measured') + '</small>' + esc(o.meas) + '</button></div>' : '') +
+        '<div class="fs-cnl-done">' + C.objections.filter(function (x) { return st.ok[x.id]; }).map(function (x) { return '<span>' + x.icon + ' ' + esc(x.strong) + '</span>'; }).join('') + '</div>' +
+        (!o ? orderHTML() : '');
+      $$('.fs-cnl-card', body).forEach(function (b) { b.addEventListener('click', function () {
+        if (b.dataset.w === 'obs') { bounce(b, miss, o.weak); return; }
+        st.ok[o.id] = 1; saveJ('council', st); miss.classList.remove('show'); SFX.chime(); paint();
+      }); });
+      var sb = $('.fs-cnl-stampbtn', body); if (sb) sb.addEventListener('click', function () { st.stamped = 1; saveJ('council', st); SFX.stamp(); paint(); if (!win.classList.contains('show')) { win.innerHTML = esc(C.win); win.classList.add('show'); SFX.win(); shootStar(true); } });
+      if (st.stamped && !win.classList.contains('show')) { win.innerHTML = esc(C.win); win.classList.add('show'); }
+    }
+    function orderHTML() {
+      var O = C.order;
+      return '<div class="fs-cnl-order"><div class="fs-cnl-oh">' + esc(O.head) + '</div><dl>' + O.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' +
+        (st.stamped ? '<div class="fs-cnl-stamp' + (reduceMotion ? '' : ' hit') + '">' + esc(O.stamp || 'APPROVED') + '</div><div class="fs-cnl-sign">' + esc(O.sign || '') + '</div>' : '<button type="button" class="fs-btn fs-cnl-stampbtn">🟥 ' + esc(O.stampBtn || 'Stamp it') + '</button>') + '</div>' +
+        (st.stamped && O.img ? '<figure class="fs-cnl-photo"><img alt="' + esc(O.alt) + '" src="' + esc(O.img) + '"><figcaption>' + esc(O.cap) + '</figcaption></figure><details class="fs-credit fs-credit-fold"><summary>📷 Photo credit</summary>' + esc(O.credit) + '</details>' : '');
+    }
+    document.addEventListener('fs:solved', paint);
+    paint();
+  }
+
+  /* ---------- Bonus after the case: "Evidence Detective" speed round — one claim at a time, tap WEAK or STRONG before the timer ends;
+     stars for the score, best score saved (20.02) ----------
+     D.speedround = {after, kicker, title, todo[], why, lockLine, secs, items:[{t, k:'w'|'s', why}], startBtn, weakBtn, strongBtn, againBtn, lines:{…}} */
+  function buildSpeedround() {
+    var S = D.speedround; if (!S) return;
+    var host = $(S.after); if (!host) { FAILED.push('speedround: no anchor'); return; }
+    var g = gameShell(S.kicker || 'Bonus game', S.title, S.todo, S.why); g.dataset.mod = 'speedround';
+    var best = +(store('speed-best') || 0), L = S.lines || {};
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(S.lockLine || 'Crack the case first. Then this game opens.') + '</span>');
+    var box = el('div', 'fs-spd-box', '<div class="fs-spd-hud"><span class="fs-spd-time">⏱ ' + S.secs + ' s</span><span class="fs-spd-score">0</span><span class="fs-spd-best"></span></div><div class="fs-spd-card"></div><div class="fs-spd-btns"><button type="button" class="fs-btn fs-spd-w">👎 ' + esc(S.weakBtn || 'WEAK') + '</button><button type="button" class="fs-btn fs-spd-s">💪 ' + esc(S.strongBtn || 'STRONG') + '</button></div><div class="fs-spd-why"></div><button type="button" class="fs-btn alt fs-spd-go">▶ ' + esc(S.startBtn || 'Start') + '</button>');
+    g.appendChild(lock); g.appendChild(box); host.parentNode.insertBefore(g, host.nextSibling);
+    var card = $('.fs-spd-card', box), why = $('.fs-spd-why', box), tEl = $('.fs-spd-time', box), sEl = $('.fs-spd-score', box), bW = $('.fs-spd-w', box), bS = $('.fs-spd-s', box), go = $('.fs-spd-go', box);
+    var order = [], i = 0, score = 0, left = 0, timer = null, on = false;
+    function showBest() { $('.fs-spd-best', box).textContent = best ? (L.best || 'Best') + ': ' + best + '/' + S.items.length : ''; }
+    function lockIt() { var ok = !!store('solved'); lock.style.display = ok ? 'none' : ''; box.style.display = ok ? '' : 'none'; }
+    function next() { if (i >= order.length) return end(); card.textContent = order[i].t; card.className = 'fs-spd-card'; }
+    function end() {
+      on = false; clearInterval(timer); bW.disabled = bS.disabled = true; go.style.display = ''; go.textContent = '↺ ' + (S.againBtn || 'Play again');
+      var stars = score >= (S.three || 9) ? 3 : score >= (S.two || 7) ? 2 : score >= (S.one || 5) ? 1 : 0;
+      card.className = 'fs-spd-card end'; card.innerHTML = '<b>' + score + ' / ' + order.length + '</b><span class="fs-spd-stars">' + '⭐'.repeat(stars) + '☆'.repeat(3 - stars) + '</span><small>' + esc(stars === 3 ? (L.three || 'Evidence Detective, first class!') : stars ? (L.some || 'Nice work! Play again for more stars.') : (L.none || 'Try again: look for numbers someone else could check.')) + '</small>';
+      if (score > best) { best = score; store('speed-best', String(best)); } showBest(); if (stars) SFX.win();
+    }
+    function pick(k) {
+      if (!on) return; var it = order[i], ok = it.k === k;
+      if (ok) { score++; sEl.textContent = score; tone(880, 0, 0.12, 'triangle', 0.05); why.textContent = ''; }
+      else { SFX.thud(); why.textContent = '🔎 ' + it.why; }
+      card.classList.add(ok ? 'right' : 'wrong'); i++; setTimeout(next, ok ? 250 : 900);
+    }
+    bW.addEventListener('click', function () { pick('w'); }); bS.addEventListener('click', function () { pick('s'); });
+    go.addEventListener('click', function () {
+      order = S.items.slice().sort(function () { return Math.random() - 0.5; }); i = 0; score = 0; left = S.secs; on = true; sEl.textContent = '0'; why.textContent = '';
+      go.style.display = 'none'; bW.disabled = bS.disabled = false; tEl.textContent = '⏱ ' + left + ' s'; next(); SFX.blip();
+      clearInterval(timer); timer = setInterval(function () { left--; tEl.textContent = '⏱ ' + left + ' s'; if (left <= 0) end(); }, 1000);
+    });
+    bW.disabled = bS.disabled = true; card.textContent = S.ready || 'Press Start. Then tap WEAK or STRONG for each claim.'; showBest();
+    document.addEventListener('fs:solved', lockIt); lockIt();
+  }
+
+  /* ---------- A printable blank station report (20.02): a button opens a print-ready page. D.printcard = {after, btn, head, sub, rows[], note} ---------- */
+  function buildPrintcard() {
+    var P = D.printcard; if (!P) return;
+    var host = $(P.after); if (!host) { FAILED.push('printcard: no anchor'); return; }
+    var w = fsOnly(el('div', 'fs-prc', '<button type="button" class="fs-btn alt fs-prc-btn">🖨 ' + esc(P.btn || 'Print a station report') + '</button><small>' + esc(P.note || '') + '</small>'));
+    host.parentNode.insertBefore(w, host.nextSibling);
+    $('.fs-prc-btn', w).addEventListener('click', function () {
+      var html = '<!doctype html><html><head><meta charset="utf-8"><title>' + esc(P.head) + '</title><style>body{font-family:Arial,sans-serif;margin:32px;color:#222}h1{font-size:24px;margin:0 0 4px}p.s{margin:0 0 18px;color:#555}.r{border:2px solid #333;border-radius:8px;padding:10px 12px;margin:0 0 12px;min-height:56px}.r b{display:block;font-size:14px;margin-bottom:28px}.n{font-size:13px;color:#555;margin-top:18px}</style></head><body><h1>' + esc(P.head) + '</h1><p class="s">' + esc(P.sub || '') + '</p>' +
+        P.rows.map(function (r) { return '<div class="r"><b>' + esc(r) + '</b></div>'; }).join('') + '<p class="n">Name: ____________________ &nbsp; Date: __________</p></body></html>';
+      var win = window.open('', '_blank'); if (!win) return; win.document.write(html); win.document.close(); setTimeout(function () { try { win.print(); } catch (e) {} }, 300);
+    });
+  }
+
   function init() {
     if (/[?&]review\b/.test(location.search)) html.classList.add('fs-review');
     guard('tabs', trackTabs);
@@ -7846,6 +8159,10 @@
     guard('blockpath', buildBlockpath);
     guard('heatflow', buildHeatflow);
     guard('stormwatch', buildStormwatch);
+    guard('doubter', buildDoubter);
+    guard('stationkit', buildStationkit);
+    guard('proofmeter', buildProofmeter);
+    guard('stationrun', buildStationrun);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
@@ -7854,11 +8171,14 @@
     guard('quiz', buildQuiz);
     guard('solve', buildSolve);
     guard('permit', buildPermit);
+    guard('council', buildCouncil);
+    guard('speedround', buildSpeedround);
     guard('bullseye', buildBullseye);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);
     guard('inputs', buildInputs);
+    guard('printcard', buildPrintcard);
     guard('specimen', buildSpecimen);
     guard('lens', buildWordLens);
     guard('slots', placeSlots);

@@ -1,0 +1,258 @@
+{
+ "slots": {
+  "welcome": {
+   "label": "Welcome · prove it to the council",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "📝 Councilor Ruiz’s note",
+     "tag": "CASE FILE 20, PART 2",
+     "title": "Prove It to the Council",
+     "col": "#1F7F86",
+     "body": "“No money for a lightning rod unless you PROVE energy moves, with evidence I can check myself.”"
+    },
+    {
+     "label": "🔎 The case question",
+     "tag": "A TOUGH DOUBTER",
+     "title": "What evidence will convince her?",
+     "col": "#C8553D",
+     "body": "Today we collect evidence she can check."
+    }
+   ],
+   "script": "(Hold up a mug.) This mug is warm. Trust me! … Do you believe me? Why not?\n\n[ON SCREEN: Councilor Ruiz’s note]\nCouncilor Ruiz doesn’t believe Sam’s readings from the storm. She wants evidence she can check herself.\n\n[ON SCREEN: The case question]\nLet’s give her some. Press Listen on Sam’s walkie-talkie, right below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · convince the doubter (Clue 1)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🤨 Prove it!",
+     "tag": "LIVE DEMO",
+     "title": "Which would convince you?",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "🤞",
+       "“I just know.”"
+      ],
+      [
+       "👀",
+       "“I can see steam.”"
+      ],
+      [
+       "🌡️",
+       "“The thermometer reads 130°F.”"
+      ]
+     ]
+    }
+   ],
+   "script": "(Raise one eyebrow like a doubter.) I’m a doubter today. Convince me!\n\n[ON SCREEN: Prove it!]\nWhich one would convince YOU? Show me one finger, two or three. Most of you picked the number. Why? Because you could check it yourself. Now convince Councilor Ruiz. Press Listen."
+  },
+  "part1": {
+   "label": "Part 1 · build-a-station kit (Clue 2)",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🧪 Every station needs",
+     "tag": "PART 1 GAME",
+     "title": "Three parts",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "📤",
+       "A source"
+      ],
+      [
+       "📥",
+       "A receiver"
+      ],
+      [
+       "📏",
+       "An evidence tool"
+      ]
+     ]
+    }
+   ],
+   "script": "(Hold up a flashlight, then a sheet of paper, then a ruler.) Source… receiver… and a tool to measure.\n\n[ON SCREEN: Every station needs]\nBuild all four stations. Careful: two parts don’t belong anywhere. Press Listen."
+  },
+  "part2": {
+   "label": "Part 2 · hands lie, numbers don’t (Clue 3)",
+   "length": "40–50 s",
+   "want": false,
+   "parts": [
+    {
+     "label": "✋ The three bowls",
+     "tag": "TRY IT AT HOME",
+     "title": "Can your hands be fooled?",
+     "col": "#C8553D",
+     "rows": [
+      [
+       "♨️",
+       "Warm tap water"
+      ],
+      [
+       "💧",
+       "Room-temperature water"
+      ],
+      [
+       "🧊",
+       "Ice water"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: The three bowls]\nWith an adult, you can try this at home with warm tap water. One hand warm, one hand cold, then both in the middle. Your hands will argue! Press Listen."
+  },
+  "explore": {
+   "label": "Part 4 · run the stations (Clue 4)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "📋 Run all four",
+     "tag": "PART 4 GAME",
+     "title": "Read the tool",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "☕",
+       "Thermometer"
+      ],
+      [
+       "🔦",
+       "Ruler under the light spot"
+      ],
+      [
+       "🥁",
+       "Ruler beside the drum"
+      ],
+      [
+       "🔋",
+       "Light meter"
+      ]
+     ]
+    }
+   ],
+   "script": "(Squint at a ruler, then tap a number with your finger.) Scientists don’t guess. They read the tool.\n\n[ON SCREEN: Run all four]\nRun each station twice, then tap the number the tool shows. Every number goes into your station log, and you’ll need it for the council. Press Listen."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔓 Crack the case",
+     "tag": "TOP OF THE ASSIGNMENT",
+     "title": "What will convince her?",
+     "col": "#1F7F86",
+     "body": "Then present your evidence to the council."
+    },
+    {
+     "label": "✍️ Your case report",
+     "tag": "WHAT TO WRITE",
+     "title": "Three places to write",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "Part B",
+       "Two short answers"
+      ],
+      [
+       "Part C",
+       "Two station reports"
+      ],
+      [
+       "CER",
+       "Claim, evidence, reasoning"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nYou have four clues. Crack the case, then stand up in front of the council and answer Councilor Ruiz.\n\n[ON SCREEN: Your case report]\nThen write your case report: two short answers, two station reports and your CER. Press Listen."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💬 The claim",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "A classmate says…",
+     "col": "#C8553D",
+     "body": "“You can’t really prove that energy moved. You just have to trust it.”"
+    },
+    {
+     "label": "🧩 The planner",
+     "tag": "PLAN BEFORE YOU WRITE",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "1",
+       "Tap I agree or I disagree."
+      ],
+      [
+       "2",
+       "Tap two pieces of evidence."
+      ],
+      [
+       "3",
+       "You write the reasoning."
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: The claim]\nJust trust it? Hmm. Think about your thermometer and your rice ruler.\n\nThere’s no wrong side, as long as you prove it.\n\n[ON SCREEN: The planner]\nTap your side and two facts, then explain how they prove your claim. Try starting with “This shows that…” Press Listen."
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "30–40 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "rod",
+     "label": "⚡ A real lightning rod"
+    },
+    {
+     "label": "📋 Your specimen",
+     "tag": "FIELD NOTEBOOK",
+     "title": "The approved work order",
+     "col": "#1F7F86",
+     "body": "Finish the checklist to stamp CASE CLOSED."
+    },
+    {
+     "label": "➡ Next week",
+     "tag": "LESSON 21.01",
+     "title": "What happens when objects collide?",
+     "col": "#2D7AA6",
+     "body": "Crashes, bumps and where the energy goes."
+    }
+   ],
+   "script": "[ON SCREEN: A real lightning rod]\nCase closed! Your evidence got the pier its lightning rod, just like this one.\n\n[ON SCREEN: Your specimen]\nFinish your checklist, and the approved work order goes in your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next week]\nNext week, things start crashing! Press Listen for Sam’s last word."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s",
+   "want": false,
+   "parts": [],
+   "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  }
+ },
+ "pics": {
+  "rod": {
+   "src": "images/20-02-lightning-rod.jpg",
+   "cap": "A real lightning rod on a roof in LaPlace, Louisiana (Infrogmation of New Orleans, CC BY-SA 4.0)"
+  }
+ },
+ "other": [
+  "vocab",
+  "lesson",
+  "partb",
+  "partc"
+ ]
+}

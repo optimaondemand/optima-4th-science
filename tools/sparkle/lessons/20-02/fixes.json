@@ -1,0 +1,222 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for two station reports",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🧪 Part C &mdash; Two Station Reports"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (now two station reports, typed on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick two stations from today. For each one, write the source, the receiver, what you observed, what you measured and your claim.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "energy transfer is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard: 4-PS3-2 is “energy can be transferred by sound, light, heat and electric currents” (4-ESS3-1 is about energy resources)",
+  "old": "<div class=\"info-value\">4-ESS3-1 · TEKS 4.8(B)</div>",
+  "new": "<div class=\"info-value\">4-PS3-2 · TEKS 4.8(B)</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the AI station picture (smoke rising off the battery reads as a short or a hazard; an 85°F cup steaming hard) and the Key Concept, Stop & Reason, tap diagram (its electrical “time how long the bulb stays bright” would take hours), Observe & Reason, the weather-station fact, the Solar Energy Center callout and Go Deeper are gone (lean); Build-a-station kit replaces the picture and the diagram, and the stations (with safety lines: warm tap water, one AA battery, never a wall outlet) run in Part 4. Next button goes to Self-Check",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">🧪 Four Classroom Energy Stations</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Run the Stations</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Now run all four stations yourself. Do something to each source, then read the tool. Every number you read goes into your station log.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 5 pointed at the removed diagram",
+  "old": "Pick ONE station from the diagram (heat, light, sound, or electrical).",
+  "new": "Pick ONE station from today (heat, light, sound, or electrical)."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll have done your own investigation — running four small \"stations\" — and recorded evidence for each form of energy transfer.",
+  "new": "Keep this question in mind. By the end, you’ll run four small stations and collect evidence that energy moved at each one."
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up now asks how to PROVE it (typed on the page)",
+  "old": "In one minute, write down what you can tell about each of these without going closer:",
+  "new": "Look at these three from where you sit. What can you tell about each one, and how could you PROVE it to a doubter?"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Today you'll be the investigator. You'll set up four small stations, each one showing a different form of energy moving — and collect evidence with your senses and simple tools.",
+  "new": "Today you're the investigator. You'll set up four small stations, each showing a different way energy moves, and collect evidence with your senses and simple tools."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Today, you'll do the same — four stations, one for each form of energy.",
+  "new": "Today you'll do the same: four stations, one for each way energy moves."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "your senses (you can SEE light, HEAR sound, FEEL heat) — and sometimes a tool",
+  "new": "your senses (you can SEE light, HEAR sound, FEEL heat), and sometimes a tool"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Scientists do better than that — they collect EVIDENCE other people can check.",
+  "new": "Scientists do better than that. They collect EVIDENCE other people can check."
+ },
+ {
+  "kind": "plain",
+  "why": "misconception kept, plain, no dash",
+  "old": "<p><strong>Common misconception:</strong> Some people think you have to have fancy tools to do real science\\..*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think real science needs fancy tools. It doesn’t. A thermometer, a ruler, a stopwatch and your own senses are enough for this lesson and for thousands of real investigations.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; points to 21.01",
+  "old": "<p><strong>Nicely done\\.</strong> You can now set up an investigation.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You set up stations, collected observations AND measurements, and convinced a doubter. Next week, things start crashing: what happens to energy when objects collide?</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (Build-a-station kit is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (a copy of 20.01’s: the same home hunt, whale fact, hummingbird question and conductor Go Deeper)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page",
+  "old": "Two station reports — each with source, receiver, evidence (observation + measurement), and an evidence-based claim.",
+  "new": "Two station reports, each with the source, the receiver, what I observed, what I measured and my claim. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether we can prove energy moved, and supported it with two pieces of evidence from my stations.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether we can prove energy moved, with two pieces of evidence from my stations."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]

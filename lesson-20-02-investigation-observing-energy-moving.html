@@ -785,6 +785,9 @@
   background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #8B6FC0;
 }
 </style>
+<!-- Field Station sparkle layer (G4 Science). Lesson content lives in fs-data; the layer is shared. -->
+<script type="application/json" id="fs-data">{"lesson":"20.02","week":20,"day":2,"guide":"sam","prefix":"g4sci-20-2","manifestKey":"20-02","paths":{"audio":"assets/audio/guide/","video":"assets/video/teacher/","manifest":"https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json","h2c":"assets/sparkle/vendor/html2canvas.min.js","crew":"assets/crew/","ornaments":"assets/ornaments/"},"crew":{"sam":{"name":"Sam Park","role":"engineer (someone who designs and builds things to solve problems)","initials":"SP","color":"#1F7F86","lens":"blueprint","voiceId":"s3TPKV1kjDlVtZbl4Ksh"}},"expedition":{"num":20,"title":"Prove It to the Council"},"ambient":{"icon":"🌊","label":"Ocean sounds"},"case":{"num":20,"title":"Prove It to the Council","style":"council","hook":"Good news: the town might pay for a lightning rod on the pier. Bad news: one councilor doesn’t believe my 9:41 PM readings. (A councilor helps make decisions for a town.)","notice":{"head":"PALMETTO BEACH TOWN COUNCIL","title":"Monday Meeting · Agenda","rows":[["Item 1","Beach cleanup schedule"],["Item 2","A lightning rod for the pier lamp (Sam Park)"],["To vote yes","Evidence that energy really moves"],["When","6:00 PM, Town Hall"]],"line":"Bring your evidence."},"memo":{"t":"Sam, I think your pier sensors just glitched. Energy doesn’t really travel from place to place. No money for a lightning rod unless you PROVE it, with evidence I can check myself.","sign":"— Councilor Ruiz"},"stills":[],"question":"What evidence will convince Councilor Ruiz that energy really moves?","how":"Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.","clues":[{"id":"doubter","icon":"🤨","where":"Warm-Up: convince the doubter","t":"Councilor Ruiz shrugged at “I just know” and smiled at a number from a tool, because she could check it herself."},{"id":"stationkit","icon":"🧪","where":"The Lesson, Part 1: build-a-station kit","t":"Every station needs a source, a receiver and a way to collect evidence. Without a tool, a station is NOT READY."},{"id":"proofmeter","icon":"🌡️","where":"The Lesson, Part 2: hands lie","t":"Your hands can be fooled: the same water felt warm AND cool. A measurement, checked by someone else, made the evidence PROVEN."},{"id":"stationrun","icon":"📋","where":"The Lesson, Part 4: run the stations","t":"At every station the receiver changed, and a tool measured it: 104°F to 92°F, a 6 cm to 12 cm light spot, rice jumping 1 cm and 4 cm, 250 lux to 0."}],"solve":{"title":"What will convince Councilor Ruiz?","q":"Which answer fits all four clues?","options":[{"t":"Tell her Sam is an engineer, so she should trust him.","why":"Check Clue 1. Being an expert isn’t evidence she can check."},{"t":"Describe how each station looked and felt.","why":"Check Clue 3. Hands can be fooled. What makes evidence strong?"},{"t":"Run four stations, each with a source, a receiver and a tool, and bring her observations AND measurements she can check.","right":true,"why":"Case cracked! Now present your evidence to the town council, just below."},{"t":"Wait for another lightning storm and hope she sees it.","why":"Check Clue 4. You can collect evidence right now with stations."}]}},"doubter":{"afterText":"PROVE it to a doubter","kicker":"Warm-Up game","title":"Convince the doubter","todo":["Pick a claim.","Tap the evidence you think would convince Councilor Ruiz.","Watch her face. Convince her about all 3."],"why":{"icon":"🤨","q":"What is a doubter?","t":"Someone who won’t believe a claim until they see evidence. Good scientists are doubters too!"},"name":"Councilor Ruiz","hello":"Prove it!","faces":["🤨","🙂","😃"],"claimWord":"The claim","pickQ":"Which evidence would convince her?","halfLine":"That’s real evidence! But she wants something she can check herself. Try another card.","zeroLine":"She doesn’t buy it. Pick evidence she could check.","countWord":"claims proven","doneSay":"Numbers I can check. Okay, I believe you!","claims":[{"id":"cocoa","icon":"☕","short":"Warm cocoa","t":"This cup of cocoa is warm.","opts":[{"t":"I can see steam coming off it.","lvl":1,"react":"Steam is a clue… but HOW warm?"},{"t":"A thermometer in it reads 130°F.","lvl":2,"react":"A number! I can check that myself."},{"t":"I just know it is.","lvl":0,"react":"You just KNOW? That’s not evidence."}]},{"id":"lamp","icon":"💡","short":"The lamp","t":"That lamp across the room is sending out light.","opts":[{"t":"Lamps always do that.","lvl":0,"react":"Always? Says who?"},{"t":"The wall next to it looks brighter.","lvl":1,"react":"Brighter to YOU. How much brighter?"},{"t":"A light meter by the wall reads 300 with the lamp on and 20 with it off.","lvl":2,"react":"On, off, two numbers. Now I see it!"}]},{"id":"pencil","icon":"✏️","short":"The tapping pencil","t":"The tapping pencil is making sound.","opts":[{"t":"A sound meter reads 60 while it taps and 35 when it stops.","lvl":2,"react":"Louder while it taps. I can test that!"},{"t":"Everybody knows pencils are noisy.","lvl":0,"react":"Everybody? That’s not proof."},{"t":"I can hear tap, tap, tap.","lvl":1,"react":"You heard it. Can you show me a number?"}]}],"q":"What convinced Councilor Ruiz the most?","opts":[{"t":"A number from a tool, because she could check it herself.","ok":true},{"t":"Saying “I just know.”","miss":"Look at her face when you picked that one!"},{"t":"Whatever sounded the most sure.","miss":"Sounding sure isn’t evidence. What could she check?"}],"win":"Numbers she could check won every time. Clue 1!"},"bulletin":{"afterSel":".act-warmup .callout-tip","kicker":"Bonus · Voice memo","title":"Councilor Ruiz speaks","skin":"mic","tone":"gavel","todo":["Press Play and listen. You can read along.","Tap the 3 weak spots in her argument."],"device":"TOWN HALL","deviceSub":"Councilor Ruiz","station":"A voice memo for Sam · 0:15","playBtn":"Play the voice memo","againBtn":"Play it again","audio":"memo","paperHead":"VOICE MEMO · COUNCILOR RUIZ","lines":["This is Councilor Ruiz. I read Sam Park’s report about the pier.","Honestly, his chart [[feel|just feels wrong to me]].","Everybody knows [[wire|energy can’t move without wires]].","And I [[look|didn’t even need to look at his numbers]]. [[x:That part is fair! Good scientists DO ask for evidence. Look for the weak spots.|Prove it to me with evidence I can check]]."],"foundLabel":"Weak spots in her argument","dangerWord":"Weak spot","countIcon":"🔎","countWord":"weak spots found","dangers":[{"id":"feel","icon":"🤷","t":"A feeling","does":"a feeling isn’t evidence"},{"id":"wire","icon":"⚡","t":"A wrong idea","does":"light and sound cross the air"},{"id":"look","icon":"🙈","t":"Skipped the data","does":"she didn’t look at the numbers"}],"win":"Three weak spots! A feeling, a wrong idea and skipped data. Sam has work to do."},"stationkit":{"afterText":"Every station has the same three parts","kicker":"Part 1 game","title":"Build-a-station kit","todo":["Drag each part onto its station mat (or tap a part, then a slot).","Every mat needs a source, a receiver and an evidence tool.","Watch out: two parts don’t belong anywhere."],"why":{"icon":"🧪","q":"What is an evidence tool?","t":"A tool that measures something and gives you a number, like a thermometer, a ruler or a light meter."},"roles":[{"k":"src","icon":"📤","t":"Source"},{"k":"rec","icon":"📥","t":"Receiver"},{"k":"tool","icon":"📏","t":"Evidence tool"}],"stations":[{"id":"heat","icon":"☕","t":"Heat station"},{"id":"light","icon":"🔦","t":"Light station"},{"id":"sound","icon":"🥁","t":"Sound station"},{"id":"elec","icon":"🔋","t":"Electrical station"}],"parts":[{"id":"flash","icon":"🔦","t":"Flashlight","st":"light","role":"src"},{"id":"therm","icon":"🌡️","t":"Thermometer","st":"heat","role":"tool"},{"id":"rice","icon":"🍚","t":"Rice grains on the drum","st":"sound","role":"rec"},{"id":"outlet","icon":"🔌","t":"Wall outlet","st":"x","role":"src","miss":"Never a wall outlet! It’s far too strong to play with. A small battery is safe."},{"id":"bulb","icon":"💡","t":"Small bulb","st":"elec","role":"rec"},{"id":"cup","icon":"☕","t":"Cup of warm tap water","st":"heat","role":"src"},{"id":"meter","icon":"📟","t":"Light meter","st":"elec","role":"tool"},{"id":"paper","icon":"📄","t":"White paper","st":"light","role":"rec"},{"id":"hand","icon":"✋","t":"Your hand tapping the drum","st":"sound","role":"src"},{"id":"know","icon":"🤞","t":"“I just know”","st":"x","role":"tool","miss":"That’s not a tool! A station needs a way to collect evidence someone else can check."},{"id":"ruler1","icon":"📏","t":"Ruler on the paper","st":"light","role":"tool"},{"id":"air","icon":"🌬️","t":"The cooler air around the cup","st":"heat","role":"rec"},{"id":"batt","icon":"🔋","t":"One AA battery","st":"elec","role":"src"},{"id":"ruler2","icon":"📐","t":"Ruler standing by the drum","st":"sound","role":"tool"}],"trayLabel":"Parts (drag one onto a mat, or tap it and then a slot)","ready":"READY ✓","notReady":"NOT READY: no way to measure","countWord":"stations ready","roleMiss":"Right station! But this is the {is}, not the {slot}.","q":"Why does every station need an evidence tool?","opts":[{"t":"So we can collect a measurement someone else can check.","ok":true},{"t":"Tools make the station look cool.","miss":"They do look cool! But what does a tool GIVE you?"},{"t":"Without a tool, the energy can’t move.","miss":"Energy moves either way. The tool lets us measure it."}],"win":"Four stations, each with a source, a receiver and a tool. Clue 2!"},"proofmeter":{"afterText":"The strongest investigation reports use BOTH","kicker":"Part 2 game","title":"Hands lie, numbers don’t","todo":["Try the three bowls with the buttons. (You can try it at home with an adult: warm tap water only.)","Then drag (or tap) evidence onto the claim until the meter says PROVEN."],"why":{"icon":"✋","q":"Why can hands be fooled?","t":"Your skin feels warmer or cooler than what it touched just before. It can’t tell you an exact temperature."},"part1Head":"1. Can your hands be fooled?","part2Head":"2. Upgrade the evidence","bowls":{"hot":{"t":"Warm tap water","temp":104},"room":{"t":"Room-temperature water","temp":72},"cold":{"t":"Ice water","temp":40}},"leftWord":"left hand","rightWord":"right hand","steps":["Put your left hand in the warm bowl and your right hand in the ice water","Wait 30 seconds","Waiting…","Move both hands into the middle bowl","Check with a thermometer"],"left":"Left: “It feels COOL!”","right":"Right: “It feels WARM!”","sameBowl":"Same water. Two different answers!","trickAsk":"Which hand is right?","thermo":"The middle bowl is 72°F. One number.","trickWhy":"Your hands only feel warmer or cooler than before. A thermometer gives a number anyone can check.","claimWord":"Claim","claim":"The cup of cocoa cooled down.","dropHere":"Drop evidence here","levels":["Hmm, not yet","Maybe","Pretty good","Strong","PROVEN!"],"pieces":[{"id":"hand","icon":"✋","t":"My hand said the mug felt less warm.","pts":0,"why":"Remember the bowls? Hands can be fooled."},{"id":"t1","icon":"🌡️","t":"Thermometer at 3:00 PM: 130°F","pts":1,"why":"A number! But one reading can’t show a change."},{"id":"steam","icon":"💨","t":"The steam slowly stopped.","pts":1,"why":"An observation anyone could see. A good start!"},{"id":"sure","icon":"🙂","t":"I’m really, really sure.","pts":0,"why":"Being sure isn’t evidence. What could someone check?"},{"id":"t2","icon":"🌡️","t":"Thermometer at 3:20 PM: 110°F","pts":2,"why":"Before and after: the number dropped 20°F."},{"id":"check","icon":"👥","t":"My partner read it too: 110°F.","pts":1,"why":"Someone else checked and got the same number."}],"q":"What makes evidence the strongest?","opts":[{"t":"An observation AND a measurement someone else can check.","ok":true},{"t":"Whatever your hand feels.","miss":"Remember the bowls! The same water felt warm and cool."},{"t":"Saying it very loudly.","miss":"Loud isn’t proof. What can someone check?"}],"win":"Hands can be fooled, but numbers can be checked. Clue 3!"},"stationrun":{"afterText":"Now run all four stations yourself","kicker":"Part 4 game","title":"Run the stations","todo":["Pick a station.","Press a button to run it.","Read the tool: tap the number it shows. Do both buttons at every station."],"why":{"icon":"📋","q":"What is a station log?","t":"A table where scientists write what they observed and what they measured, so anyone can check it later."},"model":"a model","condQ":"Run it:","readQ":"Read the tool. Tap the number it shows ({unit}).","pickLine":"Press a button above to run the station.","lowLine":"A little low. Look again where the tool points.","highLine":"A little high. Look again where the tool points.","logLabel":"My station log","colSt":"Station","colObs":"What I observed","colMeas":"What I measured","stations":[{"id":"heat","icon":"☕","t":"Heat","kind":"therm","unit":"°F","min":60,"max":110,"step":2,"tol":2,"src":"Source: warm water","rec":"Receiver: the cooler air","obs":"The steam slowly stopped.","safety":"Warm tap water only. Never boiling water.","conds":[{"k":"a","btn":"Start","val":104,"note":"A cup of warm tap water just went on the table. The air in the room is 75°F."},{"k":"b","btn":"After 10 minutes","val":92,"note":"Ten minutes later. Heat has been moving from the warm water into the cooler air."}]},{"id":"light","icon":"🔦","t":"Light","kind":"ruler","unit":"cm wide","min":0,"max":13,"step":1,"tol":0,"src":"Source: flashlight","rec":"Receiver: white paper","obs":"A bright spot on the paper. Farther away, it got bigger and dimmer.","safety":"Never shine a flashlight into anyone’s eyes.","conds":[{"k":"a","btn":"Flashlight 20 cm away","val":6,"note":"The light makes a bright spot. How wide is it?"},{"k":"b","btn":"Flashlight 40 cm away","val":12,"note":"Twice as far away. The spot spreads out and looks dimmer."}]},{"id":"sound","icon":"🥁","t":"Sound","kind":"vruler","unit":"cm high","min":0,"max":6,"step":0.5,"tol":0.5,"src":"Source: your tapping hand","rec":"Receiver: rice grains (and your ears)","obs":"The rice grains jumped. Harder taps made them jump higher.","safety":"Tap with your hand, not a hard object.","conds":[{"k":"a","btn":"Soft tap","val":1,"note":"A soft tap makes the drum shake a little. How high did the rice jump?"},{"k":"b","btn":"Hard tap","val":4,"note":"A hard tap sends more energy into the drum."}]},{"id":"elec","icon":"🔋","t":"Electrical","kind":"meter","unit":"lux","min":0,"max":400,"step":50,"major":100,"tol":0,"src":"Source: one AA battery","rec":"Receiver: a small bulb","obs":"The bulb glowed. With a wire unhooked, it went dark.","safety":"One AA battery and a small bulb. Never a wall outlet.","conds":[{"k":"a","btn":"Wires hooked up","val":250,"note":"A light meter measures how much light reaches it, in units called lux."},{"k":"b","btn":"One wire unhooked","val":0,"note":"The path is broken. What does the light meter say now?"}]}],"q":"At every station, what showed that energy moved?","opts":[{"t":"The receiver changed, and a tool measured the change.","ok":true},{"t":"Nothing really moved. It was a trick.","miss":"Look at your log. Did the numbers change?"},{"t":"Only the heat station worked.","miss":"Check your log. Did every station get a number?"}],"win":"Four stations, eight measurements. Your log is ready for the council. Clue 4!"},"exploreMod":"stationrun","council":{"after":".fs-solve","kicker":"After the case","title":"Present to the council","todo":["Councilor Ruiz has one question for each station.","Answer with the evidence that will convince her."],"lockLine":"Crack the case first. Then the council meets.","name":"Councilor Ruiz","icon":"🏛️","meter":["Not convinced","Hmm…","Getting there","Almost","I believe it!"],"answerQ":"Answer her with evidence from your station log:","obsWord":"What I observed","measWord":"What I measured","objections":[{"id":"heat","icon":"☕","t":"Maybe that water was never warm in the first place.","obs":"The steam slowly stopped.","meas":"The thermometer read 104°F, then 92°F ten minutes later.","weak":"Steam is nice, but how warm was it? She wants a number.","strong":"Heat: 104°F → 92°F. Heat moved into the air."},{"id":"light","icon":"🔦","t":"Light doesn’t really GO anywhere. It just sits in the flashlight.","obs":"I saw a bright spot on the paper.","meas":"The spot was 6 cm wide at 20 cm and 12 cm wide at 40 cm.","weak":"You saw it, but could she check it? Give her a measurement.","strong":"Light: the spot grew from 6 cm to 12 cm as it traveled farther."},{"id":"sound","icon":"🥁","t":"Tapping a drum can’t move anything else.","obs":"The rice wiggled.","meas":"The rice jumped 1 cm on a soft tap and 4 cm on a hard tap.","weak":"“Wiggled” could mean anything. How high?","strong":"Sound: the rice jumped 1 cm, then 4 cm."},{"id":"elec","icon":"🔋","t":"That bulb could be a fake. Maybe it glows by itself.","obs":"The bulb looked bright.","meas":"The light meter read 250 lux hooked up and 0 lux unhooked.","weak":"Looked bright to YOU. She needs something she can check.","strong":"Electrical: 250 lux hooked up, 0 unhooked."}],"order":{"head":"WORK ORDER 20-B · PALMETTO BEACH PIER","rows":[["Job","A lightning rod on the pier lamp post"],["Material","A copper rod and a cable down to a rod in the ground"],["Evidence","4 stations: observations + measurements"],["Asked for by","Sam Park, engineer"]],"stampBtn":"Stamp it APPROVED","stamp":"APPROVED","sign":"Councilor Ruiz","img":"images/20-02-lightning-rod.jpg","alt":"A thin metal lightning rod sticks up from a rusty metal roof under a blue sky.","cap":"A real lightning rod on a house roof in LaPlace, Louisiana. A cable carries a strike safely down into the ground.","credit":"“Lightning rod, Woodland Plantation House, LaPlace, Louisiana” by Infrogmation of New Orleans, CC BY-SA 4.0, via Wikimedia Commons."},"win":"APPROVED! Your evidence convinced the council. The pier gets its lightning rod, and Evidence Detective is open below."},"speedround":{"after":".fs-game[data-mod=\"council\"]","kicker":"Bonus game · unlocked after the case","title":"Evidence Detective","todo":["Press Start.","Tap WEAK or STRONG for each piece of evidence before time runs out.","Can you get 3 stars?"],"why":{"icon":"🕵️","q":"What makes evidence STRONG?","t":"A number from a tool, or something anyone could check. “I just know” is weak."},"lockLine":"Crack the case first. Then Evidence Detective opens.","secs":40,"three":9,"two":7,"one":5,"startBtn":"Start","againBtn":"Play again","weakBtn":"WEAK","strongBtn":"STRONG","ready":"Press Start. Then tap WEAK or STRONG for each piece of evidence.","lines":{"best":"Best","three":"Evidence Detective, first class!","some":"Nice work! Play again for more stars.","none":"Try again: look for numbers someone else could check."},"items":[{"t":"The thermometer went from 70°F to 85°F.","k":"s","why":"Two numbers from a tool. That’s strong!"},{"t":"I just know it got warmer.","k":"w","why":"“I just know” can’t be checked."},{"t":"The rice jumped 3 cm when I tapped the drum.","k":"s","why":"A measurement anyone could repeat."},{"t":"My friend said the bulb was on.","k":"w","why":"One person’s word, with no number to check."},{"t":"The light meter read 300 lux next to the lamp.","k":"s","why":"A number from a tool."},{"t":"It felt kind of warm to me.","k":"w","why":"Remember the bowls? Hands can be fooled."},{"t":"Two of us measured the light spot: 8 cm and 8 cm.","k":"s","why":"Measured twice, by two people. Very strong!"},{"t":"Trust me, I’m a scientist.","k":"w","why":"Even scientists need evidence."},{"t":"I took the temperature 3 times: 92, 92 and 91°F.","k":"s","why":"Several readings that agree."},{"t":"The drum probably made the rice move.","k":"w","why":"“Probably” is a guess, not a measurement."},{"t":"The stopwatch read 4.2 seconds.","k":"s","why":"A number anyone could check with a stopwatch."}]},"printcard":{"after":"#tab-assignment .fs-in-frame","btn":"Print a blank station report","note":"Optional: run a real station at home with an adult.","head":"My Station Report","sub":"Field Station · Lesson 20.02","rows":["Station (heat, light, sound or electrical):","Source (where the energy comes from):","Receiver (where the energy goes):","What I observed:","What I measured (the tool and the numbers):","My claim (did energy move? how do I know?):"]},"quizKicker":"","quizMiss":{"q1":{"A":"Batteries and bulbs are only at the electrical station. What did EVERY mat in the station kit have?","C":"Tools are one part. What else did every mat need?"},"q2":{"A":"Warmth isn’t what you saw. What did the rice DO?","B":"Color doesn’t change when energy arrives. What did the rice do?"},"q3":{"B":"Measurements can be a little off. So why are they still strong?","C":"Fancy words don’t make evidence strong. What can another scientist do with a number?"}},"flags":{"ans-1":[{"label":"the station","re":"heat|light|sound|electric|cup|water|flashlight|drum|rice|battery|bulb"},{"label":"source and receiver","re":"source|receiver|goes to|comes from"},{"label":"evidence","re":"evidence|measure|thermometer|ruler|meter|number|degree|°|cm|lux|observ|saw|see|jump|glow|light up|lit"}],"ans-2":[{"label":"observation","re":"observ|see|saw|hear|heard|feel|felt|notice|look|senses"},{"label":"measurement","re":"measur|number|tool|thermometer|ruler|meter|degree|°|cm|lux|stopwatch"},{"label":"a station example","re":"heat|light|sound|electric|cup|water|flashlight|drum|rice|battery|bulb|cocoa|lamp"}],"cer-4":[{"label":"your claim","re":"agree|disagree|not true|wrong|right|true|false|can prove|you can"},{"label":"two pieces of evidence","any":["thermometer","degree","°","104","92","rice","cm","jump","ruler","light meter","lux","250","spot","bulb","battery","bowl","hand","measure","number","station"],"min":2},{"label":"your reasoning","re":"because|so |this shows|that shows|this means|that means|which means|proves|since"}]},"minWords":{"ans-1":15,"ans-2":15,"cer-4":30},"hints":{"ans-1":["Think about the Build-a-station kit. What were the three parts?","Name the source, the receiver and the tool you would use.","Try: At the ___ station, the source is ___, the receiver is ___, and I would measure ___ with a ___."],"ans-2":["Think about the three bowls. What did your hands say? What did the thermometer say?","An observation uses your senses. A measurement uses a tool and gives a number.","Try: An observation is ___, like ___. A measurement is ___, like ___."],"cer-4":["First decide: can you prove energy moved?","Think about your station log: the thermometer, the rice and the light meter.","Try: I ___ because ___. One piece of evidence is ___. Another is ___."]},"scholar":{},"planner":{"before":"cer-4","title":"Your claim and two pieces of evidence","rows":[{"label":"1. Pick your side","options":["I agree","I disagree"],"pick":1},{"label":"2. Pick two pieces of evidence from the lesson","pick":2,"options":["The thermometer read 104°F, then 92°F ten minutes later.","The rice jumped 1 cm on a soft tap and 4 cm on a hard tap.","The light meter read 250 lux with the wires hooked up and 0 unhooked.","My hands said the same water was warm AND cool, but the thermometer said 72°F."]}],"note":"Tap your side and two facts. Then write your reasoning in your own words."},"slots":{"welcome":{"label":"Welcome · prove it to the council","length":"30–40 s","script":"Good news and bad news. The town might pay for a lightning rod on the pier, but Councilor Ruiz doesn’t believe my readings. Read her note. She wants evidence she can check herself. Let’s give her some!"},"warmup":{"label":"Warm-Up · convince the doubter (Clue 1)","length":"20–30 s","script":"Councilor Ruiz is a tough doubter. For each claim, pick the evidence that would convince her. Watch her face. Does she raise an eyebrow, or does she smile?"},"vocab":{"label":"Word Wall","length":"30–45 s","notes":"Hold up a thermometer for “measurement”; point at a lamp for “receiver”."},"lesson":{"label":"The Lesson","length":"25–35 s"},"part1":{"label":"Part 1 · build-a-station kit (Clue 2)","length":"20–30 s","script":"Every station needs three parts. Drag a source, a receiver, and an evidence tool onto each mat. Watch out for parts that don’t belong. A station without a tool says not ready."},"part2":{"label":"Part 2 · hands lie, numbers don’t (Clue 3)","length":"20–30 s","script":"Try the three bowls. One hand goes in warm water, one in ice water. Then both go into the middle bowl. Your hands disagree! Next, add evidence to the claim until the meter says proven."},"explore":{"label":"Part 4 · run the stations (Clue 4)","length":"25–35 s","script":"Time to run all four stations. Pick a station, press a button to run it, then read the tool. Tap the number it shows. Every reading goes into your station log."},"quiz":{"label":"Self-Check","length":"15–20 s"},"assignment":{"label":"Assignment · crack the case","length":"20–30 s","script":"Do you have all four clues? Crack the case at the top of this tab, then present your evidence to the council. After that, answer two questions, write two station reports, and finish your C-E-R."},"partb":{"label":"Part B","length":"30 s"},"partc":{"label":"Part C · two station reports","length":"30 s"},"evidence":{"label":"Use your evidence · CER","length":"25–35 s","script":"A classmate says you can’t really prove that energy moved. Hmm. Think about your thermometer and your rice ruler. Pick your side, tap two pieces of evidence, then explain how they prove your claim."},"closing":{"label":"Case closed","length":"20–30 s","notes":"Celebrate; tease 21.01 (collisions).","script":"Case closed! Councilor Ruiz approved the lightning rod, all because of your evidence. Next week, things start crashing. What happens to energy when objects collide?"}},"videoOff":[],"camera":{"max":8,"huntTitle":"Bonus: can you snap all 4 shots on this list?","missions":["Councilor Ruiz smiling (Warm-Up)","A READY station mat (The Lesson)","The PROVEN meter (The Lesson)","Your station log (The Lesson)"]},"sketch":{"tip":"Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.","prompts":["My favorite station","The three bowls","The pier with its new lightning rod"],"inline":[{"id":"partc","afterPart":"C","kicker":"Part C · sketch it (optional)","required":false,"minLabels":3,"prompts":["Draw one of your stations","Label the source and the receiver","Label the tool you used to measure"]}]},"hlCoach":{"title":"Highlight like a scientist","tips":[["🔑","Highlight key words, not whole paragraphs.","If everything is yellow, nothing stands out. Aim for a few words in each paragraph."],["📖","Look for words that are explained.","Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."],["🎯","Look for answers to the Big Question.","Ask yourself: does this help me explain what evidence shows that energy moved?"],["🔗","Watch for clue words.","“Because”, “so” and “first … then” show how ideas connect."],["🎨","Use the colors on purpose.","Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."]],"practice":{"q":"Practice: tap the 3 to 5 words that matter most in this sentence.","text":"A measurement is a number from a tool that someone else can check.","key":["measurement","number","tool","check"],"small":["A","a","that"],"model":"A scientist might highlight “measurement”, “number from a tool” and “someone else can check”. Those words hold the big idea. Small words like “a” and “that” don’t carry the idea."},"outside":"This works in every subject. When you read anything, save the words that answer your question, and skip the rest."},"specimen":{"kicker":"Specimen collected","stamp":"CASE CLOSED","icon":"📋","name":"The approved work order","line":"You cracked Case 20 part 2, and the approved work order goes in your Field Notebook. (A specimen is something a scientist collects to keep.) Next week: collisions."},"notebookTitle":"Unit 5 · Energy, Motion & Collisions","notebook":[{"lesson":"18.01","icon":"🧫","name":"Red tide sample slide"},{"lesson":"18.02","icon":"🎟️","name":"Star party ticket"},{"lesson":"19.01","icon":"🏁","name":"Derby checkered flag"},{"lesson":"19.02","icon":"🧦","name":"The fluke sock"},{"lesson":"20.01","icon":"💡","name":"The burnt-out pier bulb"},{"lesson":"20.02","icon":"📋","name":"The approved work order"},{"lesson":"21.01"},{"lesson":"21.02"},{"lesson":"22.01"},{"lesson":"22.02"},{"lesson":"23.01"},{"lesson":"23.02"},{"lesson":"24.01"},{"lesson":"24.02"}],"rankLine":"Your Field Station ID just updated. Keep going, scientist.","lensWin":"All six words are in focus. You’re ready to run your stations.","inputs":[{"id":"tab1","type":"swap","find":{"sel":".tab-btn[data-tab=\"vocab\"]"},"swap":["📚 Vocabulary","🌅 Warm-Up"]},{"id":"fs-warm","type":"frame","find":{"sel":".fs-game[data-mod=\"doubter\"]"},"label":"Warm-Up: what I can tell, and how I could prove it","q":"Warm-Up: What I can tell about each one, and how I could prove it to a doubter","title":"Your turn: what can you tell about each one, and how could you prove it?","fields":[{"t":"A lamp glowing across the room","icon":"💡","ph":"I can tell… I could prove it with…"},{"t":"A friend tapping a pencil on a desk","icon":"✏️","ph":"I can tell… I could prove it with…"},{"t":"A warm cup of cocoa on a table","icon":"☕","ph":"I can tell… I could prove it with…"}]},{"id":"hide-list","type":"hide","find":{"sel":".act-warmup ul","text":"A lamp glowing"}},{"id":"sw-words","type":"swap","find":{"sel":"p","text":"Tap a card to flip it"},"swap":["<strong>Tap a card to flip it<\/strong> and read what the word means.","<strong>Tap a word<\/strong> to hear it and see what it means."]},{"id":"hide-nw","type":"hide","find":{"sel":".act-warmup .socratic-q","text":"Notice"}},{"id":"fs-partc","type":"frame","find":{"sel":"#tab-assignment p","text":"Pick two stations from today"},"label":"Part C: Two station reports","q":"Part C: Two station reports (source, receiver, observation, measurement, claim)","title":"My two station reports","fields":[{"t":"STATION 1: which station, the source and the receiver","icon":"1️⃣","ph":"Station: ___. Source: ___. Receiver: ___."},{"t":"STATION 1: what I observed, what I measured and my claim","icon":"📏","ph":"I observed… I measured… So energy…","long":true},{"t":"STATION 2: which station, the source and the receiver","icon":"2️⃣","ph":"Station: ___. Source: ___. Receiver: ___."},{"t":"STATION 2: what I observed, what I measured and my claim","icon":"📏","ph":"I observed… I measured… So energy…","long":true}]},{"id":"fs-cer","type":"cer","target":"cer-4","find":{"sel":"textarea#cer-4"},"reminder":"Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.","parts":[{"k":"C","t":"Claim","ask":"Can you prove that energy moved?","ph":"I agree / I disagree because…"},{"k":"E","t":"Evidence","ask":"Two facts from the lesson. Tap them in the planner above, or type them.","ph":"One fact is… Another fact is…","rows":3},{"k":"R","t":"Reasoning","ask":"How do those facts prove your claim?","ph":"This shows that…","rows":3}]},{"id":"relabel","type":"relabel","map":{"ans-1":"Part B · Question 5","ans-2":"Part B · Question 6","cer-4":"Use Your Evidence (CER)"}},{"id":"sw-check","type":"swap","find":{"sel":"p","text":"Tap to toggle"},"swap":[" Tap to toggle.",""]},{"id":"sw-circle","type":"swap","find":{"sel":".card-head-title","text":"Revisit Our Key Question"},"swap":["Revisit Our Key Question","Back to the Big Question"]}],"cues":{"welcome":[{"at":"^lightning","sel":".fs-casecard .fs-notice","fx":"glow"},{"at":"^Ruiz","sel":".fs-casecard .fs-memo","fx":"pop"},{"at":"^note","sel":".fs-casecard .fs-memo p","fx":"trace"},{"at":"^check","sel":".fs-casecard .fs-case-ask","fx":"glow"}],"warmup":[{"at":"^doubter","sel":".fs-dbt-who","fx":"glow","scroll":true},{"at":"^claim","sel":".fs-dbt-tabs","fx":"pop"},{"at":"^evidence","sel":".fs-dbt-opts","fx":"glow"},{"at":"^face","sel":".fs-dbt-face","fx":"wiggle","tag":"Watch her face"},{"at":"^smile","sel":".fs-dbt-say","fx":"pop"}],"part1":[{"at":"^three","sel":".fs-kit-mat .fs-kit-slots","all":true,"fx":"glow","scroll":true},{"at":"^Drag","sel":".fs-kit-tray","fx":"point"},{"at":"^mat","sel":".fs-kit-mat","all":true,"fx":"pop"},{"at":"^belong","sel":".fs-kit-part[data-id=\"outlet\"]","fx":"wiggle"},{"at":"^ready","sel":".fs-kit-tag","all":true,"fx":"glow"}],"part2":[{"at":"^bowls","sel":".fs-prf-bowls","fx":"glow","scroll":true},{"at":"^warm$","sel":".fs-prf-bowl.b-hot","fx":"pop"},{"at":"^ice","sel":".fs-prf-bowl.b-cold","fx":"pop"},{"at":"^middle","sel":".fs-prf-bowl.b-room","fx":"point"},{"at":"^claim","sel":".fs-game[data-mod=\"proofmeter\"] .fs-todo li","i":1,"fx":"trace"}],"explore":[{"at":"^four","sel":".fs-srn-tabs","fx":"glow","scroll":true},{"at":"^button","sel":".fs-srn-conds","fx":"point"},{"at":"^tool","sel":".fs-srn-vis","fx":"pop"},{"at":"^number","sel":".fs-srn-panel","fx":"glow"},{"at":"^log","sel":".fs-srn-log","fx":"glow"}],"assignment":[{"at":"^clues","sel":".fs-board","fx":"glow"},{"at":"^Crack","sel":".fs-solve","fx":"pop","scroll":true},{"at":"^council","sel":".fs-game[data-mod=\"council\"]","fx":"glow","scroll":true},{"at":"^two$","sel":"#tab-assignment .pq","fx":"glow","all":true,"scroll":true},{"at":"^reports","sel":"#tab-assignment .fs-in-frame","fx":"pop","scroll":true},{"at":"^C-E-R$","sel":"#tab-assignment .fs-cer","fx":"glow","scroll":true}],"evidence":[{"at":"^classmate","sel":"#tab-assignment .act-body > div:has(> .fs-plan) > p","i":0,"fx":"trace"},{"at":"^thermometer","sel":".fs-plan .fs-opt","i":2,"fx":"glow"},{"at":"^rice","sel":".fs-plan .fs-opt","i":3,"fx":"glow"},{"at":"^side","sel":".fs-plan .fs-plan-row","i":0,"fx":"pop"},{"at":"^explain","sel":".fs-cer .fs-cer-row","i":2,"fx":"glow","scroll":true}],"closing":[{"at":"^closed","sel":".fs-specimen","fx":"pop","scroll":true},{"at":"^approved","sel":".fs-game[data-mod=\"council\"]","fx":"glow"},{"at":"^Next","sel":"#tab-assignment .callout-tip","fx":"glow"}]},"fold":{"bulletin":{"icon":"🎙️","tease":"Councilor Ruiz left Sam a voice memo. Can you spot the weak parts of her argument?","open":"Listen"},"speedround":{"icon":"🕵️","tease":"WEAK or STRONG? Sort 11 pieces of evidence before the clock runs out. Can you get 3 stars?","open":"Play"}},"cueWords":{"welcome":[[0,0.24,"Good"],[0.32,0.64,"news"],[0.8,0.96,"and"],[1.04,1.28,"bad"],[1.36,1.96,"news."],[2.24,2.32,"The"],[2.48,2.64,"town"],[2.72,2.96,"might"],[3.04,3.12,"pay"],[3.2,3.36,"for"],[3.4,3.44,"a"],[3.52,3.76,"lightning"],[3.84,4,"rod"],[4.08,4.12,"on"],[4.16,4.24,"the"],[4.32,5.04,"pier,"],[5.16,5.28,"but"],[5.36,5.76,"Councilor"],[5.84,6.24,"Ruiz"],[6.32,6.56,"doesn’t"],[6.64,6.88,"believe"],[6.96,7.04,"my"],[7.16,8,"readings."],[8.08,8.16,"Read"],[8.24,8.32,"her"],[8.4,9.04,"note."],[9.12,9.2,"She"],[9.28,9.52,"wants"],[9.6,9.92,"evidence"],[10,10.08,"she"],[10.16,10.24,"can"],[10.32,10.48,"check"],[10.587,11.36,"herself."],[11.44,11.6,"Let’s"],[11.68,11.76,"give"],[11.8,11.84,"her"],[11.92,12.4,"some!"]],"warmup":[[0,0.48,"Councilor"],[0.6,0.96,"Ruiz"],[1.04,1.12,"is"],[1.2,1.28,"a"],[1.36,1.68,"tough"],[1.76,2.24,"doubter."],[2.64,2.8,"For"],[2.88,3.04,"each"],[3.12,3.68,"claim,"],[3.76,3.84,"pick"],[3.92,4,"the"],[4.08,4.48,"evidence"],[4.52,4.56,"that"],[4.64,4.72,"would"],[4.8,5.12,"convince"],[5.2,5.44,"her."],[5.92,6.08,"Watch"],[6.16,6.24,"her"],[6.44,6.72,"face."],[7.12,7.2,"Does"],[7.28,7.36,"she"],[7.48,7.6,"raise"],[7.64,7.68,"an"],[7.76,8.4,"eyebrow,"],[8.52,8.64,"or"],[8.8,8.88,"does"],[8.96,9.04,"she"],[9.12,9.84,"smile?"]],"part1":[[0,0.24,"Every"],[0.32,0.72,"station"],[0.8,1.04,"needs"],[1.12,1.28,"three"],[1.44,2.08,"parts."],[2.32,2.56,"Drag"],[2.6,2.64,"a"],[2.72,3.36,"source,"],[3.44,3.48,"a"],[3.52,4.32,"receiver,"],[4.44,4.56,"and"],[4.64,4.72,"an"],[4.8,5.2,"evidence"],[5.36,5.52,"tool"],[5.6,5.84,"onto"],[5.92,6.08,"each"],[6.16,6.56,"mat."],[7.04,7.2,"Watch"],[7.28,7.36,"out"],[7.4,7.44,"for"],[7.52,7.76,"parts"],[7.84,8,"that"],[8.08,8.24,"don’t"],[8.32,8.8,"belong."],[9.12,9.2,"A"],[9.4,9.6,"station"],[9.76,9.92,"without"],[9.96,10,"a"],[10.08,10.32,"tool"],[10.4,10.72,"says"],[10.96,11.2,"not"],[11.28,11.84,"ready."]],"part2":[[0,0.24,"Try"],[0.32,0.4,"the"],[0.48,0.64,"three"],[0.72,1.2,"bowls."],[1.6,1.76,"One"],[1.84,2,"hand"],[2.08,2.24,"goes"],[2.32,2.4,"in"],[2.48,2.72,"warm"],[2.88,3.36,"water,"],[3.44,3.68,"one"],[3.76,3.84,"in"],[3.92,4.08,"ice"],[4.16,4.56,"water."],[4.88,5.04,"Then"],[5.12,5.44,"both"],[5.52,5.6,"go"],[5.68,5.84,"into"],[5.88,5.92,"the"],[6,6.16,"middle"],[6.24,6.68,"bowl."],[6.88,7.04,"Your"],[7.2,7.36,"hands"],[7.48,8.16,"disagree!"],[8.64,9.2,"Next,"],[9.28,9.44,"add"],[9.6,9.92,"evidence"],[9.96,10,"to"],[10.08,10.12,"the"],[10.16,10.48,"claim"],[10.56,10.8,"until"],[10.84,10.88,"the"],[10.96,11.2,"meter"],[11.28,11.52,"says"],[11.76,12.56,"proven."]],"explore":[[0,0.24,"Time"],[0.32,0.36,"to"],[0.4,0.64,"run"],[0.72,0.88,"all"],[0.96,1.12,"four"],[1.2,2.16,"stations."],[2.24,2.32,"Pick"],[2.4,2.44,"a"],[2.48,3.28,"station,"],[3.4,3.52,"press"],[3.56,3.6,"a"],[3.68,3.92,"button"],[3.96,4,"to"],[4.08,4.24,"run"],[4.32,4.72,"it,"],[4.92,5.12,"then"],[5.2,5.36,"read"],[5.4,5.44,"the"],[5.52,6.32,"tool."],[6.4,6.56,"Tap"],[6.64,6.68,"the"],[6.72,6.96,"number"],[7.04,7.12,"it"],[7.32,8,"shows."],[8.08,8.32,"Every"],[8.4,8.72,"reading"],[8.8,9.04,"goes"],[9.16,9.28,"into"],[9.32,9.36,"your"],[9.44,9.76,"station"],[9.84,10.32,"log."]],"assignment":[[0.0,0.16,"Do"],[0.2,0.24,"you"],[0.32,0.48,"have"],[0.56,0.72,"all"],[0.8,0.96,"four"],[1.04,1.68,"clues?"],[1.92,2.16,"Crack"],[2.2,2.24,"the"],[2.32,2.56,"case"],[2.64,2.72,"at"],[2.8,2.88,"the"],[2.96,3.04,"top"],[3.12,3.2,"of"],[3.28,3.36,"this"],[3.44,4.08,"tab,"],[4.2,4.32,"then"],[4.56,4.88,"present"],[4.96,5.04,"your"],[5.08,5.44,"evidence"],[5.48,5.52,"to"],[5.6,5.68,"the"],[5.84,6.64,"council."],[6.8,6.96,"After"],[7.08,7.52,"that,"],[7.6,7.92,"answer"],[8.0,8.08,"two"],[8.16,8.88,"questions,"],[8.96,9.2,"write"],[9.28,9.36,"two"],[9.44,9.76,"station"],[9.84,10.48,"reports,"],[10.56,10.72,"and"],[10.8,11.12,"finish"],[11.24,11.36,"your"],[11.44,12.8,"C-E-R."]],"evidence":[[0.0,0.08,"A"],[0.16,0.56,"classmate"],[0.64,0.96,"says"],[1.2,1.36,"you"],[1.44,1.6,"can’t"],[1.68,1.92,"really"],[2.08,2.48,"prove"],[2.56,2.64,"that"],[2.72,3.04,"energy"],[3.12,3.68,"moved."],[4.16,4.84,"Hmm."],[5.12,5.28,"Think"],[5.36,5.52,"about"],[5.56,5.6,"your"],[5.68,6.24,"thermometer"],[6.4,6.48,"and"],[6.52,6.56,"your"],[6.64,6.88,"rice"],[6.96,7.28,"ruler."],[7.76,7.92,"Pick"],[8.0,8.08,"your"],[8.24,8.8,"side,"],[8.96,9.12,"tap"],[9.2,9.28,"two"],[9.36,9.68,"pieces"],[9.72,9.76,"of"],[9.84,10.64,"evidence,"],[10.72,10.96,"then"],[11.2,11.6,"explain"],[11.68,11.76,"how"],[11.84,12.0,"they"],[12.16,12.32,"prove"],[12.4,12.48,"your"],[12.68,13.12,"claim."]],"closing":[[0.0,0.32,"Case"],[0.48,1.04,"closed!"],[1.44,1.84,"Councilor"],[1.92,2.32,"Ruiz"],[2.56,2.8,"approved"],[2.84,2.88,"the"],[2.96,3.2,"lightning"],[3.28,3.84,"rod,"],[3.96,4.08,"all"],[4.2,4.32,"because"],[4.4,4.48,"of"],[4.64,4.8,"your"],[4.96,5.72,"evidence."],[6.0,6.24,"Next"],[6.36,6.8,"week,"],[6.92,7.04,"things"],[7.16,7.28,"start"],[7.36,8.4,"crashing."],[8.48,8.56,"What"],[8.64,8.96,"happens"],[9.04,9.12,"to"],[9.32,9.52,"energy"],[9.64,9.76,"when"],[9.96,10.16,"objects"],[10.24,10.96,"collide?"]]},"banner":"<svg viewBox=\"0 0 920 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Four stations on Sam's lab bench at sunset: a steaming cup with a thermometer, a flashlight shining a spot onto paper, rice jumping on a drum, and a battery lighting a small bulb; through the window, the pier with a new lightning rod\">\n  <style>\n    .b202steam { animation: b202steam 2.4s ease-in-out infinite; }\n    .b202steam.s2 { animation-delay:.8s; } .b202steam.s3 { animation-delay:1.6s; }\n    .b202rice { animation: b202rice 1.2s ease-in-out infinite; }\n    .b202rice.r2 { animation-delay:.15s; } .b202rice.r3 { animation-delay:.3s; }\n    .b202glow { animation: b202glow 2.6s ease-in-out infinite; }\n    .b202beam { animation: b202beam 3s ease-in-out infinite; }\n    .b202ring { fill:none; stroke:#3D5A99; stroke-width:2.5; opacity:0; animation: b202ring 1.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }\n    @keyframes b202steam { 0% { opacity:0; transform: translateY(6px); } 40% { opacity:.8; } 100% { opacity:0; transform: translateY(-16px); } }\n    @keyframes b202rice { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-16px); } }\n    @keyframes b202glow { 50% { opacity:.45; } }\n    @keyframes b202beam { 50% { opacity:.6; } }\n    @keyframes b202ring { 0% { opacity:.8; transform: scale(.5); } 100% { opacity:0; transform: scale(1.5); } }\n    @media (prefers-reduced-motion: reduce) { .b202steam, .b202rice, .b202glow, .b202beam, .b202ring { animation:none; } .b202steam { opacity:.7; } .b202ring { opacity:.5; } }\n  <\/style>\n  <defs>\n    <linearGradient id=\"b202wall\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#F3E7D0\"/><stop offset=\"1\" stop-color=\"#E6D3B0\"/><\/linearGradient>\n    <linearGradient id=\"b202sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#F7B267\"/><stop offset=\".6\" stop-color=\"#F9D28B\"/><stop offset=\"1\" stop-color=\"#7FB8D8\"/><\/linearGradient>\n    <linearGradient id=\"b202bench\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#A9784A\"/><stop offset=\"1\" stop-color=\"#7E5530\"/><\/linearGradient>\n    <radialGradient id=\"b202bulb\" cx=\".5\" cy=\".5\" r=\".5\"><stop offset=\"0\" stop-color=\"#FFF7C2\"/><stop offset=\"1\" stop-color=\"#FFD54A\" stop-opacity=\"0\"/><\/radialGradient>\n  <\/defs>\n  <rect width=\"920\" height=\"200\" fill=\"url(#b202wall)\"/>\n  <!-- the window: sunset over the Gulf, the pier and its new lightning rod -->\n  <g>\n    <rect x=\"610\" y=\"14\" width=\"280\" height=\"112\" rx=\"6\" fill=\"url(#b202sky)\" stroke=\"#8A6A44\" stroke-width=\"6\"/>\n    <circle cx=\"790\" cy=\"78\" r=\"16\" fill=\"#FFE29A\"/>\n    <rect x=\"613\" y=\"92\" width=\"274\" height=\"31\" fill=\"#4E93BF\"/>\n    <g stroke=\"#5B4430\" stroke-width=\"3\"><line x1=\"640\" y1=\"98\" x2=\"860\" y2=\"98\"/><line x1=\"660\" y1=\"98\" x2=\"660\" y2=\"118\"/><line x1=\"720\" y1=\"98\" x2=\"720\" y2=\"118\"/><line x1=\"780\" y1=\"98\" x2=\"780\" y2=\"118\"/><line x1=\"840\" y1=\"98\" x2=\"840\" y2=\"118\"/><\/g>\n    <line x1=\"812\" y1=\"98\" x2=\"812\" y2=\"60\" stroke=\"#3B3B3B\" stroke-width=\"3\"/><circle cx=\"812\" cy=\"58\" r=\"4\" fill=\"#FFE066\"/>\n    <line x1=\"812\" y1=\"54\" x2=\"812\" y2=\"36\" stroke=\"#B87333\" stroke-width=\"2.5\"/><circle cx=\"812\" cy=\"35\" r=\"2\" fill=\"#B87333\"/>\n    <line x1=\"750\" y1=\"14\" x2=\"750\" y2=\"126\" stroke=\"#8A6A44\" stroke-width=\"4\"/>\n  <\/g>\n  <!-- the bench -->\n  <rect x=\"0\" y=\"150\" width=\"920\" height=\"16\" fill=\"url(#b202bench)\"/><rect x=\"0\" y=\"166\" width=\"920\" height=\"34\" fill=\"#6A4628\"/>\n  <!-- heat station: warm cup + thermometer -->\n  <g>\n    <path d=\"M60 106 h50 l-5 44 h-40 z\" fill=\"#FBF6EC\" stroke=\"#9FB7C8\" stroke-width=\"2.5\"/><path d=\"M64 116 h42 l-4 32 h-34z\" fill=\"#F2B98A\"/>\n    <path d=\"M110 116 q14 0 14 12 q0 12 -16 12\" fill=\"none\" stroke=\"#9FB7C8\" stroke-width=\"3\"/>\n    <rect x=\"92\" y=\"62\" width=\"9\" height=\"78\" rx=\"4.5\" fill=\"#fff\" stroke=\"#8A9AA8\" stroke-width=\"1.5\" transform=\"rotate(10 96 100)\"/>\n    <rect x=\"94\" y=\"96\" width=\"5\" height=\"42\" rx=\"2.5\" fill=\"#E8636B\" transform=\"rotate(10 96 100)\"/>\n    <g stroke=\"#C9C1B4\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"><path class=\"b202steam\" d=\"M72 100 q-5 -8 0 -16 t0 -16\"/><path class=\"b202steam s2\" d=\"M84 100 q-5 -8 0 -16 t0 -16\"/><path class=\"b202steam s3\" d=\"M96 98 q-5 -8 0 -16\"/><\/g>\n  <\/g>\n  <!-- light station: flashlight + beam + spot on paper -->\n  <g>\n    <g transform=\"rotate(-8 205 132)\"><rect x=\"170\" y=\"124\" width=\"46\" height=\"18\" rx=\"5\" fill=\"#2E3A4A\"/><path d=\"M216 120 h12 v26 h-12 z\" fill=\"#4A5868\"/><\/g>\n    <path class=\"b202beam\" d=\"M228 120 L318 92 L318 152 L228 140 Z\" fill=\"#FFF0A8\" opacity=\".85\"/>\n    <rect x=\"318\" y=\"84\" width=\"8\" height=\"66\" fill=\"#fff\" stroke=\"#C9D6E0\" stroke-width=\"1.5\"/>\n    <ellipse cx=\"320\" cy=\"122\" rx=\"4\" ry=\"22\" fill=\"#FFE066\"/>\n  <\/g>\n  <!-- sound station: drum + jumping rice + sound rings -->\n  <g>\n    <ellipse cx=\"450\" cy=\"126\" rx=\"48\" ry=\"10\" fill=\"#F3E9D2\" stroke=\"#C8B48A\" stroke-width=\"2\"/>\n    <rect x=\"402\" y=\"126\" width=\"96\" height=\"24\" fill=\"#C8453D\"/><ellipse cx=\"450\" cy=\"150\" rx=\"48\" ry=\"9\" fill=\"#A8352F\"/>\n    <path d=\"M408 130 l12 18 l12 -18 l12 18 l12 -18 l12 18 l12 -18 l12 18\" fill=\"none\" stroke=\"#F3E9D2\" stroke-width=\"2\"/>\n    <g fill=\"#fff\" stroke=\"#BBB\"><ellipse class=\"b202rice\" cx=\"432\" cy=\"118\" rx=\"4.5\" ry=\"2.4\"/><ellipse class=\"b202rice r2\" cx=\"452\" cy=\"116\" rx=\"4.5\" ry=\"2.4\"/><ellipse class=\"b202rice r3\" cx=\"468\" cy=\"119\" rx=\"4.5\" ry=\"2.4\"/><\/g>\n    <g transform=\"translate(450 100)\"><circle class=\"b202ring\" r=\"20\"/><circle class=\"b202ring\" r=\"20\" style=\"animation-delay:.6s\"/><\/g>\n  <\/g>\n  <!-- electrical station: battery + wires + glowing bulb -->\n  <g>\n    <rect x=\"530\" y=\"128\" width=\"46\" height=\"20\" rx=\"4\" fill=\"#2E3A4A\"/><rect x=\"576\" y=\"133\" width=\"5\" height=\"10\" fill=\"#B9C2CC\"/><rect x=\"530\" y=\"128\" width=\"14\" height=\"20\" rx=\"3\" fill=\"#D99A00\"/>\n    <circle class=\"b202glow\" cx=\"590\" cy=\"96\" r=\"26\" fill=\"url(#b202bulb)\"/>\n    <circle cx=\"590\" cy=\"96\" r=\"11\" fill=\"#FFE066\" stroke=\"#E0A100\" stroke-width=\"2\"/><rect x=\"584\" y=\"106\" width=\"12\" height=\"9\" fill=\"#9AA5B1\"/>\n    <path d=\"M581 138 C600 138 600 120 594 115 M530 138 C512 138 512 112 586 112\" fill=\"none\" stroke=\"#C0392B\" stroke-width=\"2.5\"/>\n  <\/g>\n<\/svg>\n"}</script>
+<link rel="stylesheet" href="assets/sparkle/fs-sparkle.css?v=a31c892c">
 </head>
 <body>
 <div class="page-wrap">
@@ -1153,7 +1156,7 @@
     <div>
       <div class="info-label">Quarter / Week</div>
       <div class="info-value">Q3 &middot; Week 20</div>
-      <div class="info-detail">Ecosystems &amp; Energy</div>
+      <div class="info-detail">Energy, Motion &amp; Collisions</div>
     </div>
   </div>
   <div class="info-item">
@@ -1161,7 +1164,7 @@
     <div>
       <div class="info-label">Lesson</div>
       <div class="info-value">Lesson 20.02</div>
-      <div class="info-detail">Life Science</div>
+      <div class="info-detail">Physical Science</div>
     </div>
   </div>
   <div class="info-item">
@@ -1176,7 +1179,7 @@
     <div class="info-icon" style="background:#EEF8F0;">🌿</div>
     <div>
       <div class="info-label">Standards</div>
-      <div class="info-value">4-ESS3-1 · TEKS 4.8(B)</div>
+      <div class="info-value">4-PS3-2 · TEKS 4.8(B)</div>
       <div class="info-detail">Energy Transfer</div>
     </div>
   </div>
@@ -1200,7 +1203,7 @@
           <div class="question">"What evidence can YOU collect to show that energy moved between two places?"</div>
         </div>
       </div>
-      <p>Hold this question in your head as you work. By the end of the lesson, you'll have done your own investigation — running four small "stations" — and recorded evidence for each form of energy transfer.</p>
+      <p>Keep this question in mind. By the end, you’ll run four small stations and collect evidence that energy moved at each one.</p>
     </div>
   </div>
 
@@ -1231,16 +1234,13 @@
 
 <div class="need-strip">
   <span class="need-strip-label">🎒 You'll need:</span>
-  <span class="need-chip"><span>📓</span>Science notebook</span>
   <span class="need-chip"><span>✏️</span>Colored pencils</span>
-  <span class="need-chip"><span>🔆</span>A sunny window or memory of one</span>
 </div>
 
 <!-- ═══ TAB BAR ═══ -->
 <div class="tab-bar" id="tabBar">
   <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
-  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
 </div>
@@ -1264,7 +1264,7 @@
 </div>
 
 
-</div>
+
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#E8636B;">1</div>
@@ -1275,7 +1275,7 @@
       <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
     </div>
     <div class="act-body">
-      <p>In one minute, write down what you can tell about each of these without going closer:</p>
+      <p>Look at these three from where you sit. What can you tell about each one, and how could you PROVE it to a doubter?</p>
 
       <ul style="font-size:16px;color:#2B1D12;line-height:1.7;margin:6px 0 10px 24px;">
         <li>A lamp glowing across the room</li>
@@ -1293,7 +1293,7 @@
 
       <div class="callout callout-tip">
         <span class="callout-icon">💡</span>
-        <p>Today you'll be the investigator. You'll set up four small stations, each one showing a different form of energy moving — and collect evidence with your senses and simple tools.</p>
+        <p>Today you're the investigator. You'll set up four small stations, each showing a different way energy moves, and collect evidence with your senses and simple tools.</p>
       </div>
     </div>
   </div>
@@ -1307,7 +1307,7 @@
       </div>
     </div>
     <div class="card-body">
-      <p>These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.</p>
+      <p><strong>Tap a card to flip it</strong> and read what the word means.</p>
       <div class="vocab-grid">
         <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">➡️</div><div class="fc-word">Transfer</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Transfer</div><div class="fc-def">When energy moves from one place to another. A campfire transfers heat to your hands; a lamp transfers light to a leaf.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
         <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🧪</div><div class="fc-word">Station</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Station</div><div class="fc-def">A small setup where you investigate one thing. In today's lesson, each station shows one form of energy transferring.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
@@ -1341,26 +1341,18 @@
     <div class="act-body">
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · What a Station Looks Like</h3>
-      <p>A <span class="vtip">station<span class="vtip-box"><span class="vtip-word">Station</span>A small investigation setup.</span></span> is a small setup designed to show ONE thing happening clearly. In real research labs, scientists set up stations to test one variable at a time. Today, you'll do the same — four stations, one for each form of energy.</p>
+      <p>A <span class="vtip">station<span class="vtip-box"><span class="vtip-word">Station</span>A small investigation setup.</span></span> is a small setup designed to show ONE thing happening clearly. In real research labs, scientists set up stations to test one variable at a time. Today you'll do the same: four stations, one for each way energy moves.</p>
 
       <p>Every station has the same three parts:</p>
 
       <ul style="font-size:16px;color:#2B1D12;line-height:1.7;margin:10px 0 12px 24px;">
         <li><strong>A <span class="vtip">source<span class="vtip-box"><span class="vtip-word">Source</span>Where energy starts.</span></span>:</strong> something giving off energy (a warm cup, a flashlight, a drum, a battery).</li>
         <li><strong>A <span class="vtip">receiver<span class="vtip-box"><span class="vtip-word">Receiver</span>Where energy ends up.</span></span>:</strong> something the energy reaches (your hand, a wall, a small object, a bulb).</li>
-        <li><strong>A way to collect <span class="vtip">evidence<span class="vtip-box"><span class="vtip-word">Evidence</span>What supports a claim.</span></span>:</strong> your senses (you can SEE light, HEAR sound, FEEL heat) — and sometimes a tool to take a <span class="vtip">measurement<span class="vtip-box"><span class="vtip-word">Measurement</span>A number from a tool.</span></span>.</li>
+        <li><strong>A way to collect <span class="vtip">evidence<span class="vtip-box"><span class="vtip-word">Evidence</span>What supports a claim.</span></span>:</strong> your senses (you can SEE light, HEAR sound, FEEL heat), and sometimes a tool to take a <span class="vtip">measurement<span class="vtip-box"><span class="vtip-word">Measurement</span>A number from a tool.</span></span>.</li>
       </ul>
 
-      <div class="socratic-q">
-        <span class="sq-icon">🛑</span>
-        <div>
-          <div class="label">Stop &amp; Think</div>
-          <div class="question">"Suppose your station is a warm cup of cocoa. What's the source? What could be the receiver? What evidence would tell you energy moved?"</div>
-        </div>
-      </div>
-
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 2 · Strong Evidence vs. Weak Evidence</h3>
-      <p>Anyone can say "I think the cup is warm." Scientists do better than that — they collect EVIDENCE other people can check. Two forms of evidence are especially strong:</p>
+      <p>Anyone can say "I think the cup is warm." Scientists do better than that. They collect EVIDENCE other people can check. Two forms of evidence are especially strong:</p>
 
       <ul style="font-size:16px;color:#2B1D12;line-height:1.7;margin:10px 0 12px 24px;">
         <li><strong>Direct observation:</strong> "I saw the bulb light up." "I heard the drum vibrate." Anyone watching could check.</li>
@@ -1369,208 +1361,9 @@
 
       <p>The strongest investigation reports use BOTH. You write what you observed, AND you record the measurement. Together they form evidence that another scientist could verify.</p>
 
-      <p><strong>Common misconception:</strong> Some people think you have to have fancy tools to do real science. You don't. A thermometer, ruler, stopwatch, and your own senses are enough for this lesson — and for thousands of real scientific investigations.</p>
-      <div class="lesson-figure scroll-reveal">
-        <div class="lesson-figure-label">🧪 Four Classroom Energy Stations</div>
-        <img src="images/20-02-energy-stations.png"
-             alt="Four illustrated investigation stations. HEAT: a warm cup of water with a thermometer measuring 85°F. LIGHT: a flashlight shining at a piece of paper showing a glowing spot. SOUND: a drum with rice grains bouncing on top from the vibrations. ELECTRICAL: a battery connected to a small bulb by wires, bulb lit."
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
-        <div class="image-suggestion" style="display:none;">
-          <div class="image-suggestion-icon">🖼️</div>
-          <div class="image-suggestion-label">Suggested Image — Generate This</div>
-          <div class="image-suggestion-desc">A wide horizontal infographic showing FOUR classroom investigation stations side by side. STATION 1 labeled "HEAT" — a warm cup of water with steam rising, a thermometer inserted, reading "85°F." STATION 2 labeled "LIGHT" — a flashlight shining onto a piece of white paper, with a circular bright spot illuminated and labeled. STATION 3 labeled "SOUND" — a small drum or upside-down container with a few grains of rice sitting on top, with motion lines showing the rice bouncing. STATION 4 labeled "ELECTRICAL" — a simple circuit with a battery, two wires, and a small lit lightbulb with a glow. Each station has a small label below: "Source: ___" and "Receiver: ___". Title at top: "Four Energy Stations You Can Run." Use Optima palette: navy text, coral/amber/forest-green/sky-blue accents per station. Cream/transparent background. 16:9 ratio. Friendly textbook-illustration style, 4th-grade-appropriate.</div>
-          <div class="image-suggestion-file">Save as: images/20-02-energy-stations.png</div>
-        </div>
-        <div class="lesson-figure-caption"><strong>Each station has a source, a receiver, and a way to collect evidence.</strong> Same investigation structure — four different forms of energy to study.</div>
-      </div>
-
-      <div style="background:#FFF6E5;border:2.5px solid #F0C97A;border-radius:14px;padding:18px 20px;margin:18px 0;">
-        <div style="font-size:12px;color:#9A6E10;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:6px;">⭐ Key Concept</div>
-        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin:0;line-height:1.6;">A station is a small investigation setup. The strongest evidence comes from combining direct observation with measurement.</p>
-      </div>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🧠</span>
-        <div>
-          <div class="label">Stop &amp; Reason</div>
-          <div class="question">"Look at the four stations above. Pick TWO. For each, name the source, the receiver, and what kind of evidence you'd collect. Could you measure it with a tool?"</div>
-        </div>
-      </div>
-
-      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Four Stations to Run</h3>
-      <p><strong>Tap a station</strong> to see exactly what to set up and what evidence to collect.</p>
-
-      <div class="diagram-wrap diagram-interactive" style="background:linear-gradient(135deg,#E8F0DC,#C0D8A8);border-radius:14px;padding:14px;">
-        <div style="font-size:13px;color:#1B5A28;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;text-align:center;">
-          🧪 Tap a station — see what to do
-        </div>
-        <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;width:100%;height:auto;" role="img" aria-label="Four classroom energy stations">
-
-          <rect x="0"   y="0"   width="360" height="160" fill="#F0CCB5" opacity="0.6"/>
-          <rect x="360" y="0"   width="360" height="160" fill="#F0E0B5" opacity="0.6"/>
-          <rect x="0"   y="160" width="360" height="160" fill="#C5DCE5" opacity="0.6"/>
-          <rect x="360" y="160" width="360" height="160" fill="#E5C8E0" opacity="0.6"/>
-
-          <line x1="360" y1="0"   x2="360" y2="320" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-          <line x1="0"   y1="160" x2="720" y2="160" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-
-          <text x="180" y="90" text-anchor="middle" font-size="56">☕</text>
-          <rect x="100" y="125" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="180" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#8A4118">HEAT STATION</text>
-
-          <text x="540" y="90" text-anchor="middle" font-size="56">🔦</text>
-          <rect x="460" y="125" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="540" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#7A5414">LIGHT STATION</text>
-
-          <text x="180" y="250" text-anchor="middle" font-size="56">🥁</text>
-          <rect x="100" y="285" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="180" y="305" text-anchor="middle" font-size="14" font-weight="900" fill="#1B4A6F">SOUND STATION</text>
-
-          <text x="540" y="250" text-anchor="middle" font-size="56">🔋</text>
-          <rect x="460" y="285" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="540" y="305" text-anchor="middle" font-size="14" font-weight="900" fill="#5A3B92">ELECTRICAL STATION</text>
-
-          <rect class="hotspot" x="0" y="0" width="360" height="160"
-                fill="#D4772C"
-                data-part="Heat station"
-                data-info="SETUP: a cup of warm water and a thermometer. SOURCE: the warm water. RECEIVER: the thermometer (and the air around the cup). EVIDENCE TO COLLECT: write down the temperature now. Wait 10 minutes. Write it down again. Did it go DOWN as heat moved to the cooler air? That's your evidence of heat transfer. Optional measurement: take readings every 2 minutes."/>
-          <rect class="hotspot" x="360" y="0" width="360" height="160"
-                fill="#D4A017"
-                data-part="Light station"
-                data-info="SETUP: a flashlight, a piece of paper, and a darkish corner. SOURCE: the flashlight bulb. RECEIVER: the paper. EVIDENCE TO COLLECT: trace the bright spot on the paper with a pencil. Move the flashlight farther away — does the spot get bigger? Brighter? Cover the bulb with your hand — what happens to the spot? Optional measurement: measure the distance between flashlight and paper."/>
-          <rect class="hotspot" x="0" y="160" width="360" height="160"
-                fill="#2D7AA6"
-                data-part="Sound station"
-                data-info="SETUP: a drum (or any flat container turned upside down) and a few grains of rice or salt on top. SOURCE: your hand tapping the drum. RECEIVER: the rice grains (and your ears). EVIDENCE TO COLLECT: tap softly — what do the rice grains do? Tap hard — what do they do now? Optional measurement: count how many grains move in each tap, or measure how high they jump."/>
-          <rect class="hotspot" x="360" y="160" width="360" height="160"
-                fill="#8B6FC0"
-                data-part="Electrical station"
-                data-info="SETUP: a battery, two wires (or strips of foil), and a small bulb (or LED). SOURCE: the battery. RECEIVER: the bulb. EVIDENCE TO COLLECT: connect the wires from battery to bulb. Did it light up? Disconnect one wire. What happens? Optional measurement: time how long the bulb stays bright with a fresh battery."/>
-        </svg>
-
-        <div class="diagram-info-panel" id="diagramPanel">
-          <span class="dip-word" id="diagramWord"></span>
-          <span id="diagramInfo"></span>
-        </div>
-      </div>
-      
-      
-      <div class="socratic-q">
-        <span class="sq-icon">👀</span>
-        <div>
-          <div class="label">Observe &amp; Reason</div>
-          <div class="question">"Pick TWO stations from the diagram. For each, what kind of evidence would tell you the energy actually moved? Is it observation, measurement, or both?"</div>
-        </div>
-      </div>
-
-      <div class="mind-blow">
-        <span class="mind-blow-icon">🤯</span>
-        <div class="mind-blow-content">
-          <div class="mind-blow-label">Amazing Florida Fact</div>
-          <div class="mind-blow-text">Real scientific labs sometimes set up <strong>hundreds of identical stations</strong> at once. Researchers studying climate run hundreds of weather stations across Florida — each one collecting the same kinds of evidence so they can compare.</div>
-        </div>
-      </div>
-      <div class="callout callout-info" style="margin-top:18px;">
-        <span class="callout-icon">🌴</span>
-        <p><strong>Florida connection:</strong> The Florida Solar Energy Center at the University of Central Florida runs energy-transfer investigations year-round — testing how much heat, light, and electricity solar panels collect. Their evidence shapes statewide energy decisions.</p>
-      </div>
-
-      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
-        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · Why are simple tools usually enough?</summary>
-        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
-          Real science doesn't need fancy equipment to start. A thermometer and a stopwatch can let you do work that matters. Many ground-breaking experiments were done with just simple tools — careful observation and careful records matter more than expensive gear.
-        </div>
-      </details>
-
-      <div class="tab-next-wrap">
-        <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- TAB 3: GUIDED EXPLORATION          -->
-<!-- ═══════════════════════════════════ -->
-<div class="tab-panel" id="tab-explore">
-
-  <div class="activity-card act-explore scroll-reveal">
-    <div class="act-head">
-      <div class="act-num" style="background:#55C8E8;">3</div>
-      <div style="flex:1;">
-        <div class="act-title">🔬 Explore: Trace Four Energy Transfers</div>
-        <div class="act-subtitle">Find the source and receiver in real Florida moments</div>
-      </div>
-      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
-    </div>
-    <div class="act-body">
-
-      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Walk around your home or school for two minutes (with permission). Find ONE example of each energy form: heat, light, sound, and electrical. By step 4 you'll have a four-row chart showing the source, the receiver, and your evidence for each.</p>
-      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFF5E1;border:2px solid #F0C97A;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#F5A623,#D4772C);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#9A6E10;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 1</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Set up your chart</div>
-            <p style="color:#2B1D12;margin:0;">In your notebook, draw a chart with FOUR rows (HEAT, LIGHT, SOUND, ELECTRICAL) and THREE columns (Source, Receiver, Evidence).</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#EEF8F0;border:2px solid #B7DDC3;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#34B76F,#1F9252);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#1F6E3F;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 2</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Find a HEAT example</div>
-            <p style="color:#2B1D12;margin:0;">Look for one heat transfer (a hot mug, a sunny window, a running oven). Note the source, the receiver, and your evidence the heat moved.</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFEDEF;border:2px solid #F0B4B8;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#E8636B,#D04450);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#9A1B22;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 3</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Find LIGHT and SOUND examples</div>
-            <p style="color:#2B1D12;margin:0;">Find one light transfer (a lamp, sunlight) and one sound transfer (a voice, a fan, music). For each, record the source, receiver, and evidence.</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#F0EDF6;border:2px solid #C9BFE0;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8B6FC0,#6E4FA8);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#5A3B92;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 4</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Find an ELECTRICAL example + reflect</div>
-            <p style="color:#2B1D12;margin:0;">Find one electrical transfer (a charging phone, a plugged-in clock). Complete your chart. Then write one sentence: "Energy transfers always need a ___ and a ___."</p>
-          </div>
-        </div>
-
-      </div>
-      
-      
-      
-      <div class="mind-blow" style="margin-top:22px;">
-        <span class="mind-blow-icon">🤯</span>
-        <div class="mind-blow-content">
-          <div class="mind-blow-label">Amazing Florida Fact</div>
-          <div class="mind-blow-text">Sound travels about <strong>4 times faster in water</strong> than in air. That's why whales can hear each other across oceans — sound energy moves more easily through dense materials than through gas.</div>
-        </div>
-      </div>
-      <div class="socratic-q">
-        <span class="sq-icon">🧪</span>
-        <div>
-          <div class="label">Think like a scientist</div>
-          <div class="question">"A Florida scientist watches a hummingbird hovering in front of a feeder. Name TWO different energy transfers happening in that one moment. What's the source and receiver for each?"</div>
-        </div>
-      </div>
-
-      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
-        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · What is a CONDUCTOR?</summary>
-        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
-          A conductor is a material that lets energy travel through it easily. Metal is a great heat conductor — that's why frying pans are made of metal. Copper is a great electrical conductor — that's why most wires are made of it. The opposite of a conductor is an insulator (wood, plastic, air), which slows energy down.
-        </div>
-      </details>
-
+      <p><strong>Watch out:</strong> Some people think real science needs fancy tools. It doesn’t. A thermometer, a ruler, a stopwatch and your own senses are enough for this lesson and for thousands of real investigations.</p>
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 4 · Run the Stations</h3>
+      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Now run all four stations yourself. Do something to each source, then read the tool. Every number you read goes into your station log.</p>
       <div class="tab-next-wrap">
         <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
       </div>
@@ -1659,31 +1452,12 @@
     </div>
     <div class="act-body">
 
-      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Station, Receiver, Evidence, Measurement</strong></p>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">1</span>
-        <span class="pq-text">A small setup where you investigate one thing: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">2</span>
-        <span class="pq-text">Where energy goes — like the wall a flashlight hits: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">3</span>
-        <span class="pq-text">What you observe or record that supports a claim: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">4</span>
-        <span class="pq-text">A number you get from a tool — like 75°F or 10 cm: ___________</span>
-      </div>
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🌿 Part B &mdash; Short Answer</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use vocabulary words from today's lesson.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">5</span>
-        <span class="pq-text">Pick ONE station from the diagram (heat, light, sound, or electrical). Describe the SETUP, the SOURCE, the RECEIVER, and what EVIDENCE you would collect.</span>
+        <span class="pq-text">Pick ONE station from today (heat, light, sound, or electrical). Describe the SETUP, the SOURCE, the RECEIVER, and what EVIDENCE you would collect.</span>
       </div>
       <textarea class="response-textarea" id="ans-1" data-label="Pick ONE station from the diagram (heat, light, so..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
@@ -1693,28 +1467,13 @@
       </div>
       <textarea class="response-textarea" id="ans-2" data-label="What&#x27;s the difference between OBSERVATION evidence..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-      <div class="pq">
-        <span class="pq-num" style="background:#D4772C;">7</span>
-        <span class="pq-text">Why are SIMPLE tools (a thermometer, a stopwatch) often enough to do real science? Give one example.</span>
-      </div>
-      <textarea class="response-textarea" id="ans-3" data-label="Why are SIMPLE tools (a thermometer, a stopwatch) ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
-      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use colors. Label every part.</p>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Reflect</div>
-          <div class="question">"What was the trickiest part of figuring out where the energy in a hawk really comes from? Write 2–3 sentences about something you learned today that you didn't know before."</div>
-        </div>
-      </div>
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🧪 Part C &mdash; Two Station Reports</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Pick two stations from today. For each one, write the source, the receiver, what you observed, what you measured and your claim.</p>
 
       <div style="background:#FAF7F3;border:2px solid #8B6FC0;border-radius:16px;padding:22px 24px;margin-bottom:20px;">
         <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ Use Your Evidence</div>
         <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A classmate says, <em>"You can't really prove that energy moved. You just have to trust it."</em></p>
-        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.</p>
+        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson.</p>
         <textarea class="response-textarea ta-lg" id="cer-4" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
       </div>
 
@@ -1729,7 +1488,7 @@
       </div>
     </div>
     <div class="gathered-body">
-      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-intro">All your answers in one place. Copy or download them to turn in on Canvas.</div>
       <div class="gathered-name-row">
         <span class="gathered-name-label">Your name:</span>
         <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
@@ -1756,32 +1515,21 @@
 
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A:</strong> All four blanks filled in using words from the bank.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5 and 6 answered in complete sentences using lesson vocabulary.</span>
           </div>
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5, 6, and 7 answered in complete sentences using lesson vocabulary.</span>
-          </div>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
-            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> Two station reports — each with source, receiver, evidence (observation + measurement), and an evidence-based claim.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> Two station reports, each with the source, the receiver, what I observed, what I measured and my claim. (A sketch is a bonus.)</span>
           </div>
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Key Question Response:</strong> 2–3 sentences answering the big question using at least three vocabulary words.</span>
-          </div>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
-            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Evidence Response:</strong> I made a claim about whether we can prove energy moved, and supported it with two pieces of evidence from my stations.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Use Your Evidence:</strong> My claim about whether we can prove energy moved, with two pieces of evidence from my stations.</span>
           </div>
 
           <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
             <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
             <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
-              Submit your work however works best for you:<br/><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.</span><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> — Take a clear photo of your handwritten work and upload it.</span><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> — Record a short video explaining your food chain.</span>
+              Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.
             </div>
           </div>
         </div>
@@ -1806,10 +1554,9 @@
           <div class="question">"What evidence can YOU collect to show that energy moved between two places?"</div>
         </div>
       </div>
-      <p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong> to this question in your science notebook. Use at least <strong>three vocabulary words</strong> from today.</p>
       <div class="callout callout-tip">
         <span class="callout-icon">⭐</span>
-        <p><strong>Nicely done.</strong> You can now set up an investigation <span class="vtip">station<span class="vtip-box"><span class="vtip-word">Station</span>A small setup.</span></span>, identify the <span class="vtip">source<span class="vtip-box"><span class="vtip-word">Source</span>Where energy starts.</span></span> and <span class="vtip">receiver<span class="vtip-box"><span class="vtip-word">Receiver</span>Where energy ends.</span></span>, collect both observation and <span class="vtip">measurement<span class="vtip-box"><span class="vtip-word">Measurement</span>A number from a tool.</span></span> <span class="vtip">evidence<span class="vtip-box"><span class="vtip-word">Evidence</span>What supports a claim.</span></span>, and make a claim with that evidence. Next module, we switch from energy transfer to what happens when objects COLLIDE — where motion suddenly stops or changes.</p>
+        <p><strong>Nicely done.</strong> You set up stations, collected observations AND measurements, and convinced a doubter. Next week, things start crashing: what happens to energy when objects collide?</p>
       </div>
     </div>
   </div>
@@ -1832,7 +1579,7 @@
 
 <script>
 // ── Tab System ──
-var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var TAB_ORDER = ['vocab','lesson','quiz','assignment'];
 var tabsVisited = new Set(['vocab']);
 
 function switchTab(tabId) {
@@ -2125,7 +1872,7 @@ window.addEventListener('beforeunload', function(e){
 <!-- Video Manifest Loader -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('https://raw.githubusercontent.com/bbirchum1/optima-4th-science/main/video-manifest.json?v=' + Date.now())
+  fetch('https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json?v=' + Date.now())
     .then(function(r) { return r.json(); })
     .then(function(data) {
       var manifest = data.videos || data;
@@ -2334,5 +2081,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<script src="assets/sparkle/fs-sparkle.js?v=a31c892c"></script>
 </body>
 </html>
