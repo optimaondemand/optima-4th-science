@@ -241,6 +241,49 @@
    "want": false,
    "parts": [],
    "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  },
+  "vr": {
+   "label": "VR activity · The island field camp (separate page)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "solar",
+     "label": "📷 Power from the sun"
+    },
+    {
+     "label": "📋 The supply order",
+     "tag": "CASE 15 FOLLOW-UP",
+     "title": "Only order what refills!",
+     "col": "#B9822A",
+     "body": "Our island camp has to run for 20 years. Diesel, propane and gravel? Or sun, rain and trees?"
+    },
+    {
+     "label": "🧭 Two ways",
+     "tag": "PICK AT THE TOP",
+     "title": "Two ways to do it",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "🥽",
+       "VR Field Mission: build the camp in Island Town and say why each piece won’t run out."
+      ],
+      [
+       "🗂",
+       "No headset? Run the camp for 20 years and see what runs out first."
+      ]
+     ]
+    },
+    {
+     "label": "🥇 The badge",
+     "tag": "VR ONLY",
+     "title": "Golden Sun badge",
+     "col": "#7A5BB5",
+     "body": "Save your capture in VR to earn it."
+    }
+   ],
+   "script": "[ON SCREEN: Power from the sun]\nHi, scientists! Dr. Reyes is opening a Field Station camp on a little island, and it has to keep running for twenty years.\n\n[ON SCREEN: The supply order]\nA volunteer filled out the supply order. Some of it would run out and never come back! Only order what refills.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, build the camp in Island Town and tell why each piece won’t run out. No headset? Run the camp for twenty years and watch the piles.\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Golden Sun badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me."
   }
  },
  "pics": {
