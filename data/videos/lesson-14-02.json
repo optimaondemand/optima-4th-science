@@ -278,6 +278,49 @@
    "want": false,
    "parts": [],
    "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  },
+  "vr": {
+   "label": "VR activity · The season wheel (separate page)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "vrrobin",
+     "label": "📷 The banded robin"
+    },
+    {
+     "label": "📋 The band report",
+     "tag": "CASE 14 FOLLOW-UP",
+     "title": "Where did the robin go?",
+     "col": "#B9822A",
+     "body": "Banded in Maine in July. Found in Tallahassee, Florida in January. Why?"
+    },
+    {
+     "label": "🧭 Two ways",
+     "tag": "PICK AT THE TOP",
+     "title": "Two ways to do it",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "🥽",
+       "VR Field Mission: build a season wheel around a clock, with winter, spring, summer and fall."
+      ],
+      [
+       "🗂",
+       "No headset? Follow four banded birds on a map. One never left home!"
+      ]
+     ]
+    },
+    {
+     "label": "🥇 The badge",
+     "tag": "VR ONLY",
+     "title": "Silver Snowflake badge",
+     "col": "#7A5BB5",
+     "body": "Save your capture in VR to earn it."
+    }
+   ],
+   "script": "[ON SCREEN: The banded robin]\nHi, scientists! See this robin? Last summer, Dr. Reyes put a tiny band on its leg in Maine.\n\n[ON SCREEN: The band report]\nThis January, it turned up in Florida! Hmm. Why would a robin fly all that way?\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, build a season wheel around a clock and show who needs what in each season. No headset? Follow four banded birds on a map.\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Silver Snowflake badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me."
   }
  },
  "pics": {
@@ -304,6 +347,10 @@
   "robin": {
    "src": "images/14-02-robin.jpg",
    "cap": "A robin eating holly berries (CC BY 2.0)"
+  },
+  "vrrobin": {
+   "src": "images/14-02-vr-robin.jpg",
+   "cap": "An American robin on a snowy branch (USFWS, public domain)"
   },
   "grass": {
    "src": "images/14-02-seagrass.jpg",
