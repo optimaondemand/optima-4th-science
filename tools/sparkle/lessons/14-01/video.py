@@ -8,6 +8,7 @@ pics = {
     'egg': {'src': 'images/14-01-monarch-egg.jpg', 'cap': 'Monarch egg (CC BY-SA 2.0)'},
     'cat': {'src': 'images/14-01-monarch-caterpillar.jpg', 'cap': 'Monarch caterpillar (USFWS, public domain)'},
     'lubber': {'src': 'images/14-01-lubber-nymph.jpg', 'cap': 'Eastern lubber grasshopper nymph (CC BY 2.0)'},
+    'vrmosq': {'src': 'images/14-01-vr-mosq-baby.jpg', 'cap': 'Mosquito larvae hanging from the top of the water (CDC, James Gathany, public domain)'},
     'emerged': {'src': 'images/14-01-dragonfly-emerged.jpg', 'cap': 'A dragonfly just out of its nymph skin (CC BY 4.0)'},
 }
 C_CASE, C_GREEN, C_PURP, C_RED, C_BLUE = '#B9822A', '#2F7A55', '#7A5BB5', '#C8553D', '#2D7AA6'
@@ -45,5 +46,11 @@ S['part3'] = {'label': 'Part 3 · close the circle (Clue 3)', 'length': '30–40
 S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts': [],
     'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
 V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part1', 'partb', 'partc']}
+S['vr'] = {'label': 'VR activity · Two insect families (separate page)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'label': '🫙 Ava’s jar', 'tag': 'CASE 14 FOLLOW-UP', 'title': 'What will they turn into?', 'col': C_CASE, 'body': 'A girl named Ava found wiggly things in her pond. Help Dr. Reyes answer her.'},
+    {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': C_BLUE, 'rows': [['🥽', 'VR Field Mission: in the Tropical Rainforest, line up the insects that change completely and circle up the ones that grow up in steps.'], ['🗂', 'No headset? Solve six mystery babies: guess the parent, then stamp the family.']]},
+    {'kind': 'photo', 'pic': 'vrmosq', 'label': '📷 The wigglers'},
+    {'label': '🥇 The badge', 'tag': 'VR ONLY', 'title': 'Golden Firefly badge', 'col': C_PURP, 'body': 'Save your capture in VR to earn it.'}],
+    'script': 'Hi, scientists! (Wiggle your finger like a worm.) A girl named Ava found little wigglers like this in her pond.\n\n[ON SCREEN: Ava’s jar]\nShe wants to know: what will they turn into?\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, sort two insect families in the rainforest. Make the insects big and tell why each one belongs. No headset? Solve six mystery babies.\n\n[ON SCREEN: The wigglers]\nHere is the big clue: does the baby look like a small adult, or nothing like it at all?\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Golden Firefly badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me.'}
 json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('video.json written')
