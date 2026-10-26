@@ -224,9 +224,56 @@
    "want": false,
    "parts": [],
    "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  },
+  "vr": {
+   "label": "VR activity · The quarry model (separate page)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "vrstork",
+     "label": "📷 Who lives in the slough"
+    },
+    {
+     "label": "📋 The permit",
+     "tag": "CASE 16 FOLLOW-UP",
+     "title": "PENDING",
+     "col": "#B9822A",
+     "body": "The council will say yes only IF the permit shows how to protect Cypress Slough and the town wells."
+    },
+    {
+     "label": "🧭 Two ways",
+     "tag": "PICK AT THE TOP",
+     "title": "Two ways to do it",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "🥽",
+       "VR Field Mission: build a tabletop quarry model with at least two protections."
+      ],
+      [
+       "🗂",
+       "No headset? Draw the deal: drag four protections onto a site plan."
+      ]
+     ]
+    },
+    {
+     "label": "🥇 The badge",
+     "tag": "VR ONLY",
+     "title": "Golden Gavel badge",
+     "col": "#7A5BB5",
+     "body": "Save your capture in VR to earn it."
+    }
+   ],
+   "script": "[ON SCREEN: Who lives in the slough]\nHi, scientists! Wood storks like this one feed in Cypress Slough, right next to where the quarry wants to dig.\n\n[ON SCREEN: The permit]\nThe town council stamped the quarry permit PENDING. They will only say yes if the permit lists ways to protect the slough and the town wells.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, build a tabletop model of the quarry with at least two protections. No headset? Draw the deal on a site plan and watch the cost meters drop.\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Golden Gavel badge!\n\nPress Listen on June’s walkie-talkie, right below me."
   }
  },
  "pics": {
+  "vrstork": {
+   "src": "images/16-01-vr-stork.jpg",
+   "cap": "A wood stork feeding in shallow water (CC BY 2.0)"
+  },
   "lakebelt": {
    "src": "images/16-01-lake-belt.jpg",
    "cap": "Rock pits beside the Everglades (USGS, public domain)"

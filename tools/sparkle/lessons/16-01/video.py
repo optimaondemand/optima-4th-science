@@ -2,6 +2,7 @@
 """Writes video.json (Video Studio plan) for 16.01."""
 import json
 pics = {
+    'vrstork': {'src': 'images/16-01-vr-stork.jpg', 'cap': 'A wood stork feeding in shallow water (CC BY 2.0)'},
     'lakebelt': {'src': 'images/16-01-lake-belt.jpg', 'cap': 'Rock pits beside the Everglades (USGS, public domain)'},
     'wall': {'src': 'images/16-01-quarry-wall.jpg', 'cap': 'A limestone wall in a Florida quarry (RealGatba, CC BY-SA 4.0)'},
     'wetland': {'src': 'images/16-01-wetland.jpg', 'cap': 'Sawgrass growing on limestone, Everglades (public domain)'},
@@ -41,6 +42,12 @@ S['part2'] = {'label': 'Part 2 · strategy toolbox (Clue 3)', 'length': '30–40
     'script': 'There are four kinds of protection strategies: using less, fixing damage afterward, a smarter machine, and rules. Drop each card into its drawer. Round two is the quarry. Press Listen.'}
 S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts': [],
     'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
+S['vr'] = {'label': 'VR activity · The quarry model (separate page)', 'length': '45–55 s', 'want': True, 'parts': [
+    {'kind': 'photo', 'pic': 'vrstork', 'label': '📷 Who lives in the slough'},
+    {'label': '📋 The permit', 'tag': 'CASE 16 FOLLOW-UP', 'title': 'PENDING', 'col': C_CASE, 'body': 'The council will say yes only IF the permit shows how to protect Cypress Slough and the town wells.'},
+    {'label': '🧭 Two ways', 'tag': 'PICK AT THE TOP', 'title': 'Two ways to do it', 'col': C_BLUE, 'rows': [['🥽', 'VR Field Mission: build a tabletop quarry model with at least two protections.'], ['🗂', 'No headset? Draw the deal: drag four protections onto a site plan.']]},
+    {'label': '🥇 The badge', 'tag': 'VR ONLY', 'title': 'Golden Gavel badge', 'col': C_PURP, 'body': 'Save your capture in VR to earn it.'}],
+    'script': '[ON SCREEN: Who lives in the slough]\nHi, scientists! Wood storks like this one feed in Cypress Slough, right next to where the quarry wants to dig.\n\n[ON SCREEN: The permit]\nThe town council stamped the quarry permit PENDING. They will only say yes if the permit lists ways to protect the slough and the town wells.\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, build a tabletop model of the quarry with at least two protections. No headset? Draw the deal on a site plan and watch the cost meters drop.\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Golden Gavel badge!\n\nPress Listen on June’s walkie-talkie, right below me.'}
 V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'part3', 'partb', 'partc']}
 json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('video.json written')
