@@ -260,6 +260,49 @@
    "want": false,
    "parts": [],
    "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  },
+  "vr": {
+   "label": "VR activity · The resource museum (separate page)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "kind": "photo",
+     "pic": "vrkayak",
+     "label": "📷 A Florida spring river"
+    },
+    {
+     "label": "🗺 The soaked map",
+     "tag": "CASE 15 FOLLOW-UP",
+     "title": "The key washed off!",
+     "col": "#B9822A",
+     "body": "The symbols are still on Dr. Reyes’s map, but nobody can tell which is which."
+    },
+    {
+     "label": "🧭 Two ways",
+     "tag": "PICK AT THE TOP",
+     "title": "Two ways to do it",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "🥽",
+       "VR Field Mission: build a museum with four exhibits and give a tour."
+      ],
+      [
+       "🗂",
+       "No headset? Trace 8 things from a Florida day back to where they started."
+      ]
+     ]
+    },
+    {
+     "label": "🥇 The badge",
+     "tag": "VR ONLY",
+     "title": "Golden Compass badge",
+     "col": "#7A5BB5",
+     "body": "Save your capture in VR to earn it."
+    }
+   ],
+   "script": "[ON SCREEN: A Florida spring river]\nHi, scientists! Look at this clear river. It comes from springs, one of Florida’s resources.\n\n[ON SCREEN: The soaked map]\nOh no! A storm soaked Dr. Reyes’s resource map, and the words in the key washed off. The symbols are still there, but what do they mean?\n\n[ON SCREEN: Two ways]\nPick your way at the top. With a headset, build a resource museum: citrus, beaches, phosphate and springs, and give a tour. No headset? Trace eight things from a Florida day back to where they started.\n\n[ON SCREEN: The badge]\nFinish in VR to earn the Golden Compass badge!\n\nPress Listen on Dr. Reyes’s walkie-talkie, right below me."
   }
  },
  "pics": {
@@ -270,6 +313,10 @@
   "s2023": {
    "src": "images/15-01-sat-2023.jpg",
    "cap": "The square lakes from Case 15 (USGS, public domain)"
+  },
+  "vrkayak": {
+   "src": "images/15-02-vr-kayak.jpg",
+   "cap": "Kayaking on the Ichetucknee River, Florida (public domain)"
   },
   "dragline": {
    "src": "images/15-01-dragline.jpg",
