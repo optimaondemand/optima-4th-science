@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – 15.01 VR · Island Field Camp</title>
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  15.01 VR ACTIVITY — THE ISLAND FIELD CAMP (only order what refills)
+  Optima Academy Online · 4th Grade Science · Week 15 · Case 15 follow-up
+  Extends Lesson 15.01 (renewable vs. nonrenewable resources)
+  Separate Canvas assignment. Two paths on one page:
+    🥽 VR mission (default)  → Island Town: build a camp from Optima Domi Tent, Solar Panel with
+                               Stand, Water Wheel (Moving), Water Barrel, Corn Stage 4, Sheep,
+                               Lumber, Fire Pit, Fire Wood; say what each uses and why it refills;
+                               bonus "leave it in the ground" pile (Gold Nugget, Granite Block);
+                               capture + caption in Canvas.
+    🗂 Field Station version → run the camp for 20 years: pick power, cooking and building,
+                               toggle replanting, watch the fuel / woodlot / gravel piles;
+                               only the all-renewable plan lasts; paragraph, PDF upload.
+  Media (all invisible until the file exists):
+    assets/video/teacher/g4sci-15-1-vr.mp4 (+ .jpg poster, .vtt captions)
+    assets/audio/guide/lena/g4sci-15-1-vr-{brief,alt,built,saved}.mp3
+  ════════════════════════════════════════════════════════════════════════
+-->
+<link rel="stylesheet" href="assets/sparkle/fs-sparkle.css?v=vr1501a" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --navy:#0E1C42; --kraft:#F4EBD6; --kraft2:#EADBB8; --edge:#C9B489; --ink:#2B1D12; --soft:#5A4D3E;
+  --green:#2F5D3A; --marsh:#1F6F78; --gold:#F5B83D; --red:#D9534F; --out:#1F6F78; --in:#B5476B; --paper:#FFFDF8; }
+html { scroll-behavior: smooth; }
+body { font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-serif; background:#F4F0EB; color:var(--ink); line-height:1.6; }
+.wrap { max-width: 920px; margin: 0 auto; background: #FBF8F2; min-height: 100vh; box-shadow: 0 0 40px rgba(43,29,18,.06); position:relative; overflow:hidden; }
+img { max-width:100%; }
+button { font-family: inherit; }
+.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+
+/* header */
+.hd { background: linear-gradient(135deg,#0E1C42 0%,#1a1060 60%,#0E1C42 100%); border-bottom: 6px solid #8B6FC0; padding: 14px 22px; display:flex; align-items:center; gap:14px; position:relative; overflow:hidden; }
+.hd-logo { width:46px; height:46px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.hd-logo img { width:40px; height:32px; }
+.hd-org { font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:#B7C3E8; font-weight:800; }
+.hd-title { font-size:24px; color:#fff; font-weight:900; line-height:1.2; }
+.hd-sub { font-size:13px; color:#C9D2EE; margin-top:3px; display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; }
+.hd-sub b { color:#fff; }
+.wk { background:var(--kraft); color:var(--navy); font-weight:900; font-size:11px; letter-spacing:1px; padding:2px 8px; border-radius:4px; transform: rotate(-2deg); display:inline-block; }
+.hd-compass { position:absolute; right:6%; top:-30px; width:150px; height:150px; opacity:.12; filter: invert(1) brightness(1.6); background: url(assets/ornaments/compass.png) center/contain no-repeat; pointer-events:none; }
+.banner { display:block; width:100%; border-bottom:4px solid #8B6FC0; background:#BFD9E0; }
+.banner svg { display:block; width:100%; height:auto; }
+
+main { padding: 22px 22px 40px; position:relative; }
+.card { background:var(--paper); border:2px solid #E8DDD2; border-radius:18px; box-shadow:0 2px 12px rgba(43,29,18,.06); margin: 0 0 22px; position:relative; }
+.card-pad { padding: 18px 22px; }
+.kicker { font-size:11px; font-weight:900; letter-spacing:1.4px; text-transform:uppercase; color:#7A5F2C; }
+h2 { font-size:22px; color:var(--navy); line-height:1.25; margin: 2px 0 8px; font-weight:900; }
+h3 { font-size:18px; color:var(--navy); margin: 0 0 6px; font-weight:900; }
+p { font-size:17px; color:var(--soft); line-height:1.7; margin-bottom:10px; }
+p:last-child { margin-bottom:0; }
+.orn-divider { width:min(60%,420px); height:30px; margin:6px auto 18px; background: url(assets/ornaments/divider.png) center/contain no-repeat; opacity:.75; }
+.orn-corner { position:absolute; left:-14px; bottom:-14px; width:78px; height:78px; transform:scaleY(-1); background:url(assets/ornaments/corner.png) center/contain no-repeat; pointer-events:none; opacity:.9; }
+
+/* case file + light box */
+.casefile { background: var(--kraft); border:2px solid var(--edge); border-radius: 4px 18px 18px 18px; margin-top: 26px; }
+.casefile .tab { position:absolute; top:-26px; left:18px; background:var(--kraft); border:2px solid var(--edge); border-bottom:none; border-radius:10px 10px 0 0; padding:3px 16px; font: 900 12px 'Nunito',sans-serif; letter-spacing:1.4px; color:#7A5F2C; text-transform:uppercase; }
+.case-grid { display:grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items:center; }
+.from { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.from .fs-av { width:46px; height:46px; flex-shrink:0; }
+.from .fs-av-ini { font-size:16px; }
+.lightbox { background:#1d2430; border-radius:14px; padding:12px 12px 8px; box-shadow: inset 0 0 0 3px #3b4659, 0 6px 18px rgba(0,0,0,.18); position:relative; }
+.lightbox .glow { background: radial-gradient(ellipse at center,#f6fbff 0%,#dfe9f2 70%,#c5d3e0 100%); border-radius:8px; padding:8px; }
+.lightbox img { display:block; width:100%; border-radius:4px; mix-blend-mode:multiply; }
+.lightbox .clip { position:absolute; top:4px; width:34px; height:12px; background:#9aa6b8; border-radius:3px; }
+.lightbox .clip.l { left:22%; } .lightbox .clip.r { right:22%; }
+.lightbox figcaption { font-size:12px; color:#B9C4D6; padding:6px 2px 0; line-height:1.4; }
+.rule { margin-top:12px; background:#fff; border:2px dashed var(--edge); border-radius:12px; padding:10px 14px; }
+.rule b { color:var(--navy); }
+.rule .yn { display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+.pill { display:inline-flex; align-items:center; gap:6px; font-weight:800; font-size:14px; padding:4px 10px; border-radius:999px; }
+.pill.out { background:#E3F1F2; color:var(--out); } .pill.in { background:#F7E4EB; color:var(--in); }
+
+/* media */
+.media { margin: 0 0 36px; }
+.done-box .fs-radio { text-align:left; }
+.media .fs-video { margin-bottom:12px; }
+.media .fs-video video { width:100%; display:block; border-radius:12px; background:#000; }
+.cc-btn { margin-top:6px; background:#fff; border:1.5px solid var(--edge); color:var(--navy); font-weight:800; font-size:13px; border-radius:999px; padding:4px 12px; cursor:pointer; }
+.cc-btn[aria-pressed="true"] { background:var(--navy); color:#fff; border-color:var(--navy); }
+.vslot-ph { display:none; border:2px dashed #C9B489; border-radius:12px; padding:10px 14px; font-size:14px; color:#7A5F2C; margin-bottom:12px; }
+html.review .vslot-ph.on { display:block; }
+.fs-radio.hidden { display:none; }
+.fs-transcript { display:none; }
+.fs-transcript.open { display:block; }
+
+/* VR mission card */
+.mission { border:3px solid var(--navy); background: var(--paper); overflow:hidden; }
+.mission-top { background:#14234F; padding: 16px 22px 14px; color:#fff; display:flex; gap:16px; align-items:center; position:relative; }
+.mission-top .kicker { color: var(--gold); }
+.mission-top h2 { color:#fff; margin:0; font-size:26px; }
+.mission-top p { color:#C9D2EE; font-size:15px; margin:2px 0 0; }
+.mission-ic { width:72px; height:72px; flex-shrink:0; border-radius:18px; background:linear-gradient(145deg,#2c4a9a,#0E1C42); display:flex; align-items:center; justify-content:center; font-size:40px; box-shadow:0 0 0 3px rgba(245,184,61,.6), 0 0 24px rgba(85,200,232,.35); }
+.badge-peek { margin-left:auto; text-align:center; flex-shrink:0; }
+.badge-peek .medal { width:76px; height:76px; }
+.badge-peek small { display:block; color:var(--gold); font-weight:900; font-size:11px; letter-spacing:1px; text-transform:uppercase; line-height:1.2; margin-top:2px; }
+.mission-body { padding: 18px 22px 20px; }
+.meter { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.meter-bar { flex:1; height:12px; background:#E8DDD2; border-radius:99px; overflow:hidden; }
+.meter-bar i { display:block; height:100%; width:0; background: linear-gradient(90deg,#55C8E8,#F5B83D); border-radius:99px; transition: width .4s; }
+.meter b { font-size:14px; color:var(--navy); white-space:nowrap; }
+.steps { list-style:none; counter-reset: s; }
+.step { display:flex; gap:12px; align-items:flex-start; padding:12px 12px; border:2px solid #EFE6DA; border-radius:14px; margin-bottom:10px; background:#fff; transition: background .2s, border-color .2s; }
+.step.done { background:#F1F8F2; border-color:#B8E8CF; }
+.step .chk { width:34px; height:34px; border-radius:10px; border:2.5px solid #9BA8C4; background:#fff; flex-shrink:0; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:20px; color:#fff; font-weight:900; }
+.step.done .chk { background:#34B76F; border-color:#34B76F; }
+.step .chk:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+.step-n { font-size:12px; font-weight:900; letter-spacing:1px; color:#8D7A5C; text-transform:uppercase; }
+.step-t { font-size:17px; color:var(--ink); line-height:1.55; }
+.step-t b { color:var(--navy); }
+.key { display:inline-block; background:var(--navy); color:#fff; font-weight:900; font-size:14px; padding:1px 8px; border-radius:6px; }
+.typed { font-family:'Courier New',monospace; background:#F4F0EB; border:1.5px solid #D0C8BE; border-radius:6px; padding:0 6px; font-weight:700; color:var(--navy); }
+.parts { display:grid; grid-template-columns: repeat(4,1fr); gap:8px; margin-top:10px; }
+.part { background:var(--kraft); border:1.5px solid var(--edge); border-radius:10px; padding:6px 8px; font-size:13px; line-height:1.3; color:var(--ink); }
+.part small { display:block; font-size:10.5px; color:#8D7A5C; font-weight:700; }
+.bonus-tag { display:inline-block; background:var(--gold); color:var(--navy); font-weight:900; font-size:11px; letter-spacing:1px; padding:1px 8px; border-radius:999px; text-transform:uppercase; margin-right:4px; }
+.points { margin-top:14px; background:#F4F7FD; border:1.5px solid #CBD6EE; border-radius:12px; padding:10px 14px; font-size:15px; color:var(--navy); }
+.points ul { margin:4px 0 0 20px; } .points li { margin:2px 0; }
+.done-box { display:none; margin-top:14px; border:3px solid var(--gold); background:#FFF8E6; border-radius:16px; padding:16px; text-align:center; }
+.done-box.show { display:block; }
+.done-box .medal { width:120px; height:120px; display:block; margin:0 auto 6px; }
+.done-box.show .medal { animation: stampIn .7s cubic-bezier(.2,1.6,.4,1) both; }
+@keyframes stampIn { from { transform: scale(2.2) rotate(-25deg); opacity:0; } to { transform:none; opacity:1; } }
+.done-box h3 { font-size:22px; }
+.copy-row { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:10px; align-items:center; }
+.btn { background:var(--navy); color:#fff; border:none; border-radius:12px; padding:10px 18px; font-weight:900; font-size:15px; cursor:pointer; display:inline-flex; gap:6px; align-items:center; }
+.btn:hover { background:#1F6F78; }
+.btn.green { background:#34B76F; } .btn.green:hover { background:#2A9A5C; }
+.btn.ghost { background:#fff; color:var(--navy); border:2px solid var(--navy); }
+.copied { font-weight:800; color:#1a6b35; font-size:14px; }
+
+/* help drawer */
+.howto { margin-top:8px; background:#F4F7FD; border:1.5px solid #CBD6EE; border-radius:10px; padding:6px 10px; font-size:15px; color:var(--navy); line-height:1.5; }
+.helpdrawer { margin:14px 0 0; border:2px solid #CBD6EE; border-radius:14px; background:#F8FAFE; overflow:hidden; }
+.helpdrawer summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px; padding:12px 16px; }
+.helpdrawer summary::-webkit-details-marker { display:none; }
+.helpdrawer summary:focus-visible { outline:3px solid var(--gold); outline-offset:-3px; }
+.hd-ic { font-size:26px; }
+.helpdrawer summary b { display:block; color:var(--navy); font-size:16px; }
+.helpdrawer summary small { display:block; color:#5A6B8C; font-size:13.5px; }
+.hd-chev { margin-left:auto; font-size:18px; color:var(--navy); transition: transform .2s; }
+.helpdrawer[open] .hd-chev { transform: rotate(180deg); }
+.hd-body { padding: 0 16px 16px; }
+.hd-video { margin-bottom:12px; }
+.hd-frame { position:relative; width:100%; aspect-ratio:16/9; background:#0E1C42; border-radius:12px; overflow:hidden; }
+.hd-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.hd-cap { font-size:13px; color:#5A6B8C; margin-top:4px; }
+.hd-note { font-size:15px; background:#FFF8E6; border:1.5px solid #F2D58E; border-radius:10px; padding:6px 10px; margin-bottom:12px; }
+.hd-steps { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.hd-step { background:#fff; border:1.5px solid #E2E8F4; border-radius:12px; overflow:hidden; }
+.hd-step img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:#0b0f18; }
+.hd-step > div { padding:8px 10px 10px; }
+.hd-step b { color:var(--navy); font-size:15px; }
+.hd-step p { font-size:14.5px; line-height:1.5; margin:2px 0 0; color:var(--soft); }
+.hd-n { display:inline-flex; width:22px; height:22px; border-radius:50%; background:var(--navy); color:#fff; font-size:12px; font-weight:900; align-items:center; justify-content:center; margin-right:6px; }
+@media (max-width:600px) { .hd-steps { grid-template-columns:1fr; } }
+/* job line + phases */
+.jobline { display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; background:#FFF8E6; border:2px solid #F2D58E; border-radius:14px; padding:10px 14px; margin:0 0 14px; }
+.job-k { font-size:11px; font-weight:900; letter-spacing:1.4px; text-transform:uppercase; color:#7A5F2C; margin-right:4px; }
+.job-s { display:inline-flex; align-items:center; gap:6px; font-weight:900; font-size:15.5px; color:var(--navy); }
+.job-s i { font-style:normal; width:22px; height:22px; border-radius:50%; background:var(--navy); color:#fff; font-size:12px; display:inline-flex; align-items:center; justify-content:center; }
+.job-a { color:#C9A54A; font-weight:900; }
+.phase { list-style:none; display:flex; align-items:center; gap:8px; font-size:13px; font-weight:900; letter-spacing:1.3px; text-transform:uppercase; color:var(--navy); margin:16px 0 8px; padding-bottom:4px; border-bottom:2px solid #E8DDD2; }
+.phase:first-child { margin-top:2px; }
+.ph-ic { font-size:18px; }
+@media (max-width:480px) { .job-a { display:none; } .jobline { flex-direction:column; align-items:flex-start; } }
+/* path chooser */
+.pathbar { display:flex; gap:12px; margin: 0 0 16px; align-items:stretch; }
+.pb { display:flex; align-items:center; gap:12px; text-align:left; border-radius:16px; padding:12px 16px; cursor:pointer; border:2.5px solid #C9B489; background:#fff; color:var(--navy); transition: transform .15s, box-shadow .15s, background .2s; }
+.pb:hover { transform: translateY(-2px); box-shadow:0 4px 12px rgba(43,29,18,.12); }
+.pb:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+.pb-ic { font-size:30px; line-height:1; flex-shrink:0; }
+.pb-t b { display:block; font-size:17px; font-weight:900; line-height:1.2; }
+.pb-t small { display:block; font-size:13.5px; color:#6B5B45; line-height:1.35; margin-top:2px; }
+.pb-vr { flex:1.35; }
+.pb-alt { flex:1; }
+.pb[aria-pressed="true"] { cursor:default; }
+.pb-vr[aria-pressed="true"] { background:linear-gradient(135deg,#14234F,#1F3A7A); border-color:var(--gold); color:#fff; box-shadow:0 0 0 3px rgba(245,184,61,.35), 0 6px 16px rgba(14,28,66,.25); }
+.pb-vr[aria-pressed="true"] small { color:#F5D58A; }
+.pb-alt[aria-pressed="true"] { background:var(--kraft); border-color:#7A5F2C; box-shadow:0 0 0 3px rgba(122,95,44,.18); }
+.pb-vr[aria-pressed="false"] { border-color:var(--gold); background:#FFF8E6; }
+.pb-vr[aria-pressed="false"] small::after { content:' ✨'; }
+@media (max-width:480px) { .pathbar { flex-direction:column; } }
+.switch { text-align:center; margin: -6px 0 26px; }
+.switch button { background:none; border:none; color:#7A6A55; font-size:15px; font-weight:700; cursor:pointer; text-decoration:underline; text-underline-offset:3px; padding:6px; }
+.switch button:hover { color:var(--navy); }
+
+/* alternate */
+.alt { display:none; }
+body.path-alt .alt { display:block; }
+body.path-alt .vr-only { display:none; }
+.alt-head { border:2px solid #D9CDB8; }
+.alt-note { display:flex; gap:10px; align-items:center; background:#F4EFE4; border-radius:12px; padding:10px 14px; margin-top:10px; font-size:15px; color:var(--soft); }
+.alt-note .medal-sm { width:40px; height:40px; flex-shrink:0; opacity:.55; filter: grayscale(1); }
+.todo { margin: 6px 0 12px 20px; font-size:16px; color:var(--soft); }
+.todo li { margin: 3px 0; }
+.sorter { display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:12px; }
+.tray { border:3px dashed; border-radius:16px; min-height:170px; padding:10px; transition: background .2s, transform .15s; cursor:pointer; position:relative; }
+.tray.out { border-color:#7BB9BE; background:#F0F8F8; } .tray.in { border-color:#D99AB0; background:#FBF0F4; }
+.tray.hot { transform: scale(1.015); box-shadow:0 0 0 4px rgba(245,184,61,.6); }
+.tray-h { font-weight:900; font-size:17px; display:flex; align-items:center; gap:6px; margin-bottom:8px; }
+.tray.out .tray-h { color:var(--out); } .tray.in .tray-h { color:var(--in); }
+.tray-h small { font-weight:700; font-size:13px; color:#8D7A5C; }
+.tray-cards { display:grid; grid-template-columns: repeat(2,1fr); gap:8px; }
+.tray-cards > * { animation: dropIn .35s ease-out both; }
+@keyframes dropIn { from { transform: translateY(-8px) scale(.9); opacity:0; } to { transform:none; opacity:1; } }
+.deck { display:grid; grid-template-columns: repeat(4,1fr); gap:10px; margin-top:14px; min-height: 40px; }
+.fcard { background:#fff; border:2px solid #E2D6C4; border-radius:12px; overflow:hidden; cursor:grab; user-select:none; -webkit-user-select:none; touch-action:none; transition: transform .15s, box-shadow .15s; position:relative; }
+.fcard:hover { transform: translateY(-2px); box-shadow:0 4px 10px rgba(43,29,18,.12); }
+.fcard.sel { box-shadow:0 0 0 4px var(--gold); transform: translateY(-3px); }
+.fcard.drag { opacity:.4; }
+.fcard .ph { aspect-ratio: 4/3; background:#F7F0E1; display:flex; align-items:center; justify-content:center; font-size:34px; overflow:hidden; }
+.fcard .ph img { width:100%; height:100%; object-fit:cover; display:block; }
+.fcard .nm { font-weight:900; font-size:14px; color:var(--navy); padding:5px 8px 6px; line-height:1.25; }
+.fcard.placed { cursor:default; border-color:#B8E8CF; }
+.fcard.placed:hover { transform:none; box-shadow:none; }
+.fcard .job { font-size:12.5px; color:var(--soft); padding:0 8px 7px; line-height:1.35; }
+.fcard.shake { animation: shake .4s; }
+@keyframes shake { 20%,60% { transform: translateX(-6px); } 40%,80% { transform: translateX(6px); } }
+.ghost-card { position:fixed; pointer-events:none; z-index:999; width:150px; opacity:.92; transform: rotate(-4deg); box-shadow:0 10px 24px rgba(0,0,0,.25); }
+.msg { min-height: 26px; margin-top:10px; font-size:16px; font-weight:700; color:var(--navy); background:#FFF8E6; border:1.5px solid #F2D58E; border-radius:10px; padding:8px 12px; display:none; }
+.msg.show { display:block; }
+.msg.ok { background:#EEF8F0; border-color:#B8E8CF; color:#1a6b35; }
+.why { margin-top:12px; background:#F4EFE4; border-left:4px solid var(--gold); border-radius:8px; padding:8px 12px; font-size:15px; color:var(--soft); }
+.why b { color:var(--navy); }
+.stamp-plain { display:none; text-align:center; margin-top:12px; }
+.stamp-plain.show { display:block; animation: stampIn .6s both; }
+.stamp-plain span { display:inline-block; border:3px solid var(--marsh); color:var(--marsh); font-weight:900; letter-spacing:2px; padding:4px 14px; border-radius:8px; transform: rotate(-4deg); text-transform:uppercase; }
+
+.locked { opacity:.55; pointer-events:none; }
+.write-q { font-size:17px; color:var(--ink); font-weight:700; margin-bottom:6px; }
+.write-q b { color:var(--navy); }
+textarea.answer { width:100%; min-height:150px; padding:12px 14px; border:2px solid #D0C8BE; border-radius:12px; font: 17px/1.6 'Nunito',sans-serif; color:var(--ink); background:#FAFAF6; resize:vertical; }
+textarea.answer:focus { outline:none; border-color:#55C8E8; background:#fff; }
+.counter { font-size:14px; font-weight:800; color:#8D7A5C; margin-top:6px; }
+.counter.met { color:#1a6b35; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; align-items:center; }
+.chips .lbl { font-size:13px; font-weight:900; color:#7A5F2C; text-transform:uppercase; letter-spacing:.8px; margin-right:2px; }
+.chip { font-size:14px; font-weight:800; padding:3px 10px; border-radius:999px; background:#EFE9DF; color:#8D7A5C; border:1.5px solid #E0D6C6; transition: all .2s; }
+.chip.on { background:#E6F6EC; color:#1a6b35; border-color:#9ED8B4; }
+.chip.on::before { content:'✓ '; }
+.help-btn { margin-top:10px; background:#fff; border:1.5px solid var(--edge); color:var(--navy); font-weight:800; font-size:14px; border-radius:999px; padding:5px 14px; cursor:pointer; }
+.helps { display:none; margin-top:8px; background:#FFF8E6; border:1.5px solid #F2D58E; border-radius:10px; padding:8px 12px; font-size:15px; color:var(--soft); }
+.helps.show { display:block; }
+.helps li { margin: 2px 0 2px 18px; }
+
+.gathered-card { background:#fff; border:2px solid #E8DDD2; border-radius:18px; overflow:hidden; box-shadow:0 2px 12px rgba(43,29,18,.06); margin-bottom:22px; }
+.gathered-header { background:linear-gradient(135deg,#0E1C42,#1A2D5A); padding:14px 20px; display:flex; align-items:center; gap:12px; }
+.gathered-header .ic { font-size:24px; }
+.gathered-header .k { font-size:10px; color:#55C8E8; text-transform:uppercase; letter-spacing:1.5px; font-weight:800; }
+.gathered-header .t { font-size:18px; color:#fff; font-weight:800; line-height:1.2; }
+.gathered-body { padding:16px 20px 18px; }
+.name-row { display:flex; align-items:center; gap:10px; margin-bottom:6px; flex-wrap:wrap; }
+.name-row label { font-size:14px; color:var(--navy); font-weight:900; }
+.name-row input { flex:1; min-width:160px; padding:8px 12px; border:1.5px solid #D0C8BE; border-radius:8px; font: 16px 'Nunito',sans-serif; background:#FAFAF6; }
+.name-msg { font-size:14px; font-weight:700; color:#B03A2E; min-height:20px; margin-bottom:8px; }
+.g-out { background:#F4F0EB; border:1.5px solid #D0C8BE; border-radius:10px; padding:12px 14px; font-size:15px; line-height:1.6; white-space:pre-wrap; color:var(--ink); min-height:120px; }
+.turnin { margin-top:12px; font-size:16px; color:var(--soft); }
+.turnin b { color:var(--navy); }
+
+footer { text-align:center; font-size:12px; color:#8D7A5C; padding: 0 22px 26px; line-height:1.5; }
+
+@media (max-width: 700px) {
+  .case-grid { grid-template-columns: 1fr; }
+  .parts { grid-template-columns: repeat(2,1fr); }
+  .deck { grid-template-columns: repeat(2,1fr); }
+  .hd-title { font-size:20px; }
+  .mission-top { gap:10px; padding:14px; }
+  .mission-ic { display:none !important; }
+  .mission-top p { font-size:14px; }
+  .mission-top h2 { font-size:22px; }
+  .mission-ic { width:56px; height:56px; font-size:30px; }
+  .badge-peek .medal { width:60px; height:60px; }
+}
+@media (max-width: 480px) {
+  main { padding: 16px 14px 30px; }
+  .card-pad, .mission-body { padding: 14px 14px; }
+  .sorter { grid-template-columns: 1fr; }
+  .tray { min-height:110px; }
+  .hd { padding: 12px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print { .no-print { display:none !important; } }
+
+/* VR models table */
+.parts { grid-template-columns: repeat(3,1fr); }
+.part .pk { display:block; font-size:11px; font-weight:900; letter-spacing:.8px; text-transform:uppercase; margin-bottom:2px; }
+.part .ex { display:block; font-size:12px; color:var(--soft); margin-top:3px; line-height:1.35; }
+.part .ex b { color:var(--navy); }
+.three { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.three span { font-weight:800; font-size:14px; padding:4px 10px; border-radius:999px; background:#F4EFE4; color:var(--navy); }
+/* supply order (case file) */
+.order { position:relative; background:#FFFDF6; border:2px solid #C9B489; border-radius:6px; box-shadow:0 8px 20px rgba(43,29,18,.18); transform: rotate(-1.2deg); font-family:'Courier New',monospace; color:#2B1D12; overflow:hidden; }
+.order .o-top { background:#2F5D3A; color:#fff; padding:7px 12px; font: 900 13px 'Nunito',sans-serif; letter-spacing:1.3px; display:flex; justify-content:space-between; }
+.order .o-top i { font-style:normal; font-weight:700; color:#D3EBD7; }
+.order .o-sub { padding:6px 12px; font-size:12.5px; border-bottom:1px dashed #C9B489; color:#5A4D3E; }
+.order table { width:100%; border-collapse:collapse; font-size:13.5px; }
+.order td { padding:5px 10px; border-bottom:1px solid #EFE6D3; }
+.order td.q { width:40px; text-align:right; color:#7A6A55; }
+.order td.m { width:34px; text-align:center; font: 900 16px 'Nunito',sans-serif; }
+.order td.m.ok { color:#2F7A55; } .order td.m.hm { color:#C8553D; }
+.order .redpen { margin:8px 12px 12px; color:#C8553D; font: 700 17px/1.3 'Comic Sans MS','Chalkboard SE','Nunito',sans-serif; transform: rotate(-2deg); }
+/* camp sim */
+.sim { margin-top:12px; border:2px solid #E2D6C4; border-radius:16px; background:#FFFDF8; overflow:hidden; }
+.sim-plan { padding:12px 14px; display:grid; grid-template-columns: repeat(3,1fr); gap:10px; }
+.need { border:2px solid #E2D6C4; border-radius:12px; padding:8px 10px; background:#fff; }
+.need h4 { font-size:15px; color:var(--navy); margin-bottom:6px; }
+.pick { display:flex; gap:6px; align-items:flex-start; width:100%; text-align:left; border:2px solid #D9CBB3; background:#FFFDF8; border-radius:10px; padding:6px 8px; margin-top:6px; font: 800 14px 'Nunito',sans-serif; color:var(--ink); cursor:pointer; }
+.pick small { display:block; font-weight:700; font-size:12px; color:var(--soft); }
+.pick .ic { font-size:20px; line-height:1; }
+.pick[aria-pressed="true"] { border-color:var(--navy); background:#EEF4F8; box-shadow:0 2px 0 var(--navy); }
+.sim-opts { padding:0 14px 6px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+.switch2 { display:inline-flex; align-items:center; gap:8px; font: 800 15px 'Nunito',sans-serif; color:var(--navy); cursor:pointer; background:#EEF8F0; border:2px solid #B8E8CF; border-radius:999px; padding:5px 12px 5px 6px; }
+.switch2 i { width:38px; height:22px; border-radius:999px; background:#D0C8BE; position:relative; transition: background .2s; }
+.switch2 i::after { content:''; position:absolute; left:3px; top:3px; width:16px; height:16px; border-radius:50%; background:#fff; transition: left .2s; }
+.switch2[aria-pressed="true"] i { background:#2F7A55; } .switch2[aria-pressed="true"] i::after { left:19px; }
+.sim-run { padding:6px 14px 12px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.yearbox { font: 900 15px 'Nunito',sans-serif; color:var(--navy); background:#F4EFE4; border-radius:999px; padding:5px 14px; }
+.yearbox b { font-size:20px; color:#C8553D; }
+.piles { display:grid; grid-template-columns: repeat(4,1fr); gap:10px; padding:0 14px 12px; }
+.pile { background:#fff; border:2px solid #E2D6C4; border-radius:12px; padding:8px; text-align:center; }
+.pile .pn { font: 900 12px 'Nunito',sans-serif; letter-spacing:.6px; text-transform:uppercase; color:#7A5F2C; }
+.pile .pv { font: 900 22px 'Nunito',sans-serif; color:var(--navy); }
+.pile .bar { height:10px; border-radius:999px; background:#EFE6D3; overflow:hidden; margin-top:4px; }
+.pile .bar i { display:block; height:100%; border-radius:999px; transition: width .25s; }
+.pile.renew .bar i { background:#34B76F; } .pile.non .bar i { background:#C8553D; } .pile.sun .bar i { background:#F5B83D; }
+.pile .tag { display:inline-block; margin-top:4px; font: 800 11px 'Nunito',sans-serif; padding:1px 7px; border-radius:999px; }
+.pile.renew .tag, .pile.sun .tag { background:#EEF8F0; color:#1a6b35; } .pile.non .tag { background:#FDF0EE; color:#8E2F51; }
+.pile.empty { border-color:#C8553D; animation: shake .4s; }
+.years { display:grid; grid-template-columns: repeat(20,1fr); gap:3px; padding:0 14px 12px; }
+.years i { height:18px; border-radius:4px; background:#EFE6D3; }
+.years i.ok { background:#34B76F; } .years i.bad { background:#C8553D; }
+.result { display:none; margin:0 14px 14px; border-radius:12px; padding:10px 14px; font-size:15.5px; }
+.result.show { display:block; animation: dropIn .35s ease-out both; }
+.result.fail { background:#FDF0EE; border:2px solid #E3A9BD; } .result.win { background:#EEF8F0; border:2px solid #B8E8CF; }
+.tries { padding:0 14px 12px; font-size:14px; color:var(--soft); }
+.tries b { color:var(--navy); }
+@media (max-width: 760px) { .parts { grid-template-columns: 1fr; } .sim-plan { grid-template-columns: 1fr; } .piles { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 480px) { .years { gap:2px; } .years i { height:14px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hd">
+  <div class="hd-compass" aria-hidden="true"></div>
+  <div class="hd-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+  <div>
+    <div class="hd-org">Optima Academy Online · 4th Grade Science</div>
+    <div class="hd-title">The Island Field Camp: Only What Refills</div>
+    <div class="hd-sub"><span class="wk">WEEK 15</span><span>Case 15 follow-up · Guide: <b>Dr. Lena Reyes</b></span></div>
+  </div>
+</header>
+<div class="banner" aria-hidden="true"><svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A small island camp by the sea: a tent, a solar panel facing the sun, a water wheel turning in a stream, a rain barrel, a row of corn and a sheep, with young pine trees growing behind.">
+<defs>
+<linearGradient id="b151sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FD0EC"/><stop offset="1" stop-color="#E7F5FB"/></linearGradient>
+<style>
+.b151-wheel{animation:b151spin 6s linear infinite;transform-box:fill-box;transform-origin:center}
+.b151-ray{animation:b151glow 3s ease-in-out infinite}
+.b151-wave{animation:b151wave 4s ease-in-out infinite}
+.b151-sway{animation:b151sway 3.4s ease-in-out infinite;transform-box:fill-box;transform-origin:bottom}
+@keyframes b151spin{to{transform:rotate(360deg)}}
+@keyframes b151glow{0%,100%{opacity:.35}50%{opacity:.9}}
+@keyframes b151wave{0%,100%{transform:translateX(0)}50%{transform:translateX(-14px)}}
+@keyframes b151sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@media (prefers-reduced-motion: reduce){.b151-wheel,.b151-ray,.b151-wave,.b151-sway{animation:none}}
+</style>
+</defs>
+<rect width="920" height="200" fill="url(#b151sky)"/>
+<circle cx="120" cy="50" r="26" fill="#FFE29A"/>
+<g class="b151-ray" stroke="#FFD86B" stroke-width="3" stroke-linecap="round"><path d="M120 12 L120 4"/><path d="M158 50 L166 50"/><path d="M147 23 L153 17"/><path d="M147 77 L153 83"/><path d="M93 23 L87 17"/></g>
+<g class="b151-wave" fill="#3F8FB8"><path d="M0 160 Q60 150 120 160 T240 160 T360 160 T480 160 T600 160 T720 160 T840 160 T960 160 L960 200 L0 200 Z"/></g>
+<path d="M150 170 Q300 112 520 118 Q700 120 820 172 L150 172 Z" fill="#E9D3A6"/>
+<path d="M210 150 Q330 104 520 108 Q680 112 770 156 Z" fill="#8CC07A"/>
+<!-- young pines -->
+<g fill="#3E7A4A"><path d="M360 110 l12 -30 l12 30 z"/><path d="M392 108 l10 -24 l10 24 z"/><path d="M640 110 l12 -30 l12 30 z"/><path d="M672 112 l9 -22 l9 22 z"/></g>
+<!-- tent -->
+<g transform="translate(420 112)"><path d="M0 34 L34 -6 L68 34 Z" fill="#E8822A"/><path d="M34 -6 L34 34 L46 34 Z" fill="#C9661A"/><path d="M28 34 L34 16 L40 34 Z" fill="#7A3E12"/></g>
+<!-- solar panel -->
+<g transform="translate(300 106)"><path d="M0 0 L46 -10 L52 14 L6 24 Z" fill="#2B4E7A" stroke="#1B2F4A" stroke-width="2"/><path d="M15 -3 L21 21 M30 -7 L36 18 M3 12 L49 2" stroke="#7FB3D5" stroke-width="1.3"/><path d="M28 18 L28 38" stroke="#5A5A5A" stroke-width="4"/></g>
+<!-- stream + water wheel -->
+<path d="M540 150 Q560 132 600 128" stroke="#5FB3D3" stroke-width="10" fill="none" stroke-linecap="round"/>
+<g transform="translate(560 112)"><g class="b151-wheel"><circle r="20" fill="none" stroke="#8A6A44" stroke-width="4"/><g stroke="#8A6A44" stroke-width="3"><path d="M-20 0 L20 0"/><path d="M0 -20 L0 20"/><path d="M-14 -14 L14 14"/><path d="M-14 14 L14 -14"/></g><circle r="4" fill="#6B4A2E"/></g></g>
+<!-- rain barrel -->
+<g transform="translate(500 120)"><rect x="0" y="0" width="22" height="28" rx="4" fill="#6B8A9E"/><path d="M0 8 L22 8 M0 20 L22 20" stroke="#4E6676" stroke-width="2"/></g>
+<!-- corn row -->
+<g transform="translate(690 112)"><g class="b151-sway"><path d="M0 30 L0 0 M14 30 L14 2 M28 30 L28 4" stroke="#4FA853" stroke-width="3"/><g fill="#F2C744"><ellipse cx="3" cy="10" rx="3" ry="6"/><ellipse cx="17" cy="12" rx="3" ry="6"/><ellipse cx="31" cy="14" rx="3" ry="6"/></g></g></g>
+<!-- sheep -->
+<g transform="translate(250 132)"><g fill="#FFFFFF" stroke="#D8D2C4" stroke-width="1"><circle cx="0" cy="0" r="8"/><circle cx="10" cy="-2" r="9"/><circle cx="20" cy="0" r="8"/><circle cx="10" cy="5" r="8"/></g><ellipse cx="28" cy="-2" rx="5" ry="4" fill="#3A322A"/><path d="M4 10 L4 16 M16 10 L16 16" stroke="#3A322A" stroke-width="2.4"/></g>
+</svg></div>
+
+<main>
+
+  <section class="media" id="media-top">
+    <div class="vslot-ph" data-ph="vr">🎥 Teacher video slot: <b>g4sci-15-1-vr</b> (assets/video/teacher/g4sci-15-1-vr.mp4 + .jpg + .vtt). Hidden from students until the file exists.</div>
+    <div id="vslot-vr"></div>
+    <div class="vr-only"><div class="radio" data-clip="vr-brief" data-label="Your mission · the island field camp"></div></div>
+  </section>
+
+  <section class="card casefile">
+    <div class="tab">Case File 15 · A supply order</div>
+    <div class="card-pad">
+      <div class="case-grid">
+        <div>
+          <div class="from"><div class="fs-av" id="av-case" style="--avc:#2F7A55"><span class="fs-av-ini">LR</span></div><div class="kicker">From Dr. Lena Reyes, field biologist</div></div>
+          <h2>Only order what refills!</h2>
+          <p>Our Field Station is opening a camp on a little island. It has to run for <b>20 years</b>, and boats can’t bring supplies very often.</p>
+          <p>A volunteer filled out the supply order. Some lines are great. Some lines would run out and never come back. Help me plan a camp that keeps going.</p>
+          <div class="three"><span>♻️ Renewable: comes back on its own</span><span>⛔ Nonrenewable: once it’s gone, it’s gone</span></div>
+        </div>
+        <div class="order" aria-label="A supply order for the island camp. Solar panels and rain barrels have green check marks. Diesel fuel, propane, pine seedlings and gravel have red question marks. A red-pen note says only order what refills.">
+          <div class="o-top">FIELD STATION · SUPPLY ORDER <i>No. 15-01</i></div>
+          <div class="o-sub">Ship to: Island camp · Must last: 20 years</div>
+          <table>
+            <tr><td class="q">4</td><td>Solar panels</td><td class="m ok">✓</td></tr>
+            <tr><td class="q">2</td><td>Rain barrels</td><td class="m ok">✓</td></tr>
+            <tr><td class="q">50</td><td>Barrels of diesel fuel</td><td class="m hm">?</td></tr>
+            <tr><td class="q">30</td><td>Propane tanks</td><td class="m hm">?</td></tr>
+            <tr><td class="q">200</td><td>Pine seedlings</td><td class="m hm">?</td></tr>
+            <tr><td class="q">12</td><td>Truckloads of gravel</td><td class="m hm">?</td></tr>
+          </table>
+          <div class="redpen">Only order what refills! ~ L.R.</div>
+        </div>
+      </div>
+    </div>
+    <div class="orn-corner" aria-hidden="true"></div>
+  </section>
+
+  <div class="orn-divider" aria-hidden="true"></div>
+
+  <div class="pathbar no-print" role="group" aria-label="Choose how you will do this activity">
+    <button type="button" class="pb pb-vr" id="pb-vr"><span class="pb-ic">🥽</span><span class="pb-t"><b>VR Field Mission</b><small>Use your headset and earn the Golden Sun badge</small></span></button>
+    <button type="button" class="pb pb-alt" id="pb-alt"><span class="pb-ic">🗂</span><span class="pb-t"><b>No headset today?</b><small>Do the Field Station version on your computer</small></span></button>
+  </div>
+  <section class="card mission vr-only" id="vr">
+    <div class="mission-top">
+      <div class="mission-ic" aria-hidden="true">🥽</div>
+      <div>
+        <div class="kicker">VR Field Mission · about 12 minutes</div>
+        <h2>Set up the island camp</h2>
+        <p>Build a camp that runs on resources that refill. Then tell what each piece uses and why it won’t run out.</p>
+      </div>
+      <div class="badge-peek" aria-hidden="true"><svg class="medal" viewBox="0 0 120 120" aria-hidden="true"><path d="M38 6 L54 50 L44 56 L26 14Z" fill="#C8553D"/><path d="M82 6 L66 50 L76 56 L94 14Z" fill="#F5B83D"/><circle cx="60" cy="74" r="40" fill="#E9B83A"/><circle cx="60" cy="74" r="40" fill="none" stroke="#B9822A" stroke-width="4"/><circle cx="60" cy="74" r="31" fill="#FBE3A0" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 4"/><g stroke="#D9822B" stroke-width="3.5" stroke-linecap="round"><path d="M60 50 L60 56"/><path d="M60 92 L60 98"/><path d="M36 74 L42 74"/><path d="M78 74 L84 74"/><path d="M43 57 L47 61"/><path d="M73 87 L77 91"/><path d="M43 91 L47 87"/><path d="M73 61 L77 57"/></g><circle cx="60" cy="74" r="12" fill="#F5B83D" stroke="#D9822B" stroke-width="3"/></svg><small>Golden Sun<br>badge</small></div>
+    </div>
+    <div class="mission-body">
+      <div class="jobline" aria-label="Your whole job"><span class="job-k">Your job</span><span class="job-s"><i>1</i>Build the camp in VR</span><span class="job-a" aria-hidden="true">→</span><span class="job-s"><i>2</i>Save your capture</span><span class="job-a" aria-hidden="true">→</span><span class="job-s"><i>3</i>Send your caption in Canvas</span></div>
+      <div class="meter"><div class="meter-bar"><i id="vr-bar"></i></div><b id="vr-count">0 of 7 steps</b></div>
+      <p style="font-size:15px">Tap the box next to each step when you finish it.</p>
+      <ol class="steps" id="vr-steps">
+        <li class="phase"><span class="ph-ic">🖥️</span>Before you put on your headset</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 1 done"></button><div><div class="step-n">Step 1 · Know your camp</div><div class="step-t">Your camp has <b>three areas</b>. Type the gray words in the <b>Filter models</b> box. This list is also in VR: open your menu, click <b>Assignments</b>, then click our assignment.
+          <div class="parts">
+            <div class="part"><span class="pk" style="color:#B9822A">⚡ Shelter and power</span>Optima Domi Tent, Solar Panel with Stand, Water Wheel (Moving)<small>type: Tent · Solar · Water Wheel</small><span class="ex">Sunlight and moving water <b>come back every day</b>.</span></div>
+            <div class="part"><span class="pk" style="color:#2F7A55">🌽 Water and food</span>Water Barrel, Corn Stage 4, Sheep<small>type: Barrel · Corn · Sheep</small><span class="ex">Rain <b>refills</b> the barrel. Corn <b>regrows</b> from seed. Sheep grow new wool.</span></div>
+            <div class="part"><span class="pk" style="color:#8A6A44">🪵 Building and cooking</span>Lumber, Fire Pit, Fire Wood<small>type: Lumber · Fire Pit · Fire Wood</small><span class="ex">Trees <b>grow back</b>, but only if we plant new ones.</span></div>
+          </div></div></div></li>
+        <li class="phase"><span class="ph-ic">🥽</span>In VR</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 2 done"></button><div><div class="step-n">Step 2 · Go in</div><div class="step-t">Put on your headset and open the <b>On-Demand</b> app. Click the <b>Explore</b> tab and find <b>Island Town</b>. (Typing <b>Island</b> in the <b>Filter environments</b> box finds it fast.) Click it, then click <b>Begin Solo</b>. Find an open, sunny spot for your camp.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 3 done"></button><div><div class="step-n">Step 3 · Shelter and power</div><div class="step-t">Press the <b>top button on your right controller</b> to open your menu, then click the <b>Models</b> tab. Set up the <b>Tent</b>. Point the <b>Solar Panel</b> toward the open sky. Put the <b>Water Wheel</b> nearby (by water, if you can find some).
+          <div class="howto">✋ <b>To move a model:</b> grab it with the <b>palm trigger</b> (the button under your middle finger). Turn and move it with the thumbstick. Grab it with <b>both</b> palm triggers to make it bigger or smaller.</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 4 done"></button><div><div class="step-n">Step 4 · Water, food and wood</div><div class="step-t">Add the <b>Water Barrel</b>, <b>Corn</b>, <b>Sheep</b>, <b>Lumber</b>, <b>Fire Pit</b> and <b>Fire Wood</b> around your tent. Then walk to each piece and say what it uses and why it won’t run out, like this:
+          <div class="howto">🗣 “The solar panel uses <b>sunlight</b>. The sun comes back every day, so it’s <b>renewable</b>.” · “The fire uses <b>wood</b>. It stays renewable only if we <b>plant new trees</b>.”</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 5 done"></button><div><div class="step-n">Step 5 · Bonus</div><div class="step-t"><span class="bonus-tag">VR only</span>Make a little <b>“leave it in the ground”</b> pile away from camp: a <b>Gold Nugget</b> and a <b>Granite Block</b>. Say why the camp shouldn’t depend on them. (Hint: how long did they take to form?) Skip this step if you run out of time.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Save (capture)</div><div class="step-t">Stand back so you can see your whole camp. Open your menu and click the <b>Captures</b> tab, then click <b>Capture</b>. Type a title, like your first name. For <b>Class</b>, pick <b>our class</b> (not <i>No class (personal)</i>). For <b>Assignment</b>, pick <b>15.01 VR · Island Field Camp</b>. Click <b>Save</b>, then look for <b>Submitted</b> at the bottom of the menu.<div class="howto">🔁 Want to fix something? Move the models and save again. Your new capture takes the place of the old one.</div></div></div></li>
+        <li class="phase"><span class="ph-ic">✅</span>After</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Add your caption in Canvas</div><div class="step-t">Click <b>Leave</b> in the top right corner of your menu and take off your headset. VR can’t hold words, so your caption goes in Canvas. Pick one piece of your camp and finish this sentence:
+          <div class="capbox"><label for="vr-cap">Our camp uses ___ for ___. It is renewable because ___.</label><input id="vr-cap" maxlength="220" placeholder="Our camp uses sunlight for power. It is renewable because the sun comes back every day." /></div>
+          Then click the green button below the steps when it appears, and paste into the Canvas assignment box. (Or type <span class="typed">VR option submitted</span> and your caption yourself.)</div></div></li>
+      </ol>
+      <details class="helpdrawer" id="vr-help">
+        <summary><span class="hd-ic">🛟</span><span><b>Having trouble in VR?</b><small>Steps with pictures, and a how-to video</small></span><span class="hd-chev" aria-hidden="true">▾</span></summary>
+        <div class="hd-body">
+          <div class="hd-video"><div class="hd-frame" data-src="https://www.youtube-nocookie.com/embed/xVzX24ENnqk?rel=0"></div><p class="hd-cap">How-to video: Completing Assignments in Optima On-Demand (2 minutes)</p></div>
+          <p class="hd-note">These pictures come from a space map. Your map will be <b>Island Town</b>, but the buttons are the same.</p>
+          <ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="images/vr-help-01-explore.jpg" alt="The Explore tab is selected, with a list of maps below it."><div><span class="hd-n">1</span><b>Explore tab</b><p>On your dashboard, click the <b>Explore</b> tab. Scroll with the bar on the right, or type the map’s name in <b>Filter environments</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-02-begin-solo.jpg" alt="A map is selected and the Begin Solo button is circled."><div><span class="hd-n">2</span><b>Begin Solo</b><p>Click the map, then click <b>Begin Solo</b>. Only a solo room (just you) can save your work.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-03-menu.jpg" alt="The menu is open, with its row of tabs circled."><div><span class="hd-n">3</span><b>Open your menu</b><p>Press the <b>top button on your right controller</b>. The menu tabs are <b>Environments, Models, Assignments</b> and <b>Captures</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-04-assignments.jpg" alt="An assignment is open, with its directions circled on the right."><div><span class="hd-n">4</span><b>Read the assignment</b><p>Click <b>Assignments</b>, then click our assignment. What to build shows on the right.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-05-models.jpg" alt="The Models tab and the Filter models box are circled."><div><span class="hd-n">5</span><b>Bring out the models</b><p>Click <b>Models</b>. Type in the <b>Filter models</b> box to find the parts. Click a part to bring it out.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-06-grab.jpg" alt="A controller grabbing a model of the Moon."><div><span class="hd-n">6</span><b>Move and resize</b><p>Grab a part with the <b>palm trigger</b>. Turn and move it with the thumbstick. Use <b>both</b> palm triggers to make it bigger or smaller.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-07-captures.jpg" alt="The Captures tab, with the Capture button circled."><div><span class="hd-n">7</span><b>Capture</b><p>When it looks right, open your menu, click <b>Captures</b>, then click <b>Capture</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-08-save.jpg" alt="The Capture environment box, with Class, Assignment and Save circled."><div><span class="hd-n">8</span><b>Pick the class and assignment</b><p>Type a title. For <b>Class</b>, pick our class, not <i>No class (personal)</i>. For <b>Assignment</b>, pick ours. Click <b>Save</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="images/vr-help-09-submitted.jpg" alt="The word Submitted at the bottom of the menu and the Leave button are circled."><div><span class="hd-n">9</span><b>Check, then leave</b><p>Look for <b>Submitted</b> at the bottom of the menu. Then click <b>Leave</b> in the top right corner.</p></div></li></ol>
+        </div>
+      </details>
+      <div class="points">⭐ <b>Full points:</b><ul><li>Your capture shows a camp with shelter, power, water, food and wood.</li><li>Your Canvas box has “VR option submitted” and a caption that tells why one resource is renewable.</li></ul></div>
+      <div class="done-box" id="vr-done">
+        <svg class="medal" viewBox="0 0 120 120" aria-hidden="true"><path d="M38 6 L54 50 L44 56 L26 14Z" fill="#C8553D"/><path d="M82 6 L66 50 L76 56 L94 14Z" fill="#F5B83D"/><circle cx="60" cy="74" r="40" fill="#E9B83A"/><circle cx="60" cy="74" r="40" fill="none" stroke="#B9822A" stroke-width="4"/><circle cx="60" cy="74" r="31" fill="#FBE3A0" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 4"/><g stroke="#D9822B" stroke-width="3.5" stroke-linecap="round"><path d="M60 50 L60 56"/><path d="M60 92 L60 98"/><path d="M36 74 L42 74"/><path d="M78 74 L84 74"/><path d="M43 57 L47 61"/><path d="M73 87 L77 91"/><path d="M43 91 L47 87"/><path d="M73 61 L77 57"/></g><circle cx="60" cy="74" r="12" fill="#F5B83D" stroke="#D9822B" stroke-width="3"/></svg>
+        <h3>Golden Sun badge earned!</h3>
+        <p style="font-size:15px">Only VR field assistants earn this one. Dr. Reyes will visit your island camp and read your caption.</p>
+        <div class="radio" data-wait data-clip="vr-saved" data-label="Capture saved!" style="text-align:left;margin-top:10px"></div>
+        <div class="copy-row"><button class="btn green" type="button" id="copy-vr">📋 Copy “VR option submitted” + my caption</button><span class="copied" id="copied" hidden>Copied! Paste it in Canvas.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="card alt-head">
+      <div class="card-pad">
+        <div class="kicker">Field Station version · no headset</div>
+        <h2>Run the camp for 20 years</h2>
+        <div class="radio" data-clip="vr-alt" data-label="No headset? Run the camp" style="margin:8px 0 12px"></div>
+        <div class="jobline" aria-label="Your whole job"><span class="job-k">Your job</span><span class="job-s"><i>1</i>Make the camp last 20 years</span><span class="job-a" aria-hidden="true">→</span><span class="job-s"><i>2</i>Write a paragraph</span><span class="job-a" aria-hidden="true">→</span><span class="job-s"><i>3</i>Upload your PDF</span></div>
+        <p>Plan how the camp gets its <b>power</b>, how it <b>cooks</b> and how it <b>builds</b>. Then press Run and watch 20 years go by.</p>
+        <ul class="todo">
+          <li><b>⛽ Fuel and 🪨 gravel</b> come in one big pile. When the pile is empty, it never comes back.</li>
+          <li><b>🌲 Trees</b> grow back, but only as fast as you plant them.</li>
+          <li><b>☀️ Sunlight</b> shows up every single day.</li>
+        </ul>
+        <div class="sim" id="sim">
+          <div class="sim-plan" id="plan"></div>
+          <div class="sim-opts"><button type="button" class="switch2" id="replant" aria-pressed="false"><i></i>🌱 Plant 3 new trees every year</button></div>
+          <div class="sim-run"><button type="button" class="btn green" id="run">▶ Run 20 years</button><span class="yearbox">Year <b id="yr">0</b> of 20</span></div>
+          <div class="piles" id="piles"></div>
+          <div class="years" id="years" aria-hidden="true"></div>
+          <div class="result" id="result" role="status" aria-live="polite"></div>
+          <div class="tries" id="tries"></div>
+        </div>
+        <div class="msg" id="cs-msg" role="status" aria-live="polite"></div>
+        <div class="stamp-plain" id="cs-stamp"><span>Field Station stamp</span></div>
+        <div class="radio" data-wait data-clip="vr-built" data-label="The camp lasted 20 years!" id="radio-built" style="margin-top:12px"></div>
+        <div class="alt-note"><svg class="medal-sm" viewBox="0 0 120 120" aria-hidden="true"><path d="M38 6 L54 50 L44 56 L26 14Z" fill="#C8553D"/><path d="M82 6 L66 50 L76 56 L94 14Z" fill="#F5B83D"/><circle cx="60" cy="74" r="40" fill="#E9B83A"/><circle cx="60" cy="74" r="40" fill="none" stroke="#B9822A" stroke-width="4"/><circle cx="60" cy="74" r="31" fill="#FBE3A0" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 4"/><g stroke="#D9822B" stroke-width="3.5" stroke-linecap="round"><path d="M60 50 L60 56"/><path d="M60 92 L60 98"/><path d="M36 74 L42 74"/><path d="M78 74 L84 74"/><path d="M43 57 L47 61"/><path d="M73 87 L77 91"/><path d="M43 91 L47 87"/><path d="M73 61 L77 57"/></g><circle cx="60" cy="74" r="12" fill="#F5B83D" stroke="#D9822B" stroke-width="3"/></svg><span>VR field assistants earn the Golden Sun badge. You’ll earn the Field Station stamp. Got a headset after all? Pick <b>VR Field Mission</b> at the top.</span></div>
+      </div>
+    </div>
+
+    <div class="card" id="write-card">
+      <div class="card-pad">
+        <div class="kicker">Explain your thinking</div>
+        <h3>Write a paragraph (4 or 5 sentences)</h3>
+        <p class="write-q">Tell Dr. Reyes about your <b>best plan</b>. Why did it last 20 years? What happened when your camp used something <b>nonrenewable</b>?</p>
+        <textarea class="answer" id="para" data-label="My paragraph" placeholder="Type your paragraph here..."></textarea>
+        <div class="counter" id="para-count">0 of 40 words</div>
+        <div class="chips"><span class="lbl">Your paragraph needs</span>
+          <span class="chip" data-chip="ren">renewable</span>
+          <span class="chip" data-chip="non">nonrenewable</span>
+          <span class="chip" data-chip="refill">refill or regrow</span>
+          <span class="chip" data-chip="res">a resource</span>
+          <span class="chip" data-chip="why">because</span>
+        </div>
+        <button class="help-btn" type="button" id="help-btn">💡 Need help starting?</button>
+        <div class="helps" id="helps">
+          Try these sentence starters:
+          <ul>
+            <li>My best plan used ___ for power.</li>
+            <li>It lasted because ___.</li>
+            <li>When my camp used ___, it ran out in year ___.</li>
+            <li>That resource is nonrenewable, so ___.</li>
+            <li>Trees are renewable only if ___.</li>
+          </ul>
+        </div>
+        <div class="points">⭐ <b>Full points:</b><ul><li>Your camp lasted all 20 years.</li><li>Your paragraph is at least 40 words and all 5 checks are lit.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="gathered-card">
+      <div class="gathered-header"><span class="ic">📓</span><div><div class="k">Turn it in</div><div class="t">My Gathered Answers</div></div></div>
+      <div class="gathered-body">
+        <div class="name-row"><label for="g-name">First name:</label><input id="g-name" autocomplete="off" maxlength="30" placeholder="Your first name" /></div>
+        <div class="name-msg" id="name-msg" role="status"></div>
+        <div class="g-out" id="g-out"></div>
+        <div class="copy-row" style="justify-content:flex-start"><button class="btn green" type="button" id="pdf-btn">📄 Download my answers (PDF)</button></div>
+        <p class="turnin"><b>How to turn it in:</b> click the green button, choose <b>Save as PDF</b>, then upload that file to the Canvas assignment.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer>No photos on this page. The supply order and the Field Station camp are part of the story.</footer>
+</div>
+<script>
+(function () {
+  'use strict';
+  var PRE = 'g4sci-15-1-vr', AUDIO = 'assets/audio/guide/lena/', VIDEO = 'assets/video/teacher/';
+  var LENA = { name: 'Dr. Lena Reyes', initials: 'LR', color: '#2F7A55', img: 'assets/crew/lena.png' };
+  var SCRIPTS = {
+      "vr-brief": "Hi, field assistant! It's Dr. Reyes. Our Field Station is opening a camp on a little island, and it has to keep running for twenty years. Go to Island Town and build it: a tent, power, water, food and wood. At each piece, say what it uses and why that won't run out. Then save a capture for me.",
+      "vr-alt": "No headset today? You can run the camp on your computer. Pick how the camp gets power, how it cooks and how it builds. Then press run and watch twenty years go by. Be careful! Fuel and gravel never come back once they are used up. Trees only come back if you plant them.",
+      "vr-built": "The camp lasted twenty years! Sunlight comes back every day, and the new trees grew as fast as the camp used them. That's what renewable means. Now tell me about your plan in your paragraph.",
+      "vr-saved": "Capture saved! What a camp, field assistant. You earned the Golden Sun badge. Last step: put your caption in the Canvas assignment box with VR option submitted."
+  };
+
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function get(k, d) { try { var v = localStorage.getItem(PRE + '-' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function set(k, v) { try { localStorage.setItem(PRE + '-' + k, JSON.stringify(v)); } catch (e) {} }
+  if (/[?&]review\b/.test(location.search)) document.documentElement.classList.add('review');
+
+  /* ── sounds (WebAudio, never on load) ── */
+  var AC = null;
+  function ac() { try { AC = AC || new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} return AC; }
+  function tone(f, t0, d, type, vol) { var c = ac(); if (!c) return; var o = c.createOscillator(), g = c.createGain(); o.type = type || 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, c.currentTime + t0); g.gain.exponentialRampToValueAtTime(vol || 0.08, c.currentTime + t0 + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + t0 + d);
+    o.connect(g); g.connect(c.destination); o.start(c.currentTime + t0); o.stop(c.currentTime + t0 + d + 0.05); }
+  function ding() { tone(660, 0, 0.18); tone(990, 0.09, 0.25); }
+  function bonk() { tone(180, 0, 0.18, 'triangle', 0.06); }
+  function fanfare() { [523, 659, 784, 1047].forEach(function (f, i) { tone(f, i * 0.11, 0.3, 'triangle', 0.07); }); }
+  function croak() { var c = ac(); if (!c) return; var o = c.createOscillator(), fl = c.createBiquadFilter(), g = c.createGain();
+    o.type = 'sawtooth'; o.frequency.setValueAtTime(130, c.currentTime); o.frequency.linearRampToValueAtTime(90, c.currentTime + 0.25); fl.type = 'lowpass'; fl.frequency.value = 520;
+    g.gain.setValueAtTime(0.0001, c.currentTime); g.gain.exponentialRampToValueAtTime(0.04, c.currentTime + 0.04); g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.3);
+    o.connect(fl); fl.connect(g); g.connect(c.destination); o.start(); o.stop(c.currentTime + 0.35); }
+
+  /* ── crew avatar ── */
+  function avatar(el) { var img = new Image(); img.alt = LENA.name; img.className = 'fs-av-img'; img.onload = function () { el.classList.add('has-img'); el.appendChild(img); }; img.src = LENA.img; }
+  avatar($('#av-case'));
+
+  /* ── walkie-talkie (same look as the lessons; hidden if the clip is missing) ── */
+  var WALKIE = '<svg class="fs-wt" viewBox="0 0 84 136" aria-hidden="true"><g class="fs-waves" fill="none" stroke="#F5B83D" stroke-width="3" stroke-linecap="round"><path class="w1" d="M70 8 a8 8 0 0 1 0 14"/><path class="w2" d="M74 2 a15 15 0 0 1 0 26"/><path class="w3" d="M78 -4 a22 22 0 0 1 0 38"/></g><rect x="54" y="4" width="9" height="40" rx="4" fill="#1E2618"/><rect x="8" y="34" width="66" height="98" rx="14" fill="#47563A"/><rect x="8" y="34" width="66" height="98" rx="14" fill="none" stroke="#2C3622" stroke-width="3"/><rect x="2" y="60" width="8" height="26" rx="3" class="fs-ptt" fill="#2C3622"/><circle cx="20" cy="44" r="4" class="fs-led" fill="#5B6B4C"/><circle cx="62" cy="44" r="5" fill="#2C3622"/><rect x="16" y="52" width="50" height="26" rx="4" fill="#B9E3A6" stroke="#1E2618" stroke-width="2"/><g class="fs-bars" fill="#24451C"><rect x="21" y="70" width="4" height="4"/><rect x="27" y="70" width="4" height="4"/><rect x="33" y="70" width="4" height="4"/><rect x="39" y="70" width="4" height="4"/><rect x="45" y="70" width="4" height="4"/><rect x="51" y="70" width="4" height="4"/><rect x="57" y="70" width="4" height="4"/></g><g class="fs-grille"><circle cx="41" cy="106" r="17" fill="#2C3622"/></g></svg>';
+  var current = null;
+  function makeRadio(host) {
+    var id = host.dataset.clip, src = AUDIO + PRE.replace('-vr', '') + '-' + id + '.mp3', words = SCRIPTS[id].split(/(\s+)/);
+    host.className = 'radio fs-radio fs-radio2 hidden';
+    host.innerHTML = '<div class="fs-radio-dev"><div class="fs-av-slot"><div class="fs-av talk" style="--avc:' + LENA.color + '"><span class="fs-av-ini">LR</span></div></div>' + WALKIE + '</div>' +
+      '<div class="fs-radio-body"><div class="fs-radio-who">📻 ' + esc(LENA.name) + '</div><div class="fs-radio-label">' + esc(host.dataset.label) + '</div>' +
+      '<div class="fs-radio-ctl"><button class="fs-play" type="button">▶ Listen</button><button class="fs-readalong" type="button">Read along</button><span class="fs-onair">● ON AIR</span></div>' +
+      '<div class="fs-transcript">' + words.map(function (w, i) { return /^\s+$/.test(w) ? w : '<span data-w="' + i + '">' + esc(w) + '</span>'; }).join('') + '</div></div>';
+    avatar($('.fs-av', host));
+    var audio = new Audio(); audio.preload = 'metadata';
+    var wait = host.hasAttribute('data-wait');
+    function showIf() { if (host.dataset.ok && (!wait || host.dataset.reveal)) host.classList.remove('hidden'); }
+    audio.addEventListener('loadedmetadata', function () { host.dataset.ok = '1'; showIf(); });
+    audio.src = src;
+    var b = $('.fs-play', host), tr = $('.fs-transcript', host), wordEls = $$('[data-w]', tr), bars = $$('.fs-bars rect', host), raf = null;
+    $('.fs-readalong', host).addEventListener('click', function () { tr.classList.toggle('open'); });
+    function frame() {
+      var amp = Math.random() * 0.7 + 0.2;
+      bars.forEach(function (r, i) { var h = 4 + Math.round(amp * (0.5 + 0.5 * Math.abs(Math.sin(Date.now() / 90 + i))) * 16); r.setAttribute('height', h); r.setAttribute('y', 74 - h); });
+      if (audio.duration) { var k = Math.floor(audio.currentTime / audio.duration * wordEls.length); wordEls.forEach(function (w, i) { w.classList.toggle('said', i < k); w.classList.toggle('now', i === k); }); }
+      raf = requestAnimationFrame(frame);
+    }
+    function stop() { host.classList.remove('playing'); b.textContent = '▶ Listen'; cancelAnimationFrame(raf); wordEls.forEach(function (w) { w.classList.remove('now'); }); }
+    b.addEventListener('click', function () {
+      if (!audio.paused) { audio.pause(); stop(); return; }
+      if (current && current !== audio) { current.pause(); current.dispatchEvent(new Event('pause')); }
+      current = audio; tr.classList.add('open'); audio.play().then(function () { host.classList.add('playing'); b.textContent = '❚❚ Pause'; frame(); }).catch(function () {});
+    });
+    audio.addEventListener('pause', stop); audio.addEventListener('ended', function () { stop(); wordEls.forEach(function (w) { w.classList.add('said'); }); });
+    host.reveal = function () { host.dataset.reveal = '1'; showIf(); };
+  }
+  $$('.radio').forEach(makeRadio);
+
+  /* ── teacher video slot (invisible until the file exists) ── */
+  function probe(url, cb) { fetch(url, { method: 'HEAD', cache: 'no-store' }).then(function (r) { cb(r.ok && !/text\/html/.test(r.headers.get('content-type') || '')); }).catch(function () { cb(false); }); }
+  (function () {
+    var slot = 'vr', file = VIDEO + PRE.replace('-vr', '') + '-' + slot + '.mp4', host = $('#vslot-vr'), ph = $('[data-ph="vr"]');
+    probe(file, function (ok) {
+      if (!ok) { ph.classList.add('on'); return; }
+      host.innerHTML = '<div class="fs-video"><video controls playsinline preload="metadata" poster="' + file.replace('.mp4', '.jpg') + '" src="' + file + '"><track kind="captions" srclang="en" label="English" src="' + file.replace('.mp4', '.vtt') + '"></video><button class="cc-btn" type="button" aria-pressed="false">CC Captions</button></div>';
+      var v = $('video', host), cc = $('.cc-btn', host);
+      function setCC(on) { if (v.textTracks[0]) v.textTracks[0].mode = on ? 'showing' : 'hidden'; cc.setAttribute('aria-pressed', on ? 'true' : 'false'); set('cc', on); }
+      v.addEventListener('loadedmetadata', function () { setCC(!!get('cc', false)); });
+      cc.addEventListener('click', function () { setCC(cc.getAttribute('aria-pressed') !== 'true'); });
+    });
+  })();
+
+  /* ── help drawer: load the video only when opened ── */
+  (function () { var d = $('#vr-help'); if (!d) return; d.addEventListener('toggle', function () { var f = $('.hd-frame', d); if (d.open && f && !f.firstChild) { var i = document.createElement('iframe'); i.src = f.dataset.src; i.title = 'How-to video: Completing Assignments in Optima On-Demand'; i.allow = 'encrypted-media; picture-in-picture; fullscreen'; i.allowFullscreen = true; f.appendChild(i); } }); })();
+
+
+  /* ── path toggle (VR is the default) ── */
+  function setPath(p, scroll) {
+    document.body.classList.toggle('path-alt', p === 'alt'); set('path', p);
+    $('#pb-vr').setAttribute('aria-pressed', p === 'alt' ? 'false' : 'true'); $('#pb-alt').setAttribute('aria-pressed', p === 'alt' ? 'true' : 'false');
+    if (scroll) { var t = p === 'alt' ? $('.alt') : $('#vr'); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  }
+  $('#pb-alt').addEventListener('click', function () { setPath('alt', false); });
+  $('#pb-vr').addEventListener('click', function () { setPath('vr', false); });
+  setPath(get('path', 'vr'), false);
+
+  /* ── VR checklist ── */
+  var steps = $$('#vr-steps .step'), vrDone = get('steps', []);
+  function vrUpd(celebrate) {
+    var n = 0; steps.forEach(function (s, i) { var on = vrDone.indexOf(i) >= 0; s.classList.toggle('done', on); $('.chk', s).textContent = on ? '✓' : ''; $('.chk', s).setAttribute('aria-pressed', on ? 'true' : 'false'); if (on) n++; });
+    $('#vr-bar').style.width = (n / steps.length * 100) + '%'; $('#vr-count').textContent = n + ' of ' + steps.length + ' steps';
+    /* step 5 is the bonus: the badge needs the 6 required steps */
+    var req = [0, 1, 2, 3, 5, 6].every(function (i) { return vrDone.indexOf(i) >= 0; });
+    var box = $('#vr-done'), was = box.classList.contains('show');
+    box.classList.toggle('show', req);
+    if (req) $('#vr-done .radio').reveal();
+    if (req && !was && celebrate) { fanfare(); setTimeout(function () { box.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200); }
+  }
+  steps.forEach(function (s, i) { $('.chk', s).addEventListener('click', function () { var k = vrDone.indexOf(i); if (k >= 0) vrDone.splice(k, 1); else { vrDone.push(i); ding(); } set('steps', vrDone); vrUpd(true); }); });
+  vrUpd(false);
+  $('#copy-vr').addEventListener('click', function () {
+    var cap = ($('#vr-cap') && $('#vr-cap').value.trim()) || ''; var t = 'VR option submitted.' + (cap ? ' My caption: ' + cap : '');
+    function ok() { var c = $('#copied'); c.hidden = false; setTimeout(function () { c.hidden = true; }, 4000); }
+    try { navigator.clipboard.writeText(t).then(ok, function () { fallback(); }); } catch (e) { fallback(); }
+    function fallback() { var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} ta.remove(); ok(); }
+  });
+
+
+  /* VR caption box: remembered */
+  (function () { var c = $('#vr-cap'); if (!c) return; c.value = get('vrcap', ''); c.addEventListener('input', function () { set('vrcap', c.value); }); })();
+
+  /* ── Field Station: run the camp for 20 years ── */
+  var NEEDS = [
+    { k: 'power', ic: '⚡', n: 'Power', opts: [
+      { k: 'solar', ic: '☀️', t: 'Solar panels', s: 'Uses sunlight', use: {} },
+      { k: 'diesel', ic: '⛽', t: 'Diesel generator', s: 'Uses 1 fuel a year', use: { fuel: 1 } }] },
+    { k: 'cook', ic: '🔥', n: 'Cooking', opts: [
+      { k: 'wood', ic: '🪵', t: 'Firewood', s: 'Uses 2 trees a year', use: { trees: 2 } },
+      { k: 'propane', ic: '⛽', t: 'Propane stove', s: 'Uses 1 fuel a year', use: { fuel: 1 } }] },
+    { k: 'build', ic: '🏗', n: 'Building repairs', opts: [
+      { k: 'lumber', ic: '🌲', t: 'Lumber', s: 'Uses 1 tree a year', use: { trees: 1 } },
+      { k: 'concrete', ic: '🪨', t: 'Concrete blocks', s: 'Uses 1 load of gravel a year', use: { gravel: 1 } }] }
+  ];
+  var PILES = [
+    { k: 'sun', ic: '☀️', n: 'Sunlight', start: Infinity, cls: 'sun', tag: 'Renewable' },
+    { k: 'fuel', ic: '⛽', n: 'Fuel tank', start: 10, cls: 'non', tag: 'Nonrenewable' },
+    { k: 'trees', ic: '🌲', n: 'Woodlot', start: 10, cls: 'renew', tag: 'Renewable if replanted' },
+    { k: 'gravel', ic: '🪨', n: 'Gravel pile', start: 12, cls: 'non', tag: 'Nonrenewable' }
+  ];
+  var YEARS = 20, PLANT = 3, TREE_MAX = 10;
+  var plan = get('plan', { power: null, cook: null, build: null }), replant = get('replant', false);
+  var tries = get('tries', []), won = get('won', false), running = false, msg = $('#cs-msg');
+  var left = {}, yr = 0;
+  function say(t, ok) { msg.textContent = t; msg.className = 'msg show' + (ok ? ' ok' : ''); }
+  function O(nk, ok) { var n = NEEDS.filter(function (x) { return x.k === nk; })[0]; return n.opts.filter(function (o) { return o.k === ok; })[0]; }
+  function planDone() { return NEEDS.every(function (n) { return plan[n.k]; }); }
+  function planText(p, rp) { return NEEDS.map(function (n) { return p[n.k] ? O(n.k, p[n.k]).t : '?'; }).join(' + ') + (rp ? ' + planting trees' : ' + no new trees'); }
+  function save() { set('plan', plan); set('replant', replant); set('tries', tries); set('won', won); }
+  function resetPiles() { left = {}; PILES.forEach(function (p) { left[p.k] = p.start; }); yr = 0; }
+  function useYear() { var u = { fuel: 0, trees: 0, gravel: 0 }; NEEDS.forEach(function (n) { var o = O(n.k, plan[n.k]); Object.keys(o.use).forEach(function (r) { u[r] += o.use[r]; }); }); return u; }
+
+  function renderPlan() {
+    $('#plan').innerHTML = NEEDS.map(function (n) {
+      return '<div class="need"><h4>' + n.ic + ' ' + esc(n.n) + '</h4>' + n.opts.map(function (o) {
+        return '<button type="button" class="pick" data-n="' + n.k + '" data-o="' + o.k + '" aria-pressed="' + (plan[n.k] === o.k) + '"><span class="ic">' + o.ic + '</span><span>' + esc(o.t) + '<small>' + esc(o.s) + '</small></span></button>';
+      }).join('') + '</div>';
+    }).join('');
+    $$('#plan .pick').forEach(function (b) { b.addEventListener('click', function () { if (running) return; plan[b.dataset.n] = b.dataset.o; save(); resetPiles(); renderAll(); }); });
+    var r = $('#replant'); r.setAttribute('aria-pressed', String(replant));
+  }
+  function renderPiles(empty) {
+    $('#piles').innerHTML = PILES.map(function (p) {
+      var v = left[p.k], inf = v === Infinity, pct = inf ? 100 : Math.max(0, v / p.start * 100);
+      return '<div class="pile ' + p.cls + (empty === p.k ? ' empty' : '') + '"><div class="pn">' + p.ic + ' ' + esc(p.n) + '</div><div class="pv">' + (inf ? 'every day' : v) + '</div><div class="bar"><i style="width:' + pct + '%"></i></div><span class="tag">' + esc(p.tag) + '</span></div>';
+    }).join('');
+  }
+  function renderYears(failAt) {
+    var h = ''; for (var i = 1; i <= YEARS; i++) h += '<i class="' + (i <= yr ? 'ok' : (failAt && i === failAt ? 'bad' : '')) + '"></i>';
+    $('#years').innerHTML = h; $('#yr').textContent = yr;
+  }
+  function renderTries() {
+    var t = $('#tries');
+    if (!tries.length) { t.innerHTML = ''; return; }
+    t.innerHTML = '<b>Your tries:</b><br>' + tries.map(function (x, i) { return (i + 1) + '. ' + esc(x.plan) + ': <b>' + (x.yrs >= YEARS ? 'all 20 years ✓' : 'stopped in year ' + (x.yrs + 1)) + '</b>'; }).join('<br>');
+  }
+  function showResult(cls, html) { var r = $('#result'); r.className = 'result show ' + cls; r.innerHTML = html; }
+  function renderAll() {
+    renderPlan(); renderPiles(); renderYears(); renderTries();
+    $('#run').disabled = running;
+    $('#cs-stamp').classList.toggle('show', won); if (won) $('#radio-built').reveal();
+    refreshG();
+  }
+  var FAIL = {
+    fuel: function (y) { return '⛔ <b>Year ' + y + ': the fuel tank is empty.</b> Fuel took millions of years to form underground, so no more is coming. ' + (plan.power === 'diesel' ? 'The lights go out!' : 'The stove goes cold!') + ' Try a plan that does not need fuel.'; },
+    trees: function (y, u) { return '⛔ <b>Year ' + y + ': the woodlot is empty!</b> Your camp cut ' + u + ' trees a year' + (replant ? ', but only ' + PLANT + ' new trees grow each year.' : ' and planted none.') + ' Trees are renewable only if we plant new ones as fast as we cut them.'; },
+    gravel: function (y) { return '⛔ <b>Year ' + y + ': the gravel pile is gone.</b> Gravel is broken rock, and rock takes a very, very long time to form. No more repairs! Try a building plan that can grow back.'; }
+  };
+  $('#replant').addEventListener('click', function () { if (running) return; replant = !replant; save(); resetPiles(); renderAll(); });
+  $('#run').addEventListener('click', function () {
+    if (running) return;
+    if (!planDone()) { bonk(); say('Pick one choice for power, one for cooking and one for building first.'); return; }
+    resetPiles(); running = true; $('#result').className = 'result'; say('Running the camp… watch the piles!', true); renderAll();
+    var u = useYear(), p0 = planText(plan, replant);
+    var tick = function () {
+      var y = yr + 1, short = null;
+      ['fuel', 'trees', 'gravel'].forEach(function (r) { if (!short && u[r] > left[r]) short = r; });
+      if (short) {
+        running = false; bonk(); renderPiles(short); renderYears(y); $('#run').disabled = false;
+        tries.push({ plan: p0, yrs: yr }); save(); renderTries();
+        showResult('fail', FAIL[short](y, u.trees));
+        say('Your camp lasted ' + yr + (yr === 1 ? ' year' : ' years') + '. Change your plan and run it again.');
+        refreshG(); return;
+      }
+      ['fuel', 'trees', 'gravel'].forEach(function (r) { left[r] -= u[r]; });
+      if (replant) left.trees = Math.min(TREE_MAX, left.trees + PLANT);
+      yr = y; if (yr % 5 === 0) ding(); renderPiles(); renderYears();
+      if (yr >= YEARS) {
+        running = false; $('#run').disabled = false; won = true;
+        tries.push({ plan: p0, yrs: YEARS }); save(); fanfare();
+        showResult('win', '✅ <b>The camp ran all 20 years!</b> Sunlight comes back every day, and the woodlot stayed full because new trees grew as fast as the camp used them. Nothing ran out. Now write your paragraph.');
+        say('✓ You did it! Every resource your camp uses refills or regrows.', true);
+        renderAll(); return;
+      }
+      setTimeout(tick, 200);
+    };
+    setTimeout(tick, 250);
+  });
+  resetPiles();
+  function render() {
+    renderAll();
+    if (won && !running) showResult('win', '✅ <b>The camp ran all 20 years!</b> Your best plan used only resources that refill or regrow.');
+  }
+
+  /* ── paragraph: counter + chips + help ── */
+  var para = $('#para'), MIN = 40;
+  var RX = {
+    ren: /(^|[^-\w])renewable\b/i,
+    non: /\b(nonrenewable|non-renewable)\b/i,
+    refill: /\b(refill\w*|regrow\w*|grows? back|grew back|replant\w*|comes? back|came back)\b/i,
+    res: /\b(sun\w*|solar|fuel|diesel|propane|gravel|trees?|wood|firewood|lumber|water|rock)\b/i,
+    why: /\b(because|since|so)\b/i
+  };
+  function words(t) { return (t.trim().match(/[A-Za-z0-9'’-]+/g) || []).length; }
+  function updPara() {
+    var t = para.value, n = words(t), cnt = $('#para-count');
+    cnt.textContent = n + ' of ' + MIN + ' words' + (n >= MIN ? ' ✓' : ''); cnt.classList.toggle('met', n >= MIN);
+    $$('[data-chip]').forEach(function (c) { c.classList.toggle('on', RX[c.dataset.chip].test(t)); });
+    set('para', t); refreshG();
+  }
+  para.value = get('para', ''); para.addEventListener('input', updPara);
+  $('#help-btn').addEventListener('click', function () { $('#helps').classList.toggle('show'); });
+
+  /* ── name box (kind names only) ── */
+  var NAME_WORDS = ['ass','arse','butt','butts','booty','bum','poo','poop','poopy','pee','peepee','wee','weewee','piss','pp',
+    'dick','cock','tit','tits','titty','boob','boobs','balls','nut','nuts','weiner','wiener','sex','crap','damn','hell',
+    'turd','doodoo','dookie','fart','farts','puke','barf','booger','boogers','snot','toilet','diaper','suck','sucks',
+    'shit','shits','shitty','stupid','dumb','idiot','loser','ugly','fat','kill','die','dead','hate','kys','noob','sus'];
+  var NAME_START = ['butt','poop','fart','boob','crap','piss'];
+  var NAME_ANY = ['fuck','fuk','fck','bitch','biatch','cunt','nigg','niga','faggot','slut','whore','penis','vagina','pussy',
+    'porn','dildo','asshole','dumbass','jackass','badass','retard','nazi','hitler','sexy','poophead','butthead','buttface',
+    'fartface','poopface','shithead','shitface','dickhead','wtf','stfu','bastard','motherf','kkk'];
+  var LEET = { '0': 'o', '1': 'i', '!': 'i', '|': 'i', '3': 'e', '4': 'a', '@': 'a', '5': 's', '$': 's', '7': 't', '8': 'b', '9': 'g', '+': 't' };
+  function wordRe(w, how) { var r = w.split('').map(function (c) { return c + '+'; }).join(''); return new RegExp(how === 'any' ? r : how === 'start' ? '^' + r : '^' + r + '$'); }
+  var NAME_RES = NAME_WORDS.map(function (w) { return wordRe(w, 'word'); }), NAME_RES_S = NAME_START.map(function (w) { return wordRe(w, 'start'); }),
+      NAME_RES_A = NAME_ANY.map(function (w) { return wordRe(w, 'any'); });
+  function unkind(n) {
+    var low = String(n || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[0-9!|@$+]/g, function (c) { return LEET[c] || c; });
+    var toks = low.split(/[^a-z]+/).filter(Boolean), squash = toks.join('');
+    if (NAME_RES_A.some(function (r) { return r.test(squash); })) return true;
+    var all = toks.concat(toks.length > 1 ? [squash] : []);
+    return all.some(function (t) { return NAME_RES.some(function (r) { return r.test(t); }) || NAME_RES_S.some(function (r) { return r.test(t); }); });
+  }
+  function nameProblem(n) {
+    if (!n) return ''; if (n.length < 2) return 'Type your first name (at least 2 letters).';
+    if (!/^[A-Za-zÀ-ÿ' -]+$/.test(n)) return 'Use letters only, please.';
+    if (unkind(n)) return 'Let’s keep it kind. Please type your real first name.'; return '';
+  }
+  var nameIn = $('#g-name');
+  try { nameIn.value = localStorage.getItem('fs-name') || get('name', ''); } catch (e) { nameIn.value = get('name', ''); }
+  function goodName() { var n = nameIn.value.trim(); return nameProblem(n) ? '' : n; }
+  nameIn.addEventListener('input', function () { var n = nameIn.value.trim(), p = nameProblem(n); $('#name-msg').textContent = p; if (!p) set('name', n); refreshG(); });
+
+
+  /* ── gathered answers + PDF ── */
+  function bestTry() { var b = null; tries.forEach(function (x) { if (!b || x.yrs > b.yrs) b = x; }); return b; }
+  function tryLine(x, i) { return (i + 1) + '. ' + x.plan + ': ' + (x.yrs >= YEARS ? 'lasted all 20 years' : 'stopped in year ' + (x.yrs + 1)); }
+  function refreshG() {
+    var p = (para && para.value.trim()) || '', b = bestTry();
+    var t = 'Name: ' + (goodName() || '(add your name)') + '\n15.01 VR · Island Field Camp (Field Station version)\n\n' +
+      'Run the camp for 20 years: ' + (won ? 'the camp lasted all 20 years ✓' : 'not 20 years yet') + '\n' +
+      (b ? 'Best plan: ' + b.plan + '\n' : '') +
+      'My tries:\n' + (tries.length ? tries.map(function (x, i) { return '  ' + tryLine(x, i); }).join('\n') : '  (no runs yet)') +
+      '\n\nMy paragraph (' + words(p) + ' words):\n' + (p || '(not written yet)');
+    var g = $('#g-out'); if (g) g.textContent = t;
+  }
+  $('#pdf-btn').addEventListener('click', function () {
+    var p = para.value.trim(), nm = goodName() || '(add your name)', b = bestTry();
+    var chips = $$('[data-chip]').map(function (c) { return (c.classList.contains('on') ? '✓ ' : '○ ') + c.textContent; }).join(' &nbsp; ');
+    var rows = tries.map(function (x, i) { return '<tr><td>' + (i + 1) + '</td><td>' + esc(x.plan) + '</td><td>' + (x.yrs >= YEARS ? '<b>all 20 years ✓</b>' : 'stopped in year ' + (x.yrs + 1)) + '</td></tr>'; }).join('') || '<tr><td colspan="3"><i>No runs yet</i></td></tr>';
+    var h = '<!doctype html><html><head><meta charset="utf-8"><title>15.01 VR Field Station · ' + esc(nm) + '</title><style>' +
+      'body{font-family:Nunito,Arial,sans-serif;color:#2B1D12;max-width:760px;margin:24px auto;padding:0 18px;line-height:1.55}h1{font-size:22px;color:#0E1C42;margin:2px 0 6px}' +
+      'h2{font-size:16px;color:#0E1C42;border-bottom:2px solid #C9B489;padding-bottom:3px;margin:20px 0 8px}.k{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#7A5F2C;font-weight:800}' +
+      'table{border-collapse:collapse;width:100%}th{background:#0E1C42;color:#fff;font-size:12px;text-align:left;padding:5px 8px}td{border:1px solid #DDD;padding:6px 8px;vertical-align:top;font-size:13.5px}.p{border:1px solid #DDD;border-radius:6px;padding:8px 12px;white-space:pre-wrap}' +
+      '.st{display:inline-block;border:3px solid #1F6F78;color:#1F6F78;font-weight:900;letter-spacing:2px;padding:3px 12px;border-radius:8px;transform:rotate(-3deg);text-transform:uppercase;margin-top:6px}@media print{button{display:none}}</style></head><body>' +
+      '<div class="k">Optima Academy Online · 4th Grade Science · Week 15</div><h1>15.01 VR · Island Field Camp (Field Station version)</h1>' +
+      '<p><b>Scientist:</b> ' + esc(nm) + ' &nbsp; <b>Date:</b> ' + new Date().toLocaleDateString() + '</p>' +
+      '<h2>Run the camp for 20 years: ' + (won ? 'the camp lasted all 20 years' : 'not 20 years yet') + '</h2>' +
+      (b ? '<p><b>Best plan:</b> ' + esc(b.plan) + '</p>' : '') +
+      '<table><tr><th>Try</th><th>Plan</th><th>Result</th></tr>' + rows + '</table>' + (won ? '<div class="st">Field Station stamp</div>' : '') +
+      '<h2>My paragraph (' + words(p) + ' words)</h2><div class="p">' + (p ? esc(p) : '<i>(not written yet)</i>') + '</div><p style="font-size:13px;color:#7A5F2C">' + chips + '</p>' +
+      '<p style="margin-top:24px"><button onclick="print()">🖨 Print or save as PDF</button></p></body></html>';
+    var w = null; try { w = window.open('', '_blank'); } catch (e) {}
+    if (w && w.document) { w.document.open(); w.document.write(h); w.document.close(); setTimeout(function () { try { w.focus(); w.print(); } catch (e) {} }, 700); }
+    else { var bl = new Blob([h], { type: 'text/html' }), x = document.createElement('a'); x.href = URL.createObjectURL(bl); x.download = '15-01-vr-field-station-answers.html'; document.body.appendChild(x); x.click(); x.remove(); }
+    window.VR_LAST_PDF = h;
+  });
+
+  render(); updPara();
+})();
+</script>
+</body>
+</html>
