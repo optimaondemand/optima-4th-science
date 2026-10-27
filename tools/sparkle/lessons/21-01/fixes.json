@@ -1,0 +1,283 @@
+[
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a before/after of one collision",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🔄 Part C &mdash; Before and After"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (now a before/after of one collision, typed on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one collision from today, or one from your own life. Describe the BEFORE, the AFTER and where the energy went.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "collisions are physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard: 4-PS3-3 is “changes in energy when objects collide” (4-ESS3-1 is about energy resources)",
+  "old": "<div class=\"info-value\">4-ESS3-1 · TEKS 4.7(A)</div>",
+  "new": "<div class=\"info-value\">4-PS3-3 · TEKS 4.7(A)</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard detail: the lesson is about energy, not forces",
+  "old": "<div class=\"info-detail\">Forces in Collisions</div>",
+  "new": "<div class=\"info-detail\">Energy Changes in Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "4-PS3-3: some energy turns into sound and heat in a collision; the page never said so",
+  "old": "<div class=\"act-subtitle\">Motion and energy switch places</div>",
+  "new": "<div class=\"act-subtitle\">Energy moves, and some becomes sound and heat</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "4-PS3-3: name where the rest of the energy goes (sound and heat), no dash",
+  "old": "<p>And every collision does the same basic thing: it <span class=\"vtip\">transfers<span class=\"vtip-box\"><span class=\"vtip-word\">Transfer</span>When energy moves between objects.</span></span> energy and motion from one object to another. A moving ball stops or slows down; a still object starts moving. The total energy goes somewhere — it doesn't just disappear.</p>",
+  "new": "<p>Every collision does the same basic thing: it <span class=\"vtip\">transfers<span class=\"vtip-box\"><span class=\"vtip-word\">Transfer</span>When energy moves between objects.</span></span> energy from one object to another. A moving ball stops or slows down; a still object starts moving. And some of the energy always turns into <strong>sound</strong> (the click or crash you hear) and <strong>heat</strong> (a tiny bit of warming where they hit). The energy goes somewhere. It never just disappears.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "the AI before/after marble picture (it shows no sound or heat), Key Concept, Stop & Reason, the tap diagram, Observe & Reason, the “Florida car bumpers crumple on purpose” fact (it is the car’s front frame, a crumple zone, and nothing Florida-only), the bowling callout and Go Deeper are gone (lean); the Energy coin bank and Bumper cars replace the picture and the diagram, and the Crash lab is Part 4. Next button goes to Self-Check",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">💥 Before vs\\. After: A Marble Collision</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · The Crash Lab</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Now be the scientist. Pick two balls, predict the AFTER, crash them, then look with a heat camera. Where did the energy go?</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 7: it is the front of the car (a crumple zone) that is built to crush, not the bumper",
+  "old": "Why do car bumpers crumple in collisions? Use the words <em>energy</em> and <em>transfer</em> in your answer.",
+  "new": "Why is the front of a car built to crumple in a crash? Use the words <em>energy</em> and <em>transfer</em> in your answer."
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why do car bumpers crumple in collisions? Use the ...\"",
+  "new": "data-label=\"Why is the front of a car built to crumple?\""
+ },
+ {
+  "kind": "fix",
+  "why": "Self-Check Q1 feedback: objects DO stop by themselves when something like rubbing (friction) slows them",
+  "old": "Objects don't stop on their own (something has to push them), and sunlight hitting a leaf is a light transfer, not a collision.",
+  "new": "An object that stops by itself was slowed by rubbing (friction), and sunlight hitting a leaf is a light transfer, not a collision."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to describe how energy moves between objects when they collide — and use that idea to predict what will happen in everyday collisions.",
+  "new": "Keep this question in mind. By the end, you’ll know where the energy goes when things crash, and you’ll predict what happens next."
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up title matches the clap machine",
+  "old": "🌅 Warm-Up: A Marble at Rest",
+  "new": "🌅 Warm-Up: The Clap Test"
+ },
+ {
+  "kind": "plain",
+  "why": "warm-up subtitle",
+  "old": "What needs to happen for it to move?",
+  "new": "Your hands can collide too!"
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up starts with a real clap; the marble list is typed on the page",
+  "old": "Imagine a marble sitting still on a table. In your notebook, list three different ways you could make it start moving.",
+  "new": "Clap your hands hard 10 times, then touch your cheek. Do your palms feel warm? Your hands just collided over and over! Next, imagine a marble sitting still on a table. What could make it start moving?"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Hint: you don't have to touch it with your hand — what could touch it?",
+  "new": "Hint: you don't have to touch it with your hand. What else could bump into it?"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Today you'll learn that when two objects collide, energy and motion can pass from one to the other. The ball you bump becomes the next thing in motion — and you can predict what happens.",
+  "new": "Today you'll learn that when two objects collide, energy passes from one to the other, and some turns into sound and heat. Then you can predict what happens."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "Both slow down — and sometimes change direction.",
+  "new": "Both slow down, and sometimes change direction."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "If you know what BEFORE looks like — which objects were moving, and how fast — you can usually",
+  "new": "If you know what BEFORE looks like (which objects were moving, and how fast), you can usually"
+ },
+ {
+  "kind": "plain",
+  "why": "misconception kept, plain, no dash",
+  "old": "<p><strong>Common misconception:</strong> Some people think the moving object always \"wins\" a collision.*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think the moving object always “wins” a collision and the still one always “loses.” Not true! In most collisions, BOTH objects change how they move.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; points to 21.02",
+  "old": "<p><strong>Nicely done\\.</strong> You can now describe what happens in a.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You found where the energy goes in a crash: into the other object’s motion, sound and heat. It never disappears. Next lesson, you’ll run your own trials to test collision predictions.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Notice & Wonder (the clap machine is the warm-up’s thinking stop)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the energy coin bank is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its marble test is now the Crash lab in Part 4; its blink-fast strike fact was wrong: pins take about 2 seconds to fall)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; it pointed at the removed diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (6 → 5)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">5</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page",
+  "old": "A before/after sketch of one collision with motion arrows and a one-sentence energy statement.",
+  "new": "The BEFORE, the AFTER and where the energy went, for one collision. (A sketch is a bonus.)"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether energy disappears in a crash, and supported it with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether energy disappears in a crash, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]
