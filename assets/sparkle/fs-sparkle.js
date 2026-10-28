@@ -234,7 +234,7 @@
     row.innerHTML = '<div class="fs-radio-dev"><div class="fs-av-slot"></div>' + WALKIE + '</div><div class="fs-radio-body">' +
       '<div class="fs-radio-who">📻 ' + esc(who.name) + (demo ? ' <span class="fs-pending">demo: computer voice</span>' : '') + '</div>' +
       '<div class="fs-radio-label">' + esc(info.label || '') + '</div>' +
-      '<div class="fs-radio-ctl"><button class="fs-play" type="button">▶ ' + esc(info.audioLabel || 'Listen') + '</button><button class="fs-readalong" type="button">Read along</button><span class="fs-onair">● ON AIR</span></div>' +
+      '<div class="fs-radio-ctl"><button class="fs-play" type="button">▶ ' + esc(info.audioLabel || 'Listen') + '</button><button class="fs-readalong" type="button">📄 Read ' + esc(who.name) + '’s words</button><span class="fs-onair">● ON AIR</span></div>' +
       '<div class="fs-transcript">' + words.map(function (w, i) { return /^\s+$/.test(w) ? w : '<span data-w="' + i + '">' + esc(w) + '</span>'; }).join('') + '</div></div>';
     $('.fs-av-slot', row).appendChild(avatar(who, 'talk'));
     var b = $('.fs-play', row), tr = $('.fs-transcript', row), bars = $$('.fs-bars rect', row), grille = $('.fs-grille', row);
@@ -338,24 +338,33 @@
     box.appendChild(ph);
     var live = el('div', 'fs-ms-live'); box.appendChild(live);
     function showVideo(node) { box.classList.remove('fs-empty'); live.insertBefore(node, live.firstChild); }
+    /* Flow fix (Oct 28 2026, parent feedback): a teacher film and a crew radio in the same
+       section are two steps, in the order they sit: ① watch, ② listen. */
+    function stepUp() {
+      var vv = live.querySelector('.fs-video'), rr = live.querySelector('.fs-radio:not(.demo)');
+      if (!vv || !rr) return;
+      if (!vv.querySelector('.fs-step-label')) vv.insertBefore(el('div', 'fs-step-label', '\u2460 Watch your teacher'), vv.firstChild);
+      if (!rr.previousElementSibling || !rr.previousElementSibling.classList.contains('fs-step-label'))
+        live.insertBefore(el('div', 'fs-step-label', '\u2461 Then listen to ' + esc(who.name)), rr);
+    }
     /* D.videoOff: slots whose recorded video no longer matches the page (hidden until it is re-recorded) */
     if ((D.videoOff || []).indexOf(id) < 0) probe(vfile, 'video', function (ok) {
       if (ok) {
         var vtt = vfile.replace(/\.mp4$/, '.vtt');
         var v = el('div', 'fs-video', '<video controls playsinline preload="metadata" poster="' + vfile.replace(/\.mp4$/, '.jpg') + '" src="' + vfile + '">' +
           '<track kind="captions" srclang="en" label="English" src="' + vtt + '"></video>');
-        showVideo(v); addCaptions(v); return;
+        showVideo(v); addCaptions(v); stepUp(); return;
       }
       withManifest(function (m) {
         var e = m[key]; if (!e || e.status !== 'ready' || !e.embed) return;
         var t = document.createElement('div'); t.innerHTML = e.embed; var f = t.querySelector('iframe'); if (!f) return;
         f.removeAttribute('width'); f.removeAttribute('height'); f.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:12px;';
-        var v = el('div', 'fs-video'); v.appendChild(f); showVideo(v);
+        var v = el('div', 'fs-video'); v.appendChild(f); showVideo(v); stepUp();
       });
     });
     if (info.script) probe(afile, 'audio', function (ok) {
       if (!ok) return;
-      box.classList.remove('fs-empty'); live.appendChild(makeRadio(info, who, afile, false, id));
+      box.classList.remove('fs-empty'); live.appendChild(makeRadio(info, who, afile, false, id)); stepUp();
     });
     if (info.script) { // teacher view: demo the walkie-talkie with the computer's voice
       var demoBtn = el('button', 'fs-demo', '▶ Demo the radio'); demoBtn.type = 'button';
@@ -8675,4 +8684,35 @@
     guard('mock', buildMock);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+
+/* Flow fix (Oct 28 2026, parent feedback): remember the open tab, so a
+   Canvas reload (after Submit) reopens where the student was instead of
+   on the first tab. One key per lesson page. */
+(function () {
+  var KEY = 'oao-tab-' + location.pathname;
+  function put(v) { try { localStorage.setItem(KEY, v); } catch (e) { try { sessionStorage.setItem(KEY, v); } catch (e2) {} } }
+  function get() { try { return localStorage.getItem(KEY); } catch (e) { try { return sessionStorage.getItem(KEY); } catch (e2) { return null; } } }
+  function tabIdOf(b) {
+    return b.getAttribute('data-tab') || (b.id || '').replace(/^btn-/, '') ||
+      ((b.getAttribute('onclick') || '').match(/switchTab\(\s*['"]([\w-]+)/) || [])[1] || '';
+  }
+  function hook() {
+    var cur = window.switchTab;
+    if (typeof cur !== 'function' || cur._remembers) return;
+    var wrapped = function (id) { var r = cur.apply(this, arguments); put(id); return r; };
+    wrapped._remembers = true;
+    window.switchTab = wrapped;
+    var b = document.querySelector('.tab-btn'), first = b ? tabIdOf(b) : '', last = get();
+    if (!last || last === first) return;
+    if (!document.getElementById('tab-' + last) && !document.getElementById('panel-' + last)) return;
+    setTimeout(function () {                 /* after the page's own layers have set up */
+      var sT = window.scrollTo, sIV = Element.prototype.scrollIntoView;
+      window.scrollTo = function () {}; Element.prototype.scrollIntoView = function () {};  /* no jump on restore */
+      try { window.switchTab(last); } catch (e) {}
+      window.scrollTo = sT; Element.prototype.scrollIntoView = sIV;
+    }, 0);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hook);
+  else hook();
 })();

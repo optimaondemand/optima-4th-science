@@ -3352,3 +3352,6 @@ html.fs-on .fs-replaced { display:none !important; }
   .fs-stk-pi, .fs-cl-heat, .fs-cl-svg .fs-cl-bg { transition:none; }
 }
 @media (max-width:560px) { .fs-bmp-row { gap:6px; } .fs-bmp-row b { min-width:64px; } .fs-bmp-v { min-width:60px; font-size:14px; } .fs-bmp-row .fs-btn { padding:3px 10px; } .fs-cl-table table { font-size:12px; } .fs-cl-table th, .fs-cl-table td { padding:4px 5px; } }
+
+/* Flow fix (Oct 28 2026): numbered steps when a teacher film and a crew radio share a section */
+.fs-step-label { font:800 14px/1.3 'Nunito',sans-serif; color:#3D2E12; margin:4px 0 8px; }
