@@ -466,7 +466,7 @@
     html.setAttribute('data-fs-tab', 'vocab');
     var orig = window.switchTab;
     if (typeof orig !== 'function') return;
-    window.switchTab = function (id) { orig(id); html.setAttribute('data-fs-tab', id); };
+    window.switchTab = function (id) { orig(id); html.setAttribute('data-fs-tab', id); try { document.dispatchEvent(new Event('fs:tab')); } catch (e) {} };
   }
 
   /* ---------- the case: a mystery that runs through the lesson ---------- */
@@ -525,7 +525,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -547,6 +547,14 @@
       st.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
     });
     put(card, $('.video-placeholder-wrap', vocab) || vocab, $('.video-placeholder-wrap', vocab) ? 'after' : 'prepend');
+    if (C.envelopes) { var openEnv = function () { if (!store('solved')) return; $$('.fs-env', card).forEach(function (e) { e.classList.add('open'); });
+        var sv = $('.fs-solve'); if (sv && !$('.fs-env-board', sv)) { var b = fsOnly(el('div', 'fs-env-solve', '<div class="fs-in-k">✉️ ' + esc(C.envOpen || 'The envelopes are open!') + '</div>' + envBoard(C))); $('.fs-win', sv) ? sv.insertBefore(b, $('.fs-win', sv).nextSibling) : sv.appendChild(b); $$('.fs-env', b).forEach(function (e) { e.classList.add('open'); }); } };
+      document.addEventListener('fs:solved', function () { setTimeout(openEnv, 0); }); setTimeout(openEnv, 0); }
+  }
+  /* 21.02: sealed prediction envelopes pinned to a corkboard; they open when the case is cracked. case.envelopes = [{who, icon, front, inside, verdict}] */
+  function envBoard(C) {
+    return '<div class="fs-env-board">' + C.envelopes.map(function (e, i) { return '<div class="fs-env" style="--r:' + ((i % 2 ? 1 : -1) * (1 + i)) + 'deg"><div class="fs-env-front"><span class="fs-env-who">' + (e.icon || '✉️') + ' ' + esc(e.who) + '</span><span class="fs-env-seal">' + esc(e.seal || 'SEALED') + '</span><small>' + esc(e.front || '') + '</small></div>' +
+      '<div class="fs-env-in"><b>' + esc(e.head || (e.who + '\u2019s prediction')) + '</b><p>' + esc(e.inside) + '</p>' + (e.verdict ? '<em>' + esc(e.verdict) + '</em>' : '') + '</div></div>'; }).join('') + (C.envLine ? '<div class="fs-env-line">' + esc(C.envLine) + '</div>' : '') + '</div>';
   }
   function buildSolve() {
     var C = D.case; if (!C || !C.solve) return;
@@ -7030,6 +7038,439 @@
     choose(L.pairs[0].k); paintTable();
   }
 
+  /* ===== 21.02 · The Speed Limit Sign: ghosts, iknewit, flaglane, cradle + cradlefree, signmaker; case.envelopes (built in buildCase) ===== */
+
+  /* ---------- Warm-Up: "Ghost marbles" (21.02) — drag see-through ghost marbles onto the board where you predict each real marble will stop,
+     then Play: the real marbles roll and the ghosts stay put, so the gap shows how close the prediction was. 2 rounds (big into small, small into big).
+     D.ghosts = {afterText, kicker, title, todo[], why, hook:{beforeText, img, alt, cap, credit}, model, trayWord, scale (px per cm), e, k,
+                 rounds:[{k, t, sub, alt, a:{t, tag, r, m, c}, b:{…}, line}], playBtn, placeMiss, nextBtn, againBtn, offWord, closeLine, close, tableLabel, q, opts, win, clue} */
+  function buildGhosts() {
+    var G = D.ghosts; if (!G) return;
+    if (G.hook) guard('ghosts hook', function () {
+      var hp = anchorP(G.hook.beforeText); if (!hp) { FAILED.push('ghosts hook anchor not found'); return; }
+      var f = fsOnly(el('figure', 'fs-gh-hook', '<img alt="' + esc(G.hook.alt) + '" src="' + esc(G.hook.img) + '" loading="lazy"><figcaption>' + esc(G.hook.cap) + '</figcaption>' +
+        (G.hook.credit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credit</summary>' + esc(G.hook.credit) + '</details>' : '')));
+      hp.parentNode.insertBefore(f, hp);
+    });
+    var at = anchorP(G.afterText); if (!at) { FAILED.push('ghosts anchor text not found'); return; }
+    var g = gameShell(G.kicker || 'Warm-Up game', G.title, G.todo, G.why); g.dataset.mod = 'ghosts';
+    var st = loadJ('ghosts', { r: 0, res: {} }), cur = Math.min(st.r, G.rounds.length - 1), gh = {}, sel = null, busy = false, played = false, drag = null, moved = false;
+    var sub = el('div', 'fs-gh-sub'), stage = el('div', 'fs-gh-stage'), bar = el('div', 'fs-gh-bar'), res = el('div'), miss = el('div', 'fs-miss'), table = el('div', 'fs-gh-table'), qh = el('div'), win = el('div', 'fs-win');
+    var play = el('button', 'fs-btn fs-gh-play', '▶ ' + esc(G.playBtn || 'Play')); play.type = 'button'; bar.appendChild(play);
+    [sub, stage, bar, res, miss, table, qh, win].forEach(function (n) { g.appendChild(n); });
+    var X0 = 60, XB = 300, TOP = 146, SC = G.scale || 4, E = G.e == null ? 0.9 : G.e, K = G.k || 140;
+    function R() { return G.rounds[cur]; }
+    function cy(m) { return TOP - m.r; }
+    function ball(m, cls, k, x, y) {
+      return '<g class="' + cls + '" data-k="' + k + '" transform="translate(' + x + ' ' + y + ')">' + (cls === 'fs-gh-g'
+        ? '<circle r="' + m.r + '" fill="#fff" fill-opacity=".55" stroke="' + m.c + '" stroke-width="3" stroke-dasharray="5 4"/><text y="4" text-anchor="middle" class="fs-gh-gt">' + esc(m.tag || '') + '</text>'
+        : '<circle r="' + m.r + '" fill="' + m.c + '" stroke="#1F2A36" stroke-width="2"/><circle cx="' + (-m.r / 3) + '" cy="' + (-m.r / 3) + '" r="' + (m.r / 4) + '" fill="#fff" opacity=".55"/>') + '</g>';
+    }
+    function draw() {
+      var r = R(); gh = { a: { x: 140, y: 38, placed: false }, b: { x: 240, y: 38, placed: false } }; sel = null; played = false; busy = false; play.disabled = false; res.innerHTML = ''; miss.classList.remove('show');
+      sub.innerHTML = '<b>' + esc(r.t) + '</b> ' + esc(r.sub) + '<div class="fs-gh-key"><span><i style="background:' + r.a.c + '"></i>' + esc(r.a.t) + '</span><span><i style="background:' + r.b.c + '"></i>' + esc(r.b.t) + '</span></div>';
+      var ticks = ''; for (var x = 20; x <= 640; x += 20) ticks += '<line x1="' + x + '" y1="' + TOP + '" x2="' + x + '" y2="' + (TOP + (x % 100 === 0 ? 10 : 5)) + '" stroke="#8C6A42" stroke-width="1.5"/>';
+      stage.innerHTML = '<svg viewBox="0 0 660 200" class="fs-gh-svg" role="img" aria-label="' + esc(r.alt || 'A model: a marble rolls along a board toward a marble that is sitting still.') + '">' +
+        '<rect width="660" height="200" rx="12" fill="#FFF7EC"/><rect width="660" height="74" rx="12" fill="#F1EAFB"/><text x="12" y="18" class="fs-gh-tray">' + esc(G.trayWord || 'Ghost marbles: drag each one down onto the board') + '</text>' +
+        '<rect x="10" y="' + TOP + '" width="640" height="14" rx="4" fill="#C9A77A"/>' + ticks +
+        ball(r.a, 'fs-gh-real', 'a', X0, cy(r.a)) + ball(r.b, 'fs-gh-real', 'b', XB, cy(r.b)) + '<g class="fs-gh-gaps"></g>' +
+        ball(r.a, 'fs-gh-g', 'a', gh.a.x, gh.a.y) + ball(r.b, 'fs-gh-g', 'b', gh.b.x, gh.b.y) +
+        '<text x="650" y="18" text-anchor="end" class="fs-gh-model">' + esc(G.model || 'a model') + '</text></svg>';
+      var svg = $('svg', stage);
+      svg.addEventListener('pointerdown', function (e) {
+        if (played || busy) return; var t = e.target.closest && e.target.closest('.fs-gh-g'); if (!t) return;
+        drag = t.dataset.k; moved = false; svg.setPointerCapture && svg.setPointerCapture(e.pointerId); e.preventDefault();
+      });
+      svg.addEventListener('pointermove', function (e) { if (!drag) return; var p = flPoint(svg, e); if (!p) return; moved = true; put(drag, p[0]); });
+      svg.addEventListener('pointerup', function (e) {
+        if (played || busy) { drag = null; return; }
+        if (drag && !moved) { sel = sel === drag ? null : drag; SFX.blip(); paintG(); drag = null; return; }
+        if (drag) { drag = null; SFX.blip(); return; }
+        if (sel) { var p = flPoint(svg, e); if (p && p[1] > 74) { put(sel, p[0]); sel = null; SFX.blip(); paintG(); } }
+      });
+      paintG();
+    }
+    function put(k, x) { var o = gh[k], m = R()[k]; o.x = Math.max(16, Math.min(644, Math.round(x))); o.y = cy(m); o.placed = true; paintG(); }
+    function paintG() { ['a', 'b'].forEach(function (k) { var n = $('.fs-gh-g[data-k="' + k + '"]', stage); if (!n) return; n.setAttribute('transform', 'translate(' + gh[k].x + ' ' + gh[k].y + ')'); n.classList.toggle('sel', sel === k); n.classList.toggle('placed', gh[k].placed); }); }
+    play.addEventListener('click', function () {
+      if (busy || played) return;
+      if (!gh.a.placed || !gh.b.placed) { showMiss(miss, G.placeMiss || 'Drag both ghost marbles down onto the board first.'); return; }
+      var r = R(), m1 = r.a.m, m2 = r.b.m, ca = XB - r.a.r - r.b.r, u1 = (m1 - E * m2) / (m1 + m2), u2 = (1 + E) * m1 / (m1 + m2);
+      var fa = ca + (u1 < 0 ? -1 : 1) * K * u1 * u1, fb = XB + K * u2 * u2;
+      busy = true; play.disabled = true; miss.classList.remove('show'); sel = null; paintG();
+      var A = $('.fs-gh-real[data-k="a"]', stage), B = $('.fs-gh-real[data-k="b"]', stage), ya = cy(r.a), yb = cy(r.b), t0 = null, D1 = reduceMotion ? 1 : 900, D2 = reduceMotion ? 1 : 1500;
+      function go(ts) { if (t0 == null) t0 = ts; var q = Math.min(1, (ts - t0) / D1); A.setAttribute('transform', 'translate(' + (X0 + (ca - X0) * q).toFixed(1) + ' ' + ya + ')'); if (q < 1) requestAnimationFrame(go); else { tone(2400, 0, 0.08, 'triangle', 0.08); tone(3600, 0.01, 0.05, 'sine', 0.04); t0 = null; requestAnimationFrame(out); } }
+      function out(ts) { if (t0 == null) t0 = ts; var q = Math.min(1, (ts - t0) / D2), e = 1 - Math.pow(1 - q, 2); A.setAttribute('transform', 'translate(' + (ca + (fa - ca) * e).toFixed(1) + ' ' + ya + ')'); B.setAttribute('transform', 'translate(' + (XB + (fb - XB) * e).toFixed(1) + ' ' + yb + ')'); if (q < 1) requestAnimationFrame(out); else land(fa, fb); }
+      SFX.whoosh(); requestAnimationFrame(go);
+    });
+    function land(fa, fb) {
+      busy = false; played = true; var r = R(), ga = Math.round(Math.abs(gh.a.x - fa) / SC), gb = Math.round(Math.abs(gh.b.x - fb) / SC), close = G.close || 8;
+      var gaps = $('.fs-gh-gaps', stage), Lz = G.offWord || 'cm off';
+      gaps.innerHTML = [['a', fa, 170, ga], ['b', fb, 188, gb]].map(function (z) { var x1 = Math.min(gh[z[0]].x, z[1]), x2 = Math.max(gh[z[0]].x, z[1]), c = R()[z[0]].c;
+        return '<line x1="' + x1 + '" y1="' + z[2] + '" x2="' + x2 + '" y2="' + z[2] + '" stroke="' + c + '" stroke-width="3"/><line x1="' + x1 + '" y1="' + (z[2] - 5) + '" x2="' + x1 + '" y2="' + (z[2] + 5) + '" stroke="' + c + '" stroke-width="3"/><line x1="' + x2 + '" y1="' + (z[2] - 5) + '" x2="' + x2 + '" y2="' + (z[2] + 5) + '" stroke="' + c + '" stroke-width="3"/>' +
+          '<text x="' + Math.min(600, x2 + 8) + '" y="' + (z[2] + 4) + '" class="fs-gh-off">' + z[3] + ' ' + esc(Lz) + '</text>'; }).join('');
+      var good = ga <= close && gb <= close;
+      res.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + (good ? '🎯' : '💡') + '</span><div><b>' + esc(r.a.t + ': ' + ga + ' ' + Lz + ' · ' + r.b.t + ': ' + gb + ' ' + Lz) + '</b>' + (good ? esc(G.closeLine || 'Great prediction! ') : '') + esc(r.line) + '</div></div>';
+      st.res[r.k] = { a: ga, b: gb }; if (cur >= st.r) st.r = cur + 1; saveJ('ghosts', st); paintTable(); SFX.chime();
+      var row = el('div', 'fs-gh-btns'), again = el('button', 'fs-btn alt', '🔁 ' + esc(G.againBtn || 'Try this round again')); again.type = 'button'; row.appendChild(again);
+      again.addEventListener('click', draw);
+      if (cur < G.rounds.length - 1) { var nb = el('button', 'fs-btn', '➡ ' + esc(G.nextBtn || 'Next round')); nb.type = 'button'; row.appendChild(nb); nb.addEventListener('click', function () { cur++; draw(); scrollToEl(g); }); }
+      res.appendChild(row);
+      if (st.r >= G.rounds.length) askOnce(qh, G.q, G.opts, 'ghosts-q', win, G.win, G.clue, 'ghosts', miss);
+    }
+    function paintTable() {
+      var rows = G.rounds.filter(function (r) { return st.res[r.k]; }); if (!rows.length) { table.innerHTML = ''; return; }
+      table.innerHTML = '<div class="fs-in-k">' + esc(G.tableLabel || 'How close were my ghosts?') + '</div><table><tr><th>' + esc(G.roundWord || 'Round') + '</th><th>' + esc(G.gapWord || 'How far off my ghosts were') + '</th></tr>' +
+        rows.map(function (r) { var s = st.res[r.k]; return '<tr><td>' + esc(r.t.replace(/:$/, '')) + '</td><td>' + esc(r.a.t + ': ' + s.a + ' cm · ' + r.b.t + ': ' + s.b + ' cm') + '</td></tr>'; }).join('') + '</table>';
+    }
+    at.parentNode.insertBefore(g, afterBlock(at).nextSibling);
+    draw(); paintTable();
+    if (st.r >= G.rounds.length) askOnce(qh, G.q, G.opts, 'ghosts-q', win, G.win, G.clue, 'ghosts', miss);
+  }
+
+  /* ---------- Part 1: "The I-knew-it trap" (21.02) — pier kids wrote sticky notes about a marble test; drag each note onto the timeline, BEFORE or
+     AFTER the test, by the time on it. Only BEFORE notes can be checked. Then the result comes in: one BEFORE note was wrong. Stamp it useful or failed.
+     D.iknewit = {afterText, kicker, title, todo[], why, test:{icon, t, time}, zones:{before, after}, timeMiss, checkWord, nocheckWord, notes:[{id, who, icon, time, t, side, miss}],
+                  q1:{q, opts}, result:{icon, head, t}, wrong:{id, q, stamps:[{k, t, ok, miss}], mark}, q, opts, win, clue} */
+  function buildIknewit() {
+    var N = D.iknewit; if (!N) return;
+    var at = anchorP(N.afterText); if (!at) { FAILED.push('iknewit anchor text not found'); return; }
+    var g = gameShell(N.kicker || 'Part 1 game', N.title, N.todo, N.why); g.dataset.mod = 'iknewit';
+    var st = loadJ('iknewit', { p: {} });
+    var deck = el('div', 'fs-ikn-deck'), line = el('div', 'fs-ikn-line'), miss = el('div', 'fs-miss'), s2 = el('div'), s3 = el('div', 'fs-ikn-s3'), qh = el('div'), win = el('div', 'fs-win');
+    line.innerHTML = '<div class="fs-ikn-zone" data-k="before"><div class="fs-ikn-zh">⏪ ' + esc(N.zones.before) + '</div><div class="fs-ikn-pile"></div></div>' +
+      '<div class="fs-ikn-test"><span>' + (N.test.icon || '💥') + '</span><b>' + esc(N.test.time) + '</b><small>' + esc(N.test.t) + '</small></div>' +
+      '<div class="fs-ikn-zone" data-k="after"><div class="fs-ikn-zh">' + esc(N.zones.after) + ' ⏩</div><div class="fs-ikn-pile"></div></div>';
+    [deck, line, miss, s2, s3, qh, win].forEach(function (n) { g.appendChild(n); });
+    var zones = $$('.fs-ikn-zone', line);
+    function noteOf(id) { return N.notes.filter(function (n) { return n.id === id; })[0]; }
+    N.notes.forEach(function (n, i) {
+      var c = el('div', 'fs-ikn-note', '<div class="fs-ikn-who"><span>' + n.icon + ' ' + esc(n.who) + '</span><em>🕗 ' + esc(n.time) + '</em></div><p>' + esc(n.t) + '</p><i class="fs-ikn-stamp"></i>');
+      c.dataset.id = n.id; c.style.setProperty('--r', ((i % 2 ? 1 : -1) * (1 + i % 3)) + 'deg'); deck.appendChild(c);
+      dragDrop(c, function () { return zones; }, drop);
+    });
+    tapTargets(g, zones, drop);
+    function drop(c, z) {
+      var n = noteOf(c.dataset.id); if (!n || c.classList.contains('placed')) return;
+      if (n.side !== z.dataset.k) { bounce(c, miss, n.miss || N.timeMiss || 'Look at the time on the note. When was the test?'); return; }
+      place(c, n, true); st.p[n.id] = 1; saveJ('iknewit', st); miss.classList.remove('show'); SFX.chime(); next();
+    }
+    function place(c, n, anim) {
+      c.classList.remove('sel'); c.classList.add('placed', n.side); if (anim && !reduceMotion) c.classList.add('pop');
+      $('.fs-ikn-stamp', c).textContent = n.side === 'before' ? '✓ ' + (N.checkWord || 'Can be checked') : '✗ ' + (N.nocheckWord || 'Too late to check');
+      $('.fs-ikn-pile', $('.fs-ikn-zone[data-k="' + n.side + '"]', line)).appendChild(c);
+    }
+    function next() {
+      if (N.notes.some(function (n) { return !st.p[n.id]; })) return;
+      if (!s2.dataset.on) { s2.dataset.on = '1'; deck.style.display = 'none';
+        var w = chipsQ(s2, N.q1.q, N.q1.opts, function () { st.q1 = 1; saveJ('iknewit', st); result(true); }, miss);
+        if (st.q1) { var k = N.q1.opts.map(function (o, i) { return o.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; $$('.fs-in-chip', w)[k].classList.add('on', 'ok'); w.dataset.done = '1'; result(false); } }
+    }
+    function result(anim) {
+      if (s3.dataset.on) return; s3.dataset.on = '1'; var W = N.wrong, wn = noteOf(W.id), c = $('.fs-ikn-note[data-id="' + W.id + '"]', line);
+      s3.innerHTML = '<div class="fs-ikn-res"><span>' + (N.result.icon || '📋') + '</span><div><b>' + esc(N.result.head) + '</b>' + esc(N.result.t) + '</div></div>' +
+        '<div class="fs-in-k">' + esc(W.q) + '</div><div class="fs-ikn-stamps">' + W.stamps.map(function (s, i) { return '<button type="button" class="fs-ikn-sb ' + s.k + '" data-i="' + i + '">' + esc(s.t) + '</button>'; }).join('') + '</div>';
+      if (c) c.classList.add('wrongone');
+      if (anim) { SFX.blip(); s3.classList.add('show'); } else s3.classList.add('show');
+      $$('.fs-ikn-sb', s3).forEach(function (b) { b.addEventListener('click', function () {
+        if (st.stamp) return; var s = W.stamps[+b.dataset.i];
+        if (!s.ok) { bounce(b, miss, s.miss); return; }
+        st.stamp = 1; saveJ('iknewit', st); SFX.stamp(); stamped(true);
+      }); });
+      if (st.stamp) stamped(false);
+    }
+    function stamped(anim) {
+      var c = $('.fs-ikn-note[data-id="' + N.wrong.id + '"]', line); if (c) { c.classList.add('useful'); var m = el('b', 'fs-ikn-big' + (anim && !reduceMotion ? ' hit' : ''), esc(N.wrong.mark || 'USEFUL')); c.appendChild(m); }
+      $$('.fs-ikn-sb', s3).forEach(function (b) { b.disabled = true; if (N.wrong.stamps[+b.dataset.i].ok) b.classList.add('on'); });
+      miss.classList.remove('show');
+      askOnce(qh, N.q, N.opts, 'iknewit-q', win, N.win, N.clue, 'iknewit', miss);
+    }
+    at.parentNode.insertBefore(g, afterBlock(at).nextSibling);
+    N.notes.forEach(function (n) { if (st.p[n.id]) place($('.fs-ikn-note[data-id="' + n.id + '"]', g), n, false); });
+    next();
+  }
+
+  /* ---------- Part 2: "Flag lane" (21.02) — plant a prediction flag where you think the target block will stop, roll the marble down the ramp,
+     a tape shows the gap. 3 trials on the low ramp, then change ONE thing (the high ramp) for 3 more. One trial hits a gap in the boards.
+     Every gap goes on a gap meter. Then find what's wrong with Gus's one-try test.
+     D.flaglane = {afterText, kicker, title, todo[], why, model, alt, unit, max, keep, ramps:{low:{t, h}, high:{t, h}}, trials:[{ramp, d, bump, note}],
+                   flagWord, flagMiss, rollBtn, nextBtn, switchLine, cols, meterLabel, closerLine, useLine, gus:{icon, who, t, q, need, opts:[{t, ok, miss, yes}]}, win, clue} */
+  function buildFlaglane() {
+    var F = D.flaglane; if (!F) return;
+    var at = anchorP(F.afterText); if (!at) { FAILED.push('flaglane anchor text not found'); return; }
+    var g = gameShell(F.kicker || 'Part 2 game', F.title, F.todo, F.why); g.dataset.mod = 'flaglane';
+    var st = loadJ('flaglane', { t: 0, rows: [], gus: {} }), flag = null, busy = false, rolled = false, drag = false;
+    var head = el('div', 'fs-flg-head'), stage = el('div', 'fs-flg-stage'), bar = el('div', 'fs-flg-bar'), res = el('div'), miss = el('div', 'fs-miss'), table = el('div', 'fs-flg-table'), meter = el('div', 'fs-flg-meter'), gus = el('div'), win = el('div', 'fs-win');
+    var roll = el('button', 'fs-btn fs-flg-roll', '▶ ' + esc(F.rollBtn || 'Roll the marble')); roll.type = 'button'; bar.appendChild(roll);
+    [head, stage, bar, res, miss, table, meter, gus, win].forEach(function (n) { g.appendChild(n); });
+    var Z = 150, S = (630 - Z) / (F.max || 60), BASE = 160, U = F.unit || 'cm';
+    function T() { return F.trials[Math.min(st.t, F.trials.length - 1)]; }
+    function rampTop(k) { return BASE - (F.ramps[k].h || 30); }
+    function draw() {
+      var tr = T(), rk = tr.ramp, top = rampTop(rk); flag = null; rolled = false; busy = false; roll.disabled = false; res.innerHTML = ''; roll.innerHTML = '▶ ' + esc(F.rollBtn || 'Roll the marble');
+      head.innerHTML = '<span class="fs-flg-tn">' + esc((F.trialWord || 'Trial') + ' ' + (st.t + 1) + ' of ' + F.trials.length) + '</span><span class="fs-flg-rp ' + rk + '">' + esc(F.ramps[rk].t) + '</span>' + (F.keep ? '<small>🔒 ' + esc(F.keep) + '</small>' : '');
+      var ticks = ''; for (var c = 0; c <= (F.max || 60); c += 5) { var x = Z + c * S; ticks += '<line x1="' + x + '" y1="' + BASE + '" x2="' + x + '" y2="' + (BASE + (c % 10 ? 6 : 12)) + '" stroke="#5A4630" stroke-width="1.5"/>' + (c % 10 ? '' : '<text x="' + x + '" y="' + (BASE + 24) + '" text-anchor="middle" class="fs-flg-tk">' + c + '</text>'); }
+      stage.innerHTML = '<svg viewBox="0 0 660 210" class="fs-flg-svg" role="img" aria-label="' + esc(F.alt || 'A model: a marble rolls down a ramp and hits a wooden block on a board with a ruler') + '">' +
+        '<rect width="660" height="210" rx="12" fill="#EAF4FB"/><rect x="0" y="' + BASE + '" width="660" height="50" fill="#E9D3AE"/>' +
+        '<polygon points="10,' + BASE + ' 10,' + top + ' 128,' + BASE + '" fill="#B98C5E" stroke="#7A5A36" stroke-width="2"/>' +
+        '<rect x="' + (Z - 2) + '" y="' + (BASE - 2) + '" width="' + (630 - Z + 4) + '" height="4" fill="#F7E7C8"/>' + ticks + '<text x="640" y="' + (BASE + 24) + '" text-anchor="end" class="fs-flg-tk">' + esc(U) + '</text>' +
+        (tr.bump ? '' : '') + '<g class="fs-flg-crack"></g>' +
+        '<rect class="fs-flg-blk" x="' + Z + '" y="' + (BASE - 26) + '" width="18" height="26" rx="2" fill="#C8553D" stroke="#7A2E1E" stroke-width="2"/>' +
+        '<circle class="fs-flg-m" cx="22" cy="' + (top - 9) + '" r="9" fill="#2D7AA6" stroke="#0E3A5A" stroke-width="2"/>' +
+        '<g class="fs-flg-flag" transform="translate(' + (Z + 40) + ' 0)"><line x1="0" y1="' + (BASE - 64) + '" x2="0" y2="' + BASE + '" stroke="#3A2C1E" stroke-width="3"/><path d="M0 ' + (BASE - 64) + ' l30 9 l-30 9 z" fill="#F2C94C" stroke="#B88A00" stroke-width="1.5"/><rect x="-14" y="' + (BASE - 70) + '" width="48" height="74" fill="transparent"/></g>' +
+        '<g class="fs-flg-tape"></g><text x="12" y="20" class="fs-flg-hint">' + esc(F.flagWord || 'Drag the flag to where you think the block will stop') + '</text><text x="650" y="204" text-anchor="end" class="fs-flg-model">' + esc(F.model || 'a model') + '</text></svg>';
+      var svg = $('svg', stage), fl = $('.fs-flg-flag', svg);
+      svg.addEventListener('pointerdown', function (e) {
+        if (busy || rolled) return; var p = flPoint(svg, e); if (!p) return;
+        if (e.target.closest && e.target.closest('.fs-flg-flag')) { drag = true; svg.setPointerCapture && svg.setPointerCapture(e.pointerId); e.preventDefault(); return; }
+        if (p[1] > BASE - 80) setFlag(p[0]);
+      });
+      svg.addEventListener('pointermove', function (e) { if (!drag) return; var p = flPoint(svg, e); if (p) setFlag(p[0]); });
+      svg.addEventListener('pointerup', function () { if (drag) { drag = false; SFX.blip(); } });
+      fl.classList.add('wait');
+    }
+    function setFlag(x) {
+      var c = Math.max(0, Math.min(F.max || 60, Math.round((x - Z) / S))); flag = c; miss.classList.remove('show');
+      var fl = $('.fs-flg-flag', stage); fl.setAttribute('transform', 'translate(' + (Z + c * S) + ' 0)'); fl.classList.remove('wait');
+      roll.innerHTML = '▶ ' + esc(F.rollBtn || 'Roll the marble') + ' <small>(' + esc((F.myFlag || 'my flag') + ': ' + c + ' ' + U) + ')</small>';
+    }
+    roll.addEventListener('click', function () {
+      if (busy || rolled || st.t >= F.trials.length) return;
+      if (flag == null) { showMiss(miss, F.flagMiss || 'Plant your flag first: drag it to where you think the block will stop.'); return; }
+      busy = true; roll.disabled = true; var tr = T(), top = rampTop(tr.ramp), svg = $('svg', stage), m = $('.fs-flg-m', svg), b = $('.fs-flg-blk', svg), t0 = null, D1 = reduceMotion ? 1 : (tr.ramp === 'high' ? 800 : 1100), D2 = reduceMotion ? 1 : 1300;
+      function down(ts) { if (t0 == null) t0 = ts; var q = Math.min(1, (ts - t0) / D1), e = q * q, x = 22 + (Z - 9 - 22) * e, y = x < 128 ? top - 9 + (BASE - top) * ((x - 22) / 106) : BASE - 9; m.setAttribute('cx', x.toFixed(1)); m.setAttribute('cy', Math.min(BASE - 9, y).toFixed(1)); if (q < 1) requestAnimationFrame(down); else { tone(900, 0, 0.07, 'square', 0.05); noise(0.06, 500, 1600, 0.3); t0 = null; requestAnimationFrame(slide); } }
+      function slide(ts) { if (t0 == null) t0 = ts; var q = Math.min(1, (ts - t0) / D2), e = tr.bump ? Math.min(1, q * 1.6) : 1 - Math.pow(1 - q, 2.4); b.setAttribute('x', (Z + tr.d * S * e).toFixed(1)); m.setAttribute('cx', (Z - 9 + 4 * e).toFixed(1)); if (q < 1) requestAnimationFrame(slide); else land(); }
+      SFX.whoosh(); requestAnimationFrame(down);
+    });
+    function land() {
+      busy = false; rolled = true; var tr = T(), gap = Math.abs(flag - tr.d), svg = $('svg', stage), x1 = Z + Math.min(flag, tr.d) * S, x2 = Z + Math.max(flag, tr.d) * S;
+      if (tr.bump) { $('.fs-flg-crack', svg).innerHTML = '<path d="M' + (Z + tr.d * S + 20) + ' ' + BASE + ' l4 -5 l4 5 l4 -5" stroke="#7A5A36" stroke-width="2.5" fill="none"/>'; SFX.thud(); }
+      $('.fs-flg-tape', svg).innerHTML = '<rect x="' + x1 + '" y="' + (BASE - 96) + '" width="' + Math.max(2, x2 - x1) + '" height="12" fill="#F2C94C" stroke="#B88A00"/><text x="' + ((x1 + x2) / 2) + '" y="' + (BASE - 102) + '" text-anchor="middle" class="fs-flg-gap">' + esc((F.gapWord || 'Gap') + ': ' + gap + ' ' + U) + '</text>';
+      st.rows.push({ ramp: tr.ramp, flag: flag, d: tr.d, gap: gap, bump: !!tr.bump }); st.t++; saveJ('flaglane', st); if (!tr.bump) SFX.chime();
+      res.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + (tr.bump ? '😮' : gap <= 3 ? '🎯' : '📏') + '</span><div><b>' + esc((F.realWord || 'The block stopped at') + ' ' + tr.d + ' ' + U + '. ' + (F.gapWord || 'Gap') + ': ' + gap + ' ' + U + '.') + '</b>' + esc(tr.note || '') + '</div></div>';
+      if (st.t < F.trials.length) {
+        var nx = F.trials[st.t], nb = el('button', 'fs-btn', '➡ ' + esc(F.nextBtn || 'Next trial')); nb.type = 'button';
+        if (nx.ramp !== tr.ramp) res.appendChild(el('div', 'fs-flg-switch', '🔁 ' + esc(F.switchLine || 'Now change ONE thing: the ramp height. Everything else stays the same.')));
+        res.appendChild(nb); nb.addEventListener('click', function () { draw(); });
+      }
+      paint();
+    }
+    function paint() {
+      var R = st.rows, C = F.cols || ['Trial', 'Ramp', 'My flag', 'Real stop', 'Gap'];
+      table.innerHTML = R.length ? '<div class="fs-in-k">' + esc(F.tableLabel || 'My trials') + '</div><table><tr>' + C.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        R.map(function (r, i) { return '<tr class="' + (r.bump ? 'bump' : '') + '"><td>' + (i + 1) + '</td><td>' + esc(F.ramps[r.ramp].t) + '</td><td>' + r.flag + ' ' + U + '</td><td>' + r.d + ' ' + U + (r.bump ? ' 😮' : '') + '</td><td>' + r.gap + ' ' + U + '</td></tr>'; }).join('') + '</table>' : '';
+      var mx = Math.max.apply(null, [10].concat(R.map(function (r) { return r.gap; })));
+      meter.innerHTML = R.length ? '<div class="fs-in-k">📊 ' + esc(F.meterLabel || 'Gap meter: how far off was each flag?') + '</div><div class="fs-flg-bars">' + F.trials.map(function (t, i) { var r = R[i]; return '<div class="fs-flg-bc' + (r ? '' : ' empty') + (r && r.bump ? ' bump' : '') + '"><i style="height:' + (r ? Math.max(4, r.gap / mx * 70) : 4) + 'px"></i><b>' + (r ? r.gap : '·') + '</b><small>' + (i + 1) + '</small></div>'; }).join('') + '</div>' + meterLine() : '';
+      if (st.t >= F.trials.length) gusCard();
+    }
+    function meterLine() {
+      var R = st.rows, i = R.length - 1; if (i < 1 || R[i].bump) return '';
+      var same = R.filter(function (r) { return r.ramp === R[i].ramp && !r.bump; }); if (same.length < 2) return '<p class="fs-flg-ml">' + esc(F.useLine || 'Use the pattern in your table to place the next flag.') + '</p>';
+      return '<p class="fs-flg-ml">' + esc(same[same.length - 1].gap <= same[0].gap ? (F.closerLine || 'Your flag got closer as you learned the pattern!') : (F.useLine || 'Use the pattern in your table to place the next flag.')) + '</p>';
+    }
+    function gusCard() {
+      if (gus.dataset.on) return; gus.dataset.on = '1'; var Gc = F.gus, need = Gc.need || Gc.opts.filter(function (o) { return o.ok; }).length;
+      roll.disabled = true; bar.style.display = 'none';
+      gus.innerHTML = '<div class="fs-flg-gus"><span>' + (Gc.icon || '🛺') + '</span><div><b>' + esc(Gc.who) + '</b><p>“' + esc(Gc.t) + '”</p></div></div><div class="fs-in-k">' + esc(Gc.q) + '</div><div class="fs-in-chips">' +
+        Gc.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div><div class="fs-flg-found"></div>';
+      function found() { var n = Object.keys(st.gus).length; $('.fs-flg-found', gus).innerHTML = Gc.opts.filter(function (o, i) { return st.gus[i]; }).map(function (o) { return '<div class="fs-hs-card"><span class="fs-hs-n">✓</span><div>' + esc(o.yes) + '</div></div>'; }).join('');
+        if (n >= need) winOnce(win, F.win, F.clue, 'flaglane'); }
+      $$('.fs-in-chip', gus).forEach(function (c) { c.addEventListener('click', function () {
+        var i = +c.dataset.i, o = Gc.opts[i]; if (st.gus[i]) return;
+        if (!o.ok) { bounce(c, miss, o.miss); return; }
+        st.gus[i] = 1; saveJ('flaglane', st); c.classList.add('on', 'ok'); miss.classList.remove('show'); SFX.chime(); found();
+      }); });
+      Object.keys(st.gus).forEach(function (i) { var c = $$('.fs-in-chip', gus)[+i]; if (c) c.classList.add('on', 'ok'); }); found();
+    }
+    at.parentNode.insertBefore(g, afterBlock(at).nextSibling);
+    if (st.t < F.trials.length) draw(); else { stage.style.display = 'none'; bar.style.display = 'none'; head.innerHTML = '<span class="fs-flg-tn">✓ ' + esc(F.allDone || 'All trials done') + '</span>'; }
+    paint();
+  }
+
+  /* ---------- a Newton's cradle model shared by Part 4 ("cradle") and the bonus ("cradlefree"), 21.02.
+     The balls hang from strings; pull back n balls (drag the end ball, or press Let go) and the same number swing out the other side.
+     Every click turns a little energy into sound and heat, so each swing is smaller until it stops (a model). ---------- */
+  function cradleRig(host, label) {
+    var R = { n: 5, busy: false, pull: 1, ang: 0, drag: false };
+    function bx(i) { return 220 - (R.n - 1) * 21 + i * 42; }
+    R.draw = function (n) {
+      R.n = n || R.n; R.ang = 0;
+      var balls = ''; for (var i = 0; i < R.n; i++) balls += '<g class="fs-nc-b" data-i="' + i + '"><line x1="' + bx(i) + '" y1="34" x2="' + bx(i) + '" y2="192" stroke="#6B7785" stroke-width="2"/><circle cx="' + bx(i) + '" cy="212" r="20" fill="url(#fsNcSteel)" stroke="#5B6672" stroke-width="2"/><circle cx="' + (bx(i) - 7) + '" cy="205" r="5" fill="#fff" opacity=".7"/></g>';
+      host.innerHTML = '<svg viewBox="0 0 440 290" class="fs-nc-svg" role="img" aria-label="' + esc(label || 'A model of a Newton’s cradle: steel balls hanging in a row from strings') + '"><defs><radialGradient id="fsNcSteel" cx=".35" cy=".3"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#C9D2DB"/><stop offset="1" stop-color="#6E7B88"/></radialGradient></defs>' +
+        '<rect width="440" height="290" rx="14" fill="#F4F1EA"/><rect x="40" y="262" width="360" height="14" rx="5" fill="#3A2C1E"/><rect x="58" y="28" width="324" height="8" rx="4" fill="#4A5563"/><rect x="58" y="28" width="8" height="236" fill="#4A5563"/><rect x="374" y="28" width="8" height="236" fill="#4A5563"/>' +
+        balls + '<text class="fs-nc-word" x="220" y="80" text-anchor="middle"></text></svg>';
+      R.svg = $('svg', host);
+    };
+    R.set = function (i, a) { var b = $('.fs-nc-b[data-i="' + i + '"]', R.svg); if (b) b.setAttribute('transform', 'rotate(' + a.toFixed(2) + ' ' + bx(i) + ' 34)'); };
+    R.setGroup = function (side, n, a) { for (var k = 0; k < n; k++) R.set(side === 'L' ? k : R.n - 1 - k, a); };
+    R.click = function (v) { tone(2900, 0, 0.06, 'triangle', 0.05 * v + 0.01); tone(4300, 0.005, 0.04, 'sine', 0.025 * v); };
+    /* let go of n balls pulled to angle a0; cb(outCount) when it stops */
+    R.release = function (n, a0, cb) {
+      if (R.busy) return; R.busy = true; var amp = a0, side = 'L', t0 = null, phase = 'in', hits = 0, MAX = 6, Tq = 300, Th = 300;
+      var w = $('.fs-nc-word', R.svg);
+      if (reduceMotion) { R.setGroup('L', n, 0); R.click(1); R.setGroup('R', n, -a0 * 0.9); setTimeout(function () { R.setGroup('R', n, 0); R.busy = false; cb(n); }, 900); return; }
+      function step(ts) {
+        if (t0 == null) t0 = ts; var t = ts - t0;
+        if (phase === 'in') { var q = Math.min(1, t / Tq); R.setGroup(side, n, (side === 'L' ? 1 : -1) * amp * Math.cos(q * Math.PI / 2)); if (q >= 1) { hits++; R.click(amp / 40); amp *= 0.8; side = side === 'L' ? 'R' : 'L'; phase = 'out'; t0 = ts; if (hits === 1 && w) w.textContent = 'CLICK!'; if (hits === 2 && w) w.textContent = '';
+            if (hits >= MAX) { R.setGroup('L', n, 0); R.setGroup('R', n, 0); R.busy = false; if (w) w.textContent = ''; cb(n); return; } } }
+        else { var q2 = Math.min(1, t / Th); R.setGroup(side, n, (side === 'L' ? 1 : -1) * amp * Math.sin(q2 * Math.PI / 2)); if (q2 >= 1) { phase = 'in'; t0 = ts; } }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    };
+    /* drag the end ball: pulls the first n balls together */
+    R.bindDrag = function (getN, ok, onLet) {
+      var svg = function () { return R.svg; };
+      host.addEventListener('pointerdown', function (e) {
+        if (R.busy || !ok()) return; var b = e.target.closest && e.target.closest('.fs-nc-b'); if (!b || +b.dataset.i >= getN()) return;
+        R.drag = true; host.setPointerCapture && host.setPointerCapture(e.pointerId); e.preventDefault();
+      });
+      host.addEventListener('pointermove', function (e) {
+        if (!R.drag) return; var p = flPoint(svg(), e); if (!p) return; var n = getN(), px = bx(n - 1);
+        var a = Math.atan2(px - p[0], Math.max(10, p[1] - 34)) * 180 / Math.PI; R.ang = Math.max(0, Math.min(45, a)); R.setGroup('L', n, R.ang);
+      });
+      host.addEventListener('pointerup', function () { if (!R.drag) return; R.drag = false; var a = R.ang; if (a < 12) { R.setGroup('L', getN(), 0); R.ang = 0; return; } onLet(a); });
+    };
+    return R;
+  }
+
+  /* ---------- Part 4: "Pull, predict, let go" (21.02) — a Newton's cradle; pull back 1, 2 or 3 balls, predict how many fly out, let go; 3 trials each
+     fill a table; then the real photo + why it slowly stops.
+     D.cradle = {afterText, kicker, title, todo[], why, alt, model, balls, pulls:[1,2,3], trials, pullQ, predQ, predMax, predMiss, pullMiss, letBtn, againBtn,
+                 outWord, cols, tableLabel, warmFrom, warmLabel, rightPre, wrongPre, photo:{head, img, alt, cap, credit}, slowLine, q, opts, win, clue} */
+  function buildCradle() {
+    var C = D.cradle; if (!C) return;
+    var at = anchorP(C.afterText); if (!at) { FAILED.push('cradle anchor text not found'); return; }
+    var g = gameShell(C.kicker || 'Part 4 game', C.title, C.todo, C.why); g.dataset.mod = 'cradle';
+    var st = loadJ('cradle', { pred: {}, out: {} }), n = 0, pred = null;
+    var warm = el('div', 'fs-nc-warm'), pick = el('div', 'fs-nc-pick'), pq = el('div', 'fs-nc-pred'), stage = el('div', 'fs-nc-stage'), bar = el('div', 'fs-nc-bar'), res = el('div'), miss = el('div', 'fs-miss'), table = el('div', 'fs-nc-table'), photo = el('div', 'fs-nc-photo'), qh = el('div'), win = el('div', 'fs-win');
+    var let1 = el('button', 'fs-btn fs-nc-let', '✋ ' + esc(C.letBtn || 'Let go')); let1.type = 'button'; bar.appendChild(let1);
+    [warm, pick, pq, stage, bar, res, miss, table, photo, qh, win].forEach(function (x) { g.appendChild(x); });
+    var rig = cradleRig(stage, C.alt); rig.draw(C.balls || 5);
+    var T = C.trials || 3;
+    function tries(k) { return (st.out[k] || []).length; }
+    function paintWarm() { var v = ''; try { var o = JSON.parse(store('ans.' + (C.warmFrom || 'fs-warm') + '.f') || '{}'); v = [o[0], o[1]].filter(function (x) { return x && x.trim(); }).join(' · '); } catch (e) {}
+      warm.innerHTML = '<span>🌅</span><div><b>' + esc(C.warmLabel || 'Your Warm-Up prediction:') + '</b> ' + (v ? esc(v) : '<em>' + esc(C.warmNone || 'You can still write one on the Warm-Up tab.') + '</em>') + '</div>'; }
+    function paintPick() {
+      pick.innerHTML = '<div class="fs-in-k">' + esc(C.pullQ || '1. How many balls will you pull back?') + '</div><div class="fs-in-chips">' + C.pulls.map(function (k) { var d = tries(k) >= T; return '<button type="button" class="fs-in-chip' + (k === n ? ' on' : '') + (d ? ' done' : '') + '" data-k="' + k + '">' + k + ' ' + esc(k === 1 ? (C.ballWord || 'ball') : (C.ballsWord || 'balls')) + (d ? ' ✓' : '') + '</button>'; }).join('') + '</div>';
+      $$('.fs-in-chip', pick).forEach(function (b) { b.addEventListener('click', function () { if (rig.busy) return; n = +b.dataset.k; pred = st.pred[n] != null ? st.pred[n] : null; rig.draw(); res.innerHTML = ''; miss.classList.remove('show'); SFX.blip(); paintPick(); paintPred(); }); });
+    }
+    function paintPred() {
+      if (!n) { pq.innerHTML = ''; return; } var locked = st.pred[n] != null, M = C.predMax || 4, o = '';
+      for (var i = 0; i <= M; i++) o += '<button type="button" class="fs-in-chip' + (pred === i ? ' on' : '') + '" data-v="' + i + '"' + (locked && pred !== i ? ' disabled' : '') + '>' + i + '</button>';
+      pq.innerHTML = '<div class="fs-in-k">' + esc((C.predQ || '2. Predict: how many balls will fly out the other side?') + (locked ? ' ' + (C.lockedWord || '(your prediction is locked in)') : '')) + '</div><div class="fs-in-chips">' + o + '</div><div class="fs-nc-how">' + esc(C.dragLine || '3. Drag the end ball back and let go, or press Let go.') + '</div>';
+      $$('.fs-in-chip', pq).forEach(function (b) { b.addEventListener('click', function () { if (locked || rig.busy) return; pred = +b.dataset.v; SFX.blip(); miss.classList.remove('show'); paintPred(); }); });
+    }
+    function ready() { if (!n) { showMiss(miss, C.pullMiss || 'First pick how many balls to pull back.'); return false; } if (pred == null) { showMiss(miss, C.predMiss || 'Predict first: how many will fly out?'); return false; } if (tries(n) >= T) { showMiss(miss, C.doneMiss || 'You did all the trials for this one. Pick another number.'); return false; } return true; }
+    function go(a) {
+      if (!ready()) { rig.setGroup('L', n || 1, 0); return; }
+      if (st.pred[n] == null) { st.pred[n] = pred; saveJ('cradle', st); paintPred(); }
+      miss.classList.remove('show'); let1.disabled = true;
+      rig.release(n, a || 35, function (out) {
+        (st.out[n] = st.out[n] || []).push(out); saveJ('cradle', st); let1.disabled = false;
+        var right = st.pred[n] === out, k = tries(n);
+        res.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + (right ? '🎯' : '💡') + '</span><div><b>' + esc((C.trialWord || 'Trial') + ' ' + k + ': ' + out + ' ' + (C.outWord || 'flew out')) + '</b>' + esc((k === 1 ? (right ? (C.rightPre || 'Your prediction was right! ') : (C.wrongPre || 'Surprise! A wrong prediction still teaches you something. ')) : '') + (k < T ? (C.againLine || 'Run it again. Does the same thing happen?') : (C.doneLine || 'Same every time: that’s a pattern. Try another number.'))) + '</div></div>';
+        if (right && k === 1) SFX.chime(); paintPick(); paintTable();
+      });
+      SFX.whoosh();
+    }
+    let1.addEventListener('click', function () { if (rig.busy) return; if (!ready()) return; rig.setGroup('L', n, 35); setTimeout(function () { go(35); }, reduceMotion ? 0 : 250); });
+    rig.bindDrag(function () { return n || 1; }, function () { return true; }, function (a) { go(a); });
+    stage.addEventListener('pointerdown', function () { if (!n) showMiss(miss, C.pullMiss || 'First pick how many balls to pull back.'); else if (pred == null) showMiss(miss, C.predMiss || 'Predict first: how many will fly out?'); });
+    function paintTable() {
+      var Cc = C.cols || ['Pulled back', 'My prediction', 'Trial 1', 'Trial 2', 'Trial 3'];
+      table.innerHTML = '<div class="fs-in-k">' + esc(C.tableLabel || 'My cradle trials') + '</div><table><tr>' + Cc.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        C.pulls.map(function (k) { var o = st.out[k] || []; var cells = ''; for (var i = 0; i < T; i++) cells += '<td>' + (o[i] != null ? o[i] : '—') + '</td>'; return '<tr><td>' + k + '</td><td>' + (st.pred[k] != null ? st.pred[k] : '—') + '</td>' + cells + '</tr>'; }).join('') + '</table>';
+      if (C.pulls.every(function (k) { return tries(k) >= T; })) reveal();
+    }
+    function reveal() {
+      if (photo.dataset.on) return; photo.dataset.on = '1'; var P = C.photo;
+      photo.innerHTML = '<div class="fs-nc-ph-h">✨ ' + esc(P.head) + '</div><figure><img alt="' + esc(P.alt) + '" src="' + esc(P.img) + '" loading="lazy"><figcaption>' + esc(P.cap) + '</figcaption></figure>' + (C.slowLine ? '<div class="fs-nc-slow">🔊🌡️ ' + esc(C.slowLine) + '</div>' : '') + '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credit</summary>' + esc(P.credit) + '</details>';
+      photo.classList.add('show'); SFX.sparkle();
+      askOnce(qh, C.q, C.opts, 'cradle-q', win, C.win, C.clue, 'cradle', miss);
+    }
+    at.parentNode.insertBefore(g, afterBlock(at).nextSibling);
+    paintWarm(); document.addEventListener('fs:tab', paintWarm); paintPick(); paintPred(); paintTable();
+  }
+
+  /* ---------- Bonus after the case: "Cradle free play" (21.02) — 5 or 7 balls, pull back any number, predict, let go; a prediction streak. Folded, locked until solved.
+     D.cradlefree = {after, kicker, title, todo[], why, lockLine, sizes:[5,7], sizeWord, pullQ, predQ, letBtn, streakWord, bestWord, rightLine, wrongLine} */
+  function buildCradlefree() {
+    var C = D.cradlefree; if (!C) return;
+    var sv = $(C.after || '.fs-solve'); if (!sv) { FAILED.push('cradlefree: anchor not found'); return; }
+    var g = gameShell(C.kicker || 'Bonus', C.title, C.todo, C.why); g.dataset.mod = 'cradlefree';
+    var st = loadJ('cradlefree', { best: 0 }), streak = 0, N = (C.sizes || [5])[0], n = 1, pred = null;
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(C.lockLine || 'Crack the case first. Then free play opens.') + '</span>');
+    var hud = el('div', 'fs-nc-hud'), ctl = el('div', 'fs-nc-ctl'), stage = el('div', 'fs-nc-stage'), bar = el('div', 'fs-nc-bar'), msg = el('div'), miss = el('div', 'fs-miss');
+    var let1 = el('button', 'fs-btn fs-nc-let', '✋ ' + esc(C.letBtn || 'Let go')); let1.type = 'button'; bar.appendChild(let1);
+    [lock, hud, ctl, stage, bar, msg, miss].forEach(function (x) { g.appendChild(x); });
+    var rig = cradleRig(stage, C.alt); rig.draw(N);
+    function paintHud() { hud.innerHTML = '<span>🔥 ' + esc(C.streakWord || 'Prediction streak') + ': <b>' + streak + '</b></span><span>🏆 ' + esc(C.bestWord || 'Best') + ': <b>' + st.best + '</b></span>'; }
+    function chips(lbl, arr, cur, key) { return '<div class="fs-in-k">' + esc(lbl) + '</div><div class="fs-in-chips" data-key="' + key + '">' + arr.map(function (v) { return '<button type="button" class="fs-in-chip' + (v === cur ? ' on' : '') + '" data-v="' + v + '">' + v + '</button>'; }).join('') + '</div>'; }
+    function range(a, b) { var r = []; for (var i = a; i <= b; i++) r.push(i); return r; }
+    function paintCtl() {
+      ctl.innerHTML = chips(C.sizeWord || 'How many balls on the cradle?', C.sizes || [5, 7], N, 'N') + chips(C.pullQ || 'Pull back:', range(1, N - 1), n, 'n') + chips(C.predQ || 'Predict: how many fly out?', range(0, N), pred, 'p');
+      $$('.fs-in-chips', ctl).forEach(function (row) { $$('.fs-in-chip', row).forEach(function (b) { b.addEventListener('click', function () {
+        if (rig.busy) return; var v = +b.dataset.v, k = row.dataset.key;
+        if (k === 'N') { N = v; n = Math.min(n, N - 1); rig.draw(N); } else if (k === 'n') { n = v; rig.draw(N); } else pred = v;
+        SFX.blip(); miss.classList.remove('show'); paintCtl();
+      }); }); });
+    }
+    function go(a) {
+      if (!store('solved')) return; if (pred == null) { rig.setGroup('L', n, 0); showMiss(miss, C.predMiss || 'Predict first: how many will fly out?'); return; }
+      miss.classList.remove('show'); let1.disabled = true; var p = pred;
+      rig.release(n, a || 35, function (out) {
+        let1.disabled = false; var right = p === out; streak = right ? streak + 1 : 0; if (streak > st.best) { st.best = streak; saveJ('cradlefree', st); }
+        msg.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + (right ? '🎯' : '💡') + '</span><div><b>' + out + ' ' + esc(C.outWord || 'flew out') + '</b>' + esc(right ? (C.rightLine || 'You predicted it!') : (C.wrongLine || 'Not this time. What does the pattern say?')) + '</div></div>';
+        if (right) SFX.chime(); pred = null; paintCtl(); paintHud();
+      });
+    }
+    let1.addEventListener('click', function () { if (rig.busy) return; rig.setGroup('L', n, 35); setTimeout(function () { go(35); }, reduceMotion ? 0 : 250); });
+    rig.bindDrag(function () { return n; }, function () { return !!store('solved'); }, go);
+    function gate() { g.classList.toggle('locked', !store('solved')); }
+    sv.parentNode.insertBefore(g, sv.nextSibling);
+    document.addEventListener('fs:solved', gate); gate(); paintCtl(); paintHud();
+  }
+
+  /* ---------- After the case: "Make the sign" (21.02) — the pier manager's rule + Sam's cart-bump trials; pick the speed limit the pattern supports
+     (nobody tested that exact speed: you predict it), answer how you knew, stamp the sign.
+     D.signmaker = {after, kicker, title, todo[], why, lockLine, rule, data:{head, cols, rows:[[..]], note}, pickQ, opts:[{mph, ok, line}], signHead, unitWord,
+                    q, qopts, stampBtn, stamp, sign, win} */
+  function buildSignmaker() {
+    var M = D.signmaker; if (!M) return;
+    var sv = $(M.after || '.fs-solve'); if (!sv) { FAILED.push('signmaker: anchor not found'); return; }
+    var g = gameShell(M.kicker || 'After the case', M.title, M.todo, M.why); g.dataset.mod = 'signmaker';
+    var st = loadJ('signmaker', {});
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(M.lockLine || 'Crack the case first. Then make the sign.') + '</span>');
+    var body = el('div', 'fs-sgn-body'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    [lock, body, miss, win].forEach(function (x) { g.appendChild(x); });
+    function opt(v) { return M.opts.filter(function (o) { return o.mph === v; })[0]; }
+    function paint(anim) {
+      var open = !!store('solved'); g.classList.toggle('locked', !open); body.style.display = open ? '' : 'none'; lock.style.display = open ? 'none' : ''; if (!open) return;
+      var o = st.pick != null ? opt(st.pick) : null, ok = o && o.ok;
+      body.innerHTML = '<div class="fs-sgn-grid"><div><div class="fs-sgn-rule">📌 ' + esc(M.rule) + '</div><div class="fs-sgn-data"><div class="fs-in-k">' + esc(M.data.head) + '</div><table><tr>' + M.data.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        M.data.rows.map(function (r) { return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</table>' + (M.data.note ? '<small>' + esc(M.data.note) + '</small>' : '') + '</div>' +
+        '<div class="fs-in-k">' + esc(M.pickQ) + '</div><div class="fs-in-chips fs-sgn-pick">' + M.opts.map(function (x) { return '<button type="button" class="fs-in-chip' + (st.pick === x.mph ? (x.ok ? ' on ok' : ' on') : '') + '" data-v="' + x.mph + '"' + (st.stamped ? ' disabled' : '') + '>' + x.mph + ' ' + esc(M.unitWord || 'mph') + '</button>'; }).join('') + '</div>' +
+        (o ? '<div class="fs-hs-card"><span class="fs-hs-n">' + (ok ? '✅' : '⚠️') + '</span><div>' + esc(o.line) + '</div></div>' : '') + '<div class="fs-sgn-q"></div></div>' +
+        '<div class="fs-sgn-signwrap"><div class="fs-sgn-sign' + (st.stamped ? ' stamped' : '') + (anim && st.stamped && !reduceMotion ? ' thump' : '') + '"><small>' + esc(M.signHead || 'SPEED LIMIT') + '</small><b>' + (ok ? st.pick : '?') + '</b><em>' + esc(M.unitWord || 'mph') + '</em>' +
+        (st.stamped ? '<i class="fs-sgn-stamp">' + esc(M.stamp || 'APPROVED') + '</i>' : '') + '</div><div class="fs-sgn-post"></div>' + (st.stamped ? '<div class="fs-sgn-signed">' + esc(M.sign || '') + '</div>' : '') + '</div></div>';
+      $$('.fs-sgn-pick .fs-in-chip', body).forEach(function (b) { b.addEventListener('click', function () {
+        if (st.stamped) return; var v = +b.dataset.v, x = opt(v); st.pick = v; if (!x.ok) { st.q = 0; saveJ('signmaker', st); paint(); bounce($('.fs-sgn-pick .fs-in-chip[data-v="' + v + '"]', body), miss, x.miss || x.line); return; }
+        saveJ('signmaker', st); miss.classList.remove('show'); SFX.chime(); paint();
+      }); });
+      if (ok) {
+        var qh = $('.fs-sgn-q', body), w = chipsQ(qh, M.q, M.qopts, function () { st.q = 1; saveJ('signmaker', st); paint(); }, miss);
+        if (st.q) { var k = M.qopts.map(function (x, i) { return x.ok ? i : -1; }).filter(function (i) { return i > -1; })[0]; $$('.fs-in-chip', w)[k].classList.add('on', 'ok'); w.dataset.done = '1';
+          if (!st.stamped) { var sb = el('button', 'fs-btn fs-sgn-go', '🟥 ' + esc(M.stampBtn || 'Stamp the sign')); sb.type = 'button'; qh.appendChild(sb);
+            sb.addEventListener('click', function () { st.stamped = 1; saveJ('signmaker', st); SFX.stamp(); setTimeout(SFX.win, 350); paint(true); shootStar(true); }); } }
+      }
+      if (st.stamped && !win.classList.contains('show')) { win.innerHTML = esc(M.win); win.classList.add('show'); }
+    }
+    sv.parentNode.insertBefore(g, sv.nextSibling);
+    document.addEventListener('fs:solved', function () { paint(false); });
+    paint(false);
+  }
+
   /* ---------- Bonus game after the case: "Strike!" (21.01) — a top view of a bowling lane; pick where to aim and how fast to roll; the ball's energy coins
      knock pins, and every falling pin passes energy to the pins behind it (a model). 3 lanes, stars, folded. ----------
      D.strike = {after, kicker, title, todo[], why, lockLine, alt, model, speeds:[{k, t, coins}], aimLabel, rollBtn, nextBtn, levels:[{name, pins:[ids], need, tip0}], lines:{…}} */
@@ -8649,6 +9090,10 @@
     guard('coinbank', buildCoinbank);
     guard('bumpercars', buildBumpercars);
     guard('crashlab', buildCrashlab);
+    guard('ghosts', buildGhosts);
+    guard('iknewit', buildIknewit);
+    guard('flaglane', buildFlaglane);
+    guard('cradle', buildCradle);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
@@ -8661,6 +9106,8 @@
     guard('speedround', buildSpeedround);
     guard('bullseye', buildBullseye);
     guard('strike', buildStrike);
+    guard('cradlefree', buildCradlefree);
+    guard('signmaker', buildSignmaker);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

@@ -1,0 +1,73 @@
+<svg viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Morning on the Palmetto Beach boardwalk: a chalk test lane runs along the boards with little yellow flags at the edge, a wooden ramp with a blue marble at the top, and a red block waiting at the bottom. A Newton’s cradle sits on a crate with its end ball swinging. The dented pink ice cream cart is parked behind, and a brown pelican watches from a post as the sun rises over the Gulf.">
+  <style>
+    .b212swing { animation: b212swing 1.8s ease-in-out infinite; transform-box: view-box; transform-origin: 650px 86px; }
+    .b212swing2 { animation: b212swing2 1.8s ease-in-out infinite; transform-box: view-box; transform-origin: 714px 86px; }
+    .b212flag { animation: b212flag 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: left center; } .b212flag.f2 { animation-delay: .6s; } .b212flag.f3 { animation-delay: 1.2s; }
+    .b212wave { animation: b212wave 7s ease-in-out infinite; }
+    .b212sun { animation: b212sun 5s ease-in-out infinite; }
+    .b212marble { animation: b212marble 4s ease-in-out infinite; }
+    @keyframes b212swing { 0%, 45%, 100% { transform: rotate(0deg); } 20% { transform: rotate(28deg); } }
+    @keyframes b212swing2 { 0%, 45%, 100% { transform: rotate(0deg); } 70% { transform: rotate(-28deg); } }
+    @keyframes b212flag { 50% { transform: scaleX(.8) skewY(4deg); } }
+    @keyframes b212wave { 50% { transform: translateX(-14px); } }
+    @keyframes b212sun { 50% { opacity: .8; } }
+    @keyframes b212marble { 0%, 60%, 100% { transform: translate(0, 0); } 30% { transform: translate(0, -3px); } }
+    @media (prefers-reduced-motion: reduce) { .b212swing, .b212swing2, .b212flag, .b212wave, .b212sun, .b212marble { animation: none; } }
+  </style>
+  <defs>
+    <linearGradient id="b212sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8EC5E8"/><stop offset=".7" stop-color="#FCE3C0"/><stop offset="1" stop-color="#FFD7A8"/></linearGradient>
+    <linearGradient id="b212sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FA3C7"/><stop offset="1" stop-color="#2E7FA6"/></linearGradient>
+    <linearGradient id="b212deck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A06E"/><stop offset="1" stop-color="#9A7448"/></linearGradient>
+    <radialGradient id="b212glow"><stop offset="0" stop-color="#FFF4C2"/><stop offset=".5" stop-color="#FFD15A" stop-opacity=".7"/><stop offset="1" stop-color="#FFB33F" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b212steel" cx=".35" cy=".3"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#C9D2DB"/><stop offset="1" stop-color="#6E7B88"/></radialGradient>
+  </defs>
+  <rect width="920" height="200" fill="url(#b212sky)"/>
+  <circle class="b212sun" cx="150" cy="78" r="60" fill="url(#b212glow)"/>
+  <circle cx="150" cy="78" r="22" fill="#FFE07A"/>
+  <rect y="86" width="920" height="40" fill="url(#b212sea)"/>
+  <g class="b212wave" opacity=".55"><path d="M0 98 q20 -5 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 112 q20 -4 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" stroke="#fff" stroke-width="1.5" fill="none"/></g>
+  <path d="M120 98 h60" stroke="#FFF2B0" stroke-width="3" opacity=".8"/><path d="M130 106 h40" stroke="#FFF2B0" stroke-width="2" opacity=".6"/>
+  <!-- railing -->
+  <rect y="118" width="920" height="5" fill="#7A5A36"/>
+  <g fill="#7A5A36"><rect x="20" y="118" width="5" height="22"/><rect x="120" y="118" width="5" height="22"/><rect x="220" y="118" width="5" height="22"/><rect x="320" y="118" width="5" height="22"/><rect x="420" y="118" width="5" height="22"/><rect x="520" y="118" width="5" height="22"/><rect x="620" y="118" width="5" height="22"/><rect x="720" y="118" width="5" height="22"/><rect x="820" y="118" width="5" height="22"/></g>
+  <!-- deck -->
+  <rect y="138" width="920" height="62" fill="url(#b212deck)"/>
+  <g stroke="#8A6640" stroke-width="1.5"><line x1="0" y1="150" x2="920" y2="150"/><line x1="0" y1="164" x2="920" y2="164"/><line x1="0" y1="180" x2="920" y2="180"/></g>
+  <!-- dented ice cream cart, parked behind -->
+  <g transform="translate(790 92)">
+    <path d="M-22 -16 h44 l-22 -16 z" fill="#FFE07A" stroke="#C99400" stroke-width="2"/><line x1="0" y1="-16" x2="0" y2="8" stroke="#8A8A8A" stroke-width="2"/>
+    <rect x="-34" y="8" width="68" height="38" rx="6" fill="#F8C8DC" stroke="#B5577E" stroke-width="2.5"/>
+    <path d="M-34 30 q5 -4 10 2" stroke="#B5577E" stroke-width="2" fill="none"/>
+    <circle cx="-20" cy="50" r="7" fill="#3A2C1E"/><circle cx="20" cy="50" r="7" fill="#3A2C1E"/>
+    <circle cx="10" cy="22" r="6" fill="#9FE0C2"/><circle cx="-6" cy="22" r="6" fill="#F5A0B5"/>
+  </g>
+  <!-- pelican on a post -->
+  <g transform="translate(880 64)">
+    <rect x="-5" y="40" width="10" height="56" fill="#6B4E30"/>
+    <ellipse cx="0" cy="30" rx="16" ry="12" fill="#8A7A66"/><path d="M-12 26 q-6 10 4 16" fill="#6E6152"/>
+    <path d="M6 22 q4 -14 -2 -20" stroke="#8A7A66" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <circle cx="2" cy="1" r="6" fill="#F4F1E6"/><path d="M-3 0 l-26 6 l24 2 z" fill="#C9A44A"/><circle cx="0" cy="0" r="1.4" fill="#222"/>
+    <path d="M-4 40 l-3 8 M4 40 l3 8" stroke="#E0A040" stroke-width="2"/>
+  </g>
+  <!-- chalk test lane -->
+  <g stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="10 7" opacity=".85" fill="none"><path d="M140 160 H560"/><path d="M140 186 H560"/></g>
+  <g fill="#FFFFFF" opacity=".75" font-family="Nunito,sans-serif" font-size="11" font-weight="800"><text x="196" y="197">10</text><text x="276" y="197">20</text><text x="356" y="197">30</text><text x="436" y="197">40</text><text x="516" y="197">50</text></g>
+  <g stroke="#FFFFFF" stroke-width="2" opacity=".8"><line x1="200" y1="160" x2="200" y2="168"/><line x1="280" y1="160" x2="280" y2="168"/><line x1="360" y1="160" x2="360" y2="168"/><line x1="440" y1="160" x2="440" y2="168"/><line x1="520" y1="160" x2="520" y2="168"/></g>
+  <!-- ramp, marble, block -->
+  <polygon points="40,176 40,128 150,176" fill="#B98C5E" stroke="#7A5A36" stroke-width="2.5"/>
+  <g class="b212marble"><circle cx="52" cy="120" r="9" fill="#2D7AA6" stroke="#0E3A5A" stroke-width="2"/><circle cx="49" cy="117" r="2.5" fill="#fff" opacity=".7"/></g>
+  <rect x="158" y="154" width="16" height="22" rx="2" fill="#C8553D" stroke="#7A2E1E" stroke-width="2"/>
+  <!-- prediction flags -->
+  <g><line x1="330" y1="138" x2="330" y2="176" stroke="#3A2C1E" stroke-width="2.5"/><path class="b212flag" d="M330 138 l22 7 l-22 7 z" fill="#F2C94C" stroke="#B88A00" stroke-width="1.2"/></g>
+  <g><line x1="400" y1="140" x2="400" y2="176" stroke="#3A2C1E" stroke-width="2.5"/><path class="b212flag f2" d="M400 140 l22 7 l-22 7 z" fill="#F2C94C" stroke="#B88A00" stroke-width="1.2"/></g>
+  <g><line x1="470" y1="142" x2="470" y2="176" stroke="#3A2C1E" stroke-width="2.5"/><path class="b212flag f3" d="M470 142 l22 7 l-22 7 z" fill="#F2C94C" stroke="#B88A00" stroke-width="1.2"/></g>
+  <!-- crate with a Newton's cradle -->
+  <rect x="610" y="146" width="150" height="40" fill="#B98C5E" stroke="#7A5A36" stroke-width="2.5"/><path d="M610 166 h150 M650 146 v40 M720 146 v40" stroke="#7A5A36" stroke-width="1.5"/>
+  <rect x="616" y="140" width="138" height="6" rx="2" fill="#3A2C1E"/>
+  <rect x="624" y="80" width="5" height="62" fill="#4A5563"/><rect x="741" y="80" width="5" height="62" fill="#4A5563"/><rect x="624" y="80" width="122" height="6" rx="2" fill="#4A5563"/>
+  <g class="b212swing"><line x1="650" y1="86" x2="650" y2="118" stroke="#6B7785" stroke-width="1.5"/><circle cx="650" cy="126" r="8" fill="url(#b212steel)" stroke="#5B6672" stroke-width="1.5"/></g>
+  <g><line x1="666" y1="86" x2="666" y2="118" stroke="#6B7785" stroke-width="1.5"/><circle cx="666" cy="126" r="8" fill="url(#b212steel)" stroke="#5B6672" stroke-width="1.5"/></g>
+  <g><line x1="682" y1="86" x2="682" y2="118" stroke="#6B7785" stroke-width="1.5"/><circle cx="682" cy="126" r="8" fill="url(#b212steel)" stroke="#5B6672" stroke-width="1.5"/></g>
+  <g><line x1="698" y1="86" x2="698" y2="118" stroke="#6B7785" stroke-width="1.5"/><circle cx="698" cy="126" r="8" fill="url(#b212steel)" stroke="#5B6672" stroke-width="1.5"/></g>
+  <g class="b212swing2"><line x1="714" y1="86" x2="714" y2="118" stroke="#6B7785" stroke-width="1.5"/><circle cx="714" cy="126" r="8" fill="url(#b212steel)" stroke="#5B6672" stroke-width="1.5"/></g>
+</svg>

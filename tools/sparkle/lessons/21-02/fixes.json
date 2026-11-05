@@ -1,0 +1,295 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "collisions are physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard: 4-PS3-3 is about energy in collisions (4-ESS3-1 is about energy resources)",
+  "old": "<div class=\"info-value\">4-ESS3-1 · TEKS 4.7(B)</div>",
+  "new": "<div class=\"info-value\">4-PS3-3 · TEKS 4.7(B)</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard detail: the lesson is about predicting collisions, not friction",
+  "old": "<div class=\"info-detail\">Friction in Collisions</div>",
+  "new": "<div class=\"info-detail\">Predicting Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a trial table",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "📋 Part C &mdash; My Trial Table"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (now a 3-trial table typed on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick one collision test: the flag lane, the cradle, or your own test at home with two balls. For 3 trials, write your prediction and the outcome. Then write the pattern in one sentence.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: two balls for the optional home test (the old Explore asked for them)",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>\n  <span class=\"need-chip\"><span>⚪</span>Two balls or marbles (optional)</span>"
+ },
+ {
+  "kind": "fix",
+  "why": "shaky: “five trials lock it in” overstates it; more trials make you surer, never certain. No dash",
+  "old": "<p>One trial alone is rarely enough. Three trials usually start showing a pattern. Five or more lock it in. Real scientific studies sometimes run THOUSANDS of trials to spot tiny patterns.</p>",
+  "new": "<p>One trial alone can fool you. Three trials can start to show a pattern, and more trials make you surer. Some real studies run THOUSANDS of trials.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "the AI table picture (never made), Stop & Reason, the tap diagram (its angle card said “angle in predicts angle out”, which is how light bounces, not marbles: a side hit sends the target off at an angle, along the line where the balls touch), Observe & Reason, the “collision drift tables” fact (could not be verified), the Florida traffic-model callout and Go Deeper are gone (lean); the flag lane replaces the picture and the diagram, and the Newton’s cradle is Part 3. Next button goes to Self-Check",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">🎯 Predictions vs\\. Real Results</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Pull, Predict, Let Go</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Remember the Newton’s cradle from the Warm-Up? Now test it. Pull back 1, 2, then 3 balls. Predict first, then run 3 trials of each.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 5 pointed at the removed diagram; now it plans a new test on today’s games",
+  "old": "Pick ONE investigation idea from the diagram. Write a 2-sentence prediction about what you think the pattern will be. Then write what variable you would change.",
+  "new": "Plan a new test on the flag lane or the cradle. What ONE variable would you change? Write a 2-sentence prediction about the pattern you think you will see."
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE investigation idea from the diagram. Writ...\"",
+  "new": "data-label=\"Plan a new test: one variable + a prediction\""
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 7 said “predicts X… shows Y”; now a real example from the lesson (a small marble hitting a big one bounces back)",
+  "old": "A scientist predicts X. The trials show Y instead. Did the investigation fail? Explain using the word <em>pattern</em>.",
+  "new": "Ava predicted the small marble would roll forward after it hit the big marble. In 5 trials, it bounced back every time. Did her investigation fail? Explain using the word <em>pattern</em>."
+ },
+ {
+  "kind": "fix",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"A scientist predicts X. The trials show Y instead....\"",
+  "new": "data-label=\"Did Ava’s investigation fail?\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll have planned a collision test, made predictions, run multiple trials, recorded outcomes, and spotted a real pattern in your data.",
+  "new": "Keep this question in mind. By the end, you’ll predict, test, run lots of trials and spot a real pattern."
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up opens with a real Newton’s cradle photo; the prediction is typed on the page",
+  "old": "<p>Imagine you roll a heavy marble at a smaller marble sitting still. In your notebook, sketch what you think the AFTER picture will look like. Which marble moves? How fast? Which direction?</p>",
+  "new": "<p>Look at this toy. It’s called a Newton’s cradle: five steel balls hanging in a row. If you pull back TWO balls and let go, how many will fly out the other side? Write your prediction before you find out.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "the marble sketches are now the ghost marbles game",
+  "old": "<p>Now imagine swapping it: roll the SMALLER marble at the HEAVIER one. Sketch that AFTER too. Same question.</p>",
+  "new": "<p>Now a warm-up with marbles. A big marble rolls into a small one that is sitting still. Then the small one rolls into the big one. Where will each marble stop? Use ghost marbles to predict.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "subtitle",
+  "old": "What do you THINK will happen?",
+  "new": "Predict before you look!"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; shorter",
+  "old": "is your best guess about what will happen — written down BEFORE you run a test. That timing matters. Scientists write predictions first because it forces them to think clearly about what they already know.</p>",
+  "new": "is your best guess about what will happen, written down BEFORE you run a test. That timing matters: a prediction you write first can be checked. Saying “I knew it!” afterward can’t.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; the misconception lives here now (wrong ≠ failed)",
+  "old": "tells you whether your prediction was right, partly right, or wrong. ALL THREE are useful! A \"wrong\" prediction often teaches you the most — it tells you something you didn't know yet.</p>",
+  "new": "tells you whether your prediction was right, partly right, or wrong. ALL THREE are useful! A “wrong” prediction does not mean the test failed. It often teaches you the most, because it shows you something you didn’t know yet.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "plain; drops the “Florida engineers” and “for centuries” claims",
+  "old": "<p>The three-step cycle has been used for centuries because it works. It's how Florida engineers test bridges, how doctors test medicines, and how 4th-grade scientists figure out marble collisions:</p>",
+  "new": "<p>Scientists use three steps over and over. Engineers use them to test bridges, doctors use them to test medicines, and you can use them to test marble crashes:</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "<li><strong>PREDICT</strong> — Write down",
+  "new": "<li><strong>PREDICT:</strong> Write down"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "<li><strong>TEST</strong> — Run multiple",
+  "new": "<li><strong>TEST:</strong> Run several"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "<li><strong>COMPARE</strong> — Look at",
+  "new": "<li><strong>COMPARE:</strong> Look at"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; no dash; points to 22.01",
+  "old": "<p><strong>Nicely done\\.</strong> You can now plan a.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You wrote predictions first, ran trials, changed one thing at a time and found a pattern you can trust. Next lesson, energy changes from one form to another.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Notice & Wonder (the ghost marbles are the warm-up’s thinking stop)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the I-knew-it trap is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception paragraph repeats Part 1 (moved there)",
+  "old": "<p><strong>Common misconception:</strong> Some people think a \"wrong\" prediction.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its two-ball test is now the Newton’s cradle in Part 3 and the optional home test in Part C; its “strike in a blink” fact was wrong: pins take about 2 seconds to fall)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: renumber Part B (7 → 6)",
+  "old": "<span class=\"pq-num\" style=\"background:#D4772C;\">7</span>",
+  "new": "<span class=\"pq-num\" style=\"background:#D4772C;\">6</span>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page",
+  "old": "A collision-investigation data table with at least 3 trials, a prediction column, an outcome column, and a one-sentence pattern claim.",
+  "new": "My trial table: the one thing I changed, 3 trials (prediction and outcome) and the pattern in one sentence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether one trial is enough, and supported it with two pieces of evidence from the lesson or my own trials.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether one trial is enough, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
+  "regex": true
+ }
+]
