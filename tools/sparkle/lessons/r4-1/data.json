@@ -638,8 +638,8 @@
    {
     "id": "partc",
     "afterPart": "C",
-    "kicker": "Part C · sketch it (optional)",
-    "required": false,
+    "kicker": "Part C · sketch it",
+    "required": true,
     "minLabels": 2,
     "prompts": [
      "Draw what’s under Main Street: sand and clay on top, limestone below",

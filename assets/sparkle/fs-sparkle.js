@@ -12,6 +12,7 @@
   var REVIEW = /[?&]review\b/.test(location.search) || !!D.mockup;
   var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   html.classList.add('fs-on');
+  html.classList.add('fs-boot');   /* the page shows only once the layer has set it up (no re-flow on load) */
 
   /* ---------- helpers ---------- */
   function $(s, r) { return (r || document).querySelector(s); }
@@ -3563,6 +3564,29 @@
       return '<div class="sk"><b>' + esc(st.title || 'Untitled sketch') + '</b><img src="' + img + '"></div>'; }).filter(Boolean);
     return '<h2>✏️ My scientific sketches</h2>' + (parts.length ? parts.join('') : '<p><i>No sketches yet.</i></p>');
   }
+  /* ---------- Start here: one how-to video for every lesson, in a drawer at the top of the first tab ---------- */
+  function buildStartHere() {
+    var first = $('#tab-vocab') || $('.tab-panel'); if (!first || $('.fs-start')) return;
+    var base = (D.paths && D.paths.start) || 'assets/video/start-here/g4sci-start-here';
+    var d = fsOnly(el('details', 'fs-start'));
+    d.innerHTML = '<summary><span class="fs-start-k">▶ Start here</span><span class="fs-start-t">How your science lessons work</span><span class="fs-start-m">1-minute video</span><span class="fs-start-o">Open ▾</span></summary><div class="fs-start-b"></div>';
+    first.insertBefore(d, first.firstChild);
+    d.addEventListener('toggle', function () {
+      var v = $('video', d); if (!d.open) { if (v) v.pause(); return; }
+      if (v) return;
+      $('.fs-start-b', d).innerHTML = '<video controls playsinline preload="metadata" poster="' + base + '.jpg"><source src="' + base + '.mp4" type="video/mp4"><track kind="captions" srclang="en" label="English" src="' + base + '.vtt" default></video>' +
+        '<p class="fs-start-n">Captions are on. To turn them off, press CC on the video.</p>';
+    });
+  }
+  /* ---------- Required sketch: say so in What to Turn In and in How to submit ---------- */
+  function buildSketchTurnIn() {
+    var req = ((D.sketch && D.sketch.inline) || []).some(function (x) { return x.required; }); if (!req) return;
+    var c = $$('#tab-assignment .checklist-item').filter(function (li) { return /Part C/.test(li.textContent); })[0];
+    if (c && !/sketch/i.test(c.textContent)) { var t = c.lastElementChild || c; t.appendChild(fsOnly(el('span', 'fs-sk-turnin', ' Plus your labeled sketch.'))); }
+    var re = /Gathered Answers[^.]{0,40} into the Canvas assignment/i;
+    var hits = $$('#tab-assignment p, #tab-assignment div').filter(function (p) { return re.test(p.textContent) && !$$('p, div', p).some(function (k) { return re.test(k.textContent); }); });
+    if (hits[0] && !$('.fs-sk-turnin2')) hits[0].appendChild(fsOnly(el('span', 'fs-sk-turnin2', ' Then press 📓 Download my field journal (it has your Part C sketch) and upload that file to the same assignment.')));
+  }
   function buildJournal() {
     window.fsDownloadJournal = downloadJournal; window.fsToast = function (a, b, c) { toast(a, b, c); };
     var acts = $('.gathered-actions');
@@ -3647,7 +3671,7 @@
       s.innerHTML = '<span class="' + (drew ? 'ok' : '') + '">' + (drew ? '✓' : '○') + ' drawing</span>' +
         '<span class="' + (labels >= need && labels ? 'ok' : '') + '">' + (labels >= need && labels ? '✓' : '○') + ' ' + (need ? labels + ' of ' + need + ' labels' : labels + ' label' + (labels === 1 ? '' : 's')) + '</span>' +
         '<span class="' + (title.value.trim() ? 'ok' : '') + '">' + (title.value.trim() ? '✓' : '○') + ' title</span>' +
-        '<span class="fs-sk-saved">Saves by itself · prints in your field journal</span>';
+        '<span class="fs-sk-saved">' + (opts.required ? 'Required. It saves by itself and goes in your field journal: download the journal and upload it to Canvas with your answers.' : 'Saves by itself · prints in your field journal') + '</span>';
       pad.classList.toggle('done', drew && labels >= need && !!title.value.trim());
     }
     title.addEventListener('input', status);
@@ -9097,6 +9121,8 @@
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
+    guard('starthere', buildStartHere);
+    guard('sketchturnin', buildSketchTurnIn);
     guard('score', buildScore);
     guard('revise', buildRevise);
     guard('quiz', buildQuiz);

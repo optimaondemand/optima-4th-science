@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Field Station sparkle: build ONE lesson in place.   python3 tools/sparkle/build_lesson.py 12-02
+"""Field Station sparkle: build ONE lesson in place.   python3 tools/sparkle/build_lesson.py 12-02 [--check | --absorb | --force]
 
 Run from the repo root (optima-4th-science). Python 3 standard library only, so it runs on Bethany's computer.
 
@@ -11,8 +11,14 @@ Reads   tools/sparkle/lessons/<WW-LL>/
           original.html  the untouched lesson. Saved automatically the first time (refuses if the file is already sparkled).
 Writes  lesson-<W>-<LL>-*.html (in place)  and  data/videos/lesson-<WW>-<LL>.json (when video.json exists)
 Every run starts again from original.html, so a rebuild never stacks edits.
+Safety: kit_guard.py refuses to overwrite a page that was edited outside the kit (see its docstring):
+  --check shows the differences, --absorb moves them into fixes.json, --force overwrites anyway.
 """
 import json, re, sys, os, glob, hashlib, shutil
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.dont_write_bytecode = True
+import kit_guard
+FLAGS = {a for a in sys.argv[2:] if a.startswith('--')}
 
 def die(msg): print('STOP:', msg); sys.exit(1)
 
@@ -72,9 +78,12 @@ head = ('<!-- Field Station sparkle layer (G4 Science). Lesson content lives in 
         '<script type="application/json" id="fs-data">' + data + '</script>\n'
         '<link rel="stylesheet" href="assets/sparkle/fs-sparkle.css?v=' + VER + '">\n')
 if s.count('</head>') != 1 or s.count('</body>') != 1: die('lesson needs exactly one </head> and one </body>')
-s = s.replace('</head>', head + '</head>', 1)
-s = s.replace('</body>', '<script src="assets/sparkle/fs-sparkle.js?v=' + VER + '"></script>\n</body>', 1)
-open(OUT, 'w', encoding='utf-8', newline='').write(s)
+def inject(t):
+    t = t.replace('</head>', head + '</head>', 1)
+    return t.replace('</body>', '<script src="assets/sparkle/fs-sparkle.js?v=' + VER + '"></script>\n</body>', 1)
+pre = s
+s = inject(pre)
+if not kit_guard.write(OUT, s, here, 'fs-sparkle', pre, inject, fx, ('old', 'new'), FLAGS): sys.exit(0)
 
 # 4. the Video Studio plan
 vj = os.path.join(here, 'video.json')

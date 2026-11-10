@@ -221,7 +221,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the circle sketch is a bonus",
   "old": "A drawing of one Florida organism's life cycle, in a circle with arrows, every stage labeled, plus the metamorphosis type explained.",
-  "new": "One Florida organism's life cycle: every stage in order, plus its kind of life cycle explained. (A circle sketch is a bonus.)"
+  "new": "One Florida organism's life cycle: every stage in order, plus its kind of life cycle explained. Plus your labeled circle sketch."
  },
  {
   "kind": "cut",
@@ -249,5 +249,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "CPALMS · ",
+  "new": "",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "ence: Circle of Life</div>\n  <div class=",
+  "new": "ence: Circle of Life &middot; CPALMS SC.4.L.16.4</div>\n  <div class=",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

@@ -190,7 +190,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page",
   "old": "Two station reports — each with source, receiver, evidence (observation + measurement), and an evidence-based claim.",
-  "new": "Two station reports, each with the source, the receiver, what I observed, what I measured and my claim. (A sketch is a bonus.)"
+  "new": "Two station reports, each with the source, the receiver, what I observed, what I measured and my claim. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -218,5 +218,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-PS3-2 · TEKS 4.8(B)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.N.1.1, SC.4.P.10.1 · TEKS 4.8(B)</div>\n      <div class=\"info-detail\">NGSS 4-PS3-2 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": " Investigation — Observing Energy Moving</div>\n  <div class=\"footer-line3\">&copy",
+  "new": " Investigation — Observing Energy Moving &middot; CPALMS SC.4.N.1.1, SC.4.P.10.1</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

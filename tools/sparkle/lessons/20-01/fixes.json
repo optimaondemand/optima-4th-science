@@ -229,7 +229,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page",
   "old": "A four-row chart showing one Florida example for each form (heat / light / sound / electrical) with source, receiver, and evidence.",
-  "new": "One example each of heat, light, sound and electrical energy, with the source, the receiver and my evidence. (A sketch is a bonus.)"
+  "new": "One example each of heat, light, sound and electrical energy, with the source, the receiver and my evidence. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -257,5 +257,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-PS3-2 · TEKS 4.8(B), 4.8(C)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.P.10.1, SC.4.P.11.1 · TEKS 4.8(B), 4.8(C)</div>\n      <div class=\"info-detail\">NGSS 4-PS3-2 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": " Physical Science: How Does Energy Move?</div>\n  <div class=\"footer-line3\">&copy",
+  "new": " Physical Science: How Does Energy Move? &middot; CPALMS SC.4.P.10.1, SC.4.P.11.1</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

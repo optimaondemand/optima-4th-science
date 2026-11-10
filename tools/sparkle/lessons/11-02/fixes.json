@@ -182,7 +182,7 @@
   "kind": "cut",
   "why": "lean: Part C is a model in words; the sketch is a bonus",
   "old": "An annotated model of one Florida adaptation — including the organism, the structure, an arrow showing action, and a caption tying the structure to a survival need.",
-  "new": "A model of one Florida organism’s structure: the label, what it does (the arrow), and a caption about a survival need. (A sketch is a bonus.)"
+  "new": "A model of one Florida organism’s structure: the label, what it does (the arrow), and a caption about a survival need. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -210,5 +210,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-LS1-1 · TEKS 4.13(B)</div>\n      <div class=\"info-detail\">NGSS core",
+  "new": "SC.4.N.3.1 · TEKS 4.13(B)</div>\n      <div class=\"info-detail\">NGSS 4-LS1-1",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": " Science: Model — Structure and Survival</div>\n  <div class=\"footer-line3\">&copy",
+  "new": " Science: Model — Structure and Survival &middot; CPALMS SC.4.N.3.1</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

@@ -221,7 +221,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page",
   "old": "A data table with at least 9 trials (3 trials at each of 3 speeds), full measurements, and an evidence-based claim.",
-  "new": "My 9-trial table (3 trials from each start), the averages and a claim with numbers. (A sketch is a bonus.)"
+  "new": "My 9-trial table (3 trials from each start), the averages and a claim with numbers. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -249,5 +249,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-PS3-1 · TEKS 4.8(A)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.N.1.1, SC.4.P.10.2, SC.4.P.12.2 · TEKS 4.8(A)</div>\n      <div class=\"info-detail\">NGSS 4-PS3-1 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "on — Why Faster Objects Have More Energy</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "on — Why Faster Objects Have More Energy &middot; CPALMS SC.4.N.1.1, SC.4.P.10.2, SC.4.P.12.2</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

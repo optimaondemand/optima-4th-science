@@ -216,7 +216,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the map sketch is a bonus",
   "old": "A sketched Florida map with at least 3 resource symbols, a map key, and a one-sentence evidence statement underneath.",
-  "new": "One Florida resource: where it is, its pattern, and an evidence statement. (A map sketch with a key is a bonus.)"
+  "new": "One Florida resource: where it is, its pattern, and an evidence statement. Plus your labeled map sketch with a key."
  },
  {
   "kind": "cut",
@@ -244,5 +244,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-ESS3-1 · TEKS 4.11(B)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.E.6.6, SC.4.N.1.1 · TEKS 4.11(B)</div>\n      <div class=\"info-detail\">NGSS 4-ESS3-1 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "sk — Local Resources</div>\n  <div class=",
+  "new": "sk — Local Resources &middot; CPALMS SC.4.E.6.6, SC.4.N.1.1</div>\n  <div class=",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

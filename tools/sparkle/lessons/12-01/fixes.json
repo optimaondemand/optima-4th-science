@@ -370,5 +370,20 @@
   "why": "lean: answers are typed on the page, so one way to turn in",
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment."
+ },
+ {
+  "old": "4-LS1-2 · TEKS 4.5(G)</div>\n      <div class=\"info-detail\">NGSS core",
+  "new": "SC.4.L.16.3 · TEKS 4.5(G)</div>\n      <div class=\"info-detail\">NGSS 4-LS1-2",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "\n\n      <div class=\"tab-next-wrap\">\n    ",
+  "new": "\n\n      <div class=\"callout callout-think scroll-reveal\">\n    <span class=\"callout-icon\">🔬</span>\n    <p><strong>Science Connection:</strong> Some behaviors are inherited. An animal is born knowing how to do them. These are called instincts, like a baby sea turtle crawling toward the ocean. Other behaviors are learned. A young panther learns to hunt by watching its mother.</p>\n  </div>\n\n  <div class=\"tab-next-wrap\">\n    ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "e: Sensing the World</div>\n  <div class=",
+  "new": "e: Sensing the World &middot; CPALMS SC.4.L.16.3</div>\n  <div class=",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

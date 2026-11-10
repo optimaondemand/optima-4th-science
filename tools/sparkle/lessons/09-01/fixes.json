@@ -261,5 +261,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "3 · TEKS 4.12(A)</div>\n      <div class=\"info-detail\">CPALMS · ",
+  "new": "2, SC.4.L.17.3 · TEKS 4.12(A)</div>\n      <div class=\"info-detail\">",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "s — From Sun to Life</div>\n  <div class=",
+  "new": "s — From Sun to Life &middot; CPALMS SC.4.L.17.2, SC.4.L.17.3</div>\n  <div class=",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

@@ -231,7 +231,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the sketch is a bonus",
   "old": "Two complete pathway models (four boxes each, all arrows present) plus two comparison sentences underneath.",
-  "new": "Two pathway models (all four steps each) and two sentences comparing them. (A sketch is a bonus.)"
+  "new": "Two pathway models (all four steps each) and two sentences comparing them. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -259,5 +259,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-LS1-2 · TEKS 4.5(G)</div>\n      <div class=\"info-detail\">NGSS core",
+  "new": "SC.4.N.3.1 · TEKS 4.5(G)</div>\n      <div class=\"info-detail\">NGSS 4-LS1-2",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "fe Science: Model — From Senses to Brain</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "fe Science: Model — From Senses to Brain &middot; CPALMS SC.4.N.3.1</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

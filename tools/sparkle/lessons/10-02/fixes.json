@@ -227,5 +227,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "class=\"info-detail\">CPALMS · Decomposers &amp;",
+  "new": "class=\"info-detail\">NGSS 4-ESS3-1 · Decomposers &amp;",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "e: Ecosystem Balance</div>\n  <div class=",
+  "new": "e: Ecosystem Balance &middot; CPALMS SC.4.L.17.4</div>\n  <div class=",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

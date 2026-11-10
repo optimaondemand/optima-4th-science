@@ -698,8 +698,8 @@
    {
     "id": "partc",
     "afterPart": "C",
-    "kicker": "Part C · sketch it (optional)",
-    "required": false,
+    "kicker": "Part C · sketch it",
+    "required": true,
     "minLabels": 2,
     "prompts": [
      "Draw your plan from the ocean to the homes",

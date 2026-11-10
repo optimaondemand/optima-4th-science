@@ -291,5 +291,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-PS3-3 · TEKS 4.7(B)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.N.1.1, SC.4.N.1.2, SC.4.P.10.2, SC.4.P.12.2 · TEKS 4.7(B)</div>\n      <div class=\"info-detail\">NGSS 4-PS3-3 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "e: Investigation — Predicting Collisions</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "e: Investigation — Predicting Collisions &middot; CPALMS SC.4.N.1.1, SC.4.N.1.2, SC.4.P.10.2, SC.4.P.12.2</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

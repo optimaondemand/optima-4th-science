@@ -1580,8 +1580,8 @@
    {
     "id": "partc",
     "afterPart": "C",
-    "kicker": "Part C · sketch it (optional)",
-    "required": false,
+    "kicker": "Part C · sketch it",
+    "required": true,
     "minLabels": 3,
     "prompts": [
      "Draw Florida and your resource’s symbols",

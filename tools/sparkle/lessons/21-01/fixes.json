@@ -251,7 +251,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page",
   "old": "A before/after sketch of one collision with motion arrows and a one-sentence energy statement.",
-  "new": "The BEFORE, the AFTER and where the energy went, for one collision. (A sketch is a bonus.)"
+  "new": "The BEFORE, the AFTER and where the energy went, for one collision. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -279,5 +279,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-PS3-3 · TEKS 4.7(A)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.P.10.2, SC.4.P.12.1 · TEKS 4.7(A)</div>\n      <div class=\"info-detail\">NGSS 4-PS3-3 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "ence: What Happens When Objects Collide?</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "ence: What Happens When Objects Collide? &middot; CPALMS SC.4.P.10.2, SC.4.P.12.1</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

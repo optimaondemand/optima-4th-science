@@ -283,7 +283,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the scale sketch is a bonus",
   "old": "A balance-scale tradeoff diagram for one Florida resource, with at least 2 benefits on the left, 2 environmental costs on the right, and 1 protection strategy below.",
-  "new": "One Florida resource use with 2 benefits, 2 environmental costs and 1 protection strategy. (A balance-scale sketch is a bonus.)"
+  "new": "One Florida resource use with 2 benefits, 2 environmental costs and 1 protection strategy. Plus your labeled balance-scale sketch."
  },
  {
   "kind": "cut",
@@ -311,5 +311,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-ESS3-1 · TEKS 4.11(B)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.E.6.3, SC.4.L.17.4 · TEKS 4.11(B)</div>\n      <div class=\"info-detail\">NGSS 4-ESS3-1 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "rn Resources &amp; Environmental Choices</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "rn Resources &amp; Environmental Choices &middot; CPALMS SC.4.E.6.3, SC.4.L.17.4</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

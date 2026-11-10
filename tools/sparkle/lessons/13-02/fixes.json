@@ -219,7 +219,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the sketch is a bonus",
   "old": "A 5-step flowering plant reproduction cycle, drawn as a circle with arrows, with a picture and sentence for each step.",
-  "new": "One sentence for each of the five steps. (A sketch of the cycle is a bonus.)"
+  "new": "One sentence for each of the five steps. Plus your labeled sketch of the cycle."
  },
  {
   "kind": "cut",
@@ -247,5 +247,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": " · TEKS 4.13(B)</div>\n      <div class=\"info-detail\">CPALMS · ",
+  "new": ", SC.4.L.16.2 · TEKS 4.13(B)</div>\n      <div class=\"info-detail\">",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "ence: Circle of Life</div>\n  <div class=",
+  "new": "ence: Circle of Life &middot; CPALMS SC.4.L.16.1, SC.4.L.16.2</div>\n  <div class=",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

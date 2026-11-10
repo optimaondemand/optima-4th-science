@@ -216,7 +216,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page",
   "old": "A three-row data table showing slow/medium/fast trials with the target distance, sketches, and an evidence statement.",
-  "new": "My speed and energy table (Low, Middle and High starts) and what the numbers show. (A sketch is a bonus.)"
+  "new": "My speed and energy table (Low, Middle and High starts) and what the numbers show. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -244,5 +244,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-PS3-1 · TEKS 4.8(A), 4.7(A)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.P.10.2, SC.4.P.12.1 · TEKS 4.8(A), 4.7(A)</div>\n      <div class=\"info-detail\">NGSS 4-PS3-1 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "e: Motion and Energy</div>\n  <div class=",
+  "new": "e: Motion and Energy &middot; CPALMS SC.4.P.10.2, SC.4.P.12.1</div>\n  <div class=",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

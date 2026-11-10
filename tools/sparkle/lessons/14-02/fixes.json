@@ -281,7 +281,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the sketch is a bonus",
   "old": "A two-region model showing Florida + one other region in the same season, with food-energy arrows in each circle plus one arrow between them.",
-  "new": "Your two-region model: both places in one season, a food-energy connection in each, and how they are connected. (A sketch is a bonus.)"
+  "new": "Your two-region model: both places in one season, a food-energy connection in each, and how they are connected. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -309,5 +309,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": " · TEKS 4.9(A), 4.5(E)</div>\n      <div class=\"info-detail\">CPALMS · ",
+  "new": ", SC.4.L.17.2 · TEKS 4.9(A), 4.5(E)</div>\n      <div class=\"info-detail\">",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": ": Model — Interdependence Across Seasons</div>\n  <div class=\"footer-line3\">&copy",
+  "new": ": Model — Interdependence Across Seasons &middot; CPALMS SC.4.L.17.1, SC.4.L.17.2</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

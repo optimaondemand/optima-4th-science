@@ -245,5 +245,15 @@
   "why": "shorter",
   "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
   "new": "All your written answers in one place, so you can copy or download them to turn in on Canvas."
+ },
+ {
+  "old": "3 · TEKS 4.12(A)</div>\n      <div class=\"info-detail\">CPALMS · ",
+  "new": "2, SC.4.L.17.3 · TEKS 4.12(A)</div>\n      <div class=\"info-detail\">",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "ce: The Power of Producers and Consumers</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "ce: The Power of Producers and Consumers &middot; CPALMS SC.4.L.17.2, SC.4.L.17.3</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

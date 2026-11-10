@@ -270,7 +270,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the sketch is a bonus",
   "old": "A parent + offspring drawing with 3 inherited traits and 2 environmental traits labeled clearly.",
-  "new": "A parent and offspring with 3 inherited traits and 2 environmental traits. (A sketch is a bonus.)"
+  "new": "A parent and offspring with 3 inherited traits and 2 environmental traits. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -298,5 +298,20 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": " · TEKS 4.13(B)</div>\n      <div class=\"info-detail\">CPALMS",
+  "new": ", SC.4.L.16.3 · TEKS 4.13(B)</div>\n      <div class=\"info-detail\">NGSS 4-LS1-1",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": ">\n      <div class=\"tab-next-wrap\">\n    ",
+  "new": ">\n      <div class=\"callout callout-think scroll-reveal\">\n    <span class=\"callout-icon\">🔬</span>\n    <p><strong>Science Connection:</strong> Not every behavior is inherited. Some behaviors are learned from the environment, like a parrot learning to copy sounds or a dog learning to sit on command.</p>\n  </div>\n\n  <div class=\"tab-next-wrap\">\n    ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "ence: Circle of Life</div>\n  <div class=",
+  "new": "ence: Circle of Life &middot; CPALMS SC.4.L.16.2, SC.4.L.16.3</div>\n  <div class=",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

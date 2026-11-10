@@ -836,8 +836,8 @@
    {
     "id": "partc",
     "afterPart": "C",
-    "kicker": "Part C · sketch it (optional)",
-    "required": false,
+    "kicker": "Part C · sketch it",
+    "required": true,
     "minLabels": 2,
     "prompts": [
      "The parent and its offspring side by side",

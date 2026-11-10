@@ -1,3 +1,10 @@
+/* Load without a jump: the plain page stays invisible until the layer has rebuilt it.
+   Failsafe: if the script never runs, the page still appears after 2.5 s. */
+html:not(.fs-boot) body{opacity:0;animation:fsBootShow .2s 2.5s forwards}
+@keyframes fsBootShow{to{opacity:1}}
+html.fs-boot body{animation:fsBootIn .25s ease-out}
+@keyframes fsBootIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){html.fs-boot body{animation:none}}
 /* ===== Field Station sparkle layer — G4 Science (mockup v1) =====
    Card families: KRAFT = field story (crew, radio, why, specimen)
                   WHITE + teal edge = learning content (the lesson's own cards)
@@ -3452,3 +3459,16 @@ html.fs-on .fs-replaced { display:none !important; }
 .fs-game[data-mod="signmaker"].locked .fs-lock { display:block; }
 @media (prefers-reduced-motion: reduce) { .fs-env.open .fs-env-in, .fs-ikn-note.pop, .fs-ikn-big.hit, .fs-sgn-sign.thump, .fs-nc-photo.show { animation:none; } .fs-flg-bc i { transition:none; } }
 @media (max-width:560px) { .fs-flg-tk { font-size:20px; } .fs-flg-gap { font-size:24px; } .fs-flg-hint, .fs-gh-tray { font-size:20px; } .fs-gh-off { font-size:20px; } .fs-gh-gt { font-size:12px; } .fs-ikn-note { width:100%; } }
+
+/* Start here: the how-to video drawer at the top of the first tab */
+.fs-start{margin:0 0 18px;border:2px solid #1C6E8C;border-radius:14px;background:#fff;box-shadow:0 2px 0 rgba(28,110,140,.25)}
+.fs-start>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;font:700 16px/1.3 'Nunito',sans-serif;color:#14304A}
+.fs-start>summary::-webkit-details-marker{display:none}
+.fs-start-k{background:#1C6E8C;color:#fff;border-radius:999px;padding:5px 14px;font:900 14px 'Nunito',sans-serif;letter-spacing:.04em}
+.fs-start-t{flex:1 1 200px}
+.fs-start-m{font:700 13px 'Nunito',sans-serif;color:#5B667A}
+.fs-start-o{font:800 13px 'Nunito',sans-serif;color:#1C6E8C}
+.fs-start[open] .fs-start-o{font-size:0}.fs-start[open] .fs-start-o::after{content:'Close ▴';font-size:13px}
+.fs-start-b{padding:0 16px 14px}
+.fs-start-b video{display:block;width:100%;aspect-ratio:16/9;border-radius:10px;background:#0d1b2a}
+.fs-start-n{margin:8px 0 0;font:600 13px 'Nunito',sans-serif;color:#5B667A}

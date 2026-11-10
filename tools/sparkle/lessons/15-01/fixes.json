@@ -218,7 +218,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the chart sketch is a bonus",
   "old": "A two-column comparison chart with one renewable and one nonrenewable Florida resource, including uses, environmental impact, and an open question for each.",
-  "new": "One renewable and one nonrenewable Florida resource: a use and an impact for each, and which one has the smaller impact. (A chart sketch is a bonus.)"
+  "new": "One renewable and one nonrenewable Florida resource: a use and an impact for each, and which one has the smaller impact. Plus your labeled chart sketch."
  },
  {
   "kind": "cut",
@@ -246,5 +246,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-ESS3-1 · TEKS 4.11(A)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.E.6.3 · TEKS 4.11(A)</div>\n      <div class=\"info-detail\">NGSS 4-ESS3-1 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "ce: Renewable and Nonrenewable Resources</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "ce: Renewable and Nonrenewable Resources &middot; CPALMS SC.4.E.6.3</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

@@ -233,7 +233,7 @@
   "kind": "cut",
   "why": "lean: Part C typed on the page; the sketch is a bonus",
   "old": "A hazard mitigation plan with a decision matrix (1 built + 1 natural solution), criteria, constraints, a winner, and a revision suggestion.",
-  "new": "A mitigation plan for one Florida hazard: criteria, a constraint, a built and a natural solution, the winner and a revision. (A matrix sketch is a bonus.)"
+  "new": "A mitigation plan for one Florida hazard: criteria, a constraint, a built and a natural solution, the winner and a revision. Plus your labeled matrix sketch."
  },
  {
   "kind": "cut",
@@ -261,5 +261,20 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-ESS3-1 · TEKS 4.4(A)</div>\n      <div class=\"info-detail\">",
+  "new": "SC.4.L.17.4, SC.4.N.1.8 · TEKS 4.4(A)</div>\n      <div class=\"info-detail\">NGSS 4-ESS3-2 · ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": ">\n      <div class=\"tab-next-wrap\">\n    ",
+  "new": ">\n      <div class=\"callout callout-think scroll-reveal\">\n    <span class=\"callout-icon\">🔬</span>\n    <p><strong>Science Connection:</strong> Designing a safe building takes creativity. Engineers sketch many ideas, test them against the problem, and choose the one that works best.</p>\n  </div>\n\n  <div class=\"tab-next-wrap\">\n    ",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "ience: Engineering — Building for Safety</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "ience: Engineering — Building for Safety &middot; CPALMS SC.4.L.17.4, SC.4.N.1.8</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

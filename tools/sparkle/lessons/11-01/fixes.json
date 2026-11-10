@@ -235,7 +235,7 @@
   "kind": "cut",
   "why": "lean: Part C matches the new task; the sketch is a bonus; the CER has its own line",
   "old": "A sketch of one Florida organism with at least three structures labeled, plus a Claim-Evidence-Reasoning paragraph.",
-  "new": "One Florida plant or animal with three structures, the job of each, and whether each is internal or external. (A sketch is a bonus.)"
+  "new": "One Florida plant or animal with three structures, the job of each, and whether each is internal or external. Plus your labeled sketch."
  },
  {
   "kind": "cut",
@@ -263,5 +263,15 @@
   "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
   "new": "Copy or download your Gathered Answers (above) and paste them into the Canvas assignment.",
   "regex": true
+ },
+ {
+  "old": "4-LS1-1 · TEKS 4.13(B)</div>\n      <div class=\"info-detail\">NGSS core",
+  "new": "SC.4.N.1.5, SC.4.N.3.1 · TEKS 4.13(B)</div>\n      <div class=\"info-detail\">NGSS 4-LS1-1",
+  "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "old": "Inside Out — Plant and Animal Structures</div>\n  <div class=\"footer-line3\">&copy",
+  "new": "Inside Out — Plant and Animal Structures &middot; CPALMS SC.4.N.1.5, SC.4.N.3.1</div>\n  <div class=\"footer-line3\">&copy",
+  "why": "absorbed: page edited outside the kit"
  }
 ]

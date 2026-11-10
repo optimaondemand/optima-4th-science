@@ -842,8 +842,8 @@
    {
     "id": "partc",
     "afterPart": "C",
-    "kicker": "Part C · sketch it (optional)",
-    "required": false,
+    "kicker": "Part C · sketch it",
+    "required": true,
     "minLabels": 2,
     "prompts": [
      "Animal 1: four boxes and arrows",
