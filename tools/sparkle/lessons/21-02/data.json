@@ -511,7 +511,6 @@
   "doneLine": "Same every time: that’s a pattern. Try another number.",
   "warmFrom": "fs-warm",
   "warmLabel": "Your Warm-Up prediction (2 balls):",
-  "warmNone": "You can still write one on the Warm-Up tab.",
   "tableLabel": "My cradle trials",
   "cols": [
    "Pulled back",

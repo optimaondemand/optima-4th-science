@@ -899,12 +899,8 @@
     "min": 2
    },
    {
-    "label": "a reason",
-    "re": "because|so |this shows|that means|which means|without|if "
-   },
-   {
     "label": "your reasoning",
-    "re": "because|this shows|that shows|this means|that means|so "
+    "re": "because|so |this shows|that shows|this means|that means|which means|proves|since"
    }
   ]
  },
@@ -1049,7 +1045,7 @@
     "id": "partc",
     "afterPart": "C",
     "kicker": "Part C · draw it too",
-    "required": true,
+    "required": false,
     "minLabels": 3,
     "prompts": [
      "My manatee line graph with labels",

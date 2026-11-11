@@ -374,7 +374,7 @@
      ]
     }
    ],
-   "script": "[ON SCREEN: Your place]\nNow it’s your turn. Pick a Florida place you know. Name one producer and two consumers, then show how the energy moves. Want to draw it? The sketch pad is a bonus."
+   "script": "[ON SCREEN: Your place]\nNow it’s your turn. Pick a Florida place you know. Name one producer and two consumers, then show how the energy moves. Then draw it on the sketch pad and add labels."
   },
   "vr": {
    "label": "VR activity · Follow the Sun’s energy (separate page)",
@@ -414,6 +414,10 @@
   }
  },
  "pics": {
+  "vrcam": {
+   "src": "images/09-01-vr-cam-4.jpg",
+   "cap": "CAM 4: the hawk at post 7 eats a snake (Everglades NPS, public domain)"
+  },
   "hawk": {
    "src": "images/9-01-case-hawk.jpg",
    "cap": "TAG 1 · the hawk at post 7"
@@ -449,10 +453,6 @@
   "marsh": {
    "src": "images/9-01-marsh.jpg",
    "cap": "A real sawgrass marsh, Everglades (public domain)"
-  },
-  "vrcam": {
-   "src": "images/09-01-vr-cam-4.jpg",
-   "cap": "CAM 4: the hawk at post 7 eats a snake (Everglades NPS, public domain)"
   }
  },
  "other": [

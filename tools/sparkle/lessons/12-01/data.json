@@ -1,5 +1,9 @@
 {
   "lesson": "12.01",
+  "videoOff": [
+    "assignment",
+    "partc"
+  ],
   "week": 12,
   "day": 1,
   "guide": "lena",
@@ -169,7 +173,7 @@
       }
     ],
     "win": "All four cameras checked. Look at what started each reaction. Were they the same? That’s Clue 3.",
-    "kicker": "Last night’s trail cameras",
+    "kicker": "Part 3 · Last night’s trail cameras",
     "credit": "Real photos, public domain, with a night-vision look added. CAM 1: sea turtle hatchling, Blackbeard Island, Georgia (USFWS, Becky Skiba), standing in for a Florida beach. CAM 2: Florida panther and kittens, trail camera at Florida Panther National Wildlife Refuge (USFWS). CAM 3: Florida manatee, Crystal River National Wildlife Refuge (Keith Ramos, USFWS). CAM 4: Florida cottonmouth (Larry D. Fishel)."
   },
   "sort": {
@@ -290,12 +294,8 @@
         "min": 2
       },
       {
-        "label": "a reason",
-        "re": "because|so |this shows|that means|which means|without|if"
-      },
-      {
         "label": "your reasoning",
-        "re": "because|this shows|that shows|this means|that means|so "
+        "re": "because|so |this shows|that shows|this means|that means|which means|proves|since"
       }
     ]
   },
@@ -915,7 +915,7 @@
         {
           "name": "Manatee",
           "img": "images/12-01-cam3.jpg",
-          "t": "A boat motor rumbled through the river. The manatee dove away."
+          "t": "A boat motor shook the water in the river. The manatee felt it and dove away."
         },
         {
           "name": "Cottonmouth",

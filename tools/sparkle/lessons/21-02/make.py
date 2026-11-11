@@ -227,7 +227,7 @@ D = {
         'pullMiss': 'First pick how many balls to pull back.', 'predMiss': 'Predict first: how many will fly out?', 'doneMiss': 'You did all 3 trials for this one. Pick another number.',
         'trialWord': 'Trial', 'outWord': 'flew out', 'rightPre': 'Your prediction was right! ', 'wrongPre': 'Surprise! A wrong prediction still teaches you something. ',
         'againLine': 'Run it again. Does the same thing happen?', 'doneLine': 'Same every time: that’s a pattern. Try another number.',
-        'warmFrom': 'fs-warm', 'warmLabel': 'Your Warm-Up prediction (2 balls):', 'warmNone': 'You can still write one on the Warm-Up tab.',
+        'warmFrom': 'fs-warm', 'warmLabel': 'Your Warm-Up prediction (2 balls):',
         'tableLabel': 'My cradle trials', 'cols': ['Pulled back', 'My prediction', 'Trial 1', 'Trial 2', 'Trial 3'],
         'photo': {'head': 'The real thing', 'img': I('cradle'), 'alt': 'A real Newton’s cradle: five shiny steel balls on strings. The two end balls are swinging out, one on each side, and the middle three hang still.',
                   'cap': 'A real Newton’s cradle. Here someone let go of BOTH end balls at once, so one ball bounces out on each side and the middle three stay still. The balls are all the same size, so each click passes the motion along the row.', 'credit': ''},

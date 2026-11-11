@@ -224,7 +224,7 @@
      ]
     }
    ],
-   "script": "[ON SCREEN: Crack the case]\nYou made it! First, crack the case at the top. Still locked? Tap “Show me where the clues are.” Pick the answer that fits every clue.\n\n[ON SCREEN: Your case report]\nThen three parts. Part B: two short answers. Part C: pick a real parent and its offspring, maybe your pet or a backyard plant. Name three inherited traits and two from the environment. A sketch is a bonus. Last, your CER.\n\nPress Listen on the walkie-talkie."
+   "script": "[ON SCREEN: Crack the case]\nYou made it! First, crack the case at the top. Still locked? Tap “Show me where the clues are.” Pick the answer that fits every clue.\n\n[ON SCREEN: Your case report]\nThen three parts. Part B: two short answers. Part C: pick a real parent and its offspring, maybe your pet or a backyard plant. Name three inherited traits and two from the environment. Then sketch and label it. Last, your CER.\n\nPress Listen on the walkie-talkie."
   },
   "partc": {
    "label": "Part C · parent and offspring",
@@ -411,5 +411,7 @@
    "length": "20–30 s"
   }
  ],
- "redo": []
+ "redo": [
+  "assignment"
+ ]
 }

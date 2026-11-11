@@ -3046,6 +3046,21 @@
     return '';
   }
   /* guard the page's own "Your name" box in Gathered Answers too */
+  /* ---------- Part B numbers: after the lean cut the page keeps questions 5 and 6; students see 1 and 2 (Bethany, 10 Nov 2026) ---------- */
+  function renumberPartB() {
+    var tab = document.getElementById('tab-assignment'); if (!tab) return;
+    var nums = [].slice.call(tab.querySelectorAll('.pq-num')).filter(function (n) { return !n.closest('.fs-hide-on'); });
+    var map = {}, changed = false;
+    nums.forEach(function (n, i) { var o = n.textContent.trim(); if (/^\d+$/.test(o)) { map[o] = String(i + 1); if (o !== map[o]) { n.textContent = map[o]; changed = true; } } });
+    if (!changed) return;
+    var swap = function (t) { return t.replace(/\b(Questions?) (\d+)(?:( and )(\d+))?/g, function (m, w, a, and, b) { return w + ' ' + (map[a] || a) + (b ? and + (map[b] || b) : ''); }); };
+    [].slice.call(tab.querySelectorAll('.response-textarea[data-label]')).forEach(function (t) { t.setAttribute('data-label', swap(t.getAttribute('data-label'))); });
+    var w = document.createTreeWalker(tab, NodeFilter.SHOW_TEXT, null), n, hit = [];
+    while ((n = w.nextNode())) if (/Questions? \d/.test(n.nodeValue) && !(n.parentNode && /^(SCRIPT|STYLE|TEXTAREA)$/.test(n.parentNode.tagName))) hit.push(n);
+    hit.forEach(function (x) { x.nodeValue = swap(x.nodeValue); });
+    try { if (window.refreshGathered) window.refreshGathered(); } catch (e) {}
+  }
+
   function guardNameBox() {
     var g = document.getElementById('student-name'); if (!g || g.dataset.fsKind) return; g.dataset.fsKind = '1';
     var note = el('div', 'fs-name-note'); note.setAttribute('role', 'alert'); var row = g.closest('.gathered-name-row') || g; row.parentNode.insertBefore(note, row.nextSibling);
@@ -7374,7 +7389,9 @@
     var T = C.trials || 3;
     function tries(k) { return (st.out[k] || []).length; }
     function paintWarm() { var v = ''; try { var o = JSON.parse(store('ans.' + (C.warmFrom || 'fs-warm') + '.f') || '{}'); v = [o[0], o[1]].filter(function (x) { return x && x.trim(); }).join(' · '); } catch (e) {}
-      warm.innerHTML = '<span>🌅</span><div><b>' + esc(C.warmLabel || 'Your Warm-Up prediction:') + '</b> ' + (v ? esc(v) : '<em>' + esc(C.warmNone || 'You can still write one on the Warm-Up tab.') + '</em>') + '</div>'; }
+      // no Warm-Up prediction saved: show nothing (never send students to another tab; this game asks for a prediction itself)
+      warm.style.display = (!v && !C.warmNone) ? 'none' : '';
+      warm.innerHTML = '<span>🌅</span><div><b>' + esc(C.warmLabel || 'Your Warm-Up prediction:') + '</b> ' + (v ? esc(v) : '<em>' + esc(C.warmNone || '') + '</em>') + '</div>'; }
     function paintPick() {
       pick.innerHTML = '<div class="fs-in-k">' + esc(C.pullQ || '1. How many balls will you pull back?') + '</div><div class="fs-in-chips">' + C.pulls.map(function (k) { var d = tries(k) >= T; return '<button type="button" class="fs-in-chip' + (k === n ? ' on' : '') + (d ? ' done' : '') + '" data-k="' + k + '">' + k + ' ' + esc(k === 1 ? (C.ballWord || 'ball') : (C.ballsWord || 'balls')) + (d ? ' ✓' : '') + '</button>'; }).join('') + '</div>';
       $$('.fs-in-chip', pick).forEach(function (b) { b.addEventListener('click', function () { if (rig.busy) return; n = +b.dataset.k; pred = st.pred[n] != null ? st.pred[n] : null; rig.draw(); res.innerHTML = ''; miss.classList.remove('show'); SFX.blip(); paintPick(); paintPred(); }); });
@@ -9138,6 +9155,7 @@
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);
     guard('inputs', buildInputs);
+    guard('renumber', renumberPartB);
     guard('printcard', buildPrintcard);
     guard('specimen', buildSpecimen);
     guard('lens', buildWordLens);

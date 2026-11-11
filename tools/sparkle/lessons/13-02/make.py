@@ -259,7 +259,7 @@ D = {
         'closing': {'label': 'Case closed', 'length': '20–30 s', 'notes': 'Celebrate; tease week 14 (life cycles and seasons).',
                     'script': 'Case closed! My courtyard sunflower had plenty of flowers, but almost no bees, so almost no seeds. I’m planting more flowers back there to invite the bees in. Next week, we’ll follow Florida plants and animals through their whole lives, and through the seasons.'},
     },
-    'videoOff': [],
+    'videoOff': ['assignment'],  # the recorded take calls the sketch a bonus; hidden until re-recorded
     'camera': {'max': 8, 'huntTitle': 'Bonus: can you snap all 4 shots on this list?', 'missions': [
         'The bee on its third pollinated sunflower (Warm-Up)',
         'Your bag test with the seed counts showing (The Lesson)',

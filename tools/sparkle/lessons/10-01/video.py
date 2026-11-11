@@ -53,7 +53,7 @@ S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts
              'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
 S['partc'] = {'label': 'Part C · your own ecosystem web', 'length': '25–35 s', 'want': False, 'parts': [
     {'label': '🗺️ Your place', 'tag': 'PART C', 'title': 'Pick a Florida place', 'col': C_GREEN, 'rows': [['🏖️', 'A beach'], ['🏡', 'A backyard'], ['🐸', 'A pond'], ['🌲', 'A pine forest']]}],
-    'script': '[ON SCREEN: Your place]\nNow it’s your web. Pick a Florida place you know. Name five living things there, then three connections, each a different kind. Want to draw it? The sketch pad is a bonus.'}
+    'script': '[ON SCREEN: Your place]\nNow it’s your web. Pick a Florida place you know. Name five living things there, then three connections, each a different kind. Then draw it on the sketch pad and add labels.'}
 # VR activity page (vr-10-01.html) uses the same prefix: g4sci-10-1-vr.mp4
 S['vr'] = {'label': 'VR activity · Rebuild the web (separate page)', 'length': '45–55 s', 'want': True, 'parts': [
     {'kind': 'photo', 'pic': 'sketch', 'label': '📷 The sketch'},

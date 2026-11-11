@@ -224,7 +224,7 @@
      ]
     }
    ],
-   "script": "[ON SCREEN: Your model]\nPick a Florida organism, not the spoonbill. Name one part, tell what it does, and finish with a caption about a survival need. Want to draw it too? The sketch pad is a bonus."
+   "script": "[ON SCREEN: Your model]\nPick a Florida organism, not the spoonbill. Name one part, tell what it does, and finish with a caption about a survival need. Then draw it on the sketch pad and add labels."
   },
   "evidence": {
    "label": "Use your evidence · CER",

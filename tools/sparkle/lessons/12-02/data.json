@@ -820,7 +820,9 @@
    "script": "Case closed! A Florida bonneted bat clicked, listened for the echoes, and its brain did the rest. Same four steps as an eagle, just a different sense. Next week, we’ll look at families: how Florida plants and animals pass their traits to their young."
   }
  },
- "videoOff": [],
+ "videoOff": [
+  "assignment"
+ ],
  "camera": {
   "max": 8,
   "huntTitle": "Bonus: can you snap all 4 shots on this list?",

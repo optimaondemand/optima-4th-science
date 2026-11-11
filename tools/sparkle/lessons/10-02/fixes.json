@@ -237,5 +237,18 @@
   "old": "e: Ecosystem Balance</div>\n  <div class=",
   "new": "e: Ecosystem Balance &middot; CPALMS SC.4.L.17.4</div>\n  <div class=",
   "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "kind": "cut",
+  "why": "pilot audit, 11 Nov 2026 (Bethany): the planning table lists only SC.4.L.17.4 for 10.02; decomposers are taught in 9.01 and are not on the Unit 3 assessment. Also trims an over-budget lesson.",
+  "old": "<div style=\"background:#F0EDF6;border:2px solid #D4C0E8;border-radius:14px;padding:16px 20px;margin:16px 0;\">\\s*<p[^>]*>🍂 Decomposers &amp; the Cycling of Matter</p>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "header detail matches what the lesson now teaches",
+  "old": "class=\"info-detail\">NGSS 4-ESS3-1 · Decomposers &amp; Cycling of Matter</div>",
+  "new": "class=\"info-detail\">NGSS 4-ESS3-1</div>"
  }
 ]

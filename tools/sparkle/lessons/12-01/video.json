@@ -463,7 +463,7 @@
       ],
       [
        "Part C",
-       "Make up a Florida animal moment. A sketch is a bonus."
+       "Make up a Florida animal moment, then sketch it."
       ],
       [
        "CER",
@@ -479,7 +479,7 @@
      "body": "Every answer you type saves itself and shows up in Gathered Answers at the bottom of this tab."
     }
    ],
-   "script": "You made it to the assignment!\n\n[ON SCREEN: Crack the case]\nFirst, crack the case. Still locked? Tap \"Show me where the clues are,\" then \"Go there.\" With all four clues, pick the answer that fits every clue. Did all four animals react to the same thing?\n\n[ON SCREEN: Today’s parts]\nThen there are three parts. Part B: two answers in complete sentences. Part C: make up your own Florida animal moment. A sketch is a bonus. And last, a CER.\n\n[ON SCREEN: Saved for you]\nEverything saves itself and shows up in Gathered Answers at the bottom. That's what you turn in.\n\nPress Listen. Dr. Reyes wants a real field report."
+   "script": "You made it to the assignment!\n\n[ON SCREEN: Crack the case]\nFirst, crack the case. Still locked? Tap \"Show me where the clues are,\" then \"Go there.\" With all four clues, pick the answer that fits every clue. Did all four animals react to the same thing?\n\n[ON SCREEN: Today’s parts]\nThen there are three parts. Part B: two answers in complete sentences. Part C: make up your own Florida animal moment, then sketch and label it. And last, a CER.\n\n[ON SCREEN: Saved for you]\nEverything saves itself and shows up in Gathered Answers at the bottom. That's what you turn in.\n\nPress Listen. Dr. Reyes wants a real field report."
   },
   "partb": {
    "label": "Part B · short answers",
@@ -546,7 +546,7 @@
     },
     {
      "label": "✏ The sketch pad",
-     "tag": "BONUS · SKETCH IT",
+     "tag": "SKETCH IT",
      "title": "Draw, then label",
      "col": "#7A5BB5",
      "rows": [
@@ -565,7 +565,7 @@
      ]
     }
    ],
-   "script": "Now you're the scientist.\n\n[ON SCREEN: Your scenario]\nMake up a short moment, like the heron story, about a Florida animal that wasn't in today's lesson. A pelican? A bobcat? A dolphin? Fill in the four boxes: what happened, what noticed it, what the brain decided, and what the animal did.\n\n[ON SCREEN: The sketch pad]\nIf you have time, sketch it too. It's a bonus. Draw with the pen. To add a label, pick Label, drag from a part of your drawing to an empty spot, and type. Add arrows to show the order."
+   "script": "Now you're the scientist.\n\n[ON SCREEN: Your scenario]\nMake up a short moment, like the heron story, about a Florida animal that wasn't in today's lesson. A pelican? A bobcat? A dolphin? Fill in the four boxes: what happened, what noticed it, what the brain decided, and what the animal did.\n\n[ON SCREEN: The sketch pad]\nThen sketch it. The sketch is part of Part C. Draw with the pen. To add a label, pick Label, drag from a part of your drawing to an empty spot, and type. Add arrows to show the order."
   },
   "evidence": {
    "label": "Use your evidence · CER",

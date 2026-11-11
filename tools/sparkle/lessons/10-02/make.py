@@ -189,8 +189,7 @@ D = {
         'cer-4': [
             {'label': 'your claim', 're': 'agree|disagree|i think|wrong|right|not true|true|big deal|matter|problem'},
             {'label': 'two pieces of evidence', 'any': ['raccoon|opossum|possum|rabbit', '99|ninety', 'lionfish|lion fish', '20|twenty', 'native', 'predator|enem|eat|ate|food', 'balance', 'python'], 'min': 2},
-            {'label': 'a reason', 're': 'because|so |this shows|that means|which means|without|if '},
-            {'label': 'your reasoning', 're': 'because|this shows|that shows|this means|that means|so '},
+            {'label': 'your reasoning', 're': 'because|so |this shows|that shows|this means|that means|which means|proves|since'},
         ],
     },
     'minWords': {'ans-1': 20, 'ans-3': 20, 'cer-4': 30},
@@ -245,7 +244,8 @@ D = {
         'The chart with every flight showing (The Lesson)',
         'Your own manatee graph (Assignment)']},
     'sketch': {'tip': P['sketch']['tip'], 'prompts': ['A manatee in a warm spring', 'A healthy wetland vs. an unhealthy one', 'My manatee line graph'],
-               'inline': [{'id': 'partc', 'afterPart': 'C', 'kicker': 'Part C · draw it too (optional)', 'required': False, 'minLabels': 3,
+               'inline': [{'id': 'partc', 'afterPart': 'C', 'kicker': 'Part C · draw it too', 'required': False,  # Part C is already a graph made on the page (Bethany, 10 Nov 2026)
+                           'minLabels': 3,
                            'prompts': ['My manatee line graph with labels', 'A Florida story I stamped', 'Before and after a change']}]},
     'hlCoach': copy.deepcopy(P['hlCoach']),
     'specimen': {'kicker': 'Specimen collected', 'stamp': 'CASE CLOSED', 'icon': '🐚', 'name': 'Florida apple snail shell',

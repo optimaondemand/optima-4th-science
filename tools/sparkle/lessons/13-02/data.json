@@ -605,7 +605,9 @@
    "script": "Case closed! My courtyard sunflower had plenty of flowers, but almost no bees, so almost no seeds. I’m planting more flowers back there to invite the bees in. Next week, we’ll follow Florida plants and animals through their whole lives, and through the seasons."
   }
  },
- "videoOff": [],
+ "videoOff": [
+  "assignment"
+ ],
  "camera": {
   "max": 8,
   "huntTitle": "Bonus: can you snap all 4 shots on this list?",

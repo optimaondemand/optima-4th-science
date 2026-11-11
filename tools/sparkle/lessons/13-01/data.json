@@ -814,7 +814,9 @@
    "script": "Case closed! My seeds weren’t mixed up. Same parent, different gardens. The flower color and leaves came from the parent, and the sun did the rest. Next time, a new question: how did that one beach sunflower make all those seeds in the first place?"
   }
  },
- "videoOff": [],
+ "videoOff": [
+  "assignment"
+ ],
  "camera": {
   "max": 8,
   "huntTitle": "Bonus: can you snap all 4 shots on this list?",

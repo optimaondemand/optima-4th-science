@@ -309,7 +309,7 @@ D = {
         'closing': {'label': 'Case closed', 'length': '20–30 s', 'notes': 'Celebrate; tease week 13 (families and traits).',
                     'script': 'Case closed! A Florida bonneted bat clicked, listened for the echoes, and its brain did the rest. Same four steps as an eagle, just a different sense. Next week, we’ll look at families: how Florida plants and animals pass their traits to their young.'},
     },
-    'videoOff': [],
+    'videoOff': ['assignment'],  # the recorded take calls the sketch a bonus; hidden until re-recorded
     'camera': {'max': 8, 'huntTitle': 'Bonus: can you snap all 4 shots on this list?', 'missions': [
         'Your echo hunt with all three moths found (Warm-Up)',
         'Your bat model when the meter is full (The Lesson)',

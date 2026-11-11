@@ -214,7 +214,7 @@
      ]
     }
    ],
-   "script": "[ON SCREEN: Crack the case]\nYou made it! First, crack the case at the top. Still locked? Tap “Show me where the clues are.”\n\n[ON SCREEN: Your case report]\nThen three parts. Part B: two short answers. Part C: pick one Florida flower and write one sentence for each of the five steps. A sketch is a bonus. Last, your CER.\n\nPress Listen on the walkie-talkie."
+   "script": "[ON SCREEN: Crack the case]\nYou made it! First, crack the case at the top. Still locked? Tap “Show me where the clues are.”\n\n[ON SCREEN: Your case report]\nThen three parts. Part B: two short answers. Part C: pick one Florida flower and write one sentence for each of the five steps. Then sketch and label it. Last, your CER.\n\nPress Listen on the walkie-talkie."
   },
   "partc": {
    "label": "Part C · follow one flower",
@@ -376,5 +376,7 @@
    "length": "20–30 s"
   }
  ],
- "redo": []
+ "redo": [
+  "assignment"
+ ]
 }

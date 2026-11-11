@@ -328,7 +328,7 @@ D = {
         'closing': {'label': 'Case closed', 'length': '20–30 s', 'notes': 'Celebrate; tease 13.02 (how a flower makes seeds).',
                     'script': 'Case closed! My seeds weren’t mixed up. Same parent, different gardens. The flower color and leaves came from the parent, and the sun did the rest. Next time, a new question: how did that one beach sunflower make all those seeds in the first place?'},
     },
-    'videoOff': [],
+    'videoOff': ['assignment'],  # the recorded take calls the sketch a bonus; hidden until re-recorded
     'camera': {'max': 8, 'huntTitle': 'Bonus: can you snap all 4 shots on this list?', 'missions': [
         'All four families matched (Warm-Up)',
         'Your sunny pot next to your shady pot (The Lesson)',
