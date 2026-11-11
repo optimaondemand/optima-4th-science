@@ -345,6 +345,7 @@
       var vv = live.querySelector('.fs-video'), rr = live.querySelector('.fs-radio:not(.demo)');
       if (!vv || !rr) return;
       if (!vv.querySelector('.fs-step-label')) vv.insertBefore(el('div', 'fs-step-label', '\u2460 Watch your teacher'), vv.firstChild);
+      var fs0 = vv.querySelector('.fs-vfold-t'); if (fs0) fs0.textContent = '\u2460 Watch your teacher';
       if (!rr.previousElementSibling || !rr.previousElementSibling.classList.contains('fs-step-label'))
         live.insertBefore(el('div', 'fs-step-label', '\u2461 Then listen to ' + esc(who.name)), rr);
     }
@@ -354,7 +355,7 @@
         var vtt = vfile.replace(/\.mp4$/, '.vtt');
         var v = el('div', 'fs-video', '<video controls playsinline preload="metadata" poster="' + vfile.replace(/\.mp4$/, '.jpg') + '" src="' + vfile + '">' +
           '<track kind="captions" srclang="en" label="English" src="' + vtt + '"></video>');
-        showVideo(v); addCaptions(v); stepUp(); return;
+        showVideo(v); addCaptions(v); stepUp(); foldVideo(v); return;
       }
       withManifest(function (m) {
         var e = m[key]; if (!e || e.status !== 'ready' || !e.embed) return;
@@ -493,6 +494,46 @@
     }).join('');
     $$('.fs-goclue', list).forEach(function (btn) { btn.addEventListener('click', function (e) { e.stopPropagation(); goToClue(btn.dataset.id); }); });
     if (D.constellation) paintConstellation();
+  }
+  /* Lean (Bethany, 11 Nov 2026): a teacher video starts as a small row (thumbnail, length) and opens in place,
+     so the first activity is not pushed a screen down. D.videoFold === false keeps videos open. */
+  function foldVideo(v) {
+    if (D.videoFold === false || v.querySelector('.fs-vfold')) return;
+    var vid = v.querySelector('video'); if (!vid) return;
+    var d = el('details', 'fs-vfold'), sm = el('summary', 'fs-vfold-s',
+      '<img alt="" src="' + esc(vid.getAttribute('poster') || '') + '"><span class="fs-vfold-x"><b class="fs-vfold-t">' + (v.querySelector('.fs-step-label') ? '\u2460' : '\u25B6') + ' Watch your teacher</b><small class="fs-vfold-m">about 1 minute</small></span><span class="fs-vfold-go">Open \u25BE</span>');
+    d.appendChild(sm);
+    Array.prototype.slice.call(v.children).forEach(function (c) { if (!c.classList.contains('fs-step-label')) d.appendChild(c); });
+    v.appendChild(d); v.classList.add('fs-vfolded');
+    var im = sm.querySelector('img'); im.addEventListener('error', function () { im.style.display = 'none'; });
+    function len() { if (isFinite(vid.duration) && vid.duration > 0) { var t = Math.round(vid.duration); sm.querySelector('.fs-vfold-m').textContent = Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2) + ' \u00B7 captions inside'; } }
+    vid.addEventListener('loadedmetadata', len); len();
+    d.addEventListener('toggle', function () { if (!d.open) { try { vid.pause(); } catch (e) {} } });
+  }
+  /* Step numbers on the tabs (like G5): students follow the tabs in order */
+  function buildTabSteps() {
+    if (D.tabSteps === false) return;
+    var n = 0; $$('.tab-btn').forEach(function (b) { if (b.hidden || b.classList.contains('fs-hide-on') || getComputedStyle(b).display === 'none' || b.querySelector('.fs-tabstep')) return; n++; b.insertBefore(fsOnly(el('span', 'fs-tabstep', 'Step ' + n)), b.firstChild); });
+  }
+  /* Assignment map: one line at the top of the Assignment tab listing its parts; each chip jumps to its part */
+  function buildAssignMap() {
+    if (D.assignMap === false) return;
+    var tab = document.getElementById('tab-assignment'); if (!tab || tab.querySelector('.fs-amap')) return;
+    var body = tab.querySelector('.act-body') || tab;
+    function byText(re) { var els = tab.querySelectorAll('p, h3, h4, div, span'); for (var i = 0; i < els.length; i++) { var e = els[i], t = ''; if (e.closest('.fs-amap') || e.closest('.fs-hide-on')) continue; for (var c = e.firstChild; c; c = c.nextSibling) if (c.nodeType === 3) t += c.nodeValue; if (re.test(t.replace(/\s+/g, ' ').trim())) return e; } return null; }
+    var jobs = [], solve = tab.querySelector('.fs-solve');
+    if (solve) jobs.push(['Crack the case', solve]);
+    var pb = byText(/Part B\b/); if (pb) { var q = [].slice.call(tab.querySelectorAll('.pq-num')).filter(function (x) { return !x.closest('.fs-hide-on'); }).length; jobs.push(['Part B' + (q ? ' \u00B7 ' + q + ' question' + (q === 1 ? '' : 's') : ''), pb]); }
+    var pc = byText(/Part C\b/); if (pc) jobs.push(['Part C', pc]);
+    var ce = byText(/^\W*Use Your Evidence/i); if (ce) jobs.push(['Use your evidence \u00B7 CER', ce]);
+    if (jobs.length < 2) return;
+    var ti = byText(/What to Turn In/i);
+    var box = fsOnly(el('div', 'fs-amap', '<div class="fs-amap-k">\uD83D\uDDFA On this tab \u00B7 ' + jobs.length + ' things to do</div>')), ol = el('ol', 'fs-amap-l');
+    function chip(html, target) { var li = el('li'), b = el('button', 'fs-amap-b', html); b.type = 'button'; b.addEventListener('click', function () { scrollToEl(target); }); li.appendChild(b); ol.appendChild(li); }
+    jobs.forEach(function (j, i) { chip('<span>' + (i + 1) + '</span>' + esc(j[0]), j[1]); });
+    if (ti) chip('\u2705 Then turn it in', ti);
+    box.appendChild(ol);
+    var first = body.querySelector(':scope > .fs-ms'); body.insertBefore(box, first || body.firstChild);
   }
   function scrollToEl(t) {
     var bar = $('#tabBar'), off = bar ? bar.getBoundingClientRect().height + 12 : 12;
@@ -9164,6 +9205,8 @@
     guard('inputs', buildInputs);
     guard('renumber', renumberPartB);
     guard('printcard', buildPrintcard);
+    guard('tabsteps', buildTabSteps);
+    guard('amap', buildAssignMap);
     guard('specimen', buildSpecimen);
     guard('lens', buildWordLens);
     guard('slots', placeSlots);
