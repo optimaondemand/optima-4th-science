@@ -119,7 +119,7 @@ D = {
         'num': 21, 'title': 'The Speed Limit Sign', 'style': 'cork',
         'hook': 'After the fender bender, the pier manager wants a speed limit for golf carts. Gus says speed doesn’t matter, and he says he already tested it. Gus, Rosa and I each sealed a prediction in an envelope. Before anyone opens them, we test.',
         'notice': {'head': 'PALMETTO BEACH PIER · NOTICE', 'title': 'Coming soon: a cart speed limit',
-                   'rows': [['From', 'Ms. Okafor, pier manager'], ['Why', 'Last Tuesday, a golf cart bumped Rosa’s ice cream cart.'], ['The rule', 'If a cart bumps something, the thing it hits must not roll more than 2 feet.'], ['Before I post a sign', 'Test it first. Show me evidence, not guesses.']],
+                   'rows': [['From', 'Ms. Okafor, pier manager'], ['Why', 'Last Tuesday, a golf cart bumped Rosa’s ice cream cart.'], ['The rule', 'If a cart bumps something, the thing it hits must not roll more than 2 feet.']],
                    'line': 'Three sealed predictions are pinned below.'},
         'memo': {'t': 'I already tested it! I rolled a BIG marble down the low ramp, and a SMALL marble down the high ramp. Both pushed the block about the same. One try each. So speed doesn’t matter. Any speed limit is fine!', 'sign': '— Gus, pier security'},
         'envelopes': [
@@ -169,7 +169,7 @@ D = {
                  {'t': 'It doesn’t matter. I could place them after.', 'miss': 'If you place them after you watch, is that still a prediction?'}],
         'win': 'Ghosts first, then the test. That’s how you check a prediction. Clue 1!'},
     'iknewit': {
-        'afterText': 'shows you something you didn’t know yet', 'kicker': 'Part 1 game', 'title': 'The “I knew it!” trap',
+        'afterText': 'often teaches you the most', 'kicker': 'Part 1 game', 'title': 'The “I knew it!” trap',
         'todo': ['Sam tested a small marble rolling into a big one at 8:15 PM. Read each pier kid’s sticky note and its time.', 'Drag each note to BEFORE or AFTER the test (or tap a note, then a side).', 'Then the result comes in. Stamp the wrong prediction.'],
         'why': {'icon': '📝', 'q': 'What’s a sticky note doing here?', 't': 'Pier kids watched Sam’s test and wrote notes. The time on each note shows when they wrote it.'},
         'test': {'icon': '💥', 't': 'Sam’s marble test', 'time': '8:15 PM'},

@@ -301,5 +301,30 @@
   "old": "e: Investigation — Predicting Collisions</div>\n  <div class=\"footer-line3\">&copy",
   "new": "e: Investigation — Predicting Collisions &middot; CPALMS SC.4.N.1.1, SC.4.N.1.2, SC.4.P.10.2, SC.4.P.12.2</div>\n  <div class=\"footer-line3\">&copy",
   "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll plan a real collision investigation.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "ALL THREE are useful! A “wrong” prediction does not mean the test failed. It often teaches you the most, because it shows you something you didn’t know yet.",
+  "new": "All three are useful. A “wrong” prediction often teaches you the most."
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "Scientists use three steps over and over. Engineers use them to test bridges, doctors use them to test medicines, and you can use them to test marble crashes:",
+  "new": "Scientists use three steps over and over:"
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": " Some real studies run THOUSANDS of trials.</p>",
+  "new": "</p>"
  }
 ]

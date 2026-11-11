@@ -250,5 +250,41 @@
   "why": "header detail matches what the lesson now teaches",
   "old": "class=\"info-detail\">NGSS 4-ESS3-1 · Decomposers &amp; Cycling of Matter</div>",
   "new": "class=\"info-detail\">NGSS 4-ESS3-1</div>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "<p>Keep this question in mind as you work. By the end, you’ll use real Florida numbers to decide whether an ecosystem is in balance, and back up your answer with evidence.</p>",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "A hurricane knocks down trees. A cold winter kills some plants. A bird species moves in. Healthy",
+  "new": "A hurricane knocks down trees. Healthy"
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "        <li><strong>Counting species:</strong> How many <em>different</em> kinds of fish live in this lake? More variety usually means more balance.</li>\n",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "        <li><strong>Testing the water and soil:</strong> Is the water clear? Is the soil rich in <span class=\"vtip\">nutrients<span class=\"vtip-box\"><span class=\"vtip-word\">Nutrients</span>The materials plants need to grow.</span></span>?</li>\n",
+  "new": ""
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "But ecosystems often change slowly, a little each year, and the data is the only way to spot it. By the time you can <em>see</em> a problem, it can be hard to fix.",
+  "new": "But ecosystems often change slowly, and data is the only way to spot it."
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": " One flight can fool you. Thirty years of flights can’t.</p>",
+  "new": "</p>"
  }
 ]

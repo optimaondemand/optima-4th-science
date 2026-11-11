@@ -3166,8 +3166,10 @@
         '<div class="fs-hunt-l"><div class="fs-hunt-cam">📷<i></i></div></div>' +
         '<div class="fs-hunt-r"><div class="fs-game-k">Bonus · Photo Hunt <span class="fs-hunt-opt">optional</span></div>' +
         '<div class="fs-hunt-t">' + esc(CAM.huntTitle || 'Your field camera is ready. Can you complete all ' + MS.length + ' photo missions?') + '</div>' +
-        '<ol class="fs-hunt-list"></ol>' +
-        '<div class="fs-hunt-ctl"><button type="button" class="fs-btn fs-hunt-try">📷 Try the camera</button><span class="fs-hunt-how">' + esc(CAM.huntHow || 'Tap 📷 Snap at the bottom right, then drag a box around what you want. Your photos print in your field journal.') + '</span></div></div>'));
+        // lean (11 Nov 2026): the missions and how-to stay folded until a student opens them
+        '<details class="fs-hunt-more"><summary>See the ' + MS.length + ' photo missions</summary><ol class="fs-hunt-list"></ol>' +
+        '<p class="fs-hunt-how">' + esc(CAM.huntHow || 'Tap 📷 Snap at the bottom right, then drag a box around what you want. Your photos print in your field journal.') + '</p></details>' +
+        '<div class="fs-hunt-ctl"><button type="button" class="fs-btn fs-hunt-try">📷 Try the camera</button></div></div>'));
       var after = $('.fs-casecard'); var wtab = $('#tab-welcome .act-body') || $('#tab-welcome');
       if (after && after.parentNode) after.parentNode.insertBefore(hunt, after.nextSibling); else if (wtab) wtab.insertBefore(hunt, wtab.firstChild);
       $('.fs-hunt-try', hunt).addEventListener('click', startSnap);
@@ -3861,6 +3863,7 @@
       });
       anchorGame.parentNode.insertBefore(g, anchorGame.nextSibling);
       upd();
+      if (P.fold) foldGame(g, P.fold === true ? { icon: '📸' } : P.fold);   // an optional extra: closed until opened (lean)
     });
   }
 
@@ -7640,16 +7643,20 @@
   /* ---------- Fold extras (18.02): an optional piece starts closed as a calm, inviting card. D.fold = {mod: {icon, tease, open}} ---------- */
   function foldExtras() {
     var Fo = D.fold; if (!Fo) return;
-    Object.keys(Fo).forEach(function (k) {
-      var g = $('.fs-game[data-mod="' + k + '"]'); if (!g || g.querySelector('.fs-fold')) return;
-      var f = Fo[k], kick = $('.fs-game-k', g), title = $('.fs-game-t', g);
+    Object.keys(Fo).forEach(function (k) { foldGame($('.fs-game[data-mod="' + k + '"]'), Fo[k]); });
+  }
+  /* fold one game card behind its kicker + title (used by D.fold and by photos[].fold) */
+  function foldGame(g, f) {
+    {
+      if (!g || g.querySelector('.fs-fold')) return;
+      var kick = $('.fs-game-k', g), title = $('.fs-game-t', g);
       var d = el('details', 'fs-fold'), sm = el('summary', 'fs-fold-s', '<span class="fs-fold-ic">' + (f.icon || '✨') + '</span><span class="fs-fold-tx"><small>' + esc(kick ? kick.textContent : '') + '</small><b>' + esc(title ? title.textContent : '') + '</b><em>' + esc(f.tease || '') + '</em></span><span class="fs-fold-go">' + esc(f.open || 'Open') + ' ▸</span>');
       d.appendChild(sm); var body = el('div', 'fs-fold-b'); d.appendChild(body);
       Array.prototype.slice.call(g.childNodes).forEach(function (n) { if (n !== kick && n !== title) body.appendChild(n); });
       if (kick) kick.remove(); if (title) title.remove();
       g.appendChild(d); g.classList.add('fs-folded');
       d.addEventListener('toggle', function () { if (d.open) SFX.blip(); });
-    });
+    }
   }
 
   /* ---------- Night sky page (18.02): the lesson sits under a slow, twinkling sky; a shooting star crosses on every clue. D.nightsky = {stars, shoot:true} ---------- */

@@ -339,10 +339,8 @@
         "pick": 2,
         "options": [
           "A sense organ picks up information first.",
-          "A signal carries the information to the brain.",
           "The brain decides what the information means.",
           "The brain tells the body what to do.",
-          "No signal, no response.",
           "Skip a step, and the animal can’t react."
         ]
       }
@@ -622,6 +620,11 @@
       "id": "manatee",
       "after": "cams",
       "kicker": "Look closer · a real Florida manatee",
+      "fold": {
+        "icon": "📸",
+        "tease": "Optional · about 2 minutes",
+        "open": "Open"
+      },
       "short": "manatee photo",
       "title": "What does a manatee use to feel the water?",
       "todo": [

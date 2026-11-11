@@ -51,10 +51,6 @@
     [
      "The rule",
      "If a cart bumps something, the thing it hits must not roll more than 2 feet."
-    ],
-    [
-     "Before I post a sign",
-     "Test it first. Show me evidence, not guesses."
     ]
    ],
    "line": "Three sealed predictions are pinned below."
@@ -239,7 +235,7 @@
   "win": "Ghosts first, then the test. That’s how you check a prediction. Clue 1!"
  },
  "iknewit": {
-  "afterText": "shows you something you didn’t know yet",
+  "afterText": "often teaches you the most",
   "kicker": "Part 1 game",
   "title": "The “I knew it!” trap",
   "todo": [

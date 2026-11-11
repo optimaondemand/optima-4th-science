@@ -69,7 +69,7 @@ D = {
         'clue': 'judge',
     },
     'survey': {
-        'afterText': 'the data is the only way to spot it',
+        'afterText': 'data is the only way to spot it',
         'kicker': 'Part 2 game · Fly the survey', 'title': 'Fly the survey',
         'todo': ['Pick the weather and the wind.', 'Press Fly the survey and watch the count.', 'Fly at least 3 times with different weather. Then answer the question.'],
         'why': {'icon': '✈️', 'q': 'Why fly?', 't': 'Manatees spread out across rivers and bays, so scientists count them from small planes flying low over the water. When water gets cold, manatees crowd into warm springs to stay warm.'},

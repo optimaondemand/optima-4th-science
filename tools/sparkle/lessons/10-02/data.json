@@ -196,7 +196,7 @@
   "clue": "judge"
  },
  "survey": {
-  "afterText": "the data is the only way to spot it",
+  "afterText": "data is the only way to spot it",
   "kicker": "Part 2 game · Fly the survey",
   "title": "Fly the survey",
   "todo": [
@@ -946,8 +946,7 @@
      "Where pythons live, raccoons and opossums dropped about 99%.",
      "One lionfish ate 20 small fish in 30 minutes.",
      "Invasive species have no natural enemies here, so their numbers can explode.",
-     "When a native species disappears, the ecosystem can tip out of balance.",
-     "Scientists use numbers measured over many years, not feelings."
+     "When a native species disappears, the ecosystem can tip out of balance."
     ]
    }
   ],

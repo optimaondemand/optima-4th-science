@@ -770,6 +770,7 @@ html.fs-hlmode .fs-toasts { bottom:76px; }
 .fs-hunt-list li { display:flex; gap:8px; align-items:flex-start; font-weight:800; font-size:15px; color:#4A3F30; line-height:1.35; }
 .fs-hunt-list li.on { color:#1a6b35; text-decoration: line-through; text-decoration-color: rgba(26,107,53,.4); }
 .fs-hunt-ctl { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.fs-hunt-more { margin:0 0 10px; } .fs-hunt-more > summary { cursor:pointer; font-weight:800; font-size:15px; color:#0E1C42; padding:6px 0; } .fs-hunt-more[open] > summary { margin-bottom:8px; } .fs-hunt-more .fs-hunt-how { margin:0; }
 .fs-hunt-how { font-size:14px; color:#6B5A40; font-weight:700; flex:1; min-width:200px; }
 @media (max-width:640px){ .fs-hunt { flex-direction:column; gap:10px; } .fs-hunt-list { grid-template-columns:1fr; } .fs-hunt-cam { width:52px; height:52px; font-size:28px; } }
 .fs-fab.fs-fab-hint .fs-fab-snap { animation: fsFabGlow 1.8s ease-in-out infinite; }

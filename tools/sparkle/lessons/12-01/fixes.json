@@ -385,5 +385,23 @@
   "old": "e: Sensing the World</div>\n  <div class=",
   "new": "e: Sensing the World &middot; CPALMS SC.4.L.16.3</div>\n  <div class=",
   "why": "absorbed: page edited outside the kit"
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "Every animal, including you, uses four steps to turn what it notices into an action. Scientists call these steps a <b>pathway</b>, like a path a message travels along. Today you’ll learn the steps and find them in Florida animals.",
+  "new": "Every animal, including you, uses four steps to react. Scientists call the steps a <b>pathway</b>, like a path a message travels along."
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": "<strong>Read it left to right.</strong> A splash (<em>stimulus</em>) reaches the alligator's ear (<em>sense organ</em>), travels as a signal to the <em>brain</em>, and the alligator turns toward the splash (<em>response</em>). All of it takes less than a second.",
+  "new": "<strong>Read it left to right:</strong> from the splash to the alligator’s turn."
+ },
+ {
+  "kind": "cut",
+  "why": "lean trim approved by Bethany, 11 Nov 2026 (reading only)",
+  "old": ", and draw arrows to show the order. Use colors.</p>",
+  "new": ".</p>"
  }
 ]
