@@ -64,16 +64,56 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     [58.2, `{const e=__box(__find('#tab-assignment div, #tab-assignment h3, #tab-assignment span','^What to Turn In'),160,520); __go(e,170); __ring(e); setTimeout(()=>__at(e,.3,.5),700)}`],
     [60.6, `{const e=document.querySelector('.tab-btn[data-tab="vocab"]'); __ring(null); e.click(); window.scrollTo({top:0,behavior:'smooth'}); setTimeout(()=>{const c=document.querySelector('.fs-casecard'); __go(c,200); __ring(c); __at(c,.35,.3)},900)}`],
   ];
-  const steps = GRADE === 'g4' ? G4 : G4;
+
+  // Grade 3 Wonder Films tour (recorded on lesson 17.02). Function steps get the Playwright page.
+  const real = async (sel) => { const e = await p.$(sel); if (e) await e.click({ force: true }).catch(() => {}); };
+  const G3 = [
+    [0.0, `window.scrollTo(0,0); __ring(null); __cur(640,300)`],
+    [4.4, `{const e=__find('.wf-cover .wf-btn'); __go(e,380); __ring(e); setTimeout(()=>__at(e),600)}`],
+    [5.7, async () => { await real('.wf-cover .wf-btn'); }],
+    [6.5, async () => { await real('.wf-ctrl button:nth-child(4)'); await run(`__ring(null)`); }],
+    [7.2, `{const e=__find('#wf-film button','Start the lesson'); if(e){__ring(e); __at(e)}}`],
+    [9.0, `{const e=__find('#wf-film button','Start the lesson'); __ring(null); if(e) e.click()}`],
+    [9.9, `{const e=document.querySelector('#spec-open'); __go(e,430); setTimeout(()=>{__ring(e); __at(e,.8,1.2)},700)}`],
+    [12.7, `{const e=document.querySelector('.wl-tab[data-tab="lesson"]'); __ring(null); window.scrollTo({top:0}); __at(e); setTimeout(()=>e.click(),350)}`],
+    [13.6, `{const e=document.querySelector('#tab-lesson .wl-read .wl-glos, #tab-lesson .wl-glos'); __go(e,300); setTimeout(()=>{__ring(e); __at(e,.5,.8)},600)}`],
+    [16.7, async () => { const e = await p.$('#tab-lesson .wl-read .wl-glos, #tab-lesson .wl-glos'); if (e) { await e.hover({ force: true }).catch(() => {}); } }],
+    [18.5, async () => { await p.mouse.move(5, 400); }],
+    [18.7, `{const e=[...document.querySelectorAll('#tab-lesson button')].find(b=>/🔊/.test(b.textContent)&&b.getClientRects().length); if(e){__go(e,260); setTimeout(()=>{__ring(e); __at(e)},600)}}`],
+    [21.7, `{const e=document.querySelector('.wl-tabs'); window.scrollTo({top:Math.max(0,e.getBoundingClientRect().top+scrollY-10),behavior:'smooth'}); __ring(e)}`],
+    [23.6, `{const e=document.querySelector('.wl-tab[data-tab="warm"]'); __ring(e); __at(e)}`],
+    [24.8, `{const e=document.querySelector('.wl-tab[data-tab="lesson"]'); __ring(e); __at(e)}`],
+    [26.0, `{const e=document.querySelector('.wl-tab[data-tab="check"]'); __ring(e); __at(e)}`],
+    [27.1, `{const e=document.querySelector('.wl-tab[data-tab="assign"]'); __ring(e); __at(e)}`],
+    [28.1, `{const e=document.querySelector('#bite-step'); __go(document.querySelector('#m-bite'),70); __ring(null); setTimeout(()=>{__go(e,420); __ring(e); __at(e,.3,.5)},500)}`],
+    [29.8, async () => { const t = await p.evaluate(() => WL_DATA.compare.ask[0].ans); await run(`__at(document.querySelector('.wl-tray-spec[data-t="${t}"] .wl-lit'))`); await sleep(500); await real(`.wl-tray-spec[data-t="${t}"] .wl-lit`); }],
+    [31.2, `{const e=document.querySelector('#bite-step .wl-nextstep'); if(e){__ring(document.querySelector('#bite-step')); __at(e)}}`],
+    [33.4, `{const e=document.querySelector('#bite-step .wl-nextstep'); if(e){__ring(e); __at(e)}}`],
+    [35.0, async () => { await real('#bite-step .wl-nextstep'); await run(`__ring(null)`); }],
+    [35.9, `{const e=document.querySelector('.wl-tab[data-tab="assign"]'); window.scrollTo({top:0}); __at(e); setTimeout(()=>e.click(),300)}`],
+    [36.7, `{const e=document.querySelector('.wl-amap'); __go(e,200); __ring(e); setTimeout(()=>__at(e,.3,.7),500)}`],
+    [37.5, `{const e=document.querySelector('#in-a2'); __go(e,330); __ring(e); __at(e,.2,.5)}`],
+    [37.9, `TYPE:#in-a2:It is an inference`],
+    [38.8, `{const e=document.querySelector('#partc'); __go(e,70); __ring(e); setTimeout(()=>__at(document.querySelector('#sketch'),.2,.6),600)}`],
+    [40.0, async () => { const bb = await (await p.$('#sketch')).boundingBox(); const pts = [[.18,.62],[.3,.45],[.45,.4],[.6,.42],[.72,.55]]; await p.mouse.move(bb.x + bb.width * pts[0][0], bb.y + bb.height * pts[0][1]); await p.mouse.down();
+        for (const q of pts) { await run(`__cur(${bb.x + bb.width * q[0]},${bb.y + bb.height * q[1]})`); await p.mouse.move(bb.x + bb.width * q[0], bb.y + bb.height * q[1], { steps: 8 }); await sleep(260); } await p.mouse.up(); }],
+    [42.4, `{const e=document.querySelector('#sk-save'); __ring(e); __at(e)}`],
+    [44.1, `{const e=document.querySelector('.wl-gather'); __go(e,90); __ring(e); setTimeout(()=>__at(document.querySelector('#g-copy')),700)}`],
+    [47.9, `{const e=document.querySelector('#checklist'); __go(e,200); __ring(e); setTimeout(()=>__at(e,.3,.4),600)}`],
+    [49.4, `{const e=document.querySelector('#m-premiere'); __go(e,80); __ring(e); setTimeout(()=>__at(e,.5,.3),600)}`],
+    [51.1, `{__ring(null); document.querySelector('.wl-tab[data-tab="warm"]').click(); window.scrollTo({top:0,behavior:'smooth'}); setTimeout(()=>{const f=document.querySelector('#wf-film'); __go(f,150); __at(f,.5,.5)},700)}`],
+  ];
+  const steps = GRADE === 'g3' ? G3 : G4; const END = GRADE === 'g3' ? 54900 : 64200;
   await run(steps[0][1]);
   await sleep(600);
   const t0 = Date.now();
   for (const [t, js] of steps) {
     const wait = t0 + t * 1000 - Date.now(); if (wait > 0) await sleep(wait);
-    if (js.startsWith('TYPE:')) { const [, sel, text] = js.match(/^TYPE:(.*?):(.*)$/); const el = await p.$(sel); if (el) { await el.focus(); await p.keyboard.type(text, { delay: 55 }); } }
+    if (typeof js === 'string' && js.startsWith('TYPE:')) { const [, sel, text] = js.match(/^TYPE:(.*?):(.*)$/); const el = await p.$(sel); if (el) { await el.focus(); await p.keyboard.type(text, { delay: 55 }); } }
+    else if (typeof js === 'function') await js().catch(e => console.log('step error', t, e.message.split('\n')[0]));
     else await run(js);
   }
-  await sleep(t0 + 64200 - Date.now());
+  await sleep(t0 + END - Date.now());
   const video = p.video();
   await ctx.close();
   const path = await video.path();
