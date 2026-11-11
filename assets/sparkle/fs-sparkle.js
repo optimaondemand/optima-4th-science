@@ -536,6 +536,7 @@
     var first = body.querySelector(':scope > .fs-ms'); body.insertBefore(box, first || body.firstChild);
   }
   function scrollToEl(t) {
+    if (window.OneStep) window.OneStep.reveal(t);   /* one step at a time: open the step that holds it first */
     var bar = $('#tabBar'), off = bar ? bar.getBoundingClientRect().height + 12 : 12;
     window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - off, behavior: reduceMotion ? 'auto' : 'smooth' });
   }
@@ -9223,6 +9224,15 @@
     guard('tool', buildTool);
     guard('ornaments', buildOrnaments);
     guard('mock', buildMock);
+    guard('onestep', loadOneStep);
+  }
+  /* one step at a time (the ELA step walker, for science): assets/sparkle/onestep.js. On when the lesson data says  "onestep": true
+     (or ?steps=1 in the address, to preview any lesson); ?steps=0 turns it off. */
+  function loadOneStep() {
+    var q = location.search; if (/[?&]steps=0\b/.test(q) || !(D.onestep || /[?&]steps=1\b/.test(q))) return;
+    var me = document.querySelector('script[src*="fs-sparkle.js"]'), base = me ? me.getAttribute('src').replace(/fs-sparkle\.js.*$/, '') : 'assets/sparkle/', v = '?v=20261111a';
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = base + 'onestep.css' + v; document.head.appendChild(l);
+    var s = document.createElement('script'); s.src = base + 'onestep.js' + v; document.body.appendChild(s);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

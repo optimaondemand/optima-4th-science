@@ -20,7 +20,7 @@ class QuietServer(socketserver.ThreadingTCPServer):
 H = functools.partial(Quiet, directory='.')
 srv = QuietServer(('127.0.0.1', 0), H); port = srv.server_address[1]
 threading.Thread(target=srv.serve_forever, daemon=True).start()
-URL = f'http://127.0.0.1:{port}/{page_file}'
+URL = f'http://127.0.0.1:{port}/{page_file}?steps=0'   # the whole page at once (word counts, boxes); the step walker is tested by stepwalk.js
 TABS = ['vocab', 'lesson', 'explore', 'quiz', 'assignment']
 # words a 4th grader may not know: each hit must be defined where students first meet it
 JARGON = r'\b(module|scenario|stimul\w*|process(es|ed)?|trigger\w*|organism\w*|specific|vibration|misconception|predator\w*|prey|adapt\w*|function|structure|internal|external|interdepend\w*|migrat\w*|hibernat\w*|metamorphosis|germinat\w*|fertiliz\w*|pollinat\w*|photosynthesis|nonrenewable|renewable|fossil fuel|distribution|availability|invasive|native species|conservation|population|ecosystem|habitat|nutrients?|decompos\w*|consumer|producer|evidence|claim|reasoning|model|annotate|camouflage|trait|inherited|offspring|variation|energy|transfer|collision|friction|gravity|matter|property|properties|magnet\w*|conduct\w*|insulat\w*|circuit|wave|amplitude|wavelength)\b'
