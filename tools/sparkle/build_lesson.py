@@ -77,6 +77,8 @@ data = json.dumps(D, ensure_ascii=False, separators=(',', ':')).replace('</', '<
 head = ('<!-- Field Station sparkle layer (G4 Science). Lesson content lives in fs-data; the layer is shared. -->\n'
         '<script type="application/json" id="fs-data">' + data + '</script>\n'
         '<link rel="stylesheet" href="assets/sparkle/fs-sparkle.css?v=' + VER + '">\n')
+if os.path.exists('assets/tab-quiet.js'):  # stops sound when the tab changes (shared G3-5)
+    head += '<script src="assets/tab-quiet.js?v=' + hashlib.sha1(open('assets/tab-quiet.js', 'rb').read()).hexdigest()[:8] + '"></script>\n'
 if s.count('</head>') != 1 or s.count('</body>') != 1: die('lesson needs exactly one </head> and one </body>')
 def inject(t):
     t = t.replace('</head>', head + '</head>', 1)
