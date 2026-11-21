@@ -6662,5 +6662,61 @@
 "script_source": "lesson-23-02-moving-air-and-water.html",
 "bytes": 229492,
 "md5": "6dc2fab16548cf50b897d3ba5b100b47"
+},
+{
+"repo": "sci",
+"grade": "sci",
+"subject": "",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-24-1-evidence.mp3",
+"text": "A classmate says cold flows out of ice into your hand. True? Think about the heat dots, and the ice on the metal block. Pick your side, tap two facts, then explain. That’s your C-E-R.",
+"key": "a classmate says cold flows out of ice into your hand. true? think about the heat dots, and the ice on the metal block. pick your side, tap two facts, then explain. that's your c-e-r",
+"chars": 183,
+"kind": "speech",
+"script_source": "lesson-24-01-energy-moves-between-objects.html",
+"bytes": 226984,
+"md5": "f8362cc1d8f2e9a3514a55d4221c0da9"
+},
+{
+"repo": "sci",
+"grade": "sci",
+"subject": "",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-24-1-explore.mp3",
+"text": "Cup Race time! First, tap the cup you think stays warmest. Press Start, and watch the lines on the graph. Then rank the cups, warmest to coolest.",
+"key": "cup race time! first, tap the cup you think stays warmest. press start, and watch the lines on the graph. then rank the cups, warmest to coolest",
+"chars": 145,
+"kind": "speech",
+"script_source": "lesson-24-01-energy-moves-between-objects.html",
+"bytes": 187278,
+"md5": "732f6c12002745e978b3c63be44cab0d"
+},
+{
+"repo": "sci",
+"grade": "sci",
+"subject": "",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-24-1-part1.mp3",
+"text": "Does cold really flow? Let’s test it. Drag a heat dot from the warm hand to the ice cube. Now try Send cold. Keep going until both are the same temperature.",
+"key": "does cold really flow? let's test it. drag a heat dot from the warm hand to the ice cube. now try send cold. keep going until both are the same temperature",
+"chars": 156,
+"kind": "speech",
+"script_source": "lesson-24-01-energy-moves-between-objects.html",
+"bytes": 191040,
+"md5": "3858c740363dc738130dfd92d3502bad"
+},
+{
+"repo": "sci",
+"grade": "sci",
+"subject": "",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-24-1-warmup.mp3",
+"text": "Sam here, at Rosa’s cocoa cart. Read the menu and the order slips first. Then, the spoon test! Guess which handle gets warm, press Wait, then touch every spot.",
+"key": "sam here, at rosa's cocoa cart. read the menu and the order slips first. then, the spoon test! guess which handle gets warm, press wait, then touch every spot",
+"chars": 159,
+"kind": "speech",
+"script_source": "lesson-24-01-energy-moves-between-objects.html",
+"bytes": 198563,
+"md5": "2daeb4a07d8414658110bc0570cf1fe4"
 }
 ]
