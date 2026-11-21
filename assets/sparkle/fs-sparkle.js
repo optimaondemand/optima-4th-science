@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -10242,6 +10242,461 @@
     paintSet(); paintTable(); placeAfter(g, at); requestAnimationFrame(frame);
   }
 
+
+  /* =================== 24.01: The Cold Cocoa Cart (menu, handlemap, heatdots, rodrace, cuprace, iceblocks, mugdesign, snowcoat, SIMS.irtherm) =================== */
+  /* ---------- case: a chalkboard menu + customer order slips (24.01). case.menu = {name, sub, items:[{t, p}], note, slipsHead, slips:[{n, t, who, time}]} ---------- */
+  function menuBoard(M) {
+    return '<div class="fs-menu"><div class="fs-menu-board"><div class="fs-menu-name">' + esc(M.name) + '</div>' + (M.sub ? '<div class="fs-menu-sub">' + esc(M.sub) + '</div>' : '') +
+      '<ul class="fs-menu-items">' + M.items.map(function (i) { return '<li><span>' + esc(i.t) + '</span><i></i><b>' + esc(i.p || '') + '</b></li>'; }).join('') + '</ul>' +
+      (M.note ? '<div class="fs-menu-note">' + esc(M.note) + '</div>' : '') + '</div>' +
+      (M.slips ? '<div class="fs-slip-h">' + esc(M.slipsHead || 'Order slips') + '</div><div class="fs-slip-row">' + M.slips.map(function (s, i) {
+        return '<div class="fs-slip" style="--r:' + ((i % 2 ? 1 : -1) * (1 + i * 0.6)).toFixed(1) + 'deg"><div class="fs-slip-top"><b>#' + esc(String(s.n)) + '</b><small>' + esc(s.time || '') + '</small></div><p>' + esc(s.t) + '</p><em>' + esc(s.who || '') + '</em></div>'; }).join('') + '</div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Feel along the handle" — three spoons stand in a mug of hot cocoa; pick which handle will get warm, wait one
+     (model) minute, then touch spots up each handle (tap a spot, or drag the 👆 fingertip onto it) and a heat map builds (24.01) ----------
+     D.handlemap = {afterText, kicker, title, todo[], why, model, predictQ, waitBtn, waitLine, finger, spoons:[{id, t, c, spots:[{feel, f, icon}]}],
+                    spotWord, feelHint, q, opts, win, clue} */
+  function buildHandlemap() {
+    var H = D.handlemap; if (!H) return;
+    var at = anchorP(H.afterText); if (!at) { FAILED.push('handlemap anchor text not found'); return; }
+    var g = gameShell(H.kicker || 'Warm-Up game', H.title, H.todo, H.why); g.dataset.mod = 'handlemap';
+    var st = loadJ('handlemap', { pick: null, waited: 0, t: {} }), S = H.spoons, nSp = S[0].spots.length;
+    var pq = el('div', 'fs-hm-pq'), stage = el('div', 'fs-hm-stage'), ctl = el('div', 'fs-hm-ctl'), info = el('div', 'fs-hm-info'), map = el('div', 'fs-hm-map');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    pq.innerHTML = '<div class="fs-in-k">' + esc(H.predictQ) + '</div><div class="fs-in-chips">' + S.map(function (s) { return '<button type="button" class="fs-in-chip fs-hm-p" data-id="' + s.id + '">' + esc(s.t) + '</button>'; }).join('') + '</div>';
+    /* the drawing: a mug, three spoons standing up out of it; spots go from just above the cocoa (1) to the tip (4) */
+    var xs = [130, 240, 350], top = 52, bot = 200;
+    function spotY(k) { return bot - 12 - k * ((bot - 12 - top) / (nSp - 1)); }
+    var svg = '<svg viewBox="60 0 400 345" class="fs-hm-svg" role="img" aria-label="A model: a mug of hot cocoa with three spoons standing in it, a metal one, a wooden one and a plastic one.">' +
+      '<defs><linearGradient id="hmMetal" x1="0" x2="1"><stop offset="0" stop-color="#9BA6B1"/><stop offset=".5" stop-color="#E9EEF2"/><stop offset="1" stop-color="#8C97A2"/></linearGradient>' +
+      '<linearGradient id="hmHeat" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F04E23"/><stop offset=".6" stop-color="#F5A623" stop-opacity=".8"/><stop offset="1" stop-color="#F5A623" stop-opacity="0"/></linearGradient></defs>' +
+      '<g class="fs-hm-steam"><path d="M186 190 q-8 -16 0 -32 t0 -32"/><path d="M296 188 q-8 -16 0 -32 t0 -32"/></g>' +
+      S.map(function (s, i) {
+        var x = xs[i]; return '<g class="fs-hm-sp" data-id="' + s.id + '"><rect x="' + (x - 7) + '" y="' + top + '" width="14" height="' + (bot + 60 - top) + '" rx="7" fill="' + (s.c === 'metal' ? 'url(#hmMetal)' : s.c) + '" stroke="#4A4A4A" stroke-width="1.5"/>' +
+          '<rect class="fs-hm-glow" x="' + (x - 7) + '" y="' + top + '" width="14" height="' + (bot + 60 - top) + '" rx="7" fill="url(#hmHeat)" style="opacity:0;transform-origin:' + x + 'px ' + (bot + 60) + 'px"/>' +
+          '<text x="' + x + '" y="' + (top - 22) + '" text-anchor="middle" class="fs-hm-lab">' + esc(s.t) + '</text></g>'; }).join('') +
+      '<path d="M90 200 h300 v90 q0 26 -26 26 h-248 q-26 0 -26 -26z" fill="#F4E9DA" stroke="#6B4E2E" stroke-width="3"/><path d="M390 220 q46 0 46 36 t-46 36" fill="none" stroke="#6B4E2E" stroke-width="10"/>' +
+      '<rect x="94" y="206" width="292" height="16" fill="#6B3F22"/><text x="240" y="275" text-anchor="middle" class="fs-hm-mug">HOT COCOA</text>' +
+      S.map(function (s, i) { var x = xs[i]; return s.spots.map(function (p, k) { return '<g class="fs-hm-spot" data-s="' + i + '" data-k="' + k + '" tabindex="0" role="button" aria-label="' + esc(s.t + ', spot ' + (k + 1)) + '"><circle class="fs-hm-hit" cx="' + x + '" cy="' + spotY(k).toFixed(1) + '" r="24"/><circle cx="' + x + '" cy="' + spotY(k).toFixed(1) + '" r="16"/><text x="' + x + '" y="' + (spotY(k) + 5).toFixed(1) + '" text-anchor="middle">' + (k + 1) + '</text></g>'; }).join(''); }).join('') +
+      '<text x="455" y="340" text-anchor="end" class="fs-vlv-lab">' + esc(H.model || 'a model') + '</text></svg>';
+    stage.innerHTML = svg;
+    ctl.innerHTML = '<button type="button" class="fs-btn fs-hm-wait">' + esc(H.waitBtn || '⏱ Wait 1 minute') + '</button><span class="fs-hm-clock"></span>' +
+      '<span class="fs-hm-finger" title="Drag me onto a spot">' + esc(H.finger || '👆 Drag me onto a spot, or tap a spot') + '</span>';
+    g.appendChild(pq); g.appendChild(stage); g.appendChild(ctl); g.appendChild(info); g.appendChild(map); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var waitB = $('.fs-hm-wait', ctl), clock = $('.fs-hm-clock', ctl), finger = $('.fs-hm-finger', ctl), spots = $$('.fs-hm-spot', stage);
+    function glow(on, anim) {
+      S.forEach(function (s) {
+        var r = $('.fs-hm-sp[data-id="' + s.id + '"] .fs-hm-glow', stage), reach = s.spots.filter(function (p) { return p.f >= 90; }).length / nSp;
+        r.style.transition = (anim && !reduceMotion) ? 'transform 3s ease-out, opacity .6s' : 'none';
+        r.style.opacity = on ? '1' : '0'; r.style.transform = 'scaleY(' + (on ? (0.22 + reach * 0.78) : 0.2) + ')';
+      });
+    }
+    function paintPick() { $$('.fs-hm-p', pq).forEach(function (c) { c.classList.toggle('on', c.dataset.id === st.pick); }); }
+    function paintMap() {
+      var total = S.length * nSp, n = Object.keys(st.t).length;
+      spots.forEach(function (sp) { var key = sp.dataset.s + '-' + sp.dataset.k, p = S[+sp.dataset.s].spots[+sp.dataset.k]; sp.classList.toggle('got', !!st.t[key]); sp.setAttribute('data-feel', st.t[key] ? p.feel : ''); });
+      map.innerHTML = n ? '<div class="fs-in-k">' + esc(H.mapLabel || 'My heat map (spot 1 is near the cocoa, spot 4 is the tip)') + '</div><table><tr><th></th>' + S[0].spots.map(function (p, k) { return '<th>' + (k + 1) + '</th>'; }).join('') + '</tr>' +
+        S.map(function (s, i) { return '<tr><th>' + esc(s.t) + '</th>' + s.spots.map(function (p, k) { var got = st.t[i + '-' + k]; return '<td class="' + (got ? 'f-' + p.feel : '') + '">' + (got ? p.icon + ' ' + p.f + '°F' : '?') + '</td>'; }).join('') + '</tr>'; }).join('') + '</table>' : '';
+      count.textContent = '👆 ' + n + ' of ' + total + ' ' + (H.spotWord || 'spots touched'); count.classList.toggle('ok', n === total);
+      if (n === total) askOnce(qh, H.q, H.opts, 'handlemap-q', win, H.win, H.clue, 'handlemap', miss);
+    }
+    function touch(i, k) {
+      if (!st.pick) { bounce(finger, miss, H.needPick || 'First, guess which handle will get warm.'); return; }
+      if (!st.waited) { bounce(waitB, miss, H.needWait || 'Press “Wait 1 minute” first, so the heat has time to move.'); return; }
+      var s = S[i], p = s.spots[k]; st.t[i + '-' + k] = 1; saveJ('handlemap', st); miss.classList.remove('show');
+      tone(p.f >= 110 ? 900 : p.f >= 90 ? 700 : 480, 0, 0.12, 'sine', 0.05);
+      info.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + p.icon + '</span><div><b>' + esc(s.t + ', spot ' + (k + 1) + ': ' + p.word + ' (' + p.f + '°F)') + '</b>' + esc(p.note || '') + '</div></div>';
+      var sp = spots.filter(function (x) { return x.dataset.s === String(i) && x.dataset.k === String(k); })[0]; if (sp && !reduceMotion) { sp.classList.remove('pop'); void sp.getBoundingClientRect(); sp.classList.add('pop'); }
+      paintMap();
+    }
+    $$('.fs-hm-p', pq).forEach(function (c) { c.addEventListener('click', function () { if (st.waited) return; st.pick = c.dataset.id; saveJ('handlemap', st); SFX.blip(); miss.classList.remove('show'); paintPick(); }); });
+    waitB.addEventListener('click', function () {
+      if (!st.pick) { bounce(waitB, miss, H.needPick || 'First, guess which handle will get warm.'); return; }
+      if (st.waited) return; ac(); waitB.disabled = true; var t0 = performance.now(), D1 = reduceMotion ? 10 : 3000;
+      glow(false, false); void stage.getBoundingClientRect(); glow(true, true);
+      (function run(now) { var p = Math.min(1, (now - t0) / D1); clock.textContent = '⏱ 0:' + String(Math.round(p * 60)).padStart(2, '0'); if (p < 1) requestAnimationFrame(run); else { st.waited = 1; saveJ('handlemap', st); SFX.chime(); clock.textContent = '⏱ 1:00 · ' + (H.waitLine || 'Now touch the handles.'); } })(t0);
+    });
+    spots.forEach(function (sp) { sp.addEventListener('click', function () { touch(+sp.dataset.s, +sp.dataset.k); }); sp.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); touch(+sp.dataset.s, +sp.dataset.k); } }); });
+    dragDrop(finger, function () { return spots; }, function (item, hit) { item.classList.remove('sel'); touch(+hit.dataset.s, +hit.dataset.k); });
+    if (st.waited) { waitB.disabled = true; clock.textContent = '⏱ 1:00'; }
+    paintPick(); glow(!!st.waited, false); paintMap(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "Be the heat" — drag heat dots from the warmer thing to the cooler thing (or press Send); a dot dragged the other
+     way bounces, and the "Send cold" button never works; heat stops when both are the same temperature. Two rounds (24.01) ----------
+     D.heatdots = {afterText, kicker, title, todo[], why, model, rounds:[{id, t, a:{icon, t, dots}, b:{icon, t, dots, big}, line, done}],
+                   sendBtn, coldBtn, coldNo, wrongWay, autoBtn, sameLine, q, opts, win, clue} */
+  function buildHeatdots() {
+    var H = D.heatdots; if (!H) return;
+    var at = anchorP(H.afterText); if (!at) { FAILED.push('heatdots anchor text not found'); return; }
+    var g = gameShell(H.kicker || 'Part 1 game', H.title, H.todo, H.why); g.dataset.mod = 'heatdots';
+    var st = loadJ('heatdots', { r: 0, done: {}, a: null, b: null });
+    var tabs = el('div', 'fs-in-chips fs-hdt-tabs'), stage = el('div', 'fs-hdt-stage'), ctl = el('div', 'fs-hdt-ctl'), line = el('div', 'fs-hdt-line');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    tabs.innerHTML = H.rounds.map(function (r, i) { return '<button type="button" class="fs-in-chip fs-hdt-tab" data-i="' + i + '">' + esc(r.t) + '<em></em></button>'; }).join('');
+    ctl.innerHTML = '<button type="button" class="fs-btn fs-hdt-send">' + esc(H.sendBtn || 'Send a heat dot →') + '</button><button type="button" class="fs-btn alt fs-hdt-cold">' + esc(H.coldBtn || '← Send cold') + '</button>';
+    g.appendChild(tabs); g.appendChild(stage); g.appendChild(ctl); g.appendChild(line); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var R, a, b;
+    function level(side) { var o = side === 'a' ? R.a : R.b; var n = side === 'a' ? a : b; if (o.big) return Math.min(1, n / o.big); return n / (R.a.dots + R.b.dots); }
+    function temp(side) { var o = side === 'a' ? R.a : R.b, n = side === 'a' ? a : b; return Math.round(o.base + n * o.per); }
+    function equal() { return R.b.big ? a <= R.b.floor : a === b; }
+    function draw() {
+      stage.innerHTML = ['a', 'b'].map(function (s) {
+        var o = R[s], n = s === 'a' ? a : b, dots = ''; for (var i = 0; i < n; i++) dots += '<span class="fs-hdt-dot" data-s="' + s + '" role="button" tabindex="0" aria-label="heat dot">🔴</span>';
+        return '<div class="fs-hdt-box s-' + s + '" data-s="' + s + '"><div class="fs-hdt-top"><span class="fs-hdt-ic">' + o.icon + '</span><b>' + esc(o.t) + '</b></div>' +
+          '<div class="fs-hdt-therm"><i style="height:' + Math.round(8 + level(s) * 88) + '%"></i></div><div class="fs-hdt-temp">' + temp(s) + '°F</div><div class="fs-hdt-dots">' + dots + (o.big ? '<small>' + esc(o.bigNote || '') + '</small>' : '') + '</div></div>';
+      }).join('<div class="fs-hdt-arrow" aria-hidden="true">➜</div>') + '<div class="fs-hdt-model">' + esc(H.model || 'a model') + '</div>';
+      $$('.fs-hdt-dot', stage).forEach(function (d) {
+        dragDrop(d, function () { return $$('.fs-hdt-box', stage); }, function (item, hit) { move(item.dataset.s, hit.dataset.s); });
+        d.addEventListener('keydown', function (e) { if (e.key === 'Enter') move(d.dataset.s, d.dataset.s === 'a' ? 'b' : 'a'); });
+      });
+      var c = $$('.fs-hdt-tab', tabs); c.forEach(function (t, i) { t.classList.toggle('on', i === st.r); $('em', t).textContent = st.done[i] ? ' ✓' : ''; });
+      var n = Object.keys(st.done).length; count.textContent = '🔴 ' + n + ' of ' + H.rounds.length + ' ' + (H.roundWord || 'rounds done'); count.classList.toggle('ok', n === H.rounds.length);
+    }
+    function move(from, to) {
+      if (from === to) return;
+      if (from === 'b') { bounce($('.fs-hdt-box.s-b', stage), miss, H.wrongWay || 'Heat only moves from the WARMER thing to the COOLER thing.'); return; }
+      if (equal()) { bounce($('.fs-hdt-box.s-a', stage), miss, H.sameLine || 'They are the same temperature now. Heat stops moving.'); return; }
+      a--; b++; st.a = a; st.b = b; saveJ('heatdots', st); miss.classList.remove('show'); tone(660 - (R.a.dots - a) * 25, 0, 0.08, 'sine', 0.05);
+      draw(); check();
+    }
+    function check() {
+      if (equal()) {
+        st.done[st.r] = 1; saveJ('heatdots', st); SFX.chime();
+        line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">⚖️</span><div><b>' + esc(H.sameLine || 'Same temperature!') + '</b>' + esc(R.done) + '</div></div>'; draw();
+        if (Object.keys(st.done).length === H.rounds.length) askOnce(qh, H.q, H.opts, 'heatdots-q', win, H.win, H.clue, 'heatdots', miss);
+      } else line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + R.a.icon + '</span><div>' + esc(R.line) + '</div></div>';
+    }
+    function go(i) {
+      st.r = i; R = H.rounds[i];
+      if (st.done[i]) { a = R.b.big ? R.b.floor : Math.round((R.a.dots + R.b.dots) / 2); b = R.a.dots + R.b.dots - a; }
+      else if (st.a != null && st.cur === i) { a = st.a; b = st.b; } else { a = R.a.dots; b = R.b.dots; st.a = a; st.b = b; }
+      st.cur = i; saveJ('heatdots', st); miss.classList.remove('show'); draw(); check();
+    }
+    $$('.fs-hdt-tab', tabs).forEach(function (t) { t.addEventListener('click', function () { SFX.blip(); go(+t.dataset.i); }); });
+    $('.fs-hdt-send', ctl).addEventListener('click', function () { ac(); move('a', 'b'); });
+    $('.fs-hdt-cold', ctl).addEventListener('click', function () { ac(); bounce(this, miss, H.coldNo || 'Nothing moved. There is no such thing as a “cold dot”. Cold just means LESS heat.'); });
+    go(st.cur != null ? st.cur : 0); placeAfter(g, at);
+    if (Object.keys(st.done).length === H.rounds.length) askOnce(qh, H.q, H.opts, 'heatdots-q', win, H.win, H.clue, 'heatdots', miss);
+  }
+
+  /* ---------- Part 2: "The butter rod race" — pick 3 rods, drag (or tap) each rod's butter dot onto a 1-2-3 podium to predict, then heat the
+     ends: warm color creeps along each rod by its model melt time and the butter slides off; real-life minutes are shown (24.01) ----------
+     D.rodrace = {afterText, kicker, title, todo[], why, model, rods:[{id, t, c, kind, min, note}], pickN, maxMin, pickLine, predictLine, heatBtn,
+                  needPick, needPredict, never, resultLine, needMix, q, opts, credit, win, clue} */
+  function buildRodrace() {
+    var R = D.rodrace; if (!R) return;
+    var at = anchorP(R.afterText); if (!at) { FAILED.push('rodrace anchor text not found'); return; }
+    var g = gameShell(R.kicker || 'Part 2 game', R.title, R.todo, R.why); g.dataset.mod = 'rodrace';
+    var st = loadJ('rodrace', { pick: [], pred: {}, runs: [] }), N = R.pickN || 3, running = false;
+    var pick = el('div', 'fs-rod-pick'), pod = el('div', 'fs-rod-pod'), stage = el('div', 'fs-rod-stage'), go = el('div', 'fs-rod-go'), log = el('div', 'fs-vlv-tab fs-rod-log');
+    var miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(el('div', 'fs-lu-lab', esc(R.pickLine || '1. Pick 3 rods'))); g.appendChild(pick);
+    g.appendChild(el('div', 'fs-lu-lab', esc(R.predictLine || '2. Predict: which butter dot falls off first?'))); g.appendChild(pod);
+    g.appendChild(stage); g.appendChild(go); g.appendChild(log); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    function rod(id) { return R.rods.filter(function (r) { return r.id === id; })[0]; }
+    pick.innerHTML = R.rods.map(function (r) { return '<button type="button" class="fs-in-chip fs-rod-c" data-id="' + r.id + '"><span class="fs-rod-sw" style="background:' + r.c + '"></span>' + esc(r.t) + '</button>'; }).join('');
+    go.innerHTML = '<button type="button" class="fs-btn fs-rod-heat">' + esc(R.heatBtn || '🔥 Heat the ends') + '</button><span class="fs-rod-clock"></span>';
+    function paintPick() { $$('.fs-rod-c', pick).forEach(function (c) { c.classList.toggle('on', st.pick.indexOf(c.dataset.id) > -1); }); }
+    function paintPod() {
+      var placed = {}; Object.keys(st.pred).forEach(function (id) { placed[st.pred[id]] = id; });
+      pod.innerHTML = '<div class="fs-rod-tray">' + st.pick.filter(function (id) { return !st.pred[id]; }).map(function (id) { var r = rod(id); return '<span class="fs-rod-butter" data-id="' + id + '" role="button" tabindex="0"><i style="background:' + r.c + '"></i>🧈 ' + esc(r.t) + '</span>'; }).join('') + '</div>' +
+        '<div class="fs-rod-steps">' + [1, 2, 3].slice(0, N).map(function (n) { var id = placed[n], r = id && rod(id); return '<div class="fs-rod-step" data-n="' + n + '"><b>' + ['🥇 1st', '🥈 2nd', '🥉 3rd'][n - 1] + '</b>' + (r ? '<span class="fs-rod-in" data-id="' + id + '">🧈 ' + esc(r.t) + ' ✕</span>' : '<small>' + esc(R.dropHere || 'drop a butter dot') + '</small>') + '</div>'; }).join('') + '</div>';
+      var steps = $$('.fs-rod-step', pod);
+      $$('.fs-rod-butter', pod).forEach(function (b) { dragDrop(b, function () { return steps; }, function (item, hit) { put(item.dataset.id, +hit.dataset.n); }); });
+      tapTargets(pod, steps, function (item, hit) { put(item.dataset.id, +hit.dataset.n); });
+      $$('.fs-rod-in', pod).forEach(function (s) { s.addEventListener('click', function (e) { e.stopPropagation(); if (running) return; delete st.pred[s.dataset.id]; saveJ('rodrace', st); paintPod(); }); });
+    }
+    function put(id, n) { if (running) return; Object.keys(st.pred).forEach(function (k) { if (st.pred[k] === n) delete st.pred[k]; }); st.pred[id] = n; saveJ('rodrace', st); SFX.pop(); paintPod(); }
+    function drawStage(prog) {
+      var ids = st.pick.length ? st.pick : [], h = 70 + ids.length * 62;
+      stage.innerHTML = '<svg viewBox="0 0 560 ' + h + '" class="fs-rod-svg" role="img" aria-label="A model: rods side by side over a candle flame at the left end, each with a butter dot near the far end.">' +
+        '<rect x="20" y="20" width="44" height="' + (h - 40) + '" rx="10" fill="#FFF4D6" stroke="#E0B85A"/><g class="fs-rod-flame' + (prog ? ' on' : '') + '"><path d="M42 ' + (h / 2 + 18) + ' q-14 -18 0 -42 q14 24 0 42z" fill="#F5A623"/><path d="M42 ' + (h / 2 + 14) + ' q-7 -10 0 -24 q7 14 0 24z" fill="#F04E23"/></g>' +
+        ids.map(function (id, i) {
+          var r = rod(id), y = 50 + i * 62, p = prog ? Math.min(1, prog[id] || 0) : 0, gone = prog && prog[id] >= 1;
+          return '<g><rect x="60" y="' + y + '" width="440" height="16" rx="8" fill="' + r.c + '" stroke="#4A4A4A"/>' +
+            '<rect x="60" y="' + y + '" width="' + (440 * p).toFixed(1) + '" height="16" rx="8" fill="#F04E23" opacity=".55"/>' +
+            '<g class="fs-rod-bd' + (gone ? ' gone' : '') + '"><ellipse cx="470" cy="' + (y - 6) + '" rx="14" ry="8" fill="#FFE27A" stroke="#C9A227"/></g>' +
+            '<text x="72" y="' + (y + 36) + '" class="fs-vlv-lab">' + esc(r.t) + '</text></g>';
+        }).join('') + '<text x="550" y="' + (h - 6) + '" text-anchor="end" class="fs-vlv-lab">' + esc(R.model || 'a model') + '</text></svg>';
+    }
+    function paintLog() {
+      if (!st.runs.length) { log.innerHTML = ''; return; }
+      log.innerHTML = '<div class="fs-in-k">' + esc(R.logLabel || 'My races') + '</div><table><tr><th>' + esc(R.raceWord || 'Race') + '</th><th>' + esc(R.orderWord || 'Butter fell off (in order)') + '</th><th>' + esc(R.predWord || 'My prediction') + '</th></tr>' +
+        st.runs.map(function (u, i) { return '<tr><td>' + (i + 1) + '</td><td>' + u.order.map(function (o) { var r = rod(o.id); return esc(r.t) + ' <small>(' + (o.min == null ? esc(R.never || 'never') : o.min + ' min') + ')</small>'; }).join(' → ') + '</td><td>' + (u.right ? '✅' : '🔁') + '</td></tr>'; }).join('') + '</table>';
+      var mixed = st.runs.some(function (u) { var k = u.order.map(function (o) { return rod(o.id).kind; }); return k.indexOf('metal') > -1 && k.indexOf('non') > -1; });
+      if (mixed) askOnce(qh, R.q, R.opts, 'rodrace-q', win, R.win, R.clue, 'rodrace', miss);
+      else line(R.needMix || 'Race again with at least one metal rod AND one rod that is not metal.');
+    }
+    function line(t) { miss.innerHTML = '🔎 ' + esc(t); miss.classList.add('show'); }
+    $$('.fs-rod-c', pick).forEach(function (c) { c.addEventListener('click', function () {
+      if (running) return; var id = c.dataset.id, i = st.pick.indexOf(id);
+      if (i > -1) { st.pick.splice(i, 1); delete st.pred[id]; } else { if (st.pick.length >= N) { bounce(c, miss, (R.tooMany || 'Pick only {n}. Tap one you picked to take it out.').replace('{n}', N)); return; } st.pick.push(id); }
+      saveJ('rodrace', st); SFX.blip(); miss.classList.remove('show'); paintPick(); paintPod(); drawStage(null);
+    }); });
+    $('.fs-rod-heat', go).addEventListener('click', function () {
+      if (running) return; var btn = this;
+      if (st.pick.length < N) { bounce(btn, miss, (R.needPick || 'Pick {n} rods first.').replace('{n}', N)); return; }
+      if (st.pick.some(function (id) { return !st.pred[id]; })) { bounce(btn, miss, R.needPredict || 'Put every butter dot on the podium first.'); return; }
+      ac(); running = true; miss.classList.remove('show'); var t0 = performance.now(), D1 = reduceMotion ? 50 : 7000, max = R.maxMin || 10, clock = $('.fs-rod-clock', go), fell = {};
+      (function run(now) {
+        var m = Math.min(max, (now - t0) / D1 * max), prog = {};
+        st.pick.forEach(function (id) { var r = rod(id); prog[id] = r.min == null ? m / (max * 6) : m / r.min; if (r.min != null && m >= r.min && !fell[id]) { fell[id] = 1; tone(380, 0, 0.18, 'triangle', 0.06); } });
+        clock.textContent = '⏱ ' + m.toFixed(1) + ' ' + (R.minWord || 'min'); drawStage(prog);
+        if (m < max) requestAnimationFrame(run); else finish();
+      })(t0);
+      function finish() {
+        running = false; var order = st.pick.map(function (id) { return { id: id, min: rod(id).min }; }).sort(function (x, y) { return (x.min == null ? 1e9 : x.min) - (y.min == null ? 1e9 : y.min); });
+        var right = order.every(function (o, i) { return o.min == null || st.pred[o.id] === i + 1; });
+        st.runs.push({ order: order, right: right }); saveJ('rodrace', st); SFX.chime();
+        miss.classList.remove('show'); paintLog();
+        var w = order.filter(function (o) { return o.min == null; }).map(function (o) { return rod(o.id).t; });
+        var note = el('div', 'fs-hs-card', '<span class="fs-hs-n">' + (right ? '✅' : '🤔') + '</span><div><b>' + esc(right ? (R.rightLine || 'Your prediction matched!') : (R.wrongLine || 'Surprise! Look at the order.')) + '</b>' + esc(order.map(function (o) { return rod(o.id).note; }).join(' ')) + (w.length ? ' ' + esc((R.stillLine || '{r}: still cool at the end after 10 minutes.').replace('{r}', w.join(', '))) : '') + '</div></div>');
+        var old = $('.fs-hs-card', go); if (old) old.remove(); go.appendChild(note);
+        st.pred = {}; saveJ('rodrace', st); paintPod();
+      }
+    });
+    paintPick(); paintPod(); drawStage(null); paintLog(); placeAfter(g, at);
+    if (R.credit) g.appendChild(el('div', 'fs-credit', esc(R.credit)));
+  }
+
+  /* ---------- Part 3: "The Cup Race" — predict the warmest cup, run 10 (model) minutes: a live cooling graph draws a line per cup; then
+     rank the cups (drag or tap), then a chip question (24.01) ----------
+     D.cuprace = {afterText, kicker, title, todo[], why, model, start, room, mins, cups:[{id, t, icon, c, k}], predictQ, runBtn, needPredict,
+                  rankLine, ranks[], q, opts, win, clue} */
+  function buildCuprace() {
+    var C = D.cuprace; if (!C) return;
+    var at = anchorP(C.afterText); if (!at) { FAILED.push('cuprace anchor text not found'); return; }
+    var g = gameShell(C.kicker || 'Part 3 game', C.title, C.todo, C.why); g.dataset.mod = 'cuprace';
+    var st = loadJ('cuprace', { pred: null, ran: 0, rank: {} }), M = C.mins || 10, T0 = C.start, RM = C.room, running = false;
+    var pq = el('div', 'fs-cup-pq'), stage = el('div', 'fs-cup-stage'), go = el('div', 'fs-cup-go'), rank = el('div', 'fs-cup-rank');
+    var miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    pq.innerHTML = '<div class="fs-in-k">' + esc(C.predictQ) + '</div><div class="fs-in-chips">' + C.cups.map(function (c) { return '<button type="button" class="fs-in-chip fs-cup-p" data-id="' + c.id + '"><span>' + c.icon + '</span>' + esc(c.t) + '</button>'; }).join('') + '</div>';
+    go.innerHTML = '<button type="button" class="fs-btn fs-cup-run">' + esc(C.runBtn || '▶ Start the 10-minute race') + '</button><span class="fs-cup-clock"></span>';
+    g.appendChild(pq); g.appendChild(stage); g.appendChild(go); g.appendChild(rank); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    function temp(c, m) { return RM + (T0 - RM) * Math.exp(-c.k * m); }
+    var W = 560, Hh = 260, x0 = 54, x1 = 520, y0 = 220, y1 = 24, tMin = Math.floor(RM / 5) * 5 + 15, tMax = Math.ceil(T0 / 5) * 5 + 5;
+    function X(m) { return x0 + (x1 - x0) * m / M; } function Y(t) { return y0 - (y0 - y1) * (t - tMin) / (tMax - tMin); }
+    function draw(m) {
+      var grid = ''; for (var t = tMin; t <= tMax; t += 5) grid += '<line x1="' + x0 + '" x2="' + x1 + '" y1="' + Y(t) + '" y2="' + Y(t) + '" class="fs-cup-gl"/><text x="' + (x0 - 6) + '" y="' + (Y(t) + 4) + '" text-anchor="end" class="fs-vlv-lab">' + t + '°</text>';
+      for (var k = 0; k <= M; k += 2) grid += '<text x="' + X(k) + '" y="' + (y0 + 18) + '" text-anchor="middle" class="fs-vlv-lab">' + k + '</text>';
+      var ly = C.cups.map(function (c) { return { c: c, y: Y(temp(c, m)) - 8 }; }).sort(function (p, q) { return p.y - q.y; });
+      for (var j = 1; j < ly.length; j++) if (ly[j].y - ly[j - 1].y < 24) ly[j].y = ly[j - 1].y + 24;
+      var labY = {}; ly.forEach(function (o) { labY[o.c.id] = o.y; });
+      var lines = C.cups.map(function (c) { var d = ''; for (var s = 0; s <= m + 1e-6; s += 0.25) d += (s ? 'L' : 'M') + X(s).toFixed(1) + ' ' + Y(temp(c, s)).toFixed(1); var tn = temp(c, m);
+        return '<path d="' + d + '" fill="none" stroke="' + c.c + '" stroke-width="4" stroke-linecap="round"/>' + (m > 0 ? '<circle cx="' + X(m) + '" cy="' + Y(tn) + '" r="6" fill="' + c.c + '"/><text x="' + (X(m) + (m >= M ? -12 : 10)) + '" y="' + labY[c.id].toFixed(1) + '" text-anchor="' + (m >= M ? 'end' : 'start') + '" class="fs-cup-val" fill="' + c.c + '">' + c.icon + ' ' + Math.round(tn) + '°F</text>' : ''); }).join('');
+      stage.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + Hh + '" class="fs-cup-svg" role="img" aria-label="A line graph: water temperature in each cup over 10 minutes."><rect width="' + W + '" height="' + Hh + '" fill="#FFFDF6"/>' + grid +
+        '<text x="' + ((x0 + x1) / 2) + '" y="' + (Hh - 2) + '" text-anchor="middle" class="fs-vlv-lab">' + esc(C.xLabel || 'minutes') + '</text>' + lines +
+        '<text x="' + x1 + '" y="16" text-anchor="end" class="fs-vlv-lab">' + esc(C.model || 'a model') + '</text></svg>' +
+        '<div class="fs-cup-key">' + C.cups.map(function (c) { return '<span><i style="background:' + c.c + '"></i>' + c.icon + ' ' + esc(c.t) + '</span>'; }).join('') + '</div>';
+    }
+    function paintPick() { $$('.fs-cup-p', pq).forEach(function (b) { b.classList.toggle('on', b.dataset.id === st.pred); }); }
+    function paintRank() {
+      if (!st.ran) { rank.innerHTML = ''; return; }
+      var byT = C.cups.slice().sort(function (p, q) { return temp(q, M) - temp(p, M); }), placed = {};
+      Object.keys(st.rank).forEach(function (id) { placed[st.rank[id]] = id; });
+      rank.innerHTML = '<div class="fs-lu-lab">' + esc(C.rankLine || 'Rank the cups: drag each one (or tap it, then a place).') + '</div><div class="fs-rod-tray">' + C.cups.filter(function (c) { return !st.rank[c.id]; }).map(function (c) { return '<span class="fs-rod-butter fs-cup-card" data-id="' + c.id + '" role="button" tabindex="0">' + c.icon + ' ' + esc(c.t) + '</span>'; }).join('') + '</div>' +
+        '<div class="fs-rod-steps">' + (C.ranks || ['🔥 Warmest', 'Middle', '❄️ Coolest']).map(function (t, i) { var id = placed[i + 1], c = id && C.cups.filter(function (x) { return x.id === id; })[0]; return '<div class="fs-rod-step" data-n="' + (i + 1) + '"><b>' + esc(t) + '</b>' + (c ? '<span class="fs-rod-in ok">' + c.icon + ' ' + esc(c.t) + '</span>' : '<small>?</small>') + '</div>'; }).join('') + '</div>';
+      var steps = $$('.fs-rod-step', rank);
+      function put(id, n) { var c = C.cups.filter(function (x) { return x.id === id; })[0]; if (byT[n - 1].id !== id) { bounce($('.fs-cup-card[data-id="' + id + '"]', rank) || steps[n - 1], miss, (C.rankMiss || 'Look at the graph again. Where did the {c} line end?').replace('{c}', c.t.toLowerCase())); return; } st.rank[id] = n; saveJ('cuprace', st); SFX.pop(); miss.classList.remove('show'); paintRank(); }
+      $$('.fs-cup-card', rank).forEach(function (b) { dragDrop(b, function () { return steps; }, function (item, hit) { put(item.dataset.id, +hit.dataset.n); }); });
+      tapTargets(rank, steps, function (item, hit) { put(item.dataset.id, +hit.dataset.n); });
+      if (Object.keys(st.rank).length === C.cups.length) askOnce(qh, C.q, C.opts, 'cuprace-q', win, C.win, C.clue, 'cuprace', miss);
+    }
+    $$('.fs-cup-p', pq).forEach(function (b) { b.addEventListener('click', function () { if (running || st.ran) return; st.pred = b.dataset.id; saveJ('cuprace', st); SFX.blip(); miss.classList.remove('show'); paintPick(); }); });
+    $('.fs-cup-run', go).addEventListener('click', function () {
+      if (running) return; if (!st.pred) { bounce(this, miss, C.needPredict || 'Predict first: tap the cup you think stays warmest.'); return; }
+      ac(); running = true; var btn = this; btn.disabled = true; var t0 = performance.now(), D1 = reduceMotion ? 20 : 8000, clock = $('.fs-cup-clock', go);
+      (function run(now) { var m = Math.min(M, (now - t0) / D1 * M); draw(m); clock.textContent = '⏱ ' + m.toFixed(1) + ' min'; if (Math.floor(m) !== Math.floor(m - 0.1)) tone(300 + m * 30, 0, 0.03, 'square', 0.015);
+        if (m < M) requestAnimationFrame(run); else { running = false; btn.disabled = false; btn.textContent = C.againBtn || '↺ Run it again'; st.ran = 1; saveJ('cuprace', st); SFX.chime();
+          var best = C.cups.slice().sort(function (p, q) { return temp(q, M) - temp(p, M); })[0];
+          clock.textContent = (st.pred === best.id ? (C.rightPre || 'You predicted it! ') : (C.wrongPre || 'Surprise! ')) + (C.bestLine || '{c} stayed warmest.').replace('{c}', best.icon + ' ' + best.t); paintRank(); } })(t0);
+    });
+    draw(st.ran ? M : 0); paintPick(); paintRank(); placeAfter(g, at);
+  }
+
+  /* ---------- after the Cup Race (the wow): "Ice on two blocks" — touch two room-temperature blocks (metal feels cold), read the
+     thermometer (same number!), predict which melts its ice first, drop the ice (24.01; not a clue) ----------
+     D.iceblocks = {after, kicker, title, todo[], why, model, room, blocks:[{id, t, c, feel, melt}], touchBtn, thermoBtn, sameLine, predictQ, dropBtn,
+                    needTouch, needPredict, rightPre, wrongPre, whyLine, done} */
+  function buildIceblocks() {
+    var I = D.iceblocks; if (!I) return;
+    var host = $('.fs-game[data-mod="' + (I.after || 'cuprace') + '"]'); if (!host) { FAILED.push('iceblocks: no anchor game'); return; }
+    var g = gameShell(I.kicker || 'Wow', I.title, I.todo, I.why); g.dataset.mod = 'iceblocks'; g.classList.add('fs-ice-wow');
+    var st = loadJ('iceblocks', { touch: {}, thermo: 0, pred: null, ran: 0 }), B = I.blocks, running = false;
+    var stage = el('div', 'fs-ice-stage'), steps = el('div', 'fs-ice-steps'), out = el('div', 'fs-ice-out'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    g.appendChild(stage); g.appendChild(steps); g.appendChild(out); g.appendChild(miss); g.appendChild(win);
+    function drawBlocks(p) {
+      stage.innerHTML = '<div class="fs-ice-row">' + B.map(function (b) {
+        var m = p ? Math.min(1, p / b.melt) : (st.ran ? Math.min(1, (I.mins || 10) / b.melt) : 0), size = 46 * (1 - 0.85 * m), pud = 20 + 70 * m;
+        return '<div class="fs-ice-b" data-id="' + b.id + '"><div class="fs-ice-scene"><div class="fs-ice-pud" style="width:' + pud.toFixed(0) + '%"></div>' + ((st.pred || p) ? '<div class="fs-ice-cube" style="width:' + size.toFixed(1) + 'px;height:' + size.toFixed(1) + 'px"></div>' : '') +
+          '<div class="fs-ice-block" style="background:' + b.c + '"></div></div><b>' + esc(b.t) + '</b><button type="button" class="fs-btn alt fs-ice-touch" data-id="' + b.id + '">' + esc(I.touchBtn || '✋ Touch it') + '</button><small class="fs-ice-feel">' + (st.touch[b.id] ? esc(b.feel) : '') + '</small>' +
+          (st.thermo ? '<div class="fs-ice-th">🌡 ' + I.room + '°F</div>' : '') + '</div>'; }).join('') + '</div><div class="fs-hdt-model">' + esc(I.model || 'a model') + '</div>';
+      $$('.fs-ice-touch', stage).forEach(function (t) { t.addEventListener('click', function () { st.touch[t.dataset.id] = 1; saveJ('iceblocks', st); var b = B.filter(function (x) { return x.id === t.dataset.id; })[0]; tone(b.cold ? 420 : 620, 0, 0.12, 'sine', 0.05); drawBlocks(); paintSteps(); }); });
+    }
+    function paintSteps() {
+      var touched = B.every(function (b) { return st.touch[b.id]; });
+      steps.innerHTML = (touched ? '<button type="button" class="fs-btn fs-ice-thermo"' + (st.thermo ? ' disabled' : '') + '>' + esc(I.thermoBtn || '🌡 Check both with a thermometer') + '</button>' : '') +
+        (st.thermo ? '<div class="fs-hs-card"><span class="fs-hs-n">🤯</span><div><b>' + esc(I.sameLine) + '</b>' + esc(I.sameWhy || '') + '</div></div>' +
+          '<div class="fs-in-k">' + esc(I.predictQ) + '</div><div class="fs-in-chips">' + B.map(function (b) { return '<button type="button" class="fs-in-chip fs-ice-p" data-id="' + b.id + '">' + esc(b.t) + '</button>'; }).join('') + '</div>' +
+          '<button type="button" class="fs-btn fs-ice-drop">' + esc(I.dropBtn || '🧊 Drop the ice cubes') + '</button><span class="fs-cup-clock fs-ice-clock"></span>' : '');
+      var th = $('.fs-ice-thermo', steps); if (th) th.addEventListener('click', function () { st.thermo = 1; saveJ('iceblocks', st); SFX.chime(); drawBlocks(); paintSteps(); });
+      $$('.fs-ice-p', steps).forEach(function (c) { c.classList.toggle('on', c.dataset.id === st.pred); c.addEventListener('click', function () { if (running) return; st.pred = c.dataset.id; saveJ('iceblocks', st); SFX.blip(); paintSteps(); drawBlocks(); }); });
+      var dr = $('.fs-ice-drop', steps); if (dr) dr.addEventListener('click', function () {
+        if (running) return; if (!st.pred) { bounce(dr, miss, I.needPredict || 'Predict first: which ice cube melts first?'); return; }
+        ac(); running = true; miss.classList.remove('show'); var t0 = performance.now(), M = I.mins || 10, D1 = reduceMotion ? 20 : 6000, clock = $('.fs-ice-clock', steps);
+        (function run(now) { var m = Math.min(M, (now - t0) / D1 * M); drawBlocks(Math.max(0.001, m)); clock.textContent = '⏱ ' + m.toFixed(1) + ' min'; if (m < M) requestAnimationFrame(run); else done(); })(t0);
+      });
+      if (st.ran) result();
+    }
+    function done() { running = false; st.ran = 1; saveJ('iceblocks', st); SFX.win(); result(); }
+    function result() {
+      var fast = B.slice().sort(function (p, q) { return p.melt - q.melt; })[0];
+      out.innerHTML = '<div class="fs-hs-card fs-ice-why"><span class="fs-hs-n">' + (st.pred === fast.id ? '✅' : '😮') + '</span><div><b>' + esc((st.pred === fast.id ? (I.rightPre || 'You called it! ') : (I.wrongPre || 'Surprise! ')) + (I.fastLine || '').replace('{b}', fast.t)) + '</b>' + esc(I.whyLine) + '</div></div>';
+      win.innerHTML = esc(I.done || ''); win.classList.add('show');
+    }
+    drawBlocks(); paintSteps();
+    host.parentNode.insertBefore(g, host.nextSibling);
+  }
+
+  /* ---------- after the case: "Design Rosa's new mug" — pick the wall, a lid and the handle, run a 30-minute parade test (cocoa line + a
+     handle check), then an APPROVED stamp when the cocoa is still hot AND the handle is safe (24.01) ----------
+     D.mugdesign = {after, kicker, title, todo[], lockLine, model, start, air, mins, need, walls:[{id, t, icon, k, lidK, metal}], lids:[{id, t}],
+                    handles:[{id, t, metal}], runBtn, hotWord, coolWord, burnLine, coldLine, passLine, stamp, win} */
+  function buildMugdesign() {
+    var M = D.mugdesign; if (!M) return;
+    var g = gameShell(M.kicker || 'Case closed', M.title, M.todo, M.why); g.dataset.mod = 'mugdesign';
+    var st = loadJ('mugdesign', { w: null, l: null, h: null, tests: [], pass: 0 });
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(M.lockLine || 'Crack the case first.') + '</span>'), body = el('div', 'fs-mug-body'), win = el('div', 'fs-win'), miss = el('div', 'fs-miss');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(miss); g.appendChild(win);
+    var host = $(M.after || '.fs-solve'); if (!host) { FAILED.push('mugdesign: no anchor'); return; }
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    function find(list, id) { return list.filter(function (x) { return x.id === id; })[0]; }
+    function chips(lbl, key, list) { return '<div class="fs-mug-set"><span class="fs-in-k">' + esc(lbl) + '</span><div class="fs-in-chips">' + list.map(function (o) { return '<button type="button" class="fs-in-chip fs-mug-c" data-key="' + key + '" data-id="' + o.id + '">' + (o.icon ? '<span>' + o.icon + '</span>' : '') + esc(o.t) + '</button>'; }).join('') + '</div></div>'; }
+    function build() {
+      body.innerHTML = chips(M.wallLabel || '1. The mug', 'w', M.walls) + chips(M.lidLabel || '2. A lid?', 'l', M.lids) + chips(M.handleLabel || '3. The handle', 'h', M.handles) +
+        '<div class="fs-mug-go"><button type="button" class="fs-btn fs-mug-run">' + esc(M.runBtn || '🎆 Run the 30-minute parade test') + '</button></div><div class="fs-mug-res"></div><div class="fs-vlv-tab fs-mug-log"></div>';
+      $$('.fs-mug-c', body).forEach(function (c) { c.addEventListener('click', function () { st[c.dataset.key] = c.dataset.id; saveJ('mugdesign', st); SFX.blip(); miss.classList.remove('show'); paintSel(); }); });
+      $('.fs-mug-run', body).addEventListener('click', run);
+    }
+    function paintSel() { $$('.fs-mug-c', body).forEach(function (c) { c.classList.toggle('on', st[c.dataset.key] === c.dataset.id); }); }
+    function test(w, l, h) { var k = l === 'lid' ? w.lidK : w.k, t = M.air + (M.start - M.air) * Math.exp(-k * M.mins); return { t: Math.round(t), hot: t >= M.need, burn: !!(w.metal && find(M.handles, h).metal) }; }
+    function run() {
+      if (!st.w || !st.l || !st.h) { bounce($('.fs-mug-run', body), miss, M.needAll || 'Pick a mug, a lid choice and a handle first.'); return; }
+      var w = find(M.walls, st.w), r = test(w, st.l, st.h), pass = r.hot && !r.burn; ac();
+      st.tests.push({ w: st.w, l: st.l, h: st.h, t: r.t, pass: pass, burn: r.burn }); if (pass) st.pass = 1; saveJ('mugdesign', st);
+      var res = $('.fs-mug-res', body), lines = [];
+      lines.push((r.hot ? '☕ ' : '🥶 ') + (M.afterWord || 'After 30 minutes: ') + r.t + '°F. ' + (r.hot ? M.hotWord : M.coldLine));
+      if (r.burn) lines.push('🔥 ' + M.burnLine);
+      res.innerHTML = '<div class="fs-mug-card' + (pass ? ' pass' : '') + '"><div class="fs-mug-pic"><span class="fs-mug-ic">' + w.icon + '</span>' + (st.l === 'lid' ? '<span class="fs-mug-lid"></span>' : '') + (pass ? '<span class="fs-mug-stamp">' + esc(M.stamp || 'APPROVED') + '</span>' : '') + '</div><div>' + lines.map(function (x) { return '<p>' + esc(x) + '</p>'; }).join('') + (pass ? '<p><b>' + esc(M.passLine) + '</b></p>' : '<p><em>' + esc(M.tryLine || 'Change something and test again.') + '</em></p>') + '</div></div>';
+      if (pass) { SFX.stamp(); winOnce(win, M.win, null, 'mugdesign'); } else SFX.thud();
+      paintLog();
+    }
+    function paintLog() {
+      var lg = $('.fs-mug-log', body); if (!st.tests.length) { lg.innerHTML = ''; return; }
+      lg.innerHTML = '<div class="fs-in-k">' + esc(M.logLabel || 'My tests') + '</div><table><tr>' + (M.cols || ['Mug', 'Lid', 'Handle', 'Cocoa at 30 min', 'Result']).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        st.tests.slice(-6).map(function (u) { return '<tr><td>' + esc(find(M.walls, u.w).t) + '</td><td>' + esc(find(M.lids, u.l).t) + '</td><td>' + esc(find(M.handles, u.h).t) + '</td><td>' + u.t + '°F</td><td>' + (u.pass ? '✅' : (u.burn ? '🔥' : '🥶')) + '</td></tr>'; }).join('') + '</table>';
+    }
+    var built = false;
+    function paint() { var s = !!store('solved'); g.classList.toggle('locked', !s); lock.style.display = s ? 'none' : ''; body.style.display = s ? '' : 'none'; if (!s) return; if (!built) { built = true; build(); } paintSel(); paintLog(); if (st.pass) winOnce(win, M.win, null, 'mugdesign'); }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
+  }
+
+  /* ---------- bonus (fold it): "The coat on the snow cone" — guess which wrap melts FIRST, then run a sunny beach model: unwrapped, napkin,
+     towel and puffy coat melt at their model times; the coat lasts longest (24.01) ----------
+     D.snowcoat = {after, kicker, title, todo[], lockLine, model, mins, wraps:[{id, t, icon, melt}], guessQ, runBtn, needGuess, rightPre, wrongPre, whyLine, win} */
+  function buildSnowcoat() {
+    var S = D.snowcoat; if (!S) return;
+    var g = gameShell(S.kicker || 'Bonus', S.title, S.todo, S.why); g.dataset.mod = 'snowcoat';
+    var st = loadJ('snowcoat', { g: null, ran: 0 }), running = false;
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(S.lockLine || 'Crack the case first.') + '</span>'), body = el('div', 'fs-snc-body'), win = el('div', 'fs-win'), miss = el('div', 'fs-miss');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(miss); g.appendChild(win);
+    var host = $(S.after || '.fs-solve'); if (!host) { FAILED.push('snowcoat: no anchor'); return; }
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    function draw(m) {
+      $('.fs-snc-row', body).innerHTML = S.wraps.map(function (w) { var p = Math.min(1, m / w.melt), left = Math.round(100 * (1 - p));
+        return '<div class="fs-snc-c"><div class="fs-snc-pic"><span class="fs-snc-cone" style="opacity:' + (0.25 + 0.75 * (1 - p)).toFixed(2) + ';transform:scale(' + (0.55 + 0.45 * (1 - p)).toFixed(2) + ')">🍧</span><span class="fs-snc-wrap">' + w.icon + '</span></div><b>' + esc(w.t) + '</b><span class="fs-snc-bar"><i style="width:' + left + '%"></i></span><small>' + (p >= 1 ? esc(S.meltedWord || 'melted!') + ' (' + w.melt + ' min)' : left + '% ' + esc(S.frozenWord || 'still frozen')) + '</small></div>'; }).join('');
+    }
+    function build() {
+      body.innerHTML = '<div class="fs-in-k">' + esc(S.guessQ) + '</div><div class="fs-in-chips">' + S.wraps.map(function (w) { return '<button type="button" class="fs-in-chip fs-snc-g" data-id="' + w.id + '"><span>' + w.icon + '</span>' + esc(w.t) + '</button>'; }).join('') + '</div>' +
+        '<div class="fs-snc-row"></div><div class="fs-hdt-model">' + esc(S.model || 'a model') + '</div><div class="fs-mug-go"><button type="button" class="fs-btn fs-snc-run">' + esc(S.runBtn || '☀️ Into the sun!') + '</button><span class="fs-cup-clock fs-snc-clock"></span></div><div class="fs-snc-out"></div>';
+      $$('.fs-snc-g', body).forEach(function (c) { c.addEventListener('click', function () { if (running) return; st.g = c.dataset.id; saveJ('snowcoat', st); SFX.blip(); paintG(); }); });
+      $('.fs-snc-run', body).addEventListener('click', function () {
+        if (running) return; if (!st.g) { bounce(this, miss, S.needGuess || 'Guess first: which one melts FIRST?'); return; }
+        ac(); running = true; miss.classList.remove('show'); var t0 = performance.now(), M = S.mins || 60, D1 = reduceMotion ? 20 : 7000, clock = $('.fs-snc-clock', body);
+        (function run(now) { var m = Math.min(M, (now - t0) / D1 * M); draw(m); clock.textContent = '⏱ ' + Math.round(m) + ' min'; if (m < M) requestAnimationFrame(run); else { running = false; st.ran = 1; saveJ('snowcoat', st); out(); } })(t0);
+      });
+    }
+    function paintG() { $$('.fs-snc-g', body).forEach(function (c) { c.classList.toggle('on', c.dataset.id === st.g); }); }
+    function out() {
+      var first = S.wraps.slice().sort(function (p, q) { return p.melt - q.melt; })[0];
+      $('.fs-snc-out', body).innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + (st.g === first.id ? '✅' : '😮') + '</span><div><b>' + esc(st.g === first.id ? (S.rightPre || 'You called it!') : (S.wrongPre || 'Surprise!')) + '</b>' + esc(S.whyLine) + '</div></div>';
+      winOnce(win, S.win, null, 'snowcoat');
+    }
+    var built = false;
+    function paint() { var s = !!store('solved'); g.classList.toggle('locked', !s); lock.style.display = s ? 'none' : ''; body.style.display = s ? '' : 'none'; if (!s) return; if (!built) { built = true; build(); draw(st.ran ? (S.mins || 60) : 0); if (st.ran) out(); } paintG(); }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
+  }
+
+  /* ----- Tool of the Week: infrared thermometer (24.01): drag the red aim dot (or tap a spot) on a real photo, pull the trigger, read the
+     screen; the shiny steel mug reads wrong until you stick tape on it -----
+     T.irtherm = {kicker, title, todo[], model, photo:{img, alt, credit}, scenes:[{id, t, img, alt, credit, spots:[{id, x, y, t, f, shiny, tapeF, note}]}],
+                  trigger, tapeBtn, missLine, shinyLine, q:{q, opts:[{t, ok, why}]}} */
+  SIMS.irtherm = function (host, T) {
+    var M = T.irtherm, st = loadJ('irtherm', { s: 0, read: {}, tape: 0 }), aim = { x: 50, y: 50 };
+    host.innerHTML = '<div class="fs-game-k">' + esc(M.kicker || 'Try it: an infrared thermometer') + '</div><div class="fs-game-t">' + esc(M.title) + '</div>' +
+      '<ul class="fs-todo">' + M.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      (M.photo ? '<figure class="fs-irt-real"><img alt="' + esc(M.photo.alt) + '" src="' + esc(M.photo.img) + '"><figcaption>' + esc(M.photo.cap || '') + '</figcaption></figure>' : '') +
+      '<div class="fs-in-chips fs-irt-tabs">' + M.scenes.map(function (s, i) { return '<button type="button" class="fs-in-chip fs-irt-tab" data-i="' + i + '">' + esc(s.t) + '</button>'; }).join('') + '</div>' +
+      '<div class="fs-irt-wrap"><div class="fs-mp fs-irt-mp"></div><div class="fs-irt-side"><div class="fs-irt-gun"><div class="fs-irt-lcd"><b>--.-</b><small>°F</small></div><button type="button" class="fs-btn fs-irt-trig">' + esc(M.trigger || '🔫 Pull the trigger') + '</button><button type="button" class="fs-btn alt fs-irt-tape">' + esc(M.tapeBtn || '🩹 Stick tape on the shiny mug') + '</button></div><div class="fs-irt-note"></div></div></div>' +
+      '<div class="fs-vlv-tab fs-irt-log"></div><div class="fs-sv-q fs-irt-q"></div><div class="fs-miss fs-irt-miss"></div><div class="fs-win fs-irt-win"></div>';
+    var mp = $('.fs-irt-mp', host), lcd = $('.fs-irt-lcd b', host), note = $('.fs-irt-note', host), miss = $('.fs-irt-miss', host);
+    function scene() { return M.scenes[st.s]; }
+    function draw() {
+      var S = scene();
+      mp.innerHTML = '<img alt="' + esc(S.alt) + '" src="' + esc(S.img) + '">' + (st.tape && S.spots.some(function (p) { return p.shiny; }) ? S.spots.filter(function (p) { return p.shiny; }).map(function (p) { return '<span class="fs-irt-tp" style="left:' + p.x + '%;top:' + p.y + '%"></span>'; }).join('') : '') +
+        S.spots.map(function (p) { return '<button type="button" class="fs-irt-sp' + (st.read[S.id + '.' + p.id] ? ' on' : '') + '" data-id="' + p.id + '" style="left:' + p.x + '%;top:' + p.y + '%" aria-label="Aim at ' + esc(p.t) + '"></button>'; }).join('') +
+        '<span class="fs-irt-dot" style="left:' + aim.x + '%;top:' + aim.y + '%" role="button" aria-label="Aim dot: drag it"></span>' + (S.credit ? '<div class="fs-irt-cr">' + esc(S.credit) + '</div>' : '');
+      $$('.fs-irt-tab', host).forEach(function (t, i) { t.classList.toggle('on', i === st.s); });
+      $('.fs-irt-tape', host).style.display = S.spots.some(function (p) { return p.shiny; }) ? '' : 'none';
+      $$('.fs-irt-sp', mp).forEach(function (b) { b.addEventListener('click', function (e) { e.stopPropagation(); var p = S.spots.filter(function (x) { return x.id === b.dataset.id; })[0]; aim = { x: p.x, y: p.y }; setDot(); SFX.blip(); }); });
+      var dot = $('.fs-irt-dot', mp), drag = false;
+      dot.addEventListener('pointerdown', function (e) { drag = true; dot.setPointerCapture && dot.setPointerCapture(e.pointerId); e.preventDefault(); });
+      dot.addEventListener('pointermove', function (e) { if (!drag) return; var r = mp.getBoundingClientRect(); aim = { x: Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100)), y: Math.max(0, Math.min(100, (e.clientY - r.top) / r.height * 100)) }; setDot(); });
+      dot.addEventListener('pointerup', function () { drag = false; });
+    }
+    function setDot() { var d = $('.fs-irt-dot', mp); if (d) { d.style.left = aim.x + '%'; d.style.top = aim.y + '%'; } }
+    function near() { var S = scene(), best = null, bd = 1e9; S.spots.forEach(function (p) { var d = Math.hypot(p.x - aim.x, (p.y - aim.y) * 0.75); if (d < bd) { bd = d; best = p; } }); return bd <= (M.radius || 9) ? best : null; }
+    function trigger() {
+      ac(); var p = near(); tone(1760, 0, 0.06, 'square', 0.03);
+      if (!p) { lcd.textContent = '--.-'; bounce($('.fs-irt-trig', host), miss, M.missLine || 'Aim the red dot right on something first.'); return; }
+      miss.classList.remove('show'); var S = scene(), f = p.shiny && st.tape ? p.tapeF : p.f, t0 = null, D1 = reduceMotion ? 1 : 700;
+      (function run(ts) { if (t0 == null) t0 = ts; var q = Math.min(1, (ts - t0) / D1); lcd.textContent = (f * (0.6 + 0.4 * q)).toFixed(1); if (q < 1) requestAnimationFrame(run); else tone(990, 0, 0.1, 'sine', 0.04); })(performance.now());
+      var key = S.id + '.' + p.id + (p.shiny && st.tape ? '.tape' : ''); st.read[key] = f; st.read[S.id + '.' + p.id] = st.read[S.id + '.' + p.id] || f; saveJ('irtherm', st);
+      note.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">🌡</span><div><b>' + esc(p.t + ': ' + f + '°F') + '</b>' + esc(p.shiny && !st.tape ? M.shinyLine : (p.shiny ? p.tapeNote : p.note)) + '</div></div>';
+      draw(); log();
+    }
+    function log() {
+      var rows = []; M.scenes.forEach(function (S) { S.spots.forEach(function (p) { if (st.read[S.id + '.' + p.id] != null) rows.push('<tr><td>' + esc(p.t) + '</td><td>' + st.read[S.id + '.' + p.id] + '°F</td><td>' + (p.shiny ? (st.read[S.id + '.' + p.id + '.tape'] != null ? st.read[S.id + '.' + p.id + '.tape'] + '°F' : '?') : '') + '</td></tr>'); }); });
+      $('.fs-irt-log', host).innerHTML = rows.length ? '<div class="fs-in-k">' + esc(M.logLabel || 'My readings') + '</div><table><tr><th>' + esc(M.whatWord || 'Aimed at') + '</th><th>' + esc(M.readWord || 'Reading') + '</th><th>' + esc(M.tapeWord || 'With tape') + '</th></tr>' + rows.join('') + '</table>' : '';
+      var all = M.scenes.every(function (S) { return S.spots.every(function (p) { return st.read[S.id + '.' + p.id] != null && (!p.shiny || st.read[S.id + '.' + p.id + '.tape'] != null); }); });
+      if (all) check();
+    }
+    function check() {
+      var q = $('.fs-irt-q', host); if (q.dataset.on) return; q.dataset.on = '1';
+      q.innerHTML = '<div class="fs-in-k">' + esc(M.q.q) + '</div><div class="fs-in-chips">' + M.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      function ok(i) { $$('.fs-in-chip', q)[i].classList.add('on', 'ok'); var w = $('.fs-irt-win', host); w.innerHTML = esc(M.q.opts[i].why); w.classList.add('show'); }
+      $$('.fs-in-chip', q).forEach(function (c) { c.addEventListener('click', function () { var o = M.q.opts[+c.dataset.i]; if (!o.ok) { bounce(c, miss, o.why); return; } miss.classList.remove('show'); ok(+c.dataset.i); SFX.win(); store('irtherm-q', '1'); toolDone(); }); });
+      if (store('irtherm-q')) ok(M.q.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]);
+    }
+    $$('.fs-irt-tab', host).forEach(function (t) { t.addEventListener('click', function () { st.s = +t.dataset.i; saveJ('irtherm', st); aim = { x: 50, y: 50 }; lcd.textContent = '--.-'; note.innerHTML = ''; SFX.blip(); draw(); }); });
+    mp.addEventListener('click', function (e) { if (e.target.closest('.fs-irt-sp, .fs-irt-dot')) return; var r = mp.getBoundingClientRect(); aim = { x: (e.clientX - r.left) / r.width * 100, y: (e.clientY - r.top) / r.height * 100 }; setDot(); });
+    $('.fs-irt-trig', host).addEventListener('click', trigger);
+    $('.fs-irt-tape', host).addEventListener('click', function () { if (st.tape) return; st.tape = 1; saveJ('irtherm', st); SFX.pop(); note.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">🩹</span><div>' + esc(M.tapeLine || 'Tape on! Aim at the tape and pull the trigger again.') + '</div></div>'; draw(); });
+    draw(); log();
+  };
+
   /* ---------- After the case: "Florida's zero" — guess how many wind farms Florida has (slider), the number counts down to the real answer
      with the reasons; then a real photo of a dam: tap each numbered spot to see what moves and what gets pushed (23.02) ----------
      D.zero = {after, kicker, title, todo[], lockLine, guessQ, max, unit, guessBtn, answer, bigLabel, reasons:[{icon, t}], photoHead,
@@ -10570,6 +11025,13 @@
     guard('zero', buildZero);
     guard('windribbon', buildWindribbon);
     guard('sail', buildSail);
+    guard('handlemap', buildHandlemap);
+    guard('heatdots', buildHeatdots);
+    guard('rodrace', buildRodrace);
+    guard('cuprace', buildCuprace);
+    guard('iceblocks', buildIceblocks);
+    guard('mugdesign', buildMugdesign);
+    guard('snowcoat', buildSnowcoat);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

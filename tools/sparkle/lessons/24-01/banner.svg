@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="Night at the Palmetto Beach boat parade: a steaming mug of cocoa with a glowing metal spoon and a wooden spoon under string lights, lit boats on the bay, and a pelican on a post.">
+  <defs>
+    <linearGradient id="b24sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1433"/><stop offset=".7" stop-color="#1B2A5C"/><stop offset="1" stop-color="#2C3E78"/></linearGradient>
+    <linearGradient id="b24sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14254F"/><stop offset="1" stop-color="#0A1430"/></linearGradient>
+    <linearGradient id="b24steel" x1="0" x2="1"><stop offset="0" stop-color="#8E99A4"/><stop offset=".5" stop-color="#E6ECF1"/><stop offset="1" stop-color="#7F8A95"/></linearGradient>
+    <linearGradient id="b24heat" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF6A2B"/><stop offset=".55" stop-color="#FFB547" stop-opacity=".85"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></linearGradient>
+    <radialGradient id="b24glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD27A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD27A" stop-opacity="0"/></radialGradient>
+    <linearGradient id="b24mug" x1="0" x2="1"><stop offset="0" stop-color="#C64A3A"/><stop offset=".45" stop-color="#E26A55"/><stop offset="1" stop-color="#A83A2D"/></linearGradient>
+    <linearGradient id="b24wood" x1="0" x2="1"><stop offset="0" stop-color="#9A6635"/><stop offset=".5" stop-color="#C08A52"/><stop offset="1" stop-color="#8A5A2C"/></linearGradient>
+  </defs>
+  <style>
+    .b24-tw { animation: b24tw 2.4s ease-in-out infinite; }
+    .b24-tw:nth-child(3n) { animation-delay: .8s; } .b24-tw:nth-child(3n+1) { animation-delay: 1.6s; }
+    @keyframes b24tw { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+    .b24-steam { animation: b24st 3.6s ease-in-out infinite; }
+    .b24-steam.s2 { animation-delay: 1.8s; }
+    @keyframes b24st { 0% { opacity: 0; transform: translateY(8px); } 40% { opacity: .8; } 100% { opacity: 0; transform: translateY(-14px); } }
+    .b24-bob { animation: b24bob 4s ease-in-out infinite; }
+    .b24-bob.b2 { animation-delay: 1.3s; }
+    @keyframes b24bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(2px); } }
+    .b24-hot { animation: b24hot 2.8s ease-in-out infinite; }
+    @keyframes b24hot { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .b24-tw, .b24-steam, .b24-bob, .b24-hot { animation: none; } .b24-steam { opacity: .6; } }
+  </style>
+  <rect width="920" height="200" fill="url(#b24sky)"/>
+  <g fill="#FFF6D8" opacity=".8"><circle cx="70" cy="22" r="1.3"/><circle cx="160" cy="44" r="1"/><circle cx="250" cy="16" r="1.2"/><circle cx="420" cy="30" r="1"/><circle cx="520" cy="12" r="1.4"/><circle cx="640" cy="38" r="1"/><circle cx="760" cy="18" r="1.2"/><circle cx="860" cy="46" r="1"/></g>
+  <circle cx="800" cy="38" r="14" fill="#FFF4D2"/>
+  <!-- far shore with house lights -->
+  <path d="M0 108 L120 104 L260 108 L420 103 L600 107 L780 102 L920 106 L920 118 L0 118 Z" fill="#0D1838"/>
+  <g fill="#FFD27A"><rect x="60" y="106" width="3" height="3"/><rect x="190" y="105" width="3" height="3"/><rect x="330" y="105" width="3" height="3"/><rect x="470" y="104" width="3" height="3"/><rect x="700" y="104" width="3" height="3"/><rect x="850" y="104" width="3" height="3"/></g>
+  <rect y="116" width="920" height="84" fill="url(#b24sea)"/>
+  <!-- boat 1, lit -->
+  <g transform="translate(160 118)"><g class="b24-bob">
+    <path d="M-60 0 L60 0 L48 14 L-50 14 Z" fill="#2E3A66"/>
+    <path d="M-60 0 L60 0" stroke="#FFC24A" stroke-width="2.5" stroke-dasharray="2 5"/>
+    <path d="M-20 0 V-30 H14 V0" fill="none" stroke="#5ED1FF" stroke-width="2" stroke-dasharray="2 4"/>
+    <path d="M0 -30 V-62" stroke="#3A4466" stroke-width="2"/>
+    <path d="M0 -62 L-36 0 M0 -62 L40 0" stroke="#FF5D73" stroke-width="2" stroke-dasharray="2 4"/>
+    <circle cx="0" cy="-64" r="3.5" fill="#FFE07A"/>
+  </g></g>
+  <!-- boat 2, lit -->
+  <g transform="translate(395 124)"><g class="b24-bob b2">
+    <path d="M-46 0 L46 0 L36 11 L-38 11 Z" fill="#2E3A66"/>
+    <path d="M-46 0 L46 0" stroke="#7CFF9C" stroke-width="2.5" stroke-dasharray="2 5"/>
+    <path d="M-6 0 V-48" stroke="#3A4466" stroke-width="2"/>
+    <path d="M-6 -48 L-30 0 M-6 -48 L28 0" stroke="#FFC24A" stroke-width="2" stroke-dasharray="2 4"/>
+    <circle cx="-6" cy="-50" r="3" fill="#FF5D73"/>
+  </g></g>
+  <!-- light reflections -->
+  <g stroke-width="2" opacity=".45"><path d="M120 140 h50 M135 150 h30" stroke="#FFC24A"/><path d="M370 146 h40 M380 156 h22" stroke="#7CFF9C"/></g>
+  <!-- dock rail and pelican on a post -->
+  <rect x="868" y="96" width="10" height="104" fill="#5B4632"/>
+  <g transform="translate(873 96)">
+    <path d="M-22 -2 C-26 -14 -16 -24 -2 -24 C10 -24 16 -16 14 -6 C12 2 2 4 -10 3 Z" fill="#7A6A58"/>
+    <path d="M-20 -6 C-12 -16 0 -18 10 -12 C2 -8 -10 -4 -20 -6 Z" fill="#5C4E40"/>
+    <path d="M-22 -2 L-34 4 L-24 -6 Z" fill="#5C4E40"/>
+    <path d="M8 -20 C2 -30 4 -42 12 -46" fill="none" stroke="#6E4A36" stroke-width="7" stroke-linecap="round"/>
+    <path d="M9 -22 C4 -30 6 -40 12 -44" fill="none" stroke="#F1EBDD" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="14" cy="-48" rx="6.5" ry="5.5" fill="#F3E7B8"/>
+    <path d="M18 -50 L50 -42 L20 -44 Z" fill="#C9A15A"/>
+    <path d="M20 -44 Q34 -34 48 -41 L50 -42 Z" fill="#9C7A44"/>
+    <circle cx="15.5" cy="-49" r="1.2" fill="#1A1A1A"/>
+  </g>
+  <!-- string lights across the top -->
+  <path d="M0 10 Q230 52 460 14 Q690 52 920 10" fill="none" stroke="#2A2F45" stroke-width="2"/>
+  <g>
+    <circle class="b24-tw" cx="40" cy="17" r="4" fill="#FFD27A"/><circle class="b24-tw" cx="100" cy="27" r="4" fill="#FF7A6B"/><circle class="b24-tw" cx="160" cy="33" r="4" fill="#7CFF9C"/>
+    <circle class="b24-tw" cx="220" cy="35" r="4" fill="#5ED1FF"/><circle class="b24-tw" cx="280" cy="33" r="4" fill="#FFD27A"/><circle class="b24-tw" cx="340" cy="28" r="4" fill="#FF7A6B"/>
+    <circle class="b24-tw" cx="400" cy="21" r="4" fill="#7CFF9C"/><circle class="b24-tw" cx="520" cy="21" r="4" fill="#5ED1FF"/><circle class="b24-tw" cx="580" cy="28" r="4" fill="#FFD27A"/>
+    <circle class="b24-tw" cx="640" cy="33" r="4" fill="#FF7A6B"/><circle class="b24-tw" cx="700" cy="35" r="4" fill="#7CFF9C"/><circle class="b24-tw" cx="760" cy="33" r="4" fill="#5ED1FF"/>
+    <circle class="b24-tw" cx="820" cy="27" r="4" fill="#FFD27A"/><circle class="b24-tw" cx="880" cy="17" r="4" fill="#FF7A6B"/>
+  </g>
+  <!-- the cart counter and the mug -->
+  <rect x="520" y="168" width="300" height="32" fill="#6B4A2E"/><rect x="520" y="164" width="300" height="6" fill="#8A6440"/>
+  <ellipse cx="660" cy="120" rx="90" ry="60" fill="url(#b24glow)"/>
+  <!-- spoons behind the rim -->
+  <g transform="translate(632 82) rotate(-12)"><rect x="-5" y="0" width="10" height="70" rx="5" fill="url(#b24steel)" stroke="#55606B"/><rect class="b24-hot" x="-5" y="0" width="10" height="70" rx="5" fill="url(#b24heat)"/></g>
+  <g transform="translate(690 86) rotate(14)"><rect x="-5.5" y="0" width="11" height="66" rx="5" fill="url(#b24wood)" stroke="#5E3E1E"/></g>
+  <path d="M612 120 h96 v36 q0 12 -12 12 h-72 q-12 0 -12 -12 z" fill="url(#b24mug)"/>
+  <ellipse cx="660" cy="120" rx="48" ry="7" fill="#5A321D"/>
+  <path d="M708 128 q22 0 22 16 t-22 16" fill="none" stroke="#B4402F" stroke-width="7"/>
+  <g fill="none" stroke="#E8E2D8" stroke-width="3.5" stroke-linecap="round">
+    <path class="b24-steam" d="M648 110 q-6 -10 0 -20 t0 -20"/>
+    <path class="b24-steam s2" d="M672 110 q-6 -10 0 -20 t0 -20"/>
+  </g>
+</svg>

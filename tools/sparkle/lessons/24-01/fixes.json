@@ -1,0 +1,279 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "heat and materials is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS codes; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.P.10.2, SC.4.P.11.1, SC.4.P.11.2 · TEKS 4.8(B)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.10.2, SC.4.P.11.1, SC.4.P.11.2</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Three Spoons in a Mug</div>\n        <div class=\"act-subtitle\">Feel how far the heat climbs</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the spoon test",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Sam stands three spoons in a mug of hot cocoa: one metal, one wood and one plastic. After one minute, which handle feels warm? Touch each one to find out.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → a list of hot and cold things (on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Now think about your day. What hot and cold things did you touch?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for a conductor and insulator chart",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; My Conductor and Insulator Chart"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task (now a chart typed on the page + a required labeled sketch)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Find 4 conductors and 4 insulators at home. Fill in your chart below, explain one from each side, then sketch one.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: things to try it for real",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🥄</span>A metal spoon and a wooden spoon (to try it for real)</span>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact: insulators SLOW heat; they don’t block it (the page’s own pop-up says “Slows heat down”)",
+  "old": "Part 2 · Some Materials Carry Heat — Some Block It",
+  "new": "Part 2 · Some Materials Carry Heat, Some Slow It Down"
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact + no dashes: “block heat” → “slow heat down”",
+  "old": "</span></span> handle heat in totally different ways. Metals carry heat extremely well — they're heat ",
+  "new": "</span></span> handle heat in different ways. Metals carry heat very well, so they're heat "
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact: “Wood, plastic, foam, and fabric block heat” → slow it down",
+  "old": "</span></span>. Wood, plastic, foam, and fabric block heat — they're heat ",
+  "new": "</span></span>. Wood, plastic, foam, and fabric slow heat down, so they're heat "
+ },
+ {
+  "kind": "fix",
+  "why": "kept (Bethany ticked it): the Florida connection is true, as one line in the list",
+  "old": "<li><strong>Why it matters:</strong> we put metal where we WANT heat to flow (pot bottoms). We put insulators where we DON'T want heat to flow (handles, oven mitts, jackets, walls).</li>",
+  "new": "<li><strong>Why it matters:</strong> we put metal where we WANT heat to flow (pot bottoms). We put insulators where we DON'T want heat to flow (handles, oven mitts, jackets, walls).</li>\n        <li><strong>In Florida:</strong> builders put insulation and shiny barriers in the attic to keep the hot outside air’s heat from getting IN.</li>"
+ },
+ {
+  "kind": "fix",
+  "why": "closing pop-up: an insulator slows heat, it doesn’t block it",
+  "old": "<span class=\"vtip-word\">Insulator</span>Blocks heat.</span>",
+  "new": "<span class=\"vtip-word\">Insulator</span>Slows heat down.</span>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll predict which materials carry heat well and which slow it down, and explain things like oven mitts and metal pots.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "no dash (Part 1)",
+  "old": "It feels cold. The handrail itself didn't change — but it gave its ",
+  "new": "It feels cold. The handrail itself didn't change, but it gave its "
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; the misconception moves here and leads into the game (Part 1)",
+  "old": "It always travels in ONE direction — from the hotter object to the cooler one. This is called heat ",
+  "new": "It always travels in ONE direction: from the hotter object to the cooler one. This is called heat "
+ },
+ {
+  "kind": "plain",
+  "why": "the misconception now sits in Part 1, right before Be the Heat",
+  "old": "Energy moves between objects.</span></span>.</p>",
+  "new": "Energy moves between objects.</span></span>.</p>\n\n      <p><strong>Watch out:</strong> some people think “cold” is a kind of energy that flows. It’s not. Cold just means LESS heat. When ice makes your hand feel cold, YOUR heat is flowing INTO the ice. Try it: be the heat.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; leads into the rod race (Part 2)",
+  "old": "The heat from the pan is real — but the mitt slows it down enough that you have time to set the pan down before your hand gets too hot.</p>",
+  "new": "The heat from the pan is real, but the mitt slows it down enough that you can set the pan down before your hand gets too hot. Now race some rods and see which materials carry heat fastest.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Explain why an oven mitt protects your hand from a...\"",
+  "new": "data-label=\"Why an oven mitt protects your hand\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"A spoon left in hot soup gets hot. Did the SOUP &quot;g...\"",
+  "new": "data-label=\"The spoon in hot soup\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (Be the Heat is Part 1’s thinking stop, with the same ice cube)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "removed: the AI picture (it said insulators make heat “stop”, which is wrong; the rod race replaces it), Key Concept, the Stop & Reason about “the three devices above” (a 22.01 leftover), the Four Material Tests tap diagram, Observe & Reason, the trapped-air “Amazing Florida Fact” (not about Florida), the Florida callout (kept as a line in the list), and Go Deeper (it said a spoon gets hot “all the way up in a few seconds”). The misconception paragraph moved to Part 1. Part 3 = the old Explore (the Cup Race); the next button goes to Self-Check",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think \"cold\" is a kind of energy\\..*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "\n\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · The Cup Race</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Which cup keeps warm water warm the longest? Pour the same warm water into a metal cup, a ceramic mug and a foam cup. Then watch the temperatures for 10 minutes.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its Cup Race is now Part 3; its penguin “Amazing Florida Fact” (Antarctica, not Florida), Think like a scientist and Go Deeper go with it; the coat idea lives in the snow cone bonus)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; Q5 named the removed diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 6 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page, plus the required sketch",
+  "old": "A two-column chart with at least 4 conductors and 4 insulators, plus a sentence explaining one item from each column.",
+  "new": "My chart: 4 conductors and 4 insulators, plus a sentence explaining one from each side. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether \"cold flows\" or whether heat moves into the ice, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether cold flows out of ice, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]
