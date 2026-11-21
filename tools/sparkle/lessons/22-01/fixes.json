@@ -1,0 +1,272 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "energy conversion is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a device energy map",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🔌 Part C &mdash; My Device Energy Map"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (now an energy map typed on the page + a required labeled sketch)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick ONE device you can see right now (a lamp, a fan, a phone charger). Map its energy below, then sketch it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "confusing: “the heat that escapes the kitchen” → the heat that warms the kitchen air instead of the bread (vocab card)",
+  "old": "Some output energy is also \"wasted\" — like the toaster's sound or the heat that escapes the kitchen.",
+  "new": "Some output energy is extra, like the toaster’s click or the heat that warms the kitchen air instead of the bread."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "Hold this question in your head as you work. By the end of the lesson, you'll be able to look at any device — a toaster, a flashlight, a fan — and explain what energy goes IN, what energy comes OUT, and how it changed in between.",
+  "new": "Keep this question in mind. By the end, you’ll look at any device and say what energy goes IN, what comes OUT, and how it changed."
+ },
+ {
+  "kind": "plain",
+  "why": "the warm-up opens with the toaster, then the black box game",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast. Something you can’t see went into the toaster, too!</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "Warm-Up sketch → the black box game + a 3-row typed list (Bethany ticked it)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>A device is a bit like a black box. You can see what goes IN and what comes OUT, even when you can’t see inside. Open three mystery boxes.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; plain; points to the list",
+  "old": "<p>Today you'll learn that energy can CONVERT — change from one form into a completely different form. Toasters, flashlights, wind turbines, your own body — they're all energy converters.</p>",
+  "new": "<p>Every box changed energy from one form into a different form. That’s called converting energy. Now look around your home for three more devices.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; shorter (Part 1)",
+  "old": "In the last few lessons, you saw energy TRANSFER between things — one marble passing motion to another, sound moving from a drum to your ear. Today's idea is different. In <span class=\"vtip\">transformation",
+  "new": "In the last few lessons, energy TRANSFERRED (moved) between things: one marble passed its motion to another, and sound traveled from a drum to your ear. Today’s idea is different. In <span class=\"vtip\">transformation"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "</span></span>, energy doesn't just move — it CHANGES into a different form.</p>",
+  "new": "</span></span>, energy doesn’t just move. It CHANGES into a different form.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter: two examples, no wind turbine (Part 1)",
+  "old": "A toaster doesn't just move electrical energy. It <span class=\"vtip\">converts<span class=\"vtip-box\"><span class=\"vtip-word\">Convert</span>Change energy from one form to another.</span></span> electrical energy INTO heat energy. A flashlight converts electrical energy INTO light energy. A wind turbine converts the motion of the wind INTO electrical energy.",
+  "new": "A toaster <span class=\"vtip\">converts<span class=\"vtip-box\"><span class=\"vtip-word\">Convert</span>Change energy from one form to another.</span></span> (changes) electrical energy INTO heat. A flashlight converts electrical energy INTO light."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; new words named (Part 2)",
+  "old": "is anything designed to convert energy. Every device has the same basic structure:</p>",
+  "new": "is a tool or machine built to do a job, and most devices convert energy. Every device has three parts to its energy story:</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "one example each",
+  "old": "what goes IN. (Battery for a flashlight. Wind for a turbine. The Sun's light for a solar panel.)",
+  "new": "what goes IN. (A battery for a flashlight.)"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; one example",
+  "old": "what comes OUT — usually a NEW form. (Light from the flashlight. Electricity from the turbine. Electricity from the solar panel.)",
+  "new": "what comes OUT, usually in a NEW form. (Light from the flashlight.)"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter, one idea; no dash",
+  "old": "<p>Sometimes the output includes BOTH the useful form AND some extras you didn't plan for\\..*?No device is 100% efficient — some output always sneaks out as a form you didn't ask for\\.</p>",
+  "new": "<p>The output you want is the <span class=\"vtip\">useful energy<span class=\"vtip-box\"><span class=\"vtip-word\">Useful energy</span>The output you wanted.</span></span>. But there are always extras. A flashlight makes light (useful) and also gets a little warm (extra heat). No device turns ALL its energy into the useful kind.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "the misconception, plain; leads into the pipes",
+  "old": "<p><strong>Common misconception:</strong> Some people think energy gets used up or created inside a device\\..*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think a device USES UP energy, or MAKES new energy. It doesn’t do either. It only changes the form. Put 10 units of energy in, and 10 units come out, in different forms. Test it with the energy pipes.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; no dash; points to 22.02",
+  "old": "<p><strong>Nicely done\\.</strong> You can now map any.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You can map any device from input energy to output energy, find its useful energy, and trace its energy back to the Sun. Next lesson, you become the engineer: you design your OWN device that converts energy.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 named the removed diagram; now it names the pipes devices",
+  "old": "Pick ONE conversion from the diagram (solar panel, gas car, wind turbine, or toaster). Write the INPUT form and OUTPUT form. Identify one form of extra energy that's also produced.",
+  "new": "Pick ONE device from the energy pipes (toaster, old bulb, LED bulb, gas car or solar panel). Write its INPUT energy and its useful OUTPUT energy. Then name one kind of extra energy it also makes."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE conversion from the diagram (solar panel,...\"",
+  "new": "data-label=\"One device: input, useful output, extra\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Explain the difference between TRANSFER (last less...\"",
+  "new": "data-label=\"Transfer vs. transformation\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Notice & Wonder (the black box is the warm-up’s thinking stop; its “nothing moved between objects” was confusing, since electrical energy did move in)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the arrow tags are the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "the never-made AI picture, Key Concept, Stop & Reason, the Four Florida Conversions tap diagram, Observe & Reason, the solar Amazing Fact, the “Florida connection” (about the body, not Florida) and Go Deeper are gone (lean); the energy pipes replace the picture and the diagram, and Part 3 follows the energy back to the Sun. Next button goes to Self-Check",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">🔌 Three Devices Converting Energy</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Follow It Back to the Sun</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Where did the toaster’s energy come from before it reached your kitchen? Follow it backward, one step at a time. Then follow one more device.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its trace-a-device task is now Part C; its two Amazing Facts and Go Deeper go with it, including the wrong “LED bulbs are over 90% efficient”)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page, plus the required sketch",
+  "old": "A device energy map with INPUT, OUTPUT, and one wasted-energy arrow, plus a one-sentence conversion statement.",
+  "new": "My device energy map: IN, useful OUT, extra OUT and one conversion sentence. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether a toaster CREATES heat, and supported it with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether a toaster creates heat, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]

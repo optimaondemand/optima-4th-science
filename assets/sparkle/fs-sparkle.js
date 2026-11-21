@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -1819,8 +1819,8 @@
     var g = gameShell(T.kicker || 'Warm-Up game', T.title, T.todo, T.why); g.dataset.mod = 'trace';
     var picks = el('div', 'fs-tc-picks', '<div class="fs-in-k">' + esc(T.pick || 'Pick a food:') + '</div><div class="fs-in-chips">' + T.foods.map(function (f, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '"><span>' + f.icon + '</span> ' + esc(f.name) + '<em></em></button>'; }).join('') + '</div>');
     var trail = el('div', 'fs-tc-trail'), note = el('div', 'fs-tc-note', esc(T.arrowNote || 'The arrows show which way the energy moved.'));
-    var stage = el('div', 'fs-tc-stage'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
-    g.appendChild(picks); g.appendChild(trail); g.appendChild(note); g.appendChild(stage); g.appendChild(miss); g.appendChild(count); g.appendChild(win);
+    var stage = el('div', 'fs-tc-stage'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(picks); g.appendChild(trail); g.appendChild(note); g.appendChild(stage); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
     var done = {}; try { done = JSON.parse(store('trace') || '{}'); } catch (e) {}
     var need = Math.min(T.need || 2, T.foods.length);
     function rights(f) { return f.steps.map(function (s) { return s.opts.filter(function (o) { return o.ok; })[0]; }); }
@@ -1835,10 +1835,11 @@
     }
     function upd() {
       var n = Object.keys(done).length;
-      count.textContent = '☀️ ' + n + ' of ' + need + ' foods traced to the start';
+      count.textContent = '☀️ ' + n + ' of ' + need + ' ' + (T.countWord || 'foods traced to the start');
       count.classList.toggle('ok', n >= need);
       $$('.fs-in-chip', picks).forEach(function (b) { var ok = !!done[T.foods[+b.dataset.i].id]; b.classList.toggle('done', ok); $('em', b).textContent = ok ? ' ✓' : ''; });
-      if (n >= need && !win.classList.contains('show')) { win.innerHTML = esc(T.win); win.classList.add('show'); SFX.win(); earnClue(T.clue || 'trace'); }
+      if (n >= need && T.q) { if (T.twist && !g.querySelector('.fs-tc-twist')) count.parentNode.insertBefore(el('div', 'fs-hs-card fs-tc-twist', '<span class="fs-hs-n">' + (T.twist.icon || '☀️') + '</span><div><b>' + esc(T.twist.head) + '</b>' + esc(T.twist.t) + '</div>'), count.nextSibling); askOnce(qh, T.q, T.opts, 'trace-q', win, T.win, T.clue, 'trace', miss); }
+      else if (n >= need && !win.classList.contains('show')) { win.innerHTML = esc(T.win); win.classList.add('show'); SFX.win(); earnClue(T.clue || 'trace'); }
     }
     function open(i) {
       var f = T.foods[i]; SFX.blip(); miss.classList.remove('show');
@@ -1851,7 +1852,7 @@
           done[f.id] = 1; store('trace', JSON.stringify(done)); SFX.sparkle();
           stage.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">☀️</span><div>' + esc(f.end || T.sunLine) + '</div>'));
           var nx = T.foods.map(function (o, k) { return done[o.id] ? -1 : k; }).filter(function (k) { return k > -1; })[0];
-          if (nx != null) { var b = el('button', 'fs-btn alt fs-ch-next', 'Trace another food →'); b.type = 'button'; b.addEventListener('click', function () { open(nx); }); stage.appendChild(b); }
+          if (nx != null) { var b = el('button', 'fs-btn alt fs-ch-next', esc(T.anotherBtn || 'Trace another food →')); b.type = 'button'; b.addEventListener('click', function () { open(nx); }); stage.appendChild(b); }
           upd(); return;
         }
         var w = chipsQ(stage, f.steps[s].q, f.steps[s].opts, function () {
@@ -5196,7 +5197,7 @@
     var box = fsOnly(el('div', 'fs-lens'));
     box.dataset.style = style;
     var first = esc(who.name.replace(/^Dr\.\s*/, '').split(' ')[0]);
-    box.innerHTML = '<div class="fs-lens-top"><span class="fs-lens-who"></span><div class="fs-lens-say"><div class="fs-game-k">Word Lens</div><div class="fs-lens-tip">' + esc(L.tip) + ' I’ll read it to you!</div></div></div>' +
+    box.innerHTML = '<div class="fs-lens-top"><span class="fs-lens-who"></span><div class="fs-lens-say"><div class="fs-game-k">Word Lens</div><div class="fs-lens-tip">' + esc(L.tip) + (D.lensVoice === false ? '' : ' I’ll read it to you!') + '</div></div></div>' +
       '<div class="fs-lens-stage"><div class="fs-lens-view"><div class="fs-lens-bg"></div><div class="fs-lens-tool">' + (LENS_ART[style] || LENS_ART.binoculars) + '</div>' +
       '<div class="fs-lens-inner"><span class="fs-lens-e">' + L.icon + '</span><b class="fs-lens-w">Pick a word</b><p class="fs-lens-d">Tap a word sticker below.</p></div><div class="fs-lens-fx"></div></div></div>' +
       '<div class="fs-lens-chips">' + words.map(function (w, i) { return '<button type="button" data-n="' + w.n + '" style="--lc:' + LENS_COLORS[i % LENS_COLORS.length] + ';--rot:' + (i % 2 ? 2 : -2) + 'deg"><span>' + w.emoji + '</span>' + esc(w.w) + '</button>'; }).join('') + '</div>' +
@@ -9085,6 +9086,340 @@
     });
   }
 
+
+  /* =================== 22.01: The Beacon Went Dark (black box, arrow tags, energy pipes, repair ticket, light the harbor, watt meter) =================== */
+  /* case.ticket (22.01): the keeper's work ticket under the notice. {head, title, rows:[[icon, k, v, state ('ok'|'bad'|'')]], foot} */
+  function workTicket(T) {
+    return '<div class="fs-wkt"><div class="fs-wkt-h"><span>' + esc(T.head) + '</span><b>' + esc(T.num || '') + '</b></div>' + (T.title ? '<div class="fs-wkt-t">' + esc(T.title) + '</div>' : '') +
+      '<ul class="fs-wkt-rows">' + T.rows.map(function (r) { return '<li class="' + esc(r[3] || '') + '"><span>' + r[0] + '</span><b>' + esc(r[1]) + '</b><em>' + esc(r[2]) + '</em></li>'; }).join('') + '</ul>' +
+      (T.foot ? '<div class="fs-wkt-f">' + esc(T.foot) + '</div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "The black box" — three sealed boxes show only what goes IN and what comes OUT; drag (or tap) the device card that
+     fits onto the box; a right pick opens the box to a real photo (22.01) ----------
+     D.blackbox = {afterText, kicker, title, todo[], why, inWord, outWord, boxes:[{id, label, in:{icon,t}, outs:[{icon,t,fx}], answer, reveal:{img, alt, cap, line}}],
+                   cards:[{id, icon, t}], misses:{boxId:{cardId:hint}}, missLine, credit, countWord, q, opts, win, clue} */
+  function buildBlackbox() {
+    var B = D.blackbox; if (!B) return;
+    var at = anchorP(B.afterText); if (!at) { FAILED.push('blackbox anchor text not found'); return; }
+    var g = gameShell(B.kicker || 'Warm-Up game', B.title, B.todo, B.why); g.dataset.mod = 'blackbox';
+    var st = loadJ('blackbox', { open: {} }), cur = 0;
+    var tabs = el('div', 'fs-in-chips fs-bbx-tabs'), stage = el('div', 'fs-bbx-stage'), tray = el('div', 'fs-bbx-tray');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    B.boxes.forEach(function (b, i) { var t = el('button', 'fs-in-chip fs-bbx-tab', '📦 ' + esc(b.label)); t.type = 'button'; t.dataset.i = i; tabs.appendChild(t); });
+    tray.innerHTML = '<div class="fs-in-k">' + esc(B.trayLabel || 'Which device is hiding inside? Drag its card onto the box, or tap the card, then the box.') + '</div><div class="fs-bbx-cards">' +
+      B.cards.map(function (c) { return '<button type="button" class="fs-bbx-card" data-id="' + c.id + '"><span>' + c.icon + '</span>' + esc(c.t) + '</button>'; }).join('') + '</div>';
+    g.appendChild(tabs); g.appendChild(stage); g.appendChild(tray); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    if (B.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credits</summary>' + esc(B.credit)));
+    function card(id) { return B.cards.filter(function (c) { return c.id === id; })[0]; }
+    function paint(anim) {
+      var b = B.boxes[cur], open = !!st.open[b.id];
+      $$('.fs-bbx-tab', tabs).forEach(function (t, i) { t.classList.toggle('on', i === cur); t.classList.toggle('ok', !!st.open[B.boxes[i].id]); });
+      stage.innerHTML = '<div class="fs-bbx-row"><div class="fs-bbx-in"><small>' + esc(B.inWord || 'Goes IN') + '</small><span class="fs-bbx-ic">' + b.in.icon + '</span><b>' + esc(b.in.t) + '</b></div>' +
+        '<div class="fs-bbx-arw" aria-hidden="true">➜</div>' +
+        '<div class="fs-bbx-box' + (open ? ' open' : '') + (open && anim ? ' pop' : '') + '" role="button" tabindex="0" aria-label="' + esc(b.label + (open ? ': ' + card(b.answer).t : ': sealed box')) + '">' +
+        (open ? '<img alt="' + esc(b.reveal.alt) + '" src="' + esc(b.reveal.img) + '">' : '<div class="fs-bbx-lid"><span class="fs-bbx-q">?</span><b>' + esc(b.label) + '</b><small>' + esc(B.sealWord || 'SEALED') + '</small></div>') + '</div>' +
+        '<div class="fs-bbx-arw" aria-hidden="true">➜</div>' +
+        '<div class="fs-bbx-outs"><small>' + esc(B.outWord || 'Comes OUT') + '</small>' + b.outs.map(function (o) { return '<div class="fs-bbx-out fx-' + esc(o.fx || 'none') + '"><span class="fs-bbx-ic">' + o.icon + '</span><b>' + esc(o.t) + '</b></div>'; }).join('') + '</div></div>' +
+        (open ? '<div class="fs-hs-card fs-bbx-said"><span class="fs-hs-n">' + card(b.answer).icon + '</span><div><b>' + esc(b.reveal.cap) + '</b>' + esc(b.reveal.line) + '</div></div>' : '');
+      var box = $('.fs-bbx-box', stage);
+      box.addEventListener('click', function () { var s = $('.fs-bbx-card.sel', tray); if (s) drop(s, box); });
+      box.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); var s = $('.fs-bbx-card.sel', tray); if (s) drop(s, box); } });
+      $$('.fs-bbx-card', tray).forEach(function (c) { var used = B.boxes.some(function (bb) { return st.open[bb.id] && bb.answer === c.dataset.id; }); c.classList.toggle('placed', used); });
+      var n = B.boxes.filter(function (bb) { return st.open[bb.id]; }).length;
+      count.textContent = '📦 ' + n + ' of ' + B.boxes.length + ' ' + (B.countWord || 'boxes opened'); count.classList.toggle('ok', n === B.boxes.length);
+      tray.style.display = open ? 'none' : '';
+      if (n === B.boxes.length) askOnce(qh, B.q, B.opts, 'blackbox-q', win, B.win, B.clue, 'blackbox', miss);
+    }
+    function drop(item, target) {
+      item.classList.remove('sel'); var b = B.boxes[cur]; if (st.open[b.id]) return;
+      if (item.dataset.id !== b.answer) { bounce(target, miss, ((B.misses || {})[b.id] || {})[item.dataset.id] || B.missLine || 'Look at what comes OUT of this box. Would that device make all of it?'); return; }
+      st.open[b.id] = 1; saveJ('blackbox', st); miss.classList.remove('show'); SFX.pop(); setTimeout(SFX.chime, 120); paint(true);
+      var nx = -1; B.boxes.some(function (bb, k) { if (!st.open[bb.id]) { nx = k; return true; } });
+      if (nx > -1) { var go = el('button', 'fs-btn alt fs-bbx-next', esc(B.nextBtn || 'Next box →')); go.type = 'button'; go.addEventListener('click', function () { cur = nx; SFX.blip(); paint(); }); stage.appendChild(go); }
+    }
+    $$('.fs-bbx-card', tray).forEach(function (c) { dragDrop(c, function () { return [$('.fs-bbx-box', stage)]; }, drop); });
+    $$('.fs-bbx-tab', tabs).forEach(function (t) { t.addEventListener('click', function () { cur = +t.dataset.i; miss.classList.remove('show'); SFX.blip(); paint(); }); });
+    placeAfter(g, at);
+    B.boxes.some(function (bb, k) { if (!st.open[bb.id]) { cur = k; return true; } }); paint();
+  }
+
+  /* ---------- Lesson Part 1: "Flip the arrow tag" — each scene has an arrow from a thing to a thing; tag the arrow MOVES (same form, it just
+     travels) or CHANGES (a new form); drag a tag token onto an arrow or tap the arrow to flip it; Check locks the right ones and the energy
+     dots change color only on CHANGES (22.01) ----------
+     D.arrowtags = {afterText, kicker, title, todo[], why, tags:{moves:{t,icon}, changes:{t,icon}}, forms:{k:{t,c,icon}}, scenes:[{id, from:{icon,t}, to:{icon,t,see}, a, b, k, why, miss}],
+                    checkBtn, emptyLine, countWord, q, opts, win, clue} */
+  function buildArrowtags() {
+    var A = D.arrowtags; if (!A) return;
+    var at = anchorP(A.afterText); if (!at) { FAILED.push('arrowtags anchor text not found'); return; }
+    var g = gameShell(A.kicker || 'Part 1 game', A.title, A.todo, A.why); g.dataset.mod = 'arrowtags';
+    var st = loadJ('arrowtags', { ok: {} }), pick = {};
+    var tray = el('div', 'fs-atg-tray'), list = el('div', 'fs-atg-list'), check = el('button', 'fs-btn fs-atg-check', esc(A.checkBtn || 'Check my tags'));
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win'); check.type = 'button';
+    var T = A.tags, F = A.forms;
+    tray.innerHTML = '<div class="fs-in-k">' + esc(A.trayLabel || 'Tags (drag one onto an arrow, or tap an arrow to flip its tag)') + '</div>' +
+      ['moves', 'changes'].map(function (k) { return '<button type="button" class="fs-atg-tok k-' + k + '" data-k="' + k + '"><span>' + T[k].icon + '</span>' + esc(T[k].t) + '</button>'; }).join('');
+    function chip(k, hide) { var f = F[k]; return '<span class="fs-atg-form' + (hide ? ' hid' : '') + '" style="--c:' + f.c + '">' + f.icon + ' ' + esc(f.t) + '</span>'; }
+    A.scenes.forEach(function (s, i) {
+      var r = el('div', 'fs-atg-row', '<div class="fs-atg-end"><span class="fs-atg-ic">' + s.from.icon + '</span><b>' + esc(s.from.t) + '</b>' + chip(s.a) + '</div>' +
+        '<div class="fs-atg-mid"><div class="fs-atg-arrow" style="--a:' + F[s.a].c + ';--b:' + F[s.b].c + '"><i></i><i></i><i></i><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M0 0 L10 5 L0 10z"/></svg></div>' +
+        '<button type="button" class="fs-atg-tag" data-id="' + s.id + '" aria-label="Arrow tag for scene ' + (i + 1) + '">' + esc(A.emptyTag || '? tap me') + '</button></div>' +
+        '<div class="fs-atg-end"><span class="fs-atg-ic">' + s.to.icon + '</span><b>' + esc(s.to.t) + '</b><small>' + esc(s.to.see || '') + '</small>' + chip(s.b, true) + '</div>' +
+        '<div class="fs-atg-why"></div>');
+      r.dataset.id = s.id; list.appendChild(r);
+    });
+    g.appendChild(tray); g.appendChild(list); g.appendChild(check); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function scene(id) { return A.scenes.filter(function (s) { return s.id === id; })[0]; }
+    function paint() {
+      A.scenes.forEach(function (s) {
+        var r = $('.fs-atg-row[data-id="' + s.id + '"]', list), tag = $('.fs-atg-tag', r), k = st.ok[s.id] ? s.k : pick[s.id];
+        tag.className = 'fs-atg-tag' + (k ? ' k-' + k : '') + (st.ok[s.id] ? ' locked' : '');
+        tag.innerHTML = k ? T[k].icon + ' ' + esc(T[k].t) : esc(A.emptyTag || '? tap me');
+        r.classList.toggle('ok', !!st.ok[s.id]); r.classList.toggle('chg', !!st.ok[s.id] && s.k === 'changes');
+        $('.fs-atg-form.hid', r) && st.ok[s.id] && $('.fs-atg-form.hid', r).classList.remove('hid');
+        $('.fs-atg-why', r).innerHTML = st.ok[s.id] ? esc(s.why) : '';
+      });
+      var n = A.scenes.filter(function (s) { return st.ok[s.id]; }).length;
+      count.textContent = '🏷️ ' + n + ' of ' + A.scenes.length + ' ' + (A.countWord || 'arrows tagged'); count.classList.toggle('ok', n === A.scenes.length);
+      check.style.display = n === A.scenes.length ? 'none' : '';
+      if (n === A.scenes.length) askOnce(qh, A.q, A.opts, 'arrowtags-q', win, A.win, A.clue, 'arrowtags', miss);
+    }
+    function setTag(id, k) { if (st.ok[id]) return; pick[id] = k; SFX.blip(); miss.classList.remove('show'); paint(); }
+    $$('.fs-atg-tag', list).forEach(function (t) { t.addEventListener('click', function () {
+      var s = $('.fs-atg-tok.sel', tray); if (s) { s.classList.remove('sel'); setTag(t.dataset.id, s.dataset.k); return; }
+      var id = t.dataset.id; setTag(id, pick[id] === 'moves' ? 'changes' : 'moves');
+    }); });
+    $$('.fs-atg-tok', tray).forEach(function (tok) { dragDrop(tok, function () { return $$('.fs-atg-tag:not(.locked)', list); }, function (item, target) { item.classList.remove('sel'); setTag(target.dataset.id, item.dataset.k); }); });
+    check.addEventListener('click', function () {
+      var tried = A.scenes.filter(function (s) { return !st.ok[s.id] && pick[s.id]; });
+      if (!tried.length) { showMiss(miss, A.noneLine || 'Tag at least one arrow first: MOVES or CHANGES.'); return; }
+      var wrong = null;
+      tried.forEach(function (s) { if (pick[s.id] === s.k) st.ok[s.id] = 1; else { if (!wrong) wrong = s; delete pick[s.id]; } });
+      saveJ('arrowtags', st); paint();
+      if (wrong) { bounce($('.fs-atg-row[data-id="' + wrong.id + '"] .fs-atg-tag', list), miss, wrong.miss); }
+      else { miss.classList.remove('show'); SFX.chime(); }
+    });
+    placeAfter(g, at); paint();
+  }
+
+  /* ---------- Lesson Part 2: "Energy pipes" — pick a device, drag the splitter to guess how many of 10 energy units come out USEFUL,
+     then pour: the units run through the device and split into a useful pipe and an extra pipe; always 10 out (22.01) ----------
+     D.pipes = {afterText or replace, kicker, title, todo[], why, model, units, devices:[{id, icon, t, inF:{t,c,icon}, use:{t,c,icon,n}, xtra:{t,c,icon,n}, note}],
+                need:[ids], needLine, guessQ, pourBtn, tableLabel, cols, q, opts, win, clue} */
+  function buildPipes() {
+    var P = D.pipes; if (!P) return;
+    var at = P.replace ? $(P.replace) : anchorP(P.afterText); if (!at) { FAILED.push('pipes anchor not found'); return; }
+    var g = gameShell(P.kicker || 'Part 2 game', P.title, P.todo, P.why); g.dataset.mod = 'pipes';
+    var st = loadJ('pipes', { r: {} }), cur = 0, guess = 5, busy = false, U = P.units || 10;
+    var tabs = el('div', 'fs-in-chips fs-pip-tabs'), vis = el('div', 'fs-pip-vis'), ctl = el('div', 'fs-pip-ctl'), res = el('div', 'fs-pip-res'), tbl = el('div', 'fs-pip-tbl');
+    var miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    P.devices.forEach(function (d, i) { var b = el('button', 'fs-in-chip fs-pip-tab', d.icon + ' ' + esc(d.t)); b.type = 'button'; b.dataset.i = i; tabs.appendChild(b); });
+    g.appendChild(tabs); g.appendChild(vis); g.appendChild(ctl); g.appendChild(res); g.appendChild(miss); g.appendChild(tbl); g.appendChild(qh); g.appendChild(win);
+    var narrow = false, DEV = null;
+    function svg(d) {
+      narrow = (g.clientWidth || vis.clientWidth || 800) < 600;
+      var IN, PU, PX, out = '';
+      if (!narrow) {
+        IN = 'M20 110 H250'; PU = 'M390 110 C430 110 430 50 470 50 H690'; PX = 'M390 110 C430 110 430 170 470 170 H690'; DEV = { x: 250, y: 60, w: 140, h: 100, ax: 250, ay: 110 };
+        out = '<svg viewBox="0 0 720 220" class="fs-pip-svg"';
+      } else {
+        IN = 'M180 64 V150'; PU = 'M180 250 C180 290 90 280 90 320 V410'; PX = 'M180 250 C180 290 270 280 270 320 V410'; DEV = { x: 110, y: 150, w: 140, h: 100, ax: 180, ay: 150, v: true };
+        out = '<svg viewBox="0 0 360 470" class="fs-pip-svg narrow"';
+      }
+      out += ' role="img" aria-label="' + esc(d.t + ': ' + d.inF.t + ' energy goes in; ' + d.use.t + ' (useful) and ' + d.xtra.t + ' (extra) come out') + '">' +
+        '<path d="' + IN + '" class="fs-pip-p" style="stroke:' + d.inF.c + '"/><path d="' + PU + '" class="fs-pip-p" style="stroke:' + d.use.c + '"/><path d="' + PX + '" class="fs-pip-p" style="stroke:' + d.xtra.c + '"/>' +
+        '<path d="' + IN + '" class="fs-pip-in"/><path d="' + PU + '" class="fs-pip-in"/><path d="' + PX + '" class="fs-pip-in"/>' +
+        '<rect x="' + DEV.x + '" y="' + DEV.y + '" width="140" height="100" rx="18" class="fs-pip-dev"/><text x="' + (DEV.x + 70) + '" y="' + (DEV.y + 52) + '" text-anchor="middle" class="fs-pip-dic">' + d.icon + '</text><text x="' + (DEV.x + 70) + '" y="' + (DEV.y + 86) + '" text-anchor="middle" class="fs-pip-dt">' + esc(d.t) + '</text>';
+      if (!narrow) out += '<text x="24" y="92" class="fs-pip-lab">' + d.inF.icon + ' ' + esc((P.inWord || 'IN') + ': ' + d.inF.t) + '</text>' +
+        '<text x="600" y="34" text-anchor="middle" class="fs-pip-lab">' + d.use.icon + ' ' + esc((P.useWord || 'USEFUL') + ': ' + d.use.t) + '</text>' +
+        '<text x="600" y="204" text-anchor="middle" class="fs-pip-lab">' + d.xtra.icon + ' ' + esc((P.xtraWord || 'EXTRA') + ': ' + d.xtra.t) + '</text>' +
+        '<g class="fs-pip-drops"></g><text x="700" y="56" text-anchor="end" class="fs-pip-n" data-k="u">0</text><text x="700" y="176" text-anchor="end" class="fs-pip-n" data-k="x">0</text>' +
+        '<text x="140" y="140" text-anchor="middle" class="fs-pip-n" data-k="i">' + U + '</text><text x="8" y="214" class="fs-pip-model">' + esc(P.model || 'a model') + '</text></svg>';
+      else out += '<text x="180" y="22" text-anchor="middle" class="fs-pip-lab">' + d.inF.icon + ' ' + esc((P.inWord || 'IN') + ': ' + d.inF.t) + '</text>' +
+        '<text x="200" y="112" class="fs-pip-n" data-k="i">' + U + '</text>' +
+        '<text x="90" y="440" text-anchor="middle" class="fs-pip-lab">' + d.use.icon + ' ' + esc(P.useWord || 'USEFUL') + '</text><text x="270" y="440" text-anchor="middle" class="fs-pip-lab">' + d.xtra.icon + ' ' + esc(P.xtraWord || 'EXTRA') + '</text>' +
+        '<text x="90" y="462" text-anchor="middle" class="fs-pip-sub">' + esc(d.use.t) + '</text><text x="270" y="462" text-anchor="middle" class="fs-pip-sub">' + esc(d.xtra.t) + '</text>' +
+        '<g class="fs-pip-drops"></g><text x="40" y="360" text-anchor="middle" class="fs-pip-n" data-k="u">0</text><text x="320" y="360" text-anchor="middle" class="fs-pip-n" data-k="x">0</text>' +
+        '<text x="180" y="360" text-anchor="middle" class="fs-pip-model">' + esc(P.model || 'a model') + '</text></svg>';
+      return out;
+    }
+    function paint() {
+      var d = P.devices[cur], r = st.r[d.id];
+      $$('.fs-pip-tab', tabs).forEach(function (b, i) { b.classList.toggle('on', i === cur); b.classList.toggle('ok', !!st.r[P.devices[i].id]); });
+      vis.innerHTML = svg(d);
+      if (r) { $('.fs-pip-n[data-k="u"]', vis).textContent = d.use.n; $('.fs-pip-n[data-k="x"]', vis).textContent = d.xtra.n; $('.fs-pip-n[data-k="i"]', vis).textContent = '0'; }
+      guess = r ? r.g : 5;
+      ctl.innerHTML = '<div class="fs-in-k">' + esc((P.guessQ || 'Guess first: of {n} units, how many come out USEFUL?').replace('{n}', U)) + '</div>' +
+        '<div class="fs-pip-split"><span class="fs-pip-sl">' + d.use.icon + ' <b class="fs-pip-gu"></b></span><input type="range" min="0" max="' + U + '" step="1" class="fs-pip-range" aria-label="My guess: useful units"' + (r ? ' disabled' : '') + '><span class="fs-pip-sl">' + d.xtra.icon + ' <b class="fs-pip-gx"></b></span></div>' +
+        '<div class="fs-pip-bar"><i class="u" style="background:' + d.use.c + '"></i><i class="x" style="background:' + d.xtra.c + '"></i></div>' +
+        (r ? '' : '<button type="button" class="fs-btn fs-pip-pour">' + esc(P.pourBtn || 'Pour in 10 units') + '</button>');
+      var rg = $('.fs-pip-range', ctl); rg.value = guess;
+      function show() { guess = +rg.value; $('.fs-pip-gu', ctl).textContent = guess; $('.fs-pip-gx', ctl).textContent = U - guess; $('.fs-pip-bar .u', ctl).style.width = (guess / U * 100) + '%'; $('.fs-pip-bar .x', ctl).style.width = ((U - guess) / U * 100) + '%'; }
+      rg.addEventListener('input', show); show();
+      var pb = $('.fs-pip-pour', ctl); if (pb) pb.addEventListener('click', pour);
+      res.innerHTML = r ? result(d, r) : '';
+    }
+    function result(d, r) {
+      var off = Math.abs(r.g - d.use.n);
+      return '<div class="fs-hs-card"><span class="fs-hs-n">' + d.icon + '</span><div><b>' + esc(d.t) + ': ' + d.use.n + ' ' + esc(P.usefulWord || 'useful') + ' + ' + d.xtra.n + ' ' + esc(P.extraWord || 'extra') + ' = ' + U + ' ' + esc(P.outWord || 'units out') + '</b>' +
+        esc(off === 0 ? (P.exactLine || 'Your guess was exactly right! ') : off <= 2 ? (P.closeLine || 'Close guess! ') : (P.farLine || 'A surprise! ')) + esc(d.note) + '</div></div>';
+    }
+    function pour() {
+      if (busy) return; var d = P.devices[cur]; busy = true; miss.classList.remove('show'); SFX.whoosh();
+      var gD = $('.fs-pip-drops', vis), ns = 'http://www.w3.org/2000/svg', paths = $$('.fs-pip-in', vis), Lin = paths[0].getTotalLength(), Lu = paths[1].getTotalLength(), Lx = paths[2].getTotalLength();
+      var nU = 0, nX = 0, left = U, order = []; for (var i = 0; i < U; i++) order.push(i < d.use.n ? 'u' : 'x'); order = shuffle(order);
+      function fin() {
+        st.r[d.id] = { g: guess }; saveJ('pipes', st); busy = false; SFX.chime(); paint(); table();
+        var nx = -1; P.devices.some(function (dd, k) { if (!st.r[dd.id]) { nx = k; return true; } });
+        if (nx > -1 && !done()) { var b = el('button', 'fs-btn alt fs-pip-next', esc(P.nextBtn || 'Try another device →')); b.type = 'button'; b.addEventListener('click', function () { cur = nx; SFX.blip(); paint(); }); res.appendChild(b); }
+      }
+      if (reduceMotion) { fin(); return; }
+      order.forEach(function (k, i) {
+        var c = document.createElementNS(ns, 'circle'); c.setAttribute('r', 9); c.setAttribute('class', 'fs-pip-drop'); c.setAttribute('fill', d.inF.c); c.setAttribute('opacity', 0); gD.appendChild(c);
+        var t0 = null, delay = i * 180, T1 = 700, T2 = 900;
+        function step(ts) {
+          if (t0 == null) t0 = ts; var t = ts - t0 - delay; if (t < 0) { requestAnimationFrame(step); return; }
+          var p;
+          if (t < T1) { p = paths[0].getPointAtLength(Lin * t / T1); c.setAttribute('opacity', 1); }
+          else if (t < T1 + 250) { p = DEV.v ? { x: 180, y: 150 + 100 * (t - T1) / 250 } : { x: 250 + 140 * (t - T1) / 250, y: 110 }; c.setAttribute('opacity', 0.25); if (!c.dataset.in) { c.dataset.in = 1; left--; $('.fs-pip-n[data-k="i"]', vis).textContent = left; tone(300 + i * 30, 0, 0.06, 'triangle', 0.03); } }
+          else { var q = Math.min(1, (t - T1 - 250) / T2), path = k === 'u' ? paths[1] : paths[2], L = k === 'u' ? Lu : Lx; p = path.getPointAtLength(L * q); c.setAttribute('opacity', 1); c.setAttribute('fill', k === 'u' ? d.use.c : d.xtra.c);
+            if (q >= 1) { c.remove(); if (k === 'u') nU++; else nX++; $('.fs-pip-n[data-k="u"]', vis).textContent = nU; $('.fs-pip-n[data-k="x"]', vis).textContent = nX; tone(k === 'u' ? 880 : 440, 0, 0.07, 'sine', 0.035); if (nU + nX === U) setTimeout(fin, 300); return; } }
+          c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+      var pb = $('.fs-pip-pour', ctl); if (pb) pb.disabled = true; $('.fs-pip-range', ctl).disabled = true;
+    }
+    function done() { return (P.need || []).every(function (id) { return st.r[id]; }) && Object.keys(st.r).length >= (P.needCount || 3); }
+    function table() {
+      var rows = P.devices.filter(function (d) { return st.r[d.id]; });
+      tbl.innerHTML = rows.length ? '<div class="fs-in-k">' + esc(P.tableLabel || 'My pipe log') + '</div><table class="fs-pip-table"><tr>' + (P.cols || ['Device', 'My guess', 'Useful', 'Extra', 'Total out']).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        rows.map(function (d) { return '<tr><td>' + d.icon + ' ' + esc(d.t) + '</td><td>' + st.r[d.id].g + '</td><td>' + d.use.icon + ' ' + d.use.n + '</td><td>' + d.xtra.icon + ' ' + d.xtra.n + '</td><td><b>' + U + '</b></td></tr>'; }).join('') + '</table>' +
+        (done() ? '' : '<div class="fs-pip-need">' + esc(P.needLine || '') + '</div>') : '';
+      if (done()) askOnce(qh, P.q, P.opts, 'pipes-q', win, P.win, P.clue, 'pipes', miss);
+    }
+    $$('.fs-pip-tab', tabs).forEach(function (b) { b.addEventListener('click', function () { if (busy) return; cur = +b.dataset.i; SFX.blip(); miss.classList.remove('show'); paint(); }); });
+    if (P.replace) { at.parentNode.insertBefore(g, at); at.classList.add('fs-hide-on'); at.style.display = 'none'; } else placeAfter(g, at);
+    paint(); table();
+  }
+
+  /* ---------- After the case: "The repair ticket" — tap the broken link in the beacon's energy chain, pick the fix, stamp FIXED; the lamp
+     comes back on (22.01) ----------
+     D.repair = {after, kicker, title, todo[], why, lockLine, chain:[{id, icon, t, sub}], broken, brokenQ, brokenMiss:{id:hint}, brokenLine, fixQ, fixes:[{t, ok, miss}],
+                 ticket:{head, num, rows:[[k,v]]}, stampBtn, stamp, sign, win} */
+  function buildRepair() {
+    var R = D.repair; if (!R) return;
+    var host = $(R.after || '.fs-solve'); if (!host) { FAILED.push('repair: no anchor'); return; }
+    var g = gameShell(R.kicker || 'Case closed', R.title, R.todo, R.why); g.dataset.mod = 'repair';
+    var st = loadJ('repair', { broken: 0, fix: -1, stamped: 0 });
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(R.lockLine || 'Crack the case first. Then fill in the repair ticket.') + '</span>');
+    var chain = el('div', 'fs-rtk-chain'), step2 = el('div', 'fs-rtk-s2'), tk = el('div', 'fs-rtk-ticket'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    chain.innerHTML = R.chain.map(function (c, i) { return (i ? '<span class="fs-rtk-arw" aria-hidden="true">➜</span>' : '') + '<button type="button" class="fs-rtk-link" data-id="' + c.id + '"><span>' + c.icon + '</span><b>' + esc(c.t) + '</b><small>' + esc(c.sub || '') + '</small></button>'; }).join('');
+    g.appendChild(lock); g.appendChild(el('div', 'fs-in-k fs-rtk-q1', esc(R.brokenQ))); g.appendChild(chain); g.appendChild(step2); g.appendChild(miss); g.appendChild(tk); g.appendChild(win);
+    host.parentNode.insertBefore(g, host.nextSibling);
+    function paint(anim) {
+      var solved = !!store('solved'); g.classList.toggle('locked', !solved); lock.style.display = solved ? 'none' : '';
+      $$('.fs-rtk-link', chain).forEach(function (b) { b.classList.toggle('bad', st.broken && b.dataset.id === R.broken && !st.stamped); b.classList.toggle('lit', !!st.stamped); });
+      step2.innerHTML = '';
+      if (st.broken) {
+        step2.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">🔎</span><div>' + esc(R.brokenLine) + '</div>'));
+        var w = chipsQ(step2, R.fixQ, R.fixes, function (o, i) { st.fix = i; saveJ('repair', st); paint(true); }, miss);
+        if (st.fix > -1) { var c = $$('.fs-in-chip', w)[st.fix]; if (c) c.classList.add('on', 'ok'); w.dataset.done = '1'; }
+      }
+      var fixT = st.fix > -1 ? R.fixes[st.fix].t : '';
+      tk.style.display = st.fix > -1 ? '' : 'none';
+      tk.innerHTML = '<div class="fs-wkt fs-rtk-paper' + (st.stamped && anim ? ' thump' : '') + '"><div class="fs-wkt-h"><span>' + esc(R.ticket.head) + '</span><b>' + esc(R.ticket.num || '') + '</b></div><ul class="fs-wkt-rows">' +
+        R.ticket.rows.map(function (r) { return '<li><b>' + esc(r[0]) + '</b><em>' + esc(r[1].replace('{fix}', fixT)) + '</em></li>'; }).join('') + '</ul>' +
+        (st.stamped ? '<span class="fs-rtk-stamp">' + esc(R.stamp || 'FIXED') + '</span><div class="fs-wkt-f">' + esc(R.sign || '') + '</div>' : '<button type="button" class="fs-btn fs-rtk-go">' + esc(R.stampBtn || 'Stamp it FIXED') + '</button>') + '</div>';
+      var go = $('.fs-rtk-go', tk); if (go) go.addEventListener('click', function () { st.stamped = 1; saveJ('repair', st); SFX.stamp(); setTimeout(SFX.win, 250); paint(true); winOnce(win, R.win, null, 'repair'); document.dispatchEvent(new Event('fs:evidence')); });
+      if (st.stamped) winOnce(win, R.win, null, 'repair');
+    }
+    $$('.fs-rtk-link', chain).forEach(function (b) { b.addEventListener('click', function () {
+      if (g.classList.contains('locked') || st.broken) return;
+      if (b.dataset.id !== R.broken) { bounce(b, miss, (R.brokenMiss || {})[b.dataset.id] || 'That link worked fine. Check the ticket again.'); return; }
+      st.broken = 1; saveJ('repair', st); miss.classList.remove('show'); SFX.pop(); paint(true);
+    }); });
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); });
+    paint();
+  }
+
+  /* ---------- Bonus after the case: "Light the harbor" — pick the best device for each night job; each pick shows its energy change and
+     1 to 3 stars; try again for 3 stars (22.01, folded) ----------
+     D.harbor = {after, kicker, title, todo[], lockLine, jobs:[{id, icon, t, picks:[{icon, t, chain, stars, line}]}], starsWord, win} */
+  function buildHarbor() {
+    var H = D.harbor; if (!H) return;
+    var host = $(H.after || '.fs-solve'); if (!host) { FAILED.push('harbor: no anchor'); return; }
+    var g = gameShell(H.kicker || 'Bonus game', H.title, H.todo, H.why); g.dataset.mod = 'harbor';
+    var st = loadJ('harbor', { s: {} });
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(H.lockLine || 'Crack the case first. Then this game opens.') + '</span>');
+    var jobs = el('div', 'fs-hbr-jobs'), total = el('div', 'fs-count'), win = el('div', 'fs-win');
+    g.appendChild(lock); g.appendChild(jobs); g.appendChild(total); g.appendChild(win);
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    function stars(n) { return '<span class="fs-hbr-st">' + [1, 2, 3].map(function (k) { return k <= n ? '★' : '☆'; }).join('') + '</span>'; }
+    function paint() {
+      var solved = !!store('solved'); g.classList.toggle('locked', !solved); lock.style.display = solved ? 'none' : '';
+      jobs.innerHTML = H.jobs.map(function (j) {
+        var s = st.s[j.id], p = s ? j.picks[s.i] : null;
+        return '<div class="fs-hbr-job' + (s && s.n === 3 ? ' ok' : '') + '" data-id="' + j.id + '"><div class="fs-hbr-h"><span>' + j.icon + '</span><b>' + esc(j.t) + '</b>' + (s ? stars(s.best) : '') + '</div><div class="fs-hbr-picks">' +
+          j.picks.map(function (pp, i) { return '<button type="button" class="fs-hbr-p' + (s && s.i === i ? ' on' : '') + '" data-i="' + i + '"><span>' + pp.icon + '</span>' + esc(pp.t) + '</button>'; }).join('') + '</div>' +
+          (p ? '<div class="fs-hbr-res">' + stars(p.stars) + ' <code>' + esc(p.chain) + '</code><p>' + esc(p.line) + '</p></div>' : '') + '</div>';
+      }).join('');
+      $$('.fs-hbr-p', jobs).forEach(function (b) { b.addEventListener('click', function () {
+        if (g.classList.contains('locked')) return;
+        var id = b.closest('.fs-hbr-job').dataset.id, j = H.jobs.filter(function (x) { return x.id === id; })[0], i = +b.dataset.i, n = j.picks[i].stars, old = st.s[id];
+        st.s[id] = { i: i, n: n, best: Math.max(n, old ? old.best : 0) }; saveJ('harbor', st);
+        if (n === 3) SFX.chime(); else SFX.blip(); paint();
+      }); });
+      var sum = H.jobs.reduce(function (a, j) { return a + (st.s[j.id] ? st.s[j.id].best : 0); }, 0), max = H.jobs.length * 3;
+      total.textContent = '★ ' + sum + ' of ' + max + ' ' + (H.starsWord || 'stars'); total.classList.toggle('ok', sum === max);
+      if (sum === max && !win.classList.contains('show')) { win.innerHTML = esc(H.win); win.classList.add('show'); SFX.win(); }
+    }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); });
+    paint();
+  }
+
+  /* ----- Tool of the Week (22.01): plug-in watt meter. Plug in a load: the screen counts up to its watts; an old bulb and an LED give the same
+     light for very different watts. T.wattmeter = {title, todo[], model, loads:[{k, icon, t, w, note, same}], ladderLabel, pairLine, q:{q, opts:[{t, ok, why}]}} ----- */
+  SIMS.wattmeter = function (host, T) {
+    var M = T.wattmeter, st = loadJ('wattmeter', {});
+    host.innerHTML = '<div class="fs-game-k">' + esc(M.kicker || 'Try it: a plug-in watt meter') + '</div><div class="fs-game-t">' + esc(M.title) + '</div>' +
+      '<ul class="fs-todo">' + M.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-wtm-wrap"><svg viewBox="0 0 220 240" class="fs-wtm-svg" role="img" aria-label="A model of a plug-in watt meter: a box that plugs into the wall, with a screen and a socket on the front">' +
+      '<rect x="40" y="10" width="140" height="210" rx="22" fill="#F2F4F7" stroke="#9AA5B1" stroke-width="3"/><rect x="58" y="30" width="104" height="58" rx="8" fill="#B9D7A8" stroke="#6E8F5E" stroke-width="2"/>' +
+      '<text x="148" y="70" text-anchor="end" class="fs-wtm-lcd">----</text><text x="152" y="82" text-anchor="end" class="fs-wtm-u">W</text>' +
+      '<g fill="#7B8794"><rect x="70" y="100" width="20" height="10" rx="3"/><rect x="100" y="100" width="20" height="10" rx="3"/><rect x="130" y="100" width="20" height="10" rx="3"/></g>' +
+      '<circle cx="110" cy="168" r="36" fill="#E3E7EC" stroke="#9AA5B1" stroke-width="2"/><rect x="96" y="150" width="7" height="20" rx="2" fill="#4A5561"/><rect x="117" y="150" width="7" height="20" rx="2" fill="#4A5561"/><path d="M104 184 a6 6 0 0 1 12 0 v6 h-12z" fill="#4A5561"/>' +
+      '<path class="fs-wtm-cord" d="M110 204 C110 232 190 226 214 236" fill="none" stroke="#2E3A4A" stroke-width="5" stroke-linecap="round"/><text x="46" y="234" class="fs-wtm-model">' + esc(M.model || 'a model') + '</text></svg>' +
+      '<div class="fs-wtm-side"><div class="fs-wtm-cards">' + M.loads.map(function (l) { return '<button type="button" class="fs-wtm-card" data-k="' + l.k + '"><span>' + l.icon + '</span>' + esc(l.t) + '</button>'; }).join('') + '</div><div class="fs-wtm-note"></div></div></div>' +
+      '<div class="fs-wtm-ladder"></div><div class="fs-sv-q fs-wtm-q"></div><div class="fs-miss fs-wtm-miss"></div><div class="fs-win fs-wtm-win"></div>';
+    var lcd = $('.fs-wtm-lcd', host), note = $('.fs-wtm-note', host), miss = $('.fs-wtm-miss', host);
+    function L(k) { return M.loads.filter(function (l) { return l.k === k; })[0]; }
+    function plug(k) {
+      var l = L(k), t0 = null, D1 = reduceMotion ? 1 : 900;
+      SFX.pop(); $$('.fs-wtm-card', host).forEach(function (b) { b.classList.toggle('on', b.dataset.k === k); });
+      function run(ts) { if (t0 == null) t0 = ts; var p = Math.min(1, (ts - t0) / D1); lcd.textContent = Math.round(l.w * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(run); else tone(990, 0, 0.12, 'sine', 0.04); }
+      requestAnimationFrame(run);
+      note.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + l.icon + '</span><div><b>' + esc(l.t + ': ' + (M.aboutWord || 'about') + ' ' + l.w + ' ' + (M.unitWord || 'watts')) + '</b>' + esc(l.note) + '</div></div>';
+      st[k] = 1; saveJ('wattmeter', st); ladder();
+    }
+    function ladder() {
+      var got = M.loads.filter(function (l) { return st[l.k]; }).sort(function (a, b) { return a.w - b.w; }), max = Math.max.apply(null, M.loads.map(function (l) { return l.w; }));
+      $('.fs-wtm-ladder', host).innerHTML = got.length ? '<div class="fs-in-k">' + esc(M.ladderLabel || 'Watts going IN') + '</div>' + got.map(function (l) { return '<div class="fs-wtm-bar"><b>' + l.icon + ' ' + esc(l.t) + '</b><span><i style="width:' + Math.max(2, Math.round(Math.sqrt(l.w / max) * 100)) + '%"></i></span><em>' + l.w + ' W</em></div>'; }).join('') +
+        (M.loads.filter(function (l) { return l.same; }).every(function (l) { return st[l.k]; }) ? '<div class="fs-wtm-pair">💡 ' + esc(M.pairLine) + '</div>' : '') : '';
+      $$('.fs-wtm-card', host).forEach(function (b) { b.classList.toggle('done', !!st[b.dataset.k]); });
+      if (M.loads.every(function (l) { return st[l.k]; })) check();
+    }
+    function check() {
+      var q = $('.fs-wtm-q', host); if (q.dataset.on) return; q.dataset.on = '1';
+      q.innerHTML = '<div class="fs-in-k">' + esc(M.q.q) + '</div><div class="fs-in-chips">' + M.q.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+      function ok(i) { $$('.fs-in-chip', q)[i].classList.add('on', 'ok'); var w = $('.fs-wtm-win', host); w.innerHTML = esc(M.q.opts[i].why); w.classList.add('show'); }
+      $$('.fs-in-chip', q).forEach(function (c) { c.addEventListener('click', function () { var o = M.q.opts[+c.dataset.i]; if (!o.ok) { bounce(c, miss, o.why); return; } miss.classList.remove('show'); ok(+c.dataset.i); SFX.win(); store('wattmeter-q', '1'); toolDone(); }); });
+      if (store('wattmeter-q')) ok(M.q.opts.map(function (o, j) { return o.ok ? j : -1; }).filter(function (j) { return j > -1; })[0]);
+    }
+    $$('.fs-wtm-card', host).forEach(function (b) { b.addEventListener('click', function () { plug(b.dataset.k); }); });
+    ladder();
+  };
+
   function init() {
     if (/[?&]review\b/.test(location.search)) html.classList.add('fs-review');
     guard('tabs', trackTabs);
@@ -9184,6 +9519,9 @@
     guard('iknewit', buildIknewit);
     guard('flaglane', buildFlaglane);
     guard('cradle', buildCradle);
+    guard('blackbox', buildBlackbox);
+    guard('arrowtags', buildArrowtags);
+    guard('pipes', buildPipes);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
@@ -9200,6 +9538,8 @@
     guard('strike', buildStrike);
     guard('cradlefree', buildCradlefree);
     guard('signmaker', buildSignmaker);
+    guard('repair', buildRepair);
+    guard('harbor', buildHarbor);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);
