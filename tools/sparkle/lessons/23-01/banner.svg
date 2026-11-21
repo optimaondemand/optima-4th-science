@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="A Florida canal at night: a full moon, a wooden dock and a house with one lit window. Under the dark water, two black drum fish send soft sound rings up through the water and into the house.">
+  <defs>
+    <linearGradient id="c23sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D1530"/><stop offset="1" stop-color="#26385E"/></linearGradient>
+    <linearGradient id="c23sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E3A55"/><stop offset="1" stop-color="#0B1A2A"/></linearGradient>
+    <radialGradient id="c23moon" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF8DC"/><stop offset=".55" stop-color="#F6E7B0"/><stop offset="1" stop-color="#F6E7B0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="c23win" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD36E" stop-opacity=".9"/><stop offset="1" stop-color="#FFD36E" stop-opacity="0"/></radialGradient>
+    <style>
+      .c23-ring{fill:none;stroke:#9FD8F2;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:c23ring 3s ease-out infinite}
+      .c23-r2{animation-delay:1s}.c23-r3{animation-delay:2s}
+      .c23-fish{animation:c23swim 7s ease-in-out infinite}
+      .c23-f2{animation-duration:9s;animation-delay:-3s}
+      .c23-win{animation:c23glow 3s ease-in-out infinite}
+      .c23-star{animation:c23tw 3.5s ease-in-out infinite}
+      .c23-glint{animation:c23gl 4s ease-in-out infinite}
+      @keyframes c23ring{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+      @keyframes c23swim{50%{transform:translateX(14px)}}
+      @keyframes c23glow{50%{opacity:.55}}
+      @keyframes c23tw{50%{opacity:.25}}
+      @keyframes c23gl{50%{opacity:.35}}
+      @media (prefers-reduced-motion: reduce){.c23-ring,.c23-fish,.c23-win,.c23-star,.c23-glint{animation:none}.c23-ring{opacity:.5}}
+    </style>
+  </defs>
+  <rect width="920" height="200" fill="url(#c23sky)"/>
+  <g fill="#fff"><circle class="c23-star" cx="60" cy="24" r="1.4"/><circle class="c23-star" cx="170" cy="48" r="1.1" style="animation-delay:1s"/><circle class="c23-star" cx="300" cy="18" r="1.3" style="animation-delay:2s"/><circle class="c23-star" cx="520" cy="30" r="1.1"/><circle class="c23-star" cx="610" cy="14" r="1.4" style="animation-delay:1.5s"/><circle class="c23-star" cx="860" cy="40" r="1.2" style="animation-delay:.5s"/></g>
+  <circle cx="420" cy="42" r="40" fill="url(#c23moon)"/><circle cx="420" cy="42" r="19" fill="#FFF6D6"/>
+  <!-- far shore: sea grape bushes and a cabbage palm -->
+  <path d="M0 96 Q40 80 90 92 Q140 78 190 94 L190 104 L0 104z" fill="#14233A"/>
+  <g fill="#14233A"><rect x="128" y="52" width="4" height="46"/><path d="M130 54 q-22 -6 -30 6 q16 -4 30 -4z M130 54 q22 -8 32 4 q-16 -4 -32 -2z M130 54 q-8 -18 -24 -18 q14 6 24 16z M130 54 q10 -18 26 -16 q-14 6 -26 14z"/></g>
+  <!-- house with a lit window -->
+  <g><path d="M640 104 V58 L700 26 L760 58 V104z" fill="#24344F"/><path d="M630 60 L700 22 L770 60" fill="none" stroke="#3A4C6B" stroke-width="6" stroke-linejoin="round"/>
+    <circle class="c23-win" cx="700" cy="70" r="34" fill="url(#c23win)"/><rect x="686" y="58" width="28" height="24" rx="2" fill="#FFD36E"/><path d="M700 58 v24 M686 70 h28" stroke="#B9822A" stroke-width="2"/>
+    <rect x="726" y="76" width="16" height="28" fill="#3A4C6B"/></g>
+  <!-- seawall + dock -->
+  <rect x="600" y="100" width="320" height="8" fill="#5A6478"/>
+  <g fill="#6B5233"><rect x="470" y="96" width="140" height="7" rx="2"/><rect x="480" y="96" width="5" height="40"/><rect x="530" y="96" width="5" height="40"/><rect x="580" y="96" width="5" height="40"/></g>
+  <!-- water -->
+  <rect y="104" width="920" height="96" fill="url(#c23sea)"/>
+  <g class="c23-glint" stroke="#F6E7B0" stroke-width="2" opacity=".7"><path d="M396 116 h48"/><path d="M404 126 h32"/><path d="M410 136 h20"/></g>
+  <!-- sound rings rising to the house -->
+  <g><circle class="c23-ring" cx="330" cy="168" r="16"/><circle class="c23-ring c23-r2" cx="330" cy="168" r="16"/><circle class="c23-ring c23-r3" cx="330" cy="168" r="16"/>
+     <circle class="c23-ring" cx="560" cy="176" r="14"/><circle class="c23-ring c23-r2" cx="560" cy="176" r="14"/><circle class="c23-ring c23-r3" cx="560" cy="176" r="14"/></g>
+  <path d="M600 150 Q640 120 690 96" fill="none" stroke="#9FD8F2" stroke-width="2" stroke-dasharray="3 6" opacity=".55"/>
+  <!-- two black drum fish: deep body, arched back, chin barbels -->
+  <g transform="translate(300 160)"><g class="c23-fish"><path d="M0 8 Q18 -16 56 -12 Q78 -8 90 6 Q78 20 56 22 Q18 26 0 8z" fill="#55606B"/><path d="M90 6 l16 -12 v24z" fill="#4A535D"/><path d="M30 -12 q14 -10 30 -2" fill="#4A535D"/><circle cx="14" cy="4" r="2.6" fill="#E8EEF2"/><path d="M4 14 l-3 6 M8 15 l-1 7 M12 16 l1 6" stroke="#B9C2CA" stroke-width="1.2"/></g></g>
+  <g transform="translate(532 172) scale(.85)"><g class="c23-fish c23-f2"><path d="M0 8 Q18 -16 56 -12 Q78 -8 90 6 Q78 20 56 22 Q18 26 0 8z" fill="#4E5862"/><path d="M90 6 l16 -12 v24z" fill="#444C55"/><path d="M30 -12 q14 -10 30 -2" fill="#444C55"/><circle cx="14" cy="4" r="2.6" fill="#E8EEF2"/><path d="M4 14 l-3 6 M8 15 l-1 7 M12 16 l1 6" stroke="#B9C2CA" stroke-width="1.2"/></g></g>
+  <!-- seagrass -->
+  <g stroke="#2E5A43" stroke-width="3" stroke-linecap="round" fill="none"><path d="M40 200 q4 -20 -2 -34"/><path d="M52 200 q-4 -18 4 -30"/><path d="M820 200 q4 -22 -3 -36"/><path d="M834 200 q-5 -16 3 -28"/><path d="M200 200 q3 -14 -2 -24"/></g>
+</svg>

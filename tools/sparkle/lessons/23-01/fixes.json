@@ -1,0 +1,277 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "sound is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: Florida benchmark first; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.P.10.3 · TEKS 4.8(A)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.10.3</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the case + the hold-it-to-stop-it game",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Every sound you have ever heard started the same way. Make each thing below ring, then stop it with your hand.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → a list of sounds at home (on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Now listen around you. What is vibrating to make each sound?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Stop & Reason about “the three devices above”",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for a sound model",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; My Sound Model"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task (now a sound model typed on the page + a required labeled sketch)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Show how a sound gets from a vibrating thing to an ear. Fill in your model below, then sketch it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: a ruler for the ruler test",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>📏</span>A ruler (to try it for real)</span>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll explain what sound is and why fast vibrations sound high.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; two examples (Part 1)",
+  "old": "Pluck a rubber band. Tap a desk. Strum a guitar string. Stand near a speaker and feel the air buzz. Every one of those sounds happens because something is moving back and forth very fast — a ",
+  "new": "Pluck a rubber band. Strum a guitar string. Each sound happens because something is moving back and forth very fast. That is a "
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; the misconception moves here, next to the wave idea, and leads into the game (Part 1)",
+  "old": "When the wave reaches your ear, it shakes your eardrum — and your brain turns that shaking into <span class=\"vtip\">sound<span class=\"vtip-box\"><span class=\"vtip-word\">Sound</span>Wave energy from a vibration.</span></span>.</p>",
+  "new": "When the wave reaches your ear, it shakes your eardrum, and your brain hears it as <span class=\"vtip\">sound<span class=\"vtip-box\"><span class=\"vtip-word\">Sound</span>Wave energy from a vibration.</span></span>.</p>\n      <p><strong>Watch out:</strong> sound is NOT a tiny thing flying through the air. The air just shakes in place and passes the push along. Be the vibration and watch.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Every Sound Starts Somewhere</div>\n        <div class=\"act-subtitle\">Make it ring, then stop it</div>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash (Part 2)",
+  "old": "Pitch depends on how FAST the source is vibrating — its ",
+  "new": "Pitch depends on how FAST the source is vibrating: its "
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; leads into the game (Part 2)",
+  "old": "<p>You've probably noticed: a short rubber band stretched tight makes a HIGH twang. A long, loose one makes a LOW twang. The tighter and shorter the band, the faster it vibrates — and the higher the pitch you hear.</p>",
+  "new": "<p>A short, tight rubber band makes a HIGH twang. A long, loose one makes a LOW twang. Shorter and tighter means faster vibrations and a higher pitch. Try to tune one by ear.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; no dash; points to 23.02",
+  "old": "Next lesson, we\\'ll leave sound waves behind and look at moving AIR and WATER — and how they can do work for us\\.",
+  "new": "Next lesson: moving air and moving water, and the work they can do.",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Explain how a guitar makes a higher pitch when you...\"",
+  "new": "data-label=\"Shorter guitar string, higher pitch\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why is it possible to FEEL sound on a speaker but ...\"",
+  "new": "data-label=\"Feel it but not see it\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the wiggle game is Part 1’s thinking stop)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "the misconception paragraph moved to Part 1 (next to the wave idea)",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think sound is something invisible flying.*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Key Concept box (the games and the diagram carry it)",
+  "old": "<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "removed: the Four Florida Sounds tap diagram (its thunder line was wrong: you feel and hear thunder at the same time; its tree frog line said the vocal sac vibrates, but the vocal cords do and the sac makes it louder), Observe & Reason, the dolphin fact, the Florida connection and Go Deeper (lean). Part 3 = the old Explore (the ruler test); the next button goes to Self-Check",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Florida Sounds</h3>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Pluck, Tap, Listen</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Test it like a scientist. A ruler hanging off a desk vibrates just like a guitar string. Change ONE thing, how much hangs off the edge, and listen.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its ruler steps are now Part 3; its manatee fact was wrong: manatee chirps are high squeaks, not low rumbles; the thunder puzzle and Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; Q5 named the removed diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 6 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page, plus the required sketch",
+  "old": "A sound model labeled with vibrating source, wave, and ear — plus two mini-waves for high vs. low pitch.",
+  "new": "My sound model: the vibrating source, the wave, the ear, and what makes high and low pitch. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether sound is a \"flying object\" or a \"wave,\" and supported it with two pieces of evidence\\.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether sound is a tiny flying ball, with two pieces of evidence.",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]
