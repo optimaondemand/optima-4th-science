@@ -785,6 +785,10 @@
 }
 </style>
 <script src="assets/tab-quiet.js?v=e721bcc8"></script>
+<!-- Field Station sparkle layer (G4 Science). Lesson content lives in fs-data; the layer is shared. -->
+<script type="application/json" id="fs-data">{"lesson":"22.02","week":22,"day":2,"guide":"sam","prefix":"g4sci-22-2","manifestKey":"22-02","paths":{"audio":"assets/audio/guide/","video":"assets/video/teacher/","manifest":"https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json","h2c":"assets/sparkle/vendor/html2canvas.min.js","crew":"assets/crew/","ornaments":"assets/ornaments/"},"crew":{"sam":{"name":"Sam Park","role":"engineer (someone who designs and builds things to solve problems)","initials":"SP","color":"#1F7F86","lens":"blueprint","voiceId":"s3TPKV1kjDlVtZbl4Ksh"}},"expedition":{"num":22,"title":"The Backup Light"},"ambient":{"icon":"🌊","label":"Ocean sounds"},"case":{"num":22,"title":"The Backup Light","style":"mariners","hook":"The jetty light is fixed. But a big storm is coming, and clouds will hide the Sun for days. Its solar panel can’t charge with no sunshine, so the keeper wants a backup light. My first try failed. Good! Now I know what to fix.","notice":{"head":"NOTICE TO MARINERS · STORM WATCH","title":"CLOUDS AND STORM AHEAD","rows":[["Mon–Wed","☁️ Thick clouds all day. Very little sunshine."],["Thu night","⛈️ Storm: strong wind, rain and salt spray."],["Boats","The jetty light must shine every night."]],"line":"A forecast tells what the weather will probably do."},"memo":{"t":"Sam, the solar light can’t charge with no sunshine. Can you build a backup light that keeps shining through all of this? Work order attached.","sign":"~ the harbor keeper"},"stills":[],"question":"What will make Sam’s backup light ready for the storm?","how":"Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.","clues":[{"id":"stamps","icon":"📋","where":"Warm-Up: stamp the work order","t":"Criteria are the goals a design must meet. Constraints are the limits it must stay inside. Write both down first."},{"id":"crossout","icon":"✂️","where":"The Lesson, Part 1: limits cross out ideas","t":"The limits crossed out 4 of 6 ideas. Only ideas that fit the limits are worth building and testing."},{"id":"versions","icon":"🔁","where":"The Lesson, Part 2: the version timeline","t":"Every failed test showed what to fix. Changing ONE thing at a time, Sam’s light got better: v1, v2, v3, v4."},{"id":"stormtest","icon":"⛈️","where":"The Lesson, Part 3: design it, then storm it","t":"A design isn’t ready until it passes a test in the real conditions: three cloudy days and a storm night."}],"solve":{"title":"What will make the backup light ready for the storm?","q":"Which answer fits all four clues?","options":[{"t":"Sam’s first design. Good engineers get it right on the first try.","why":"Check Clue 3. Sam’s first try was too dim! It took four versions."},{"t":"The brightest, biggest light, no matter what it costs.","why":"Check Clue 1. The light has to stay inside the limits, like the budget."},{"t":"A design that meets the goals, stays inside the limits, and passed a real storm test after redesigns.","right":true,"why":"Case cracked! Goals, limits, a test, and redesign until it passes: that’s engineering. Make your patent drawing just below."},{"t":"Any design works if you build it carefully. You don’t need to test it.","why":"Check Clue 4. Only a test in real conditions shows if it works."}]}},"stamps":{"afterText":"Tap a line, then stamp it.","kicker":"Warm-Up game","title":"Stamp the work order","todo":["Tap a line on the work order.","Stamp it CRITERION (a goal) or CONSTRAINT (a limit). Or drag a stamp onto the line."],"why":{"icon":"📋","q":"What’s a work order?","t":"A note that tells a builder what job to do. This one is from the harbor keeper to Sam."},"order":{"head":"WORK ORDER · Palmetto Beach Harbor","num":"No. 22-B","title":"Build a backup jetty light","to":"To: Sam Park, engineer"},"kinds":{"crit":{"t":"CRITERION","icon":"🎯","sub":"a goal: what it should DO"},"cons":{"t":"CONSTRAINT","icon":"🚧","sub":"a limit: what it CAN’T do"}},"lines":[{"id":"bright","t":"Boats must see it from 1 mile away.","k":"crit","why":"A goal: how well it must work.","miss":"Is this something the light should DO well, or a limit?"},{"id":"cost","t":"Spend no more than $50.","k":"cons","why":"A limit: the budget.","miss":"Is money something the light DOES, or a limit Sam must stay inside?"},{"id":"night","t":"Shine all night, every night.","k":"crit","why":"A goal: what the light must do.","miss":"Is shining all night a goal or a limit?"},{"id":"wires","t":"No wires out to the jetty.","k":"cons","why":"A limit: something Sam can’t use.","miss":"Is “no wires” a goal, or a rule that limits Sam?"},{"id":"nobody","t":"Must work with nobody there at night.","k":"cons","why":"A limit: no one can help it.","miss":"Does this tell what the light should do, or what Sam can’t count on?"},{"id":"storm","t":"Keep shining through the storm.","k":"crit","why":"A goal: it must survive and work.","miss":"Is this a goal for the light, or a limit?"}],"pickLine":"Tap a line, then press a stamp. (Or drag a stamp onto a line.)","countWord":"lines stamped","q":"What’s the difference between a criterion and a constraint?","opts":[{"t":"A criterion is a goal. A constraint is a limit.","ok":true},{"t":"They mean the same thing.","miss":"Look at your stamps. Are “seen from 1 mile” and “$50” the same kind of line?"},{"t":"A constraint is a goal. A criterion is a limit.","miss":"Flip it! Which stamp did “Spend no more than $50” get?"}],"win":"Goals and limits, sorted. That’s step one for every engineer. Clue 1!"},"crossout":{"afterText":"so you only test the good ones","kicker":"Part 1 game","title":"Limits cross out ideas","todo":["Read the 6 backup-light ideas.","Add the keeper’s limits one at a time (press the button, or drag the next limit onto the ideas).","Watch which ideas get crossed out, and why."],"why":{"icon":"✂️","q":"Why add limits?","t":"Limits save time. Crossing out ideas that can’t work means you only build and test the good ones."},"ideas":[{"id":"cord","icon":"🔌","t":"A long extension cord from shore","breaks":{"wires":"No wires to the jetty."}},{"id":"candle","icon":"🕯️","t":"A candle lantern","breaks":{"nobody":"Someone has to light it every night."}},{"id":"crank","icon":"🔄","t":"A hand-crank light","breaks":{"nobody":"Nobody is there to turn the crank."}},{"id":"gen","icon":"⛽","t":"A gas generator","sub":"costs about $400","breaks":{"nobody":"Someone has to add gas.","cost":"Costs way more than $50."}},{"id":"solar","icon":"🔲","t":"A solar light with a bigger battery"},{"id":"wind","icon":"🌀","t":"A small wind-spinner light"}],"limits":[{"id":"wires","icon":"🔌","t":"No wires out to the jetty."},{"id":"nobody","icon":"🌙","t":"Must work with nobody there."},{"id":"cost","icon":"💲","t":"No more than $50."}],"limitsLabel":"The keeper’s limits","addBtn":"Add limit {n}","dragLine":"Or drag the next limit onto the ideas.","leftLine":"Two ideas are left. Now they need testing!","q":"What did the limits do?","opts":[{"t":"They crossed out ideas that couldn’t work, so only the good ones are left to test.","ok":true},{"t":"They picked the perfect design.","miss":"Two ideas are still left. Do we know yet which one works?"},{"t":"They made the job impossible.","miss":"Look again. Are any ideas still standing?"}],"win":"6 ideas, 3 limits, 2 left to test. Limits help! Clue 2!"},"versions":{"afterText":"Watch Sam’s backup light change, version by version","kicker":"Part 2 game","title":"The version timeline","todo":["Read the test results for each version of Sam’s wind-spinner light.","Pick the ONE change that fixes what failed.","Build and test the next version."],"why":{"icon":"🔁","q":"What’s a version?","t":"Each new try of a prototype. Engineers number them: v1, v2, v3… so they can compare."},"model":"a model","partsLabel":"Built with","oneQ":"What ONE change should Sam make for the next version?","buildBtn":"Build and test {v}","goalWord":"Goal","testWord":"Test result","passWord":"Pass","failWord":"Fail","naWord":"Not tested yet","crit":[{"id":"bright","icon":"💡","t":"Seen from 1 mile away"},{"id":"night","icon":"🌙","t":"Shines all night"},{"id":"salt","icon":"🌊","t":"Survives a week of salt spray"}],"vers":[{"v":"v1","name":"first try","icon":"🌀","parts":["a small wind spinner","a small battery","a tiny LED"],"tests":{"bright":false,"night":null,"salt":null},"note":"Too dim! From the boats, nobody could see it. Sam stopped testing here: no point testing the rest until it’s bright enough.","opts":[{"t":"Use a brighter LED.","ok":true},{"t":"Change everything: new spinner, new battery, new LED, new case.","miss":"If v2 works, how would Sam know WHICH change fixed it? Change ONE thing."},{"t":"Give up. Wind lights don’t work.","miss":"One failed test is information, not the end. What did the test tell Sam to fix?"}]},{"v":"v2","name":"brighter LED","icon":"🌀","parts":["a small wind spinner","a small battery","a BRIGHTER LED"],"fixed":"Changed: the LED","tests":{"bright":true,"night":false,"salt":null},"note":"Bright enough now! But at 2 AM the light went out. The brighter LED uses energy faster, and the small battery ran empty. Fixing one thing caused a new problem.","opts":[{"t":"Add a bigger battery.","ok":true},{"t":"Go back to the tiny LED.","miss":"Then it fails the brightness test again!"},{"t":"Give up.","miss":"Sam is close! Which goal failed this time?"}]},{"v":"v3","name":"bigger battery","icon":"🌀","parts":["a small wind spinner","a BIGGER battery","a brighter LED"],"fixed":"Changed: the battery","tests":{"bright":true,"night":true,"salt":false},"note":"Bright, and it shines all night! But after 3 days of salt spray, the spinner’s motor rusted stuck. No spinning, no charging.","opts":[{"t":"Put the spinner’s motor in a salt-proof case.","ok":true},{"t":"Add an even bigger battery.","miss":"The battery was fine this time. Which goal failed?"},{"t":"Paint the light a brighter color.","miss":"Paint won’t stop rust inside the motor. What failed?"}]},{"v":"v4","name":"salt-proof case","icon":"🌀","parts":["a small wind spinner in a salt-proof case","a bigger battery","a brighter LED"],"fixed":"Changed: added a salt-proof case","tests":{"bright":true,"night":true,"salt":true},"note":"All three goals pass! Four versions, one change at a time. Every failed test showed Sam what to fix next."}],"q":"Sam’s light failed three times. Was Sam a bad engineer?","opts":[{"t":"No. Each failed test showed what to fix, and the light got better every time.","ok":true},{"t":"Yes. Good engineers get it right the first time.","miss":"Look at the timeline. Did the failed tests help or hurt?"},{"t":"Yes, Sam should have changed everything at once.","miss":"Then Sam wouldn’t know which change fixed what. One change at a time!"}],"win":"Fail, learn, fix one thing, test again. That’s the design cycle! Clue 3!"},"stormtest":{"afterText":"Build a backup light inside the keeper’s limits, then test it in the storm","kicker":"Part 3 game","title":"Design it, then storm it","todo":["Pick ONE energy input and up to 2 add-ons. Stay under $50.","Press Run the storm test: 3 cloudy days, then a storm night.","If the light goes dark, read why, change your design and test again."],"why":{"icon":"⛈️","q":"Why test in a storm?","t":"A light that works on a sunny day might fail when it matters most. Engineers test in the real conditions."},"model":"a model","budget":50,"maxAdd":2,"cap":8,"bigCap":24,"need":6,"brightNeed":9,"saltFrom":1,"inQ":"1. Pick ONE energy input","addQ":"2. Add up to {n} add-ons","budgetWord":"Budget","inputs":[{"id":"solar","icon":"🔲","t":"Solar panel","cost":20,"note":"Light → electrical. No moving parts.","charge":{"cloudy":2,"storm":0}},{"id":"wind","icon":"🌀","t":"Wind spinner","cost":25,"note":"Moving air → motion → electrical.","moving":true,"charge":{"cloudy":6,"storm":12}},{"id":"crank","icon":"🔄","t":"Hand crank","cost":10,"note":"Your arm’s motion → electrical.","person":true,"charge":{"cloudy":8,"storm":8}},{"id":"tide","icon":"🌊","t":"Tide water wheel","cost":45,"note":"Moving water → motion → electrical.","moving":true,"charge":{"cloudy":8,"storm":8}}],"addons":[{"id":"big","icon":"🔋","t":"Bigger battery","cost":15,"note":"Stores 3 times more energy.","big":true},{"id":"salt","icon":"🛡️","t":"Salt-proof case","cost":10,"note":"Keeps salt spray off moving parts.","salt":true},{"id":"bright","icon":"🔆","t":"Extra-bright LED","cost":10,"note":"Brighter than needed. Uses more energy.","bright":true},{"id":"panel2","icon":"➕","t":"Second solar panel","cost":15,"note":"Catches a little more light on cloudy days.","extra":2}],"days":[{"k":"cloudy","icon":"☁️","t":"Day 1"},{"k":"cloudy","icon":"☁️","t":"Day 2"},{"k":"cloudy","icon":"🌥️","t":"Day 3"},{"k":"storm","icon":"⛈️","t":"Storm night"}],"runBtn":"⛈ Run the storm test","pickLine":"Pick an energy input first.","overLine":"Over budget! The keeper’s limit is $50. Take something off.","maxLine":"Only 2 add-ons fit. Tap one to take it off first.","rustWord":"rusted","logLabel":"My tests","lines":{"dark":"The battery ran empty and the light went dark.","rust":"Salt spray rusted the moving parts, so it stopped charging.","person":"Nobody was there at night to turn the crank.","ok":"The light shone every night, even in the storm!"},"retryLine":" Redesign: change ONE thing and test again.","wow":" The boats can see the jetty light all through the storm. Your design passed a real test.","q":"Why didn’t Sam trust the backup light until it passed the storm test?","opts":[{"t":"Only a test in the real conditions shows whether a design really works.","ok":true},{"t":"Because tests are fun.","miss":"They are fun! But what does a storm test SHOW?"},{"t":"He didn’t need to. It looked good on paper.","miss":"Did every design that looked good on paper pass the storm?"}],"win":"Tested in clouds and a storm, and it kept shining. Clue 4!"},"exploreMod":"stormtest","patent":{"after":".fs-solve","kicker":"Case closed · your patent drawing","title":"Patent your backup light","todo":["Your design from the storm test is drawn below.","Give your invention a name.","Stamp it APPROVED."],"lockLine":"Crack the case first. Then patent your design.","noDesign":"Pass the storm test in Part 3 first. Your winning design becomes the drawing.","head":"PATENT DRAWING · Palmetto Beach Harbor","chains":{"solar":[{"icon":"☀️","t":"Sunlight","sub":"light IN"},{"icon":"🔲","t":"Solar panel","sub":"light → electrical"},{"icon":"🔋","t":"Battery","sub":"stores it"},{"icon":"💡","t":"LED","sub":"electrical → light OUT"}],"wind":[{"icon":"🌬️","t":"Wind","sub":"motion IN"},{"icon":"🌀","t":"Spinner","sub":"motion → electrical"},{"icon":"🔋","t":"Battery","sub":"stores it"},{"icon":"💡","t":"LED","sub":"electrical → light OUT"}],"tide":[{"icon":"🌊","t":"Moving water","sub":"motion IN"},{"icon":"⚙️","t":"Water wheel","sub":"motion → electrical"},{"icon":"🔋","t":"Battery","sub":"stores it"},{"icon":"💡","t":"LED","sub":"electrical → light OUT"}],"crank":[{"icon":"💪","t":"Your arm","sub":"motion IN"},{"icon":"🔄","t":"Crank","sub":"motion → electrical"},{"icon":"🔋","t":"Battery","sub":"stores it"},{"icon":"💡","t":"LED","sub":"electrical → light OUT"}]},"addLabels":{"big":"🔋 bigger battery","salt":"🛡️ salt-proof case","bright":"🔆 extra-bright LED","panel2":"➕ second solar panel"},"addWord":"Add-ons:","nameQ":"Name your invention:","ph":"The Storm Beacon 3000","stampBtn":"Stamp it APPROVED","stamp":"APPROVED","sign":"Approved by the harbor keeper","win":"APPROVED! Your backup light goes up on the jetty tonight."},"photos":[{"id":"wright","after":"versions","kicker":"Even the Wright brothers","short":"Wright glider photo","title":"They failed first, too","fold":{"icon":"✈️","tease":"A real 1901 photo: the famous airplane builders had a glider that disappointed them. What did they do next?","open":"Look"},"todo":["Tap each number on the photo.","Then match the clues."],"why":{"icon":"✈️","q":"Who were the Wright brothers?","t":"Wilbur and Orville Wright, two bike makers from Ohio. In 1903 they flew the first powered airplane."},"img":"images/22-02-glider-1901.jpg","alt":"An old black-and-white photo: a big two-winged glider made of cloth and wood floats above the sand, held by ropes. Two men stand on the beach holding the ropes.","credit":"1901 Wright glider flown as a kite at Kitty Hawk, North Carolina: photo by Wilbur or Orville Wright, Library of Congress (public domain, via Wikimedia Commons)","license":"Public domain","hotspots":[{"n":1,"x":46,"y":34,"label":"The wings","t":"In 1901 these wings lifted much less than the Wrights’ numbers said they should. A disappointing test!"},{"n":2,"x":9,"y":62,"label":"The ropes","t":"They flew it like a kite first, with nobody on it. A safe way to test a prototype."},{"n":3,"x":50,"y":84,"label":"The sand","t":"Kitty Hawk has steady wind and soft sand for landings. A good place to test."}],"task":{"q":"Match each clue to a number on the photo.","win":"After this test, the Wrights built a small wind tunnel and tested more than 200 model wings. Their redesigned 1902 glider made hundreds of good glides. Failing first helped them succeed.","items":[{"icon":"🪁","step":"A safe way to test with nobody on board","ans":2,"evid":"The ropes."},{"icon":"📉","step":"The part that failed the test","ans":1,"evid":"The wings lifted less than expected."},{"icon":"🏖️","step":"Why Kitty Hawk was a good test spot","ans":3,"evid":"Steady wind and soft sand."}]}}],"quizKicker":"","quizMiss":{"q1":{"A":"Think about Sam’s v1. Was it the final version?","C":"Sam actually built and tested every version."},"q2":{"A":"Sam’s light failed three times. Did Sam throw it away?","B":"A failed test tells you what to fix. What should the engineer do next?"},"q3":{"B":"Bright light is a goal. Which answer is a LIMIT?","C":"A nice-to-have isn’t a limit. Which one limits what you can spend?"}},"flags":{"ans-2":[{"label":"a criterion","re":"criteri|criter|goal|should|must do|need to|want|success|job"},{"label":"a constraint","re":"constrain|limit|can.?t|cannot|budget|cost|\\$|money|only|rule|not allowed"},{"label":"an example","re":"light|bright|mile|night|battery|wire|50|dollar|storm|salt|spinner|solar|flashlight|crank|tide|device"}],"ans-3":[{"label":"why redesign","re":"redesign|fix|improve|better|problem|fail|test|learn|mistake|change"},{"label":"a flashlight example","re":"flashlight|bright|battery|light|led|bulb|longer|waterproof|water|case|crank|solar"}],"cer-4":[{"label":"your claim","re":"agree|disagree|not true|wrong|right|true|false|doesn|does not|don|first try|perfect"},{"label":"two pieces of evidence","any":["version","v1","v2","v3","v4","sam","wright","glider","wing","storm","test","fail","redesign","dim","rust","battery"],"min":2},{"label":"your reasoning","re":"because|so |this shows|that shows|this means|that means|which means|proves|since"}]},"minWords":{"ans-2":15,"ans-3":15,"cer-4":30},"hints":{"ans-2":["Think about your stamps on the work order.","A criterion is a ___. A constraint is a ___.","Try: A criterion is a goal, like ___. A constraint is a limit, like ___."],"ans-3":["Think about Sam’s version timeline.","What could go wrong with a flashlight? Too dim? Dies fast? Gets wet?","Try: Redesign matters because ___. A flashlight could be improved by ___."],"cer-4":["First decide: do engineers get it perfect the first time?","Think about Sam’s 4 versions, the Wright brothers, and your storm test.","Try: I ___ because ___. One piece of evidence is ___. Another is ___."]},"scholar":{},"planner":{"before":"cer-4","title":"Your claim and two pieces of evidence","rows":[{"label":"1. Pick your side","options":["I agree","I disagree"],"pick":1},{"label":"2. Pick two pieces of evidence from the lesson","pick":2,"options":["Sam’s backup light took four versions. Each failed test showed what to fix.","The Wright brothers’ 1901 glider disappointed them, so they tested more than 200 model wings and redesigned it.","In my storm test, I changed my design and tested again until it passed.","Engineers are very smart people."]}],"note":"Tap your side and two facts. Then write your reasoning in your own words."},"slots":{"welcome":{"label":"Welcome · the backup light","length":"20–30 s"},"warmup":{"label":"Warm-Up · stamp the work order (Clue 1)","length":"20–30 s","script":"Sam here. A big storm is coming, and clouds will hide the Sun for days. Read the forecast and the keeper’s work order. Tap a line, then stamp it. Is it a goal the light should meet, or a limit it has to stay inside?"},"vocab":{"label":"Word Wall","length":"30–45 s","notes":"Hold up a paper airplane for “prototype”; fold a second, better one for “redesign”."},"lesson":{"label":"The Lesson","length":"25–35 s"},"part1":{"label":"Part 1 · limits cross out ideas (Clue 2)","length":"20–30 s"},"part2":{"label":"Part 2 · the version timeline (Clue 3)","length":"20–30 s","script":"Here’s my backup light, version one. Read the test results. Which goal failed? Pick the ONE change that fixes it, then build and test the next version. Watch out: fixing one thing can break another!"},"explore":{"label":"Part 3 · design it, then storm it (Clue 4)","length":"25–35 s","script":"Your turn to be the engineer. Pick one energy input and up to two add-ons, and stay inside the budget. Then press run the storm test. If the beam goes dark, read why, change one thing, and test again."},"quiz":{"label":"Self-Check","length":"15–20 s"},"assignment":{"label":"Assignment · crack the case","length":"20–30 s"},"partb":{"label":"Part B","length":"30 s"},"partc":{"label":"Part C · my device design plan","length":"30 s"},"evidence":{"label":"Use your evidence · CER","length":"25–35 s","script":"A classmate says real engineers get it perfect on the first try. Do they? Think about my four versions, and the Wright brothers. Pick your side, tap two pieces of evidence, then explain. That’s your C-E-R."},"closing":{"label":"Case closed","length":"20–30 s","notes":"Celebrate; tease 23.01 (sound)."}},"videoOff":[],"lensVoice":false,"camera":{"max":8,"huntTitle":"Bonus: can you snap all 4 shots on this list?","missions":["Your stamped work order (Warm-Up)","The two ideas left after the limits (The Lesson)","Sam’s v4 passing every test (The Lesson)","Your light shining in the storm (The Lesson)"]},"sketch":{"tip":"Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.","prompts":["Your backup light","Sam’s v4","A night-hike light"],"inline":[{"id":"partc","afterPart":"C","kicker":"Part C · sketch and label your device","required":true,"minLabels":3,"prompts":["Draw your device","Label the energy IN","Label where it changes and the energy OUT"]}]},"hlCoach":{"title":"Highlight like a scientist","tips":[["🔑","Highlight key words, not whole paragraphs.","If everything is yellow, nothing stands out. Aim for a few words in each paragraph."],["📖","Look for words that are explained.","Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."],["🎯","Look for answers to the Big Question.","Ask yourself: does this help me explain how to design a device that converts energy?"],["🔗","Watch for clue words.","“Because”, “so” and “first … then” show how ideas connect."],["🎨","Use the colors on purpose.","Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."]],"practice":{"q":"Practice: tap the 3 to 5 words that matter most in this sentence.","text":"Engineers set goals and limits, test a prototype, and redesign it when a test fails.","key":["goals","limits","test","prototype","redesign","fails"],"small":["and","a","it","when"],"model":"A scientist might highlight “goals and limits”, “test a prototype” and “redesign”. Those words hold the big idea."},"outside":"This works in every subject. When you read anything, save the words that answer your question, and skip the rest."},"specimen":{"kicker":"Specimen collected","stamp":"CASE CLOSED","icon":"📐","name":"Your approved patent drawing","line":"You cracked Case 22 part 2, and your patent drawing goes in your Field Notebook. (A specimen is something a scientist collects to keep.) Next time: sound."},"notebookTitle":"Unit 5 · Energy, Motion & Collisions","notebook":[{"lesson":"18.01","icon":"🧫","name":"Red tide sample slide"},{"lesson":"18.02","icon":"🎟️","name":"Star party ticket"},{"lesson":"19.01","icon":"🏁","name":"Derby checkered flag"},{"lesson":"19.02","icon":"🧦","name":"The fluke sock"},{"lesson":"20.01","icon":"💡","name":"The burnt-out pier bulb"},{"lesson":"20.02","icon":"📋","name":"The approved work order"},{"lesson":"21.01","icon":"🔩","name":"A bolt from the dented bumper"},{"lesson":"21.02","icon":"✉️","name":"An opened prediction envelope"},{"lesson":"22.01","icon":"🪶","name":"A pelican feather from the solar panel"},{"lesson":"22.02","icon":"📐","name":"Your approved patent drawing"},{"lesson":"23.01"},{"lesson":"23.02"},{"lesson":"24.01"},{"lesson":"24.02"}],"rankLine":"Your Field Station ID just updated. Keep going, scientist.","lensWin":"All six words are in focus. Time to engineer!","inputs":[{"id":"tab1","type":"swap","find":{"sel":".tab-btn[data-tab=\"vocab\"]"},"swap":["📚 Vocabulary","🌅 Warm-Up"]},{"id":"sw-words","type":"swap","find":{"sel":"p","text":"Tap a card to flip it"},"swap":["<strong>Tap a card to flip it<\/strong> and read what the word means.","<strong>Tap a word<\/strong> to see what it means."]},{"id":"fs-warm","type":"frame","find":{"sel":"#tab-vocab p","text":"Engineers write both down before they build"},"label":"Warm-Up: my night-hike light","q":"Warm-Up: Your flashlight dies on a night hike. No battery. Pick an energy source and one goal and one limit.","title":"Night hike, dead flashlight: your idea","compact":true,"fields":[{"t":"Energy source (sunlight, wind, your hands or a stream)","icon":"⚡","ph":"I would use ___."},{"t":"One criterion (a goal)","icon":"🎯","ph":"It must ___."},{"t":"One constraint (a limit)","icon":"🚧","ph":"It can’t ___."}]},{"id":"fs-partc","type":"frame","find":{"sel":"#tab-assignment p","text":"Fill in the plan below"},"label":"Part C: My device design plan","q":"Part C: My device design plan (problem, criteria, constraint, IN and OUT, test, redesign)","title":"My device design plan","fields":[{"t":"The problem it solves","icon":"❓","ph":"I want a device that ___."},{"t":"Two criteria (goals)","icon":"🎯","ph":"1. ___  2. ___"},{"t":"One constraint (a limit)","icon":"🚧","ph":"It can’t ___."},{"t":"Energy IN → energy OUT","icon":"🔄","ph":"___ energy in, ___ energy out."},{"t":"How I would test it","icon":"🧪","ph":"I would test it by ___."},{"t":"One redesign if it fails","icon":"🔧","ph":"If it ___, I would change ___.","long":true}]},{"id":"fs-cer","type":"cer","target":"cer-4","find":{"sel":"textarea#cer-4"},"reminder":"Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.","parts":[{"k":"C","t":"Claim","ask":"Do real engineers get it perfect on the first try?","ph":"I agree / I disagree because…"},{"k":"E","t":"Evidence","ask":"Two facts from the lesson. Tap them in the planner above, or type them.","ph":"One fact is… Another fact is…","rows":3},{"k":"R","t":"Reasoning","ask":"How do those facts prove your claim?","ph":"This shows that…","rows":3}]},{"id":"relabel","type":"relabel","map":{"ans-2":"Part B · Question 6","ans-3":"Part B · Question 7","cer-4":"Use Your Evidence (CER)"}},{"id":"sw-check","type":"swap","find":{"sel":"p","text":"Tap to toggle"},"swap":[" Tap to toggle.",""]},{"id":"sw-circle","type":"swap","find":{"sel":".card-head-title","text":"Revisit Our Key Question"},"swap":["Revisit Our Key Question","Back to the Big Question"]}],"cues":{"warmup":[{"at":"^forecast","sel":".fs-casecard .fs-notice","fx":"glow"},{"at":"^order","sel":".fs-stp-paper","fx":"pop","scroll":true},{"at":"^line","sel":".fs-stp-line","i":0,"fx":"point"},{"at":"^goal","sel":".fs-stp-stamp.k-crit","fx":"pop"},{"at":"^limit","sel":".fs-stp-stamp.k-cons","fx":"pop"}],"part2":[{"at":"^version","sel":".fs-ver-line","fx":"glow","scroll":true},{"at":"^results","sel":".fs-ver-tests","fx":"pop"},{"at":"^failed","sel":".fs-ver-tests tr.bad","fx":"wiggle"},{"at":"^ONE$","sel":".fs-ver-q","fx":"glow"},{"at":"^break","sel":".fs-ver-card","fx":"glow"}],"explore":[{"at":"^input","sel":".fs-stm-opts","i":0,"fx":"pop","scroll":true},{"at":"^add","sel":".fs-stm-opts","i":1,"fx":"pop"},{"at":"^budget","sel":".fs-stm-budget","fx":"glow"},{"at":"^storm","sel":".fs-stm-run","fx":"point"},{"at":"^again","sel":".fs-stm-go","fx":"glow"}],"evidence":[{"at":"^classmate","sel":"#tab-assignment .act-body > div:has(> .fs-plan) > p","i":0,"fx":"trace","scroll":true},{"at":"^versions","sel":".fs-plan .fs-opt","i":2,"fx":"glow"},{"at":"^Wright","sel":".fs-plan .fs-opt","i":3,"fx":"glow"},{"at":"^side","sel":".fs-plan .fs-plan-row","i":0,"fx":"pop"},{"at":"^explain","sel":".fs-cer .fs-cer-row","i":2,"fx":"glow","scroll":true}]},"cueWords":{"warmup":[[0.0,0.32,"Sam"],[0.44,0.64,"here."],[1.04,1.12,"A"],[1.28,1.44,"big"],[1.52,1.76,"storm"],[1.84,1.92,"is"],[2.0,2.48,"coming,"],[2.56,2.64,"and"],[2.72,3.12,"clouds"],[3.2,3.28,"will"],[3.36,3.52,"hide"],[3.6,3.68,"the"],[3.76,3.92,"Sun"],[4.0,4.08,"for"],[4.24,4.8,"days."],[5.36,5.52,"Read"],[5.56,5.6,"the"],[5.68,6.24,"forecast"],[6.32,6.4,"and"],[6.44,6.48,"the"],[6.56,6.88,"keeper’s"],[6.96,7.12,"work"],[7.2,7.52,"order."],[7.92,8.16,"Tap"],[8.2,8.24,"a"],[8.4,8.8,"line,"],[8.88,8.96,"then"],[9.04,9.28,"stamp"],[9.36,9.6,"it."],[10.0,10.08,"Is"],[10.16,10.2,"it"],[10.24,10.32,"a"],[10.4,10.64,"goal"],[10.72,10.8,"the"],[10.88,11.04,"light"],[11.12,11.28,"should"],[11.36,11.76,"meet,"],[11.84,11.92,"or"],[12.0,12.08,"a"],[12.16,12.48,"limit"],[12.56,12.64,"it"],[12.72,12.8,"has"],[12.88,12.92,"to"],[12.96,13.12,"stay"],[13.4,14.0,"inside?"]],"part2":[[0.0,0.24,"Here’s"],[0.32,0.4,"my"],[0.48,0.8,"backup"],[0.88,1.36,"light,"],[1.44,1.68,"version"],[1.84,2.16,"one."],[2.72,2.88,"Read"],[2.92,2.96,"the"],[3.04,3.2,"test"],[3.28,4.0,"results."],[4.24,4.4,"Which"],[4.48,4.64,"goal"],[4.72,5.2,"failed?"],[5.6,5.76,"Pick"],[5.84,5.92,"the"],[6.08,6.24,"ONE"],[6.32,6.64,"change"],[6.72,6.8,"that"],[6.88,7.2,"fixes"],[7.28,7.68,"it,"],[7.76,7.84,"then"],[8.0,8.32,"build"],[8.4,8.48,"and"],[8.56,8.88,"test"],[8.92,8.96,"the"],[9.04,9.2,"next"],[9.28,9.92,"version."],[10.16,10.4,"Watch"],[10.48,11.04,"out:"],[11.16,11.52,"fixing"],[11.6,11.76,"one"],[11.84,12.08,"thing"],[12.16,12.32,"can"],[12.4,12.64,"break"],[12.84,13.36,"another!"]],"explore":[[0.0,0.24,"Your"],[0.32,0.48,"turn"],[0.56,0.6,"to"],[0.64,0.72,"be"],[0.76,0.8,"the"],[0.88,1.64,"engineer."],[1.92,2.16,"Pick"],[2.24,2.4,"one"],[2.48,2.8,"energy"],[2.88,3.28,"input"],[3.36,3.44,"and"],[3.52,3.6,"up"],[3.68,3.84,"to"],[3.92,4.08,"two"],[4.16,4.88,"add-ons,"],[4.96,5.04,"and"],[5.12,5.28,"stay"],[5.36,5.68,"inside"],[5.72,5.76,"the"],[5.84,6.64,"budget."],[6.72,7.12,"Then"],[7.2,7.44,"press"],[7.6,7.76,"run"],[7.8,7.84,"the"],[7.92,8.16,"storm"],[8.24,9.04,"test."],[9.12,9.2,"If"],[9.24,9.28,"the"],[9.36,9.52,"beam"],[9.6,9.84,"goes"],[10.0,10.48,"dark,"],[10.56,10.72,"read"],[10.8,11.44,"why,"],[11.6,11.76,"change"],[11.84,11.92,"one"],[12.0,12.613,"thing,"],[12.667,12.72,"and"],[12.84,12.96,"test"],[13.12,13.6,"again."]],"evidence":[[0.0,0.08,"A"],[0.16,0.56,"classmate"],[0.64,0.96,"says"],[1.36,1.6,"real"],[1.68,2.16,"engineers"],[2.24,2.32,"get"],[2.4,2.48,"it"],[2.56,2.96,"perfect"],[3.0,3.04,"on"],[3.12,3.2,"the"],[3.28,3.52,"first"],[3.6,4.0,"try."],[4.48,4.64,"Do"],[4.76,4.96,"they?"],[5.44,5.6,"Think"],[5.72,5.84,"about"],[6.0,6.16,"my"],[6.24,6.4,"four"],[6.48,7.08,"versions,"],[7.2,7.28,"and"],[7.36,7.4,"the"],[7.44,7.6,"Wright"],[7.68,8.32,"brothers."],[8.56,8.72,"Pick"],[8.8,8.88,"your"],[9.04,9.52,"side,"],[9.6,9.84,"tap"],[9.92,10.0,"two"],[10.08,10.32,"pieces"],[10.4,10.48,"of"],[10.56,11.2,"evidence,"],[11.32,11.44,"then"],[11.52,12.32,"explain."],[12.56,12.8,"That’s"],[12.88,13.04,"your"],[13.12,14.16,"C-E-R."]]},"banner":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 920 200\" role=\"img\" aria-label=\"Storm test on the jetty: gray clouds and slanted rain over the Gulf, the jetty light shining a green beam with a small wind spinner turning beside its solar panel, and the brown pelican on its own perch post.\">\n  <defs>\n    <linearGradient id=\"b23sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2E3644\"/><stop offset=\".6\" stop-color=\"#55606F\"/><stop offset=\"1\" stop-color=\"#7C8794\"/><\/linearGradient>\n    <linearGradient id=\"b23sea\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#3E5C84\"/><stop offset=\"1\" stop-color=\"#1D2D4A\"/><\/linearGradient>\n    <radialGradient id=\"b23sun\" cx=\".5\" cy=\".5\" r=\".5\"><stop offset=\"0\" stop-color=\"#FFE9A8\"/><stop offset=\".6\" stop-color=\"#FFC266\"/><stop offset=\"1\" stop-color=\"#FFC266\" stop-opacity=\"0\"/><\/radialGradient>\n    <linearGradient id=\"b23beam\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#7DF0A6\" stop-opacity=\".75\"/><stop offset=\"1\" stop-color=\"#7DF0A6\" stop-opacity=\"0\"/><\/linearGradient>\n    <style>\n      .b23-rays{animation:b23ray 4s ease-in-out infinite}\n      .b23-beam{transform-origin:742px 66px;animation:b23sweep 6s ease-in-out infinite}\n      .b23-wave{animation:b23wave 5s ease-in-out infinite}\n      .b23-lamp{animation:b23glow 2.4s ease-in-out infinite}\n      @keyframes b23ray{50%{opacity:.35}}\n      @keyframes b23sweep{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}\n      @keyframes b23wave{50%{transform:translateX(-14px)}}\n      @keyframes b23glow{50%{opacity:.55}}\n      @media (prefers-reduced-motion: reduce){.b23-rays,.b23-beam,.b23-wave,.b23-lamp{animation:none}}\n    <\/style>\n  <\/defs>\n  <rect width=\"920\" height=\"200\" fill=\"url(#b23sky)\"/>\n  <g fill=\"#3A4350\" opacity=\".9\"><ellipse cx=\"120\" cy=\"40\" rx=\"120\" ry=\"34\"/><ellipse cx=\"300\" cy=\"30\" rx=\"140\" ry=\"36\"/><ellipse cx=\"520\" cy=\"38\" rx=\"150\" ry=\"34\"/><ellipse cx=\"760\" cy=\"26\" rx=\"170\" ry=\"34\"/><\/g>\n  <g class=\"b23-rain\" stroke=\"#B8C4D2\" stroke-width=\"1.6\" opacity=\".55\"><path d=\"M40 60 l-12 60 M90 70 l-12 60 M150 58 l-12 60 M210 66 l-12 60 M270 60 l-12 60 M330 70 l-12 60 M390 62 l-12 60 M450 68 l-12 60 M510 60 l-12 60 M570 66 l-12 60 M630 62 l-12 60 M690 70 l-12 60\"/><\/g>\n  <style>.b23-rain{animation:b23rain .8s linear infinite}@keyframes b23rain{to{transform:translate(-6px,30px)}}.b23-spin{transform-origin:772px 92px;animation:b23spin 1s linear infinite}@keyframes b23spin{to{transform:rotate(360deg)}}@media (prefers-reduced-motion: reduce){.b23-rain,.b23-spin{animation:none}}<\/style>\n  <rect y=\"136\" width=\"920\" height=\"64\" fill=\"url(#b23sea)\"/>\n  <g class=\"b23-wave\" fill=\"none\" stroke=\"#9FB8D8\" stroke-width=\"2\" opacity=\".55\">\n    <path d=\"M0 160 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0\"/>\n    <path d=\"M10 182 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0\"/>\n  <\/g>\n  <!-- the jetty: a long rock wall -->\n  <path d=\"M560 146 q20 -10 40 -6 q18 -10 36 -4 q20 -12 40 -5 q16 -9 34 -3 q18 -10 34 -2 q20 -9 40 -3 q18 -8 36 0 q20 -8 40 -2 q22 -6 60 0 V160 H560z\" fill=\"#4A4A55\"/>\n  <path d=\"M560 150 q30 -6 60 -1 q30 -7 60 -1 q30 -6 60 0 q30 -7 60 0 q30 -6 60 0 V160 H560z\" fill=\"#3A3A44\"/>\n  <!-- the jetty light: tower, solar panel, lantern -->\n  <rect x=\"733\" y=\"86\" width=\"18\" height=\"56\" fill=\"#E9ECEF\"/><rect x=\"733\" y=\"100\" width=\"18\" height=\"10\" fill=\"#2F7A55\"/><rect x=\"733\" y=\"122\" width=\"18\" height=\"10\" fill=\"#2F7A55\"/>\n  <rect x=\"728\" y=\"82\" width=\"28\" height=\"6\" fill=\"#5B6B78\"/>\n  <rect x=\"736\" y=\"62\" width=\"12\" height=\"20\" rx=\"3\" fill=\"#1E3A2A\"/>\n  <circle class=\"b23-lamp\" cx=\"742\" cy=\"68\" r=\"9\" fill=\"#7DF0A6\"/>\n  <g transform=\"translate(704 90) rotate(-24)\"><rect width=\"30\" height=\"18\" fill=\"#1F3B66\" stroke=\"#C9D3E0\" stroke-width=\"2\"/><path d=\"M10 0 v18 M20 0 v18 M0 9 h30\" stroke=\"#5A7BB0\" stroke-width=\"1.5\"/><\/g>\n  <line x1=\"726\" y1=\"96\" x2=\"733\" y2=\"98\" stroke=\"#5B6B78\" stroke-width=\"3\"/>\n  <line x1=\"751\" y1=\"96\" x2=\"772\" y2=\"92\" stroke=\"#5B6B78\" stroke-width=\"3\"/>\n  <g class=\"b23-spin\"><path d=\"M772 92 l0 -16 q8 6 0 16 M772 92 l14 8 q-10 2 -14 -8 M772 92 l-14 8 q4 -10 14 -8\" fill=\"#E9ECEF\" stroke=\"#C9D3E0\"/><\/g>\n  <circle cx=\"772\" cy=\"92\" r=\"3\" fill=\"#5B6B78\"/>\n  <g class=\"b23-beam\"><path d=\"M742 66 L920 30 L920 102 Z\" fill=\"url(#b23beam)\"/><\/g>\n  <!-- a post with a brown pelican -->\n  <rect x=\"840\" y=\"126\" width=\"10\" height=\"42\" fill=\"#6B4E32\"/>\n  <g transform=\"translate(818 70)\">\n    <path d=\"M22 50 C8 50 2 40 6 32 C10 24 24 22 36 26 C48 30 52 42 44 48 C38 52 30 51 22 50 Z\" fill=\"#6E5A4A\"/>\n    <path d=\"M30 28 C26 40 40 44 44 46\" fill=\"none\" stroke=\"#4E3F33\" stroke-width=\"2\"/>\n    <path d=\"M14 30 C10 20 12 10 18 6 C22 3 27 4 28 8\" fill=\"none\" stroke=\"#F1EBDD\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n    <path d=\"M28 8 C29 5 27 1 23 1 C19 1 17 4 17 7 Z\" fill=\"#F1EBDD\"/>\n    <path d=\"M18 5 L-14 14 L-12 17 L19 10 Z\" fill=\"#C9A15B\"/>\n    <path d=\"M18 10 C8 16 -4 18 -12 17\" fill=\"#A9845A\" opacity=\".9\"/>\n    <circle cx=\"22\" cy=\"4.5\" r=\"1.4\" fill=\"#222\"/>\n    <path d=\"M24 50 v8 M32 50 v8\" stroke=\"#E0B060\" stroke-width=\"2.5\"/>\n  <\/g>\n  <!-- a sailboat heading for the harbor -->\n  <g transform=\"translate(400 112)\"><path d=\"M0 26 h40 l-6 8 h-28 z\" fill=\"#E9ECEF\"/><path d=\"M20 0 v26 M20 2 l14 22 h-14 z\" fill=\"#F4F1E6\" stroke=\"#E9ECEF\"/><circle cx=\"20\" cy=\"0\" r=\"2\" fill=\"#E8636B\"/><\/g>\n<\/svg>\n"}</script>
+<link rel="stylesheet" href="assets/sparkle/fs-sparkle.css?v=67dcaa49">
+<script src="assets/tab-quiet.js?v=e721bcc8"></script>
 </head>
 <body>
 <div class="page-wrap">
@@ -1149,7 +1153,7 @@
     <div>
       <div class="info-label">Quarter / Week</div>
       <div class="info-value">Q3 &middot; Week 22</div>
-      <div class="info-detail">Ecosystems &amp; Energy</div>
+      <div class="info-detail">Energy, Motion &amp; Collisions</div>
     </div>
   </div>
   <div class="info-item">
@@ -1157,7 +1161,7 @@
     <div>
       <div class="info-label">Lesson</div>
       <div class="info-value">Lesson 22.02</div>
-      <div class="info-detail">Life Science</div>
+      <div class="info-detail">Physical Science</div>
     </div>
   </div>
   <div class="info-item">
@@ -1173,7 +1177,7 @@
     <div>
       <div class="info-label">Standards</div>
       <div class="info-value">SC.4.N.1.8, SC.4.P.10.2 · TEKS 4.4(A), 4.8(C)</div>
-      <div class="info-detail">NGSS 4-PS3-4 · Engineering Design & Electrical Circuits</div>
+      <div class="info-detail">NGSS 4-PS3-4 · Engineering Design</div>
     </div>
   </div>
 </div>
@@ -1196,7 +1200,7 @@
           <div class="question">"How can YOU design a working device that converts one form of energy into another?"</div>
         </div>
       </div>
-      <p>Hold this question in your head as you work. By the end of the lesson, you'll have designed a simple device on paper — with criteria, constraints, a prototype sketch, and a plan to test and redesign it.</p>
+      <p>Keep this question in mind. By the end, you’ll design a device, test it in a storm and make it better.</p>
     </div>
   </div>
 
@@ -1227,16 +1231,13 @@
 
 <div class="need-strip">
   <span class="need-strip-label">🎒 You'll need:</span>
-  <span class="need-chip"><span>📓</span>Science notebook</span>
   <span class="need-chip"><span>✏️</span>Colored pencils</span>
-  <span class="need-chip"><span>🔆</span>A sunny window or memory of one</span>
 </div>
 
 <!-- ═══ TAB BAR ═══ -->
 <div class="tab-bar" id="tabBar">
   <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
-  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
 </div>
@@ -1260,7 +1261,7 @@
 </div>
 
 
-</div>
+
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#E8636B;">1</div>
@@ -1271,21 +1272,13 @@
       <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
     </div>
     <div class="act-body">
-      <p>Imagine you're hiking in a Florida state park at sunset, and your flashlight battery dies. The park doesn't have any outlets nearby — but you do have sunlight, wind, your hands, and the small stream running next to the trail.</p>
+      <p>Before you design anything, an engineer asks: what must it DO, and what are the LIMITS? The harbor keeper just sent Sam a work order. Sort it out.</p>
 
-      <p>In your notebook, sketch ONE simple idea for a device that could give you light — without using a regular battery. Don't worry about it being perfect.</p>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Notice &amp; Wonder</div>
-          <div class="question">"What's the INPUT energy for your idea? What's the OUTPUT? Did you think about what could GO WRONG with your design?"</div>
-        </div>
-      </div>
+      <p>Tap a line, then stamp it.</p>
 
       <div class="callout callout-tip">
         <span class="callout-icon">💡</span>
-        <p>Today you'll think like an engineer. You'll define criteria, list constraints, sketch a prototype, and plan how to test and improve your design.</p>
+        <p>Goals are called criteria. Limits are called constraints. Engineers write both down before they build anything.</p>
       </div>
     </div>
   </div>
@@ -1299,7 +1292,7 @@
       </div>
     </div>
     <div class="card-body">
-      <p>These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.</p>
+      <p><strong>Tap a card to flip it</strong> and read what the word means.</p>
       <div class="vocab-grid">
         <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">✅</div><div class="fc-word">Criteria</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Criteria</div><div class="fc-def">What a good design needs to do — the goals. "Produce enough light to read" or "fit in a backpack" could be criteria.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
         <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🚧</div><div class="fc-word">Constraint</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Constraint</div><div class="fc-def">A limit on what you can do. "Must use materials from a hike" or "must work in cloudy weather" are constraints.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
@@ -1333,20 +1326,12 @@
     <div class="act-body">
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · Define the Problem and the Limits</h3>
-      <p>Engineers start every design by asking <em>what does this device need to DO?</em> The answer becomes their <span class="vtip">criteria<span class="vtip-box"><span class="vtip-word">Criteria</span>What success looks like.</span></span> — the goals. Things like: "produce enough light to read a book," "fit in a backpack," "be safe for a 4th grader to use."</p>
+      <p>Engineers start every design by asking <em>what does this device need to DO?</em> The answer becomes their <span class="vtip">criteria<span class="vtip-box"><span class="vtip-word">Criteria</span>What success looks like.</span></span>: the goals, like “bright enough to read a book.”</p>
 
-      <p>Then they ask: <em>what CAN'T we do?</em> Those are the <span class="vtip">constraints<span class="vtip-box"><span class="vtip-word">Constraint</span>Limits on what you can do.</span></span> — things like budget, materials available, weight limits, or safety rules. A wind-powered flashlight has a constraint: "must work even when there's no wind blowing."</p>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🛑</span>
-        <div>
-          <div class="label">Stop &amp; Think</div>
-          <div class="question">"You're designing a device that converts sunlight into electricity. Name ONE criterion (a goal) and ONE constraint (a limit) you'd have to think about."</div>
-        </div>
-      </div>
+      <p>Then they ask: <em>what CAN'T we do?</em> Those are the <span class="vtip">constraints<span class="vtip-box"><span class="vtip-word">Constraint</span>Limits on what you can do.</span></span>: limits like money, materials or safety rules. Limits help, too: they cross out ideas that won’t work, so you only test the good ones.</p>
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 2 · Build, Test, Redesign</h3>
-      <p>Once the criteria and constraints are clear, engineers sketch and build a <span class="vtip">prototype<span class="vtip-box"><span class="vtip-word">Prototype</span>A first version to test ideas.</span></span> — a first version meant to be improved. Real engineering devices usually go through DOZENS of prototypes.</p>
+      <p>Once the criteria and constraints are clear, engineers sketch and build a <span class="vtip">prototype<span class="vtip-box"><span class="vtip-word">Prototype</span>A first version to test ideas.</span></span>: a first version, built to be tested and improved. Real devices often go through dozens of prototypes.</p>
 
       <ul style="font-size:16px;color:#2B1D12;line-height:1.7;margin:10px 0 12px 24px;">
         <li><strong>ASK + IMAGINE:</strong> What problem does this device solve? Brainstorm ideas.</li>
@@ -1355,221 +1340,16 @@
         <li><strong><span class="vtip">TEST<span class="vtip-box"><span class="vtip-word">Test</span>A planned check.</span></span> + <span class="vtip">REDESIGN<span class="vtip-box"><span class="vtip-word">Redesign</span>Improve based on what you learned.</span></span>:</strong> Try it out. Find weaknesses. Improve them.</li>
       </ul>
 
-      <p>The cycle keeps going. Each redesign makes the next prototype a little better. NASA spent decades redesigning the Saturn V rocket. Cars are redesigned every year. Even something as simple as a backpack zipper has been redesigned thousands of times.</p>
+      <p>The cycle keeps going. Each redesign makes the next prototype a little better. Cars get redesigned every year, and even zippers keep getting better.</p>
 
-      <p><strong>Common misconception:</strong> Some people think real engineers come up with perfect designs on the first try. They don't. They count on the test-and-redesign cycle. The best engineers are the ones most willing to find what's wrong with their own design.</p>
-      <div class="lesson-figure scroll-reveal">
-        <div class="lesson-figure-label">🛠️ The Engineering Design Cycle</div>
-        <img src="images/22-02-design-cycle.png"
-             alt="A circular flowchart showing the engineering design cycle: ASK, IMAGINE, PLAN, BUILD, TEST, REDESIGN — with arrows showing the loop back to ASK."
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
-        <div class="image-suggestion" style="display:none;">
-          <div class="image-suggestion-icon">🖼️</div>
-          <div class="image-suggestion-label">Suggested Image — Generate This</div>
-          <div class="image-suggestion-desc">A wide horizontal infographic showing the engineering design cycle as a CIRCULAR flowchart with 6 connected steps arranged in a loop. STEP 1: "ASK" (a thought bubble + question mark icon) — define the problem. STEP 2: "IMAGINE" (a lightbulb icon) — brainstorm ideas. STEP 3: "PLAN" (a clipboard with check marks) — pick the best idea, set criteria + constraints. STEP 4: "BUILD" (a wrench + screwdriver icon) — make a prototype. STEP 5: "TEST" (a magnifying glass icon) — try it and find weaknesses. STEP 6: "REDESIGN" (a circular arrow icon) — improve and loop back. Use bold curved arrows to connect each step in sequence, and a final big arrow from REDESIGN back to ASK to show the cycle continues. Title at top: "The Engineering Design Cycle." Use Optima palette: navy text, coral arrows, with each step in a different colored circle (amber, sky-blue, forest-green, purple, etc.). Cream/transparent background. 16:9 ratio. Friendly infographic style, 4th-grade-appropriate.</div>
-          <div class="image-suggestion-file">Save as: images/22-02-design-cycle.png</div>
-        </div>
-        <div class="lesson-figure-caption"><strong>Real engineering is a loop — not a straight line.</strong> Every redesign makes the next prototype better.</div>
-      </div>
-
-      <div style="background:#FFF6E5;border:2.5px solid #F0C97A;border-radius:14px;padding:18px 20px;margin:18px 0;">
-        <div style="font-size:12px;color:#9A6E10;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:6px;">⭐ Key Concept</div>
-        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin:0;line-height:1.6;">Real engineering is a cycle: define criteria and constraints, sketch a prototype, test it, and redesign based on what you learn.</p>
-      </div>
-
-      <div style="background:#EAF8FD;border:2px solid #B8E0F8;border-radius:14px;padding:16px 20px;margin:16px 0;">
-        <p style="font-size:16px;color:#0E1C42;font-weight:800;margin:0 0 8px;">💡 Engineering With Circuits</p>
-        <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;">Many engineering designs use <strong>electrical circuits</strong> to make things work. Think about an alarm that flashes a light or a fan that cools a terrarium — each one needs a simple circuit: a battery (energy source), wires (conductors), a switch, and a load (the bulb, buzzer, or motor).</p>
-        <p style="font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;">When engineers design a device with a circuit, they have to choose the right materials. They pick <strong>conductors</strong> (metals like copper) for the parts that carry electricity and <strong>insulators</strong> (rubber, plastic) for the parts people will touch. The engineering design cycle applies here too — build the circuit, test whether it works, and redesign if it doesn't. A loose wire or the wrong material can break the whole loop.</p>
-      </div>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🧠</span>
-        <div>
-          <div class="label">Stop &amp; Reason</div>
-          <div class="question">"Look at the design cycle above. Which step is most likely to teach you something NEW about your design? Why?"</div>
-        </div>
-      </div>
-
-      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Four Design Challenges</h3>
-      <p><strong>Tap a challenge</strong> to see possible criteria, constraints, and prototype ideas.</p>
-
-      <div class="diagram-wrap diagram-interactive" style="background:linear-gradient(135deg,#F0E0E8,#D8B5C5);border-radius:14px;padding:14px;">
-        <div style="font-size:13px;color:#5A1B5C;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;text-align:center;">
-          🛠️ Tap a design challenge
-        </div>
-        <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;width:100%;height:auto;" role="img" aria-label="Four energy-device engineering challenges">
-
-          <rect x="0"   y="0"   width="360" height="160" fill="#E0D8E5" opacity="0.6"/>
-          <rect x="360" y="0"   width="360" height="160" fill="#D8E5C5" opacity="0.6"/>
-          <rect x="0"   y="160" width="360" height="160" fill="#C5D8E5" opacity="0.6"/>
-          <rect x="360" y="160" width="360" height="160" fill="#E5D8B5" opacity="0.6"/>
-
-          <line x1="360" y1="0"   x2="360" y2="320" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-          <line x1="0"   y1="160" x2="720" y2="160" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-
-          <text x="180" y="90" text-anchor="middle" font-size="56">☀️</text>
-          <rect x="100" y="125" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="180" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#5A3B92">SOLAR PHONE CHARGER</text>
-
-          <text x="540" y="90" text-anchor="middle" font-size="56">🌀</text>
-          <rect x="460" y="125" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="540" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#3F5F1B">HAND-CRANK FLASHLIGHT</text>
-
-          <text x="180" y="250" text-anchor="middle" font-size="56">🚲</text>
-          <rect x="100" y="285" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="180" y="305" text-anchor="middle" font-size="14" font-weight="900" fill="#1B4A6F">BIKE-POWERED FAN</text>
-
-          <text x="540" y="250" text-anchor="middle" font-size="56">💧</text>
-          <rect x="460" y="285" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="540" y="305" text-anchor="middle" font-size="14" font-weight="900" fill="#7A5414">WATER WHEEL TOY</text>
-
-          <rect class="hotspot" x="0" y="0" width="360" height="160"
-                fill="#8B6FC0"
-                data-part="Solar phone charger"
-                data-info="PROBLEM: how to keep a phone charged during a Florida outdoor trip. INPUT: sunlight. OUTPUT: electrical energy to the phone. CRITERIA: charge a phone in 4 hours; fit in a backpack. CONSTRAINTS: budget under $30; must work even when partly cloudy. PROTOTYPE IDEA: a small solar panel attached to a USB cord. TEST: time how long it takes to charge a phone by 25%. REDESIGN: add a battery to store charge during cloudy moments."/>
-          <rect class="hotspot" x="360" y="0" width="360" height="160"
-                fill="#5A8845"
-                data-part="Hand-crank flashlight"
-                data-info="PROBLEM: a flashlight that works when batteries die. INPUT: motion energy from your hand cranking. OUTPUT: light energy. CRITERIA: produce visible light after 30 seconds of cranking. CONSTRAINTS: cost under $10; fit in a desk drawer. PROTOTYPE IDEA: a hand crank connected to a small generator, then to an LED bulb. TEST: count seconds of crank to seconds of light. REDESIGN: add a tiny capacitor to keep the light on for a moment after you stop."/>
-          <rect class="hotspot" x="0" y="160" width="360" height="160"
-                fill="#2D7AA6"
-                data-part="Bike-powered fan"
-                data-info="PROBLEM: a fan you can use during a Florida summer power outage. INPUT: motion energy from pedaling a bike. OUTPUT: motion energy in the fan (and a little electrical in between). CRITERIA: spin a fan blade at a useful speed. CONSTRAINTS: use an existing bike; can't damage anything. PROTOTYPE IDEA: connect bike wheel to a small fan via a belt. TEST: see if the fan blows hard enough to feel cool. REDESIGN: try different belt-tension settings."/>
-          <rect class="hotspot" x="360" y="160" width="360" height="160"
-                fill="#D4A017"
-                data-part="Water wheel toy"
-                data-info="PROBLEM: a toy that demonstrates energy conversion using a stream or sink. INPUT: motion energy from falling water. OUTPUT: motion energy in the wheel (which could power something tiny). CRITERIA: wheel spins for at least 10 seconds under a slow stream. CONSTRAINTS: use only paper or plastic; fits in a sink. PROTOTYPE: cup-shaped paddles attached to a stick axle. TEST: count rotations per 10 seconds. REDESIGN: change the cup size or angle to spin faster."/>
-        </svg>
-
-        <div class="diagram-info-panel" id="diagramPanel">
-          <span class="dip-word" id="diagramWord"></span>
-          <span id="diagramInfo"></span>
-        </div>
-      </div>
-      
-      
-      <div class="socratic-q">
-        <span class="sq-icon">👀</span>
-        <div>
-          <div class="label">Observe &amp; Reason</div>
-          <div class="question">"Pick ONE design challenge from the diagram. Name the INPUT, OUTPUT, ONE criterion, and ONE constraint. What would you test FIRST?"</div>
-        </div>
-      </div>
-
-      <div class="mind-blow">
-        <span class="mind-blow-icon">🤯</span>
-        <div class="mind-blow-content">
-          <div class="mind-blow-label">Amazing Florida Fact</div>
-          <div class="mind-blow-text">The Wright Brothers built and tested <strong>over 200 wing prototypes</strong> before their first successful flight in 1903. They redesigned over and over until they understood how wings behave in real air.</div>
-        </div>
-      </div>
-      <div class="callout callout-info" style="margin-top:18px;">
-        <span class="callout-icon">🌴</span>
-        <p><strong>Florida connection:</strong> Florida's coast is home to engineering teams that design wind and solar devices for coastal areas — places where storms can wreck a regular device. Their criteria include "must survive a hurricane." That changes EVERYTHING about how they prototype and test.</p>
-      </div>
-
-      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
-        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · How many prototypes do real designs go through?</summary>
-        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
-          Modern cars often go through HUNDREDS of digital prototypes before any metal parts are made. The James Webb Space Telescope had thousands of design revisions over its 25+ years of development. The first 3D-printed prototype is usually wrong — but it teaches engineers exactly what to fix next.
-        </div>
-      </details>
-
+      <p><strong>Watch out:</strong> Some people think real engineers get it perfect on the first try. They don’t. A failed test isn’t a disaster. It tells you exactly what to fix next. Watch Sam’s backup light change, version by version.</p>
       <div class="callout callout-think scroll-reveal">
     <span class="callout-icon">🔬</span>
     <p><strong>Science Connection:</strong> Energy causes change. In your device, energy makes something move, light up, or heat up. Designing a device also takes creativity: engineers try many ideas before they find one that works.</p>
   </div>
 
-  <div class="tab-next-wrap">
-        <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- TAB 3: GUIDED EXPLORATION          -->
-<!-- ═══════════════════════════════════ -->
-<div class="tab-panel" id="tab-explore">
-
-  <div class="activity-card act-explore scroll-reveal">
-    <div class="act-head">
-      <div class="act-num" style="background:#55C8E8;">3</div>
-      <div style="flex:1;">
-        <div class="act-title">🔬 Explore: Design Your Own Device</div>
-        <div class="act-subtitle">Sketch a prototype with criteria, constraints, and a test plan</div>
-      </div>
-      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
-    </div>
-    <div class="act-body">
-
-      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Pick a problem you'd like to solve with an energy-converting device (real or invented). By step 4 you'll have a prototype sketch with criteria, constraints, and a test plan.</p>
-      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFF5E1;border:2px solid #F0C97A;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#F5A623,#D4772C);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#9A6E10;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 1</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Define the problem</div>
-            <p style="color:#2B1D12;margin:0;">Write the problem you want to solve in one sentence at the top of a page. Example: "I want a device that lights up my desk when the power goes out."</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#EEF8F0;border:2px solid #B7DDC3;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#34B76F,#1F9252);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#1F6E3F;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 2</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">List criteria + constraints</div>
-            <p style="color:#2B1D12;margin:0;">Write 2 CRITERIA (goals) and 1 CONSTRAINT (limit). Example criteria: "Light bright enough to read" and "Must work for at least 30 seconds." Constraint: "Use only common household items."</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFEDEF;border:2px solid #F0B4B8;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#E8636B,#D04450);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#9A1B22;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 3</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Sketch a prototype</div>
-            <p style="color:#2B1D12;margin:0;">Draw your prototype in the middle of the page. Label the INPUT (left) and the OUTPUT (right). Show where the conversion happens inside.</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#F0EDF6;border:2px solid #C9BFE0;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8B6FC0,#6E4FA8);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#5A3B92;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 4</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Plan a test + a redesign</div>
-            <p style="color:#2B1D12;margin:0;">Write ONE sentence about how you would TEST it. Then write ONE sentence about a possible REDESIGN if the test reveals a weakness.</p>
-          </div>
-        </div>
-
-      </div>
-      
-      
-      
-      <div class="mind-blow" style="margin-top:22px;">
-        <span class="mind-blow-icon">🤯</span>
-        <div class="mind-blow-content">
-          <div class="mind-blow-label">Amazing Florida Fact</div>
-          <div class="mind-blow-text">The original Wright Brothers airplane is now on display at the Smithsonian — but the team built dozens of revised prototypes BEFORE that one. Each crash taught them something new about wings. Failure was part of the design process.</div>
-        </div>
-      </div>
-      <div class="socratic-q">
-        <span class="sq-icon">🧪</span>
-        <div>
-          <div class="label">Think like a scientist</div>
-          <div class="question">"A Florida engineer's first prototype of a solar-powered AC unit doesn't cool enough. As an engineer, what's ONE specific REDESIGN you would try? Why?"</div>
-        </div>
-      </div>
-
-      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
-        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · How do engineers TEST without building everything?</summary>
-        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
-          Modern engineers use computer simulations to test designs before building them. A bridge can be tested for thousands of weather conditions in a few hours of computer time. NASA tested the James Webb Space Telescope in a giant freezer to simulate space. Smart testing saves time, money, and lots of broken prototypes.
-        </div>
-      </details>
-
+  <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 3 · Design It, Then Storm It</h3>
+      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Now you are the engineer. There is more than one good design, so use your creativity! Build a backup light inside the keeper’s limits, then test it in the storm.</p>
       <div class="tab-next-wrap">
         <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
       </div>
@@ -1658,62 +1438,28 @@
     </div>
     <div class="act-body">
 
-      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Criteria, Constraint, Prototype, Redesign</strong></p>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">1</span>
-        <span class="pq-text">What a good design needs to do — the goals: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">2</span>
-        <span class="pq-text">A limit on what you can do — like budget or available materials: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">3</span>
-        <span class="pq-text">A first version of a design — built to test and improve: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">4</span>
-        <span class="pq-text">Change and improve a design based on what testing taught you: ___________</span>
-      </div>
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🌿 Part B &mdash; Short Answer</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use vocabulary words from today's lesson.</p>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#D4772C;">5</span>
-        <span class="pq-text">Pick ONE design challenge from the diagram (solar phone charger, hand-crank flashlight, bike fan, or water wheel). Name the INPUT, the OUTPUT, ONE criterion, and ONE constraint.</span>
-      </div>
-      <textarea class="response-textarea" id="ans-1" data-label="Pick ONE design challenge from the diagram (solar ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">6</span>
         <span class="pq-text">Explain the difference between a CRITERION and a CONSTRAINT. Give one example of each for an energy-converting device.</span>
       </div>
-      <textarea class="response-textarea" id="ans-2" data-label="Explain the difference between a CRITERION and a C..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+      <textarea class="response-textarea" id="ans-2" data-label="Criterion vs. constraint" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">7</span>
         <span class="pq-text">Why is REDESIGN so important in engineering? Give an example of how a redesign could improve a flashlight.</span>
       </div>
-      <textarea class="response-textarea" id="ans-3" data-label="Why is REDESIGN so important in engineering? Give ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+      <textarea class="response-textarea" id="ans-3" data-label="Why redesign matters" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use colors. Label every part.</p>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Reflect</div>
-          <div class="question">"What was the trickiest part of figuring out where the energy in a hawk really comes from? Write 2–3 sentences about something you learned today that you didn't know before."</div>
-        </div>
-      </div>
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🛠️ Part C &mdash; My Device Design Plan</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Design your OWN device that converts energy (the night-hike light, your storm-test light, or a new idea). Fill in the plan below, then sketch it.</p>
 
       <div style="background:#FAF7F3;border:2px solid #8B6FC0;border-radius:16px;padding:22px 24px;margin-bottom:20px;">
         <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ Use Your Evidence</div>
         <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A classmate says, <em>"Real engineers come up with perfect designs on their first try."</em></p>
-        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.</p>
+        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson.</p>
         <textarea class="response-textarea ta-lg" id="cer-4" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
       </div>
 
@@ -1728,7 +1474,7 @@
       </div>
     </div>
     <div class="gathered-body">
-      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-intro">All your answers in one place. Copy or download them to turn in on Canvas.</div>
       <div class="gathered-name-row">
         <span class="gathered-name-label">Your name:</span>
         <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
@@ -1755,32 +1501,21 @@
 
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A:</strong> All four blanks filled in using words from the bank.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 6 and 7 answered in complete sentences using lesson vocabulary.</span>
           </div>
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5, 6, and 7 answered in complete sentences using lesson vocabulary.</span>
-          </div>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
-            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> A prototype sketch labeled with INPUT, OUTPUT, and conversion point — plus 2 criteria, 1 constraint, a test plan, and a redesign idea.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> My design plan: the problem, 2 criteria, 1 constraint, IN and OUT, a test and a redesign. Plus your labeled sketch.</span>
           </div>
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Key Question Response:</strong> 2–3 sentences answering the big question using at least three vocabulary words.</span>
-          </div>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
-            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Evidence Response:</strong> I made a claim about whether real engineers get it right on the first try, and supported it with two pieces of evidence.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Use Your Evidence:</strong> My claim about whether engineers get it right on the first try, with two pieces of evidence.</span>
           </div>
 
           <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
             <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
             <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
-              Submit your work however works best for you:<br/><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.</span><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> — Take a clear photo of your handwritten work and upload it.</span><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> — Record a short video explaining your food chain.</span>
+              Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.
             </div>
           </div>
         </div>
@@ -1805,10 +1540,9 @@
           <div class="question">"How can YOU design a working device that converts one form of energy into another?"</div>
         </div>
       </div>
-      <p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong> to this question in your science notebook. Use at least <strong>three vocabulary words</strong> from today.</p>
       <div class="callout callout-tip">
         <span class="callout-icon">⭐</span>
-        <p><strong>Nicely done.</strong> You can now think like an engineer — defining <span class="vtip">criteria<span class="vtip-box"><span class="vtip-word">Criteria</span>Goals.</span></span> and <span class="vtip">constraints<span class="vtip-box"><span class="vtip-word">Constraint</span>Limits.</span></span>, sketching a <span class="vtip">prototype<span class="vtip-box"><span class="vtip-word">Prototype</span>First version.</span></span>, planning a <span class="vtip">test<span class="vtip-box"><span class="vtip-word">Test</span>A planned check.</span></span>, and using what you learn to <span class="vtip">redesign<span class="vtip-box"><span class="vtip-word">Redesign</span>Improve based on testing.</span></span>. Next module, we leave devices and head into a different kind of energy story — the sound that's vibrating around you right now.</p>
+        <p><strong>Nicely done.</strong> You thought like an engineer: you set criteria and constraints, built a prototype, tested it in a storm and made it better. Next lesson, a new kind of energy: the sound that is vibrating around you right now.</p>
       </div>
     </div>
   </div>
@@ -1831,7 +1565,7 @@
 
 <script>
 // ── Tab System ──
-var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var TAB_ORDER = ['vocab','lesson','quiz','assignment'];
 var tabsVisited = new Set(['vocab']);
 
 function switchTab(tabId) {
@@ -2124,7 +1858,7 @@ window.addEventListener('beforeunload', function(e){
 <!-- Video Manifest Loader -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('https://raw.githubusercontent.com/bbirchum1/optima-4th-science/main/video-manifest.json?v=' + Date.now())
+  fetch('https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json?v=' + Date.now())
     .then(function(r) { return r.json(); })
     .then(function(data) {
       var manifest = data.videos || data;
@@ -2333,5 +2067,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<script src="assets/sparkle/fs-sparkle.js?v=67dcaa49"></script>
 </body>
 </html>

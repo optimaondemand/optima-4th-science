@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Writes video.json (Video Studio plan) for 22.02 · The Backup Light."""
+import json
+pics = {
+    'g1901': {'src': 'images/22-02-glider-1901.jpg', 'cap': 'The Wrights’ 1901 glider, tested as a kite (Library of Congress, public domain)'},
+    'g1902': {'src': 'images/22-02-glider-1902.jpg', 'cap': 'Wilbur Wright gliding in the redesigned 1902 glider (Library of Congress, public domain)'},
+}
+C_CASE, C_GREEN, C_PURP, C_RED, C_BLUE, C_GOLD = '#1F7F86', '#2F7A55', '#7A5BB5', '#C8553D', '#2D7AA6', '#B8860B'
+S = {}
+S['welcome'] = {'label': 'Welcome · the backup light', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '⛈ The storm watch', 'tag': 'CASE FILE 22 · PART 2', 'title': 'Clouds and storm ahead', 'col': C_BLUE, 'rows': [['☁️', 'Three cloudy days'], ['⛈️', 'Then a storm night'], ['🔲', 'No sun = no solar charging']]},
+    {'label': '🛠️ You are the engineer', 'tag': 'TODAY', 'title': 'Design a backup light', 'col': C_GREEN, 'body': 'Goals, limits, a prototype, a test and a redesign.'}],
+    'script': '(Hold up a paper airplane, throw it, and watch it nosedive.) Hmm. Did I fail? Or did I just learn something?\n\n[ON SCREEN: The storm watch]\nThe jetty light is fixed, but a storm is coming, and clouds will hide the Sun for days.\n\n[ON SCREEN: You are the engineer]\nToday you design a backup light. Read the storm watch and the keeper’s note in the case file just below me.'}
+S['warmup'] = {'label': 'Warm-Up · stamp the work order (Clue 1)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '📋 The work order', 'tag': 'WARM-UP GAME', 'title': 'Goal or limit?', 'col': C_PURP, 'rows': [['🎯', 'CRITERION: a goal'], ['🚧', 'CONSTRAINT: a limit']]}],
+    'script': '(Hold up a backpack.) If I design a backpack, “holds my books” is a goal. “Costs under 20 dollars” is a limit.\n\n[ON SCREEN: The work order]\nGoals are criteria. Limits are constraints. Stamp each line of the keeper’s work order. Press Listen on Sam’s walkie-talkie, right below me.'}
+S['part1'] = {'label': 'Part 1 · limits cross out ideas (Clue 2)', 'length': '30–40 s', 'want': False, 'parts': [
+    {'label': '✂️ Limits cross out ideas', 'tag': 'PART 1 GAME', 'title': '6 ideas, 3 limits', 'col': C_RED, 'body': 'Add one limit at a time. Which ideas survive?'}],
+    'script': 'Six ideas for a backup light. Some can’t possibly work here.\n\n[ON SCREEN: Limits cross out ideas]\nAdd the keeper’s limits one at a time and watch which ideas get crossed out. Limits save you time!'}
+S['part2'] = {'label': 'Part 2 · the version timeline (Clue 3)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '🔁 The version timeline', 'tag': 'PART 2 GAME', 'title': 'v1 → v4', 'col': C_GOLD, 'rows': [['📋', 'Read the test results'], ['☝️', 'Pick ONE change'], ['🔨', 'Build and test again']]},
+    {'kind': 'photo', 'pic': 'g1901', 'label': '✈️ Even the Wright brothers'}],
+    'script': '[ON SCREEN: The version timeline]\nSam’s first backup light failed. Read the test results and pick the ONE change that fixes it. Why only one?\n\n[ON SCREEN: Even the Wright brothers]\nThe Wright brothers’ 1901 glider disappointed them, too. They didn’t quit. They tested and redesigned. Press Listen.'}
+S['explore'] = {'label': 'Part 3 · design it, then storm it (Clue 4)', 'length': '40–50 s', 'want': True, 'parts': [
+    {'label': '⛈ Design it, then storm it', 'tag': 'PART 3 GAME', 'title': 'Under $50', 'col': C_BLUE, 'rows': [['⚡', 'Pick one energy input'], ['➕', 'Add up to 2 add-ons'], ['⛈', 'Run the storm test']]},
+    {'kind': 'photo', 'pic': 'g1902', 'label': '🏁 Redesign pays off'}],
+    'script': '(Cup your hands like you’re holding something precious.) Now it’s YOUR light.\n\n[ON SCREEN: Design it, then storm it]\nPick an energy input and add-ons, stay under fifty dollars, and run the storm test. Did it go dark? Good. Now you know what to fix.\n\n[ON SCREEN: Redesign pays off]\nThe Wrights’ redesigned 1902 glider flew beautifully. Press Listen.'}
+S['assignment'] = {'label': 'Assignment · crack the case', 'length': '35–45 s', 'want': True, 'parts': [
+    {'label': '🔓 Crack the case', 'tag': 'TOP OF THE ASSIGNMENT', 'title': 'Ready for the storm?', 'col': C_CASE, 'body': 'Pick the answer that fits all four clues.'},
+    {'label': '📐 Your patent drawing', 'tag': 'AFTER THE CASE', 'title': 'Name it and stamp it', 'col': C_GREEN, 'body': 'Your storm-test design becomes a patent drawing.'},
+    {'label': '✍️ Your case report', 'tag': 'WHAT TO WRITE', 'title': 'Three places to write', 'col': C_RED, 'rows': [['Part B', 'Two short answers'], ['Part C', 'Your design plan + sketch'], ['CER', 'Claim, evidence, reasoning']]}],
+    'script': '[ON SCREEN: Crack the case]\nFour clues: crack the case at the top of this tab.\n\n[ON SCREEN: Your patent drawing]\nThen your storm-test design becomes a patent drawing. Give it a great name!\n\n[ON SCREEN: Your case report]\nLast, two short answers, your design plan with a labeled sketch, and your CER.'}
+S['evidence'] = {'label': 'Use your evidence · CER', 'length': '35–45 s', 'want': True, 'parts': [
+    {'label': '💬 The claim', 'tag': 'USE YOUR EVIDENCE', 'title': 'A classmate says…', 'col': C_RED, 'body': '“Real engineers come up with perfect designs on their first try.”'},
+    {'label': '🧩 The planner', 'tag': 'PLAN BEFORE YOU WRITE', 'title': 'Claim · Evidence · Reasoning', 'col': C_PURP, 'rows': [['1', 'Tap I agree or I disagree.'], ['2', 'Tap two pieces of evidence.'], ['3', 'You write the reasoning.']]}],
+    'script': '[ON SCREEN: The claim]\nPerfect on the first try? Think about your own storm test. Did yours pass the first time?\n\nThere’s no wrong side, as long as you prove it.\n\n[ON SCREEN: The planner]\nTap your side and two facts, then explain how they prove your claim. Try starting with “This shows that…” Press Listen.'}
+S['closing'] = {'label': 'Case closed', 'length': '30–40 s', 'want': True, 'parts': [
+    {'label': '📐 Your specimen', 'tag': 'FIELD NOTEBOOK', 'title': 'Your approved patent drawing', 'col': C_CASE, 'body': 'Finish the checklist to stamp CASE CLOSED.'},
+    {'label': '➡ Next time', 'tag': 'LESSON 23.01', 'title': 'Sound', 'col': C_BLUE, 'body': 'What is sound, really?'}],
+    'script': '(Throw a second, better paper airplane that glides.) Version two!\n\n[ON SCREEN: Your specimen]\nFinish your checklist, and your patent drawing goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next time]\nNext time: sound. Put your fingers on your throat and hum. Feel that? We’ll find out what it is.'}
+S['quiz'] = {'label': 'Self-Check', 'length': '15–20 s', 'want': False, 'parts': [],
+    'script': 'Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again.'}
+V = {'slots': S, 'pics': pics, 'other': ['vocab', 'lesson', 'partb', 'partc']}
+json.dump(V, open('video.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print('video.json written')

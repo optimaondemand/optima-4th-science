@@ -1,0 +1,258 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "engineering a device is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standard detail: the circuits box is cut (not in this lesson’s plan row)",
+  "old": "<div class=\"info-detail\">NGSS 4-PS3-4 · Engineering Design & Electrical Circuits</div>",
+  "new": "<div class=\"info-detail\">NGSS 4-PS3-4 · Engineering Design</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C was 9.01’s food chain; the checklist already asks for a prototype plan",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🛠️ Part C &mdash; My Device Design Plan"
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Part C task from 9.01 (now a design plan typed on the page + a required labeled sketch)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Design your OWN device that converts energy (the night-hike light, your storm-test light, or a new idea). Fill in the plan below, then sketch it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "copy-paste leftover: Reflect asked about a hawk (from 9.01); the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "wrong: the Saturn V was designed and tested in about six years (1961–1967), not over decades. No dash",
+  "old": "<p>The cycle keeps going. Each redesign makes the next prototype a little better. NASA spent decades redesigning the Saturn V rocket. Cars are redesigned every year. Even something as simple as a backpack zipper has been redesigned thousands of times.</p>",
+  "new": "<p>The cycle keeps going. Each redesign makes the next prototype a little better. Cars get redesigned every year, and even zippers keep getting better.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson, you'll have designed.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll design a device, test it in a storm and make it better.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "the night hike stays as the warm-up story; no dash",
+  "old": "<p>Imagine you're hiking in a Florida state park at sunset, and your flashlight battery dies. The park doesn't have any outlets nearby — but you do have sunlight, wind, your hands, and the small stream running next to the trail.</p>",
+  "new": "<p>Before you design anything, an engineer asks: what must it DO, and what are the LIMITS? The harbor keeper just sent Sam a work order. Sort it out.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "Warm-Up notebook sketch → the work-order stamps (the sketch is now the required Part C sketch)",
+  "old": "<p>In your notebook, sketch ONE simple idea for a device that could give you light — without using a regular battery. Don't worry about it being perfect.</p>",
+  "new": "<p>Tap a line, then stamp it.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; points to the lesson",
+  "old": "<p>Today you'll think like an engineer. You'll define criteria, list constraints, sketch a prototype, and plan how to test and improve your design.</p>",
+  "new": "<p>Goals are called criteria. Limits are called constraints. Engineers write both down before they build anything.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; shorter examples (Part 1)",
+  "old": "</span></span> — the goals. Things like: \"produce enough light to read a book,\" \"fit in a backpack,\" \"be safe for a 4th grader to use.\"</p>",
+  "new": "</span></span>: the goals, like “bright enough to read a book.”</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; shorter; points to the game (Part 1)",
+  "old": "</span></span> — things like budget, materials available, weight limits, or safety rules\\. A wind-powered flashlight has a constraint:.*?</p>",
+  "new": "</span></span>: limits like money, materials or safety rules. Limits help, too: they cross out ideas that won’t work, so you only test the good ones.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "no dash (Part 2)",
+  "old": "</span></span> — a first version meant to be improved. Real engineering devices usually go through DOZENS of prototypes.</p>",
+  "new": "</span></span>: a first version, built to be tested and improved. Real devices often go through dozens of prototypes.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "the misconception, plain; leads into the version timeline",
+  "old": "<p><strong>Common misconception:</strong> Some people think real engineers come up with perfect designs on the first try\\..*?</p>",
+  "new": "<p><strong>Watch out:</strong> Some people think real engineers get it perfect on the first try. They don’t. A failed test isn’t a disaster. It tells you exactly what to fix next. Watch Sam’s backup light change, version by version.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter closing; no dash; points to 23.01",
+  "old": "<p><strong>Nicely done\\.</strong> You can now think like an engineer.*?</p>",
+  "new": "<p><strong>Nicely done.</strong> You thought like an engineer: you set criteria and constraints, built a prototype, tested it in a storm and made it better. Next lesson, a new kind of energy: the sound that is vibrating around you right now.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Explain the difference between a CRITERION and a C...\"",
+  "new": "data-label=\"Criterion vs. constraint\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why is REDESIGN so important in engineering? Give ...\"",
+  "new": "data-label=\"Why redesign matters\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Notice & Wonder (the stamps are the warm-up’s thinking stop)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the limits game is the thinking stop for Part 1)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "the never-made AI design-cycle picture, Key Concept, the circuits box (Bethany: not in this plan row), Stop & Reason, the Four Design Challenges tap diagram, Observe & Reason, the Wright “200 wing prototypes” fact (wrong: they tested 200+ small model wings in a wind tunnel; the Wright card says it right), the Florida connection and Go Deeper are gone (lean); the version timeline replaces the picture and the diagram. The Science Connection box (energy causes change + creativity, SC.4.P.10.2 / SC.4.N.1.8) stays",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">🛠️ The Engineering Design Cycle</div>.*?(?=<div class=\"callout callout-think scroll-reveal\">)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 3 = the old Explore (design it, then storm it); next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Design It, Then Storm It</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Now you are the engineer. There is more than one good design, so use your creativity! Build a backup light inside the keeper’s limits, then test it in the storm.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its design steps are now Part 3 and Part C; its Wright facts, “solar AC” scenario and Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; Q5 also named the removed diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 6 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page, plus the required sketch",
+  "old": "A prototype sketch labeled with INPUT, OUTPUT, and conversion point — plus 2 criteria, 1 constraint, a test plan, and a redesign idea\\.",
+  "new": "My design plan: the problem, 2 criteria, 1 constraint, IN and OUT, a test and a redesign. Plus your labeled sketch.",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether real engineers get it right on the first try, and supported it with two pieces of evidence\\.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether engineers get it right on the first try, with two pieces of evidence.",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]

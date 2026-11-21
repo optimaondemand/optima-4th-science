@@ -9420,6 +9420,220 @@
     ladder();
   };
 
+
+  /* =================== 22.02: The Backup Light (stamps, crossout, versions, stormtest, patent) =================== */
+  /* ---------- Warm-Up: "Stamp the work order" — tap a line on the keeper's clipboard, then stamp it CRITERION (a goal) or CONSTRAINT
+     (a limit); drag a stamp onto a line works too (22.02) ----------
+     D.stamps = {afterText, kicker, title, todo[], why, order:{head, num, title, to}, kinds:{crit:{t, icon}, cons:{t, icon}}, lines:[{id, t, k, why, miss}],
+                 pickLine, countWord, q, opts, win, clue} */
+  function buildStamps() {
+    var S = D.stamps; if (!S) return;
+    var at = anchorP(S.afterText); if (!at) { FAILED.push('stamps anchor text not found'); return; }
+    var g = gameShell(S.kicker || 'Warm-Up game', S.title, S.todo, S.why); g.dataset.mod = 'stamps';
+    var st = loadJ('stamps', { k: {} }), cur = null, K = S.kinds;
+    var board = el('div', 'fs-stp-board'), paper = el('div', 'fs-stp-paper'), pad = el('div', 'fs-stp-pad');
+    var miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    paper.innerHTML = '<div class="fs-stp-clip" aria-hidden="true"></div><div class="fs-stp-h"><span>' + esc(S.order.head) + '</span><b>' + esc(S.order.num || '') + '</b></div><div class="fs-stp-t">' + esc(S.order.title) + '</div>' +
+      (S.order.to ? '<div class="fs-stp-to">' + esc(S.order.to) + '</div>' : '') + '<ol class="fs-stp-lines">' +
+      S.lines.map(function (l) { return '<li><button type="button" class="fs-stp-line" data-id="' + l.id + '"><span class="fs-stp-tx">' + esc(l.t) + '</span><em class="fs-stp-mark"></em></button><small class="fs-stp-why"></small></li>'; }).join('') + '</ol>';
+    pad.innerHTML = '<div class="fs-in-k">' + esc(S.pickLine || 'Tap a line, then press a stamp. (Or drag a stamp onto a line.)') + '</div>' +
+      ['crit', 'cons'].map(function (k) { return '<button type="button" class="fs-stp-stamp k-' + k + '" data-k="' + k + '"><span>' + K[k].icon + '</span>' + esc(K[k].t) + '<small>' + esc(K[k].sub || '') + '</small></button>'; }).join('');
+    board.appendChild(paper); board.appendChild(pad);
+    g.appendChild(board); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function line(id) { return S.lines.filter(function (l) { return l.id === id; })[0]; }
+    function paint() {
+      S.lines.forEach(function (l) {
+        var b = $('.fs-stp-line[data-id="' + l.id + '"]', paper), k = st.k[l.id];
+        b.classList.toggle('on', cur === l.id); b.classList.toggle('done', !!k);
+        var m = $('.fs-stp-mark', b); m.textContent = k ? K[k].t : ''; m.className = 'fs-stp-mark' + (k ? ' k-' + k : '');
+        b.parentNode.querySelector('.fs-stp-why').textContent = k ? l.why : '';
+      });
+      var n = S.lines.filter(function (l) { return st.k[l.id]; }).length;
+      count.textContent = '📋 ' + n + ' of ' + S.lines.length + ' ' + (S.countWord || 'lines stamped'); count.classList.toggle('ok', n === S.lines.length);
+      if (n === S.lines.length) askOnce(qh, S.q, S.opts, 'stamps-q', win, S.win, S.clue, 'stamps', miss);
+    }
+    function stampIt(id, k) {
+      var l = line(id); if (!l || st.k[id]) return;
+      var b = $('.fs-stp-line[data-id="' + id + '"]', paper);
+      if (l.k !== k) { bounce(b, miss, l.miss || 'Is this something the light should DO, or a LIMIT it has to stay inside?'); b.classList.add('smudge'); setTimeout(function () { b.classList.remove('smudge'); }, 900); return; }
+      st.k[id] = k; saveJ('stamps', st); miss.classList.remove('show'); SFX.stamp(); cur = null;
+      var nx = S.lines.filter(function (x) { return !st.k[x.id]; })[0]; if (nx) cur = nx.id;
+      paint(); if (!reduceMotion) { b.classList.remove('thump'); void b.offsetWidth; b.classList.add('thump'); }
+    }
+    $$('.fs-stp-line', paper).forEach(function (b) { b.addEventListener('click', function () { if (st.k[b.dataset.id]) return; var s = $('.fs-stp-stamp.sel', pad); if (s) { s.classList.remove('sel'); stampIt(b.dataset.id, s.dataset.k); return; } cur = b.dataset.id; SFX.blip(); paint(); }); });
+    $$('.fs-stp-stamp', pad).forEach(function (s) {
+      dragDrop(s, function () { return $$('.fs-stp-line:not(.done)', paper); }, function (item, target) { item.classList.remove('sel'); stampIt(target.dataset.id, item.dataset.k); });
+      s.addEventListener('click', function () { if (cur && !st.k[cur]) { s.classList.remove('sel'); stampIt(cur, s.dataset.k); } });
+    });
+    placeAfter(g, at);
+    var first = S.lines.filter(function (x) { return !st.k[x.id]; })[0]; cur = first ? first.id : null; paint();
+  }
+
+  /* ---------- Lesson Part 1: "Limits cross out ideas" — idea cards on a board; add the keeper's limits one at a time (button, or drag the
+     limit card onto the board); every idea that breaks a limit gets crossed out with its reason (22.02) ----------
+     D.crossout = {afterText, kicker, title, todo[], why, ideas:[{id, icon, t, sub, breaks:{limitId: reason}}], limits:[{id, icon, t}], addBtn, nextLabel,
+                   leftLine, q, opts, win, clue} */
+  function buildCrossout() {
+    var C = D.crossout; if (!C) return;
+    var at = anchorP(C.afterText); if (!at) { FAILED.push('crossout anchor text not found'); return; }
+    var g = gameShell(C.kicker || 'Part 1 game', C.title, C.todo, C.why); g.dataset.mod = 'crossout';
+    var st = loadJ('crossout', { n: 0 });
+    var board = el('div', 'fs-cxo-board'), side = el('div', 'fs-cxo-side'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    board.innerHTML = C.ideas.map(function (i) { return '<div class="fs-cxo-idea" data-id="' + i.id + '"><span class="fs-cxo-ic">' + i.icon + '</span><b>' + esc(i.t) + '</b><small>' + esc(i.sub || '') + '</small><em class="fs-cxo-x"></em></div>'; }).join('');
+    var wrap = el('div', 'fs-cxo-wrap'); wrap.appendChild(board); wrap.appendChild(side);
+    g.appendChild(wrap); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    function paint(anim) {
+      var added = C.limits.slice(0, st.n), next = C.limits[st.n];
+      C.ideas.forEach(function (i) {
+        var c = $('.fs-cxo-idea[data-id="' + i.id + '"]', board), why = null;
+        added.some(function (l) { if (i.breaks && i.breaks[l.id]) { why = { l: l, t: i.breaks[l.id] }; return true; } });
+        var was = c.classList.contains('out'); c.classList.toggle('out', !!why);
+        $('.fs-cxo-x', c).innerHTML = why ? '✗ ' + esc(why.t) : '';
+        if (why && !was && anim && !reduceMotion) { c.classList.remove('hit'); void c.offsetWidth; c.classList.add('hit'); }
+        c.classList.toggle('keep', st.n === C.limits.length && !why);
+      });
+      side.innerHTML = '<div class="fs-in-k">' + esc(C.limitsLabel || 'The keeper’s limits') + '</div><ol class="fs-cxo-limits">' +
+        C.limits.map(function (l, k) { return '<li class="' + (k < st.n ? 'on' : k === st.n ? 'next' : '') + '"><span>' + l.icon + '</span>' + esc(l.t) + '</li>'; }).join('') + '</ol>' +
+        (next ? '<button type="button" class="fs-btn fs-cxo-add">' + esc((C.addBtn || 'Add limit {n}').replace('{n}', st.n + 1)) + ' ▶</button><div class="fs-cxo-drag">' + esc(C.dragLine || 'Or drag the next limit onto the ideas.') + '</div>' : '<div class="fs-cxo-left">' + esc(C.leftLine || '') + '</div>');
+      var b = $('.fs-cxo-add', side); if (b) b.addEventListener('click', add);
+      var li = $('.fs-cxo-limits li.next', side); if (li) dragDrop(li, function () { return [board]; }, function () { add(); });
+      if (st.n === C.limits.length) askOnce(qh, C.q, C.opts, 'crossout-q', win, C.win, C.clue, 'crossout', miss);
+    }
+    function add() { if (st.n >= C.limits.length) return; st.n++; saveJ('crossout', st); SFX.stamp(); paint(true); }
+    placeAfter(g, at); paint();
+  }
+
+  /* ---------- Lesson Part 2: "Version timeline" — a prototype's versions on a timeline; each test shows which goals failed; pick the ONE change
+     that fixes it ("change everything" and "give up" bounce), build the next version and test again (22.02) ----------
+     D.versions = {afterText or replace, kicker, title, todo[], why, model, crit:[{id, icon, t}], vers:[{v, name, icon, parts:[t], tests:{critId:bool}, note, opts:[{t, ok, miss}], fixed}],
+                   buildBtn, passLine, failLine, q, opts, win, clue} */
+  function buildVersions() {
+    var V = D.versions; if (!V) return;
+    var at = V.replace ? $(V.replace) : anchorP(V.afterText); if (!at) { FAILED.push('versions anchor not found'); return; }
+    var g = gameShell(V.kicker || 'Part 2 game', V.title, V.todo, V.why); g.dataset.mod = 'versions';
+    var st = loadJ('versions', { at: 0 }), view = null;
+    var line = el('div', 'fs-ver-line'), card = el('div', 'fs-ver-card'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(line); g.appendChild(card); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    function paint(anim) {
+      if (view == null) view = st.at;
+      line.innerHTML = V.vers.map(function (v, i) { return (i ? '<span class="fs-ver-arw" aria-hidden="true">→</span>' : '') + '<button type="button" class="fs-ver-chip' + (i === view ? ' on' : '') + (i < st.at ? ' past' : '') + (i > st.at ? ' lock' : '') + '" data-i="' + i + '"' + (i > st.at ? ' disabled' : '') + '><b>' + esc(v.v) + '</b><small>' + esc(i > st.at ? '?' : v.name) + '</small></button>'; }).join('');
+      $$('.fs-ver-chip', line).forEach(function (b) { b.addEventListener('click', function () { view = +b.dataset.i; SFX.blip(); miss.classList.remove('show'); paint(); }); });
+      var v = V.vers[view], allOk = V.crit.every(function (c) { return v.tests[c.id]; });
+      card.className = 'fs-ver-card' + (anim && !reduceMotion ? ' pop' : '') + (allOk ? ' pass' : '');
+      card.innerHTML = '<div class="fs-ver-top"><div class="fs-ver-pic"><span>' + v.icon + '</span><b>' + esc(v.v) + '</b><small>' + esc(V.model || 'a model') + '</small></div><div class="fs-ver-parts"><div class="fs-in-k">' + esc(V.partsLabel || 'Built with') + '</div><ul>' +
+        v.parts.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' + (v.fixed ? '<div class="fs-ver-fixed">🔧 ' + esc(v.fixed) + '</div>' : '') + '</div></div>' +
+        '<table class="fs-ver-tests"><tr><th>' + esc(V.goalWord || 'Goal') + '</th><th>' + esc(V.testWord || 'Test result') + '</th></tr>' +
+        V.crit.map(function (c) { var ok = v.tests[c.id]; return '<tr class="' + (ok == null ? 'na' : ok ? 'ok' : 'bad') + '"><td>' + c.icon + ' ' + esc(c.t) + '</td><td>' + (ok == null ? '— ' + esc(V.naWord || 'Not tested yet') : ok ? '✓ ' + esc(V.passWord || 'Pass') : '✗ ' + esc(V.failWord || 'Fail')) + '</td></tr>'; }).join('') + '</table>' +
+        '<div class="fs-hs-card"><span class="fs-hs-n">' + (allOk ? '🏁' : '🔎') + '</span><div>' + esc(v.note) + '</div></div><div class="fs-ver-q"></div>';
+      if (view === st.at && !allOk && v.opts) {
+        chipsQ($('.fs-ver-q', card), V.oneQ || 'What ONE change should Sam make for the next version?', v.opts, function () {
+          var b = el('button', 'fs-btn fs-ver-build', esc((V.buildBtn || 'Build and test {v}').replace('{v}', V.vers[view + 1].v))); b.type = 'button';
+          b.addEventListener('click', function () { st.at = view + 1; view = st.at; saveJ('versions', st); SFX.whoosh(); setTimeout(SFX.chime, 300); paint(true); });
+          $('.fs-ver-q', card).appendChild(b);
+        }, miss);
+      }
+      if (st.at === V.vers.length - 1) askOnce(qh, V.q, V.opts, 'versions-q', win, V.win, V.clue, 'versions', miss);
+    }
+    if (V.replace) { at.parentNode.insertBefore(g, at); at.style.display = 'none'; } else placeAfter(g, at);
+    paint();
+  }
+
+  /* ---------- Lesson Part 3: "Design it, then storm it" — pick one input and up to 2 add-ons inside a budget; run cloudy days + a storm night
+     on a model battery; the beam stays on or goes dark with a reason; redesign and test again until it passes (22.02) ----------
+     D.stormtest = {afterText, kicker, title, todo[], why, model, budget, maxAdd, cap, bigCap, need, brightNeed, inputs:[{id, icon, t, cost, note, moving, person, charge:{cloudy, storm}}],
+                    addons:[{id, icon, t, cost, note, big, salt, bright, extra}], days:[{k, icon, t}], saltFrom, runBtn, overLine, pickLine, lines:{dark, rust, person, ok}, q, opts, win, wow, clue} */
+  function buildStormtest() {
+    var T = D.stormtest; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('stormtest anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Part 3 game', T.title, T.todo, T.why); g.dataset.mod = 'stormtest';
+    var st = loadJ('stormtest', { inp: null, add: [], runs: [], win: null });
+    var pick = el('div', 'fs-stm-pick'), go = el('div', 'fs-stm-go'), res = el('div', 'fs-stm-res'), log = el('div', 'fs-stm-log'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(pick); g.appendChild(go); g.appendChild(miss); g.appendChild(res); g.appendChild(log); g.appendChild(qh); g.appendChild(win);
+    function I(id) { return T.inputs.filter(function (x) { return x.id === id; })[0]; }
+    function A(id) { return T.addons.filter(function (x) { return x.id === id; })[0]; }
+    function cost() { return (st.inp ? I(st.inp).cost : 0) + st.add.reduce(function (n, a) { return n + A(a).cost; }, 0); }
+    function paintPick() {
+      var c = cost(), over = c > T.budget;
+      pick.innerHTML = '<div class="fs-in-k">' + esc(T.inQ || '1. Pick ONE energy input') + '</div><div class="fs-stm-opts">' +
+        T.inputs.map(function (x) { return '<button type="button" class="fs-stm-o in' + (st.inp === x.id ? ' on' : '') + '" data-id="' + x.id + '"><span>' + x.icon + '</span><b>' + esc(x.t) + '</b><em>$' + x.cost + '</em><small>' + esc(x.note) + '</small></button>'; }).join('') + '</div>' +
+        '<div class="fs-in-k">' + esc((T.addQ || '2. Add up to {n} add-ons').replace('{n}', T.maxAdd)) + '</div><div class="fs-stm-opts">' +
+        T.addons.map(function (x) { return '<button type="button" class="fs-stm-o add' + (st.add.indexOf(x.id) > -1 ? ' on' : '') + '" data-id="' + x.id + '"><span>' + x.icon + '</span><b>' + esc(x.t) + '</b><em>$' + x.cost + '</em><small>' + esc(x.note) + '</small></button>'; }).join('') + '</div>' +
+        '<div class="fs-stm-budget' + (over ? ' over' : '') + '"><span>💲 ' + esc(T.budgetWord || 'Budget') + '</span><i><b style="width:' + Math.min(100, c / T.budget * 100) + '%"></b></i><em>$' + c + ' / $' + T.budget + '</em></div>';
+      $$('.fs-stm-o.in', pick).forEach(function (b) { b.addEventListener('click', function () { st.inp = b.dataset.id; SFX.blip(); miss.classList.remove('show'); saveJ('stormtest', st); paintPick(); }); });
+      $$('.fs-stm-o.add', pick).forEach(function (b) { b.addEventListener('click', function () {
+        var id = b.dataset.id, k = st.add.indexOf(id);
+        if (k > -1) st.add.splice(k, 1); else { if (st.add.length >= T.maxAdd) { bounce(b, miss, (T.maxLine || 'Only {n} add-ons fit. Tap one to take it off first.').replace('{n}', T.maxAdd)); return; } st.add.push(id); }
+        SFX.blip(); miss.classList.remove('show'); saveJ('stormtest', st); paintPick(); }); });
+      go.innerHTML = '<button type="button" class="fs-btn fs-stm-run">' + esc(T.runBtn || '⛈ Run the storm test') + '</button>';
+      $('.fs-stm-run', go).addEventListener('click', run);
+    }
+    function sim() {
+      var inp = I(st.inp), adds = st.add.map(A), cap = adds.some(function (a) { return a.big; }) ? T.bigCap : T.cap, need = adds.some(function (a) { return a.bright; }) ? T.brightNeed : T.need;
+      var salt = adds.some(function (a) { return a.salt; }), extra = adds.reduce(function (n, a) { return n + (a.extra || 0); }, 0), bat = cap, out = [], fail = null;
+      T.days.forEach(function (d, i) {
+        if (fail) { out.push({ d: d, skip: true }); return; }
+        var rust = inp.moving && !salt && i >= T.saltFrom, ch = 0;
+        if (!inp.person && !rust) ch = (inp.charge[d.k] || 0) + (d.k === 'cloudy' ? extra : 0);
+        bat = Math.min(cap, bat + ch);
+        var on = bat >= need; if (on) bat -= need;
+        out.push({ d: d, ch: ch, bat: bat, cap: cap, on: on, rust: rust });
+        if (!on) fail = inp.person ? 'person' : rust ? 'rust' : 'dark';
+      });
+      return { out: out, fail: fail };
+    }
+    function run() {
+      if (!st.inp) { showMiss(miss, T.pickLine || 'Pick an energy input first.'); return; }
+      if (cost() > T.budget) { showMiss(miss, T.overLine || 'Over budget! Take something off.'); return; }
+      miss.classList.remove('show'); var r = sim(), name = I(st.inp).t + (st.add.length ? ' + ' + st.add.map(function (a) { return A(a).t; }).join(' + ') : '');
+      st.runs.push({ name: name, ok: !r.fail, cost: cost() }); if (!r.fail && !st.win) st.win = { inp: st.inp, add: st.add.slice() }; saveJ('stormtest', st);
+      show(r, true); paintLog(); SFX.whoosh();
+    }
+    function show(r, anim) {
+      res.innerHTML = '<div class="fs-stm-days">' + r.out.map(function (o, i) {
+        if (o.skip) return '<div class="fs-stm-day skip"><span>' + o.d.icon + '</span><b>' + esc(o.d.t) + '</b><small>—</small></div>';
+        return '<div class="fs-stm-day ' + (o.on ? 'on' : 'off') + (o.d.k === 'storm' ? ' storm' : '') + '" style="--i:' + i + '"><span>' + o.d.icon + '</span><b>' + esc(o.d.t) + '</b><small>+' + o.ch + ' ⚡' + (o.rust ? ' · 🟤 ' + esc(T.rustWord || 'rusted') : '') + '</small><i class="fs-stm-bat"><u style="height:' + Math.round(o.bat / o.cap * 100) + '%"></u></i><em class="fs-stm-beam">' + (o.on ? '💡' : '⚫') + '</em></div>';
+      }).join('') + '</div><div class="fs-hs-card ' + (r.fail ? 'fail' : 'pass') + '"><span class="fs-hs-n">' + (r.fail ? '🔧' : '🌟') + '</span><div><b>' + esc(r.fail ? T.lines[r.fail] : T.lines.ok) + '</b>' + esc(r.fail ? (T.retryLine || ' Redesign: change something and test again.') : (T.wow || '')) + '</div></div>';
+      if (!r.fail && anim) { SFX.win(); if (!reduceMotion) { res.classList.remove('glow'); void res.offsetWidth; res.classList.add('glow'); } }
+      else if (anim) SFX.thud();
+    }
+    function paintLog() {
+      log.innerHTML = st.runs.length ? '<div class="fs-in-k">' + esc(T.logLabel || 'My tests') + '</div><ol class="fs-stm-runs">' + st.runs.map(function (r) { return '<li class="' + (r.ok ? 'ok' : 'bad') + '">' + (r.ok ? '✓' : '✗') + ' ' + esc(r.name) + ' <em>$' + r.cost + '</em></li>'; }).join('') + '</ol>' : '';
+      if (st.win) askOnce(qh, T.q, T.opts, 'stormtest-q', win, T.win, T.clue, 'stormtest', miss);
+    }
+    placeAfter(g, at); paintPick(); paintLog();
+    if (st.runs.length) show(sim(), false);
+  }
+
+  /* ---------- After the case: "Patent drawing" — the student's passing storm-test design becomes a labeled drawing (IN → change → stored → OUT);
+     name it and stamp APPROVED (22.02) ----------
+     D.patent = {after, kicker, title, todo[], lockLine, noDesign, chains:{inputId:[{icon, t, sub}]}, addLabels:{addonId:t}, nameQ, ph, stampBtn, stamp, sign, win} */
+  function buildPatent() {
+    var P = D.patent; if (!P) return;
+    var host = $(P.after || '.fs-solve'); if (!host) { FAILED.push('patent: no anchor'); return; }
+    var g = gameShell(P.kicker || 'Case closed', P.title, P.todo, P.why); g.dataset.mod = 'patent';
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(P.lockLine || 'Crack the case first.') + '</span>'), body = el('div', 'fs-pat-body'), win = el('div', 'fs-win');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(win);
+    host.parentNode.insertBefore(g, host.nextSibling);
+    function paint(anim) {
+      var solved = !!store('solved'), s = loadJ('stormtest', {}), p = loadJ('patent', { name: '', stamped: 0 });
+      g.classList.toggle('locked', !solved); lock.style.display = solved ? 'none' : ''; body.style.display = solved ? '' : 'none'; if (!solved) return;
+      if (!s.win) { body.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">⛈</span><div>' + esc(P.noDesign || 'Pass the storm test first. Your winning design becomes the drawing.') + '</div></div>'; return; }
+      var ch = P.chains[s.win.inp] || [], adds = (s.win.add || []).map(function (a) { return P.addLabels[a]; }).filter(Boolean);
+      body.innerHTML = '<div class="fs-pat-sheet' + (p.stamped && anim ? ' thump' : '') + '"><div class="fs-pat-h">' + esc(P.head || 'PATENT DRAWING · Palmetto Beach Harbor') + '</div>' +
+        '<div class="fs-pat-name">' + (p.stamped ? '<b>' + esc(p.name) + '</b>' : '<label>' + esc(P.nameQ || 'Name your invention:') + ' <input type="text" maxlength="40" class="fs-pat-in" placeholder="' + esc(P.ph || 'The Storm Beacon 3000') + '" value="' + esc(p.name) + '"></label>') + '</div>' +
+        '<div class="fs-pat-chain">' + ch.map(function (c, i) { return (i ? '<span class="fs-pat-arw">➜</span>' : '') + '<div class="fs-pat-step"><span>' + c.icon + '</span><b>' + esc(c.t) + '</b><small>' + esc(c.sub || '') + '</small></div>'; }).join('') + '</div>' +
+        (adds.length ? '<div class="fs-pat-adds">' + esc(P.addWord || 'Add-ons:') + ' ' + adds.map(esc).join(' · ') + '</div>' : '') +
+        (p.stamped ? '<span class="fs-pat-stamp">' + esc(P.stamp || 'APPROVED') + '</span><div class="fs-pat-sign">' + esc(P.sign || '') + '</div>' : '<button type="button" class="fs-btn fs-pat-go">' + esc(P.stampBtn || 'Stamp it APPROVED') + '</button>') + '</div>';
+      var inp = $('.fs-pat-in', body); if (inp) inp.addEventListener('input', function () { p.name = inp.value; saveJ('patent', p); });
+      var go = $('.fs-pat-go', body); if (go) go.addEventListener('click', function () {
+        p.name = (inp && inp.value.trim()) || P.ph || 'My backup light'; if (unkind(p.name)) { p.name = P.ph || 'My backup light'; toast('🙂', 'Kind names only', KIND_MSG); }
+        p.stamped = 1; saveJ('patent', p); SFX.stamp(); setTimeout(SFX.win, 250); paint(true); winOnce(win, P.win, null, 'patent'); });
+      if (p.stamped) winOnce(win, P.win, null, 'patent');
+    }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); });
+    paint();
+  }
+
   function init() {
     if (/[?&]review\b/.test(location.search)) html.classList.add('fs-review');
     guard('tabs', trackTabs);
@@ -9522,6 +9736,10 @@
     guard('blackbox', buildBlackbox);
     guard('arrowtags', buildArrowtags);
     guard('pipes', buildPipes);
+    guard('stamps', buildStamps);
+    guard('crossout', buildCrossout);
+    guard('versions', buildVersions);
+    guard('stormtest', buildStormtest);
     guard('words', buildWords);
     guard('layers', buildLayers);
     guard('tank', buildTank);
@@ -9540,6 +9758,7 @@
     guard('signmaker', buildSignmaker);
     guard('repair', buildRepair);
     guard('harbor', buildHarbor);
+    guard('patent', buildPatent);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);
