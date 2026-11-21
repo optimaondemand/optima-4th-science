@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="Pelican Canal at sunrise: a small windmill on a wooden dock turns in the breeze, and ripples spread out from its pump pipe. A house with a lit window stands on the shore, and a brown pelican rests on a post.">
+  <defs>
+    <linearGradient id="c232sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB3D8"/><stop offset=".6" stop-color="#F6C99A"/><stop offset="1" stop-color="#F9DDB4"/></linearGradient>
+    <linearGradient id="c232sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E9AB8"/><stop offset="1" stop-color="#2F5F7A"/></linearGradient>
+    <radialGradient id="c232sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF3C4"/><stop offset=".5" stop-color="#FFD27A"/><stop offset="1" stop-color="#FFD27A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="c232win" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD36E" stop-opacity=".8"/><stop offset="1" stop-color="#FFD36E" stop-opacity="0"/></radialGradient>
+    <style>
+      .c232-rotor{transform-box:view-box;transform-origin:540px 52px;animation:c232spin 2.4s linear infinite}
+      .c232-rip{fill:none;stroke:#D8EEF7;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:c232rip 3.2s ease-out infinite}
+      .c232-r2{animation-delay:1.1s}.c232-r3{animation-delay:2.2s}
+      .c232-tail{transform-box:fill-box;transform-origin:left center;animation:c232tail 4s ease-in-out infinite}
+      .c232-air{fill:none;stroke:#FFFFFF;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:26 60;opacity:.75;animation:c232air 3s linear infinite}
+      .c232-a2{animation-delay:-1s}.c232-a3{animation-delay:-2s}
+      .c232-glint{animation:c232gl 4s ease-in-out infinite}
+      @keyframes c232spin{to{transform:rotate(360deg)}}
+      @keyframes c232rip{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+      @keyframes c232tail{50%{transform:rotate(-3deg)}}
+      @keyframes c232air{to{stroke-dashoffset:-86}}
+      @keyframes c232gl{50%{opacity:.35}}
+      @media (prefers-reduced-motion: reduce){.c232-rotor,.c232-rip,.c232-tail,.c232-air,.c232-glint{animation:none}.c232-rip{opacity:.5}}
+    </style>
+  </defs>
+  <rect width="920" height="200" fill="url(#c232sky)"/>
+  <circle cx="150" cy="96" r="58" fill="url(#c232sun)"/><circle cx="150" cy="96" r="22" fill="#FFF1C2"/>
+  <!-- breeze lines coming in from the water -->
+  <path class="c232-air" d="M250 40 q60 -8 120 0 t120 0"/><path class="c232-air c232-a2" d="M210 66 q60 -8 120 0 t120 0"/><path class="c232-air c232-a3" d="M300 22 q50 -6 100 0 t100 0"/>
+  <!-- far shore with a cabbage palm and sea grape -->
+  <path d="M0 98 Q50 86 110 96 Q160 86 220 98 L220 106 L0 106z" fill="#4E6B52"/>
+  <g fill="#3F5A44"><rect x="66" y="58" width="4" height="40"/><path d="M68 60 q-22 -6 -30 6 q16 -4 30 -4z M68 60 q22 -8 32 4 q-16 -4 -32 -2z M68 60 q-8 -18 -24 -18 q14 6 24 16z M68 60 q10 -18 26 -16 q-14 6 -26 14z"/></g>
+  <!-- the house from 23.01 -->
+  <g><path d="M700 104 V60 L760 30 L820 60 V104z" fill="#C9B79C"/><path d="M690 62 L760 26 L830 62" fill="none" stroke="#8A6E54" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="760" cy="72" r="26" fill="url(#c232win)"/><rect x="746" y="60" width="28" height="24" rx="2" fill="#FFD36E"/><path d="M760 60 v24 M746 72 h28" stroke="#B9822A" stroke-width="2"/>
+    <rect x="786" y="78" width="16" height="26" fill="#8A6E54"/></g>
+  <rect x="660" y="102" width="260" height="8" fill="#9AA0A8"/>
+  <!-- dock -->
+  <g fill="#7A5A35"><rect x="470" y="98" width="200" height="7" rx="2"/><rect x="480" y="98" width="5" height="44"/><rect x="560" y="98" width="5" height="44"/><rect x="640" y="98" width="5" height="44"/></g>
+  <!-- windmill on the dock: a lattice tower, a tail vane and a turning wheel of blades -->
+  <g stroke="#4A5058" stroke-width="3" fill="none"><path d="M528 98 L536 52 M552 98 L544 52 M531 82 h18 M533 68 h14 M529 90 L547 72 M551 90 L533 72"/></g>
+  <path class="c232-tail" d="M540 52 h48 l8 -10 h14 v20 h-14 l-8 -10" fill="#B8BEC6" stroke="#4A5058" stroke-width="2"/>
+  <g class="c232-rotor"><circle cx="540" cy="52" r="26" fill="none" stroke="#4A5058" stroke-width="2"/>
+    <g fill="#D9DEE3" stroke="#4A5058" stroke-width="1.2">
+      <path d="M540 52 l-3 -26 h6z"/><path d="M540 52 l-3 -26 h6z" transform="rotate(30 540 52)"/><path d="M540 52 l-3 -26 h6z" transform="rotate(60 540 52)"/><path d="M540 52 l-3 -26 h6z" transform="rotate(90 540 52)"/>
+      <path d="M540 52 l-3 -26 h6z" transform="rotate(120 540 52)"/><path d="M540 52 l-3 -26 h6z" transform="rotate(150 540 52)"/><path d="M540 52 l-3 -26 h6z" transform="rotate(180 540 52)"/><path d="M540 52 l-3 -26 h6z" transform="rotate(210 540 52)"/>
+      <path d="M540 52 l-3 -26 h6z" transform="rotate(240 540 52)"/><path d="M540 52 l-3 -26 h6z" transform="rotate(270 540 52)"/><path d="M540 52 l-3 -26 h6z" transform="rotate(300 540 52)"/><path d="M540 52 l-3 -26 h6z" transform="rotate(330 540 52)"/></g>
+    <circle cx="540" cy="52" r="5" fill="#4A5058"/></g>
+  <!-- pump pipe into the canal -->
+  <path d="M540 98 V128" stroke="#4A5058" stroke-width="5"/>
+  <!-- water -->
+  <rect y="106" width="920" height="94" fill="url(#c232sea)"/>
+  <path d="M540 106 V136" stroke="#4A5058" stroke-width="5" opacity=".6"/>
+  <g class="c232-glint" stroke="#FFE7B0" stroke-width="2" opacity=".8"><path d="M120 116 h60"/><path d="M130 126 h40"/><path d="M140 136 h22"/></g>
+  <g><ellipse class="c232-rip" cx="540" cy="140" rx="26" ry="7"/><ellipse class="c232-rip c232-r2" cx="540" cy="140" rx="26" ry="7"/><ellipse class="c232-rip c232-r3" cx="540" cy="140" rx="26" ry="7"/></g>
+  <!-- brown pelican on a post -->
+  <rect x="380" y="92" width="10" height="58" fill="#6B5233"/>
+  <g transform="translate(366 66)"><path d="M10 26 Q4 10 18 6 Q34 4 38 20 Q36 30 22 30z" fill="#7A6450"/><path d="M14 8 Q14 -4 22 -6 Q30 -6 30 2 Q26 6 20 8z" fill="#EDE3D1"/>
+    <path d="M28 -2 L56 12 L54 15 L26 4z" fill="#C9A36A"/><path d="M27 4 Q40 16 54 15 Q42 20 28 10z" fill="#A98454"/><circle cx="25" cy="-1" r="1.6" fill="#222"/>
+    <path d="M16 30 v6 M24 30 v6" stroke="#4A4038" stroke-width="2"/></g>
+  <!-- seagrass -->
+  <g stroke="#2E5A43" stroke-width="3" stroke-linecap="round" fill="none"><path d="M40 200 q4 -20 -2 -34"/><path d="M52 200 q-4 -18 4 -30"/><path d="M860 200 q4 -22 -3 -36"/><path d="M874 200 q-5 -16 3 -28"/><path d="M240 200 q3 -14 -2 -24"/></g>
+</svg>

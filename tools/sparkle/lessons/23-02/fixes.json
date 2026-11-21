@@ -1,0 +1,311 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "wind and water energy is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS codes, content benchmark first; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.N.1.1, SC.4.P.10.4 · TEKS 4.8(B)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.10.4, SC.4.N.1.1</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "footer: same order as the header (plan)",
+  "old": "CPALMS SC.4.N.1.1, SC.4.P.10.4",
+  "new": "CPALMS SC.4.P.10.4, SC.4.N.1.1"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: The Mystery Tower</div>\n        <div class=\"act-subtitle\">Lift the tiles, then guess</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the uncover-the-tiles game",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Out in a field stands a tall tower with a wheel of blades on top. No wires run to it. What is it for? Lift the tiles to find out.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → a list of things moving air or water pushes (on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Now look around you. What does moving air or moving water push near you?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Stop & Reason about “the three devices above” (no such devices on this page)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for a wind and water model",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; My Wind and Water Model"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task (now the two-panel model typed on the page + a required labeled sketch)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Show how moving air makes a pinwheel spin and how moving water makes a waterwheel spin. Fill in your model below, then sketch it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: a pinwheel to try it for real",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🌀</span>A pinwheel or a sheet of paper (to try it for real)</span>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "wrong facts: Florida has no utility wind farms (EIA, 2025–26), and the Apalachicola River site is a hydroelectric dam (Jim Woodruff Dam, Florida’s only hydropower plant), not “pumps”; wind isn’t a growing source of Florida power",
+  "old": "<p>Florida uses both. The Sunshine State has wind farms along its coasts and hydroelectric pumps that move water at places like the Apalachicola River. Most of Florida's power still comes from natural gas, but more is coming from solar, wind, and water every year.</p>",
+  "new": "<p>How does Florida use them? Sailboats ride the wind, and old farm windmills pumped water for cattle. Florida has almost no wind farms, because its usual winds are gentle. But one dam on the Apalachicola River, at the Georgia line, uses moving water to make electricity.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll explain what makes a wheel spin faster in wind or water, and how Florida uses them.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.",
+  "new": "<strong>Tap a card to flip it</strong> and read what the word means."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash (Part 1)",
+  "old": "<p>Air is real stuff — even though you can't see it. When air moves, it carries <span class=\"vtip\">motion<span class=\"vtip-box\"><span class=\"vtip-word\">Motion</span>Movement.</span></span> energy. That moving air is what we call WIND.</p>",
+  "new": "<p>Air is real stuff, even though you can't see it. When air moves, it carries <span class=\"vtip\">motion<span class=\"vtip-box\"><span class=\"vtip-word\">Motion</span>Movement.</span></span> energy. That moving air is what we call WIND.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; the misconception moves here and leads into the game (Part 1)",
+  "old": "The wheel can then turn other things — a generator, a pump, even a flashlight.</p>",
+  "new": "The wheel can then turn other things, like a pump or a generator (a machine that makes electricity).</p>\n      <p><strong>Watch out:</strong> some people think air is nothing, because we can’t see it. Air is real stuff, and moving air can push. Try the drop race.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "the misconception paragraph moved to Part 1 (next to the drop race)",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think air \"isn\\'t real\".*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; leads into the game (Part 2)",
+  "old": "hits the cups of a water wheel, it pushes them — and the wheel spins.</p>",
+  "new": "hits the cups of a water wheel, it pushes them, and the wheel spins. Turn the valve and see.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash (list)",
+  "old": "</span></strong> — using them doesn't use them up.</li>",
+  "new": ".</span></strong> Using them doesn't use them up.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "no dash (figure caption)",
+  "old": "When that motion hits a blade, the blade turns — and that turning can do useful work.",
+  "new": "When that motion hits a blade, the blade turns, and that turning can do useful work."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash (CER quote)",
+  "old": "\"Wind isn't real energy. It's just air moving — it doesn't do anything.\"",
+  "new": "\"Wind isn't real energy. It's just air moving. It doesn't do anything.\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash; plain closing",
+  "old": "Noticed evidence.</span></span> — exactly what real scientists do. Next module we shift gears to HEAT — how it moves between objects, and which materials slow it down.",
+  "new": "Noticed evidence.</span></span>, just like real scientists. Next lesson: HEAT, how it moves between objects, and which materials slow it down."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Explain how a pinwheel is like a wind turbine. Use...\"",
+  "new": "data-label=\"A pinwheel is like a wind turbine\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why are wind and water energy called RENEWABLE? Gi...\"",
+  "new": "data-label=\"Renewable, and how Florida uses them\""
+ },
+ {
+  "kind": "plain",
+  "why": "define “transferred” where it is first seen",
+  "old": "That spinning is energy being TRANSFERRED from the moving air to the wheel.",
+  "new": "That spinning is energy being TRANSFERRED (passed along) from the moving air to the wheel."
+ },
+ {
+  "kind": "fix",
+  "why": "Lesson subtitle: Florida does not run on wind (0 wind farms)",
+  "old": "<div class=\"act-subtitle\">Florida runs on wind, water, and sun</div>",
+  "new": "<div class=\"act-subtitle\">Moving air and water can push</div>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the drop race is Part 1’s thinking stop)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Key Concept box (the games and the picture carry it)",
+  "old": "<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^\"]*\">\\s*<div[^>]*>⭐ Key Concept</div>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "removed: the Four Florida Power Sources tap diagram (its “coastal wind turbine” and “hydro pump” were wrong for Florida), Observe & Reason, the “1,500 homes” turbine fact, the “hurricane forecasting is our biggest wind farm” callout (not true) and Go Deeper (lean). Part 3 = the old Explore (the pinwheel test); the next button goes to Self-Check",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Florida Power Sources</h3>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · The Pinwheel Test</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Now test it like a scientist. A fan blows on a pinwheel. Change ONE thing at a time, the wind or the way the pinwheel faces, and count the spins yourself.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its pinwheel steps are now Part 3; its “5 mph to 30 mph, how many times more pushy” puzzle, the turbine fact and Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; Q5 named the removed diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 6 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page, plus the required sketch",
+  "old": "A two-panel diagram showing a pinwheel pushed by wind and a water wheel pushed by water, with energy source and effect labeled.",
+  "new": "My model: a pinwheel pushed by wind and a waterwheel pushed by water, with the energy source and what it moves. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether wind has real energy, and supported it with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether wind is real energy, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a copy-paste leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]

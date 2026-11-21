@@ -9661,7 +9661,7 @@
       '<div class="fs-gaz-hl">' + esc(P.headline) + '</div>' + (P.deck ? '<div class="fs-gaz-deck">' + esc(P.deck) + '</div>' : '') +
       '<div class="fs-gaz-cols">' + (P.photo ? '<figure class="fs-gaz-fig">' + (P.photo.img ? '<img alt="' + esc(P.photo.alt || '') + '" src="' + esc(P.photo.img) + '">' : P.photo.svg) + '<figcaption>' + esc(P.photo.cap || '') + '</figcaption></figure>' : '') +
       P.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '</div>' +
-      (P.letters ? '<div class="fs-gaz-lh">' + esc(P.lettersHead || 'Letters to the Editor') + '</div><div class="fs-gaz-letters">' + P.letters.map(function (l) { return '<div class="fs-gaz-l"><p>' + esc(l.t) + '</p><b>' + esc(l.sign) + '</b></div>'; }).join('') + '</div>' : '') + '</div>';
+      (P.letters ? '<div class="fs-gaz-lh">' + esc(P.lettersHead || 'Letters to the Editor') + '</div><div class="fs-gaz-letters">' + P.letters.map(function (l) { return '<div class="fs-gaz-l"><p>' + esc(l.t) + '</p><b>' + esc(l.sign) + '</b></div>'; }).join('') + '</div>' : '') + contestEntries(P) + '</div>';
   }
 
   /* ---------- Warm-Up: "Hold it to stop it" — tap a real photo to make it ring (vibration lines + a WebAudio note), then press and HOLD it
@@ -9986,6 +9986,417 @@
     paint();
   }
 
+  /* ---------- case: contest entry forms under the Gazette page (23.02). case.paper.entries = [{n, who, t, svg, lines[]}], entriesHead ---------- */
+  function contestEntries(P) {
+    if (!P.entries) return '';
+    return '<div class="fs-ent-h">' + esc(P.entriesHead || 'Contest entries') + '</div><div class="fs-ent-row">' + P.entries.map(function (e, i) {
+      return '<div class="fs-ent" style="--r:' + ((i % 2 ? 1 : -1) * (0.6 + i * 0.5)) + 'deg"><div class="fs-ent-top"><span>' + esc(P.entryWord || 'ENTRY') + ' #' + esc(e.n) + '</span><small>' + esc(e.who) + '</small></div>' +
+        '<div class="fs-ent-svg">' + e.svg + '</div><b>' + esc(e.t) + '</b>' + (e.lines || []).map(function (l) { return '<p>' + esc(l) + '</p>'; }).join('') + '</div>';
+    }).join('') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Uncover the tiles" — a real photo hides under tiles; lift one tile at a time (tap, or swipe across it) and guess
+     what the mystery thing does; fewer tiles = more stars; the reveal explains how it works (23.02) ----------
+     D.tiles = {afterText, kicker, title, todo[], why, img, alt, credit, cols, rows, tileWord, guessQ, needTile, guesses:[{t, ok, miss}],
+                starsLine, reveal:{head, steps:[{icon, t}]}, q, opts, win, clue} */
+  function buildTiles() {
+    var T = D.tiles; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('tiles anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Warm-Up game', T.title, T.todo, T.why); g.dataset.mod = 'tiles';
+    var C = T.cols || 3, R = T.rows || 2, N = C * R, st = loadJ('tiles', { up: [], got: 0, stars: 0 });
+    var box = el('div', 'fs-tl-box'), info = el('div', 'fs-count'), gq = el('div', 'fs-tl-gq'), reveal = el('div', 'fs-tl-rev'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    var tiles = ''; for (var i = 0; i < N; i++) tiles += '<button type="button" class="fs-tl-t" data-i="' + i + '" aria-label="Lift tile ' + (i + 1) + '"><span>' + (i + 1) + '</span></button>';
+    box.innerHTML = '<img alt="' + esc(T.alt) + '" src="' + esc(T.img) + '"><div class="fs-tl-grid" style="grid-template-columns:repeat(' + C + ',1fr);grid-template-rows:repeat(' + R + ',1fr)">' + tiles + '</div>';
+    g.appendChild(box); g.appendChild(info); g.appendChild(gq); g.appendChild(miss); g.appendChild(reveal); g.appendChild(qh); g.appendChild(win);
+    if (T.credit) g.appendChild(el('div', 'fs-credit', esc(T.credit)));
+    function starsOf(n) { return n <= 2 ? 3 : n <= 4 ? 2 : 1; }
+    function lift(i) {
+      if (st.got || st.up.indexOf(i) > -1) return; st.up.push(i); saveJ('tiles', st); SFX.pop(); miss.classList.remove('show'); paint();
+    }
+    function paint() {
+      $$('.fs-tl-t', box).forEach(function (t) { t.classList.toggle('up', !!st.got || st.up.indexOf(+t.dataset.i) > -1); });
+      info.textContent = st.got ? (T.starsLine || 'Solved with {n} tiles lifted!').replace('{n}', st.up.length) + ' ' + '★★★'.slice(0, st.stars) + '☆☆☆'.slice(0, 3 - st.stars)
+        : '🧩 ' + st.up.length + ' of ' + N + ' ' + (T.tileWord || 'tiles lifted') + ' · ' + '★★★'.slice(0, starsOf(Math.max(1, st.up.length))) + ' if you guess now';
+      info.classList.toggle('ok', !!st.got);
+      if (st.got) {
+        gq.innerHTML = ''; reveal.innerHTML = '<div class="fs-tl-rh">' + esc(T.reveal.head) + '</div><div class="fs-tl-steps">' + T.reveal.steps.map(function (s, k) { return (k ? '<i class="fs-tl-ar">➜</i>' : '') + '<div class="fs-tl-st"><span>' + s.icon + '</span>' + esc(s.t) + '</div>'; }).join('') + '</div>';
+        askOnce(qh, T.q, T.opts, 'tiles-q', win, T.win, T.clue, 'tiles', miss);
+      }
+    }
+    gq.innerHTML = '<div class="fs-in-k">' + esc(T.guessQ || 'What does it do?') + '</div><div class="fs-in-chips">' + T.guesses.map(function (o, k) { return '<button type="button" class="fs-in-chip" data-k="' + k + '">' + esc(o.t) + '</button>'; }).join('') + '</div>';
+    $$('.fs-in-chip', gq).forEach(function (c) { c.addEventListener('click', function () {
+      if (st.got) return; if (!st.up.length) { bounce(c, miss, T.needTile || 'Lift one tile first.'); return; }
+      var o = T.guesses[+c.dataset.k]; if (!o.ok) { bounce(c, miss, o.miss); return; }
+      st.got = 1; st.stars = starsOf(st.up.length); saveJ('tiles', st); SFX.sparkle(); miss.classList.remove('show'); paint();
+    }); });
+    /* tap a tile, or swipe across tiles with the mouse button / finger down */
+    var down = false;
+    $$('.fs-tl-t', box).forEach(function (t) {
+      t.addEventListener('click', function () { lift(+t.dataset.i); });
+      t.addEventListener('pointerenter', function () { if (down) lift(+t.dataset.i); });
+    });
+    box.addEventListener('pointerdown', function () { down = true; }); document.addEventListener('pointerup', function () { down = false; });
+    placeAfter(g, at); paint();
+  }
+
+  /* ---------- Lesson Part 1: "Drop race" — pick a pair, predict which lands first (drag the 🏁 flag onto one, or tap it), let go; air pushes
+     up on the wide one; then a fan round: the same things fall past a fan and the air pushes them sideways (23.02) ----------
+     D.droprace = {afterText, kicker, title, todo[], why, model, flag, sameWord, predictQ, dropBtn, againBtn, needPredict, rightPre, wrongPre,
+                   pairs:[{id, t, a:{icon, t, fall, flutter}, b:{…}, first:'a'|'b'|'same', why}], fan:{label, btn, items:[{icon, t, fall, drift}], line},
+                   taskLabel, q, opts, win, clue} */
+  function buildDroprace() {
+    var R = D.droprace; if (!R) return;
+    var at = anchorP(R.afterText); if (!at) { FAILED.push('droprace anchor text not found'); return; }
+    var g = gameShell(R.kicker || 'Part 1 game', R.title, R.todo, R.why); g.dataset.mod = 'droprace';
+    var st = loadJ('droprace', { d: {}, fan: 0 }), cur = R.pairs[0], pred = null, busy = false;
+    var tabs = el('div', 'fs-in-chips fs-drp-tabs'), stage = el('div', 'fs-drp-stage'), ctl = el('div', 'fs-drp-ctl'), res = el('div', 'fs-drp-res'), fan = el('div', 'fs-drp-fan'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(tabs); g.appendChild(stage); g.appendChild(ctl); g.appendChild(res); g.appendChild(fan); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function paintTabs() {
+      tabs.innerHTML = R.pairs.map(function (p) { return '<button type="button" class="fs-in-chip' + (p === cur ? ' on' : '') + (st.d[p.id] ? ' ok' : '') + '" data-id="' + p.id + '">' + esc(p.t) + '</button>'; }).join('');
+      $$('button', tabs).forEach(function (b) { b.addEventListener('click', function () { if (busy) return; cur = R.pairs.filter(function (p) { return p.id === b.dataset.id; })[0]; pred = null; res.innerHTML = ''; SFX.blip(); paintTabs(); paintStage(); }); });
+    }
+    function paintStage() {
+      stage.innerHTML = '<div class="fs-drp-lanes">' + ['a', 'b'].map(function (k) { var o = cur[k]; return '<div class="fs-drp-lane" data-k="' + k + '"><i class="fs-drp-h" aria-hidden="true">✋</i><div class="fs-drp-obj" data-k="' + k + '"><span>' + o.icon + '</span><b>' + esc(o.t) + '</b></div><div class="fs-drp-time"></div></div>'; }).join('') + '</div><div class="fs-drp-floor"></div><small class="fs-drp-model">' + esc(R.model || 'a model') + '</small>';
+      ctl.innerHTML = '<div class="fs-in-k">' + esc(R.predictQ || 'Which lands first? Drag the flag onto it, or tap it.') + '</div><div class="fs-drp-preds">' +
+        '<span class="fs-drp-flag" tabindex="0">' + esc(R.flag || '🏁 Lands first') + '</span>' +
+        ['a', 'b', 'same'].map(function (k) { return '<button type="button" class="fs-drp-p" data-k="' + k + '">' + (k === 'same' ? '🤝 ' + esc(R.sameWord || 'Same time') : cur[k].icon + ' ' + esc(cur[k].t)) + '</button>'; }).join('') +
+        '</div><button type="button" class="fs-btn fs-drp-go">' + esc(R.dropBtn || '✋ Let go!') + '</button>';
+      var targets = $$('.fs-drp-p', ctl);
+      function choose(k) { pred = k; targets.forEach(function (t) { t.classList.toggle('on', t.dataset.k === k); }); SFX.blip(); miss.classList.remove('show'); }
+      targets.forEach(function (t) { t.addEventListener('click', function () { if (!$('.fs-drp-flag.sel', ctl)) choose(t.dataset.k); }); });
+      dragDrop($('.fs-drp-flag', ctl), function () { return targets; }, function (item, t) { choose(t.dataset.k); });
+      tapTargets(g, targets, function (item, t) { choose(t.dataset.k); });
+      $('.fs-drp-go', ctl).addEventListener('click', drop);
+    }
+    function drop() {
+      if (busy) return; if (!pred) { bounce($('.fs-drp-go', ctl), miss, R.needPredict || 'Predict first: which lands first?'); return; }
+      busy = true; ac(); SFX.whoosh(); res.innerHTML = '';
+      ['a', 'b'].forEach(function (k) {
+        var o = cur[k], ob = $('.fs-drp-obj[data-k="' + k + '"]', stage), tm = $('.fs-drp-lane[data-k="' + k + '"] .fs-drp-time', stage), dur = reduceMotion ? 0.05 : o.fall;
+        ob.style.transition = 'transform ' + dur + 's ' + (o.flutter ? 'linear' : 'cubic-bezier(.55,0,1,1)'); if (o.flutter && !reduceMotion) ob.classList.add('flutter');
+        void ob.offsetWidth; ob.classList.add('down');
+        setTimeout(function () { ob.classList.remove('flutter'); tm.textContent = '⏱ ' + o.fall.toFixed(1) + ' s'; tone(o.flutter ? 300 : 140, 0, 0.12, 'sine', 0.08); }, dur * 1000);
+      });
+      var longest = Math.max(cur.a.fall, cur.b.fall) * (reduceMotion ? 0 : 1000) + 200;
+      setTimeout(function () {
+        busy = false; var ok = pred === cur.first;
+        res.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + (ok ? '🎯' : '🤔') + '</span><div><b>' + esc(ok ? (R.rightPre || 'You predicted it!') : (R.wrongPre || 'Surprise!')) + '</b>' + esc(cur.why) + '</div></div>' +
+          '<button type="button" class="fs-btn alt fs-drp-again">' + esc(R.againBtn || '↺ Drop again') + '</button>';
+        $('.fs-drp-again', res).addEventListener('click', function () { pred = null; res.innerHTML = ''; paintStage(); });
+        if (ok) SFX.chime(); st.d[cur.id] = 1; saveJ('droprace', st); paintTabs(); paintFan(); paintCount();
+      }, longest);
+    }
+    function paintFan() {
+      var F = R.fan; if (!F) return; var open = R.pairs.every(function (p) { return st.d[p.id]; });
+      fan.innerHTML = '<div class="fs-drp-fh">' + esc(F.label || 'Round 2: turn on a fan') + '</div>' + (open ? '<div class="fs-drp-fstage"><div class="fs-drp-fanic">🌀<i></i><i></i><i></i></div>' + F.items.map(function (o, i) {
+        return '<div class="fs-drp-fo" data-i="' + i + '" style="--x:' + (14 + i * (70 / F.items.length)) + '%"><span>' + o.icon + '</span><b>' + esc(o.t) + '</b></div>'; }).join('') + '<div class="fs-drp-floor"></div></div>' +
+        '<button type="button" class="fs-btn fs-drp-fgo">' + esc(F.btn || '🌀 Fan on, let go!') + '</button><div class="fs-drp-fline"></div>' : '<p class="fs-drp-lockp">🔒 ' + esc(F.lockLine || 'Drop every pair first.') + '</p>');
+      if (!open) return;
+      $('.fs-drp-fgo', fan).addEventListener('click', function () {
+        var s = $('.fs-drp-fstage', fan); s.classList.add('on'); noise(1.2, 300, 1400, 0.12);
+        F.items.forEach(function (o, i) { var e = $('.fs-drp-fo[data-i="' + i + '"]', fan), dur = reduceMotion ? 0.05 : Math.min(2.4, o.fall);
+          e.style.transition = 'transform ' + dur + 's linear'; void e.offsetWidth; var sw = $('.fs-drp-fstage', fan).clientWidth; e.style.transform = 'translate(' + Math.round(o.drift * Math.min(1, sw / 700)) + 'px, 150px)'; });
+        setTimeout(function () { $('.fs-drp-fline', fan).innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">💨</span><div>' + esc(F.line) + '</div></div>'; st.fan = 1; saveJ('droprace', st); paintCount(); }, reduceMotion ? 100 : 2500);
+      });
+    }
+    function paintCount() {
+      var n = R.pairs.filter(function (p) { return st.d[p.id]; }).length;
+      count.textContent = '✋ ' + n + ' of ' + R.pairs.length + ' pairs dropped' + (R.fan ? ' · ' + (st.fan ? '✓ ' : '') + (R.fan.short || 'fan test') : ''); count.classList.toggle('ok', n === R.pairs.length && (!R.fan || st.fan));
+      if (n === R.pairs.length && (!R.fan || st.fan)) askOnce(qh, R.q, R.opts, 'droprace-q', win, R.win, R.clue, 'droprace', miss);
+    }
+    paintTabs(); paintStage(); paintFan(); paintCount(); placeAfter(g, at);
+  }
+
+  /* ---------- Lesson Part 2: "Turn the valve" — drag the valve handle around (or press Open / Close) to change how much water falls on a
+     waterwheel; the wheel turns a little grinding stone and lights a lamp; "Spin it by itself" never works with the water off (23.02) ----------
+     D.valve = {afterText, kicker, title, todo[], why, model, levels:[{k, t, flow, spin, lamp, note}], openBtn, closeBtn, handleLabel,
+                spinBtn, spinNo, spinYes, tableLabel, cols[3], tasks:{self, low, high}, taskLabel, q, opts, win, clue} */
+  function buildValve() {
+    var V = D.valve; if (!V) return;
+    var at = anchorP(V.afterText); if (!at) { FAILED.push('valve anchor text not found'); return; }
+    var g = gameShell(V.kicker || 'Part 2 game', V.title, V.todo, V.why); g.dataset.mod = 'valve';
+    var st = loadJ('valve', { lv: 0, seen: {}, t: {} }), L = V.levels, ang = st.lv * 90;
+    var box = el('div', 'fs-vlv-box'), ctl = el('div', 'fs-vlv-ctl'), note = el('div'), table = el('div', 'fs-vlv-tab'), tasks = el('div', 'fs-wig-tasks'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    var paddles = ''; for (var i = 0; i < 8; i++) paddles += '<rect x="-7" y="-62" width="14" height="26" rx="3" transform="rotate(' + (i * 45) + ')" fill="#B98A4E" stroke="#6E4E25" stroke-width="2"/>';
+    box.innerHTML = '<svg viewBox="0 0 640 300" class="fs-vlv-svg" role="img" aria-label="A model: a water tank with a valve, water falling on a waterwheel, the wheel turning a grinding stone and a lamp.">' +
+      '<rect x="20" y="20" width="120" height="80" rx="8" fill="#BFD9EA" stroke="#4E7A99" stroke-width="3"/><rect x="24" y="40" width="112" height="56" fill="#5FA8D3"/><text x="80" y="35" text-anchor="middle" class="fs-vlv-lab">water tank</text>' +
+      '<rect x="138" y="78" width="120" height="16" fill="#8A97A6"/><g class="fs-vlv-handle" transform="translate(200 72)"><g class="fs-vlv-hrot"><circle r="24" fill="#C8553D" stroke="#7E2E1E" stroke-width="3"/><rect x="-4" y="-24" width="8" height="48" fill="#7E2E1E"/><rect x="-24" y="-4" width="48" height="8" fill="#7E2E1E"/><circle r="6" fill="#FFE2C8"/></g></g>' +
+      '<path class="fs-vlv-water" d="M252 94 q14 30 20 74" fill="none" stroke="#3E8FC4" stroke-linecap="round"/>' +
+      '<g transform="translate(300 180)"><g class="fs-vlv-wheel"><circle r="44" fill="none" stroke="#6E4E25" stroke-width="6"/>' + paddles + '<circle r="8" fill="#6E4E25"/></g></g>' +
+      '<rect x="300" y="174" width="190" height="10" fill="#7B6A58"/><g transform="translate(470 179)"><g class="fs-vlv-stone"><circle r="26" fill="#A9A39A" stroke="#6F6A62" stroke-width="3"/><path d="M-20 0 h40 M0 -20 v40" stroke="#6F6A62" stroke-width="3"/></g></g>' +
+      '<path d="M490 179 h60 v-90" fill="none" stroke="#2A2620" stroke-width="3"/><circle class="fs-vlv-glow" cx="550" cy="70" r="40" fill="#FFE27A"/><circle cx="550" cy="70" r="16" fill="#FFF6D8" stroke="#8A7A40" stroke-width="3"/><text x="550" y="130" text-anchor="middle" class="fs-vlv-lab">lamp</text>' +
+      '<rect x="230" y="250" width="160" height="30" fill="#5FA8D3" opacity=".6"/><text x="620" y="292" text-anchor="end" class="fs-vlv-lab">' + esc(V.model || 'a model') + '</text></svg>';
+    ctl.innerHTML = '<div class="fs-vlv-row"><button type="button" class="fs-btn alt fs-vlv-close">' + esc(V.closeBtn || '↺ Close a little') + '</button><span class="fs-vlv-lv"></span><button type="button" class="fs-btn alt fs-vlv-open">' + esc(V.openBtn || 'Open a little ↻') + '</button></div>' +
+      '<small class="fs-vlv-hint">' + esc(V.handleLabel || 'Or drag the red valve handle around.') + '</small><button type="button" class="fs-btn fs-vlv-self">' + esc(V.spinBtn || '⚡ Spin by itself') + '</button>';
+    g.appendChild(box); g.appendChild(ctl); g.appendChild(note); g.appendChild(table); g.appendChild(tasks); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    var svg = $('svg', box), wheel = $('.fs-vlv-wheel', box), stone = $('.fs-vlv-stone', box), rot = $('.fs-vlv-hrot', box), water = $('.fs-vlv-water', box), glow = $('.fs-vlv-glow', box);
+    var wa = 0, last = performance.now();
+    function frame(now) { var dt = Math.min(0.1, (now - last) / 1000); last = now; var lv = L[st.lv]; wa += (reduceMotion ? 0 : lv.spin * 360 * dt); wheel.setAttribute('transform', 'rotate(' + wa.toFixed(1) + ')'); stone.setAttribute('transform', 'rotate(' + (-wa * 1.6).toFixed(1) + ')'); if (document.body.contains(g)) requestAnimationFrame(frame); }
+    function task(k) { if (st.t[k]) return; st.t[k] = 1; saveJ('valve', st); SFX.chime(); }
+    function setLv(n, quiet) {
+      n = Math.max(0, Math.min(L.length - 1, n)); var changed = n !== st.lv; st.lv = n; ang = n * 90; st.seen[L[n].k] = 1;
+      if (n === 1) task('low'); if (n === L.length - 1) task('high');
+      saveJ('valve', st); if (changed && !quiet) { SFX.blip(); if (L[n].flow) noise(0.5, 400, 1600, 0.05 + 0.04 * n); } paint();
+    }
+    function paint() {
+      var lv = L[st.lv]; rot.setAttribute('transform', 'rotate(' + ang + ')');
+      water.setAttribute('stroke-width', String(lv.flow * 5)); water.style.opacity = lv.flow ? 1 : 0; glow.style.opacity = String(lv.lamp); svg.classList.toggle('on', !!lv.flow);
+      $('.fs-vlv-lv', ctl).textContent = '💧 ' + lv.t;
+      note.innerHTML = lv.note ? '<div class="fs-hs-card"><span class="fs-hs-n">💧</span><div>' + esc(lv.note) + '</div></div>' : '';
+      var cols = V.cols || ['Water', 'Wheel', 'Lamp'];
+      table.innerHTML = '<div class="fs-in-k">' + esc(V.tableLabel || 'My observations') + '</div><table><tr>' + cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        L.filter(function (x) { return st.seen[x.k]; }).map(function (x) { return '<tr><td>' + esc(x.t) + '</td><td>' + esc(x.wheelWord) + '</td><td>' + esc(x.lampWord) + '</td></tr>'; }).join('') + '</table>';
+      var T = V.tasks, keys = Object.keys(T);
+      tasks.innerHTML = '<div class="fs-in-k">' + esc(V.taskLabel || 'Try all of these') + '</div><ul>' + keys.map(function (k) { return '<li class="' + (st.t[k] ? 'ok' : '') + '">' + (st.t[k] ? '✓ ' : '○ ') + esc(T[k]) + '</li>'; }).join('') + '</ul>';
+      if (keys.every(function (k) { return st.t[k]; })) askOnce(qh, V.q, V.opts, 'valve-q', win, V.win, V.clue, 'valve', miss);
+    }
+    $('.fs-vlv-open', ctl).addEventListener('click', function () { setLv(st.lv + 1); });
+    $('.fs-vlv-close', ctl).addEventListener('click', function () { setLv(st.lv - 1); });
+    $('.fs-vlv-self', ctl).addEventListener('click', function () {
+      var b = this;
+      if (L[st.lv].flow) { bounce(b, miss, V.spinYes); return; }
+      wheel.parentNode.classList.remove('twitch'); void wheel.parentNode.getBoundingClientRect(); wheel.parentNode.classList.add('twitch'); SFX.thud();
+      miss.innerHTML = '🔎 ' + esc(V.spinNo); miss.classList.add('show'); task('self'); paint();
+    });
+    /* drag the handle around its center: every quarter turn opens one more step */
+    var hd = $('.fs-vlv-handle', box), dragging = false;
+    function angOf(e) { var r = svg.getBoundingClientRect(), sx = r.width / 640, cx = r.left + 200 * sx, cy = r.top + 72 * sx; return Math.atan2(e.clientY - cy, e.clientX - cx) * 180 / Math.PI; }
+    var prevA = 0, acc = 0;
+    hd.addEventListener('pointerdown', function (e) { dragging = true; prevA = angOf(e); acc = st.lv * 90; hd.setPointerCapture && hd.setPointerCapture(e.pointerId); e.preventDefault(); });
+    hd.addEventListener('pointermove', function (e) { if (!dragging) return; var a = angOf(e), d = a - prevA; if (d > 180) d -= 360; if (d < -180) d += 360; prevA = a; acc = Math.max(0, Math.min((L.length - 1) * 90, acc + d)); ang = acc; rot.setAttribute('transform', 'rotate(' + ang + ')'); var n = Math.round(acc / 90); if (n !== st.lv) { var keep = acc; setLv(n); ang = keep; rot.setAttribute('transform', 'rotate(' + ang + ')'); } });
+    function up() { if (!dragging) return; dragging = false; ang = st.lv * 90; paint(); }
+    hd.addEventListener('pointerup', up); hd.addEventListener('pointercancel', up);
+    hd.setAttribute('tabindex', '0'); hd.setAttribute('role', 'slider'); hd.setAttribute('aria-label', 'Valve handle'); hd.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { setLv(st.lv + 1); e.preventDefault(); } if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { setLv(st.lv - 1); e.preventDefault(); } });
+    placeAfter(g, at); setLv(st.lv, true); requestAnimationFrame(frame);
+  }
+
+  /* ---------- Lesson Part 3 (old Explore): "Count the red blade" — a fan blows on a pinwheel with one red blade; set the wind and the angle,
+     start a 10-second test and tap every time the red blade passes the top; change ONE thing from Test 1 each time; the table fills with
+     your own counts (23.02) ----------
+     D.redblade = {afterText, kicker, title, todo[], why, model, secs, base:{wind, angle}, winds:[{k, icon, t}], angles:[{k, icon, t}], rps:{'wind-angle': n},
+                   windLabel, angleLabel, startBtn, tapBtn, readyLine, countLine, recount, notFair, sameAs, firstLine, tableLabel, cols[4], need:['wind','angle'],
+                   q, opts, win, clue} */
+  function buildRedblade() {
+    var B = D.redblade; if (!B) return;
+    var at = anchorP(B.afterText); if (!at) { FAILED.push('redblade anchor text not found'); return; }
+    var g = gameShell(B.kicker || 'Part 3 game', B.title, B.todo, B.why); g.dataset.mod = 'redblade';
+    var st = loadJ('redblade', { rows: [] }), set = { wind: B.base.wind, angle: B.base.angle }, run = null;
+    var stage = el('div', 'fs-rb-stage'), ctl = el('div', 'fs-rb-ctl'), table = el('div', 'fs-vlv-tab'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    var blades = ''; for (var i = 0; i < 4; i++) blades += '<path d="M0 0 L-14 -70 Q0 -82 14 -70 Z" transform="rotate(' + (i * 90) + ')" fill="' + (i === 0 ? '#D2402F' : ['#F2C14E', '#4E9CD3', '#62B36B'][i - 1]) + '" stroke="#2A2620" stroke-width="2"/>';
+    stage.innerHTML = '<svg viewBox="0 0 520 240" class="fs-rb-svg" role="img" aria-label="A model: a fan on the left blows on a pinwheel with one red blade. A mark shows the top.">' +
+      '<g class="fs-rb-fan" transform="translate(70 120)"><circle r="46" fill="#EEF2F6" stroke="#5B6570" stroke-width="4"/><g class="fs-rb-fanb"><ellipse rx="10" ry="36" fill="#9AA6B2"/><ellipse rx="36" ry="10" fill="#9AA6B2"/></g><rect x="-8" y="46" width="16" height="60" fill="#5B6570"/></g>' +
+      '<g class="fs-rb-air"><path d="M130 100 h80 M130 120 h100 M130 140 h80"/></g>' +
+      '<g class="fs-rb-pw" transform="translate(330 110)"><g class="fs-rb-tilt"><g class="fs-rb-rot">' + blades + '<circle r="7" fill="#2A2620"/></g></g><rect x="-4" y="6" width="8" height="120" fill="#8A6B45"/></g>' +
+      '<path d="M330 22 l-9 -14 h18 z" fill="#2A2620"/><text x="346" y="20" class="fs-vlv-lab">top</text>' +
+      '<text x="510" y="234" text-anchor="end" class="fs-vlv-lab">' + esc(B.model || 'a slowed-down model') + '</text></svg>' +
+      '<div class="fs-rb-hud"><span class="fs-rb-clock">⏱ ' + (B.secs || 10) + '</span><span class="fs-rb-n">0</span></div>';
+    function chips(lbl, key, list) { return '<div class="fs-rb-set"><span class="fs-in-k">' + esc(lbl) + '</span>' + list.map(function (o) { return '<button type="button" class="fs-in-chip fs-rb-c" data-key="' + key + '" data-k="' + o.k + '">' + o.icon + ' ' + esc(o.t) + '</button>'; }).join('') + '</div>'; }
+    ctl.innerHTML = chips(B.windLabel || 'Wind', 'wind', B.winds) + chips(B.angleLabel || 'Pinwheel faces the wind', 'angle', B.angles) +
+      '<div class="fs-rb-go"><button type="button" class="fs-btn fs-rb-start">' + esc(B.startBtn || '▶ Start the 10-second test') + '</button><button type="button" class="fs-btn fs-rb-tap" disabled>' + esc(B.tapBtn || '👆 Tap! (red blade at the top)') + '</button></div><div class="fs-rb-line"></div>';
+    g.appendChild(stage); g.appendChild(ctl); g.appendChild(table); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    var rotEl = $('.fs-rb-rot', stage), tiltEl = $('.fs-rb-tilt', stage), fanB = $('.fs-rb-fanb', stage), nEl = $('.fs-rb-n', stage), clock = $('.fs-rb-clock', stage), line = $('.fs-rb-line', ctl), tapB = $('.fs-rb-tap', ctl), startB = $('.fs-rb-start', ctl);
+    var a = 90, fa = 0, last = performance.now();
+    function rps() { return B.rps[set.wind + '-' + set.angle] || 0; }
+    function frame(now) {
+      var dt = Math.min(0.1, (now - last) / 1000); last = now;
+      if (run) {
+        var before = a; a += rps() * 360 * dt; if (Math.floor(before / 360) !== Math.floor(a / 360)) run.model++;
+        var left = Math.max(0, run.end - now); clock.textContent = '⏱ ' + Math.ceil(left / 1000); if (!left) finish();
+      } else a += rps() * 0.25 * 360 * dt;
+      fa += (set.wind === B.winds[B.winds.length - 1].k ? 900 : 400) * dt;
+      var show = reduceMotion ? Math.round(a / 90) * 90 : a; rotEl.setAttribute('transform', 'rotate(' + show.toFixed(1) + ')'); fanB.setAttribute('transform', 'rotate(' + (reduceMotion ? 0 : fa).toFixed(1) + ')');
+      if (document.body.contains(g)) requestAnimationFrame(frame);
+    }
+    function paintSet() {
+      $$('.fs-rb-c', ctl).forEach(function (c) { c.classList.toggle('on', set[c.dataset.key] === c.dataset.k); });
+      var side = B.angles[B.angles.length - 1].k === set.angle; tiltEl.setAttribute('transform', side ? 'scale(0.35 1)' : '');
+      stage.classList.toggle('strong', set.wind === B.winds[B.winds.length - 1].k);
+    }
+    function changed(r) { var n = 0; if (r.wind !== B.base.wind) n++; if (r.angle !== B.base.angle) n++; return n; }
+    function paintTable() {
+      var cols = B.cols || ['Test', 'Wind', 'Facing', 'Spins I counted'];
+      function lbl(list, k) { var o = list.filter(function (x) { return x.k === k; })[0]; return o ? o.icon + ' ' + o.t : k; }
+      table.innerHTML = '<div class="fs-in-k">' + esc(B.tableLabel || 'My test table') + '</div><table><tr>' + cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        st.rows.map(function (r, i) { return '<tr><td>' + (i + 1) + '</td><td>' + esc(lbl(B.winds, r.wind)) + '</td><td>' + esc(lbl(B.angles, r.angle)) + '</td><td><b>' + r.n + '</b></td></tr>'; }).join('') + '</table>';
+      var have = { wind: st.rows.some(function (r) { return r.wind !== B.base.wind && r.angle === B.base.angle; }), angle: st.rows.some(function (r) { return r.angle !== B.base.angle && r.wind === B.base.wind; }) };
+      if (st.rows.length && (B.need || ['wind', 'angle']).every(function (k) { return have[k]; })) askOnce(qh, B.q, B.opts, 'redblade-q', win, B.win, B.clue, 'redblade', miss);
+    }
+    $$('.fs-rb-c', ctl).forEach(function (c) { c.addEventListener('click', function () { if (run) return; set[c.dataset.key] = c.dataset.k; SFX.blip(); miss.classList.remove('show'); paintSet(); }); });
+    function tap() { if (!run) return; run.n++; nEl.textContent = run.n; tone(1200, 0, 0.05, 'square', 0.02); nEl.classList.remove('pop'); void nEl.offsetWidth; nEl.classList.add('pop'); }
+    function finish() {
+      var r = run; run = null; tapB.disabled = true; startB.disabled = false; SFX.chime();
+      if (Math.abs(r.n - r.model) > (B.tol || 2)) { line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">🔁</span><div>' + esc((B.recount || 'You counted {n}. The model counted {m}. Try again and watch only the red blade at the top.').replace('{n}', r.n).replace('{m}', r.model)) + '</div></div>'; return; }
+      st.rows.push({ wind: r.wind, angle: r.angle, n: r.n }); saveJ('redblade', st);
+      line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">✅</span><div>' + esc((B.countLine || 'You counted {n} spins (the model counted {m}). It goes in your table.').replace('{n}', r.n).replace('{m}', r.model)) + '</div></div>';
+      paintTable();
+    }
+    startB.addEventListener('click', function () {
+      if (run) return;
+      if (!st.rows.length && (set.wind !== B.base.wind || set.angle !== B.base.angle)) { set.wind = B.base.wind; set.angle = B.base.angle; paintSet(); bounce(startB, miss, B.firstLine || 'Test 1 is the starting test. I set it for you. Press Start again.'); return; }
+      if (st.rows.length) { var c = changed(set); if (c > 1) { bounce(startB, miss, B.notFair); return; } if (c === 0 && st.rows.length) { bounce(startB, miss, B.sameAs); return; } }
+      ac(); miss.classList.remove('show'); a = 90; run = { n: 0, model: 0, wind: set.wind, angle: set.angle, end: performance.now() + (B.secs || 10) * 1000 }; nEl.textContent = '0';
+      tapB.disabled = false; startB.disabled = true; line.innerHTML = '<p class="fs-rb-ready">' + esc(B.readyLine || 'Tap every time the RED blade passes the top!') + '</p>'; tapB.focus();
+    });
+    tapB.addEventListener('click', tap); $('.fs-rb-pw', stage).addEventListener('pointerdown', tap);
+    g.addEventListener('keydown', function (e) { if (run && e.key === ' ') { e.preventDefault(); if (e.target !== tapB) tap(); } });
+    paintSet(); paintTable(); placeAfter(g, at); requestAnimationFrame(frame);
+  }
+
+  /* ---------- After the case: "Florida's zero" — guess how many wind farms Florida has (slider), the number counts down to the real answer
+     with the reasons; then a real photo of a dam: tap each numbered spot to see what moves and what gets pushed (23.02) ----------
+     D.zero = {after, kicker, title, todo[], lockLine, guessQ, max, unit, guessBtn, answer, bigLabel, reasons:[{icon, t}], photoHead,
+               img, alt, credit, spots:[{n, x, y, label, t}], spotLine, win} */
+  function buildZero() {
+    var Z = D.zero; if (!Z) return;
+    var g = gameShell(Z.kicker || 'Case closed', Z.title, Z.todo, Z.why); g.dataset.mod = 'zero';
+    var st = loadJ('zero', { g: null, s: {} });
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(Z.lockLine || 'Crack the case first.') + '</span>'), body = el('div', 'fs-zro-body'), win = el('div', 'fs-win');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(win);
+    var host = $(Z.after || '.fs-solve'); if (!host) { FAILED.push('zero: no anchor'); return; }
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    function paint(anim) {
+      var s = !!store('solved'); g.classList.toggle('locked', !s); lock.style.display = s ? 'none' : ''; body.style.display = s ? '' : 'none'; if (!s) return;
+      if (st.g == null) {
+        body.innerHTML = '<div class="fs-in-k">' + esc(Z.guessQ) + '</div><div class="fs-zro-guess"><input type="range" min="0" max="' + (Z.max || 50) + '" value="' + Math.round((Z.max || 50) / 2) + '" class="fs-zro-r" aria-label="Your guess"><b class="fs-zro-v"></b></div><button type="button" class="fs-btn fs-zro-go">' + esc(Z.guessBtn || 'Check my guess') + '</button>';
+        var r = $('.fs-zro-r', body), v = $('.fs-zro-v', body); function sv() { v.textContent = r.value + ' ' + (Z.unit || ''); } r.addEventListener('input', sv); sv();
+        $('.fs-zro-go', body).addEventListener('click', function () { st.g = +r.value; saveJ('zero', st); SFX.blip(); paint(true); });
+        return;
+      }
+      body.innerHTML = '<div class="fs-zro-big"><small>' + esc((Z.yourWord || 'Your guess: {g}').replace('{g}', st.g)) + '</small><b class="fs-zro-num">' + (anim && !reduceMotion ? st.g : Z.answer) + '</b><span>' + esc(Z.bigLabel || '') + '</span></div>' +
+        '<ul class="fs-drm-facts">' + Z.reasons.map(function (f) { return '<li><span>' + f.icon + '</span>' + esc(f.t) + '</li>'; }).join('') + '</ul>' +
+        '<div class="fs-zro-ph"><div class="fs-in-k">' + esc(Z.photoHead) + '</div><div class="fs-mp fs-zro-mp"><img alt="' + esc(Z.alt) + '" src="' + esc(Z.img) + '">' +
+        Z.spots.map(function (p) { return '<button type="button" class="fs-zro-sp' + (st.s[p.n] ? ' on' : '') + '" data-n="' + p.n + '" style="left:' + p.x + '%;top:' + p.y + '%">' + p.n + '</button>'; }).join('') + '</div>' +
+        '<div class="fs-zro-info"></div><div class="fs-count fs-zro-c"></div>' + (Z.credit ? '<div class="fs-credit">' + esc(Z.credit) + '</div>' : '') + '</div>';
+      if (anim && !reduceMotion && st.g !== Z.answer) { var n = st.g, num = $('.fs-zro-num', body), stp = Math.max(1, Math.round(st.g / 20)); var iv = setInterval(function () { n = Math.max(Z.answer, n - stp); num.textContent = n; tone(500 + n * 8, 0, 0.04, 'square', 0.02); if (n === Z.answer) { clearInterval(iv); SFX.stamp(); num.classList.add('land'); } }, 60); }
+      var info = $('.fs-zro-info', body), cnt = $('.fs-zro-c', body);
+      function pc() { var k = Z.spots.filter(function (p) { return st.s[p.n]; }).length; cnt.textContent = '📍 ' + k + ' of ' + Z.spots.length + ' ' + (Z.spotWord || 'spots'); cnt.classList.toggle('ok', k === Z.spots.length); if (k === Z.spots.length) winOnce(win, Z.win, null, 'zero'); }
+      $$('.fs-zro-sp', body).forEach(function (b) { b.addEventListener('click', function () { var p = Z.spots.filter(function (x) { return String(x.n) === b.dataset.n; })[0]; st.s[p.n] = 1; saveJ('zero', st); b.classList.add('on'); SFX.blip(); info.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + p.n + '</span><div><b>' + esc(p.label) + '</b>' + esc(p.t) + '</div></div>'; pc(); }); });
+      pc();
+    }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
+  }
+
+  /* ---------- After the case: "The wind ribbon" — one summer day on the Pelican Canal dock; drag the time slider (or ◀ ▶) and watch the
+     ribbon, the dock windmill and the pumped-water meter; then pick the best hour and say why the afternoon is windiest (23.02) ----------
+     D.windribbon = {after, kicker, title, todo[], lockLine, why, model, minMph, hours:[{h, label, mph, from, note}], need, needLine, pickQ,
+                     picks:[{h, t, ok, miss}], q, opts, win} */
+  function buildWindribbon() {
+    var W = D.windribbon; if (!W) return;
+    var g = gameShell(W.kicker || 'Case closed', W.title, W.todo, W.why); g.dataset.mod = 'windribbon';
+    var st = loadJ('windribbon', { i: 0, seen: {}, pick: 0 }), H = W.hours;
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(W.lockLine || 'Crack the case first.') + '</span>'), body = el('div', 'fs-wrb-body'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(miss); g.appendChild(qh); g.appendChild(win);
+    var host = $(W.after || '.fs-solve'); if (!host) { FAILED.push('windribbon: no anchor'); return; }
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    var built = false, wa = 0, last = performance.now();
+    function build() {
+      built = true;
+      body.innerHTML = '<svg viewBox="0 0 560 220" class="fs-wrb-svg" role="img" aria-label="A model of the canal dock: a pole with a ribbon, a small windmill, and the sun moving across the sky.">' +
+        '<rect width="560" height="220" class="fs-wrb-sky"/><circle class="fs-wrb-sun" r="16" fill="#FFD25E"/><rect y="160" width="560" height="60" fill="#4E86A8"/><rect x="60" y="150" width="300" height="12" fill="#8A6B45"/>' +
+        '<text x="22" y="150" class="fs-vlv-lab">canal</text><text x="470" y="150" class="fs-vlv-lab">land</text><rect x="420" y="152" width="140" height="68" fill="#7FA56A"/>' +
+        '<rect x="120" y="60" width="5" height="92" fill="#5B6570"/><path class="fs-wrb-rib" d="M125 62 L190 66 L125 74 Z" fill="#E4573D"/>' +
+        '<g transform="translate(260 70)"><rect x="-3" y="0" width="6" height="82" fill="#5B6570"/><g class="fs-wrb-mill">' + [0, 60, 120, 180, 240, 300].map(function (r) { return '<rect x="-3" y="-30" width="6" height="28" transform="rotate(' + r + ')" fill="#D9DEE3" stroke="#5B6570"/>'; }).join('') + '</g></g>' +
+        '<text x="550" y="214" text-anchor="end" class="fs-vlv-lab" fill="#fff">' + esc(W.model || 'a model') + '</text></svg>' +
+        '<div class="fs-wrb-ctl"><button type="button" class="fs-btn alt fs-wrb-prev" aria-label="Earlier">◀</button><input type="range" min="0" max="' + (H.length - 1) + '" step="1" class="fs-wrb-r" aria-label="Time of day"><button type="button" class="fs-btn alt fs-wrb-next" aria-label="Later">▶</button></div>' +
+        '<div class="fs-wrb-read"></div><div class="fs-count fs-wrb-c"></div><div class="fs-wrb-pick"></div>';
+      var r = $('.fs-wrb-r', body);
+      r.addEventListener('input', function () { go(+r.value); });
+      $('.fs-wrb-prev', body).addEventListener('click', function () { go(st.i - 1); }); $('.fs-wrb-next', body).addEventListener('click', function () { go(st.i + 1); });
+      requestAnimationFrame(frame);
+    }
+    function frame(now) { var dt = Math.min(0.1, (now - last) / 1000); last = now; var h = H[st.i], spin = h.mph >= (W.minMph || 7) ? h.mph / 10 : h.mph / 40; wa += reduceMotion ? 0 : spin * 360 * dt; var m = $('.fs-wrb-mill', body); if (m) m.setAttribute('transform', 'rotate(' + wa.toFixed(1) + ')'); if (document.body.contains(g)) requestAnimationFrame(frame); }
+    function go(i) { st.i = Math.max(0, Math.min(H.length - 1, i)); st.seen[st.i] = 1; saveJ('windribbon', st); paintDay(); }
+    function paintDay() {
+      var h = H[st.i], r = $('.fs-wrb-r', body); r.value = st.i;
+      var f = st.i / (H.length - 1), sun = $('.fs-wrb-sun', body); sun.setAttribute('cx', String(40 + f * 480)); sun.setAttribute('cy', String(120 - Math.sin(f * Math.PI) * 95));
+      var len = 10 + h.mph * 6, dir = h.from === 'land' ? -1 : 1, droop = Math.max(0, 22 - h.mph * 2);
+      $('.fs-wrb-rib', body).setAttribute('d', 'M125 62 L' + (125 + dir * len) + ' ' + (64 + droop) + ' L125 74 Z');
+      $('.fs-wrb-svg', body).classList.toggle('night', h.dark === true); sun.style.display = h.dark ? 'none' : '';
+      var pump = h.mph >= (W.minMph || 7);
+      $('.fs-wrb-read', body).innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">🕒</span><div><b>' + esc(h.label) + ' · ' + h.mph + ' mph ' + esc(h.fromWord || '') + '</b>' + esc(h.note) + ' <em>' + esc(pump ? (W.pumpYes || 'The windmill is pumping.') : (W.pumpNo || 'Too gentle: the windmill can’t pump.')) + '</em></div></div>';
+      var n = Object.keys(st.seen).length, need = W.need || H.length; var c = $('.fs-wrb-c', body); c.textContent = '🕒 ' + Math.min(n, need) + ' of ' + need + ' ' + (W.needWord || 'times of day checked'); c.classList.toggle('ok', n >= need);
+      var pk = $('.fs-wrb-pick', body);
+      if (n >= need && !pk.dataset.on) {
+        pk.dataset.on = '1'; pk.innerHTML = '<div class="fs-in-k">' + esc(W.pickQ) + '</div><div class="fs-in-chips">' + W.picks.map(function (p, k) { return '<button type="button" class="fs-in-chip" data-k="' + k + '">' + esc(p.t) + '</button>'; }).join('') + '</div>';
+        $$('.fs-in-chip', pk).forEach(function (c2) { c2.addEventListener('click', function () { if (st.pick) return; var p = W.picks[+c2.dataset.k]; if (!p.ok) { bounce(c2, miss, p.miss); return; } c2.classList.add('on', 'ok'); st.pick = 1; saveJ('windribbon', st); SFX.chime(); miss.classList.remove('show'); askOnce(qh, W.q, W.opts, 'windribbon-q', win, W.win, null, 'windribbon', miss); }); });
+        if (st.pick) { var okI = W.picks.map(function (p, k) { return p.ok ? k : -1; }).filter(function (k) { return k > -1; })[0]; $$('.fs-in-chip', pk)[okI].classList.add('on', 'ok'); askOnce(qh, W.q, W.opts, 'windribbon-q', win, W.win, null, 'windribbon', miss); }
+      }
+    }
+    function paint() { var s = !!store('solved'); g.classList.toggle('locked', !s); lock.style.display = s ? 'none' : ''; body.style.display = s ? '' : 'none'; if (!s) return; if (!built) build(); go(st.i); }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
+  }
+
+  /* ---------- Bonus (fold it): "Sail the canal" — turn the sail (drag the boom, the slider, or ← →) so the wind fills it and the boat reaches
+     the dock; 3 levels, stars by time (23.02) ----------
+     D.sail = {after, kicker, title, todo[], lockLine, why, model, goBtn, levels:[{t, winds:[{at (0–1 of the way), dir (deg the wind blows toward; 0 = down the canal), s}]}],
+               starsWord, doneLine, win} */
+  function buildSail() {
+    var S = D.sail; if (!S) return;
+    var g = gameShell(S.kicker || 'Bonus game', S.title, S.todo, S.why); g.dataset.mod = 'sail';
+    var st = loadJ('sail', { best: {} }), lvI = 0, sa = 0, run = null, K = S.k || 0.12;
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(S.lockLine || 'Crack the case first.') + '</span>'), body = el('div', 'fs-sail-body'), win = el('div', 'fs-win');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(win);
+    var host = $(S.after || '.fs-solve'); if (!host) { FAILED.push('sail: no anchor'); return; }
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    function stars(n) { return [1, 2, 3].map(function (k) { return k <= n ? '★' : '☆'; }).join(''); }
+    function windAt(L, p) { var w = L.winds[0]; L.winds.forEach(function (x) { if (p >= x.at) w = x; }); return w; }
+    function push(w, s) { var d = (s - w.dir) * Math.PI / 180; return w.s * Math.pow(Math.max(0, Math.cos(d)), 2) * Math.max(0, Math.cos(s * Math.PI / 180)); }
+    function best(w) { var b = 0; for (var s = -80; s <= 80; s += 2) b = Math.max(b, push(w, s)); return b; }
+    function build() {
+      body.innerHTML = '<div class="fs-in-chips fs-sail-lv"></div><svg viewBox="0 0 600 200" class="fs-sail-svg" role="img" aria-label="A model: a canal from left to right, a small sailboat, wind arrows, and a dock at the right end.">' +
+        '<rect width="600" height="200" fill="#9BC8E0"/><rect y="40" width="600" height="120" fill="#4E86A8"/><rect y="0" width="600" height="40" fill="#7FA56A"/><rect y="160" width="600" height="40" fill="#7FA56A"/>' +
+        '<rect x="560" y="60" width="30" height="80" fill="#8A6B45"/><text x="575" y="54" text-anchor="middle" class="fs-vlv-lab">dock</text><g class="fs-sail-arrows"></g>' +
+        '<g class="fs-sail-boat"><path d="M-26 -10 L22 -10 L30 0 L22 10 L-26 10 Z" fill="#F4EBDD" stroke="#5B4A36" stroke-width="2"/><circle r="4" fill="#5B4A36"/><g class="fs-sail-s"><line x1="0" y1="-30" x2="0" y2="30" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/><line x1="0" y1="-30" x2="0" y2="30" stroke="#C8553D" stroke-width="2"/></g></g>' +
+        '<text x="590" y="196" text-anchor="end" class="fs-vlv-lab">' + esc(S.model || 'a simple model') + '</text></svg>' +
+        '<div class="fs-sail-ctl"><button type="button" class="fs-btn alt fs-sail-l" aria-label="Turn the sail left">⟲</button><input type="range" min="-80" max="80" step="2" value="0" class="fs-sail-r" aria-label="Sail angle"><button type="button" class="fs-btn alt fs-sail-rt" aria-label="Turn the sail right">⟳</button><button type="button" class="fs-btn fs-sail-go">' + esc(S.goBtn || '⛵ Sail!') + '</button></div><div class="fs-sail-hud"></div>';
+      var r = $('.fs-sail-r', body);
+      r.addEventListener('input', function () { sa = +r.value; drawBoat(); });
+      $('.fs-sail-l', body).addEventListener('click', function () { sa = Math.max(-80, sa - 10); r.value = sa; drawBoat(); });
+      $('.fs-sail-rt', body).addEventListener('click', function () { sa = Math.min(80, sa + 10); r.value = sa; drawBoat(); });
+      g.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { if (e.target === r) return; sa = Math.max(-80, Math.min(80, sa + (e.key === 'ArrowLeft' ? -10 : 10))); r.value = sa; drawBoat(); e.preventDefault(); } });
+      /* drag on the boat area to point the sail */
+      var svg = $('.fs-sail-svg', body), dragging = false;
+      svg.addEventListener('pointerdown', function (e) { dragging = true; aim(e); });
+      svg.addEventListener('pointermove', function (e) { if (dragging) aim(e); });
+      document.addEventListener('pointerup', function () { dragging = false; });
+      function aim(e) { var b = svg.getBoundingClientRect(), sx = b.width / 600, bx = b.left + boatX() * sx, by = b.top + 100 * sx; var a = Math.atan2(e.clientY - by, e.clientX - bx) * 180 / Math.PI; if (a > 90) a = 180 - a; if (a < -90) a = -180 - a; sa = Math.max(-80, Math.min(80, Math.round(a / 2) * 2)); r.value = sa; drawBoat(); }
+      $('.fs-sail-go', body).addEventListener('click', start);
+      paintLv(); drawBoat();
+    }
+    var pos = 0, t0 = 0, lastT = 0;
+    function boatX() { return 40 + pos * 500; }
+    function paintLv() {
+      var lv = $('.fs-sail-lv', body); lv.innerHTML = S.levels.map(function (L, i) { return '<button type="button" class="fs-in-chip' + (i === lvI ? ' on' : '') + '" data-i="' + i + '">' + esc(L.t) + ' ' + (st.best[i] ? stars(st.best[i]) : '') + '</button>'; }).join('');
+      $$('button', lv).forEach(function (b) { b.addEventListener('click', function () { if (run) return; lvI = +b.dataset.i; pos = 0; SFX.blip(); paintLv(); drawBoat(); }); });
+      $('.fs-sail-hud', body).textContent = S.levels[lvI].line || '';
+    }
+    function drawBoat() {
+      var L = S.levels[lvI], w = windAt(L, pos), boat = $('.fs-sail-boat', body); if (!boat) return;
+      boat.setAttribute('transform', 'translate(' + boatX().toFixed(1) + ' 100)');
+      $('.fs-sail-s', boat).setAttribute('transform', 'rotate(' + sa + ')');
+      var ar = $('.fs-sail-arrows', body), s = ''; for (var i = 0; i < 4; i++) { var x = 60 + i * 130, y = 70 + (i % 2) * 60; s += '<g transform="translate(' + x + ' ' + y + ') rotate(' + w.dir + ')"><path d="M-22 0 h36 m-8 -7 l8 7 l-8 7" class="fs-sail-ar"/></g>'; } ar.innerHTML = s;
+      var p = push(w, sa), b = best(w); $('.fs-sail-svg', body).style.setProperty('--fill', String(b ? p / b : 0));
+      $('.fs-sail-s line:first-child', boat).setAttribute('stroke', p / (b || 1) > 0.8 ? '#FFFFFF' : '#D7DEE5');
+    }
+    function start() {
+      if (run) return; pos = 0; t0 = performance.now(); lastT = t0; run = { opt: 0 }; ac();
+      var L = S.levels[lvI], sim = 0, tt = 0; while (sim < 1 && tt < 120) { sim += best(windAt(L, sim)) * K * 0.05; tt += 0.05; } run.opt = tt;
+      requestAnimationFrame(step);
+    }
+    function step(now) {
+      if (!run) return; var dt = Math.min(0.1, (now - lastT) / 1000); lastT = now;
+      var L = S.levels[lvI], w = windAt(L, pos), before = windAt(L, pos); pos += push(w, sa) * K * dt; var after = windAt(L, pos); if (before !== after) SFX.whoosh();
+      drawBoat(); var t = (now - t0) / 1000; $('.fs-sail-hud', body).textContent = '⏱ ' + t.toFixed(1) + ' s';
+      if (pos >= 1) { pos = 1; drawBoat(); var k = t <= run.opt * 1.25 ? 3 : t <= run.opt * 1.7 ? 2 : 1; run = null; st.best[lvI] = Math.max(st.best[lvI] || 0, k); saveJ('sail', st); SFX.win();
+        $('.fs-sail-hud', body).textContent = (S.doneLine || 'Docked in {t} s! {s}').replace('{t}', t.toFixed(1)).replace('{s}', stars(k)); paintLv(); $('.fs-sail-hud', body).textContent = (S.doneLine || 'Docked in {t} s! {s}').replace('{t}', t.toFixed(1)).replace('{s}', stars(k));
+        if (S.levels.every(function (x, i) { return st.best[i]; })) winOnce(win, S.win, null, 'sail'); return; }
+      if (t > 90) { run = null; $('.fs-sail-hud', body).textContent = S.stuckLine || 'Stuck! Turn the sail so the wind fills it.'; return; }
+      requestAnimationFrame(step);
+    }
+    function paint() { var s = !!store('solved'); g.classList.toggle('locked', !s); lock.style.display = s ? 'none' : ''; body.style.display = s ? '' : 'none'; if (s && !body.firstChild) build(); }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
+  }
+
   /* ---------- Tool of the Week: hydrophone — drop an underwater microphone at 3 spots; a screen draws the sound wave and you hear a model
      of it; read pitch and loudness; which spot has the hum? (23.01) ----------
      T.hydrophone = {title, todo[], model, img, alt, credit, spots:[{k, icon, t, sub, kind, f, amp, note}], screenLabel, q:{q, opts}} */
@@ -10152,6 +10563,13 @@
     guard('drumfish', buildDrumfish);
     guard('column', buildColumn);
     guard('concert', buildConcert);
+    guard('tiles', buildTiles);
+    guard('droprace', buildDroprace);
+    guard('valve', buildValve);
+    guard('redblade', buildRedblade);
+    guard('zero', buildZero);
+    guard('windribbon', buildWindribbon);
+    guard('sail', buildSail);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);
