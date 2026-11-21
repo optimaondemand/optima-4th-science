@@ -6494,5 +6494,61 @@
 "script_source": "lesson-22-01-energy-conversion.html",
 "bytes": 315173,
 "md5": "152eb170496a87a0b1f996a7a99d6dd7"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-22-2-evidence.mp3",
+"text": "A classmate says real engineers get it perfect on the first try. Do they? Think about my four versions, and the Wright brothers. Pick your side, tap two pieces of evidence, then explain. That’s your C-E-R.",
+"key": "a classmate says real engineers get it perfect on the first try. do they? think about my four versions, and the wright brothers. pick your side, tap two pieces of evidence, then explain. that's your c-e-r",
+"chars": 205,
+"kind": "speech",
+"script_source": "lesson-22-02-engineering-design-device.html",
+"bytes": 243284,
+"md5": "924691a853cee794e68f704713a28001"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-22-2-explore.mp3",
+"text": "Your turn to be the engineer. Pick one energy input and up to two add-ons, and stay inside the budget. Then press run the storm test. If the beam goes dark, read why, change one thing, and test again.",
+"key": "your turn to be the engineer. pick one energy input and up to two add-ons, and stay inside the budget. then press run the storm test. if the beam goes dark, read why, change one thing, and test again",
+"chars": 200,
+"kind": "speech",
+"script_source": "lesson-22-02-engineering-design-device.html",
+"bytes": 234507,
+"md5": "71c9d07efb8b317d445c95f086da037c"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-22-2-part2.mp3",
+"text": "Here’s my backup light, version one. Read the test results. Which goal failed? Pick the ONE change that fixes it, then build and test the next version. Watch out: fixing one thing can break another!",
+"key": "here's my backup light, version one. read the test results. which goal failed? pick the one change that fixes it, then build and test the next version. watch out: fixing one thing can break another",
+"chars": 198,
+"kind": "speech",
+"script_source": "lesson-22-02-engineering-design-device.html",
+"bytes": 230746,
+"md5": "38f434a4e3161095b86efc082919db78"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-22-2-warmup.mp3",
+"text": "Sam here. A big storm is coming, and clouds will hide the Sun for days. Read the forecast and the keeper’s work order. Tap a line, then stamp it. Is it a goal the light should meet, or a limit it has to stay inside?",
+"key": "sam here. a big storm is coming, and clouds will hide the sun for days. read the forecast and the keeper's work order. tap a line, then stamp it. is it a goal the light should meet, or a limit it has to stay inside",
+"chars": 215,
+"kind": "speech",
+"script_source": "lesson-22-02-engineering-design-device.html",
+"bytes": 240777,
+"md5": "3142746ec353acbe06d4a3962cc16e34"
 }
 ]
