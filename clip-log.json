@@ -6550,5 +6550,61 @@
 "script_source": "lesson-22-02-engineering-design-device.html",
 "bytes": 240777,
 "md5": "3142746ec353acbe06d4a3962cc16e34"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-23-1-evidence.mp3",
+"text": "A classmate says sound is a tiny ball that flies through the air. Is it? Think about the red dot, and the bell you stopped. Pick your side, tap two pieces of evidence, then explain. That’s your C-E-R.",
+"key": "a classmate says sound is a tiny ball that flies through the air. is it? think about the red dot, and the bell you stopped. pick your side, tap two pieces of evidence, then explain. that's your c-e-r",
+"chars": 200,
+"kind": "speech",
+"script_source": "lesson-23-01-how-does-sound-happen.html",
+"bytes": 237015,
+"md5": "ad954f9b4b0289722b3fab816639d917"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-23-1-explore.mp3",
+"text": "Time for a real test. Pick how much ruler hangs off the desk, then drag the red tip down and let go. Listen, and pick the pitch you heard. Try all three lengths and watch the table fill in.",
+"key": "time for a real test. pick how much ruler hangs off the desk, then drag the red tip down and let go. listen, and pick the pitch you heard. try all three lengths and watch the table fill in",
+"chars": 189,
+"kind": "speech",
+"script_source": "lesson-23-01-how-does-sound-happen.html",
+"bytes": 216535,
+"md5": "029015d7a077f47633f61a96bf95db60"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-23-1-part1.mp3",
+"text": "This is a model of sound. Drag back and forth to wiggle the tuning fork. Watch the dots pass the push to the ear. Keep your eye on the red dot. Does it fly to the ear? Then send the sound through water and a wall.",
+"key": "this is a model of sound. drag back and forth to wiggle the tuning fork. watch the dots pass the push to the ear. keep your eye on the red dot. does it fly to the ear? then send the sound through water and a wall",
+"chars": 213,
+"kind": "speech",
+"script_source": "lesson-23-01-how-does-sound-happen.html",
+"bytes": 235761,
+"md5": "d6f369d1c93aa278d620d3ceaaf389d1"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-23-1-warmup.mp3",
+"text": "Sam here. The Gazette asked me to find a mystery hum. Read the front page and the letters. Then, rule number one: every sound starts with something vibrating. Make each one ring, then press and hold the picture. What happens to the sound?",
+"key": "sam here. the gazette asked me to find a mystery hum. read the front page and the letters. then, rule number one: every sound starts with something vibrating. make each one ring, then press and hold the picture. what happens to the sound",
+"chars": 238,
+"kind": "speech",
+"script_source": "lesson-23-01-how-does-sound-happen.html",
+"bytes": 267944,
+"md5": "91de3c6fea5facb9072b5b98f66004d2"
 }
 ]
