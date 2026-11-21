@@ -2263,7 +2263,7 @@
 "key": "you have the clues. before you write, decide: what really happened that night? then write it up like a real field report. name the steps, use the step words, and back up what you say with what you found",
 "chars": 203,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html",
 "bytes": 242031,
 "md5": "25bac8d9dbc549325201a79b348e4594"
 },
@@ -2277,7 +2277,7 @@
 "key": "case closed. you figured out something it took me a while to see. next time, we'll put two very different animals side by side and build models of their pathways. same four steps. let's see what that shows us",
 "chars": 209,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html",
 "bytes": 233253,
 "md5": "df11b17e7dbde75446afc823db32cbea"
 },
@@ -2291,7 +2291,7 @@
 "key": "one more camera. this one caught a heron right after the others, and it shows the whole moment from start to finish. well, almost. one step happens where no camera can see. sort what the camera caught, and you'll have your last clue",
 "chars": 233,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html",
 "bytes": 270452,
 "md5": "d0621a9d286e52b93d76173b01b5ed64"
 },
@@ -2305,7 +2305,7 @@
 "key": "here's what i know about every animal reaction i've ever filmed. something always starts it, and the animal always does something at the end. the middle is where the mystery hides. so we name every step, and nothing gets to hide from us",
 "chars": 237,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html",
 "bytes": 276721,
 "md5": "eece625eec364d1ad0feebd09771ebe9"
 },
@@ -2319,7 +2319,7 @@
 "key": "these are the four cameras from last night. open each one and follow what happened, step by step. here's what to watch for: what started each reaction? when you've seen all four, look at what you found. does it tell you anything",
 "chars": 229,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html",
 "bytes": 258749,
 "md5": "69baea6fd731997a789d62f8ee9eba6e"
 },
@@ -2389,7 +2389,7 @@
 "key": "before we look at my cameras, let's look at you. your body can do something very fast without you planning it. try the snap test, and pay attention to what happens between the sound and your tap. that's our first clue",
 "chars": 218,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html",
 "bytes": 246210,
 "md5": "305a3fa1e700f0f7457c247add05f76a"
 },
@@ -2403,7 +2403,7 @@
 "key": "hi, i'm dr. lena reyes. i study animals in the wild, and last night my trail cameras caught something i can't explain yet. four animals, four places, all reacting within about two minutes. i've opened a case file, and i need a field scientist to help me solve it. read the case, then start gathering clues",
 "chars": 306,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html",
 "bytes": 344431,
 "md5": "79aa5cc68dab709ba832a38ef3494a75"
 },
@@ -2417,7 +2417,7 @@
 "key": "stimulus",
 "chars": 8,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html (card word only)",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html (card word only)",
 "bytes": 152587,
 "md5": "15abe6ffe5e02e03816f03099e74e00d"
 },
@@ -2431,7 +2431,7 @@
 "key": "sense organ",
 "chars": 11,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html (card word only)",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html (card word only)",
 "bytes": 187278,
 "md5": "e43cb8c6e4bd1590f29cef05ebf8c628"
 },
@@ -2445,7 +2445,7 @@
 "key": "brain",
 "chars": 5,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html (card word only)",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html (card word only)",
 "bytes": 152587,
 "md5": "6cfaab2f4332a3de41290ad4167a7910"
 },
@@ -2459,7 +2459,7 @@
 "key": "response",
 "chars": 8,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html (card word only)",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html (card word only)",
 "bytes": 181844,
 "md5": "176fb7d79a7c5c4302a8d7ac2a5bb93b"
 },
@@ -2473,7 +2473,7 @@
 "key": "signal",
 "chars": 6,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html (card word only)",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html (card word only)",
 "bytes": 150080,
 "md5": "c7f99a9852e63614e5f7c0d6427241c5"
 },
@@ -2487,7 +2487,7 @@
 "key": "information",
 "chars": 11,
 "kind": "speech",
-"script_source": "lesson-12-01-sensing-the-world.html (card word only)",
+"script_source": "lesson-12-01-sensing-the-world-3d-test.html (card word only)",
 "bytes": 175575,
 "md5": "cac3a01eb181086b7083be9bdcf9aa30"
 },
@@ -6438,5 +6438,61 @@
 "script_source": "lesson-21-02-investigation-predicting-collisions.html (card word only)",
 "bytes": 145064,
 "md5": "8ac877f7e3ae4acfefac09ddca388568"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-22-1-evidence.mp3",
+"text": "A classmate says a toaster creates heat. Does it? Think about the energy pipes, and what goes into a toaster. Pick your side, tap two pieces of evidence, then explain how they prove your claim. That’s your C-E-R.",
+"key": "a classmate says a toaster creates heat. does it? think about the energy pipes, and what goes into a toaster. pick your side, tap two pieces of evidence, then explain how they prove your claim. that's your c-e-r",
+"chars": 212,
+"kind": "speech",
+"script_source": "lesson-22-01-energy-conversion.html",
+"bytes": 246210,
+"md5": "44f34c1ab1c4119af9f07970a8d59532"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-22-1-explore.mp3",
+"text": "Let’s go backward. Start with the hot toast. Pick the answer for each step, and watch your trail grow. Wires, a power plant, then what? Keep going until you can’t go back any further. Then follow one more device. Look at the start of every trail.",
+"key": "let's go backward. start with the hot toast. pick the answer for each step, and watch your trail grow. wires, a power plant, then what? keep going until you can't go back any further. then follow one more device. look at the start of every trail",
+"chars": 246,
+"kind": "speech",
+"script_source": "lesson-22-01-energy-conversion.html",
+"bytes": 288424,
+"md5": "90dcabd674f81dcfd37f7da3705b98fa"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-22-1-part2.mp3",
+"text": "Time to count energy. Pick a device, then drag the slider to guess how many units come out useful. Press pour, and count both pipes. Try the old bulb, then the LED. Where did the energy go? Did any disappear?",
+"key": "time to count energy. pick a device, then drag the slider to guess how many units come out useful. press pour, and count both pipes. try the old bulb, then the led. where did the energy go? did any disappear",
+"chars": 208,
+"kind": "speech",
+"script_source": "lesson-22-01-energy-conversion.html",
+"bytes": 251226,
+"md5": "590c2b37ba35cb6be19d9df786590df5"
+},
+{
+"repo": "optima-4th-science",
+"grade": "4",
+"subject": "science",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-22-1-warmup.mp3",
+"text": "Hi, it’s Sam. The jetty light is out. Read the notice, then the keeper’s ticket. The lamp works, but the battery is empty. Nobody plugs this light in! To figure it out, open three black boxes. Read what goes in and what comes out, then drag the right device onto each box.",
+"key": "hi, it's sam. the jetty light is out. read the notice, then the keeper's ticket. the lamp works, but the battery is empty. nobody plugs this light in! to figure it out, open three black boxes. read what goes in and what comes out, then drag the right device onto each box",
+"chars": 272,
+"kind": "speech",
+"script_source": "lesson-22-01-energy-conversion.html",
+"bytes": 315173,
+"md5": "152eb170496a87a0b1f996a7a99d6dd7"
 }
 ]
