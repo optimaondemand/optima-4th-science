@@ -23,6 +23,8 @@ def I(n): return 'images/24-02-' + n + '.jpg'
 fx('fix', 'unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5', '<div class="info-detail">Ecosystems &amp; Energy</div>', '<div class="info-detail">Energy, Motion &amp; Collisions</div>')
 fx('fix', 'energy changes are physical science, not life science', '<div class="info-detail">Life Science</div>', '<div class="info-detail">Physical Science</div>')
 fx('fix', 'standards label: the plan’s CPALMS codes; TEKS 4.2(A) is a Texas code that isn’t in the plan', '<div class="info-value">SC.4.P.10.1, SC.4.P.10.2 · TEKS 4.2(A)</div>', '<div class="info-value">SC.4.P.10.1, SC.4.P.10.2</div>')
+fx('fix', 'quarter label (Bethany, 22 Nov 2026): the Canvas plan puts this lesson in Q4 (Mar 8 to May 28)', '<div class="info-value">Q3 &middot; Week 24</div>', '<div class="info-value">Q4 &middot; Week 24</div>')
+fx('fix', 'quarter label in the footer', 'Science &middot; Quarter 3 &middot; Student Lesson Page', 'Science &middot; Quarter 4 &middot; Student Lesson Page')
 
 # ---------------------------------------------------------------- ticked fixes (Bethany, 21 Nov 2026)
 # 22.01 leftovers in the Warm-Up

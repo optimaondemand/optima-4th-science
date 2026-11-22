@@ -151,11 +151,6 @@
    "want": true,
    "parts": [
     {
-     "kind": "photo",
-     "pic": "sample",
-     "label": "🚗 A sample diagram"
-    },
-    {
      "label": "🗺 Diagram the replay",
      "tag": "PART 3 GAME",
      "title": "Four things on every diagram",
@@ -180,7 +175,7 @@
      ]
     }
    ],
-   "script": "(Roll a pencil or a toy car across your desk. Stop it. Point to where it started, then where it ended.) It started here. It ended there. It went that way.\n\n[ON SCREEN: A sample diagram]\nA motion diagram is a picture of that. Start, end, an arrow, and a reference point: the tree.\n\n[ON SCREEN: Diagram the replay]\nYour turn. Watch a crab and a seagull. Plant the Start flag and the End flag, name the direction and the path, then tap something that stays put. Your description writes itself."
+   "script": "(Roll a pencil or a toy car across your desk. Stop it. Point to where it started, then where it ended.) It started here. It ended there. It went that way.\n\n[ON SCREEN: Diagram the replay]\nA motion diagram is a picture of that: a start, an end, an arrow and a reference point. Your turn. Watch a crab and a seagull. Plant the Start flag and the End flag, name the direction and the path, then tap something that stays put. Your description writes itself."
   },
   "assignment": {
    "label": "Assignment · crack the case",
@@ -295,10 +290,6 @@
   "compass": {
    "src": "images/25-01-compass.jpg",
    "cap": "A real pocket compass (Evan-Amos, public domain)"
-  },
-  "sample": {
-   "src": "images/25-01-position-motion-diagram.png",
-   "cap": "A sample motion diagram"
   }
  },
  "other": [

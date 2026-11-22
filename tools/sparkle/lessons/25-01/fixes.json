@@ -19,6 +19,18 @@
  },
  {
   "kind": "fix",
+  "why": "quarter label (Bethany, 22 Nov 2026): the Canvas plan puts this lesson in Q4 (Mar 8 to May 28)",
+  "old": "<div class=\"info-value\">Q3 &middot; Week 25</div>",
+  "new": "<div class=\"info-value\">Q4 &middot; Week 25</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
   "why": "ticked: gravity and friction are not in the plan row, so the header no longer names them",
   "old": "<div class=\"info-detail\">NGSS 4-PS3-1 · Gravity & Friction</div>",
   "new": "<div class=\"info-detail\">NGSS 4-PS3-1 (support)</div>"
@@ -219,12 +231,6 @@
   "new": ". Your description is clear enough for someone else to draw what you saw. Next lesson, we add SPEED: using distance and time to measure how fast.</p>"
  },
  {
-  "kind": "plain",
-  "why": "figure caption: no change in meaning; names the flaw-free reading order",
-  "old": "<strong>A good motion diagram answers four questions:</strong> Where did it start? Where did it end? Which way did it go? What was the path?",
-  "new": "<strong>A good motion diagram answers four questions:</strong> Where did it start? Where did it end? Which way did it go? What was its path?"
- },
- {
   "kind": "cut",
   "why": "lean: Stop & Think (the train window is the same idea, played)",
   "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
@@ -233,7 +239,14 @@
  },
  {
   "kind": "cut",
-  "why": "removed: Key Concept, the gravity and friction box (ticked: not in the plan row), the Stop & Reason about “the three devices above” (a 22.01 leftover), the Four Motion Scenes tap diagram, Observe & Reason, the “Amazing Florida Fact” (not about Florida, and its football-field number was far too small: Earth moves about 18 miles every second), the Florida callout (kept as one sentence in Part 1) and Go Deeper. Part 3 = the old Explore (Draw a Motion Diagram); the next button goes to Self-Check. The sample motion diagram picture stays, right above Part 3",
+  "why": "hidden (Bethany, 22 Nov 2026): the sample motion diagram picture shows a curved dashed arrow next to “PATH: straight line”; Part 3’s game teaches what a motion diagram is. The file stays in images/",
+  "old": "\\s*<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"lesson-figure-caption\">.*?</div>\\s*</div>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "removed: Key Concept, the gravity and friction box (ticked: not in the plan row), the Stop & Reason about “the three devices above” (a 22.01 leftover), the Four Motion Scenes tap diagram, Observe & Reason, the “Amazing Florida Fact” (not about Florida, and its football-field number was far too small: Earth moves about 18 miles every second), the Florida callout (kept as one sentence in Part 1) and Go Deeper. Part 3 = the old Explore (Draw a Motion Diagram); the next button goes to Self-Check.",
   "old": "\\s*<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
   "new": "\n\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Draw a Motion Diagram</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Sam filmed two things moving on the beach this morning. Watch each replay, then turn it into a motion diagram.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
   "regex": true

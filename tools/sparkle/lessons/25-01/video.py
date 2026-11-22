@@ -5,7 +5,6 @@ import json
 pics = {
     'ferris': {'src': 'images/25-01-ferris-wheel.jpg', 'cap': 'The Seattle Great Wheel in a long-exposure photo (Diego Delso, CC BY-SA 4.0)'},
     'compass': {'src': 'images/25-01-compass.jpg', 'cap': 'A real pocket compass (Evan-Amos, public domain)'},
-    'sample': {'src': 'images/25-01-position-motion-diagram.png', 'cap': 'A sample motion diagram'},
 }
 C_CASE, C_GREEN, C_PURP, C_RED, C_BLUE, C_GOLD = '#1F7F86', '#2F7A55', '#7A5BB5', '#C8553D', '#2D7AA6', '#B8860B'
 S = {}
@@ -27,9 +26,8 @@ S['part2'] = {'label': 'Part 2 · program the helper (Clue 3)', 'length': '45–
     {'kind': 'photo', 'pic': 'ferris', 'label': '🎡 The Ferris wheel'}],
     'script': '(Close your eyes. Take four small steps in a random direction, then open them and look surprised.) Four steps! Did I end up in the right place?\n\n[ON SCREEN: Meet Scoot]\nScoot is Sam’s delivery robot. Tap an arrow card, set the steps, and press Go.\n\n[ON SCREEN: The order slip]\nThe first slip only says four steps. What is missing? Fix it. After three deliveries, a surprise is waiting.\n\n[ON SCREEN: The Ferris wheel]\nIf you get off a Ferris wheel right where you got on, did you move? Vote, then ride.'}
 S['explore'] = {'label': 'Part 3 · diagram the replay (Clue 4)', 'length': '45–55 s', 'want': True, 'parts': [
-    {'kind': 'photo', 'pic': 'sample', 'label': '🚗 A sample diagram'},
     {'label': '🗺 Diagram the replay', 'tag': 'PART 3 GAME', 'title': 'Four things on every diagram', 'col': C_GREEN, 'rows': [['🟢', 'Where it started'], ['🔴', 'Where it ended'], ['➡', 'An arrow for the direction'], ['📌', 'A reference point']]}],
-    'script': '(Roll a pencil or a toy car across your desk. Stop it. Point to where it started, then where it ended.) It started here. It ended there. It went that way.\n\n[ON SCREEN: A sample diagram]\nA motion diagram is a picture of that. Start, end, an arrow, and a reference point: the tree.\n\n[ON SCREEN: Diagram the replay]\nYour turn. Watch a crab and a seagull. Plant the Start flag and the End flag, name the direction and the path, then tap something that stays put. Your description writes itself.'}
+    'script': '(Roll a pencil or a toy car across your desk. Stop it. Point to where it started, then where it ended.) It started here. It ended there. It went that way.\n\n[ON SCREEN: Diagram the replay]\nA motion diagram is a picture of that: a start, an end, an arrow and a reference point. Your turn. Watch a crab and a seagull. Plant the Start flag and the End flag, name the direction and the path, then tap something that stays put. Your description writes itself.'}
 S['assignment'] = {'label': 'Assignment · crack the case', 'length': '35–45 s', 'want': True, 'parts': [
     {'label': '🔓 Crack the case', 'tag': 'TOP OF THE ASSIGNMENT', 'title': 'What is wrong with Teo’s directions?', 'col': C_CASE, 'body': 'Pick the answer that fits all four clues.'},
     {'label': '✍️ Your case report', 'tag': 'WHAT TO DO', 'title': 'Three places to work', 'col': C_GOLD, 'rows': [['Part B', 'Two short answers'], ['Part C', 'Draw and label your own motion diagram'], ['CER', 'Claim, evidence, reasoning']]}],

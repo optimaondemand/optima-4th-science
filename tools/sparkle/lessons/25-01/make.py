@@ -23,6 +23,8 @@ def I(n): return 'images/25-01-' + n + '.jpg'
 fx('fix', 'unit label: “Ecosystems & Energy” is a leftover; the plan puts Module 25 in “Energy, Motion, and Waves”', '<div class="info-detail">Ecosystems &amp; Energy</div>', '<div class="info-detail">Energy, Motion &amp; Waves</div>')
 fx('fix', 'motion is physical science, not life science', '<div class="info-detail">Life Science</div>', '<div class="info-detail">Physical Science</div>')
 fx('fix', 'standards label: the plan’s CPALMS code; TEKS is a Texas code that isn’t in the plan', '<div class="info-value">SC.4.P.12.1 · TEKS 4.7(A), 4.7(B)</div>', '<div class="info-value">SC.4.P.12.1</div>')
+fx('fix', 'quarter label (Bethany, 22 Nov 2026): the Canvas plan puts this lesson in Q4 (Mar 8 to May 28)', '<div class="info-value">Q3 &middot; Week 25</div>', '<div class="info-value">Q4 &middot; Week 25</div>')
+fx('fix', 'quarter label in the footer', 'Science &middot; Quarter 3 &middot; Student Lesson Page', 'Science &middot; Quarter 4 &middot; Student Lesson Page')
 fx('fix', 'ticked: gravity and friction are not in the plan row, so the header no longer names them', '<div class="info-detail">NGSS 4-PS3-1 · Gravity & Friction</div>', '<div class="info-detail">NGSS 4-PS3-1 (support)</div>')
 
 # ---------------------------------------------------------------- ticked fixes (Bethany, 22 Nov 2026)
@@ -95,13 +97,13 @@ fx('plain', 'shorter', 'All of your written responses — gathered in one place 
 fx('plain', 'closing: no dashes; plain words (same meaning; the teaser for 25.02 is right)',
    ' — clear enough for someone else to draw what you saw. Next lesson, we add SPEED — using distance and time to measure how fast.</p>',
    '. Your description is clear enough for someone else to draw what you saw. Next lesson, we add SPEED: using distance and time to measure how fast.</p>')
-fx('plain', 'figure caption: no change in meaning; names the flaw-free reading order', '<strong>A good motion diagram answers four questions:</strong> Where did it start? Where did it end? Which way did it go? What was the path?',
-   '<strong>A good motion diagram answers four questions:</strong> Where did it start? Where did it end? Which way did it go? What was its path?')
 
 # ---------------------------------------------------------------- lean cuts
 fx('cut', 'lean: Stop & Think (the train window is the same idea, played)',
    r'<div class="socratic-q">\s*<span class="sq-icon">🛑</span>\s*<div>\s*<div class="label">Stop &amp; Think</div>.*?</div>\s*</div>\s*</div>\s*', '', True)
-fx('cut', 'removed: Key Concept, the gravity and friction box (ticked: not in the plan row), the Stop & Reason about “the three devices above” (a 22.01 leftover), the Four Motion Scenes tap diagram, Observe & Reason, the “Amazing Florida Fact” (not about Florida, and its football-field number was far too small: Earth moves about 18 miles every second), the Florida callout (kept as one sentence in Part 1) and Go Deeper. Part 3 = the old Explore (Draw a Motion Diagram); the next button goes to Self-Check. The sample motion diagram picture stays, right above Part 3',
+fx('cut', 'hidden (Bethany, 22 Nov 2026): the sample motion diagram picture shows a curved dashed arrow next to “PATH: straight line”; Part 3’s game teaches what a motion diagram is. The file stays in images/',
+   r'\s*<div class="lesson-figure scroll-reveal">.*?<div class="lesson-figure-caption">.*?</div>\s*</div>', '', True)
+fx('cut', 'removed: Key Concept, the gravity and friction box (ticked: not in the plan row), the Stop & Reason about “the three devices above” (a 22.01 leftover), the Four Motion Scenes tap diagram, Observe & Reason, the “Amazing Florida Fact” (not about Florida, and its football-field number was far too small: Earth moves about 18 miles every second), the Florida callout (kept as one sentence in Part 1) and Go Deeper. Part 3 = the old Explore (Draw a Motion Diagram); the next button goes to Self-Check.',
    r'\s*<div style="background:#FFF6E5;border:2\.5px solid #F0C97A;[^>]*>\s*<div[^>]*>⭐ Key Concept</div>.*?<div class="tab-next-wrap">\s*<button class="tab-next-btn" onclick="switchTab\(\'explore\'\)">Continue to 🔬 Explore →</button>',
    '\n\n      ' + H3 + 'Part 3 · Draw a Motion Diagram</h3>\n      ' + PS + 'Sam filmed two things moving on the beach this morning. Watch each replay, then turn it into a motion diagram.</p>\n      <div class="tab-next-wrap">\n        <button class="tab-next-btn" onclick="switchTab(\'quiz\')">Continue to 🧠 Self-Check →</button>', True)
 fx('cut', 'lean: no Explore tab button', r'\s*<button class="tab-btn" data-tab="explore"[^>]*>.*?</button>', '', True)

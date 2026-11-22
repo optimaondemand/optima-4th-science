@@ -19,6 +19,18 @@
  },
  {
   "kind": "fix",
+  "why": "quarter label (Bethany, 22 Nov 2026): the Canvas plan puts this lesson in Q4 (Mar 8 to May 28)",
+  "old": "<div class=\"info-value\">Q3 &middot; Week 24</div>",
+  "new": "<div class=\"info-value\">Q4 &middot; Week 24</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
   "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
   "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
   "new": "<div class=\"act-title\">🌅 Warm-Up: Crack a Glow Stick</div>\n        <div class=\"act-subtitle\">Where does the light come from?</div>"
