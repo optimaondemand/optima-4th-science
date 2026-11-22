@@ -6718,5 +6718,61 @@
 "script_source": "lesson-24-01-energy-moves-between-objects.html",
 "bytes": 198563,
 "md5": "2daeb4a07d8414658110bc0570cf1fe4"
+},
+{
+"repo": "sci",
+"grade": "sci",
+"subject": "",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-24-2-evidence.mp3",
+"text": "A classmate says energy just appears in a flashlight. True? Think about the glow stick, and Teo’s bike when you stopped pedaling. Pick your side, tap two facts, then explain. That’s your C-E-R.",
+"key": "a classmate says energy just appears in a flashlight. true? think about the glow stick, and teo's bike when you stopped pedaling. pick your side, tap two facts, then explain. that's your c-e-r",
+"chars": 193,
+"kind": "speech",
+"script_source": "lesson-24-02-data-task-energy-changes.html",
+"bytes": 237015,
+"md5": "3d73af82e27dbfd580387e990276bfa0"
+},
+{
+"repo": "sci",
+"grade": "sci",
+"subject": "",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-24-2-part1.mp3",
+"text": "Welcome to the energy slot machine! Pull the lever to get a device. Then stop the starting reel and the resulting reel on the right energy, and press Check.",
+"key": "welcome to the energy slot machine! pull the lever to get a device. then stop the starting reel and the resulting reel on the right energy, and press check",
+"chars": 156,
+"kind": "speech",
+"script_source": "lesson-24-02-data-task-energy-changes.html",
+"bytes": 169306,
+"md5": "b9b956677deea23391911c6e87ea36ed"
+},
+{
+"repo": "sci",
+"grade": "sci",
+"subject": "",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-24-2-part2.mp3",
+"text": "Evidence bingo! Press Play and watch Rosa’s cart. Tap a square the moment you see, hear, feel or measure it. Careful: one square never counts.",
+"key": "evidence bingo! press play and watch rosa's cart. tap a square the moment you see, hear, feel or measure it. careful: one square never counts",
+"chars": 142,
+"kind": "speech",
+"script_source": "lesson-24-02-data-task-energy-changes.html",
+"bytes": 192293,
+"md5": "f7185abd397e8c97255492970e7ef450"
+},
+{
+"repo": "sci",
+"grade": "sci",
+"subject": "",
+"voice": "sam",
+"file": "assets/audio/guide/sam/g4sci-24-2-warmup.mp3",
+"text": "Sam here, back at the parade. First, read Teo’s napkin and Rosa’s note. Then, the glow stick! Bend it till it cracks, shake it, and tap the two things you really observe.",
+"key": "sam here, back at the parade. first, read teo's napkin and rosa's note. then, the glow stick! bend it till it cracks, shake it, and tap the two things you really observe",
+"chars": 170,
+"kind": "speech",
+"script_source": "lesson-24-02-data-task-energy-changes.html",
+"bytes": 205250,
+"md5": "b883efc6aa5eba97c5932ccda8bb7eac"
 }
 ]
