@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -10243,6 +10243,411 @@
   }
 
 
+  /* =================== 24.02: Teo's Napkin Plan (napkin, glowstick, reels, bingo, binder, pedal, glowwake) =================== */
+  /* ---------- case: a napkin sketch with handwritten notes + a sticky reply (24.02). case.napkin = {head, svg, notes:[t], sign, reply:{t, sign}} ---------- */
+  function napkinCard(N) {
+    return '<div class="fs-npk"><div class="fs-npk-paper"><div class="fs-npk-ring" aria-hidden="true"></div>' + (N.head ? '<div class="fs-npk-h">' + esc(N.head) + '</div>' : '') +
+      (N.svg ? '<div class="fs-npk-svg">' + N.svg + '</div>' : '') +
+      (N.notes ? '<ul class="fs-npk-notes">' + N.notes.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' : '') +
+      (N.sign ? '<div class="fs-npk-sign">' + esc(N.sign) + '</div>' : '') + '</div>' +
+      (N.reply ? '<div class="fs-npk-reply"><p>' + esc(N.reply.t) + '</p><b>' + esc(N.reply.sign || '') + '</b></div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Crack a glow stick" — bend the stick (drag its end up, or press Bend) until the glass inside CRACKS, shake it
+     to mix, tap what you observe (2 right, 2 that don't happen), then a real photo and the starting-energy question (24.02) ----------
+     D.glowstick = {afterText, kicker, title, todo[], why, model, bendBtn, shakeBtn, dragHint, crackLine, shakeLine, needBend, needShake,
+                    obsQ, obs:[{icon, t, ok, miss}], needObs, obsWord, photo:{img, alt, cap}, q, opts, win, clue} */
+  function buildGlowstick() {
+    var G = D.glowstick; if (!G) return;
+    var at = anchorP(G.afterText); if (!at) { FAILED.push('glowstick anchor text not found'); return; }
+    var g = gameShell(G.kicker || 'Warm-Up game', G.title, G.todo, G.why); g.dataset.mod = 'glowstick';
+    var st = loadJ('glowstick', { cracked: 0, shake: 0, obs: {} }), angle = st.cracked ? 0 : 0, NEED_SHAKE = 3;
+    var stage = el('div', 'fs-gls-stage'), ctl = el('div', 'fs-gls-ctl'), line = el('div', 'fs-gls-line'), obs = el('div', 'fs-gls-obs');
+    var pic = el('div', 'fs-gls-pic'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    stage.innerHTML = '<svg viewBox="0 0 520 170" class="fs-gls-svg" role="img" aria-label="A model of a glow stick: a plastic tube with a thin glass tube of liquid inside it.">' +
+      '<defs><filter id="glsGlow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="9"/></filter>' +
+      '<linearGradient id="glsTube" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset=".5" stop-color="#E9F3EC" stop-opacity=".55"/><stop offset="1" stop-color="#C9D8CE" stop-opacity=".8"/></linearGradient></defs>' +
+      '<rect class="fs-gls-bg" x="0" y="0" width="520" height="170" rx="16"/>' +
+      '<g class="fs-gls-aura" filter="url(#glsGlow)"><rect x="70" y="62" width="190" height="46" rx="23"/><g class="fs-gls-auraR"><rect x="260" y="62" width="190" height="46" rx="23"/></g></g>' +
+      '<g class="fs-gls-left"><rect class="fs-gls-liq" x="72" y="66" width="190" height="38" rx="19"/><rect class="fs-gls-vial" x="92" y="78" width="170" height="14" rx="7"/><rect class="fs-gls-tube" x="70" y="62" width="192" height="46" rx="23"/></g>' +
+      '<g class="fs-gls-right"><rect class="fs-gls-liq" x="258" y="66" width="190" height="38" rx="19"/><rect class="fs-gls-vial" x="258" y="78" width="170" height="14" rx="7"/><rect class="fs-gls-tube" x="258" y="62" width="192" height="46" rx="23"/>' +
+      '<circle class="fs-gls-cap" cx="452" cy="85" r="10"/><g class="fs-gls-grab" tabindex="0" role="button" aria-label="Bend the glow stick"><circle cx="430" cy="85" r="30"/><text x="430" y="92" text-anchor="middle">✋</text></g></g>' +
+      '<g class="fs-gls-crack"><path d="M252 79 l6 6 l-4 4 l7 5"/><path d="M262 78 l-3 7 l5 3"/></g>' +
+      '<text x="508" y="160" text-anchor="end" class="fs-vlv-lab">' + esc(G.model || 'a model') + '</text></svg>';
+    ctl.innerHTML = '<button type="button" class="fs-btn fs-gls-bend">' + esc(G.bendBtn || '↷ Bend it') + '</button><button type="button" class="fs-btn alt fs-gls-shake">' + esc(G.shakeBtn || '〰 Shake it') + '</button>' +
+      '<span class="fs-gls-hint">' + esc(G.dragHint || 'Or drag the ✋ up to bend it.') + '</span>';
+    g.appendChild(stage); g.appendChild(ctl); g.appendChild(line); g.appendChild(obs); g.appendChild(pic); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var svg = $('svg', stage), right = $('.fs-gls-right', stage), auraR = $('.fs-gls-auraR', stage), grab = $('.fs-gls-grab', stage);
+    var bendB = $('.fs-gls-bend', ctl), shakeB = $('.fs-gls-shake', ctl);
+    function setAngle(a) { angle = Math.max(0, Math.min(40, a)); var tr = 'rotate(' + (-angle).toFixed(1) + ' 260 85)'; right.setAttribute('transform', tr); auraR.setAttribute('transform', tr); if (angle >= 30 && !st.cracked) crack(); }
+    function glow() { var p = st.cracked ? Math.min(1, (st.shake + 1) / (NEED_SHAKE + 1)) : 0; svg.style.setProperty('--glow', p.toFixed(2)); svg.classList.toggle('lit', p > 0); svg.classList.toggle('cracked', !!st.cracked); }
+    function crack() {
+      st.cracked = 1; saveJ('glowstick', st); ac(); SFX.snap(); miss.classList.remove('show');
+      line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">💥</span><div><b>' + esc(G.crackLine || 'CRACK!') + '</b></div></div>'; glow();
+      if (!reduceMotion) { var t0 = performance.now(), a0 = angle; (function back(now) { var p = Math.min(1, (now - t0) / 500); setAngle(a0 * (1 - p)); if (p < 1) requestAnimationFrame(back); })(t0); } else setAngle(0);
+    }
+    function paintObs() {
+      if (!st.cracked || st.shake < NEED_SHAKE) { obs.innerHTML = ''; count.textContent = ''; return; }
+      if (!obs.dataset.on) {
+        obs.dataset.on = '1';
+        obs.innerHTML = '<div class="fs-in-k">' + esc(G.obsQ) + '</div><div class="fs-in-chips">' + G.obs.map(function (o, i) { return '<button type="button" class="fs-in-chip fs-gls-o" data-i="' + i + '"><span>' + o.icon + '</span>' + esc(o.t) + '</button>'; }).join('') + '</div>';
+        $$('.fs-gls-o', obs).forEach(function (c) { c.addEventListener('click', function () {
+          var o = G.obs[+c.dataset.i]; if (st.obs[c.dataset.i]) return;
+          if (!o.ok) { bounce(c, miss, o.miss); return; }
+          st.obs[c.dataset.i] = 1; saveJ('glowstick', st); miss.classList.remove('show'); SFX.chime(); paintObs();
+        }); });
+      }
+      $$('.fs-gls-o', obs).forEach(function (c) { c.classList.toggle('on', !!st.obs[c.dataset.i]); c.classList.toggle('ok', !!st.obs[c.dataset.i]); });
+      var n = Object.keys(st.obs).length, need = G.needObs || 2;
+      count.textContent = '👀 ' + n + ' of ' + need + ' ' + (G.obsWord || 'real observations found'); count.classList.toggle('ok', n >= need);
+      if (n >= need) {
+        if (G.photo && !pic.dataset.on) { pic.dataset.on = '1'; pic.innerHTML = '<figure class="fs-gls-fig"><img src="' + esc(G.photo.img) + '" alt="' + esc(G.photo.alt || '') + '"><figcaption>' + esc(G.photo.cap || '') + '</figcaption></figure>'; }
+        askOnce(qh, G.q, G.opts, 'glowstick-q', win, G.win, G.clue, 'glowstick', miss);
+      }
+    }
+    bendB.addEventListener('click', function () {
+      if (st.cracked) { line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">✅</span><div>' + esc(G.crackLine || 'Already cracked!') + '</div></div>'; return; }
+      ac(); tone(300 + angle * 8, 0, 0.08, 'triangle', 0.04);
+      var a0 = angle, a1 = angle + 15, t0 = performance.now();
+      if (reduceMotion) { setAngle(a1); return; }
+      (function run(now) { var p = Math.min(1, (now - t0) / 260); setAngle(a0 + (a1 - a0) * p); if (p < 1 && !st.cracked) requestAnimationFrame(run); })(t0);
+    });
+    shakeB.addEventListener('click', function () {
+      if (!st.cracked) { bounce(shakeB, miss, G.needBend || 'Bend it first, so the glass inside cracks.'); return; }
+      if (st.shake >= NEED_SHAKE) return;
+      st.shake++; saveJ('glowstick', st); ac(); noise(0.18, 500, 1800, 0.18);
+      if (!reduceMotion) { svg.classList.remove('shaking'); void svg.getBoundingClientRect(); svg.classList.add('shaking'); }
+      glow();
+      if (st.shake >= NEED_SHAKE) { SFX.sparkle(); line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">✨</span><div><b>' + esc(G.shakeLine || 'It glows!') + '</b></div></div>'; }
+      else line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">〰</span><div>' + esc((G.shakeMore || 'Keep shaking: {n} more.').replace('{n}', NEED_SHAKE - st.shake)) + '</div></div>';
+      paintObs();
+    });
+    /* drag the hand up to bend */
+    var drag = null;
+    function ptAngle(e) { var r = svg.getBoundingClientRect(), sx = 520 / r.width, x = (e.clientX - r.left) * sx, y = (e.clientY - r.top) * (170 / r.height); return Math.atan2(85 - y, Math.max(20, x - 260)) * 180 / Math.PI; }
+    grab.addEventListener('pointerdown', function (e) { if (st.cracked) return; drag = true; ac(); grab.setPointerCapture && grab.setPointerCapture(e.pointerId); e.preventDefault(); });
+    grab.addEventListener('pointermove', function (e) { if (!drag) return; setAngle(ptAngle(e)); });
+    function endDrag() { if (!drag) return; drag = false; if (!st.cracked) { var a0 = angle, t0 = performance.now(); (function back(now) { var p = Math.min(1, (now - t0) / 250); setAngle(a0 * (1 - p)); if (p < 1 && !st.cracked) requestAnimationFrame(back); })(t0); } }
+    grab.addEventListener('pointerup', endDrag); grab.addEventListener('pointercancel', endDrag);
+    grab.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowUp') { e.preventDefault(); bendB.click(); } });
+    if (st.cracked) line.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">' + (st.shake >= NEED_SHAKE ? '✨' : '💥') + '</span><div><b>' + esc(st.shake >= NEED_SHAKE ? (G.shakeLine || 'It glows!') : (G.crackLine || 'CRACK!')) + '</b></div></div>';
+    setAngle(0); glow(); paintObs(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "The energy slot machine" — pull the lever for a device; the starting and resulting reels spin; stop each one on the
+     right energy (press STOP, tap the window, or nudge ▲▼); a true line pays out a card. All devices = done (24.02) ----------
+     D.reels = {afterText, kicker, title, todo[], why, energies:[{id, icon, t}], devices:[{id, icon, t, s, r, missS, missR, also:{id: line}}],
+                leverBtn, reelLabels[3], stopBtn, checkBtn, spinMs, needLever, needStop, winLine, cardsLabel, countWord, q, opts, win, clue} */
+  function buildReels() {
+    var R = D.reels; if (!R) return;
+    var at = anchorP(R.afterText); if (!at) { FAILED.push('reels anchor text not found'); return; }
+    var g = gameShell(R.kicker || 'Part 1 game', R.title, R.todo, R.why); g.dataset.mod = 'reels';
+    var E = R.energies, DV = R.devices, st = loadJ('reels', { won: {} });
+    var cur = null, idx = [0, 0], stopped = [true, true], timer = null, labels = R.reelLabels || ['Device', 'Starting energy', 'Resulting energy'];
+    var mach = el('div', 'fs-reel-mach'), out = el('div', 'fs-reel-out'), tray = el('div', 'fs-reel-tray'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    mach.innerHTML = '<div class="fs-reel-top">⚡ ' + esc(R.machineName || 'ENERGY SLOTS') + ' ⚡<span class="fs-reel-bulbs"></span></div><div class="fs-reel-row">' +
+      [0, 1, 2].map(function (k) {
+        return '<div class="fs-reel-col"><div class="fs-reel-lab">' + esc(labels[k]) + '</div><div class="fs-reel-win" data-k="' + k + '" tabindex="0" role="button" aria-label="' + esc(labels[k]) + '"><div class="fs-reel-item"></div></div>' +
+          (k ? '<div class="fs-reel-btns"><button type="button" class="fs-reel-nud" data-k="' + k + '" data-d="-1" aria-label="Back one">▲</button><button type="button" class="fs-btn fs-reel-stop" data-k="' + k + '">' + esc(R.stopBtn || 'STOP') + '</button><button type="button" class="fs-reel-nud" data-k="' + k + '" data-d="1" aria-label="Forward one">▼</button></div>' : '<div class="fs-reel-btns"></div>') + '</div>';
+      }).join('') + '<div class="fs-reel-lever"><button type="button" class="fs-reel-pull" aria-label="Pull the lever"><span class="fs-reel-knob"></span><span class="fs-reel-arm"></span></button><small>' + esc(R.leverBtn || 'Pull!') + '</small></div></div>' +
+      '<div class="fs-reel-go"><button type="button" class="fs-btn fs-reel-check">' + esc(R.checkBtn || '🎰 Check my line') + '</button></div>';
+    g.appendChild(mach); g.appendChild(out); g.appendChild(tray); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var wins = $$('.fs-reel-win', mach), pull = $('.fs-reel-pull', mach);
+    function eOf(id) { return E.filter(function (x) { return x.id === id; })[0]; }
+    function show(k, html, tick) { var it = $('.fs-reel-item', wins[k]); it.innerHTML = html; if (tick && !reduceMotion) { it.classList.remove('tick'); void it.offsetWidth; it.classList.add('tick'); } }
+    function paintE(k, tick) { var e = E[idx[k - 1]]; show(k, '<span>' + e.icon + '</span><b>' + esc(e.t) + '</b>', tick); }
+    function paintStops() { [1, 2].forEach(function (k) { wins[k].classList.toggle('stopped', stopped[k - 1]); wins[k].classList.toggle('spin', !stopped[k - 1]); }); }
+    function spin() {
+      clearInterval(timer); if (reduceMotion) return;
+      timer = setInterval(function () { [1, 2].forEach(function (k) { if (!stopped[k - 1]) { idx[k - 1] = (idx[k - 1] + 1) % E.length; paintE(k, true); } }); if (stopped[0] && stopped[1]) clearInterval(timer); }, R.spinMs || 700);
+    }
+    function nextDevice() { var left = DV.filter(function (d) { return !st.won[d.id]; }); if (!left.length) return null; var i = cur ? (left.indexOf(cur) + 1) % left.length : 0; return left[Math.max(0, i)] || left[0]; }
+    function doPull() {
+      var d = nextDevice(); if (!d) return; ac(); miss.classList.remove('show'); out.innerHTML = '';
+      pull.classList.remove('pulled'); void pull.offsetWidth; pull.classList.add('pulled');
+      var n = 0, roll = setInterval(function () { var x = DV[n % DV.length]; show(0, '<span>' + x.icon + '</span><b>' + esc(x.t) + '</b>', true); tone(500 + (n % 4) * 90, 0, 0.04, 'square', 0.02); n++; }, reduceMotion ? 1 : 80);
+      setTimeout(function () {
+        clearInterval(roll); cur = d; show(0, '<span>' + d.icon + '</span><b>' + esc(d.t) + '</b>', true); SFX.blip();
+        stopped = [reduceMotion, reduceMotion]; idx = [Math.floor(Math.random() * E.length), Math.floor(Math.random() * E.length)];
+        paintE(1); paintE(2); paintStops(); spin();
+      }, reduceMotion ? 10 : 900);
+    }
+    function stop(k) { if (!cur) { bounce(pull, miss, R.needLever || 'Pull the lever first to get a device.'); return; } stopped[k - 1] = true; SFX.blip(); paintStops(); }
+    function check() {
+      if (!cur) { bounce(pull, miss, R.needLever || 'Pull the lever first to get a device.'); return; }
+      if (!stopped[0] || !stopped[1]) { bounce($('.fs-reel-check', mach), miss, R.needStop || 'Stop both spinning reels first.'); return; }
+      var s = E[idx[0]].id, r = E[idx[1]].id, okS = s === cur.s, okR = r === cur.r;
+      if (okS && okR) {
+        st.won[cur.id] = 1; saveJ('reels', st); clearInterval(timer);
+        mach.classList.remove('jackpot'); void mach.offsetWidth; mach.classList.add('jackpot');
+        [784, 988, 1175, 1568, 1175, 1568].forEach(function (f, i) { tone(f, i * 0.07, 0.12, 'square', 0.03); });
+        out.innerHTML = '<div class="fs-hs-card fs-reel-pay"><span class="fs-hs-n">🎉</span><div><b>' + esc((R.winLine || 'A true line!')) + '</b> ' + esc(cur.t + ': ' + eOf(cur.s).t + ' → ' + eOf(cur.r).t + '. ' + (cur.why || '')) + '</div></div>';
+        cur = null; paintTray(); return;
+      }
+      var msg = (cur.also && cur.also[r] && okS) ? cur.also[r] : (!okS ? cur.missS : cur.missR);
+      if (!okS) stopped[0] = false; if (!okR) stopped[1] = false;
+      if (reduceMotion) { stopped = [true, true]; }
+      bounce($('.fs-reel-check', mach), miss, msg || 'Not a true line. Try again.'); paintStops(); spin();
+    }
+    function paintTray() {
+      var n = Object.keys(st.won).length;
+      tray.innerHTML = n ? '<div class="fs-in-k">' + esc(R.cardsLabel || 'My winning cards') + '</div><div class="fs-reel-cards">' + DV.filter(function (d) { return st.won[d.id]; }).map(function (d) {
+        return '<div class="fs-reel-card"><span>' + d.icon + '</span><b>' + esc(d.t) + '</b><small>' + eOf(d.s).icon + ' ' + esc(eOf(d.s).t) + ' → ' + eOf(d.r).icon + ' ' + esc(eOf(d.r).t) + '</small></div>'; }).join('') + '</div>' : '';
+      count.textContent = '🎰 ' + n + ' of ' + DV.length + ' ' + (R.countWord || 'true lines'); count.classList.toggle('ok', n === DV.length);
+      if (n === DV.length) { show(0, '<span>🏆</span><b>' + esc(R.allLine || 'All paid out!') + '</b>'); askOnce(qh, R.q, R.opts, 'reels-q', win, R.win, R.clue, 'reels', miss); }
+    }
+    pull.addEventListener('click', doPull);
+    /* drag the lever knob down to pull */
+    $$('.fs-reel-stop', mach).forEach(function (b) { b.addEventListener('click', function () { stop(+b.dataset.k); }); });
+    wins.slice(1).forEach(function (w) { w.addEventListener('click', function () { stop(+w.dataset.k); }); w.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stop(+w.dataset.k); } }); });
+    $$('.fs-reel-nud', mach).forEach(function (b) { b.addEventListener('click', function () {
+      if (!cur) { bounce(pull, miss, R.needLever || 'Pull the lever first to get a device.'); return; }
+      var k = +b.dataset.k; stopped[k - 1] = true; idx[k - 1] = (idx[k - 1] + (+b.dataset.d) + E.length) % E.length; paintE(k, true); tone(900, 0, 0.04, 'square', 0.02); paintStops();
+    }); });
+    $('.fs-reel-check', mach).addEventListener('click', check);
+    show(0, '<span>❔</span><b>' + esc(R.startLine || 'Pull the lever') + '</b>'); show(1, '<span>·</span>'); show(2, '<span>·</span>');
+    paintTray(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 2: "Evidence bingo" — a parade scene plays at Rosa's cart; tap a square on the bingo card while that thing is happening
+     (seen, heard, felt or measured); one square is "someone says so" and never counts. A full line = BINGO (24.02) ----------
+     D.bingo = {afterText, kicker, title, todo[], why, model, loopSec, events:[{id, at, dur, icon, sense, t, fx}], grid:[9 ids incl. 'free' and decoy.id],
+                decoy:{id, icon, sense, t, miss}, playBtn, pauseBtn, nextBtn, freeWord, notNow, bingoLine, q, opts, win, clue} */
+  function buildBingo() {
+    var B = D.bingo; if (!B) return;
+    var at = anchorP(B.afterText); if (!at) { FAILED.push('bingo anchor text not found'); return; }
+    var g = gameShell(B.kicker || 'Part 2 game', B.title, B.todo, B.why); g.dataset.mod = 'bingo';
+    var st = loadJ('bingo', { m: {}, bingo: 0 }), EV = B.events, L = B.loopSec || 42, t = 0, playing = false, last = 0, raf = null;
+    var scene = el('div', 'fs-bgo-scene'), ctl = el('div', 'fs-bgo-ctl'), card = el('div', 'fs-bgo-card'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    scene.innerHTML = '<svg viewBox="0 0 640 300" class="fs-bgo-svg" role="img" aria-label="A model of Rosa’s cocoa cart at night by the bay, with string lights, a bike on a stand, a speaker, a cocoa jug and a boat going by.">' +
+      '<defs><radialGradient id="bgoMoon"><stop offset="0" stop-color="#FFF8DC"/><stop offset="1" stop-color="#FFF8DC" stop-opacity="0"/></radialGradient></defs>' +
+      '<rect width="640" height="300" fill="#16233F"/><rect y="182" width="640" height="118" fill="#1C3557"/><circle cx="560" cy="48" r="34" fill="url(#bgoMoon)"/><circle cx="560" cy="48" r="14" fill="#FFF6D5"/>' +
+      '<rect y="232" width="640" height="68" fill="#6B4E32"/><path d="M0 232 H640" stroke="#8A6A47" stroke-width="4"/>' +
+      /* boat */ '<g class="fs-bgo-boat"><path d="M430 196 h120 l-14 20 h-94z" fill="#E8E2D3"/><rect x="470" y="176" width="40" height="20" fill="#D6CFBE"/><path d="M490 176 v-34" stroke="#C8C2B4" stroke-width="3"/>' +
+      '<g class="fs-bgo-horn"><path d="M552 188 q14 -8 0 -16 M562 192 q22 -12 0 -24" fill="none" stroke="#FFE08A" stroke-width="3"/></g></g>' +
+      /* cart */ '<rect x="60" y="150" width="190" height="72" rx="6" fill="#C8553D"/><rect x="60" y="140" width="190" height="14" fill="#8A5E36"/><circle cx="95" cy="230" r="14" fill="#2A2A2A"/><circle cx="215" cy="230" r="14" fill="#2A2A2A"/>' +
+      '<path d="M66 140 V88 M244 140 V88" stroke="#8A5E36" stroke-width="5"/>' +
+      /* string lights */ '<path d="M40 92 Q150 122 260 92 T470 92" fill="none" stroke="#2C2C2C" stroke-width="2"/><g class="fs-bgo-lights">' + [60, 95, 130, 165, 200, 235, 280, 320, 360, 400, 440].map(function (x, i) { var y = x < 260 ? 92 + 30 * Math.sin(Math.PI * (x - 40) / 220) * 0.9 : 92 + 30 * Math.sin(Math.PI * (x - 260) / 210) * 0.9; return '<circle cx="' + x + '" cy="' + (y + 5).toFixed(0) + '" r="6" style="--c:' + ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF'][i % 4] + '"/>'; }).join('') + '</g>' +
+      /* jug + thermometer */ '<rect x="170" y="112" width="40" height="40" rx="6" fill="#2D7AA6"/><rect x="204" y="96" width="8" height="46" rx="4" fill="#fff"/><rect class="fs-bgo-merc" x="206" y="112" width="4" height="28" fill="#E4573D"/><text class="fs-bgo-temp" x="216" y="96" fill="#FFE9B8">160°F</text>' +
+      /* mug + hands */ '<g class="fs-bgo-mug"><rect x="96" y="116" width="26" height="24" rx="4" fill="#F4E9DA"/><path class="fs-bgo-steam" d="M104 112 q-5 -8 0 -16 M114 112 q-5 -8 0 -16" fill="none" stroke="#E9E4DA" stroke-width="3"/><text class="fs-bgo-say" x="70" y="106" fill="#FFE9B8">Ahh, warm!</text></g>' +
+      /* bike + generator + meter */ '<g class="fs-bgo-bike"><g class="fs-bgo-wheel"><circle cx="330" cy="208" r="26" fill="none" stroke="#DDD" stroke-width="4"/><path d="M330 182 V234 M304 208 H356 M312 190 L348 226 M348 190 L312 226" stroke="#9AA" stroke-width="2"/></g>' +
+      '<circle cx="400" cy="208" r="26" fill="none" stroke="#DDD" stroke-width="4"/><path d="M330 208 L362 176 L400 208 M362 176 L352 160 M342 160 h22 M362 176 L392 166 M392 166 l6 -10" stroke="#4D96FF" stroke-width="5" fill="none" stroke-linecap="round"/>' +
+      '<rect x="292" y="196" width="20" height="24" rx="3" fill="#8C949C"/><rect x="270" y="150" width="56" height="30" rx="4" fill="#0E1C42" stroke="#7FB" stroke-width="2"/><text class="fs-bgo-watt" x="298" y="171" text-anchor="middle" fill="#7FFFB0">0 W</text></g>' +
+      /* speaker */ '<g class="fs-bgo-spk"><rect x="20" y="168" width="34" height="52" rx="4" fill="#222"/><circle cx="37" cy="200" r="11" fill="#444"/><g class="fs-bgo-notes"><text x="10" y="160" fill="#FFE08A">♪</text><text x="40" y="150" fill="#FFE08A">♫</text></g></g>' +
+      /* Teo */ '<g class="fs-bgo-teo"><rect x="356" y="104" width="236" height="40" rx="12" fill="#FFFDF2"/><path d="M380 144 l-8 14 l20 -14z" fill="#FFFDF2"/><text x="474" y="129" text-anchor="middle" fill="#2A2620">' + esc(B.teoSays || 'Trust me, it runs EVERYTHING!') + '</text></g>' +
+      '<text x="632" y="292" text-anchor="end" class="fs-vlv-lab" fill="#C9D6DA">' + esc(B.model || 'a model') + '</text><rect class="fs-bgo-bar" x="0" y="296" width="0" height="4" fill="#F5B83D"/></svg>';
+    ctl.innerHTML = '<button type="button" class="fs-btn fs-bgo-play">' + esc(B.playBtn || '▶ Play the scene') + '</button>' + (reduceMotion ? '<button type="button" class="fs-btn alt fs-bgo-next">' + esc(B.nextBtn || 'Next moment ▶') + '</button>' : '') + '<span class="fs-bgo-clock"></span>';
+    var sq = function (id) {
+      if (id === 'free') return '<div class="fs-bgo-sq free on"><span>⭐</span><b>' + esc(B.freeWord || 'FREE') + '</b></div>';
+      var e = id === B.decoy.id ? B.decoy : EV.filter(function (x) { return x.id === id; })[0];
+      return '<button type="button" class="fs-bgo-sq" data-id="' + id + '"><em>' + esc(e.sense) + '</em><span>' + e.icon + '</span><b>' + esc(e.t) + '</b></button>';
+    };
+    card.innerHTML = '<div class="fs-bgo-head">' + esc(B.cardTitle || 'EVIDENCE BINGO') + '</div><div class="fs-bgo-grid">' + B.grid.map(sq).join('') + '</div>';
+    g.appendChild(scene); g.appendChild(ctl); g.appendChild(card); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var svg = $('svg', scene), clock = $('.fs-bgo-clock', ctl), playB = $('.fs-bgo-play', ctl), bar = $('.fs-bgo-bar', scene);
+    function active() { return EV.filter(function (e) { return t >= e.at && t < e.at + e.dur; }); }
+    function sfx(e) { if (e.fx === 'horn') { tone(196, 0, 0.7, 'sawtooth', 0.035); tone(247, 0, 0.7, 'sawtooth', 0.03); } else if (e.fx === 'music') { [523, 659, 784, 659, 523].forEach(function (f, i) { tone(f, i * 0.22, 0.2, 'triangle', 0.035); }); } else if (e.fx === 'meter' || e.fx === 'thermo') SFX.blip(); }
+    var fired = {};
+    function draw() {
+      var a = active(), ids = a.map(function (e) { return e.fx; });
+      ['lights', 'horn', 'wheel', 'meter', 'music', 'mug', 'thermo', 'teo'].forEach(function (f) { svg.classList.toggle('on-' + f, ids.indexOf(f) > -1); });
+      if (svg.classList.contains('on-meter') || svg.classList.contains('on-wheel') || svg.classList.contains('on-lights')) $('.fs-bgo-watt', svg).textContent = (B.meterW || 40) + ' W'; else $('.fs-bgo-watt', svg).textContent = '0 W';
+      a.forEach(function (e) { if (!fired[e.id] && playing) { fired[e.id] = 1; sfx(e); } });
+      EV.forEach(function (e) { if (!(t >= e.at && t < e.at + e.dur)) fired[e.id] = 0; });
+      bar.setAttribute('width', (640 * t / L).toFixed(0));
+      clock.textContent = playing ? '● ' + (B.liveWord || 'LIVE') : '';
+    }
+    function loop(now) { if (!playing) return; var dt = (now - last) / 1000; last = now; t = (t + dt) % L; draw(); raf = requestAnimationFrame(loop); }
+    playB.addEventListener('click', function () {
+      ac(); playing = !playing; playB.textContent = playing ? (B.pauseBtn || '⏸ Pause') : (B.playBtn || '▶ Play the scene');
+      if (playing && !reduceMotion) { last = performance.now(); raf = requestAnimationFrame(loop); } else if (playing && reduceMotion) { playing = false; playB.textContent = B.playBtn || '▶ Play the scene'; step(); }
+      draw();
+    });
+    var nb = $('.fs-bgo-next', ctl); var stepI = -1;
+    function step() { stepI = (stepI + 1) % EV.length; t = EV[stepI].at + 0.1; fired = {}; var e = EV[stepI]; sfx(e); draw(); clock.textContent = '⏱ ' + (stepI + 1) + ' / ' + EV.length; }
+    if (nb) nb.addEventListener('click', function () { ac(); step(); });
+    var LINES = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+    function marked(i) { var id = B.grid[i]; return id === 'free' || !!st.m[id]; }
+    function paint() {
+      $$('.fs-bgo-sq[data-id]', card).forEach(function (b) { b.classList.toggle('on', !!st.m[b.dataset.id]); });
+      var line = LINES.filter(function (l) { return l.every(marked); })[0];
+      $$('.fs-bgo-sq', card).forEach(function (b, i) { b.classList.toggle('line', !!line && line.indexOf(i) > -1); });
+      var n = Object.keys(st.m).length; count.textContent = '🔲 ' + n + ' ' + (B.countWord || 'squares marked') + (line ? ' · BINGO!' : ''); count.classList.toggle('ok', !!line);
+      if (line && !st.bingo) { st.bingo = 1; saveJ('bingo', st); SFX.win(); card.classList.remove('boom'); void card.offsetWidth; card.classList.add('boom'); }
+      if (line) { if (!qh.dataset.ln) { qh.dataset.ln = '1'; qh.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">🎉</span><div><b>BINGO!</b> ' + esc(B.bingoLine || '') + '</div>')); } askOnce(qh, B.q, B.opts, 'bingo-q', win, B.win, B.clue, 'bingo', miss); }
+    }
+    $$('.fs-bgo-sq[data-id]', card).forEach(function (b) { b.addEventListener('click', function () {
+      var id = b.dataset.id; if (st.m[id]) return;
+      if (id === B.decoy.id) { bounce(b, miss, B.decoy.miss); return; }
+      var on = active().some(function (e) { return e.id === id; });
+      if (!on) { bounce(b, miss, (playing || stepI > -1) ? (B.notNow || 'Not right now! Tap it while it is happening.') : (B.needPlay || 'Press Play first, then watch the scene.')); return; }
+      st.m[id] = 1; saveJ('bingo', st); miss.classList.remove('show'); SFX.chime(); paint();
+    }); });
+    draw(); paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 3 (the old Explore): "The trading-card binder" — five blank cards with real photos; fill STARTING, RESULTING and
+     EVIDENCE (one observation that shows the change, one that doesn't, one opinion); a right card turns shiny and slides into the binder,
+     which is also the data table (24.02) ----------
+     D.binder = {afterText, kicker, title, todo[], why, energies, cards:[{id, t, img, alt, s, r, missS, missR, ev:[{t, ok, miss}]}], labels:{s, r, e},
+                 pickLine, binderLabel, emptyLine, tableLabel, cols[4], credits, q, opts, win, clue} */
+  function buildBinder() {
+    var B = D.binder; if (!B) return;
+    var at = anchorP(B.afterText); if (!at) { FAILED.push('binder anchor text not found'); return; }
+    var g = gameShell(B.kicker || 'Part 3 game', B.title, B.todo, B.why); g.dataset.mod = 'binder';
+    var E = B.energies || (D.reels && D.reels.energies) || [], C = B.cards, st = loadJ('binder', { got: {}, p: {} }), cur = null, LB = B.labels || { s: 'Starting energy', r: 'Resulting energy', e: 'Best evidence' };
+    var deck = el('div', 'fs-bdr-deck'), ed = el('div', 'fs-bdr-ed'), bind = el('div', 'fs-bdr-binder'), tab = el('div', 'fs-vlv-tab fs-bdr-tab'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(el('div', 'fs-lu-lab', esc(B.pickLine || '1. Tap a blank card'))); g.appendChild(deck); g.appendChild(ed); g.appendChild(bind); g.appendChild(tab); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function eOf(id) { return E.filter(function (x) { return x.id === id; })[0] || { icon: '', t: id }; }
+    function paintDeck() {
+      deck.innerHTML = C.map(function (c, i) { var got = st.got[c.id]; return '<button type="button" class="fs-bdr-blank' + (got ? ' done' : '') + (cur === i ? ' on' : '') + '" data-i="' + i + '"><img src="' + esc(c.img) + '" alt=""><b>' + esc(c.t) + '</b><span>' + (got ? '✨' : '?') + '</span></button>'; }).join('');
+      $$('.fs-bdr-blank', deck).forEach(function (b) { b.addEventListener('click', function () { var i = +b.dataset.i; if (st.got[C[i].id]) { cur = i; paintEd(); paintDeck(); return; } cur = i; SFX.blip(); miss.classList.remove('show'); paintDeck(); paintEd(); ed.scrollIntoView && !reduceMotion && ed.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }); });
+    }
+    function row(key, lbl, opts) {
+      var c = C[cur], p = st.p[c.id] || {}, done = st.got[c.id];
+      return '<div class="fs-bdr-row" data-key="' + key + '"><div class="fs-in-k">' + esc(lbl) + '</div><div class="fs-in-chips">' + opts.map(function (o, i) {
+        var sel = key === 'e' ? (p.e === i || (done && o.ok)) : (p[key] === o.id || (done && c[key] === o.id));
+        return '<button type="button" class="fs-in-chip fs-bdr-c' + (sel ? ' on ok' : '') + '" data-key="' + key + '" data-v="' + (key === 'e' ? i : o.id) + '">' + (o.icon ? '<span>' + o.icon + '</span>' : '') + esc(o.t) + '</button>'; }).join('') + '</div></div>';
+    }
+    function paintEd() {
+      if (cur == null) { ed.innerHTML = ''; return; }
+      var c = C[cur], done = st.got[c.id];
+      ed.innerHTML = '<div class="fs-bdr-card' + (done ? ' holo' : '') + '"><div class="fs-bdr-photo"><img src="' + esc(c.img) + '" alt="' + esc(c.alt || c.t) + '"><span class="fs-bdr-name">' + esc(c.t) + '</span></div><div class="fs-bdr-body">' +
+        row('s', '2. ' + LB.s, E) + row('r', '3. ' + LB.r, E) + row('e', '4. ' + LB.e, c.ev) + '</div></div>';
+      $$('.fs-bdr-c', ed).forEach(function (b) { b.addEventListener('click', function () {
+        var c = C[cur]; if (st.got[c.id]) return; var key = b.dataset.key, v = b.dataset.v, p = st.p[c.id] = st.p[c.id] || {};
+        if (key === 'e') { var o = c.ev[+v]; if (!o.ok) { bounce(b, miss, o.miss); return; } p.e = +v; }
+        else { if (v !== c[key]) { bounce(b, miss, key === 's' ? c.missS : c.missR); return; } p[key] = v; }
+        SFX.chime(); miss.classList.remove('show'); saveJ('binder', st);
+        if (p.s && p.r && p.e != null) { st.got[c.id] = 1; saveJ('binder', st); SFX.sparkle(); paintEd(); var cd = $('.fs-bdr-card', ed); if (cd && !reduceMotion) { cd.classList.add('slide'); } setTimeout(function () { cur = null; paintEd(); paintDeck(); paintBinder(c.id); }, reduceMotion ? 0 : 650); }
+        else paintEd();
+      }); });
+    }
+    function evText(c) { return c.ev.filter(function (o) { return o.ok; })[0].t; }
+    function paintBinder(fresh) {
+      var n = Object.keys(st.got).length;
+      bind.innerHTML = '<div class="fs-bdr-blab">' + esc(B.binderLabel || 'My binder') + '</div><div class="fs-bdr-pages">' + C.map(function (c) {
+        var got = st.got[c.id]; return '<div class="fs-bdr-sleeve' + (got ? ' got' : '') + (fresh === c.id ? ' new' : '') + '">' + (got ? '<div class="fs-bdr-mini holo"><img src="' + esc(c.img) + '" alt=""><b>' + esc(c.t) + '</b><small>' + eOf(c.s).icon + ' ' + esc(eOf(c.s).t) + ' → ' + eOf(c.r).icon + ' ' + esc(eOf(c.r).t) + '</small></div>' : '<span>' + esc(B.emptyLine || 'empty sleeve') + '</span>') + '</div>'; }).join('') + '</div>';
+      var cols = B.cols || ['System', 'Starting', 'Resulting', 'Evidence'];
+      tab.innerHTML = n ? '<div class="fs-in-k">' + esc(B.tableLabel || 'My data table') + '</div><table><tr>' + cols.map(function (x) { return '<th>' + esc(x) + '</th>'; }).join('') + '</tr>' +
+        C.filter(function (c) { return st.got[c.id]; }).map(function (c) { return '<tr><td>' + esc(c.t) + '</td><td>' + esc(eOf(c.s).t) + '</td><td>' + esc(eOf(c.r).t) + '</td><td>' + esc(evText(c)) + '</td></tr>'; }).join('') + '</table>' : '';
+      count.textContent = '🃏 ' + n + ' of ' + C.length + ' ' + (B.countWord || 'cards in the binder'); count.classList.toggle('ok', n === C.length);
+      if (n === C.length) askOnce(qh, B.q, B.opts, 'binder-q', win, B.win, B.clue, 'binder', miss);
+    }
+    if (B.credits) g.appendChild(el('div', 'fs-credit', esc(B.credits)));
+    paintDeck(); paintEd(); paintBinder(); placeAfter(g, at);
+  }
+
+  /* ---------- the wow (after the binder): "Pedal power" — pedal Teo's bike by tapping ← → (or the two pedal buttons) in turn; your watts
+     come from how fast you pedal (a model: one strong rider keeps up about riderW); switch on loads and see what one rider can run; stop
+     and the lights go out (the evidence); the cocoa warmer shows how many riders it would take (24.02; not a clue) ----------
+     D.pedal = {after, kicker, title, todo[], why, model, riderW, perStroke, loads:[{id, icon, t, w, big}], leftBtn, rightBtn, keysLine, makeWord,
+                needWord, okLine, lowLine, stopLine, bigLine, ridersLine, done} */
+  function buildPedal() {
+    var P = D.pedal; if (!P) return;
+    var host = $('.fs-game[data-mod="' + (P.after || 'binder') + '"]'); if (!host) { FAILED.push('pedal: no anchor game'); return; }
+    var g = gameShell(P.kicker || 'Wow!', P.title, P.todo, P.why); g.dataset.mod = 'pedal'; g.classList.add('fs-pdl-wow');
+    var st = loadJ('pedal', { lit: 0, stop: 0, big: 0 }), on = {}, strokes = [], lastSide = null, watts = 0, raf = null, wasLit = false, MAXW = P.riderW || 100;
+    var loadsBox = el('div', 'fs-in-chips fs-pdl-loads'), stage = el('div', 'fs-pdl-stage'), ped = el('div', 'fs-pdl-ped'), meter = el('div', 'fs-pdl-meter'), out = el('div', 'fs-pdl-out'), riders = el('div', 'fs-pdl-riders'), win = el('div', 'fs-win'), miss = el('div', 'fs-miss');
+    loadsBox.innerHTML = P.loads.map(function (l) { return '<button type="button" class="fs-in-chip fs-pdl-l" data-id="' + l.id + '"><span>' + l.icon + '</span>' + esc(l.t) + ' <small>' + l.w.toLocaleString() + ' W</small></button>'; }).join('');
+    stage.innerHTML = '<svg viewBox="0 0 560 190" class="fs-pdl-svg" role="img" aria-label="A model: a bike on a stand turns a small generator; wires run to string lights, a menu sign, a radio and a cocoa warmer.">' +
+      '<rect width="560" height="190" rx="14" fill="#16233F"/><path d="M20 40 Q140 70 260 40 T540 40" fill="none" stroke="#333" stroke-width="2"/>' +
+      '<g class="fs-pdl-str">' + [40, 80, 120, 160, 200, 240, 300, 340, 380, 420, 460, 500].map(function (x, i) { return '<circle cx="' + x + '" cy="' + (44 + 22 * Math.sin(Math.PI * ((x - 20) % 240) / 240)).toFixed(0) + '" r="6" style="--c:' + ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF'][i % 4] + '"/>'; }).join('') + '</g>' +
+      '<g class="fs-pdl-sign"><rect x="300" y="86" width="96" height="40" rx="6" fill="#22302A" stroke="#8A5E36" stroke-width="4"/><text x="348" y="111" text-anchor="middle">COCOA $3</text></g>' +
+      '<g class="fs-pdl-radio"><rect x="412" y="98" width="46" height="28" rx="5" fill="#C8553D"/><circle cx="426" cy="112" r="7" fill="#2A2A2A"/><g class="fs-pdl-notes"><text x="452" y="92">♪</text><text x="466" y="80">♫</text></g></g>' +
+      '<g class="fs-pdl-warm"><rect x="476" y="96" width="54" height="56" rx="8" fill="#8C949C"/><rect x="484" y="106" width="38" height="10" rx="3" fill="#3A3A3A"/><rect class="fs-pdl-coil" x="486" y="140" width="34" height="6" rx="3"/><text x="503" y="168" text-anchor="middle">WARMER</text></g>' +
+      '<g class="fs-pdl-bike"><g class="fs-pdl-wheel"><circle cx="70" cy="150" r="28" fill="none" stroke="#DDD" stroke-width="4"/><path d="M70 122 V178 M42 150 H98 M50 130 L90 170 M90 130 L50 170" stroke="#9AA" stroke-width="2"/></g>' +
+      '<circle cx="150" cy="150" r="28" fill="none" stroke="#DDD" stroke-width="4"/><path d="M70 150 L104 116 L150 150 M104 116 L94 98 M84 98 h22 M104 116 L140 106 M140 106 l6 -12" stroke="#4D96FF" stroke-width="5" fill="none" stroke-linecap="round"/>' +
+      '<rect x="168" y="140" width="22" height="22" rx="4" fill="#8C949C"/><text x="179" y="178" text-anchor="middle" class="fs-pdl-gen">GEN</text><path d="M190 150 C 240 150, 250 60, 300 60 M300 60 H520" stroke="#F5B83D" stroke-width="2" fill="none" stroke-dasharray="4 4" class="fs-pdl-wire"/></g>' +
+      '<text x="552" y="184" text-anchor="end" class="fs-vlv-lab" fill="#C9D6DA">' + esc(P.model || 'a model') + '</text></svg>';
+    ped.innerHTML = '<button type="button" class="fs-pdl-p" data-s="L">' + esc(P.leftBtn || '◀ Left pedal') + '</button><button type="button" class="fs-pdl-p" data-s="R">' + esc(P.rightBtn || 'Right pedal ▶') + '</button><div class="fs-pdl-keys">' + esc(P.keysLine || 'Tap them one after the other, or press the ← and → keys.') + '</div>';
+    g.appendChild(el('div', 'fs-lu-lab', esc(P.loadsLine || '1. Switch something on'))); g.appendChild(loadsBox); g.appendChild(stage); g.appendChild(ped); g.appendChild(meter); g.appendChild(riders); g.appendChild(out); g.appendChild(miss); g.appendChild(win);
+    stage.tabIndex = 0; var svg = $('svg', stage);
+    function need() { return P.loads.reduce(function (s, l) { return s + (on[l.id] ? l.w : 0); }, 0); }
+    function stroke(side) {
+      ac(); if (side === lastSide) { tone(160, 0, 0.06, 'sine', 0.05); return; }
+      lastSide = side; strokes.push(performance.now()); tone(side === 'L' ? 330 : 392, 0, 0.05, 'triangle', 0.03);
+      $$('.fs-pdl-p', ped).forEach(function (b) { b.classList.toggle('hit', b.dataset.s === side); });
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+    function tick() {
+      var now = performance.now(); strokes = strokes.filter(function (x) { return now - x < 1500; });
+      var target = Math.min(MAXW, strokes.length / 1.5 * (P.perStroke || 30)); watts += (target - watts) * 0.08; if (watts < 0.5) watts = 0;
+      paint(); raf = (watts > 0 || strokes.length) ? requestAnimationFrame(tick) : null;
+    }
+    function paint() {
+      var n = need(), w = Math.round(watts), lit = n > 0 && w >= n, small = P.loads.filter(function (l) { return !l.big; });
+      ['str', 'sign', 'radio', 'warm'].forEach(function (k) { var l = P.loads.filter(function (x) { return x.svg === k; })[0]; var g2 = $('.fs-pdl-' + k, svg); if (g2 && l) { var p = on[l.id] ? Math.min(1, n ? w / n : 0) : 0; g2.style.setProperty('--p', p.toFixed(2)); g2.classList.toggle('lit', !!(on[l.id] && lit)); } });
+      svg.classList.toggle('spin', w > 3); svg.style.setProperty('--spd', Math.max(0.15, 1.2 - w / MAXW).toFixed(2) + 's');
+      meter.innerHTML = '<div class="fs-pdl-bar"><i style="width:' + Math.min(100, n ? 100 * w / Math.max(n, 1) : 0).toFixed(0) + '%"></i></div><div class="fs-pdl-nums"><span>' + esc(P.makeWord || 'You make') + ' <b>' + w + ' W</b></span><span>' + esc(P.needWord || 'Switched on needs') + ' <b>' + n.toLocaleString() + ' W</b></span></div>';
+      var allSmall = small.every(function (l) { return on[l.id]; }) && !P.loads.some(function (l) { return l.big && on[l.id]; });
+      if (lit && allSmall && !st.lit) { st.lit = 1; saveJ('pedal', st); SFX.chime(); }
+      if (lit) wasLit = true;
+      if (wasLit && w === 0 && !strokes.length && st.lit && !st.stop) { st.stop = 1; saveJ('pedal', st); tone(200, 0, 0.3, 'sine', 0.05); }
+      var bigOn = P.loads.filter(function (l) { return l.big && on[l.id]; })[0];
+      if (bigOn) { st.big = 1; saveJ('pedal', st); var k = Math.ceil(bigOn.w / MAXW); riders.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">🤯</span><div><b>' + esc((P.ridersLine || 'It would take about {n} strong riders!').replace('{n}', k)) + '</b><div class="fs-pdl-crowd">' + new Array(k + 1).join('🚴') + '</div>' + esc(P.bigLine || '') + '</div></div>'; }
+      var lines = [];
+      if (n && !lit && w > 0 && !bigOn) lines.push('🔋 ' + (P.lowLine || 'Pedal faster!'));
+      if (n && lit) lines.push('💡 ' + (P.okLine || 'It works!'));
+      if (st.stop) lines.push('🌑 ' + (P.stopLine || 'When you stopped, the lights went out.'));
+      out.innerHTML = lines.map(function (x) { return '<p>' + esc(x) + '</p>'; }).join('');
+      if (st.lit && st.stop && st.big) winOnce(win, P.done || 'Wow!', null, 'pedal-wow');
+    }
+    $$('.fs-pdl-l', loadsBox).forEach(function (c) { c.addEventListener('click', function () { on[c.dataset.id] = !on[c.dataset.id]; c.classList.toggle('on', !!on[c.dataset.id]); SFX.blip(); paint(); }); });
+    $$('.fs-pdl-p', ped).forEach(function (b) { b.addEventListener('click', function () { stroke(b.dataset.s); }); });
+    function key(e) { if (e.key === 'ArrowLeft') { e.preventDefault(); stroke('L'); } else if (e.key === 'ArrowRight') { e.preventDefault(); stroke('R'); } }
+    stage.addEventListener('keydown', key); ped.addEventListener('keydown', key);
+    paint(); host.parentNode.insertBefore(g, host.nextSibling);
+    if (st.lit && st.stop && st.big) winOnce(win, P.done || 'Wow!', null, 'pedal-wow');
+  }
+
+  /* ---------- bonus (fold it): "The glowing wake" — drag the boat across a dark lagoon (or press Go); comb jellies near its path flash;
+     then a real photo and the energy question (24.02) ----------
+     D.glowwake = {after, kicker, title, todo[], why, lockLine, model, goBtn, dragHint, needFlashes, flashWord, photo:{img, alt, cap}, q, opts, win} */
+  function buildGlowwake() {
+    var W = D.glowwake; if (!W) return;
+    var g = gameShell(W.kicker || 'Bonus', W.title, W.todo, W.why); g.dataset.mod = 'glowwake';
+    var st = loadJ('glowwake', { n: 0 });
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(W.lockLine || 'Crack the case first.') + '</span>'), body = el('div', 'fs-wke-body'), win = el('div', 'fs-win'), miss = el('div', 'fs-miss');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(miss); g.appendChild(win);
+    var host = $(W.after || '.fs-solve'); if (!host) { FAILED.push('glowwake: no anchor'); return; }
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    var J = [], seed = 7; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    for (var i = 0; i < 46; i++) J.push({ x: 20 + rnd() * 600, y: 70 + rnd() * 120, t: 0 });
+    function build() {
+      body.innerHTML = '<svg viewBox="0 0 640 220" class="fs-wke-svg" role="img" aria-label="A model: a dark lagoon at night with a small boat. Tiny comb jellies in the water flash blue-green when the boat stirs the water.">' +
+        '<rect width="640" height="220" fill="#06101F"/><rect y="52" width="640" height="168" fill="#081A2E"/>' + [60, 180, 300, 420, 540].map(function (x) { return '<circle cx="' + x + '" cy="' + (14 + (x % 23)) + '" r="1.4" fill="#fff" opacity=".7"/>'; }).join('') +
+        J.map(function (j, k) { return '<circle class="fs-wke-j" data-k="' + k + '" cx="' + j.x.toFixed(0) + '" cy="' + j.y.toFixed(0) + '" r="4"/>'; }).join('') +
+        '<g class="fs-wke-boat" tabindex="0" role="button" aria-label="The boat. Drag it across the water."><path d="M-30 0 h60 l-10 14 h-40z" fill="#E8E2D3"/><rect x="-8" y="-14" width="16" height="14" fill="#D6CFBE"/><circle cx="0" cy="-22" r="5" fill="#FFE08A"/></g>' +
+        '<text x="632" y="212" text-anchor="end" class="fs-vlv-lab" fill="#9FB3C8">' + esc(W.model || 'a model') + '</text></svg>' +
+        '<div class="fs-mug-go"><button type="button" class="fs-btn fs-wke-go">' + esc(W.goBtn || '⛵ Go') + '</button><span class="fs-wke-hint">' + esc(W.dragHint || 'Or drag the boat across the water.') + '</span></div><div class="fs-count fs-wke-n"></div><div class="fs-wke-more"></div>';
+      var svg = $('svg', body), boat = $('.fs-wke-boat', svg), dots = $$('.fs-wke-j', svg), bx = 40, by = 60, lastX = bx, drag = false;
+      function place() { boat.setAttribute('transform', 'translate(' + bx.toFixed(0) + ' ' + by.toFixed(0) + ')'); }
+      function stir(x0, x1) {
+        var lo = Math.min(x0, x1), hi = Math.max(x0, x1), hits = 0;
+        J.forEach(function (j, k) { if (j.x >= lo - 6 && j.x <= hi + 6 && j.y < by + 70 && (performance.now() - j.t > 1200)) { j.t = performance.now(); hits++; var d = dots[k]; d.classList.remove('on'); void d.getBoundingClientRect(); d.classList.add('on'); } });
+        if (hits) { st.n += hits; saveJ('glowwake', st); tone(1200 + Math.random() * 600, 0, 0.12, 'sine', 0.015); paintN(); }
+      }
+      function paintN() {
+        var need = W.needFlashes || 15; $('.fs-wke-n', body).textContent = '✨ ' + Math.min(st.n, 999) + ' ' + (W.flashWord || 'flashes') + (st.n >= need ? ' ✅' : ' (try for ' + need + ')');
+        if (st.n >= need) { var more = $('.fs-wke-more', body); if (!more.dataset.on) { more.dataset.on = '1'; if (W.photo) more.appendChild(el('figure', 'fs-gls-fig', '<img src="' + esc(W.photo.img) + '" alt="' + esc(W.photo.alt || '') + '"><figcaption>' + esc(W.photo.cap || '') + '</figcaption>')); var qh = el('div'); more.appendChild(qh); chipsQ(qh, W.q, W.opts, function (o) { if (o.why) qh.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">✅</span><div>' + esc(o.why) + '</div>')); store('glowwake-q', '1'); winOnce(win, W.win, null, 'glowwake'); }, miss); if (store('glowwake-q')) winOnce(win, W.win, null, 'glowwake'); } }
+      }
+      function svgX(e) { var r = svg.getBoundingClientRect(); return (e.clientX - r.left) * 640 / r.width; }
+      svg.addEventListener('pointerdown', function (e) { var x = svgX(e); if (Math.abs(x - bx) < 60) { drag = true; ac(); svg.setPointerCapture && svg.setPointerCapture(e.pointerId); e.preventDefault(); } });
+      svg.addEventListener('pointermove', function (e) { if (!drag) return; var x = Math.max(30, Math.min(610, svgX(e))); stir(lastX, x); bx = lastX = x; place(); });
+      function end() { drag = false; } svg.addEventListener('pointerup', end); svg.addEventListener('pointercancel', end);
+      boat.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); var x = Math.max(30, Math.min(610, bx + (e.key === 'ArrowRight' ? 40 : -40))); stir(bx, x); bx = lastX = x; place(); } });
+      $('.fs-wke-go', body).addEventListener('click', function () {
+        ac(); var x0 = bx < 320 ? 30 : 610, x1 = bx < 320 ? 610 : 30, t0 = performance.now(), D1 = reduceMotion ? 10 : 3200;
+        (function run(now) { var p = Math.min(1, (now - t0) / D1), x = x0 + (x1 - x0) * p; stir(bx, x); bx = lastX = x; place(); if (p < 1) requestAnimationFrame(run); })(t0);
+      });
+      place(); paintN();
+    }
+    var built = false;
+    function paint() { var s = !!store('solved'); g.classList.toggle('locked', !s); lock.style.display = s ? 'none' : ''; body.style.display = s ? '' : 'none'; if (!s) return; if (!built) { built = true; build(); } }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
+  }
+
   /* =================== 24.01: The Cold Cocoa Cart (menu, handlemap, heatdots, rodrace, cuprace, iceblocks, mugdesign, snowcoat, SIMS.irtherm) =================== */
   /* ---------- case: a chalkboard menu + customer order slips (24.01). case.menu = {name, sub, items:[{t, p}], note, slipsHead, slips:[{n, t, who, time}]} ---------- */
   function menuBoard(M) {
@@ -11032,6 +11437,12 @@
     guard('iceblocks', buildIceblocks);
     guard('mugdesign', buildMugdesign);
     guard('snowcoat', buildSnowcoat);
+    guard('glowstick', buildGlowstick);
+    guard('reels', buildReels);
+    guard('bingo', buildBingo);
+    guard('binder', buildBinder);
+    guard('pedal', buildPedal);
+    guard('glowwake', buildGlowwake);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

@@ -1,0 +1,285 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; weeks 18–24 are Unit 5",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Collisions</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "energy changes are physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS codes; TEKS 4.2(A) is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.P.10.1, SC.4.P.10.2 · TEKS 4.2(A)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.10.1, SC.4.P.10.2</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Crack a Glow Stick</div>\n        <div class=\"act-subtitle\">Where does the light come from?</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the glow stick",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Kids at the boat parade wave glow sticks. A glow stick has no plug and no battery. So where does its light come from? Crack one and look for clues.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → a list on the page",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Now look around your home. What glows, buzzes, spins or warms up?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for 4 energy change cards from home",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; My 4 Energy Change Cards"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task (now 4 cards typed on the page + a required labeled sketch)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Find 4 devices or systems at home that are NOT in today’s lesson. For each one, write its starting energy, its resulting energy and one piece of evidence. Then sketch and label one.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: something to try it for real",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🪄</span>A glow stick, if you have one (to try it for real)</span>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "wrong fact: a windmill (like the one in 23.02) pumps water; a wind TURBINE turns motion into electrical energy. No dashes.",
+  "old": "Almost everything around you has a starting and resulting energy. A toaster takes electrical → heat. A windmill takes motion → electrical.",
+  "new": "Almost everything around you has a starting and resulting energy. A toaster takes electrical → heat. A wind turbine takes motion → electrical."
+ },
+ {
+  "kind": "fix",
+  "why": "kept (Bethany ticked it): the Florida connection is true, as one line in Part 1",
+  "old": "Once you spot the pattern, you start seeing it everywhere.</p>",
+  "new": "Once you spot the pattern, you start seeing it everywhere.</p>\n      <p><strong>In Florida:</strong> sunshine starts lots of energy changes. Solar panels turn light into electrical energy, leaves turn it into food (chemical energy), and dark roads turn it into heat you can feel through your shoes.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "wrong teaser: next week (25.01) is about how objects move, not food chains",
+  "old": "Next module, you'll look at how plants and animals interact in Florida ecosystems — and how energy moves between them in food chains.</p>",
+  "new": "Next week, you’ll describe how objects move: where they start, where they end up and which way they go.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll name where the energy starts and what it becomes, and prove it with evidence.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "no dash (Part 2)",
+  "old": "It doesn't — it changes FORM.",
+  "new": "It doesn't. It changes FORM."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 named the removed diagram; the same four cards are in the slot machine (same question, same answer)",
+  "old": "Pick ONE card from the diagram (lamp, pedaling a bike, speaker, or solar panel).",
+  "new": "Pick ONE card from the slot machine (lamp, pedaling a bike, speaker or solar panel)."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE card from the diagram (lamp, pedaling a b...\"",
+  "new": "data-label=\"One card from the slot machine\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why is EVIDENCE important when describing an energ...\"",
+  "new": "data-label=\"Why evidence matters\""
+ },
+ {
+  "kind": "plain",
+  "why": "plain words: “misconception” is a hard word; same idea",
+  "old": "<p><strong>Common misconception:</strong> Some people think",
+  "new": "<p><strong>Watch out:</strong> some people think"
+ },
+ {
+  "kind": "plain",
+  "why": "plain words: “circuit” is not taught until later; same meaning",
+  "old": "when I push the button (closing the battery circuit), light comes out the front.",
+  "new": "when I push the button, the battery’s electricity flows and light comes out the front."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash in the classmate’s claim (same claim)",
+  "old": "when you click the button — there's no starting energy.",
+  "new": "when you click the button. There's no starting energy."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash in the Lesson subtitle",
+  "old": "<div class=\"act-subtitle\">Every system tells a story — find the proof</div>",
+  "new": "<div class=\"act-subtitle\">Every system tells a story. Find the proof.</div>"
+ },
+ {
+  "kind": "plain",
+  "why": "plain words: “converted” → “changes”",
+  "old": "it just gets converted into the resulting energy.",
+  "new": "it just changes into the resulting energy."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the slot machine is Part 1’s thinking stop)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "removed: the AI card-sort picture (its “windmill: motion → electrical” card shows a water-pumping farm windmill; the slot machine replaces it), Key Concept, the Stop & Reason about “the three devices above” (a 22.01 leftover), the Four Energy Change Cards tap diagram (its four cards live in the slot machine), Observe & Reason, the leaf “Amazing Florida Fact” (the leaf is now a binder card), the Florida callout (kept as a line in Part 1) and Go Deeper. Part 3 = the old Explore (Sort the Cards); the next button goes to Self-Check",
+  "old": "\\s*<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "\n\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Sort the Cards</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Here are five everyday systems. For each one, find the starting energy, the resulting energy and one piece of evidence. Every card you finish goes into your binder.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its five systems are now the binder in Part 3; its notebook table, solar-toy “Amazing Florida Fact”, Think like a scientist and Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7; Q6 overlaps Part C’s home cards)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C typed on the page, plus the required sketch",
+  "old": "Four hand-drawn energy change cards from systems in your home, each with system / starting → resulting / evidence.",
+  "new": "My 4 energy change cards from home, each with its starting → resulting energy and one piece of evidence. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether energy \"appears\" or whether there's always a starting energy, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether energy just appears in a flashlight, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]
