@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -10648,6 +10648,494 @@
     document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
   }
 
+  /* =================== 25.01: The Lost Time Capsule (tmap, beach map + program cards, trainwin, findit, helper, ferris, diagram, redirect, nightrun, SIMS.compass) =================== */
+  /* ---------- case: a hand-drawn treasure map with a kid's directions and a sticky reply (25.01). case.tmap = {svg, head, lines[], sign, sticky, stickySign} ---------- */
+  function treasureMap(T) {
+    return '<div class="fs-tmap"><div class="fs-tmap-paper"><div class="fs-tmap-svg">' + T.svg + '</div><div class="fs-tmap-dir">' + (T.head ? '<b>' + esc(T.head) + '</b>' : '') +
+      '<ol>' + T.lines.map(function (l) { return '<li>' + esc(l) + '</li>'; }).join('') + '</ol>' + (T.sign ? '<em>' + esc(T.sign) + '</em>' : '') + '</div></div>' +
+      (T.sticky ? '<div class="fs-tmap-note"><p>' + esc(T.sticky) + '</p><b>' + esc(T.stickySign || '') + '</b></div>' : '') + '</div>';
+  }
+
+  /* ---------- shared: a top-down beach map made of step squares (north is up, the Gulf is on the west side, the boardwalk on the east).
+     D.beach = {cols, rows, pierY, marks:[{id, icon, t, the, x, y, fixed}], dirs:{N:{t, icon}, E, S, W}, alt, model, goBtn, clearBtn, whichWay, emptyLine, thenWord,
+                stepWord, stepsWord, fullLine} ---------- */
+  var DV25 = { N: [0, -1], E: [1, 0], S: [0, 1], W: [-1, 0] }, SVGNS = 'http://www.w3.org/2000/svg';
+  function beachMark(id) { return (D.beach.marks || []).filter(function (m) { return m.id === id; })[0]; }
+  function stepsWord(n) { var B = D.beach; return n + ' ' + (n === 1 ? (B.stepWord || 'step') : (B.stepsWord || 'steps')); }
+  function relPos(p, m) {
+    var B = D.beach, dx = p[0] - m.x, dy = p[1] - m.y, a = [];
+    if (dx) a.push(stepsWord(Math.abs(dx)) + ' ' + B.dirs[dx > 0 ? 'E' : 'W'].t); if (dy) a.push(stepsWord(Math.abs(dy)) + ' ' + B.dirs[dy > 0 ? 'S' : 'N'].t);
+    return a.length ? a.join(' and ') + ' of ' + m.the : 'at ' + m.the;
+  }
+  function beachMap(o) {
+    o = o || {}; var B = D.beach, W = B.cols, H = B.rows, MX = 0.95, MY = 0.5, VW = W + 2 * MX, VH = H + 2 * MY, i, j;
+    var box = el('div', 'fs-bch' + (o.dark ? ' dark' : '')); box.style.paddingTop = (VH / VW * 100).toFixed(2) + '%';
+    box.setAttribute('role', 'group'); box.setAttribute('aria-label', B.alt || 'A map of the beach seen from above. North is up.');
+    function L(x) { return ((x + MX) / VW * 100).toFixed(3) + '%'; } function T(y) { return ((y + MY) / VH * 100).toFixed(3) + '%'; }
+    var dots = ''; for (i = 0; i <= W; i++) for (j = 0; j <= H; j++) dots += '<circle cx="' + i + '" cy="' + j + '" r=".04"/>';
+    var planks = ''; for (i = 0; i < Math.ceil(VH / 0.5); i++) planks += '<line x1="' + W + '" x2="' + (W + MX) + '" y1="' + (-MY + i * 0.5).toFixed(2) + '" y2="' + (-MY + i * 0.5).toFixed(2) + '"/>';
+    var foam = 'M0 ' + (-MY) + ' q.14 .25 0 .5'; for (i = 1; i < Math.ceil(VH / 0.5); i++) foam += ' t0 .5';
+    var py = B.pierY != null ? B.pierY : 3;
+    box.innerHTML = '<svg class="fs-bch-svg" viewBox="' + (-MX) + ' ' + (-MY) + ' ' + VW + ' ' + VH + '" preserveAspectRatio="none" aria-hidden="true">' +
+      '<rect class="fs-bch-sand" x="' + (-MX) + '" y="' + (-MY) + '" width="' + VW + '" height="' + VH + '"/>' +
+      '<rect class="fs-bch-wet" x="-.2" y="' + (-MY) + '" width=".75" height="' + VH + '"/>' +
+      '<rect class="fs-bch-sea" x="' + (-MX) + '" y="' + (-MY) + '" width="' + MX + '" height="' + VH + '"/><path class="fs-bch-foam" d="' + foam + '"/>' +
+      '<rect class="fs-bch-pier" x="' + (-MX) + '" y="' + (py + 0.22) + '" width="' + (MX + 0.2) + '" height=".56"/>' +
+      '<rect class="fs-bch-walk" x="' + W + '" y="' + (-MY) + '" width="' + MX + '" height="' + VH + '"/><g class="fs-bch-planks">' + planks + '</g>' +
+      '<g class="fs-bch-dots">' + dots + '</g><g class="fs-bch-trail"></g><g class="fs-bch-over"></g></svg>' +
+      '<div class="fs-bch-rose" aria-hidden="true"><b>N</b><i class="w">W</i><span>✛</span><i class="e">E</i><i class="s">S</i></div>' +
+      (B.model ? '<small class="fs-bch-model">' + esc(B.model) + '</small>' : '');
+    var api = { box: box, W: W, H: H, cells: [], marks: {} };
+    api.pos = function (e, x, y) { e.style.left = L(x + 0.5); e.style.top = T(y + 0.5); return e; };
+    api.trail = $('.fs-bch-trail', box); api.over = $('.fs-bch-over', box);
+    if (o.cells) for (j = 0; j < H; j++) for (i = 0; i < W; i++) {
+      var c = el('button', 'fs-bch-c'); c.type = 'button'; c.dataset.x = i; c.dataset.y = j; c.style.left = L(i); c.style.top = T(j); c.style.width = (100 / VW).toFixed(3) + '%'; c.style.height = (100 / VH).toFixed(3) + '%';
+      c.setAttribute('aria-label', 'Square ' + (i + 1) + ' across, ' + (j + 1) + ' down'); box.appendChild(c); api.cells.push(c);
+    }
+    api.mark = function (m, cls) {
+      var s = el('span', 'fs-bch-m ' + (cls || ''), '<i>' + m.icon + '</i>' + (m.t ? '<small>' + esc(m.t) + '</small>' : '')); s.dataset.id = m.id || ''; api.pos(s, m.x, m.y); box.appendChild(s); if (m.id) api.marks[m.id] = s; return s;
+    };
+    (B.marks || []).forEach(function (m) { if (!o.show || o.show.indexOf(m.id) > -1) api.mark(m, m.fixed ? 'fixed' : 'loose'); });
+    api.token = function (icon, cls, label) { var t = el('span', 'fs-bch-tok ' + (cls || ''), '<i>' + icon + '</i>'); if (label) t.setAttribute('aria-label', label); box.appendChild(t); return t; };
+    api.svg = function (tag, attrs, host) { var n = document.createElementNS(SVGNS, tag); Object.keys(attrs).forEach(function (k) { n.setAttribute(k, attrs[k]); }); (host || api.trail).appendChild(n); return n; };
+    api.clear = function () { api.trail.innerHTML = ''; };
+    api.cell = function (x, y) { return api.cells[y * W + x]; };
+    function fit() { var w = box.offsetWidth; if (w) box.style.fontSize = Math.max(w / VW * 0.58, Math.min(16, w / VW * 0.74)).toFixed(1) + 'px'; }
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(box); else window.addEventListener('resize', fit); setTimeout(fit, 0);
+    return api;
+  }
+  /* direction cards in a row: tap or drag an arrow card in, set its steps with − and +, press Go. o = {max, maxSteps, preset:[{d, n, lock}], lockAll, goBtn, onGo(cards), onChange} */
+  function progUI(o) {
+    var B = D.beach, w = el('div', 'fs-prg'), cards = [], busy = false;
+    w.innerHTML = '<div class="fs-prg-pal"></div><div class="fs-prg-strip"></div><div class="fs-prg-btns"><button type="button" class="fs-btn fs-prg-go">' + esc(o.goBtn || B.goBtn || '▶ Go') + '</button><button type="button" class="fs-btn alt fs-prg-clr">' + esc(B.clearBtn || '↺ Start over') + '</button></div>';
+    var pal = $('.fs-prg-pal', w), strip = $('.fs-prg-strip', w), go = $('.fs-prg-go', w), clr = $('.fs-prg-clr', w);
+    function reset() { cards = (o.preset || []).map(function (c) { return { d: c.d || null, n: c.n || 1, lock: !!c.lock }; }); paint(); }
+    function add(d, at) {
+      if (busy || o.lockAll) return; var blank = null; cards.forEach(function (c, i) { if (!c.d && blank == null) blank = i; });
+      if (at != null && cards[at] && (!cards[at].lock || !cards[at].d)) cards[at].d = d; else if (blank != null) cards[blank].d = d;
+      else if (cards.length < (o.max || 4)) cards.push({ d: d, n: 1 }); else { if (o.onFull) o.onFull(); return; }
+      SFX.blip(); paint(); if (o.onChange) o.onChange();
+    }
+    ['N', 'E', 'S', 'W'].forEach(function (d) {
+      var c = el('div', 'fs-card fs-prg-d', '<span>' + B.dirs[d].icon + '</span> ' + esc(B.dirs[d].t)); c.dataset.d = d; c.setAttribute('role', 'button'); c.tabIndex = 0; pal.appendChild(c);
+      var dn = null; c.addEventListener('pointerdown', function (e) { dn = [e.clientX, e.clientY]; });
+      c.addEventListener('click', function (e) { if (dn && Math.abs(e.clientX - dn[0]) + Math.abs(e.clientY - dn[1]) > 8 && e.clientX + e.clientY > 0) return; c.classList.remove('sel'); add(d, null); });
+      c.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); add(d, null); } });
+      dragDrop(c, function () { return $$('.fs-prg-c.blank', strip).concat([strip]); }, function (item, hit) { add(d, hit.dataset.i != null ? +hit.dataset.i : null); });
+    });
+    function paint() {
+      pal.style.display = o.lockAll ? 'none' : ''; clr.style.display = o.lockAll ? 'none' : '';
+      strip.innerHTML = cards.length ? cards.map(function (c, i) {
+        var fixed = c.lock || o.lockAll;
+        return '<div class="fs-prg-c' + (c.d ? '' : ' blank') + '" data-i="' + i + '"><span class="fs-prg-ar">' + (c.d ? B.dirs[c.d].icon : '?') + '</span><b>' + esc(c.d ? B.dirs[c.d].t : (B.whichWay || 'which way?')) + '</b><div class="fs-prg-n">' +
+          (fixed ? '' : '<button type="button" class="fs-prg-m" data-i="' + i + '" aria-label="One step fewer">−</button>') + '<em>' + esc(stepsWord(c.n)) + '</em>' + (fixed ? '' : '<button type="button" class="fs-prg-p" data-i="' + i + '" aria-label="One step more">+</button>') + '</div>' +
+          (fixed ? '' : '<button type="button" class="fs-prg-x" data-i="' + i + '" aria-label="Take this card out">✕</button>') + '</div>';
+      }).join('<span class="fs-prg-then">' + esc(B.thenWord || 'then') + '</span>') : '<div class="fs-prg-empty">' + esc(B.emptyLine || 'Tap an arrow card to add it here, or drag it in.') + '</div>';
+      $$('.fs-prg-m', strip).forEach(function (b) { b.addEventListener('click', function () { var c = cards[+b.dataset.i]; if (busy || c.n <= 1) return; c.n--; SFX.blip(); paint(); }); });
+      $$('.fs-prg-p', strip).forEach(function (b) { b.addEventListener('click', function () { var c = cards[+b.dataset.i]; if (busy || c.n >= (o.maxSteps || 5)) return; c.n++; SFX.blip(); paint(); }); });
+      $$('.fs-prg-x', strip).forEach(function (b) { b.addEventListener('click', function () { if (busy) return; cards.splice(+b.dataset.i, 1); SFX.blip(); paint(); if (o.onChange) o.onChange(); }); });
+    }
+    go.addEventListener('click', function () { if (busy) return; ac(); o.onGo(cards.map(function (c) { return { d: c.d, n: c.n }; })); });
+    clr.addEventListener('click', function () { if (busy) return; reset(); if (o.onClear) o.onClear(); });
+    reset();
+    return { el: w, busy: function (b) { busy = b; go.disabled = b; w.classList.toggle('busy', b); }, reset: reset, set: function (p, lockAll) { o.preset = p; o.lockAll = !!lockAll; reset(); } };
+  }
+  /* walk a token along the cards, one square at a time, leaving tracks; stops at the map edge or at a blocked square */
+  function runCards(map, tok, start, cards, o, done) {
+    o = o || {}; var p = start.slice(), path = [p.slice()], q = [], ms = reduceMotion ? 0 : (o.stepMs || 250);
+    cards.forEach(function (c) { for (var i = 0; i < c.n; i++) q.push(c.d); });
+    var line = map.svg('polyline', { 'class': 'fs-bch-track' });
+    function draw() { line.setAttribute('points', path.map(function (a) { return (a[0] + 0.5) + ',' + (a[1] + 0.5); }).join(' ')); }
+    function fin(why, d) { done({ end: p, path: path, steps: path.length - 1, stopped: why || null, dir: d || null }); }
+    function step() {
+      if (!q.length) return fin();
+      var d = q.shift(), nx = p[0] + DV25[d][0], ny = p[1] + DV25[d][1];
+      if (nx < 0 || ny < 0 || nx >= map.W || ny >= map.H) return fin('edge', d);
+      if ((o.blocks || []).some(function (b) { return b[0] === nx && b[1] === ny; })) return fin('block', d);
+      p = [nx, ny]; path.push(p.slice()); map.pos(tok, nx, ny); draw(); tone(480 + path.length * 14, 0, 0.05, 'triangle', 0.02);
+      if (ms) setTimeout(step, ms); else step();
+    }
+    map.pos(tok, p[0], p[1]); draw(); if (ms) setTimeout(step, ms); else step();
+  }
+  function cardsText(cards) { var B = D.beach; return cards.map(function (c) { return stepsWord(c.n) + ' ' + B.dirs[c.d].t; }).join(', ' + (B.thenWord || 'then') + ' '); }
+
+  /* ---------- Warm-Up: "Which train moved?" — watch out one window as the next train slides by, vote, then look out the other window at the station
+     sign (something that stays put) to find out; two trips, the second one fools you (25.01) ----------
+     D.trainwin = {afterText, kicker, title, todo[], why, model, tripWord, watchBtn, againBtn, voteQ, votes:[{k:'mine'|'other'|'unsure', t}], lookBtn, nextBtn, sign,
+                   leftLabel, rightLabel, trips:[{mover:'other'|'mine', still, verdict}], unsureLine, rightLine, wrongLine, q, opts, win, clue} */
+  function buildTrainwin() {
+    var Tn = D.trainwin; if (!Tn) return;
+    var at = anchorP(Tn.afterText); if (!at) { FAILED.push('trainwin anchor text not found'); return; }
+    var g = gameShell(Tn.kicker || 'Warm-Up game', Tn.title, Tn.todo, Tn.why); g.dataset.mod = 'trainwin';
+    var st = loadJ('trainwin', { r: 0, v: [], ph: 0 }), stage = el('div', 'fs-trn-stage'), ctl = el('div', 'fs-trn-ctl'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win'), raf = null;
+    var cars = ''; for (var i = 0; i < 9; i++) cars += '<g transform="translate(' + (i * 190) + ' 0)"><rect x="4" y="30" width="182" height="150" rx="14" fill="#E8792E"/><rect x="4" y="128" width="182" height="14" fill="#F7D36B"/><rect x="24" y="52" width="60" height="58" rx="8" fill="#BFE6F2"/><rect x="104" y="52" width="60" height="58" rx="8" fill="#BFE6F2"/><rect x="0" y="92" width="8" height="40" fill="#5B4636"/></g>';
+    stage.innerHTML = '<svg viewBox="0 0 560 250" class="fs-trn-svg" role="img" aria-label="' + esc(Tn.alt || 'A model: the view from your seat on a train, through a big window.') + '"><defs><clipPath id="fsTrnClip"><rect x="46" y="28" width="468" height="150" rx="20"/></clipPath></defs>' +
+      '<rect width="560" height="250" rx="16" fill="#3F5E7A"/><rect x="0" y="196" width="560" height="54" fill="#2E4760"/><rect x="36" y="18" width="488" height="170" rx="26" fill="#22364B"/>' +
+      '<g clip-path="url(#fsTrnClip)"><g class="fs-trn-v fs-trn-vo"><rect x="46" y="28" width="468" height="150" fill="#1C2733"/><g class="fs-trn-other" transform="translate(-40 0)">' + cars + '</g></g>' +
+      '<g class="fs-trn-v fs-trn-vp" style="display:none"><rect x="46" y="28" width="468" height="150" fill="#BFE4F5"/><g class="fs-trn-plat"><rect x="-700" y="140" width="2400" height="40" fill="#C9B79A"/><rect x="-700" y="136" width="2400" height="6" fill="#F3D45B"/>' +
+      '<rect x="236" y="62" width="6" height="78" fill="#5B4636"/><rect x="330" y="62" width="6" height="78" fill="#5B4636"/><rect x="206" y="48" width="160" height="38" rx="6" fill="#0E1C42"/><text x="286" y="73" text-anchor="middle" class="fs-trn-sign">' + esc(Tn.sign || 'PALMETTO BEACH') + '</text>' +
+      '<rect x="120" y="50" width="6" height="90" fill="#444"/><circle cx="123" cy="46" r="10" fill="#FFE08A"/><rect x="408" y="116" width="70" height="8" rx="3" fill="#8A5E36"/><rect x="414" y="124" width="6" height="16" fill="#8A5E36"/><rect x="466" y="124" width="6" height="16" fill="#8A5E36"/></g></g></g>' +
+      '<rect x="36" y="18" width="488" height="170" rx="26" fill="none" stroke="#C9D6DA" stroke-width="6"/><rect x="70" y="204" width="150" height="46" rx="10" fill="#B5533C"/><rect x="340" y="204" width="150" height="46" rx="10" fill="#B5533C"/>' +
+      '<rect x="110" y="208" width="340" height="30" rx="15" fill="#22364B"/><text x="280" y="228" text-anchor="middle" class="fs-trn-lab"></text><text x="548" y="244" text-anchor="end" class="fs-trn-model">' + esc(Tn.model || 'a model') + '</text></svg>';
+    g.appendChild(stage); g.appendChild(ctl); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    var svg = $('svg', stage), other = $('.fs-trn-other', svg), plat = $('.fs-trn-plat', svg), vo = $('.fs-trn-vo', svg), vp = $('.fs-trn-vp', svg), lab = $('.fs-trn-lab', svg);
+    function view(k) { vo.style.display = k === 'o' ? '' : 'none'; vp.style.display = k === 'p' ? '' : 'none'; lab.textContent = k === 'o' ? (Tn.leftLabel || 'Left window') : (Tn.rightLabel || 'Right window'); }
+    function slide(node, from, to, cb) {
+      cancelAnimationFrame(raf); var t0 = null, D1 = reduceMotion ? 1 : 3400; stage.classList.add('run');
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / D1), e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; node.setAttribute('transform', 'translate(' + (from + (to - from) * e).toFixed(1) + ' 0)'); if (p < 1) raf = requestAnimationFrame(f); else { stage.classList.remove('run'); cb && cb(); } })(performance.now());
+      if (!reduceMotion) { noise(0.5, 80, 300, 0.12); }
+    }
+    function trip() { return Tn.trips[Math.min(st.r, Tn.trips.length - 1)]; }
+    function paint() {
+      var done = st.r >= Tn.trips.length, T = trip(), h = '';
+      count.textContent = '🚆 ' + (Tn.tripWord || 'Trip') + ' ' + Math.min(st.r + 1, Tn.trips.length) + ' of ' + Tn.trips.length + (done ? ' ✅' : ''); count.classList.toggle('ok', done);
+      if (done) { ctl.innerHTML = ''; view('p'); plat.setAttribute('transform', 'translate(0 0)'); askOnce(qh, Tn.q, Tn.opts, 'trainwin-q', win, Tn.win, Tn.clue, 'trainwin', miss); return; }
+      if (st.ph === 0) { view('o'); other.setAttribute('transform', 'translate(-40 0)'); h = '<button type="button" class="fs-btn fs-trn-watch">' + esc(Tn.watchBtn || '▶ Watch out the left window') + '</button>'; }
+      else if (st.ph === 1) { view('o'); h = '<div class="fs-sv-q"><div class="fs-in-k">' + esc(Tn.voteQ) + '</div><div class="fs-in-chips">' + Tn.votes.map(function (v) { return '<button type="button" class="fs-in-chip fs-trn-vote" data-k="' + v.k + '">' + esc(v.t) + '</button>'; }).join('') + '</div></div><button type="button" class="fs-btn alt fs-trn-watch">' + esc(Tn.againBtn || '↺ Watch again') + '</button>'; }
+      else if (st.ph === 2) { view('o'); h = '<div class="fs-hs-card"><span class="fs-hs-n">🗳️</span><div>' + esc((Tn.votedLine || 'Your vote: {v}').replace('{v}', voteText(st.v[st.r]))) + '</div></div><button type="button" class="fs-btn fs-trn-look">' + esc(Tn.lookBtn || '👀 Now look out the right window') + '</button>'; }
+      else { view('p'); plat.setAttribute('transform', 'translate(' + (T.mover === 'mine' ? 620 : 0) + ' 0)'); var v = st.v[st.r];
+        h = '<div class="fs-hs-card flash"><span class="fs-hs-n">🪧</span><div><b>' + esc(T.still) + '</b>' + esc(T.verdict) + ' ' + esc(v === 'unsure' ? Tn.unsureLine : v === T.mover ? Tn.rightLine : Tn.wrongLine) + '</div></div><button type="button" class="fs-btn fs-trn-next">' + esc(st.r + 1 < Tn.trips.length ? (Tn.nextBtn || 'Next trip ▸') : (Tn.doneBtn || 'Finish ▸')) + '</button>'; }
+      ctl.innerHTML = h;
+      $$('.fs-trn-watch', ctl).forEach(function (b) { b.addEventListener('click', function () { ac(); b.disabled = true; view('o'); slide(other, -40, -820, function () { if (st.ph === 0) { st.ph = 1; saveJ('trainwin', st); } paint(); }); }); });
+      $$('.fs-trn-vote', ctl).forEach(function (b) { b.addEventListener('click', function () { st.v[st.r] = b.dataset.k; st.ph = 2; saveJ('trainwin', st); SFX.blip(); paint(); }); });
+      $$('.fs-trn-look', ctl).forEach(function (b) { b.addEventListener('click', function () { ac(); b.disabled = true; view('p'); plat.setAttribute('transform', 'translate(0 0)'); var fin = function () { st.ph = 3; saveJ('trainwin', st); SFX.chime(); paint(); };
+        if (T.mover === 'mine') slide(plat, 0, 620, fin); else { stage.classList.add('run'); setTimeout(function () { stage.classList.remove('run'); fin(); }, reduceMotion ? 0 : 1800); } }); });
+      $$('.fs-trn-next', ctl).forEach(function (b) { b.addEventListener('click', function () { st.r++; st.ph = 0; saveJ('trainwin', st); SFX.blip(); paint(); }); });
+    }
+    function voteText(k) { var v = Tn.votes.filter(function (x) { return x.k === k; })[0]; return v ? v.t : ''; }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "Find it from the clue" — read a position clue ("3 steps east of the lifeguard tower") and tap that square on the beach map
+     (or drag the 📍 pin there); the last clue starts from a rowboat that has moved, so it leads to an empty square (25.01) ----------
+     D.findit = {afterText, kicker, title, todo[], why, pin, foundWord, rounds:[{icon, name, clue, at:[x,y], hint, found}], trick:{icon, name, clue, wrong:[x,y], at:[x,y],
+                 ghost:[x,y], boat:'markId', hint, emptyLine, whyBtn, reveal}, q, opts, win, clue} */
+  function buildFindit() {
+    var Fi = D.findit; if (!Fi) return;
+    var at = anchorP(Fi.afterText); if (!at) { FAILED.push('findit anchor text not found'); return; }
+    var g = gameShell(Fi.kicker || 'Part 1 game', Fi.title, Fi.todo, Fi.why); g.dataset.mod = 'findit';
+    var st = loadJ('findit', { n: 0, empty: 0, rev: 0 }), R = Fi.rounds, N = R.length + 1;
+    var clue = el('div', 'fs-fnd-clue'), map = beachMap({ cells: true }), pinRow = el('div', 'fs-fnd-pinrow'), miss = el('div', 'fs-miss'), info = el('div'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    var pin = el('div', 'fs-card fs-fnd-pin', esc(Fi.pin || '📍 Drag me onto a square, or just tap a square')); pinRow.appendChild(pin);
+    g.appendChild(clue); g.appendChild(pinRow); g.appendChild(map.box); g.appendChild(miss); g.appendChild(info); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function show(it, p) { map.mark({ icon: it.icon, t: it.name, x: p[0], y: p[1] }, 'found'); }
+    function reveal(anim) {
+      var Tk = Fi.trick, b = beachMark(Tk.boat);
+      map.mark({ icon: b.icon, t: Tk.ghostLabel || 'yesterday', x: Tk.ghost[0], y: Tk.ghost[1] }, 'ghost');
+      map.svg('line', { x1: Tk.ghost[0] + 0.5, y1: Tk.ghost[1] + 0.5, x2: b.x + 0.5, y2: b.y + 0.5, 'class': 'fs-bch-drag' });
+      show(Tk, Tk.at); info.innerHTML = '<div class="fs-hs-card' + (anim ? ' flash' : '') + '"><span class="fs-hs-n">🔎</span><div>' + esc(Tk.reveal) + '</div></div>';
+    }
+    function paint() {
+      var done = st.n >= N, trick = st.n === R.length, it = trick ? Fi.trick : R[st.n];
+      count.textContent = '📍 ' + Math.min(st.n, N) + ' of ' + N + ' ' + (Fi.foundWord || 'clues tried'); count.classList.toggle('ok', done);
+      clue.innerHTML = done ? '' : '<span class="fs-fnd-ic">' + it.icon + '</span><div><small>' + esc((Fi.clueWord || 'Clue') + ' ' + (st.n + 1) + ' of ' + N) + '</small><b>' + esc(it.clue) + '</b></div>';
+      pinRow.style.display = done ? 'none' : '';
+      if (trick && st.empty && !st.rev) { info.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">🕳️</span><div><b>' + esc(Fi.trick.emptyLine) + '</b><button type="button" class="fs-btn fs-fnd-why">' + esc(Fi.trick.whyBtn || '🔎 Find out why') + '</button></div></div>';
+        $('.fs-fnd-why', info).addEventListener('click', function () { st.rev = 1; st.n = N; saveJ('findit', st); SFX.chime(); reveal(true); paint(); }); }
+      if (done) askOnce(qh, Fi.q, Fi.opts, 'findit-q', win, Fi.win, Fi.clue, 'findit', miss);
+    }
+    function tap(x, y) {
+      if (st.n >= N) return; var trick = st.n === R.length, it = trick ? Fi.trick : R[st.n];
+      if (trick) {
+        if (st.empty) return;
+        if (x === it.wrong[0] && y === it.wrong[1]) { st.empty = 1; saveJ('findit', st); miss.classList.remove('show'); map.mark({ icon: '🕳️', t: '', x: x, y: y }, 'hole'); SFX.thud(); paint(); }
+        else bounce(map.cell(x, y), miss, it.hint);
+        return;
+      }
+      if (x === it.at[0] && y === it.at[1]) { show(it, it.at); st.n++; saveJ('findit', st); miss.classList.remove('show'); SFX.chime(); info.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">✅</span><div>' + esc(it.found) + '</div></div>'; paint(); }
+      else bounce(map.cell(x, y), miss, it.hint);
+    }
+    map.cells.forEach(function (c) { c.addEventListener('click', function () { if ($('.sel', g)) { $('.sel', g).classList.remove('sel'); } tap(+c.dataset.x, +c.dataset.y); }); });
+    dragDrop(pin, function () { return map.cells; }, function (item, hit) { tap(+hit.dataset.x, +hit.dataset.y); });
+    R.forEach(function (it, i) { if (i < st.n) show(it, it.at); });
+    if (st.empty) map.mark({ icon: '🕳️', t: '', x: Fi.trick.wrong[0], y: Fi.trick.wrong[1] }, 'hole'); if (st.rev) reveal(false);
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 2: "Program the helper" — line up direction cards (tap or drag), set the steps, press Go; the delivery cart follows the words exactly
+     and reports where it ended. Level 1 fixes a description with no direction, level 2 is your own, level 3 loops back to the start (25.01) ----------
+     D.helper = {afterText, kicker, title, todo[], why, start:'markId', cart, levelWord, levels:[{id, icon, t, slip, preset, lockAll, max, target:[x,y], mark:{icon, t}, ok,
+                 loop, q, opts}], needDir, reportLine, edgeLine, endLine, missLine, nextBtn, trackWord, win, clue} */
+  function buildHelper() {
+    var Hp = D.helper; if (!Hp) return;
+    var at = anchorP(Hp.afterText); if (!at) { FAILED.push('helper anchor text not found'); return; }
+    var g = gameShell(Hp.kicker || 'Part 2 game', Hp.title, Hp.todo, Hp.why); g.dataset.mod = 'helper';
+    var st = loadJ('helper', { lv: 0, done: {} }), S = beachMark(Hp.start), LV = Hp.levels, cur = null, tmark = null;
+    var slip = el('div', 'fs-hlp-slip'), map = beachMap({ show: Hp.show }), rep = el('div'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), nx = el('div'), win = el('div', 'fs-win');
+    var tok = map.token(Hp.cart || '🛒', 'cart', 'The delivery robot'); if (map.marks[Hp.start]) map.marks[Hp.start].classList.add('home');
+    var ui = progUI({ max: 4, maxSteps: 5, onGo: go, onClear: home, onFull: function () { bounce(ui.el, miss, D.beach.fullLine || 'That is the most cards you can use. Take one out first.'); } });
+    g.appendChild(slip); g.appendChild(map.box); g.appendChild(ui.el); g.appendChild(miss); g.appendChild(rep); g.appendChild(qh); g.appendChild(nx); g.appendChild(count); g.appendChild(win);
+    function home() { map.clear(); map.pos(tok, S.x, S.y); rep.innerHTML = ''; miss.classList.remove('show'); }
+    function load(i) {
+      cur = LV[i]; home(); qh.innerHTML = ''; nx.innerHTML = '';
+      if (tmark) { tmark.remove(); tmark = null; } if (cur.mark && cur.target) tmark = map.mark({ icon: cur.mark.icon, t: cur.mark.t, x: cur.target[0], y: cur.target[1] }, 'target');
+      slip.innerHTML = '<span class="fs-hlp-n">' + esc((Hp.levelWord || 'Delivery') + ' ' + (i + 1) + ' of ' + LV.length) + '</span><div><b>' + cur.icon + ' ' + esc(cur.t) + '</b><p>' + esc(cur.slip) + '</p></div>';
+      ui.set(cur.preset || [], cur.lockAll);
+    }
+    function paintCount() { var n = Object.keys(st.done).length; count.textContent = (Hp.cart || '🛒') + ' ' + n + ' of ' + LV.length + ' ' + (Hp.countWord || 'deliveries done'); count.classList.toggle('ok', n === LV.length); if (n === LV.length) winOnce(win, Hp.win, Hp.clue, 'helper'); }
+    function finish() {
+      st.done[cur.id] = 1; saveJ('helper', st); SFX.chime(); paintCount();
+      if (st.lv < LV.length - 1) { nx.innerHTML = '<button type="button" class="fs-btn fs-hlp-next">' + esc(Hp.nextBtn || 'Next delivery ▸') + '</button>'; $('.fs-hlp-next', nx).addEventListener('click', function () { st.lv++; saveJ('helper', st); SFX.blip(); load(st.lv); }); }
+    }
+    function go(cards) {
+      if (!cards.length || cards.some(function (c) { return !c.d; })) { tok.classList.remove('shrug'); void tok.offsetWidth; tok.classList.add('shrug'); bounce(ui.el, miss, cards.length ? Hp.needDir : (Hp.needCard || D.beach.emptyLine)); return; }
+      home(); ui.busy(true);
+      runCards(map, tok, [S.x, S.y], cards, {}, function (r) {
+        ui.busy(false);
+        var hit = cur.target && r.end[0] === cur.target[0] && r.end[1] === cur.target[1] && !r.stopped, ok = cur.loop ? !r.stopped : hit;
+        var lines = '<b>' + esc(Hp.reportLine || 'The cart followed your words exactly.') + '</b>' + esc((Hp.saidLine || 'You said: {c}.').replace('{c}', cardsText(cards))) + ' ' +
+          (r.stopped ? esc((Hp.edgeLine || 'It stopped at the edge of the map after {n}.').replace('{n}', stepsWord(r.steps))) + ' ' : '') + esc((Hp.endLine || 'It ended {p}.').replace('{p}', relPos(r.end, S))) +
+          (ok ? ' ' + esc(cur.ok || '') : (cur.target ? ' ' + esc((Hp.missLine || '{who} is {p}. Change a card and try again.').replace('{who}', cur.mark.t).replace('{p}', relPos(cur.target, S))) : ''));
+        rep.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">' + (ok ? '✅' : '🧾') + '</span><div>' + lines + (cur.loop ? '<div class="fs-hlp-odo">' + esc((Hp.trackWord || 'Tracks in the sand: {n}').replace('{n}', stepsWord(r.steps))) + '</div>' : '') + '</div></div>';
+        if (!ok) { SFX.thud(); return; }
+        if (cur.q && !st.done[cur.id]) { qh.innerHTML = ''; chipsQ(qh, cur.q, cur.opts, function (o) { if (o.why) qh.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">👣</span><div>' + esc(o.why) + '</div>')); finish(); }, miss); }
+        else if (!st.done[cur.id]) finish();
+      });
+    }
+    load(Math.min(st.lv, LV.length - 1)); paintCount(); placeAfter(g, at);
+  }
+
+  /* ---------- the wow (after the helper): "The Ferris wheel" — vote: a rider gets off right where she got on, did she move? Ride once (her gold car leaves a
+     trail), read the two numbers, then a real long-exposure photo shows the whole path as a ring of light (25.01; not a clue) ----------
+     D.ferris = {after, kicker, title, todo[], why, model, voteQ, votes:[{k:'yes'|'no', t}], rideBtn, againBtn, changeLabel, changeVal, pathLabel, pathVal, yesLine, noLine,
+                 photoBtn, photo:{img, alt, cap}, done} */
+  function buildFerris() {
+    var Fe = D.ferris; if (!Fe) return;
+    var host = $('.fs-game[data-mod="' + (Fe.after || 'helper') + '"]'); if (!host) { FAILED.push('ferris: no anchor game'); return; }
+    var g = gameShell(Fe.kicker || 'Wow!', Fe.title, Fe.todo, Fe.why); g.dataset.mod = 'ferris'; g.classList.add('fs-pdl-wow');
+    var st = loadJ('ferris', { v: null, rode: 0, photo: 0 }), CX = 180, CY = 138, R = 104, LEN = 2 * Math.PI * R, raf = null;
+    var vote = el('div'), stage = el('div', 'fs-fer-stage'), out = el('div'), more = el('div'), win = el('div', 'fs-win'), miss = el('div', 'fs-miss');
+    var spokes = '', carsS = ''; for (var i = 0; i < 8; i++) { var a = i * Math.PI / 4; spokes += '<line x1="' + CX + '" y1="' + CY + '" x2="' + (CX + R * Math.cos(a)).toFixed(1) + '" y2="' + (CY + R * Math.sin(a)).toFixed(1) + '"/>'; carsS += '<g class="fs-fer-car' + (i === 0 ? ' gold' : '') + '"><rect x="-11" y="0" width="22" height="18" rx="5"/><line x1="0" y1="-4" x2="0" y2="0"/></g>'; }
+    stage.innerHTML = '<svg viewBox="0 0 360 300" class="fs-fer-svg" role="img" aria-label="' + esc(Fe.alt || 'A model of a Ferris wheel. One car is gold.') + '"><rect width="360" height="300" rx="14" fill="#101B3A"/>' +
+      [40, 90, 150, 230, 300, 330].map(function (x, k) { return '<circle cx="' + x + '" cy="' + (20 + (k * 37) % 60) + '" r="1.5" fill="#fff" opacity=".7"/>'; }).join('') +
+      '<path d="M' + CX + ' ' + CY + ' L110 272 M' + CX + ' ' + CY + ' L250 272" stroke="#7F8FB5" stroke-width="6" stroke-linecap="round"/><rect x="60" y="270" width="240" height="14" rx="4" fill="#5B4636"/>' +
+      '<rect x="' + (CX - 26) + '" y="262" width="52" height="8" rx="3" fill="#F5B83D"/><circle cx="' + CX + '" cy="' + CY + '" r="' + R + '" fill="none" stroke="#3B4D7E" stroke-width="5"/>' +
+      '<circle class="fs-fer-trail" cx="' + CX + '" cy="' + CY + '" r="' + R + '" fill="none" stroke-dasharray="0 ' + LEN.toFixed(1) + '" transform="rotate(90 ' + CX + ' ' + CY + ')"/>' +
+      '<g class="fs-fer-wheel"><g class="fs-fer-spokes">' + spokes + '</g></g><circle cx="' + CX + '" cy="' + CY + '" r="9" fill="#C9D6DA"/><g class="fs-fer-cars">' + carsS + '</g>' +
+      '<text x="352" y="294" text-anchor="end" class="fs-trn-model">' + esc(Fe.model || 'a model') + '</text></svg>';
+    g.appendChild(vote); g.appendChild(stage); g.appendChild(out); g.appendChild(more); g.appendChild(miss); g.appendChild(win);
+    var svg = $('svg', stage), wheel = $('.fs-fer-wheel', svg), carEls = $$('.fs-fer-car', svg), trail = $('.fs-fer-trail', svg);
+    function pose(t) { /* t = turns so far (0..1); the gold car starts at the bottom */
+      var a0 = Math.PI / 2 + t * 2 * Math.PI; wheel.setAttribute('transform', 'rotate(' + (t * 360).toFixed(1) + ' ' + CX + ' ' + CY + ')');
+      carEls.forEach(function (c, k) { var a = a0 + k * Math.PI / 4; c.setAttribute('transform', 'translate(' + (CX + R * Math.cos(a)).toFixed(1) + ' ' + (CY + R * Math.sin(a)).toFixed(1) + ')'); });
+      trail.setAttribute('stroke-dasharray', (LEN * t).toFixed(1) + ' ' + LEN.toFixed(1));
+    }
+    function paint() {
+      vote.innerHTML = '<div class="fs-sv-q"><p class="fs-fer-q">' + esc(Fe.voteQ) + '</p><div class="fs-in-chips">' + Fe.votes.map(function (v) { return '<button type="button" class="fs-in-chip fs-fer-v' + (st.v === v.k ? ' on' : '') + '" data-k="' + v.k + '">' + esc(v.t) + '</button>'; }).join('') + '</div></div>' +
+        '<div class="fs-mug-go"><button type="button" class="fs-btn fs-fer-ride">' + esc(st.rode ? (Fe.againBtn || '↺ Ride again') : (Fe.rideBtn || '▶ Ride once around')) + '</button></div>';
+      $$('.fs-fer-v', vote).forEach(function (b) { b.addEventListener('click', function () { if (st.rode) return; st.v = b.dataset.k; saveJ('ferris', st); SFX.blip(); miss.classList.remove('show'); paint(); }); });
+      $('.fs-fer-ride', vote).addEventListener('click', function () {
+        if (!st.v) { bounce(this, miss, Fe.needVote || 'Vote first.'); return; } ac(); var b = this; b.disabled = true; cancelAnimationFrame(raf); var t0 = null, D1 = reduceMotion ? 1 : 5200;
+        (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / D1); pose(p); if (p < 1) raf = requestAnimationFrame(f); else { st.rode = 1; saveJ('ferris', st); SFX.chime(); paint(); } })(performance.now());
+      });
+      if (!st.rode) { out.innerHTML = ''; more.innerHTML = ''; return; }
+      pose(1);
+      out.innerHTML = '<div class="fs-fer-nums"><div><small>' + esc(Fe.changeLabel) + '</small><b>' + esc(Fe.changeVal) + '</b></div><div><small>' + esc(Fe.pathLabel) + '</small><b>' + esc(Fe.pathVal) + '</b></div></div>' +
+        '<div class="fs-hs-card flash"><span class="fs-hs-n">🎡</span><div>' + esc(st.v === 'yes' ? Fe.yesLine : Fe.noLine) + '</div></div>';
+      if (!Fe.photo) { winOnce(win, Fe.done, null, 'ferris-wow'); return; }
+      if (!st.photo) { more.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-btn fs-fer-ph">' + esc(Fe.photoBtn || '📷 See a real photo') + '</button></div>'; $('.fs-fer-ph', more).addEventListener('click', function () { st.photo = 1; saveJ('ferris', st); SFX.snap(); paint(); }); return; }
+      more.innerHTML = '<figure class="fs-gls-fig fs-fer-fig"><img src="' + esc(Fe.photo.img) + '" alt="' + esc(Fe.photo.alt || '') + '"><figcaption>' + esc(Fe.photo.cap || '') + '</figcaption></figure>';
+      winOnce(win, Fe.done, null, 'ferris-wow');
+    }
+    pose(0); paint(); host.parentNode.insertBefore(g, host.nextSibling);
+  }
+
+  /* ---------- Part 3 (the old Explore): "Diagram the replay" — watch something move, then build its motion diagram: plant the Start flag and the End flag
+     (tap a square or drag the flag), name the arrow's direction and the path, tap a reference point that stays put; the description writes itself (25.01) ----------
+     D.diagram = {afterText, kicker, title, todo[], why, scenes:[{id, icon, name, the, from:[x,y], to:[x,y], bend, dir:'N|E|S|W', path:'straight'|'curved'}], watchBtn, againBtn,
+                  steps:{start, end, dir, path, ref}, flagStart, flagEnd, missStart, missEnd, missWatch, dirMiss, paths:[{k, t}], pathMiss, refMiss, sentence, sceneWord, q, opts, win, clue} */
+  function buildDiagram() {
+    var Dg = D.diagram; if (!Dg) return;
+    var at = anchorP(Dg.afterText); if (!at) { FAILED.push('diagram anchor text not found'); return; }
+    var g = gameShell(Dg.kicker || 'Part 3 game', Dg.title, Dg.todo, Dg.why); g.dataset.mod = 'diagram';
+    var B = D.beach, st = loadJ('diagram', { s: 0, d: {} }), SC = Dg.scenes, cur = null, raf = null;
+    var tabs = el('div', 'fs-in-chips fs-dgm-tabs'), map = beachMap({ cells: true }), ctl = el('div', 'fs-dgm-ctl'), miss = el('div', 'fs-miss'), out = el('div'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    var tok = map.token('', 'mover'); tok.style.display = 'none';
+    var fS = map.token('🟢', 'flag'), fE = map.token('🔴', 'flag'); fS.style.display = fE.style.display = 'none';
+    var flag = el('div', 'fs-card fs-dgm-flag', '');
+    g.appendChild(tabs); g.appendChild(map.box); g.appendChild(ctl); g.appendChild(miss); g.appendChild(out); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function P(sc) { return st.d[sc.id] || (st.d[sc.id] = { w: 0, ph: 0, ref: null }); }
+    function ctrl(sc) { var mx = (sc.from[0] + sc.to[0]) / 2, my = (sc.from[1] + sc.to[1]) / 2; return [mx, my + (sc.bend || 0)]; }
+    function at2(sc, t) { var c = ctrl(sc), u = 1 - t; return [u * u * sc.from[0] + 2 * u * t * c[0] + t * t * sc.to[0], u * u * sc.from[1] + 2 * u * t * c[1] + t * t * sc.to[1]]; }
+    function arrow(sc, real) {
+      map.clear(); var a = sc.from, b = sc.to, c = real ? ctrl(sc) : [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+      map.svg('path', { d: 'M' + (a[0] + 0.5) + ' ' + (a[1] + 0.5) + ' Q' + (c[0] + 0.5) + ' ' + (c[1] + 0.5) + ' ' + (b[0] + 0.5) + ' ' + (b[1] + 0.5), 'class': 'fs-dgm-arrow' });
+      var ang = Math.atan2(b[1] - c[1], b[0] - c[0]) * 180 / Math.PI;
+      map.svg('path', { d: 'M0 0 L-.42 -.2 L-.42 .2 Z', 'class': 'fs-dgm-head', transform: 'translate(' + (b[0] + 0.5) + ' ' + (b[1] + 0.5) + ') rotate(' + ang.toFixed(1) + ')' });
+    }
+    function replay(sc, cb) {
+      cancelAnimationFrame(raf); map.clear(); tok.style.display = ''; $('i', tok).textContent = sc.icon; var t0 = null, D1 = reduceMotion ? 1 : 2600;
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / D1), q = at2(sc, p); map.pos(tok, q[0], q[1]); if (p < 1) raf = requestAnimationFrame(f); else setTimeout(function () { tok.style.display = 'none'; cb(); }, reduceMotion ? 0 : 700); })(performance.now());
+    }
+    function paintTabs() {
+      tabs.innerHTML = SC.map(function (s, i) { return '<button type="button" class="fs-in-chip fs-dgm-tab' + (i === st.s ? ' on' : '') + (P(s).ph >= 5 ? ' ok' : '') + '" data-i="' + i + '"><span>' + s.icon + '</span>' + esc(s.name) + '</button>'; }).join('');
+      $$('.fs-dgm-tab', tabs).forEach(function (b) { b.addEventListener('click', function () { st.s = +b.dataset.i; saveJ('diagram', st); SFX.blip(); miss.classList.remove('show'); paint(); }); });
+      var n = SC.filter(function (s) { return P(s).ph >= 5; }).length; count.textContent = '🗺️ ' + n + ' of ' + SC.length + ' ' + (Dg.sceneWord || 'motion diagrams built'); count.classList.toggle('ok', n === SC.length);
+      if (n === SC.length) askOnce(qh, Dg.q, Dg.opts, 'diagram-q', win, Dg.win, Dg.clue, 'diagram', miss);
+    }
+    function chips(lbl, list, cls) { return '<div class="fs-sv-q"><div class="fs-in-k">' + esc(lbl) + '</div><div class="fs-in-chips">' + list.map(function (o) { return '<button type="button" class="fs-in-chip ' + cls + '" data-k="' + o.k + '">' + (o.icon ? '<span>' + o.icon + '</span>' : '') + esc(o.t) + '</button>'; }).join('') + '</div></div>'; }
+    function paint() {
+      cur = SC[st.s]; var p = P(cur), S = Dg.steps; cancelAnimationFrame(raf); tok.style.display = 'none'; map.clear(); out.innerHTML = '';
+      fS.style.display = p.ph >= 1 ? '' : 'none'; fE.style.display = p.ph >= 2 ? '' : 'none'; map.pos(fS, cur.from[0], cur.from[1]); map.pos(fE, cur.to[0], cur.to[1]);
+      map.box.classList.toggle('pick-ref', p.ph === 4); map.box.classList.toggle('pick-cell', p.ph < 2 && !!p.w);
+      Object.keys(map.marks).forEach(function (k) { map.marks[k].classList.toggle('ref', p.ph >= 5 && p.ref === k); });
+      if (p.ph >= 2) arrow(cur, p.ph >= 4);
+      var h = '<button type="button" class="fs-btn' + (p.w ? ' alt' : '') + ' fs-dgm-watch">' + esc(p.w ? (Dg.againBtn || '↺ Watch the replay again') : (Dg.watchBtn || '▶ Watch the replay')) + '</button>';
+      if (p.w && p.ph < 2) { flag.innerHTML = esc(p.ph === 0 ? Dg.flagStart : Dg.flagEnd); h += '<div class="fs-lu-lab">' + esc(p.ph === 0 ? S.start : S.end) + '</div><div class="fs-dgm-flagrow"></div>'; }
+      if (p.ph === 2) h += chips(S.dir, ['N', 'E', 'S', 'W'].map(function (d) { return { k: d, icon: B.dirs[d].icon, t: B.dirs[d].t }; }), 'fs-dgm-dir');
+      if (p.ph === 3) h += chips(S.path, Dg.paths, 'fs-dgm-path');
+      if (p.ph === 4) h += '<div class="fs-lu-lab">' + esc(S.ref) + '</div>';
+      ctl.innerHTML = h; var fr = $('.fs-dgm-flagrow', ctl); if (fr) fr.appendChild(flag);
+      $('.fs-dgm-watch', ctl).addEventListener('click', function () { ac(); var b = this; b.disabled = true; fS.style.display = fE.style.display = 'none'; replay(cur, function () { p.w = 1; saveJ('diagram', st); paint(); }); });
+      $$('.fs-dgm-dir', ctl).forEach(function (b) { b.addEventListener('click', function () { if (b.dataset.k !== cur.dir) { bounce(b, miss, Dg.dirMiss); return; } p.ph = 3; saveJ('diagram', st); SFX.chime(); miss.classList.remove('show'); paint(); }); });
+      $$('.fs-dgm-path', ctl).forEach(function (b) { b.addEventListener('click', function () { if (b.dataset.k !== cur.path) { bounce(b, miss, Dg.pathMiss); return; } p.ph = 4; saveJ('diagram', st); SFX.chime(); miss.classList.remove('show'); paint(); }); });
+      if (p.ph >= 5) { var m = beachMark(p.ref), pt = Dg.paths.filter(function (x) { return x.k === cur.path; })[0];
+        out.innerHTML = '<div class="fs-dgm-sent"><small>' + esc(Dg.sentLabel || 'Your motion description') + '</small><p>' + esc(Dg.sentence.replace('{the}', cur.the).replace('{start}', relPos(cur.from, m)).replace('{dir}', B.dirs[cur.dir].t).replace('{path}', pt.word || pt.t).replace('{end}', relPos(cur.to, m))) + '</p></div>'; }
+      paintTabs();
+    }
+    function tap(x, y) {
+      var p = P(cur); if (p.ph >= 2) return; if (!p.w) { bounce(map.cell(x, y), miss, Dg.missWatch); return; }
+      var want = p.ph === 0 ? cur.from : cur.to;
+      if (x !== want[0] || y !== want[1]) { bounce(map.cell(x, y), miss, p.ph === 0 ? Dg.missStart : Dg.missEnd); return; }
+      p.ph++; saveJ('diagram', st); SFX.chime(); miss.classList.remove('show'); paint();
+    }
+    map.cells.forEach(function (c) { c.addEventListener('click', function () { var s = $('.sel', g); if (s) s.classList.remove('sel'); tap(+c.dataset.x, +c.dataset.y); }); });
+    dragDrop(flag, function () { return map.cells; }, function (item, hit) { tap(+hit.dataset.x, +hit.dataset.y); });
+    Object.keys(map.marks).forEach(function (k) { var e = map.marks[k]; e.setAttribute('role', 'button'); e.tabIndex = 0;
+      function pick() { var p = P(cur); if (p.ph !== 4) return; var m = beachMark(k); if (!m.fixed) { bounce(e, miss, (Dg.refMiss || '{The} can move. Pick something that stays put.').replace('{The}', m.the.charAt(0).toUpperCase() + m.the.slice(1))); return; } p.ref = k; p.ph = 5; saveJ('diagram', st); SFX.sparkle(); miss.classList.remove('show'); paint(); }
+      e.addEventListener('click', pick); e.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); pick(); } }); });
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- after the solve: "Rewrite the directions" — pick a reference point that will still be there next year, line up the direction cards from it to
+     Teo's ✕, send the cart; it digs up the capsule; FOUND stamp and the new directions card (25.01) ----------
+     D.redirect = {after, kicker, title, todo[], why, lockLine, x:[x,y], xMark:{icon, t}, startQ, starts:[{k:'markId', t, ok, miss}], cardsLab, goBtn, missLine, edgeLine, found,
+                   inside[], insideHead, stamp, cardHead, cardTpl, cardEnd, win} */
+  function buildRedirect() {
+    var Rd = D.redirect; if (!Rd) return;
+    var g = gameShell(Rd.kicker || 'Case closed', Rd.title, Rd.todo, Rd.why); g.dataset.mod = 'redirect';
+    var st = loadJ('redirect', { ref: null, done: 0, cards: null });
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(Rd.lockLine || 'Crack the case first.') + '</span>'), body = el('div'), win = el('div', 'fs-win'), miss = el('div', 'fs-miss');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(miss); g.appendChild(win);
+    var host = $(Rd.after || '.fs-solve'); if (!host) { FAILED.push('redirect: no anchor'); return; }
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    function build() {
+      var qh = el('div'), map = beachMap({}), lab = el('div', 'fs-lu-lab', esc(Rd.cardsLab || '2. Line up the cards from there to the ✕')), out = el('div'), tok = map.token(Rd.cart || '🛒', 'cart'), S = null;
+      map.mark({ icon: Rd.xMark.icon, t: Rd.xMark.t, x: Rd.x[0], y: Rd.x[1] }, 'target xmark');
+      var ui = progUI({ max: 4, maxSteps: 5, goBtn: Rd.goBtn, onGo: go, onClear: function () { map.clear(); if (S) map.pos(tok, S.x, S.y); out.innerHTML = ''; } });
+      body.appendChild(qh); body.appendChild(lab); body.appendChild(map.box); body.appendChild(ui.el); body.appendChild(out);
+      function startAt(k) { S = beachMark(k); Object.keys(map.marks).forEach(function (m) { map.marks[m].classList.toggle('home', m === k); }); map.clear(); map.pos(tok, S.x, S.y); tok.style.display = ''; lab.style.display = ui.el.style.display = ''; Object.keys(map.marks).forEach(function (m) { map.marks[m].classList.toggle('ref', m === k); }); }
+      function finish(cards, anim) {
+        st.done = 1; st.cards = cards; saveJ('redirect', st);
+        out.innerHTML = '<div class="fs-rdx-open' + (anim ? ' flash' : '') + '"><div class="fs-rdx-tin"><span>🥫</span><em class="fs-mug-stamp fs-rdx-stamp">' + esc(Rd.stamp || 'FOUND') + '</em></div><div><b>' + esc(Rd.found) + '</b><small>' + esc(Rd.insideHead || 'Inside:') + '</small><ul>' + Rd.inside.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div></div>' +
+          '<div class="fs-tmap-dir fs-rdx-card"><b>' + esc(Rd.cardHead) + '</b><ol><li>' + esc((Rd.cardStart || 'Start at {the}.').replace('{the}', S.the)) + '</li>' + cards.map(function (c) { return '<li>' + esc((Rd.cardTpl || 'Walk {n} {d}.').replace('{n}', stepsWord(c.n)).replace('{d}', D.beach.dirs[c.d].t)) + '</li>'; }).join('') + '<li>' + esc(Rd.cardEnd || 'Dig!') + '</li></ol></div>';
+        winOnce(win, Rd.win, null, 'redirect');
+      }
+      function go(cards) {
+        if (!S) { bounce(ui.el, miss, Rd.needStart || Rd.startQ); return; }
+        if (!cards.length || cards.some(function (c) { return !c.d; })) { bounce(ui.el, miss, D.beach.emptyLine); return; }
+        map.clear(); out.innerHTML = ''; ui.busy(true);
+        runCards(map, tok, [S.x, S.y], cards, {}, function (r) {
+          ui.busy(false);
+          if (!r.stopped && r.end[0] === Rd.x[0] && r.end[1] === Rd.x[1]) { miss.classList.remove('show'); SFX.stamp(); finish(cards, true); }
+          else bounce(ui.el, miss, (r.stopped ? Rd.edgeLine : Rd.missLine).replace('{p}', relPos(r.end, S)).replace('{x}', relPos(Rd.x, S)));
+        });
+      }
+      tok.style.display = 'none'; lab.style.display = ui.el.style.display = 'none';
+      chipsQ(qh, Rd.startQ, Rd.starts, function (o) { st.ref = o.k; saveJ('redirect', st); startAt(o.k); }, miss);
+      if (st.ref) { var okI = -1; Rd.starts.forEach(function (o, i) { if (o.ok) okI = i; }); var c = $$('.fs-in-chip', qh)[okI]; if (c) c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; startAt(st.ref); }
+      if (st.done && st.cards) { map.pos(tok, Rd.x[0], Rd.x[1]); finish(st.cards, false); }
+    }
+    var built = false;
+    function paint() { var s = !!store('solved'); g.classList.toggle('locked', !s); lock.style.display = s ? 'none' : ''; body.style.display = s ? '' : 'none'; if (!s) return; if (!built) { built = true; build(); } }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
+  }
+
+  /* ---------- bonus (fold it): "Night Delivery" — three harder routes on the dark beach, with sandcastles in the way; fewer cards = more stars (25.01) ----------
+     D.nightrun = {after, kicker, title, todo[], why, lockLine, start:'markId', levelWord, levels:[{id, t, slip, target:[x,y], mark:{icon, t}, blocks:[[x,y]], par, home}], blockIcon,
+                   blockLine, edgeLine, missLine, homeLine, okLine, starsWord, nextBtn, win} */
+  function buildNightrun() {
+    var Nr = D.nightrun; if (!Nr) return;
+    var g = gameShell(Nr.kicker || 'Bonus', Nr.title, Nr.todo, Nr.why); g.dataset.mod = 'nightrun';
+    var st = loadJ('nightrun', { lv: 0, best: {} });
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(Nr.lockLine || 'Crack the case first.') + '</span>'), body = el('div'), win = el('div', 'fs-win'), miss = el('div', 'fs-miss');
+    g.appendChild(lock); g.appendChild(body); g.appendChild(miss); g.appendChild(win);
+    var host = $(Nr.after || '.fs-solve'); if (!host) { FAILED.push('nightrun: no anchor'); return; }
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    function build() {
+      var S = beachMark(Nr.start), LV = Nr.levels, tabs = el('div', 'fs-in-chips fs-dgm-tabs'), slip = el('div', 'fs-hlp-slip'), map = beachMap({ dark: true, show: [Nr.start] }), out = el('div'), tok = map.token(Nr.cart || '🛒', 'cart'), extra = []; if (map.marks[Nr.start]) map.marks[Nr.start].classList.add('home');
+      var ui = progUI({ max: 6, maxSteps: 5, onGo: go, onClear: function () { map.clear(); map.pos(tok, S.x, S.y); out.innerHTML = ''; }, onFull: function () { bounce(ui.el, miss, D.beach.fullLine || 'That is the most cards you can use.'); } });
+      body.appendChild(tabs); body.appendChild(slip); body.appendChild(map.box); body.appendChild(ui.el); body.appendChild(out);
+      function stars(n) { return '⭐⭐⭐'.slice(0, n) + '☆☆☆'.slice(0, 3 - n); }
+      function load(i) {
+        st.lv = i; saveJ('nightrun', st); var L = LV[i]; extra.forEach(function (e) { e.remove(); }); extra = []; map.clear(); out.innerHTML = ''; miss.classList.remove('show'); map.pos(tok, S.x, S.y);
+        extra.push(map.mark({ icon: L.mark.icon, t: L.mark.t, x: L.target[0], y: L.target[1] }, 'target'));
+        (L.blocks || []).forEach(function (b) { extra.push(map.mark({ icon: Nr.blockIcon || '🏰', t: '', x: b[0], y: b[1] }, 'block')); });
+        slip.innerHTML = '<span class="fs-hlp-n">' + esc((Nr.levelWord || 'Route') + ' ' + (i + 1) + ' of ' + LV.length) + '</span><div><b>' + esc(L.t) + '</b><p>' + esc(L.slip) + '</p></div>'; ui.set([], false);
+        paintTabs();
+      }
+      function paintTabs() {
+        tabs.innerHTML = LV.map(function (l, k) { return '<button type="button" class="fs-in-chip fs-dgm-tab' + (k === st.lv ? ' on' : '') + '" data-i="' + k + '">' + esc((Nr.levelWord || 'Route') + ' ' + (k + 1)) + ' <small>' + stars(st.best[l.id] || 0) + '</small></button>'; }).join('');
+        $$('.fs-dgm-tab', tabs).forEach(function (b) { b.addEventListener('click', function () { SFX.blip(); load(+b.dataset.i); }); });
+        if (LV.every(function (l) { return st.best[l.id]; })) winOnce(win, Nr.win, null, 'nightrun');
+      }
+      function go(cards) {
+        var L = LV[st.lv]; if (!cards.length) { bounce(ui.el, miss, D.beach.emptyLine); return; }
+        map.clear(); out.innerHTML = ''; ui.busy(true);
+        runCards(map, tok, [S.x, S.y], cards, { blocks: L.blocks }, function (r) {
+          ui.busy(false);
+          var visited = r.path.some(function (p) { return p[0] === L.target[0] && p[1] === L.target[1]; }), home = r.end[0] === S.x && r.end[1] === S.y;
+          var ok = !r.stopped && (L.home ? (visited && home) : (r.end[0] === L.target[0] && r.end[1] === L.target[1]));
+          if (!ok) { bounce(ui.el, miss, r.stopped === 'block' ? Nr.blockLine : r.stopped === 'edge' ? Nr.edgeLine : (L.home && visited ? Nr.homeLine : Nr.missLine).replace('{p}', relPos(r.end, S))); return; }
+          var n = cards.length <= L.par ? 3 : cards.length === L.par + 1 ? 2 : 1; if (n > (st.best[L.id] || 0)) st.best[L.id] = n; saveJ('nightrun', st); miss.classList.remove('show'); SFX.sparkle();
+          out.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">🌙</span><div><b>' + stars(n) + '</b>' + esc((Nr.okLine || 'Delivered with {n} cards, {s} of tracks.').replace('{n}', cards.length).replace('{s}', stepsWord(r.steps))) + (n < 3 ? ' ' + esc(Nr.fewerLine || '') : '') +
+            (st.lv < LV.length - 1 ? '<br><button type="button" class="fs-btn fs-hlp-next">' + esc(Nr.nextBtn || 'Next route ▸') + '</button>' : '') + '</div></div>';
+          var nb = $('.fs-hlp-next', out); if (nb) nb.addEventListener('click', function () { load(st.lv + 1); });
+          paintTabs();
+        });
+      }
+      load(Math.min(st.lv, LV.length - 1));
+    }
+    var built = false;
+    function paint() { var s = !!store('solved'); g.classList.toggle('locked', !s); lock.style.display = s ? 'none' : ''; body.style.display = s ? '' : 'none'; if (!s) return; if (!built) { built = true; build(); } }
+    document.addEventListener('fs:solved', function () { setTimeout(paint, 0); }); paint();
+  }
+
+  /* ---------- Tool of the Week: a compass (25.01). Turn left or right (buttons or the ← → keys) to face each landmark; the compass card keeps pointing north, so the
+     letter under the red mark is the way you face; log all four, then a question. A model, with a real photo.
+     T.compass = {kicker, title, todo[], photo:{img, alt, cap}, model, leftBtn, rightBtn, aheadLabel, nothing, faceQ, readQ, readMiss, logLabel, whatWord, dirWord,
+                  marks:[{id, icon, t, the, deg}], q:{q, opts:[{t, ok, why}]}} ---------- */
+  SIMS.compass = function (host, T) {
+    var M = T.compass, st = loadJ('compass', { got: {} }), deg = 45, B = D.beach, L8 = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+    var ticks = ''; for (var i = 0; i < 16; i++) ticks += '<line x1="120" y1="' + (i % 2 ? 30 : 26) + '" x2="120" y2="' + (i % 4 === 0 ? 40 : 36) + '" transform="rotate(' + (i * 22.5) + ' 120 120)"/>';
+    var letters = L8.map(function (l, k) { return '<text x="120" y="' + (l.length === 1 ? 62 : 58) + '" text-anchor="middle" class="' + (l.length === 1 ? 'big' : 'sm') + (l === 'N' ? ' n' : '') + '" transform="rotate(' + (k * 45) + ' 120 120)">' + l + '</text>'; }).join('');
+    host.innerHTML = '<div class="fs-game-k">' + esc(M.kicker || 'Try it: a compass') + '</div><div class="fs-game-t">' + esc(M.title) + '</div><ul class="fs-todo">' + M.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      (M.photo ? '<figure class="fs-irt-real"><img alt="' + esc(M.photo.alt) + '" src="' + esc(M.photo.img) + '"><figcaption>' + esc(M.photo.cap || '') + '</figcaption></figure>' : '') +
+      '<div class="fs-cmp-wrap" tabindex="0"><div class="fs-cmp-view"><small>' + esc(M.aheadLabel || 'Straight ahead of you') + '</small><span class="fs-cmp-ic"></span><b class="fs-cmp-name"></b></div>' +
+      '<svg viewBox="0 0 240 240" class="fs-cmp-svg" role="img" aria-label="' + esc(M.alt || 'A model of a compass.') + '"><circle cx="120" cy="120" r="112" fill="#22302A"/><circle cx="120" cy="120" r="100" fill="#F7F3E6"/>' +
+      '<g class="fs-cmp-card"><g class="fs-cmp-ticks">' + ticks + '</g>' + letters + '<path d="M120 76 L130 120 L110 120 Z" fill="#D9534F"/><path d="M120 164 L130 120 L110 120 Z" fill="#9AA5AA"/><circle cx="120" cy="120" r="6" fill="#22302A"/></g>' +
+      '<path d="M120 4 L132 26 L108 26 Z" fill="#D9534F" stroke="#fff" stroke-width="2"/><text x="232" y="234" text-anchor="end" class="fs-cmp-model">' + esc(M.model || 'a model') + '</text></svg></div>' +
+      '<div class="fs-prg-btns fs-cmp-btns"><button type="button" class="fs-btn fs-cmp-l">' + esc(M.leftBtn || '⟲ Turn left') + '</button><button type="button" class="fs-btn fs-cmp-r">' + esc(M.rightBtn || 'Turn right ⟳') + '</button></div>' +
+      '<div class="fs-cmp-ask"></div><div class="fs-miss fs-cmp-miss"></div><div class="fs-vlv-tab fs-cmp-log"></div><div class="fs-sv-q fs-cmp-q"></div><div class="fs-win fs-cmp-win"></div>';
+    var card = $('.fs-cmp-card', host), ask = $('.fs-cmp-ask', host), miss = $('.fs-cmp-miss', host), wrap = $('.fs-cmp-wrap', host), shown = deg;
+    function ahead() { return M.marks.filter(function (m) { return m.deg === ((deg % 360) + 360) % 360; })[0]; }
+    function log() {
+      var n = Object.keys(st.got).length;
+      $('.fs-cmp-log', host).innerHTML = n ? '<div class="fs-in-k">' + esc(M.logLabel || 'My compass log') + ' (' + n + ' of ' + M.marks.length + ')</div><table><tr><th>' + esc(M.whatWord || 'I faced') + '</th><th>' + esc(M.dirWord || 'Direction') + '</th></tr>' + M.marks.filter(function (m) { return st.got[m.id]; }).map(function (m) { return '<tr><td>' + m.icon + ' ' + esc(m.t) + '</td><td><b>' + esc(B.dirs[L8[m.deg / 45]].t) + '</b></td></tr>'; }).join('') + '</table>' : '';
+      if (n === M.marks.length) { var qh = $('.fs-cmp-q', host), win = $('.fs-cmp-win', host); if (!qh.dataset.on) { qh.dataset.on = '1'; chipsQ(qh, M.q.q, M.q.opts, function (o) { store('compass-q', '1'); win.innerHTML = esc(o.why || T.done || ''); win.classList.add('show'); SFX.win(); }, miss); if (store('compass-q')) { var okO = M.q.opts.filter(function (o) { return o.ok; })[0]; win.innerHTML = esc(okO.why || T.done || ''); win.classList.add('show'); } } }
+    }
+    function paint() {
+      card.style.transform = 'rotate(' + (-shown) + 'deg)'; var a = ahead();
+      $('.fs-cmp-ic', host).textContent = a ? a.icon : (M.nothingIcon || '🏖'); $('.fs-cmp-name', host).textContent = a ? a.t : (M.nothing || 'Just sand and sky. Keep turning.');
+      if (a && !st.got[a.id]) { ask.innerHTML = ''; chipsQ(ask, (M.readQ || 'You are facing {the}. Which letter is under the red mark?').replace('{the}', a.the), ['N', 'E', 'S', 'W'].map(function (d) { return { t: d + ' · ' + B.dirs[d].t, ok: d === L8[a.deg / 45], miss: M.readMiss }; }), function () { st.got[a.id] = 1; saveJ('compass', st); log(); }, miss); }
+      else ask.innerHTML = a ? '<div class="fs-hs-card"><span class="fs-hs-n">✅</span><div>' + esc((M.gotLine || 'Logged: {the} is to the {d}.').replace('{the}', a.the).replace('{d}', B.dirs[L8[a.deg / 45]].t)) + '</div></div>' : '';
+    }
+    function turn(d) { ac(); deg += d * 45; shown += d * 45; miss.classList.remove('show'); tone(d > 0 ? 660 : 560, 0, 0.05, 'triangle', 0.03); paint(); }
+    $('.fs-cmp-l', host).addEventListener('click', function () { turn(-1); }); $('.fs-cmp-r', host).addEventListener('click', function () { turn(1); });
+    wrap.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') { e.preventDefault(); turn(-1); } else if (e.key === 'ArrowRight') { e.preventDefault(); turn(1); } });
+    paint(); log();
+  };
+
   /* =================== 24.01: The Cold Cocoa Cart (menu, handlemap, heatdots, rodrace, cuprace, iceblocks, mugdesign, snowcoat, SIMS.irtherm) =================== */
   /* ---------- case: a chalkboard menu + customer order slips (24.01). case.menu = {name, sub, items:[{t, p}], note, slipsHead, slips:[{n, t, who, time}]} ---------- */
   function menuBoard(M) {
@@ -11443,6 +11931,13 @@
     guard('binder', buildBinder);
     guard('pedal', buildPedal);
     guard('glowwake', buildGlowwake);
+    guard('trainwin', buildTrainwin);
+    guard('findit', buildFindit);
+    guard('helper', buildHelper);
+    guard('ferris', buildFerris);
+    guard('diagram', buildDiagram);
+    guard('redirect', buildRedirect);
+    guard('nightrun', buildNightrun);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

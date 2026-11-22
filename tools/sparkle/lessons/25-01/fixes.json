@@ -1,0 +1,321 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; the plan puts Module 25 in “Energy, Motion, and Waves”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Waves</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "motion is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS code; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.P.12.1 · TEKS 4.7(A), 4.7(B)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.12.1</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "ticked: gravity and friction are not in the plan row, so the header no longer names them",
+  "old": "<div class=\"info-detail\">NGSS 4-PS3-1 · Gravity & Friction</div>",
+  "new": "<div class=\"info-detail\">NGSS 4-PS3-1 (support)</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Which Train Moved?</div>\n        <div class=\"act-subtitle\">You can’t always tell by looking</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the train window",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>You are sitting on a train at Palmetto Beach station. Another train sits right outside your window. Then something starts to move. But which train is it? Watch and vote.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → three things you can see right now (on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Now look around you. What is moving, and what is staying in one place?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for a motion diagram",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; My Motion Diagram"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task (now the lesson’s own motion diagram, drawn on the page, + its one-sentence description)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Watch something move at home: a toy car, a pet or a rolling ball. Pick a reference point that stays put. Then draw your motion diagram and describe it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: something to watch for Part C",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🚗</span>Something that moves: a toy car, a ball or a pet</span>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "wrong fact (ticked): a swing goes back and forth along a curve, it is not a circular path. No dashes; examples trimmed",
+  "old": "<li><strong>Curved path:</strong> a Frisbee turning in the wind, a runner rounding a corner.</li>\n        <li><strong>Circular path:</strong> a swing going back and forth, Earth orbiting the Sun.</li>\n        <li><strong>Up-and-down:</strong> a basketball dribbled in place.</li>",
+  "new": "<li><strong>Curved path:</strong> a Frisbee turning in the wind.</li>\n        <li><strong>Circular path:</strong> a Ferris wheel car, or Earth going around the Sun.</li>"
+ },
+ {
+  "kind": "fix",
+  "why": "Word Wall (ticked): “Device” is an energy-lesson leftover this lesson never uses; “Reference point” is the key term and had no card",
+  "old": "<div class=\"fc-emoji\">⚙️</div><div class=\"fc-word\">Device</div><div class=\"fc-tap\">tap to flip</div></div><div class=\"flip-card-back\"><div class=\"fc-word-back\">Device</div><div class=\"fc-def\">A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.</div>",
+  "new": "<div class=\"fc-emoji\">📌</div><div class=\"fc-word\">Reference point</div><div class=\"fc-tap\">tap to flip</div></div><div class=\"flip-card-back\"><div class=\"fc-word-back\">Reference point</div><div class=\"fc-def\">Something that stays put, which you compare to. A lamp post, a tree or a doorway makes a good reference point.</div>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words; no dash",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll describe how something moved so clearly that someone else could draw it.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dash; one idea per sentence; the true Florida line (sailors use things on land that stay put) kept as one sentence; leads into the game",
+  "old": " is where something IS — but only compared to something else. You might say \"the toy car is 3 feet from the door\" or \"the soccer ball is 2 steps to the left of the tree.\" That something-else you compare to is the ",
+  "new": " is where something IS, compared to something else. You might say \"the toy car is 3 feet from the door.\" The thing you compare to is the "
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: “relative to” is a hard phrase; same meaning. The Florida line and the lead-in to the game sit here",
+  "old": " relative to that reference point. If its position has changed, it's in ",
+  "new": " compared to that reference point. If its position has changed, it's in "
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: the Florida connection (true) as one sentence, then the lead-in to Find it from the clue",
+  "old": "Changing position over time.</span></span>.</p>",
+  "new": "Changing position over time.</span></span>.</p>\n\n      <p><strong>In Florida:</strong> sailors and surfers pick things on land that stay put, like a lighthouse or a pier, as their reference points. Try it on the beach: find each lost thing from its position clue.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: no dash; plain words",
+  "old": "Motion has two big pieces: how MUCH something moves, and in what ",
+  "new": "To describe motion, say how FAR something moved and in what "
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: no dash; plain words",
+  "old": ". Saying \"the toy car moved 5 feet\" isn't complete — you have to add \"to the right\" or \"toward the wall\" to fully describe it.</p>",
+  "new": ". \"The toy car moved 5 feet\" isn't enough. You have to add which way: \"to the right\" or \"toward the wall.\"</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: shorter; no dash; leads into Program the helper",
+  "old": "<p>A clear description names ALL of it: the object, the starting position, the ending position, the direction, and the path. \"The toy car started at the tree, moved 3 feet in a straight path to the right, and ended at the fence\" — anyone reading that could draw it.</p>",
+  "new": "<p>A clear description names ALL of it: where it started, which way it went, its path and where it ended. Sam’s delivery robot, Scoot, will test your descriptions. Scoot does exactly what your words say.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "plain words: “misconception” is a hard word; no dashes; same idea",
+  "old": "<p><strong>Common misconception:</strong> Some people think motion is something an object \"has.\" Motion is actually a COMPARISON — it only exists relative to a reference point. The same object can be at rest AND in motion at the same time, just compared to different things.</p>",
+  "new": "<p><strong>Watch out:</strong> some people think an object is either moving or not, and that’s that. But motion is a COMPARISON. On the train, you were at rest compared to your seat and in motion compared to the station sign, both at once.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 named the removed tap diagram; the same task now points at the two replays in Part 3 (same question, same kind of answer)",
+  "old": "Pick ONE scene from the diagram (runner, swing, toy car ramp, or bird). Name the REFERENCE POINT, DIRECTION, and PATH.",
+  "new": "Think about the crab that walked along the sand or the seagull that glided over the beach. Pick ONE. Name a REFERENCE POINT you could use, its DIRECTION, and its PATH."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE scene from the diagram (runner, swing, to...\"",
+  "new": "data-label=\"The crab or the seagull: reference point, direction, path\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"A pencil sits still on your desk while the school ...\"",
+  "new": "data-label=\"The pencil on your desk: in motion or at rest?\""
+ },
+ {
+  "kind": "plain",
+  "why": "no dash in question 6 (same question)",
+  "old": "Is the pencil in MOTION or AT REST? Explain — and name your reference point.",
+  "new": "Is the pencil in MOTION or AT REST? Explain, and name your reference point."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash in the classmate’s claim (same claim)",
+  "old": "You can describe motion without a reference point — just say how far it moved.",
+  "new": "You can describe motion without a reference point. Just say how far it moved."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash in the Lesson subtitle",
+  "old": "<div class=\"act-subtitle\">Position, direction, and a reference point</div>",
+  "new": "<div class=\"act-subtitle\">Position, direction and a reference point</div>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dashes; plain words (same meaning; the teaser for 25.02 is right)",
+  "old": " — clear enough for someone else to draw what you saw. Next lesson, we add SPEED — using distance and time to measure how fast.</p>",
+  "new": ". Your description is clear enough for someone else to draw what you saw. Next lesson, we add SPEED: using distance and time to measure how fast.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "figure caption: no change in meaning; names the flaw-free reading order",
+  "old": "<strong>A good motion diagram answers four questions:</strong> Where did it start? Where did it end? Which way did it go? What was the path?",
+  "new": "<strong>A good motion diagram answers four questions:</strong> Where did it start? Where did it end? Which way did it go? What was its path?"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the train window is the same idea, played)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "removed: Key Concept, the gravity and friction box (ticked: not in the plan row), the Stop & Reason about “the three devices above” (a 22.01 leftover), the Four Motion Scenes tap diagram, Observe & Reason, the “Amazing Florida Fact” (not about Florida, and its football-field number was far too small: Earth moves about 18 miles every second), the Florida callout (kept as one sentence in Part 1) and Go Deeper. Part 3 = the old Explore (Draw a Motion Diagram); the next button goes to Self-Check. The sample motion diagram picture stays, right above Part 3",
+  "old": "\\s*<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "\n\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Draw a Motion Diagram</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Sam filmed two things moving on the beach this morning. Watch each replay, then turn it into a motion diagram.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its motion diagram is now Part 3 and Part C; its speed “Amazing Florida Fact” (alligators do not run 35 mph; about 11 mph is the usual figure), Think like a scientist and Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6; Q7 repeats the CER claim)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C drawn and typed on the page",
+  "old": "A motion diagram of a real object with starting/ending positions, direction arrow, reference point, and a one-sentence description.",
+  "new": "What I watched, my reference point and my one-sentence description. Plus your labeled sketch: your motion diagram."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether motion needs a reference point or not, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether motion needs a reference point, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your motion diagram) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]
