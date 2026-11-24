@@ -4526,3 +4526,79 @@ html.fs-on .fs-replaced { display:none !important; }
 @media (prefers-reduced-motion: reduce) { .fs-fxs-mag, .fs-fxs-head.flash, .fs-slc-cut.new, .fs-hrf-st.new, .fs-fxs-slot.nope { animation: none; } .fs-scr-cv { transition: none; } }
 .fs-svgbox { position: relative; height: 0; width: 100%; }
 .fs-svgbox > svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+/* ===== 26.01 The Duck Derby Flop ===== */
+.fs-fly { margin: 12px 0 4px; display: grid; gap: 12px; }
+.fs-fly-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; align-items: start; }
+.fs-fly-poster { background: #FFF3B0; border: 3px solid #F2B134; border-radius: 10px; padding: 12px 14px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,.15); transform: rotate(-1.2deg); color: #3A2E12; }
+.fs-fly-poster small { display: block; font-weight: 900; letter-spacing: 2px; font-size: 12px; color: #7A5300; }
+.fs-fly-ic { display: block; font-size: 40px; line-height: 1.1; }
+.fs-fly-poster b { display: block; font: 900 30px 'Nunito', sans-serif; color: #C2410C; letter-spacing: 1px; }
+.fs-fly-poster em { display: block; font-style: normal; font-weight: 800; font-size: 14.5px; margin: 2px 0 6px; }
+.fs-fly-poster dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; text-align: left; margin: 6px 0; font-size: 14px; }
+.fs-fly-poster dt { font-weight: 900; color: #7A5300; } .fs-fly-poster dd { margin: 0; font-weight: 700; }
+.fs-fly-poster p { margin: 4px 0 0; font-size: 13px; font-weight: 700; }
+.fs-fly-rcpt { position: relative; background: #fff; border: 1.5px solid #CFC6B5; border-radius: 4px; padding: 10px 12px 44px; font-family: 'Courier New', monospace; color: #2B1D12; box-shadow: 0 2px 6px rgba(0,0,0,.12); transform: rotate(1.4deg);
+  background-image: linear-gradient(135deg, transparent 6px, #fff 6px), linear-gradient(225deg, transparent 6px, #fff 6px); }
+.fs-fly-rh { font-weight: 900; text-align: center; border-bottom: 2px dashed #CFC6B5; padding-bottom: 6px; margin-bottom: 6px; font-size: 14px; }
+.fs-fly-rcpt dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 0; font-size: 14px; } .fs-fly-rcpt dt { color: #6B5E4B; } .fs-fly-rcpt dd { margin: 0; font-weight: 800; text-align: right; }
+.fs-fly-st { position: absolute; right: 10px; bottom: 6px; font-style: normal; font: 900 18px 'Nunito', sans-serif; color: rgba(46,125,50,.8); border: 3px solid rgba(46,125,50,.8); border-radius: 6px; padding: 0 8px; transform: rotate(-10deg); }
+.fs-fly-letter { background: #FFFDF7; border: 1px solid #E3D8C3; border-radius: 6px; padding: 12px 16px; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Nunito', sans-serif; color: #2B1D12; box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  background-image: repeating-linear-gradient(transparent 0 26px, #E8EEF6 26px 27px); line-height: 27px; }
+.fs-fly-to { font-weight: 800; } .fs-fly-letter p { margin: 0 0 4px; font-size: 15.5px; } .fs-fly-sign { text-align: right; font-weight: 800; }
+@media (max-width: 640px) { .fs-fly-row { grid-template-columns: 1fr; } .fs-fly-poster, .fs-fly-rcpt { transform: none; } }
+
+.fs-crd-svg .fs-crd-col .fs-crd-in { transition: transform .22s ease-out; }
+.fs-crd-svg .fs-crd-col.up .fs-crd-in { transform: translateY(-24px); }
+.fs-crd-arm { stroke: #5A4D3E; stroke-width: 5; stroke-linecap: round; opacity: 0; transition: opacity .15s; }
+.fs-crd-col.up .fs-crd-arm { opacity: 1; }
+.fs-crd-fan.red rect { stroke: #D62828; stroke-width: 3; }
+.fs-crd-sec { fill: rgba(255,255,255,0); stroke: transparent; stroke-width: 4; cursor: pointer; }
+.fs-crd-sec.next { stroke: #F5B83D; stroke-dasharray: 10 6; fill: rgba(245,184,61,.10); }
+.fs-crd-num { font: 900 15px 'Nunito', sans-serif; fill: #0E1C42; }
+.fs-crd-track { display: flex; flex-wrap: wrap; gap: 8px 14px; justify-content: center; margin: 8px 0; font-size: 15px; }
+.fs-crd-track span { background: #fff; border: 2px solid #D8D0E8; border-radius: 999px; padding: 4px 12px; }
+.fs-crd-track .fs-crd-r { border-color: #D62828; }
+.fs-crd-go { font-size: 18px; padding: 12px 22px; }
+.fs-crd-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+.fs-crd-stats div { background: #fff; border: 2px solid #D8D0E8; border-radius: 12px; padding: 8px 12px; text-align: center; }
+.fs-crd-stats small { display: block; color: #6B5E4B; font-weight: 800; } .fs-crd-stats b { font: 900 20px 'Nunito', sans-serif; color: #0E1C42; }
+.fs-swv-tabs .fs-in-chip.on { background: #0E1C42; color: #fff; border-color: #0E1C42; }
+.fs-swv-tabs em { font-style: normal; color: #34B76F; font-weight: 900; } .fs-swv-tabs .on em { color: #9FE0B9; }
+.fs-swv-svg { cursor: pointer; }
+.fs-swv-trail { fill: none; stroke: #D62828; stroke-width: 3; stroke-dasharray: 3 4; opacity: .85; }
+.fs-swv-log { background: #fff; border: 2px solid #D8D0E8; border-radius: 12px; padding: 10px 12px; margin-top: 10px; overflow-x: auto; }
+.fs-swv-log table { width: 100%; border-collapse: collapse; font-size: 14.5px; } .fs-swv-log th { text-align: left; color: #5A3B92; border-bottom: 2px solid #E8E2F2; padding: 4px 6px; } .fs-swv-log td { padding: 5px 6px; border-bottom: 1px solid #F0ECE6; }
+.fs-swv-log small { display: block; text-align: right; color: #9A8E82; font-weight: 800; } .fs-swv-log tr.new td { background: #EEF8F0; }
+.fs-dlp-trail { fill: none; stroke: #D62828; stroke-width: 3; stroke-dasharray: 4 3; }
+.fs-dlp-lab { font: 800 13px 'Nunito', sans-serif; fill: #0E1C42; } text.fs-dlp-lab[fill] { fill: #fff; }
+.fs-brk-svg .fs-brk-grid line { stroke: #DCE6F0; stroke-width: 1; }
+.fs-brk-mid { stroke: #0E1C42; stroke-width: 2; stroke-dasharray: 8 5; }
+.fs-brk-lab { font: 800 12px 'Nunito', sans-serif; fill: #5A4D3E; }
+.fs-brk-dot { fill: #fff; stroke: #0E1C42; stroke-width: 3; cursor: pointer; }
+.fs-brk-dot:hover, .fs-brk-dot.sel { fill: #F5B83D; }
+.fs-brk-br line { stroke: #D62828; stroke-width: 4; stroke-linecap: round; } .fs-brk-br.ok line { stroke: #2E7D32; }
+.fs-brk-q { background: #F0EDF6; border-radius: 10px; padding: 8px 12px; margin: 6px 0; font-size: 16px; }
+.fs-shk-svg { touch-action: none; }
+.fs-shk-mark { stroke: #D62828; stroke-width: 4; stroke-linecap: round; opacity: .7; }
+.fs-shk-lab { font: 800 13px 'Nunito', sans-serif; fill: #5A4D3E; }
+.fs-shk-hand { cursor: grab; }
+.fs-shk-cup { transition: transform .5s ease-in, opacity .5s; transform-box: fill-box; transform-origin: center bottom; }
+.fs-shk-cup.down { transform: translate(calc(16px + var(--k) * 7px), 26px) rotate(80deg); opacity: .85; }
+.fs-rvt-two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 640px) { .fs-rvt-two { grid-template-columns: 1fr; } }
+.fs-rpn { background: #FFFDF6; border: 1.5px solid #CFC6B5; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(0,0,0,.1); color: #2B1D12; position: relative; }
+.fs-rpn-h b { display: block; font: 900 20px 'Nunito', sans-serif; color: #0E1C42; } .fs-rpn-h small { color: #6B5E4B; font-weight: 700; }
+.fs-rpn-line { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; border-bottom: 1px dashed #D8CFBE; padding: 10px 0; }
+.fs-rpn-lab { font-weight: 900; min-width: 150px; color: #5A3B92; }
+.fs-rpn-opts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; } .fs-rpn-opts i { color: #9A8E82; font-size: 13px; }
+.fs-rpn-o { background: none; border: 2.5px solid transparent; border-radius: 50%; padding: 6px 14px; font: 700 15px 'Nunito', sans-serif; color: #2B1D12; cursor: pointer; }
+.fs-rpn-o:hover:not([disabled]) { background: #FFF4D6; border-radius: 12px; }
+.fs-rpn-o.circ { border-color: #1E4FBF; border-radius: 50% / 60%; color: #0E1C42; font-weight: 900; }
+.fs-rpn-o.cross { text-decoration: line-through; text-decoration-color: #C0392B; text-decoration-thickness: 3px; color: #9A8E82; }
+.fs-rpn-o[disabled] { cursor: default; }
+.fs-rpn-sign { display: flex; justify-content: flex-end; align-items: center; gap: 14px; padding-top: 10px; min-height: 40px; }
+.fs-tf-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 520px; margin: 0 auto; }
+.fs-tf-col { text-align: center; background: #fff; border: 2px solid #E8E2F2; border-radius: 12px; padding: 8px; }
+.fs-tf-col b { display: block; margin: 4px 0; } .fs-tf-hz { font: 900 14px 'Nunito', sans-serif; fill: #0E1C42; }
+.fs-tf-read { min-height: 40px; font-size: 14px; color: #5A4D3E; margin-top: 6px; }
+@media (prefers-reduced-motion: reduce) { .fs-crd-svg .fs-crd-col .fs-crd-in, .fs-shk-cup { transition: none; } }

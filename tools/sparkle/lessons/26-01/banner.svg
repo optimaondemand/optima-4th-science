@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="Morning on the Palmetto Springs pond: a yellow rubber duck floats on the water while rings of ripples spread out past it. A faint dotted loop shows the duck only bobs in place. Cypress trees and lily pads are behind it.">
+  <defs>
+    <linearGradient id="b261sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9D8F2"/><stop offset=".75" stop-color="#E2F2F8"/><stop offset="1" stop-color="#F6EBC8"/></linearGradient>
+    <linearGradient id="b261pond" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FA9CC"/><stop offset="1" stop-color="#2F7FA8"/></linearGradient>
+    <style>
+      .b261-bob { animation: b261bob 3.2s linear infinite; }
+      @keyframes b261bob { 0% { transform: translate(0px,-6px); } 25% { transform: translate(6px,0px); } 50% { transform: translate(0px,6px); } 75% { transform: translate(-6px,0px); } 100% { transform: translate(0px,-6px); } }
+      .b261-r1, .b261-r2, .b261-r3 { animation: b261ring 4.8s ease-out infinite; opacity: 0; }
+      .b261-r2 { animation-delay: 1.6s; } .b261-r3 { animation-delay: 3.2s; }
+      @keyframes b261ring { 0% { opacity: 0; stroke-width: 4; } 10% { opacity: .9; } 100% { opacity: 0; stroke-width: 1; } }
+      .b261-r1 ellipse, .b261-r2 ellipse, .b261-r3 ellipse { animation: b261grow 4.8s ease-out infinite; animation-delay: inherit; }
+      @keyframes b261grow { 0% { rx: 30px; ry: 7px; } 100% { rx: 330px; ry: 40px; } }
+      .b261-sh { animation: b261sh 5s ease-in-out infinite; }
+      @keyframes b261sh { 0%,100% { opacity: .25; } 50% { opacity: .6; } }
+      @media (prefers-reduced-motion: reduce) { .b261-bob, .b261-r1, .b261-r2, .b261-r3, .b261-r1 ellipse, .b261-r2 ellipse, .b261-r3 ellipse, .b261-sh { animation: none; } .b261-r1, .b261-r2, .b261-r3 { opacity: .6; } }
+    </style>
+  </defs>
+  <rect width="920" height="200" fill="url(#b261sky)"/>
+  <circle cx="790" cy="40" r="20" fill="#FFF3C4"/><circle cx="790" cy="40" r="32" fill="#FFF3C4" opacity=".35"/>
+  <path d="M250 30 q18 -14 36 0 q16 -10 30 2 q-30 10 -66 -2z M560 22 q16 -12 32 0 q14 -8 26 2 q-26 8 -58 -2z" fill="#fff" opacity=".8"/>
+  <!-- far shore: cypress trees with buttressed trunks -->
+  <path d="M0 110 Q 120 96 240 106 T 480 102 T 720 106 T 920 100 L920 118 L0 118 Z" fill="#6E9B5A"/>
+  <g fill="#3F6B3A">
+    <path d="M70 108 l10 -62 l10 62 z"/><path d="M60 110 q20 -40 40 0z"/>
+    <path d="M150 106 l8 -48 l8 48 z"/><path d="M142 108 q16 -32 32 0z"/>
+    <path d="M640 106 l9 -56 l9 56 z"/><path d="M630 108 q18 -36 38 0z"/>
+    <path d="M840 104 l11 -66 l11 66 z"/><path d="M828 106 q23 -42 46 0z"/>
+  </g>
+  <g stroke="#6B4F33" stroke-width="5" stroke-linecap="round"><path d="M80 110 v-8 M158 108 v-6 M649 108 v-7 M851 106 v-8"/></g>
+  <!-- pond -->
+  <rect y="114" width="920" height="86" fill="url(#b261pond)"/>
+  <path class="b261-sh" d="M60 140 h70 M300 168 h90 M610 150 h60 M760 176 h80" stroke="#BFE3F4" stroke-width="3" stroke-linecap="round"/>
+  <!-- lily pads -->
+  <g fill="#4E8C3E"><path d="M120 176 a24 8 0 1 0 0.1 0 z"/><path d="M190 160 a16 6 0 1 0 0.1 0 z"/><path d="M760 152 a20 7 0 1 0 0.1 0 z"/></g>
+  <g stroke="#2E5E28" stroke-width="2"><path d="M120 176 l20 -4 M190 160 l13 -3 M760 152 l16 -3"/></g>
+  <circle cx="200" cy="157" r="4" fill="#F4B6C8"/>
+  <!-- ripple rings spreading from the left -->
+  <g fill="none" stroke="#E4F4FB">
+    <g class="b261-r1"><ellipse cx="300" cy="150" rx="30" ry="7"/></g>
+    <g class="b261-r2"><ellipse cx="300" cy="150" rx="30" ry="7"/></g>
+    <g class="b261-r3"><ellipse cx="300" cy="150" rx="30" ry="7"/></g>
+  </g>
+  <!-- the duck's small loop (dotted) and the duck riding it -->
+  <circle cx="470" cy="146" r="6.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 3" opacity=".9"/>
+  <g transform="translate(470 146)"><g class="b261-bob">
+    <ellipse cx="0" cy="6" rx="30" ry="6" fill="#2A6E93" opacity=".4"/>
+    <path d="M-28 -4 Q -30 12 -6 14 L 18 14 Q 32 12 30 -2 Q 18 4 6 0 Q -10 -10 -28 -4 Z" fill="#F7D232" stroke="#B88A00" stroke-width="2"/>
+    <circle cx="16" cy="-14" r="12" fill="#F7D232" stroke="#B88A00" stroke-width="2"/>
+    <path d="M26 -15 l13 4 l-13 4 z" fill="#F08A1C" stroke="#B85F0A" stroke-width="1"/>
+    <circle cx="19" cy="-17" r="2.2" fill="#1C2733"/>
+    <path d="M-14 0 q8 -8 16 -2" stroke="#E0B420" stroke-width="2" fill="none"/>
+  </g></g>
+</svg>

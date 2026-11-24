@@ -1,0 +1,304 @@
+{
+ "lesson": "26.01",
+ "prefix": "g4sci-26-1",
+ "manifestKey": "26-01",
+ "guide": "priya",
+ "slots": {
+  "welcome": {
+   "label": "Welcome · The Duck Derby Flop",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🦆 The Duck Derby",
+     "tag": "CASE 26",
+     "title": "200 ducks, one pond",
+     "col": "#B8860B",
+     "body": "A wave machine was supposed to push them to the dock."
+    },
+    {
+     "kind": "photo",
+     "pic": "duckrace",
+     "label": "📷 A real duck race"
+    },
+    {
+     "label": "❓ The question",
+     "tag": "THE PROBLEM",
+     "title": "Will BIGGER waves work?",
+     "col": "#C8553D",
+     "body": "Mr. Ortiz wants a giant wave machine next year."
+    },
+    {
+     "label": "🧪 Meet Dr. Nair",
+     "tag": "NEW CREW MEMBER",
+     "title": "Dr. Priya Nair",
+     "col": "#7A5BB5",
+     "body": "A materials scientist: what things are made of and how they behave."
+    }
+   ],
+   "script": "(Hold up a rubber duck, or any small floating toy.) If I make waves in the bathtub, will this duck surf to the other end?\n\n[ON SCREEN: The Duck Derby]\nThat is exactly what the town of Palmetto Springs tried: two hundred ducks and a wave machine.\n\n[ON SCREEN: A real duck race]\nThis is a real duck race. Look closely at where these ducks are floating.\n\n[ON SCREEN: The question]\nNot one duck reached the dock! Now the organizer wants bigger waves.\n\n[ON SCREEN: Meet Dr. Nair]\nOur new scientist, Dr. Priya Nair, needs your help. Read her case file just below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · be the crowd (Clue 1)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🏟️ Be the crowd",
+     "tag": "WARM-UP GAME",
+     "title": "Do the wave",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "👆",
+       "Tap Section 1, then each glowing section"
+      ],
+      [
+       "⏱",
+       "Too slow and it fizzles"
+      ],
+      [
+       "🧢",
+       "Watch the fan in the red cap"
+      ]
+     ]
+    },
+    {
+     "label": "🤔 Think about it",
+     "tag": "WATCH CLOSELY",
+     "title": "What went around?",
+     "col": "#7A5BB5",
+     "body": "The wave? Or the people?"
+    }
+   ],
+   "script": "(Stand up fast with your arms in the air, then sit back down.) That’s one fan doing the wave. Now picture a whole stadium!\n\n[ON SCREEN: Be the crowd]\nYou’re in charge of the crowd. Tap Section one, then each glowing section, in order. Don’t wait too long!\n\n[ON SCREEN: Think about it]\nKeep your eye on the fan in the red cap. When the wave goes all the way around, where is she? Then write about a wave you’ve seen."
+  },
+  "part1": {
+   "label": "Part 1 · same wave, new stuff (Clue 2)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🪀 Same wave, new stuff",
+     "tag": "PART 1 GAME",
+     "title": "Five kinds of stuff",
+     "col": "#B8860B",
+     "rows": [
+      [
+       "🪀",
+       "Slinky"
+      ],
+      [
+       "🪢",
+       "Rope"
+      ],
+      [
+       "💧",
+       "Pond water"
+      ],
+      [
+       "🧒",
+       "A line of kids"
+      ],
+      [
+       "🔊",
+       "Air"
+      ]
+     ]
+    },
+    {
+     "label": "🔴 Tag it",
+     "tag": "HOW TO PLAY",
+     "title": "Tag one piece red",
+     "col": "#C8553D",
+     "body": "Send a wave. Where does your tag end up?"
+    }
+   ],
+   "script": "(Tie a ribbon, or a twist tie, onto a jump rope or a string, and flick one end.) Watch the ribbon. Does it travel to the other end?\n\n[ON SCREEN: Tag it]\nIn this game you tag one piece red, then send a wave, and watch your tag.\n\n[ON SCREEN: Same wave, new stuff]\nTry all five: a slinky, a rope, pond water, a line of kids and even air. Your wave log fills in. Then watch for a surprise about the duck."
+  },
+  "part2": {
+   "label": "Part 2 · measure the waves (Clue 3)",
+   "length": "35–45 s",
+   "want": false,
+   "parts": [
+    {
+     "label": "📏 Measure the waves",
+     "tag": "PART 2 GAME",
+     "title": "Lay a bracket",
+     "col": "#5A3B92",
+     "rows": [
+      [
+       "📈",
+       "Amplitude: center line up to a crest"
+      ],
+      [
+       "↔",
+       "Wavelength: crest to the next crest"
+      ]
+     ]
+    }
+   ],
+   "script": "(Hold one hand flat for the center line and lift the other hand above it.) From the middle up to the top: that’s the amplitude.\n\n[ON SCREEN: Measure the waves]\nTap two dots to lay a bracket and read how many squares it is. Measure the amplitude, then the wavelength, for three waves. Which one carries the most energy?"
+  },
+  "explore": {
+   "label": "Part 3 · shake it yourself (Clue 4)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🌊 Shake it yourself",
+     "tag": "PART 3 GAME",
+     "title": "Your hand makes the wave",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "✊",
+       "Drag the hand up and down"
+      ],
+      [
+       "〰",
+       "Gentle wiggle"
+      ],
+      [
+       "🌊",
+       "Hard wiggle"
+      ],
+      [
+       "🥤",
+       "Watch the cups and the red ribbon"
+      ]
+     ]
+    }
+   ],
+   "script": "(Wiggle your hand gently, then hard, like shaking a rope.) Small wiggle. BIG wiggle. What do you think changes?\n\n[ON SCREEN: Shake it yourself]\nDrag the hand at the end of the slinky up and down, or press Gentle wiggle. Watch the red ribbon and the tower of cups at the far end. Then try a hard wiggle. Your log fills in, so compare the two."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔓 Crack the case",
+     "tag": "TOP OF THE ASSIGNMENT",
+     "title": "Will bigger waves work?",
+     "col": "#7A5BB5",
+     "body": "Pick the answer that fits all four clues."
+    },
+    {
+     "label": "✍️ Your case report",
+     "tag": "WHAT TO DO",
+     "title": "Three places to work",
+     "col": "#B8860B",
+     "rows": [
+      [
+       "Part B",
+       "Two short answers"
+      ],
+      [
+       "Part C",
+       "Make or find a wave, then draw and label it"
+      ],
+      [
+       "CER",
+       "Claim, evidence, reasoning"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nYou have four clues. Will a bigger wave machine get the ducks to the dock? Pick the answer that fits every clue. Then watch for a twist, and help Mr. Ortiz fix his plan.\n\n[ON SCREEN: Your case report]\nNext: two short answers. For Part C, make a wave with a jump rope or a string, or think of one you’ve seen. Then sketch and label it. Last comes your CER."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💬 The claim",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "A classmate says…",
+     "col": "#C8553D",
+     "body": "“When a wave moves through water, the water has to travel with it.”"
+    },
+    {
+     "label": "🧩 The planner",
+     "tag": "PLAN BEFORE YOU WRITE",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#5A3B92",
+     "rows": [
+      [
+       "1",
+       "Tap I agree or I disagree."
+      ],
+      [
+       "2",
+       "Tap two pieces of evidence."
+      ],
+      [
+       "3",
+       "You write the reasoning."
+      ]
+     ]
+    }
+   ],
+   "script": "(Make a wave with your arm and pretend to ride it.) Does the water ride along with the wave?\n\n[ON SCREEN: The claim]\nA classmate says the water has to travel with the wave. Think about the duck’s little loop and the red tag.\n\n[ON SCREEN: The planner]\nTap your side and two facts. Then explain how they prove your claim. Try starting with “This shows that…”"
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "30–40 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🦆 Your specimen",
+     "tag": "FIELD NOTEBOOK",
+     "title": "A derby duck",
+     "col": "#B8860B",
+     "body": "Finish the checklist to stamp CASE CLOSED."
+    },
+    {
+     "label": "➡ Next lesson",
+     "tag": "LESSON 26.02",
+     "title": "Coded messages",
+     "col": "#2D7AA6",
+     "body": "Send a secret message with light and sound."
+    }
+   ],
+   "script": "(Set the duck down and give it a little bob.) Bob, bob. Still right here!\n\n[ON SCREEN: Your specimen]\nFinish your checklist, and a derby duck goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next lesson]\nNext time: waves can carry messages, too. You’ll design your own secret code with light and sound."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s",
+   "want": false,
+   "parts": [],
+   "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  }
+ },
+ "pics": {
+  "duckrace": {
+   "src": "images/26-01-duck-race.jpg",
+   "cap": "A real charity duck race, Luxembourg 2017 (Bdx, CC BY-SA 4.0)"
+  }
+ },
+ "other": [
+  {
+   "id": "vocab",
+   "label": "Word Wall",
+   "length": "30–45 s"
+  },
+  {
+   "id": "lesson",
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  {
+   "id": "partb",
+   "label": "Part B",
+   "length": "30 s"
+  },
+  {
+   "id": "partc",
+   "label": "Part C · my wave model",
+   "length": "30 s"
+  }
+ ],
+ "redo": []
+}

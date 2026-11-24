@@ -1,0 +1,341 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; the plan puts Module 26 in “Energy, Motion, and Waves”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Waves</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "waves are physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS code; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.P.10.3 · TEKS 4.8(B)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.10.3</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label: weeks 24 on are Q4 in the Canvas plan",
+  "old": "<div class=\"info-value\">Q3 &middot; Week 26</div>",
+  "new": "<div class=\"info-value\">Q4 &middot; Week 26</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Do the Wave!</div>\n        <div class=\"act-subtitle\">What travels, and what stays?</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the stadium wave",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Have you ever seen fans do “the wave” at a big game? A wave of people standing up races all the way around the stadium. Be the crowd, and keep your eye on the fan in the red cap.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → waves you have seen (answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Now think about other waves you’ve seen. What wiggled, and what traveled?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): “Device” is in the plan row, but its meaning was about converting energy. Same word, a meaning for this lesson",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job, like a wave machine or a tuning fork."
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Stop & Reason asked about “the three devices above” (no devices on this page)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for a labeled wave diagram",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; My Wave Model"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task (now a wave the student made or saw, drawn and labeled on the sketch pad, + one amplitude and energy claim)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Make a wave at home with a jump rope, a string or a slinky. Or think of a wave you’ve seen in a pond, a pool or a bathtub. Draw it, label its parts and write one sentence about its amplitude and energy.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: what Part C can use",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🪢</span>Optional: a jump rope, a string or a slinky</span>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "picture (ticked): the bottom panel’s “HIGH ENERGY” sample wave grows from small to tall inside one wave (mixed amplitudes). Show only the main labeled wave (cropped copy); the bracket game compares small and big amplitude. The original file stays.",
+  "old": "src=\"images/26-01-wave-anatomy.png\"",
+  "new": "src=\"images/26-01-wave-anatomy-main.png\""
+ },
+ {
+  "kind": "fix",
+  "why": "picture alt text: matches the cropped picture (it shows the trough and the center line too)",
+  "old": "alt=\"A labeled wave diagram showing crest (peak), amplitude (peak height from center), and wavelength (peak-to-peak distance). An arrow shows the direction of energy travel through the medium.\"",
+  "new": "alt=\"A labeled wave on a center line: the crest (top), the trough (bottom), the amplitude (height from the center line to a crest) and the wavelength (crest to crest). A big arrow shows the energy traveling to the right.\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll measure a wave’s amplitude and wavelength and use models to show how a wave carries energy.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash; “center line” and “crest” match the picture",
+  "old": "How TALL the wave is — measured from the middle to a peak. Big amplitude = more energy.",
+  "new": "How TALL a wave is, measured from the center line to a crest. Bigger amplitude means more energy."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: crest instead of peak (one word for one thing)",
+  "old": "The distance from one peak of a wave to the next peak. Close peaks = short wavelength.",
+  "new": "The distance from one crest (top) of a wave to the next crest. Close crests mean a short wavelength."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "The stuff a wave moves through — water, air, a rope, a slinky. The medium wiggles; the wave passes through.",
+  "new": "The stuff a wave moves through, like water, air, a rope or a slinky. The medium wiggles; the wave passes through."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "The TOP of a wave — the highest point. The lowest point is called a trough.",
+  "new": "The TOP of a wave, its highest point. The lowest point is called a trough."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dash",
+  "old": "The medium can be water, air, a rope, a slinky — anything that can wiggle.",
+  "new": "The medium can be water, air, a rope or a slinky: anything that can wiggle."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dashes (same idea)",
+  "old": "The COILS don't travel — each one just wiggles in place — but the bump (the wave) moves the whole length.",
+  "new": "The COILS don't travel. Each one just wiggles in place, but the bump (the wave) moves the whole length."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (the pond leaf) is played in the duck wow and Self-Check Q1; a one-line lead-in to the Part 1 game instead",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "<p>Try it with five kinds of stuff. Tag one piece and send a wave.</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: “peaks” → “crests” (the word the lesson teaches)",
+  "old": "<li><strong>Short wavelength</strong> → peaks are close together.</li>",
+  "new": "<li><strong>Short wavelength</strong> → crests are close together.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: “peaks” → “crests”",
+  "old": "<li><strong>Long wavelength</strong> → peaks are far apart.</li>",
+  "new": "<li><strong>Long wavelength</strong> → crests are far apart.</li>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception paragraph repeats Part 1 (the five-mediums game and the duck’s loop let students meet it)",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think waves CARRY the water.*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "caption matches the cropped picture; leads into the measuring game",
+  "old": "<div class=\"lesson-figure-caption\"><strong>Every wave has the same parts.</strong> Amplitude is height (energy). Wavelength is peak-to-peak distance.</div>\n      </div>",
+  "new": "<div class=\"lesson-figure-caption\"><strong>Every wave has the same parts.</strong> Amplitude is the height from the center line (energy). Wavelength is the distance from one crest to the next.</div>\n      </div>\n\n      <p>Now measure three waves on grid paper.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Science Connection: define “vibrates” and “pitch” where first seen (same meaning; this box teaches SC.4.P.10.3, so it stays)",
+  "old": "<p><strong>Science Connection:</strong> Sound is a wave made by vibrations. When an object vibrates fast, it makes a high pitch. When it vibrates slowly, it makes a low pitch.</p>",
+  "new": "<p><strong>Science Connection:</strong> Sound is a wave made by vibrations (fast back-and-forth shakes). When an object vibrates fast, it makes a high pitch (a high sound). When it vibrates slowly, it makes a low pitch.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"An ocean storm wave is taller than a small ripple....\"",
+  "new": "data-label=\"Storm wave or ripple: which carries more energy?\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why is it accurate to say that &quot;the wave moves but...\"",
+  "new": "data-label=\"The wave moves but the water stays: why, and proof\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dash; plain words (same meaning; the teaser for 26.02 Coded Messages is right)",
+  "old": " Next lesson, we use what we know about waves to DESIGN — engineering coded message systems that send information using patterns.</p>",
+  "new": " Next lesson: you’ll use patterns of light and sound to design your own code and send a secret message.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "removed: Key Concept, the Four Kinds of Waves tap diagram (the five-mediums game replaces it; Part B question 5 that used it is cut), Observe & Reason, the Amazing Florida Fact (true, cut for length), the Florida connection callout (“rare tsunami warnings” is true but unclear; cut for length) and Go Deeper (radio waves cross empty space: true, beyond this lesson). The Stop & Reason was removed above (22.01 leftover).",
+  "old": "\\s*<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?(?=<div class=\"callout callout-think scroll-reveal\">)",
+  "new": "\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 3 = the old Explore (Slinky or Rope Wave → Shake It Yourself); the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Shake It Yourself</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Picture a slinky stretched across the floor. A red ribbon is tied to one coil, and a tower of cups waits at the far end. Wiggle your end gently. Then wiggle it hard. Watch the ribbon and the cups.</p>\n  <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its slinky test is now Part 3 and Part C’s home wave; its tsunami fact (true: wavelengths can top 60 miles), Think like a scientist and Go Deeper (light is a wave) go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; 5 asked about the removed tap diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 6 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C drawn and typed on the page",
+  "old": "A labeled wave diagram with crest, trough, amplitude, wavelength, and direction of energy — plus a one-sentence amplitude/energy claim.",
+  "new": "The wave I made or saw, what it moved through and my amplitude and energy claim. Plus your labeled sketch: crest, trough, amplitude, wavelength and an energy arrow."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether water travels with a wave or stays in place, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether water travels with a wave, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your wave sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]

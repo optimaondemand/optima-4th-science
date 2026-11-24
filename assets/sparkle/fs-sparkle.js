@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -12137,6 +12137,441 @@
     check();
   };
 
+  /* ======================= 26.01 "The Duck Derby Flop" (Case 26): case.flyer, crowd, swapwave, duckloop, brackets, shake, rivertwist, raceplan, SIMS.tuningfork ======================= */
+
+  /* ---------- case: an event flyer + a rental receipt + a letter (26.01). case.flyer = {flyer:{top, big, sub, icon, rows:[[k, v]], foot}, receipt:{head, rows:[[k, v]], stamp},
+     letter:{to, body[], sign}} ---------- */
+  function flyerCard(F) {
+    var f = F.flyer || {}, r = F.receipt, l = F.letter;
+    return '<div class="fs-fly"><div class="fs-fly-row"><div class="fs-fly-poster"><small>' + esc(f.top || '') + '</small><span class="fs-fly-ic">' + (f.icon || '🦆') + '</span><b>' + esc(f.big || '') + '</b>' + (f.sub ? '<em>' + esc(f.sub) + '</em>' : '') +
+      (f.rows ? '<dl>' + f.rows.map(function (x) { return '<dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd>'; }).join('') + '</dl>' : '') + (f.foot ? '<p>' + esc(f.foot) + '</p>' : '') + '</div>' +
+      (r ? '<div class="fs-fly-rcpt"><div class="fs-fly-rh">' + esc(r.head) + '</div><dl>' + r.rows.map(function (x) { return '<dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd>'; }).join('') + '</dl>' + (r.stamp ? '<em class="fs-fly-st">' + esc(r.stamp) + '</em>' : '') + '</div>' : '') + '</div>' +
+      (l ? '<div class="fs-fly-letter"><div class="fs-fly-to">' + esc(l.to) + '</div>' + l.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-fly-sign">' + esc(l.sign) + '</div></div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Be the crowd" — stands of fans, split into sections. Tap the glowing section (or press Stand up! / the space bar) to make it stand;
+     wait too long and the wave fizzles. Keep an eye on one fan in a red cap: after a full lap, where is she? (26.01) ----------
+     D.crowd = {afterText, kicker, title, todo[], why, sections, cols, rows, red:{col, row}, gap (ms allowed between taps), standBtn, fizzle, tracker:{wave, red},
+                lapLine, q1, opts1, stats, fact, q, opts, win, clue} */
+  function buildCrowd() {
+    var Cw = D.crowd; if (!Cw) return;
+    var at = anchorP(Cw.afterText); if (!at) { FAILED.push('crowd anchor text not found'); return; }
+    var g = gameShell(Cw.kicker || 'Warm-Up game', Cw.title, Cw.todo, Cw.why); g.dataset.mod = 'crowd';
+    var SEC = Cw.sections || 6, COLS = Cw.cols || 18, ROWS = Cw.rows || 3, PER = COLS / SEC, RED = Cw.red || { col: 4, row: 1 }, GAP = Cw.gap || 2200;
+    var st = loadJ('crowd', { lap: 0, q1: 0 }), next = 0, lastT = 0, timer = null;
+    var CW = 860 / COLS, shirts = ['#2D7AA6', '#E8792E', '#34B76F', '#8B6FC0', '#D9534F', '#F2B134', '#1F7F86', '#C2185B'], skins = ['#F2C9A0', '#C68E5E', '#8D5A3B', '#E8B48A', '#5C3B26'];
+    var fans = '';
+    for (var c = 0; c < COLS; c++) {
+      var inner = '';
+      for (var r = 0; r < ROWS; r++) {
+        var x = 20 + (c + 0.5) * CW, y = 92 + r * 70, red = c === RED.col && r === RED.row, sh = shirts[(c * 3 + r * 5) % shirts.length], sk = skins[(c * 7 + r * 3) % skins.length];
+        inner += '<g class="fs-crd-fan' + (red ? ' red' : '') + '"><line class="fs-crd-arm" x1="' + (x - 9) + '" y1="' + (y + 2) + '" x2="' + (x - 15) + '" y2="' + (y - 22) + '"/><line class="fs-crd-arm" x1="' + (x + 9) + '" y1="' + (y + 2) + '" x2="' + (x + 15) + '" y2="' + (y - 22) + '"/>' +
+          '<rect x="' + (x - 12) + '" y="' + y + '" width="24" height="30" rx="9" fill="' + (red ? '#fff' : sh) + '"/><circle cx="' + x + '" cy="' + (y - 9) + '" r="11" fill="' + sk + '"/>' +
+          (red ? '<path d="M' + (x - 12) + ' ' + (y - 13) + ' a12 10 0 0 1 24 0 z" fill="#D62828"/><rect x="' + (x + 6) + '" y="' + (y - 15) + '" width="11" height="4" rx="2" fill="#D62828"/>' : '') + '</g>';
+      }
+      fans += '<g class="fs-crd-col" data-c="' + c + '"><g class="fs-crd-in">' + inner + '</g></g>';
+    }
+    var seats = ''; for (var r2 = 0; r2 < ROWS; r2++) seats += '<rect x="14" y="' + (118 + r2 * 70) + '" width="872" height="16" rx="4" fill="#8E9BA6"/>';
+    var hits = ''; for (var s = 0; s < SEC; s++) hits += '<rect class="fs-crd-sec" data-s="' + s + '" x="' + (20 + s * PER * CW) + '" y="30" width="' + (PER * CW) + '" height="' + (ROWS * 70 + 40) + '" rx="10"/><text class="fs-crd-num" x="' + (20 + (s + 0.5) * PER * CW) + '" y="24" text-anchor="middle">' + esc((Cw.secWord || 'Section') + ' ' + (s + 1)) + '</text>';
+    var H = ROWS * 70 + 90;
+    var stage = el('div', 'fs-crd-stage', '<div class="fs-svgbox" style="padding-top:' + (H / 9).toFixed(2) + '%"><svg viewBox="0 0 900 ' + H + '" class="fs-crd-svg" role="img" aria-label="' + esc(Cw.alt || 'A model of stadium stands full of fans, split into numbered sections.') + '"><rect width="900" height="' + H + '" rx="14" fill="#DCE6EE"/>' + seats + fans + hits + '<text x="12" y="' + (H - 8) + '" class="fs-trn-model">' + esc(Cw.model || 'a model') + '</text></svg></div>');
+    var track = el('div', 'fs-crd-track'), ctl = el('div', 'fs-mug-go'), miss = el('div', 'fs-miss'), out = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(stage); g.appendChild(track); g.appendChild(ctl); g.appendChild(miss); g.appendChild(out); g.appendChild(qh); g.appendChild(win);
+    var svg = $('svg', stage), redSec = Math.floor(RED.col / PER) + 1, redSeat = RED.col + 1;
+    var btn = el('button', 'fs-btn fs-crd-go', esc(Cw.standBtn || '🙌 Stand up!')); btn.type = 'button'; ctl.appendChild(btn);
+    function paintTrack() {
+      var T = Cw.tracker || {};
+      track.innerHTML = '<span class="fs-crd-w">🌊 ' + esc(T.wave || 'The wave') + ': <b>' + (next === 0 && !st.lap ? esc(T.start || 'not started') : esc((Cw.secWord || 'Section') + ' ' + (next === 0 ? SEC : next))) + '</b></span>' +
+        '<span class="fs-crd-r">🧢 ' + esc(T.red || 'Red cap') + ': <b>' + esc((Cw.secWord || 'Section') + ' ' + redSec + ', ' + (T.seatWord || 'seat') + ' ' + redSeat) + '</b></span>';
+      $$('.fs-crd-sec', svg).forEach(function (h) { h.classList.toggle('next', +h.dataset.s === next); });
+    }
+    function stand(sIdx) {
+      for (var k = 0; k < PER; k++) (function (col, d) {
+        var gC = $('.fs-crd-col[data-c="' + col + '"]', svg); setTimeout(function () { gC.classList.add('up'); setTimeout(function () { gC.classList.remove('up'); }, 650); }, reduceMotion ? 0 : d);
+      })(sIdx * PER + k, k * 90);
+      tone(420 + sIdx * 70, 0, 0.12, 'triangle', 0.04); noise(0.12, 900, 3000, 0.08);
+    }
+    function fizzle() { if (next === 0) return; bounce(btn, miss, Cw.fizzle || 'The wave fizzled out! The next section waited too long. Start again at Section 1.'); next = 0; paintTrack(); }
+    function go(sIdx) {
+      if (sIdx !== next) { bounce(btn, miss, (Cw.wrongSec || 'Not yet! The wave has to reach Section {n} first.').replace('{n}', next + 1)); return; }
+      ac(); miss.classList.remove('show'); stand(next); next = (next + 1) % SEC; lastT = Date.now();
+      clearTimeout(timer); if (next !== 0) timer = setTimeout(fizzle, GAP);
+      if (next === 0) { st.lap++; saveJ('crowd', st); SFX.chime(); lapDone(); }
+      paintTrack();
+    }
+    btn.addEventListener('click', function () { go(next); });
+    $$('.fs-crd-sec', svg).forEach(function (h) { h.addEventListener('click', function () { go(+h.dataset.s); }); });
+    g.tabIndex = 0; g.addEventListener('keydown', function (e) { if (e.key === ' ' && e.target === g) { e.preventDefault(); go(next); } });
+    function lapDone() {
+      if (out.dataset.on) return;
+      out.dataset.on = '1'; out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">🏟️</span><div>' + esc(Cw.lapLine || 'The wave went all the way around!') + '</div>'));
+      var q1 = el('div'); out.appendChild(q1);
+      function stats() {
+        out.appendChild(el('div', 'fs-crd-stats', (Cw.stats || []).map(function (x) { return '<div><small>' + esc(x[0]) + '</small><b>' + esc(x[1]) + '</b></div>'; }).join('')));
+        if (Cw.fact) out.appendChild(el('p', 'fs-scr-tip', esc(Cw.fact)));
+        askOnce(qh, Cw.q, Cw.opts, 'crowd-q', win, Cw.win, Cw.clue, 'crowd', miss);
+      }
+      if (st.q1) stats(); else chipsQ(q1, Cw.q1, Cw.opts1, function () { st.q1 = 1; saveJ('crowd', st); stats(); }, miss);
+    }
+    paintTrack(); if (st.lap) lapDone();
+    placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "Same wave, new stuff" — one wave sender, five kinds of stuff (mediums). Tap one piece to tie a red tag on it, press Send, watch the pulse
+     travel and the tag's path; a log fills (26.01) ----------
+     D.swapwave = {afterText, kicker, title, todo[], why, media:[{id, icon, name, kind:'slinky'|'rope'|'water'|'kids'|'air', n, piece, line, how}], sendBtn, tagFirst, tagLine,
+                   logLabel, cols[3], waveCell, q1, opts1, q, opts, win, clue} */
+  function buildSwapwave() {
+    var Sw = D.swapwave; if (!Sw) return;
+    var at = anchorP(Sw.afterText); if (!at) { FAILED.push('swapwave anchor text not found'); return; }
+    var g = gameShell(Sw.kicker || 'Part 1 game', Sw.title, Sw.todo, Sw.why); g.dataset.mod = 'swapwave';
+    var st = loadJ('swapwave', { done: {}, q1: 0 }), M = Sw.media, cur = M[0], tag = -1, busy = false, X0 = 70, X1 = 830, CY = 110;
+    var tabs = el('div', 'fs-in-chips fs-swv-tabs'), stage = el('div', 'fs-swv-stage'), info = el('p', 'fs-scr-tip'), ctl = el('div', 'fs-mug-go'), miss = el('div', 'fs-miss'), q1h = el('div'), log = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    [tabs, stage, info, ctl, miss, q1h, log, qh, win].forEach(function (e) { g.appendChild(e); });
+    tabs.innerHTML = M.map(function (m) { return '<button type="button" class="fs-in-chip fs-swv-tab" data-id="' + m.id + '">' + m.icon + ' ' + esc(m.name) + '<em></em></button>'; }).join('');
+    stage.innerHTML = '<div class="fs-svgbox" style="padding-top:24.44%"><svg viewBox="0 0 900 220" class="fs-swv-svg" role="img"></svg></div>';
+    var svg = $('svg', stage), send = el('button', 'fs-btn fs-swv-send', esc(Sw.sendBtn || '〰 Send a wave')); send.type = 'button'; ctl.appendChild(send);
+    function px(m, i) { return X0 + (X1 - X0) * i / (m.n - 1); }
+    function bg(m) {
+      if (m.kind === 'water') return '<rect width="900" height="220" fill="#DFF0FA"/><rect y="' + CY + '" width="900" height="110" fill="#7FB8DA"/>';
+      if (m.kind === 'air') return '<rect width="900" height="220" fill="#F4F7FB"/><text x="22" y="' + (CY + 14) + '" font-size="40">🥁</text><text x="866" y="' + (CY + 14) + '" font-size="34" text-anchor="middle">👂</text>';
+      if (m.kind === 'kids') return '<rect width="900" height="220" fill="#EAF4E4"/><rect y="168" width="900" height="52" fill="#A9CF8E"/>';
+      return '<rect width="900" height="220" fill="#F6EEDC"/><rect y="150" width="900" height="70" fill="#D9BE8E"/>';
+    }
+    function draw(m, d, trail) { /* d(i) = displacement of piece i */
+      var h = bg(m), i, x, y;
+      if (m.kind === 'rope' || m.kind === 'water') { var pts = []; for (i = 0; i < m.n; i++) pts.push(px(m, i).toFixed(1) + ',' + (CY - d(i)).toFixed(1));
+        if (m.kind === 'water') h += '<path d="M0 ' + CY + ' L' + pts.join(' L') + ' L900 ' + CY + ' L900 220 L0 220 Z" fill="#3E8EC4"/>';
+        else h += '<polyline points="' + pts.join(' ') + '" fill="none" stroke="#B5854B" stroke-width="7" stroke-linecap="round"/>'; }
+      if (trail && trail.length > 1) h += '<polyline class="fs-swv-trail" points="' + trail.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' ') + '"/>';
+      for (i = 0; i < m.n; i++) {
+        var on = i === tag; x = px(m, i); y = CY;
+        if (m.kind === 'air') x += d(i); else y -= d(i);
+        if (m.kind === 'slinky') h += '<ellipse cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" rx="6" ry="24" fill="none" stroke="' + (on ? '#D62828' : '#9AA7B1') + '" stroke-width="' + (on ? 5 : 3.5) + '"/>';
+        else if (m.kind === 'kids') h += '<g' + (on ? ' class="red"' : '') + '><rect x="' + (x - 11) + '" y="' + (y + 6) + '" width="22" height="34" rx="8" fill="' + (on ? '#fff' : ['#2D7AA6', '#E8792E', '#34B76F', '#8B6FC0'][i % 4]) + '"/><circle cx="' + x.toFixed(1) + '" cy="' + (y - 6).toFixed(1) + '" r="11" fill="' + ['#F2C9A0', '#C68E5E', '#8D5A3B', '#E8B48A'][i % 4] + '"/>' + (on ? '<path d="M' + (x - 12) + ' ' + (y - 10) + ' a12 10 0 0 1 24 0 z" fill="#D62828"/>' : '') + '</g>';
+        else if (m.kind === 'air') { for (var k = 0; k < 4; k++) h += '<circle cx="' + x.toFixed(1) + '" cy="' + (CY - 45 + k * 30) + '" r="' + (on && k === 1 ? 8 : 5) + '" fill="' + (on && k === 1 ? '#D62828' : '#7D8FA0') + '"/>'; }
+        else h += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (on ? 9 : 6) + '" fill="' + (on ? '#D62828' : (m.kind === 'water' ? '#E7F4FB' : '#7A5A32')) + '"' + (on ? ' stroke="#fff" stroke-width="3"' : '') + '/>';
+      }
+      h += '<rect class="fs-swv-hit" width="900" height="220" fill="transparent"/><text x="12" y="212" class="fs-trn-model">' + esc(Sw.model || 'a model') + '</text>';
+      svg.innerHTML = h; svg.setAttribute('aria-label', m.alt || (m.name + ': a row of pieces you can tag'));
+    }
+    function rest(m) { draw(m, function () { return 0; }); }
+    function pick(m) {
+      if (busy) return; cur = m; tag = -1; $$('.fs-swv-tab', tabs).forEach(function (b) { b.classList.toggle('on', b.dataset.id === m.id); });
+      info.innerHTML = esc(m.line || '') + ' <b>' + esc((Sw.tagFirst || 'Tap one {piece} to tie a red tag on it.').replace('{piece}', m.piece)) + '</b>'; rest(m);
+    }
+    svg.addEventListener('click', function (e) {
+      if (busy) return; var r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 900, best = 0, bd = 1e9;
+      for (var i = 0; i < cur.n; i++) { var dd = Math.abs(px(cur, i) - x); if (dd < bd) { bd = dd; best = i; } }
+      tag = best; SFX.blip(); rest(cur); info.innerHTML = esc((Sw.tagLine || 'Tagged! Now press Send a wave and watch your tagged {piece}.').replace('{piece}', cur.piece));
+    });
+    send.addEventListener('click', function () {
+      if (busy) return; if (tag < 0) { bounce(send, miss, (Sw.tagFirst || 'Tap one {piece} to tie a red tag on it.').replace('{piece}', cur.piece)); return; }
+      ac(); miss.classList.remove('show'); busy = true; send.disabled = true; var m = cur, A = m.kind === 'air' ? 16 : 46, W = m.kind === 'air' ? 36 : 60, D1 = reduceMotion ? 900 : 2600, t0 = null, trail = [];
+      if (m.kind === 'air') { tone(70, 0, 0.35, 'sine', 0.2); noise(0.15, 80, 300, 0.4); } else SFX.whoosh();
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / D1), c = X0 - 80 + (X1 - X0 + 160) * p;
+        var d = function (i) { var dx = px(m, i) - c; return A * Math.exp(-dx * dx / (W * W)); };
+        var tx = px(m, tag) + (m.kind === 'air' ? d(tag) : 0), ty = CY - (m.kind === 'air' ? 0 : d(tag)) - (m.kind === 'air' ? 15 : 0); trail.push([tx, ty]);
+        draw(m, d, trail);
+        if (p < 1) { requestAnimationFrame(f); return; }
+        busy = false; send.disabled = false; st.done[m.id] = 1; saveJ('swapwave', st); SFX.chime(); draw(m, function () { return 0; }, trail); paint(true);
+      })(performance.now());
+    });
+    function paint(justRan) {
+      $$('.fs-swv-tab', tabs).forEach(function (b) { $('em', b).textContent = st.done[b.dataset.id] ? ' ✓' : ''; });
+      var n = M.filter(function (m) { return st.done[m.id]; }).length, C3 = Sw.cols || ['Stuff (the medium)', 'The wave', 'My tagged piece'];
+      log.innerHTML = n ? '<div class="fs-swv-log"><div class="fs-lu-lab">' + esc(Sw.logLabel || 'My wave log') + '</div><table><tr>' + C3.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        M.filter(function (m) { return st.done[m.id]; }).map(function (m) { return '<tr><td>' + m.icon + ' ' + esc(m.name) + '</td><td>' + esc(Sw.waveCell || 'went the whole way') + '</td><td>' + esc(m.how) + '</td></tr>'; }).join('') + '</table><small>' + n + ' / ' + M.length + '</small></div>' : '';
+      if (n >= 1 && !st.q1 && !q1h.dataset.on) { q1h.dataset.on = '1'; chipsQ(q1h, Sw.q1, Sw.opts1, function () { st.q1 = 1; saveJ('swapwave', st); paint(); }, miss); }
+      if (n === M.length && st.q1) askOnce(qh, Sw.q, Sw.opts, 'swapwave-q', win, Sw.win, Sw.clue, 'swapwave', miss);
+      else if (justRan && st.q1) { var nx = M.filter(function (m) { return !st.done[m.id]; })[0]; if (nx) info.innerHTML = esc((Sw.nextLine || 'Now try it with: {name}.').replace('{name}', nx.icon + ' ' + nx.name)); }
+    }
+    $$('.fs-swv-tab', tabs).forEach(function (b) { b.addEventListener('click', function () { pick(M.filter(function (m) { return m.id === b.dataset.id; })[0]); SFX.blip(); }); });
+    pick(M[0]); paint(); placeAfter(g, at);
+  }
+
+  /* ---------- the wow (after swapwave): "The duck's secret loop" — waves roll across a pond; the floating duck rides each one in a small circle and ends up
+     almost where it started; its path is drawn (26.01; not a clue) ----------
+     D.duckloop = {after, kicker, title, todo[], why, runBtn, againBtn, waveWord, duckWord, unit, done} */
+  function buildDuckloop() {
+    var Dl = D.duckloop; if (!Dl) return;
+    var host = $('.fs-game[data-mod="' + (Dl.after || 'swapwave') + '"]'); if (!host) { FAILED.push('duckloop: no anchor game'); return; }
+    var g = gameShell(Dl.kicker || 'Wow!', Dl.title, Dl.todo, Dl.why); g.dataset.mod = 'duckloop'; g.classList.add('fs-pdl-wow');
+    var st = loadJ('duckloop', { ran: 0 }), A = 18, LAM = 180, X0 = 450, CY = 130, FT = Dl.feet || 40;
+    var stage = el('div', 'fs-dlp-stage', '<div class="fs-svgbox" style="padding-top:28.89%"><svg viewBox="0 0 900 260" class="fs-dlp-svg" role="img" aria-label="' + esc(Dl.alt || 'A model pond seen from the side, with a rubber duck floating on it.') + '"></svg></div>');
+    var read = el('div', 'fs-crd-track'), ctl = el('div', 'fs-mug-go'), win = el('div', 'fs-win');
+    g.appendChild(stage); g.appendChild(read); g.appendChild(ctl); g.appendChild(win);
+    var svg = $('svg', stage);
+    function duckAt(th, env) { return [X0 - A * env * Math.sin(th), CY - A * env * Math.cos(th)]; }
+    function draw(t, front, trail) {
+      var pts = [], x, env, k = 2 * Math.PI / LAM;
+      for (x = 0; x <= 900; x += 10) { env = Math.max(0, Math.min(1, (front - x) / 120)); pts.push(x + ',' + (CY - A * env * Math.cos(k * x - t)).toFixed(1)); }
+      env = Math.max(0, Math.min(1, (front - X0) / 120));
+      var dp = duckAt(k * X0 - t, env), h = '<rect width="900" height="260" fill="#E3F1F9"/><path d="M0 ' + CY + ' L' + pts.join(' L') + ' L900 260 L0 260 Z" fill="#4A97C9"/>' +
+        '<path d="M0 238 Q 120 226 240 238 T 480 236 T 720 238 T 900 234 L900 260 L0 260Z" fill="#6B8F4E"/>' +
+        (front > 0 && front < 900 ? '<line x1="' + Math.min(900, front) + '" y1="40" x2="' + Math.min(900, front) + '" y2="58" stroke="#0E1C42" stroke-width="3"/><text x="' + Math.min(880, Math.max(30, front)) + '" y="34" text-anchor="middle" class="fs-dlp-lab">' + esc(Dl.frontWord || 'wave front') + '</text>' : '') +
+        (trail && trail.length > 1 ? '<polyline class="fs-dlp-trail" points="' + trail.map(function (p) { return p[0].toFixed(1) + ',' + (p[1] - 6).toFixed(1); }).join(' ') + '"/>' : '') +
+        '<line x1="' + X0 + '" y1="176" x2="' + X0 + '" y2="200" stroke="#fff" stroke-width="2" stroke-dasharray="4 3"/><text x="' + X0 + '" y="214" fill="#fff" text-anchor="middle" class="fs-dlp-lab">' + esc(Dl.startWord || 'where the duck started') + '</text>' +
+        '<g transform="translate(' + dp[0].toFixed(1) + ' ' + (dp[1] - 6).toFixed(1) + ')"><ellipse cx="0" cy="0" rx="22" ry="12" fill="#F7D232" stroke="#B88A00" stroke-width="2"/><circle cx="12" cy="-14" r="9" fill="#F7D232" stroke="#B88A00" stroke-width="2"/><path d="M20 -15 l10 3 l-10 3z" fill="#F08A1C"/><circle cx="14" cy="-16" r="1.8" fill="#222"/></g>' +
+        '<text x="12" y="252" class="fs-trn-model">' + esc(Dl.model || 'a model') + '</text>';
+      svg.innerHTML = h;
+    }
+    function readout(wf, df) { read.innerHTML = '<span class="fs-crd-w">🌊 ' + esc(Dl.waveWord || 'The waves traveled') + ': <b>' + wf + ' ' + esc(Dl.unit || 'feet') + '</b></span><span class="fs-crd-r">🦆 ' + esc(Dl.duckWord || 'The duck traveled') + ': <b>' + df + '</b></span>'; }
+    function run() {
+      ac(); SFX.whoosh(); var D1 = reduceMotion ? 300 : 7000, t0 = null, trail = [], b = $('button', ctl); if (b) b.disabled = true;
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / D1), t = p * 2 * Math.PI * 7, front = p * 1400 + 0;
+        var env = Math.max(0, Math.min(1, (front - X0) / 120)), dp = duckAt(2 * Math.PI / LAM * X0 - t, env); if (env > 0) trail.push(dp);
+        draw(t, front, trail); readout(Math.round(Math.min(1, front / 900) * FT), esc(Dl.loopWord || 'a little loop, back to the start'));
+        if (p < 1) { requestAnimationFrame(f); return; }
+        st.ran = 1; saveJ('duckloop', st); SFX.chime(); paint(trail);
+      })(performance.now());
+    }
+    function paint(trail) {
+      ctl.innerHTML = '<button type="button" class="fs-btn fs-dlp-run">' + esc(st.ran ? (Dl.againBtn || '↺ Send the waves again') : (Dl.runBtn || '▶ Send waves across the pond')) + '</button>';
+      $('button', ctl).addEventListener('click', run);
+      if (st.ran) { if (!trail) { trail = []; for (var i = 0; i <= 60; i++) trail.push(duckAt(i / 60 * 2 * Math.PI, 1)); draw(0, 1400, trail); } readout(FT, esc(Dl.loopWord || 'a little loop, back to the start')); winOnce(win, Dl.done, null, 'duckloop-wow'); }
+    }
+    draw(0, 0, null); readout(0, '0'); paint(); host.parentNode.insertBefore(g, host.nextSibling);
+  }
+
+  /* ---------- Part 2: "Measure the waves" — a wave on grid paper; tap (or drag between) two dots to lay a bracket and read its length in squares.
+     Amplitude = center line to a crest; wavelength = crest to the next crest. Three waves, then which carries the most energy? (26.01) ----------
+     D.brackets = {afterText, kicker, title, todo[], why, waves:[{id, name, icon, amp, wl, c}], tasks:{amp:{ask, name}, wl:{ask, name}}, sq, unit, nextBtn, miss:{...},
+                   tableLabel, q, opts (built from waves when absent), win, clue} */
+  function buildBrackets() {
+    var Bk = D.brackets; if (!Bk) return;
+    var at = anchorP(Bk.afterText); if (!at) { FAILED.push('brackets anchor text not found'); return; }
+    var g = gameShell(Bk.kicker || 'Part 2 game', Bk.title, Bk.todo, Bk.why); g.dataset.mod = 'brackets';
+    var st = loadJ('brackets', { got: {} }), WV = Bk.waves, SQ = 30, X0 = 30, XE = 780, CY = 130, TK = Bk.tasks, MS = Bk.miss || {}, wi = 0, task = 'amp', pickA = null;
+    var head = el('div', 'fs-scr-head'), stage = el('div', 'fs-brk-stage'), ask = el('div', 'fs-brk-ask'), miss = el('div', 'fs-miss'), ctl = el('div', 'fs-mug-go'), tab = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    [head, ask, stage, miss, ctl, tab, qh, win].forEach(function (e) { g.appendChild(e); });
+    stage.innerHTML = '<div class="fs-svgbox" style="padding-top:28.89%"><svg viewBox="0 0 900 260" class="fs-brk-svg" role="img"></svg></div>';
+    var svg = $('svg', stage);
+    function key(w, t) { return w.id + '-' + t; }
+    function sqs(n) { return n + ' ' + (n === 1 ? (Bk.unitOne || 'square') : (Bk.unit || 'squares')); }
+    function first() { for (var i = 0; i < WV.length; i++) { if (!st.got[key(WV[i], 'amp')]) return [i, 'amp']; if (!st.got[key(WV[i], 'wl')]) return [i, 'wl']; } return null; }
+    function pts(w) { /* quarter-wave points on the wave + center-line points under crests and troughs */
+      var P = [], L = w.wl * SQ, q = 0, x;
+      for (x = X0; x <= XE + 0.1; x = X0 + (++q) * L / 4) { var ph = q % 4, y = CY - (ph === 1 ? w.amp * SQ : ph === 3 ? -w.amp * SQ : 0); if (ph === 1 || ph === 3) P.push({ x: x, y: y, k: ph === 1 ? 'crest' : 'trough', q: q });
+        if (ph === 1 || ph === 3) P.push({ x: x, y: CY, k: 'line', q: q }); }
+      return P;
+    }
+    var P = [];
+    function draw(br) {
+      var w = WV[wi], L = w.wl * SQ, grid = '', d = '', x;
+      for (x = X0; x <= XE; x += SQ) grid += '<line x1="' + x + '" y1="10" x2="' + x + '" y2="250"/>'; for (var y = 10; y <= 250; y += SQ) grid += '<line x1="' + X0 + '" y1="' + y + '" x2="' + XE + '" y2="' + y + '"/>';
+      for (x = X0; x <= XE; x += 4) d += (x === X0 ? 'M' : 'L') + x + ' ' + (CY - w.amp * SQ * Math.sin(2 * Math.PI * (x - X0) / L)).toFixed(1);
+      P = pts(w);
+      svg.innerHTML = '<rect width="900" height="260" fill="#FBFAF4"/><g class="fs-brk-grid">' + grid + '</g><line x1="' + X0 + '" y1="' + CY + '" x2="' + XE + '" y2="' + CY + '" class="fs-brk-mid"/><text x="' + (XE + 8) + '" y="' + (CY + 4) + '" class="fs-brk-lab">' + esc(Bk.midWord || 'center line') + '</text>' +
+        '<path d="' + d + '" fill="none" stroke="' + (w.c || '#2D7AA6') + '" stroke-width="5" stroke-linecap="round"/>' + (br || '') +
+        P.map(function (p, i) { return '<circle class="fs-brk-dot' + (pickA === i ? ' sel' : '') + '" data-i="' + i + '" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="8"/>'; }).join('') +
+        '<text x="' + X0 + '" y="256" class="fs-brk-lab">' + esc(Bk.sqWord || 'Each box on the grid is 1 square.') + '</text>';
+      svg.setAttribute('aria-label', w.name + ': a wave on grid paper with dots you can tap');
+      $$('.fs-brk-dot', svg).forEach(function (c) { c.addEventListener('pointerdown', function (e) { e.preventDefault(); downAt = +c.dataset.i; }); c.addEventListener('pointerup', function () { var i = +c.dataset.i; if (downAt != null && downAt !== i) choose(downAt, i); else tap(i); downAt = null; }); });
+    }
+    var downAt = null;
+    svg.addEventListener('pointerup', function (e) { if (downAt == null) return; var t = document.elementFromPoint(e.clientX, e.clientY); if (t && t.classList && t.classList.contains('fs-brk-dot') && +t.dataset.i !== downAt) choose(downAt, +t.dataset.i); downAt = null; });
+    function tap(i) { if (pickA == null) { pickA = i; SFX.blip(); draw(); } else if (pickA === i) { pickA = null; draw(); } else choose(pickA, i); }
+    function bracket(a, b, ok) { var v = a.x === b.x; return '<g class="fs-brk-br' + (ok ? ' ok' : ' no') + '"><line x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '"/>' +
+      (v ? '<line x1="' + (a.x - 10) + '" y1="' + a.y + '" x2="' + (a.x + 10) + '" y2="' + a.y + '"/><line x1="' + (b.x - 10) + '" y1="' + b.y + '" x2="' + (b.x + 10) + '" y2="' + b.y + '"/>' : '<line x1="' + a.x + '" y1="' + (a.y - 10) + '" x2="' + a.x + '" y2="' + (a.y + 10) + '"/><line x1="' + b.x + '" y1="' + (b.y - 10) + '" x2="' + b.x + '" y2="' + (b.y + 10) + '"/>') + '</g>'; }
+    function choose(i, j) {
+      var a = P[i], b = P[j], w = WV[wi], ok = false, why = '', val = 0; pickA = null;
+      if (task === 'amp') {
+        var top = a.k === 'line' ? b : a, ln = a.k === 'line' ? a : b;
+        if (ln.k === 'line' && (top.k === 'crest' || top.k === 'trough') && top.x === ln.x) { ok = true; val = w.amp; }
+        else if ((a.k === 'crest' && b.k === 'trough') || (a.k === 'trough' && b.k === 'crest')) why = MS.ampTall || 'That bracket goes from the top all the way to the bottom: twice too tall. Amplitude starts at the center line.';
+        else if (a.k === b.k) why = MS.ampSide || 'That bracket goes sideways. Amplitude goes straight up: from the center line to a crest.';
+        else why = MS.amp || 'Start on the center line, right under a crest, and go straight up to the crest.';
+      } else {
+        var dq = Math.abs(a.q - b.q);
+        if (a.k === b.k && (a.k === 'crest' || a.k === 'trough') && dq === 4) { ok = true; val = w.wl; }
+        else if (a.k === b.k && (a.k === 'crest' || a.k === 'trough') && dq > 4) why = MS.wlTwo || 'That is more than one wave. Go from one crest to the very NEXT crest.';
+        else if ((a.k === 'crest' && b.k === 'trough') || (a.k === 'trough' && b.k === 'crest')) why = MS.wlHalf || 'That is only half a wave. Go from one crest to the NEXT crest.';
+        else why = MS.wl || 'Wavelength goes sideways along the wave: from one crest to the next crest.';
+      }
+      draw(bracket(a, b, ok));
+      if (!ok) { bounce(stage, miss, why); return; }
+      miss.classList.remove('show'); st.got[key(w, task)] = val; saveJ('brackets', st); SFX.chime();
+      ask.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">📏</span><div>' + esc((Bk.readTpl || '{name}: {n}').replace('{name}', TK[task].name).replace('{n}', sqs(val))) + '</div></div>';
+      paintTable(); setTimeout(step, reduceMotion ? 0 : 900);
+    }
+    function paintTable() {
+      tab.innerHTML = '<div class="fs-swv-log"><div class="fs-lu-lab">' + esc(Bk.tableLabel || 'My wave measurements') + '</div><table><tr><th>' + esc(Bk.waveCol || 'Wave') + '</th><th>' + esc(TK.amp.name) + '</th><th>' + esc(TK.wl.name) + '</th></tr>' +
+        WV.map(function (w) { var a = st.got[key(w, 'amp')], l = st.got[key(w, 'wl')]; return '<tr><td>' + w.icon + ' ' + esc(w.name) + '</td><td>' + (a != null ? esc(sqs(a)) : '?') + '</td><td>' + (l != null ? esc(sqs(l)) : '?') + '</td></tr>'; }).join('') + '</table></div>';
+    }
+    function step() {
+      var f = first(); paintTable();
+      if (!f) { head.innerHTML = ''; ask.innerHTML = ''; stage.style.display = 'none';
+        var opts = Bk.opts || WV.map(function (w) { var top = WV.reduce(function (m, x) { return x.amp > m.amp ? x : m; }), longest = WV.reduce(function (m, x) { return x.wl > m.wl ? x : m; });
+          return w === top ? { t: w.icon + ' ' + w.name, ok: true } : { t: w.icon + ' ' + w.name, miss: w === longest ? (MS.energyWl || 'That wave has the longest wavelength, but wavelength is spacing, not height. Energy goes with amplitude.') : (MS.energy || 'Look at the amplitude column. Which wave is tallest?') }; });
+        askOnce(qh, Bk.q || 'Which wave carries the MOST energy?', opts, 'brackets-q', win, Bk.win, Bk.clue, 'brackets', miss); return; }
+      wi = f[0]; task = f[1]; var w = WV[wi];
+      head.innerHTML = '<small>' + esc((Bk.waveWord || 'Wave') + ' ' + (wi + 1) + ' of ' + WV.length) + '</small><b>' + w.icon + ' ' + esc(w.name) + '</b>';
+      ask.innerHTML = '<div class="fs-brk-q"><b>' + esc(TK[task].name) + ':</b> ' + esc(TK[task].ask) + '</div>'; draw();
+    }
+    step(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 3 (the old Explore): "Shake it yourself" — drag the hand at the end of a slinky up and down (or press Gentle / Hard); the wave copies YOUR
+     motion and travels down the coils. A red ribbon marks its own path; a cup tower waits at the far end. Log a gentle and a hard wiggle (26.01) ----------
+     D.shake = {afterText, kicker, title, todo[], why, gentleBtn, hardBtn, handLabel, cups, logLabel, cols[4], rows:{gentle:[...], hard:[...]}, q, opts, win, clue} */
+  function buildShake() {
+    var Sk = D.shake; if (!Sk) return;
+    var at = anchorP(Sk.afterText); if (!at) { FAILED.push('shake anchor text not found'); return; }
+    var g = gameShell(Sk.kicker || 'Part 3 game', Sk.title, Sk.todo, Sk.why); g.dataset.mod = 'shake';
+    var st = loadJ('shake', { log: {} }), N = 34, XS = 110, XE = 760, CY = 150, V = 280, HIST = [], drag = false, hand = 0, peak = 0, endAt = 0, running = false, fallen = false, ribPeak = 0, RIB = 14, raf = null, gen = null, idleDrawn = false;
+    var stage = el('div', 'fs-shk-stage', '<div class="fs-svgbox" style="padding-top:33.33%"><svg viewBox="0 0 900 300" class="fs-shk-svg" role="img" aria-label="' + esc(Sk.alt || 'A model slinky stretched across the floor, a hand holding one end, a red ribbon on one coil and a tower of cups at the far end.') + '"></svg></div>');
+    var ctl = el('div', 'fs-mug-go'), miss = el('div', 'fs-miss'), log = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    [stage, ctl, miss, log, qh, win].forEach(function (e) { g.appendChild(e); });
+    var svg = $('svg', stage);
+    ctl.innerHTML = '<button type="button" class="fs-btn alt fs-shk-g">' + esc(Sk.gentleBtn || '〰 Gentle wiggle') + '</button><button type="button" class="fs-btn fs-shk-h">' + esc(Sk.hardBtn || '🌊 Hard wiggle') + '</button>';
+    function xi(i) { return XS + (XE - XS) * i / (N - 1); }
+    function hAt(t) { if (!HIST.length || t < HIST[0][0]) return 0; for (var k = HIST.length - 1; k >= 0; k--) if (HIST[k][0] <= t) return HIST[k][1]; return 0; }
+    function cups() { var h = '', P = [[0, 0], [1, 0], [2, 0], [0.5, 1], [1.5, 1], [1, 2]]; P.forEach(function (p, k) { var x = 790 + p[0] * 30, y = 214 - p[1] * 34;
+        h += '<g class="fs-shk-cup' + (fallen ? ' down' : '') + '" style="--k:' + k + '"><path d="M' + (x - 13) + ' ' + y + ' L' + (x + 13) + ' ' + y + ' L' + (x + 9) + ' ' + (y + 32) + ' L' + (x - 9) + ' ' + (y + 32) + ' Z" fill="' + ['#E8636B', '#F2B134', '#34B76F', '#55C8E8', '#8B6FC0', '#E8792E'][k] + '" stroke="#fff" stroke-width="2"/></g>'; }); return h; }
+    var marks = [];
+    function draw(now) {
+      var t = now / 1000, h = '<rect width="900" height="300" fill="#F6EEDC"/><rect y="250" width="900" height="50" fill="#D9BE8E"/>';
+      var ys = []; for (var i = 0; i < N; i++) { var d = hAt(t - (xi(i) - XS) / V) * (1 - 0.25 * i / N); ys.push(d); }
+      for (i = 0; i < N; i++) h += '<ellipse cx="' + xi(i).toFixed(1) + '" cy="' + (CY + ys[i]).toFixed(1) + '" rx="6" ry="26" fill="none" stroke="' + (i === RIB ? '#D62828' : '#9AA7B1') + '" stroke-width="' + (i === RIB ? 5 : 3.5) + '"/>';
+      var ry = CY + ys[RIB]; ribPeak = Math.max(ribPeak, Math.abs(ys[RIB])); if (running) marks.push(ry);
+      var lo = Math.min.apply(null, marks.concat([CY])), hi = Math.max.apply(null, marks.concat([CY]));
+      h += '<line x1="' + (xi(RIB) + 22) + '" y1="' + lo.toFixed(1) + '" x2="' + (xi(RIB) + 22) + '" y2="' + hi.toFixed(1) + '" class="fs-shk-mark"/><path d="M' + xi(RIB) + ' ' + (ry - 26) + ' l-8 -14 l16 0 z" fill="#D62828"/>' +
+        (hi - lo > 6 ? '<text x="' + (xi(RIB) + 30) + '" y="' + (lo - 6).toFixed(1) + '" class="fs-shk-lab">' + esc(Sk.ribbonWord || 'ribbon path') + '</text>' : '');
+      var hy = CY + hand; h += '<g class="fs-shk-hand"><rect x="44" y="' + (hy - 20) + '" width="48" height="40" rx="14" fill="#F2C9A0" stroke="#B5835A" stroke-width="2"/><text x="68" y="' + (hy + 8) + '" text-anchor="middle" font-size="22">✊</text></g>' +
+        '<line x1="92" y1="' + hy + '" x2="' + XS + '" y2="' + (CY + ys[0]).toFixed(1) + '" stroke="#9AA7B1" stroke-width="4"/>' +
+        '<text x="68" y="' + (CY - 112) + '" text-anchor="middle" class="fs-shk-lab">' + esc(Sk.handLabel || 'drag me ↕') + '</text>' + cups() + '<text x="12" y="292" class="fs-trn-model">' + esc(Sk.model || 'a model') + '</text>';
+      svg.innerHTML = h;
+      var yEnd = Math.abs(ys[N - 1]);
+      if (running && !fallen && yEnd > (Sk.topple || 52)) { fallen = true; SFX.thud(); noise(0.4, 600, 3000, 0.25); }
+      return ys;
+    }
+    function loop(now) {
+      var t = now / 1000;
+      if (gen) { var p = (t - gen.t0) / gen.dur; hand = p >= 1 ? 0 : -gen.a * Math.sin(2 * Math.PI * p); if (p >= 1) gen = null; }
+      else if (!drag) hand *= 0.8;
+      if (Math.abs(hand) > 4 && !running) { running = true; peak = 0; ribPeak = 0; marks = []; if (fallen) { fallen = false; } idleDrawn = false; }
+      if (running) { peak = Math.max(peak, Math.abs(hand)); HIST.push([t, hand]); if (Math.abs(hand) > 2) endAt = t + (XE - XS) / V + 0.5; }
+      if (HIST.length > 600) HIST.splice(0, HIST.length - 600);
+      var busyNow = running || drag || gen || Math.abs(hand) > 0.5;
+      if (busyNow || !idleDrawn) { draw(now); idleDrawn = !busyNow; }
+      if (running && t > endAt && !drag && !gen) { running = false; idleDrawn = false; finish(); }
+      raf = requestAnimationFrame(loop);
+    }
+    function finish() {
+      var kind = peak >= (Sk.hardAt || 60) ? 'hard' : 'gentle', R = (Sk.rows || {})[kind]; SFX.chime();
+      st.log[kind] = { fell: fallen ? 1 : 0, rib: Math.round(ribPeak / 15) / 2 }; saveJ('shake', st); paint(kind);
+    }
+    function paint(last) {
+      var C4 = Sk.cols || ['Wiggle', 'How tall (amplitude)', 'The red ribbon', 'The cups'], K = ['gentle', 'hard'];
+      log.innerHTML = '<div class="fs-swv-log"><div class="fs-lu-lab">' + esc(Sk.logLabel || 'My slinky log') + '</div><table><tr>' + C4.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        K.map(function (k) { var r = st.log[k], R = (Sk.rows || {})[k] || [k, '', '', '', '']; return '<tr' + (last === k ? ' class="new"' : '') + '><td>' + esc(R[0]) + '</td>' + (r ? '<td>' + esc(R[1]) + '</td><td>' + esc(R[2]) + '</td><td>' + esc(r.fell ? R[3] : R[4]) + '</td>' : '<td>?</td><td>?</td><td>?</td>') + '</tr>'; }).join('') + '</table></div>';
+      if (last && !(st.log.gentle && st.log.hard)) { var need = st.log.gentle ? 'hard' : 'gentle'; miss.classList.remove('show'); log.appendChild(el('p', 'fs-scr-tip', esc((Sk.needLine || 'Now try a {k} wiggle.').replace('{k}', ((Sk.rows || {})[need] || [need])[0].toLowerCase())))); }
+      if (st.log.gentle && st.log.hard && !st.log.hard.fell && !st.log.gentle.fell) { /* a "hard" wiggle that didn't reach the cups (unlikely): accept anyway */ }
+      if (st.log.gentle && st.log.hard) askOnce(qh, Sk.q, Sk.opts, 'shake-q', win, Sk.win, Sk.clue, 'shake', miss);
+    }
+    function yOf(e) { var r = svg.getBoundingClientRect(); return (e.clientY - r.top) / r.height * 300 - CY; }
+    svg.addEventListener('pointerdown', function (e) { var r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 900; if (x > 150) return; drag = true; gen = null; ac(); svg.setPointerCapture && svg.setPointerCapture(e.pointerId); hand = Math.max(-100, Math.min(100, yOf(e))); e.preventDefault(); });
+    svg.addEventListener('pointermove', function (e) { if (drag) hand = Math.max(-100, Math.min(100, yOf(e))); });
+    ['pointerup', 'pointercancel'].forEach(function (k) { svg.addEventListener(k, function () { drag = false; }); });
+    function wiggle(a) { if (running || gen) return; ac(); SFX.whoosh(); gen = { t0: performance.now() / 1000, dur: 0.6, a: a }; }
+    $('.fs-shk-g', ctl).addEventListener('click', function () { wiggle(30); });
+    $('.fs-shk-h', ctl).addEventListener('click', function () { wiggle(92); });
+    if (reduceMotion) V = 600;
+    paint(); raf = requestAnimationFrame(loop); placeAfter(g, at);
+  }
+
+  /* ---------- after the solve: "Twist: what really moves the ducks?" — the same ducks on a still pond with waves and on a flowing river; race them; then a real
+     duck-race photo and a chip question (26.01) ----------
+     D.rivertwist = {after, kicker, title, todo[], lockLine, pondLabel, riverLabel, raceBtn, againBtn, photo:{img, alt, cap}, q, opts, line, win} */
+  function buildRivertwist() {
+    var Rv = D.rivertwist; if (!Rv) return;
+    var g = gameShell(Rv.kicker || 'Twist!', Rv.title, Rv.todo, Rv.why); g.dataset.mod = 'rivertwist';
+    afterSolve(g, Rv.after, Rv.lockLine, function (body) {
+      var st = loadJ('rivertwist', { ran: 0 }), stage = el('div', 'fs-rvt-two'), ctl = el('div', 'fs-mug-go'), out = el('div'), qh = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      [stage, ctl, out, qh, miss, win].forEach(function (e) { body.appendChild(e); });
+      function panel(k, lab) { return '<div class="fs-rvt-p"><div class="fs-lu-lab">' + esc(lab) + '</div><div class="fs-svgbox" style="padding-top:45%"><svg viewBox="0 0 400 180" class="fs-rvt-svg" data-k="' + k + '" role="img" aria-label="' + esc(lab) + '"></svg></div></div>'; }
+      stage.innerHTML = panel('pond', Rv.pondLabel || 'The pond, with the wave machine') + panel('river', Rv.riverLabel || 'A river, where the water flows');
+      var S = $$('svg', stage);
+      function duck(x, y) { return '<g transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')"><ellipse rx="12" ry="7" fill="#F7D232" stroke="#B88A00" stroke-width="1.5"/><circle cx="7" cy="-8" r="5.5" fill="#F7D232" stroke="#B88A00" stroke-width="1.5"/><path d="M12 -9 l6 2 l-6 2z" fill="#F08A1C"/></g>'; }
+      function draw(t) {
+        S.forEach(function (s) { var river = s.dataset.k === 'river', h = '<rect width="400" height="180" fill="' + (river ? '#CFE7F2' : '#DCEFF8') + '"/><rect y="70" width="400" height="110" fill="' + (river ? '#3F8FBF' : '#5AA3D0') + '"/>' +
+          '<line x1="360" y1="60" x2="360" y2="170" stroke="#fff" stroke-width="4" stroke-dasharray="8 6"/><text x="360" y="54" text-anchor="middle" class="fs-dlp-lab">' + esc(Rv.finishWord || 'finish') + '</text>';
+          if (river) for (var a = 0; a < 5; a++) { var ax = ((a * 90 + t * 60) % 420) - 20; h += '<path d="M' + ax + ' ' + (150 - (a % 2) * 30) + ' h26 l-7 -5 m7 5 l-7 5" stroke="#BFE3F7" stroke-width="3" fill="none"/>'; }
+          for (var i = 0; i < 3; i++) { var x0 = 40 + i * 24, y0 = 92 + i * 22, x = river ? Math.min(380, x0 + t * 70) : x0 + 6 * Math.sin(t * 4 + i), y = y0 + (river ? 2 * Math.sin(t * 3 + i) : 9 * Math.cos(t * 4 + i)); h += duck(x, y); }
+          s.innerHTML = h; });
+      }
+      function race() { ac(); SFX.whoosh(); var t0 = null, D1 = reduceMotion ? 200 : 4800, b = $('button', ctl); if (b) b.disabled = true;
+        (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / D1); draw(p * 4.8); if (p < 1) { requestAnimationFrame(f); return; } st.ran = 1; saveJ('rivertwist', st); SFX.chime(); paint(); })(performance.now()); }
+      function paint() {
+        ctl.innerHTML = '<button type="button" class="fs-btn">' + esc(st.ran ? (Rv.againBtn || '↺ Race again') : (Rv.raceBtn || '▶ Race the ducks')) + '</button>'; $('button', ctl).addEventListener('click', race);
+        if (!st.ran) return;
+        if (!out.dataset.on) { out.dataset.on = '1'; if (Rv.photo) out.appendChild(el('figure', 'fs-gls-fig', '<img src="' + esc(Rv.photo.img) + '" alt="' + esc(Rv.photo.alt || '') + '"><figcaption>' + esc(Rv.photo.cap || '') + '</figcaption>'));
+          chipsQ(qh, Rv.q, Rv.opts, function () { store('rivertwist-q', '1'); out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">🏞️</span><div>' + esc(Rv.line || '') + '</div>')); winOnce(win, Rv.win, null, 'rivertwist'); }, miss);
+          if (store('rivertwist-q')) { var c = $$('.fs-in-chip', qh)[Rv.opts.map(function (o) { return !!o.ok; }).indexOf(true)]; if (c) c.click(); } }
+      }
+      draw(0); paint();
+    });
+  }
+
+  /* ---------- after the solve: "Mr. Ortiz's new race plan" — a paper form; tap the right choice on each line to circle it in pen (a wrong one gets crossed out with a
+     hint); then stamp it (26.01) ----------
+     D.raceplan = {after, kicker, title, todo[], lockLine, head, sub, lines:[{label, opts:[{t, ok, miss}]}], stampBtn, stamp, sign, win} */
+  function buildRaceplan() {
+    var Rp = D.raceplan; if (!Rp) return;
+    var g = gameShell(Rp.kicker || 'Case closed', Rp.title, Rp.todo, Rp.why); g.dataset.mod = 'raceplan';
+    afterSolve(g, Rp.after, Rp.lockLine, function (body) {
+      var st = loadJ('raceplan', { c: {}, x: {}, s: 0 }), card = el('div', 'fs-rpn'), sb = el('div', 'fs-mug-go'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      [card, sb, miss, win].forEach(function (e) { body.appendChild(e); });
+      function done() { return Rp.lines.every(function (l, i) { return st.c[i] != null; }); }
+      function paint(anim) {
+        card.innerHTML = '<div class="fs-rpn-h"><b>' + esc(Rp.head) + '</b><small>' + esc(Rp.sub || '') + '</small></div>' + Rp.lines.map(function (l, i) {
+          return '<div class="fs-rpn-line"><span class="fs-rpn-lab">' + esc(l.label) + '</span><span class="fs-rpn-opts">' + l.opts.map(function (o, j) { var c = st.c[i] === j, x = st.x[i + '-' + j];
+            return '<button type="button" class="fs-rpn-o' + (c ? ' circ' : '') + (x ? ' cross' : '') + '" data-i="' + i + '" data-j="' + j + '"' + (st.c[i] != null ? ' disabled' : '') + '>' + esc(o.t) + '</button>'; }).join('<i>or</i>') + '</span></div>'; }).join('') +
+          '<div class="fs-rpn-sign">' + (st.s ? '<em class="fs-hrf-st' + (anim ? ' new' : '') + '">' + esc(Rp.stamp) + '</em>' : '') + '<span>' + esc(Rp.signLabel || 'Signed') + ': <b>' + esc(st.s ? Rp.sign : '') + '</b></span></div>';
+        $$('.fs-rpn-o', card).forEach(function (b) { b.addEventListener('click', function () { var i = +b.dataset.i, j = +b.dataset.j, o = Rp.lines[i].opts[j];
+          if (o.ok) { st.c[i] = j; saveJ('raceplan', st); SFX.pop(); miss.classList.remove('show'); paint(); } else { st.x[i + '-' + j] = 1; saveJ('raceplan', st); paint(); bounce($$('.fs-rpn-o', card).filter(function (z) { return z.dataset.i == i && z.dataset.j == j; })[0], miss, o.miss); } }); });
+        sb.innerHTML = '';
+        if (done() && !st.s) { var b = el('button', 'fs-btn', esc(Rp.stampBtn || '🖋️ Stamp the plan')); b.type = 'button'; sb.appendChild(b); b.addEventListener('click', function () { st.s = 1; saveJ('raceplan', st); SFX.stamp(); paint(true); winOnce(win, Rp.win, null, 'raceplan'); }); }
+        if (st.s) winOnce(win, Rp.win, null, 'raceplan');
+      }
+      paint();
+    });
+  }
+
+  /* ---------- Tool of the Week: two tuning forks (26.01). Strike each: hear its note (WebAudio) and watch the prongs in slow motion; compare how fast each
+     vibrates; then dip one in water to see the splash (a real photo).
+     T.tuningfork = {title, todo[], model, forks:[{id, name, hz, c}], slow, strikeBtn, wigTpl, needBoth, q:{q, opts}, dipBtn, photo:{img, alt, cap}} ---------- */
+  SIMS.tuningfork = function (host, T) {
+    var M = T.tuningfork, st = loadJ('tuningfork', { hit: {}, q: 0, dip: 0 }), SLOW = M.slow || 128, F = M.forks;
+    host.innerHTML = '<div class="fs-game-k">' + esc(M.kicker || 'Try it: tuning forks') + '</div><div class="fs-game-t">' + esc(M.title) + '</div><ul class="fs-todo">' + M.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-tf-two">' + F.map(function (f) { return '<div class="fs-tf-col" data-id="' + f.id + '"><div class="fs-svgbox" style="padding-top:110%"><svg viewBox="0 0 200 220" role="img" aria-label="' + esc('A model ' + f.name) + '"><g class="fs-tf-l"><rect x="74" y="20" width="16" height="120" rx="8" fill="' + f.c + '"/></g><g class="fs-tf-r"><rect x="110" y="20" width="16" height="120" rx="8" fill="' + f.c + '"/></g>' +
+        '<path d="M74 132 Q100 170 126 132" fill="none" stroke="' + f.c + '" stroke-width="16"/><rect x="93" y="150" width="14" height="62" rx="5" fill="#8C959B"/><text x="100" y="12" text-anchor="middle" class="fs-tf-hz">' + esc(f.tag || (f.hz + ' Hz')) + '</text></svg></div>' +
+        '<b>' + esc(f.name) + '</b><button type="button" class="fs-btn fs-tf-hit">' + esc(M.strikeBtn || '🔨 Strike it') + '</button><div class="fs-tf-read"></div></div>'; }).join('') + '</div><div class="fs-tf-q"></div><div class="fs-miss"></div><div class="fs-tf-dip"></div>' +
+      '<p class="fs-trn-model">' + esc(M.model || 'A model: the prongs move in slow motion.') + '</p>';
+    var miss = $('.fs-miss', host), qh = $('.fs-tf-q', host), dip = $('.fs-tf-dip', host);
+    function readOut(f) { $('.fs-tf-read', $('.fs-tf-col[data-id="' + f.id + '"]', host)).innerHTML = st.hit[f.id] ? esc((M.wigTpl || 'In slow motion: {n} wiggles every second. For real: {hz} every second!').replace('{n}', f.hz / SLOW).replace('{hz}', f.hz)) : ''; }
+    function strike(f) {
+      var c = ac(); if (c) { var o = c.createOscillator(), gN = c.createGain(); o.type = 'sine'; o.frequency.value = f.hz; gN.gain.setValueAtTime(0.0001, c.currentTime); gN.gain.exponentialRampToValueAtTime(0.12, c.currentTime + 0.01); gN.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 2.2); o.connect(gN); gN.connect(c.destination); o.start(); o.stop(c.currentTime + 2.3); }
+      var col = $('.fs-tf-col[data-id="' + f.id + '"]', host), L = $('.fs-tf-l', col), R = $('.fs-tf-r', col), t0 = null, D1 = reduceMotion ? 0 : 3000, hz = f.hz / SLOW;
+      (function a(now) { if (t0 == null) t0 = now; var t = (now - t0) / 1000, p = Math.min(1, (now - t0) / (D1 || 1)), amp = 5 * (1 - p), off = amp * Math.sin(2 * Math.PI * hz * t);
+        L.setAttribute('transform', 'rotate(' + (-off).toFixed(2) + ' 82 140)'); R.setAttribute('transform', 'rotate(' + off.toFixed(2) + ' 118 140)'); if (p < 1) requestAnimationFrame(a); })(performance.now());
+      st.hit[f.id] = 1; saveJ('tuningfork', st); readOut(f); paint();
+    }
+    function paint() {
+      var both = F.every(function (f) { return st.hit[f.id]; });
+      if (!both) { qh.innerHTML = Object.keys(st.hit).length ? '<p class="fs-scr-tip">' + esc(M.needBoth || 'Now strike the other fork. Listen: is it higher or lower?') + '</p>' : ''; return; }
+      if (!qh.dataset.on) { qh.dataset.on = '1'; qh.innerHTML = ''; chipsQ(qh, M.q.q, M.q.opts, function () { st.q = 1; saveJ('tuningfork', st); paint(); }, miss);
+        if (st.q) { var c = $$('.fs-in-chip', qh)[M.q.opts.map(function (o) { return !!o.ok; }).indexOf(true)]; if (c) { c.classList.add('on', 'ok'); $('.fs-sv-q', qh).dataset.done = '1'; } } }
+      if (!st.q) return;
+      if (!st.dip) { dip.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-btn">' + esc(M.dipBtn || '💧 Dip a ringing fork in water') + '</button></div>'; $('button', dip).addEventListener('click', function () { st.dip = 1; saveJ('tuningfork', st); noise(0.3, 2000, 6000, 0.15); paint(); }); return; }
+      dip.innerHTML = '<figure class="fs-gls-fig"><img src="' + esc(M.photo.img) + '" alt="' + esc(M.photo.alt || '') + '"><figcaption>' + esc(M.photo.cap || '') + '</figcaption></figure>';
+      toolDone();
+    }
+    F.forEach(function (f) { var col = $('.fs-tf-col[data-id="' + f.id + '"]', host); $('.fs-tf-hit', col).addEventListener('click', function () { strike(f); }); readOut(f); });
+    paint();
+  };
+
   function init() {
     if (/[?&]review\b/.test(location.search)) html.classList.add('fs-review');
     guard('tabs', trackTabs);
@@ -12303,6 +12738,13 @@
     guard('rematch', buildRematch);
     guard('hireform', buildHireform);
     guard('headstart', buildHeadstart);
+    guard('crowd', buildCrowd);
+    guard('swapwave', buildSwapwave);
+    guard('duckloop', buildDuckloop);
+    guard('brackets', buildBrackets);
+    guard('shake', buildShake);
+    guard('rivertwist', buildRivertwist);
+    guard('raceplan', buildRaceplan);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);
