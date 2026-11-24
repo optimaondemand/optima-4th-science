@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -3264,7 +3264,7 @@
         var root = ref;
         while (root && root !== wrapEl && root.parentElement) {
           var q = root.getBoundingClientRect();
-          if (q.left <= r.x + 1 && q.top <= r.y + 1 && q.right >= r.x + r.w - 1 && q.bottom >= r.y + r.h - 1 && root.tagName !== 'SPAN' && root.tagName !== 'B') break;
+          if (q.left <= r.x + 1 && q.top <= r.y + 1 && q.right >= r.x + r.w - 1 && q.bottom >= r.y + r.h - 1 && root.tagName !== 'SPAN' && root.tagName !== 'B' && !(window.SVGElement && root instanceof SVGElement)) break;
           root = root.parentElement;
         }
         if (!root || !wrapEl.contains(root)) root = wrapEl;
@@ -10759,6 +10759,364 @@
   }
   function cardsText(cards) { var B = D.beach; return cards.map(function (c) { return stepsWord(c.n) + ' ' + B.dirs[c.d].t; }).join(', ' + (B.thenWord || 'then') + ' '); }
 
+  /* ======================= 25.02 "Zippy vs Scoot" (Case 25 part 2): case.board, fixsign, scratch, slicer, photofinish, rematch, hireform, headstart ======================= */
+
+  /* ---------- case: a sandwich-board sign + delivery tickets + a sticky note (25.02). case.board = {sign:{top, big, sub, foot}, tickets:[{n, icon, who, to, rows:[[k, v]], stamp}], sticky, stickySign} ---------- */
+  function boardCard(B) {
+    return '<div class="fs-sbd"><div class="fs-sbd-row"><div class="fs-sbd-sign"><div class="fs-sbd-a">' + (B.sign.top ? '<small>' + esc(B.sign.top) + '</small>' : '') + '<b>' + esc(B.sign.big) + '</b>' + (B.sign.sub ? '<em>' + esc(B.sign.sub) + '</em>' : '') + (B.sign.foot ? '<span>' + esc(B.sign.foot) + '</span>' : '') + '</div><i class="fs-sbd-leg l"></i><i class="fs-sbd-leg r"></i></div>' +
+      '<div class="fs-sbd-tix">' + (B.tickets || []).map(function (t) { return '<div class="fs-tix"><div class="fs-tix-h"><span>' + t.icon + '</span><b>' + esc(t.who) + '</b><em>#' + esc(t.n) + '</em></div><p>' + esc(t.to) + '</p><dl>' + t.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (t.stamp ? '<em class="fs-tix-st">' + esc(t.stamp) + '</em>' : '') + '</div>'; }).join('') + '</div></div>' +
+      (B.sticky ? '<div class="fs-tmap-note fs-sbd-note"><p>' + esc(B.sticky) + '</p><b>' + esc(B.stickySign || '') + '</b></div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Fix the sign" — drag a word magnet (or tap it, then tap a blank) onto each blank on a sandwich board; a magnet that claims more than
+     the number proves slides off with a hint; when every blank is right the sign is re-lettered, then a chip question (25.02) ----------
+     D.fixsign = {afterText, kicker, title, todo[], why, board:{top, big, sub}, fixed:{top, big, sub}, lines:[{pre, post, ok, miss:{tileK: t}, missAny}], tiles:[{k, t}],
+                  trayLabel, dropHere, countWord, q, opts, win, clue} */
+  function buildFixsign() {
+    var Fs = D.fixsign; if (!Fs) return;
+    var at = anchorP(Fs.afterText); if (!at) { FAILED.push('fixsign anchor text not found'); return; }
+    var g = gameShell(Fs.kicker || 'Warm-Up game', Fs.title, Fs.todo, Fs.why); g.dataset.mod = 'fixsign';
+    var st = loadJ('fixsign', { f: {} }), L = Fs.lines;
+    var board = el('div', 'fs-fxs-board'), tray = el('div', 'fs-fxs-tray'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(board); g.appendChild(tray); g.appendChild(miss); g.appendChild(count); g.appendChild(qh); g.appendChild(win);
+    function tileT(k) { var t = Fs.tiles.filter(function (x) { return x.k === k; })[0]; return t ? t.t : ''; }
+    function done() { return L.every(function (l, i) { return st.f[i]; }); }
+    function paint(anim) {
+      var ok = done(), B = ok && Fs.fixed ? Fs.fixed : Fs.board;
+      board.innerHTML = '<div class="fs-fxs-head' + (ok && anim ? ' flash' : '') + (ok ? ' fixed' : '') + '">' + (B.top ? '<small>' + esc(B.top) + '</small>' : '') + '<b>' + esc(B.big) + '</b>' + (B.sub ? '<em>' + esc(B.sub) + '</em>' : '') + '</div>' +
+        L.map(function (l, i) { return '<div class="fs-fxs-line"><span>' + esc(l.pre) + '</span> ' + (st.f[i] ? '<b class="fs-fxs-mag">' + esc(tileT(l.ok)) + '</b>' : '<button type="button" class="fs-fxs-slot" data-i="' + i + '">' + esc(Fs.dropHere || 'drop a word here') + '</button>') + (l.post ? ' <span>' + esc(l.post) + '</span>' : '') + '</div>'; }).join('') +
+        '<i class="fs-sbd-leg l"></i><i class="fs-sbd-leg r"></i>';
+      var n = L.filter(function (l, i) { return st.f[i]; }).length;
+      count.textContent = '🧲 ' + n + ' of ' + L.length + ' ' + (Fs.countWord || 'blanks fixed'); count.classList.toggle('ok', ok);
+      tray.style.display = ok ? 'none' : '';
+      $$('.fs-fxs-slot', board).forEach(function (s) { s.addEventListener('click', function () { var sel = $('.fs-fxs-tile.sel', g); if (sel) { sel.classList.remove('sel'); drop(sel, s); } else bounce(s, miss, Fs.pickFirst || 'Pick a word magnet first, then tap the blank.'); }); });
+      if (ok) askOnce(qh, Fs.q, Fs.opts, 'fixsign-q', win, Fs.win, Fs.clue, 'fixsign', miss);
+    }
+    function drop(tile, slot) {
+      var i = +slot.dataset.i, l = L[i], k = tile.dataset.k;
+      if (k === l.ok) { st.f[i] = 1; saveJ('fixsign', st); miss.classList.remove('show'); SFX.pop(); paint(true); if (done()) SFX.chime(); }
+      else { slot.classList.remove('nope'); void slot.offsetWidth; slot.classList.add('nope'); bounce(tile, miss, (l.miss && l.miss[k]) || l.missAny); }
+    }
+    tray.appendChild(el('div', 'fs-lu-lab', esc(Fs.trayLabel || 'Word magnets')));
+    Fs.tiles.forEach(function (t) { var b = el('div', 'fs-card fs-fxs-tile', esc(t.t)); b.dataset.k = t.k; tray.appendChild(b); dragDrop(b, function () { return $$('.fs-fxs-slot', board); }, drop); });
+    paint(false); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "Scratch-off tickets" — two tickets a round; silver panels hide a number. Call the winner first, then rub the panels off (drag on them,
+     or press Scratch), then call it again (25.02) ----------
+     D.scratch = {afterText, kicker, title, todo[], why, roundWord, scratchBtn, rubWord, nextBtn, countWord, rounds:[{id, t, a:{icon, who, rows:[[k, v, hide]]}, b, q1, opts1,
+                  line1, q2, opts2, line2}], win, clue} */
+  function scratchPanel(cell, word, onClear) {
+    var c = document.createElement('canvas'); c.className = 'fs-scr-cv'; c.width = 220; c.height = 64; cell.appendChild(c);
+    var x = c.getContext('2d'), gr = x.createLinearGradient(0, 0, 220, 64); gr.addColorStop(0, '#9EA7AD'); gr.addColorStop(0.5, '#E3E7EA'); gr.addColorStop(1, '#8C959B');
+    x.fillStyle = gr; x.fillRect(0, 0, 220, 64); x.fillStyle = 'rgba(70,80,86,.55)'; x.font = '900 20px Nunito, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(word || 'SCRATCH', 110, 33);
+    var on = false, last = null, n = 0, gone = false, live = false;
+    function at(e) { var r = c.getBoundingClientRect(); return [(e.clientX - r.left) / r.width * 220, (e.clientY - r.top) / r.height * 64]; }
+    function rub(p) { x.globalCompositeOperation = 'destination-out'; x.lineCap = 'round'; x.lineWidth = 30; x.beginPath(); x.moveTo((last || p)[0], (last || p)[1]); x.lineTo(p[0], p[1]); x.stroke(); last = p; if (++n % 4 === 0) { check(); if (!reduceMotion) noise(0.04, 2500, 6000, 0.05); } }
+    function check() { var d = x.getImageData(0, 0, 220, 64).data, clear = 0, tot = 0; for (var i = 3; i < d.length; i += 4 * 37) { tot++; if (d[i] < 40) clear++; } if (clear / tot > 0.55) clearAll(); }
+    function clearAll() { if (gone) return; gone = true; c.classList.add('gone'); setTimeout(function () { c.remove(); }, reduceMotion ? 0 : 400); onClear && onClear(); }
+    c.addEventListener('pointerdown', function (e) { if (!live) return; on = true; last = null; c.setPointerCapture && c.setPointerCapture(e.pointerId); rub(at(e)); e.preventDefault(); });
+    c.addEventListener('pointermove', function (e) { if (on) rub(at(e)); });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (k) { c.addEventListener(k, function () { on = false; last = null; }); });
+    return { clear: clearAll, live: function (v) { live = v; c.classList.toggle('live', v); }, gone: function () { return gone; } };
+  }
+  function buildScratch() {
+    var Sc = D.scratch; if (!Sc) return;
+    var at = anchorP(Sc.afterText); if (!at) { FAILED.push('scratch anchor text not found'); return; }
+    var g = gameShell(Sc.kicker || 'Part 1 game', Sc.title, Sc.todo, Sc.why); g.dataset.mod = 'scratch';
+    var st = loadJ('scratch', { r: 0, ph: 0 }), R = Sc.rounds;
+    var head = el('div', 'fs-scr-head'), pair = el('div', 'fs-scr-pair'), ctl = el('div'), miss = el('div', 'fs-miss'), out = el('div'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
+    g.appendChild(head); g.appendChild(pair); g.appendChild(ctl); g.appendChild(miss); g.appendChild(out); g.appendChild(count); g.appendChild(win);
+    function ticket(t, side, rd, panels) {
+      var d = el('div', 'fs-tix fs-scr-tix');
+      d.innerHTML = '<div class="fs-tix-h"><span>' + t.icon + '</span><b>' + esc(t.who) + '</b><em>' + side + '</em></div><dl></dl>';
+      var dl = $('dl', d);
+      t.rows.forEach(function (r) { var dt = el('dt', '', esc(r[0])), dd = el('dd', 'fs-scr-v', esc(r[1])); dl.appendChild(dt); dl.appendChild(dd);
+        if (r[2] && st.ph < 2) panels.push(scratchPanel(dd, Sc.rubWord, function () { if (panels.every(function (p) { return p.gone(); })) { st.ph = 2; saveJ('scratch', st); SFX.chime(); paintCtl(); } })); });
+      return d;
+    }
+    var panels = [];
+    function paint() {
+      var done = st.r >= R.length; count.textContent = '🎟️ ' + Math.min(st.r, R.length) + ' of ' + R.length + ' ' + (Sc.countWord || 'races called'); count.classList.toggle('ok', done);
+      if (done) { head.innerHTML = ''; pair.innerHTML = ''; ctl.innerHTML = ''; winOnce(win, Sc.win, Sc.clue, 'scratch'); return; }
+      var rd = R[st.r]; panels = [];
+      head.innerHTML = '<small>' + esc((Sc.roundWord || 'Race') + ' ' + (st.r + 1) + ' of ' + R.length) + '</small><b>' + esc(rd.t) + '</b>';
+      pair.innerHTML = ''; pair.appendChild(ticket(rd.a, 'A', rd, panels)); pair.appendChild(el('div', 'fs-scr-vs', 'vs')); pair.appendChild(ticket(rd.b, 'B', rd, panels));
+      out.innerHTML = ''; paintCtl();
+    }
+    function paintCtl() {
+      var rd = R[st.r]; ctl.innerHTML = ''; panels.forEach(function (p) { p.live(st.ph === 1); });
+      if (st.ph === 0) { chipsQ(ctl, rd.q1, rd.opts1, function () { st.ph = 1; saveJ('scratch', st); out.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">🤔</span><div>' + esc(rd.line1) + '</div></div>'; paintCtl(); }, miss); return; }
+      if (st.ph === 1) { var b = el('button', 'fs-btn fs-scr-go', esc(Sc.scratchBtn || '🪙 Scratch the silver panels')); b.type = 'button'; ctl.appendChild(b);
+        b.addEventListener('click', function () { ac(); panels.forEach(function (p, i) { setTimeout(p.clear, reduceMotion ? 0 : i * 260); }); });
+        ctl.appendChild(el('p', 'fs-scr-tip', esc(Sc.rubTip || 'Rub the silver with your mouse or finger, or press the button.'))); return; }
+      chipsQ(ctl, rd.q2, rd.opts2, function () { out.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">✅</span><div>' + esc(rd.line2) + '</div></div>';
+        var nb = el('button', 'fs-btn fs-scr-next', esc(st.r + 1 < R.length ? (Sc.nextBtn || 'Next race ▸') : (Sc.doneBtn || 'Finish ▸'))); nb.type = 'button'; out.appendChild(nb);
+        nb.addEventListener('click', function () { st.r++; st.ph = 0; saveJ('scratch', st); SFX.blip(); paint(); }); }, miss);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 2: "Slice it into seconds" — each run is a strip of footprints; press Run and the robot walks it; every `every` seconds it stops and you tap
+     ✂ Cut (or the strip); the pieces line up so you can compare how far each one goes in the same time (25.02) ----------
+     D.slicer = {afterText, kicker, title, todo[], why, every, msPerSec, racers:[{id, name, icon, steps, secs, c}], runBtn, cutBtn, autoBtn, beepLine, stepsWord, secWord,
+                 pieceTpl, compareLabel, compareTpl, needBoth, q1, opts1, q, opts, win, clue} */
+  function buildSlicer() {
+    var Sl = D.slicer; if (!Sl) return;
+    var at = anchorP(Sl.afterText); if (!at) { FAILED.push('slicer anchor text not found'); return; }
+    var g = gameShell(Sl.kicker || 'Part 2 game', Sl.title, Sl.todo, Sl.why); g.dataset.mod = 'slicer';
+    var st = loadJ('slicer', { done: {}, q1: 0 }), RC = Sl.racers, EV = Sl.every || 10, MAX = Math.max.apply(null, RC.map(function (r) { return r.steps; })), PX = 820 / MAX;
+    var rows = el('div', 'fs-slc-rows'), miss = el('div', 'fs-miss'), cmp = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    g.appendChild(rows); g.appendChild(miss); g.appendChild(cmp); g.appendChild(qh); g.appendChild(win);
+    function rowFor(r) {
+      var w = el('div', 'fs-slc-row'), n = r.steps, L = n * PX, prints = '';
+      for (var i = 0; i < n; i++) prints += '<ellipse cx="' + (40 + (i + 0.5) * PX).toFixed(1) + '" cy="' + (i % 2 ? 50 : 62) + '" rx="' + Math.min(3.4, PX * 0.38).toFixed(1) + '" ry="2.2"/>';
+      w.innerHTML = '<div class="fs-slc-name"><span>' + r.icon + '</span><b>' + esc(r.name) + '</b><small>' + esc(n + ' ' + (Sl.stepsWord || 'steps') + ' · ' + r.secs + ' ' + (Sl.secWord || 'seconds')) + '</small></div>' +
+        '<div class="fs-svgbox" style="padding-top:12.444%"><svg viewBox="0 0 900 112" class="fs-slc-svg" role="img" aria-label="' + esc(r.name + ': a strip of sand with ' + n + ' footprints') + '"><rect x="0" y="0" width="900" height="112" rx="10" fill="#F3E2B3"/>' +
+        '<rect x="40" y="36" width="' + L.toFixed(1) + '" height="40" rx="5" fill="#E9D193" stroke="' + r.c + '" stroke-width="2"/><g class="fs-slc-prints" fill="#B08D4C">' + prints + '</g><g class="fs-slc-cuts"></g>' +
+        '<text class="fs-slc-bot" x="40" y="44" font-size="30" text-anchor="middle">' + r.icon + '</text><text class="fs-slc-clock" x="890" y="24" text-anchor="end">0 s</text><text x="40" y="100" class="fs-slc-lab">start</text><text x="' + (40 + L).toFixed(1) + '" y="100" text-anchor="end" class="fs-slc-lab">end</text></svg></div>' +
+        '<div class="fs-slc-ctl"></div><div class="fs-slc-pieces"></div>';
+      return w;
+    }
+    var R = {}; RC.forEach(function (r) { var w = rowFor(r); rows.appendChild(w); R[r.id] = w; });
+    function xAt(r, t) { return 40 + r.steps * PX * Math.min(1, t / r.secs); }
+    function cutLine(r, t, anim) { var x = xAt(r, t), gC = $('.fs-slc-cuts', R[r.id]); gC.insertAdjacentHTML('beforeend', '<g class="fs-slc-cut' + (anim ? ' new' : '') + '"><line x1="' + x.toFixed(1) + '" y1="30" x2="' + x.toFixed(1) + '" y2="82"/><text x="' + x.toFixed(1) + '" y="24" text-anchor="middle">✂ ' + t + ' s</text></g>'); }
+    function pieces(r) {
+      var n = Math.ceil(r.secs / EV), per = r.steps / (r.secs / EV), h = '';
+      for (var i = 0; i < n; i++) h += '<span class="fs-slc-pc" style="width:' + (per * PX / 9).toFixed(2) + '%;border-color:' + r.c + '"><b>' + esc((Sl.pieceTpl || '{n} steps').replace('{n}', Math.round(per))) + '</b></span>';
+      $('.fs-slc-pieces', R[r.id]).innerHTML = '<small>' + esc((Sl.piecesLabel || 'Pieces: one for every {s} seconds').replace('{s}', EV)) + '</small><div>' + h + '</div>';
+    }
+    function finished(r) { var w = R[r.id]; $('.fs-slc-bot', w).setAttribute('x', xAt(r, r.secs).toFixed(1)); $('.fs-slc-clock', w).textContent = r.secs + ' s'; for (var t = EV; t < r.secs; t += EV) cutLine(r, t, false); pieces(r); $('.fs-slc-ctl', w).innerHTML = ''; }
+    function run(r) {
+      var w = R[r.id], ctl = $('.fs-slc-ctl', w), bot = $('.fs-slc-bot', w), clk = $('.fs-slc-clock', w), MS = Sl.msPerSec || 70, t = 0, cuts = 0, auto = false, raf = null;
+      $('.fs-slc-cuts', w).innerHTML = ''; ac();
+      function go() {
+        var stopAt = Math.min(r.secs, (Math.floor(t / EV) + 1) * EV), t0 = null, from = t;
+        (function f(now) { if (t0 == null) t0 = now; t = Math.min(stopAt, from + (now - t0) / MS); if (reduceMotion) t = stopAt; bot.setAttribute('x', xAt(r, t).toFixed(1)); clk.textContent = Math.floor(t) + ' s';
+          if (t < stopAt) { raf = requestAnimationFrame(f); return; }
+          if (t >= r.secs) { st.done[r.id] = 1; saveJ('slicer', st); SFX.chime(); finished(r); paintAll(); return; }
+          tone(1320, 0, 0.12, 'square', 0.03); if (auto) { cut(); return; }
+          ctl.innerHTML = '<div class="fs-slc-beep">⏰ ' + esc((Sl.beepLine || '{s} seconds! Cut the strip here.').replace('{s}', Math.round(t))) + '</div><button type="button" class="fs-btn fs-slc-cutb">' + esc(Sl.cutBtn || '✂ Cut') + '</button>' + (cuts >= 2 ? '<button type="button" class="fs-btn alt fs-slc-auto">' + esc(Sl.autoBtn || '✂✂ Cut the rest for me') + '</button>' : '');
+          $('.fs-slc-cutb', ctl).addEventListener('click', cut); var au = $('.fs-slc-auto', ctl); if (au) au.addEventListener('click', function () { auto = true; cut(); });
+        })(performance.now());
+      }
+      function cut() { cuts++; cutLine(r, Math.round(t), true); SFX.snap(); ctl.innerHTML = ''; go(); }
+      $('svg', w).onclick = function () { var b = $('.fs-slc-cutb', ctl); if (b) b.click(); };
+      ctl.innerHTML = ''; go();
+    }
+    function paintAll() {
+      RC.forEach(function (r) { var w = R[r.id], ctl = $('.fs-slc-ctl', w); if (st.done[r.id]) return; ctl.innerHTML = '<button type="button" class="fs-btn fs-slc-run">' + esc((Sl.runBtn || '▶ Run {name}').replace('{name}', r.name)) + '</button>'; $('.fs-slc-run', ctl).addEventListener('click', function () { this.disabled = true; run(r); }); });
+      var all = RC.every(function (r) { return st.done[r.id]; });
+      if (!all) { cmp.innerHTML = RC.some(function (r) { return st.done[r.id]; }) ? '<p class="fs-scr-tip">' + esc(Sl.needBoth || 'Now run the other robot.') + '</p>' : ''; return; }
+      if (!cmp.dataset.on) { cmp.dataset.on = '1';
+        cmp.innerHTML = '<div class="fs-slc-cmp"><div class="fs-lu-lab">' + esc(Sl.compareLabel || 'One piece from each robot, side by side') + '</div>' + RC.map(function (r) { var per = r.steps / (r.secs / EV); return '<div class="fs-slc-cbar"><span>' + r.icon + ' ' + esc(r.name) + '</span><i style="width:' + (per * PX / 8.2).toFixed(1) + '%;background:' + r.c + '"></i><b>' + esc((Sl.compareTpl || '{n} steps in {s} seconds').replace('{n}', Math.round(per)).replace('{s}', EV)) + '</b></div>'; }).join('') + '</div>';
+        var q1 = el('div'); cmp.appendChild(q1);
+        var ask = function () { askOnce(qh, Sl.q, Sl.opts, 'slicer-q', win, Sl.win, Sl.clue, 'slicer', miss); };
+        if (st.q1) { q1.innerHTML = ''; ask(); } else chipsQ(q1, Sl.q1, Sl.opts1, function () { st.q1 = 1; saveJ('slicer', st); ask(); }, miss);
+      }
+    }
+    RC.forEach(function (r) { if (st.done[r.id]) finished(r); }); paintAll(); placeAfter(g, at);
+  }
+
+  /* ---------- the wow (after the slicer): "The photo-finish camera" — a model camera that sees ONLY the finish line builds a picture one thin slice at a time,
+     so left to right is time; tap each robot's nose in the picture to read its time; the slower robot looks stretched; then a real photo-finish picture (25.02; not a clue) ----------
+     D.photofinish = {after, kicker, title, todo[], model, runBtn, againBtn, sceneLabel, stripLabel, lanes:[{id, name, c, speed}], start, line, len, secs, tapLine, readTpl, tol,
+                      missTap, slowLine, photoBtn, photo:{img, alt, cap}, done} */
+  function buildPhotofinish() {
+    var Pf = D.photofinish; if (!Pf) return;
+    var host = $('.fs-game[data-mod="' + (Pf.after || 'slicer') + '"]'); if (!host) { FAILED.push('photofinish: no anchor game'); return; }
+    var g = gameShell(Pf.kicker || 'Wow!', Pf.title, Pf.todo, Pf.why); g.dataset.mod = 'photofinish'; g.classList.add('fs-pdl-wow');
+    var st = loadJ('photofinish', { ran: 0, got: {}, photo: 0 }), W = 360, H = 150, LX = Pf.line || 300, X0 = Pf.start || 150, BL = Pf.len || 44, SECS = Pf.secs || 6, COLS = 300, LN = Pf.lanes;
+    var wrap = el('div', 'fs-pf-wrap'), scene = document.createElement('canvas'), strip = document.createElement('canvas'), ctl = el('div'), out = el('div'), more = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    scene.width = W; scene.height = H; strip.width = COLS; strip.height = H; scene.className = 'fs-pf-scene'; strip.className = 'fs-pf-strip';
+    scene.setAttribute('role', 'img'); scene.setAttribute('aria-label', Pf.sceneAlt || 'A model race seen from above, with a red finish line.'); strip.setAttribute('role', 'img'); strip.setAttribute('aria-label', Pf.stripAlt || 'The photo-finish picture, built one slice at a time.');
+    var ticks = ''; for (var s = 0; s <= SECS; s++) ticks += '<span style="left:' + (s / SECS * 100) + '%">' + s + ' s</span>';
+    wrap.innerHTML = '<div class="fs-pf-col"><div class="fs-lu-lab">' + esc(Pf.sceneLabel || 'The race, seen from above') + '</div></div><div class="fs-pf-col"><div class="fs-lu-lab">' + esc(Pf.stripLabel || 'What the photo-finish camera makes') + '</div><div class="fs-pf-sbox"></div><div class="fs-pf-ticks">' + ticks + '</div></div>';
+    $$('.fs-pf-col', wrap)[0].appendChild(scene); $('.fs-pf-sbox', wrap).appendChild(strip);
+    g.appendChild(wrap); g.appendChild(ctl); g.appendChild(out); g.appendChild(more); g.appendChild(miss); g.appendChild(win);
+    var sx = scene.getContext('2d'), tx = strip.getContext('2d'), laneH = H / LN.length;
+    function draw(t, noLine) {
+      sx.fillStyle = '#E9D79F'; sx.fillRect(0, 0, W, H);
+      LN.forEach(function (l, i) { var y0 = i * laneH; sx.fillStyle = i % 2 ? '#E2CC8C' : '#EEDDA8'; sx.fillRect(0, y0, W, laneH); sx.fillStyle = '#C9AE6A'; sx.fillRect(0, y0 + laneH - 2, W, 2);
+        var nose = X0 + l.speed * t, x = nose - BL, y = y0 + laneH / 2;
+        sx.fillStyle = l.c; sx.fillRect(x, y - 15, BL - 10, 30); sx.fillStyle = '#26323A'; sx.fillRect(x + BL - 12, y - 11, 12, 22);
+        sx.fillStyle = '#fff'; sx.fillRect(x + BL - 9, y - 8, 5, 5); sx.fillRect(x + BL - 9, y + 3, 5, 5); sx.fillStyle = '#111'; sx.fillRect(x + 4, y - 19, 10, 5); sx.fillRect(x + 4, y + 14, 10, 5); sx.fillRect(x + BL - 26, y - 19, 10, 5); sx.fillRect(x + BL - 26, y + 14, 10, 5); });
+      if (!noLine) { sx.fillStyle = '#C0392B'; sx.fillRect(LX + 1, 0, 2, H); }
+    }
+    function slice(i) { draw(i / COLS * SECS, true); tx.drawImage(scene, LX, 0, 1, H, i, 0, 1, H); }
+    function full() { for (var i = 0; i < COLS; i++) slice(i); draw(Pf.showT || 2.6); sx.fillStyle = 'rgba(192,57,43,.9)'; sx.font = '900 12px Nunito,sans-serif'; sx.fillText('📷', LX - 7, 12); }
+    function noseT(l) { return (LX - X0) / l.speed; }
+    function paint() {
+      ctl.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-btn fs-pf-run">' + esc(st.ran ? (Pf.againBtn || '↺ Run it again') : (Pf.runBtn || '▶ Run the race')) + '</button></div>';
+      $('.fs-pf-run', ctl).addEventListener('click', function () { var b = this; b.disabled = true; ac(); tx.clearRect(0, 0, COLS, H); var i = 0, t0 = null, D1 = reduceMotion ? 1 : 5200;
+        (function f(now) { if (t0 == null) t0 = now; var to = Math.min(COLS, Math.floor((now - t0) / D1 * COLS)); while (i < to) slice(i++); if (i < COLS) requestAnimationFrame(f); else { full(); st.ran = 1; saveJ('photofinish', st); SFX.snap(); paint(); } })(performance.now()); });
+      if (!st.ran) { out.innerHTML = '<p class="fs-scr-tip">' + esc(Pf.preLine || 'The camera looks through a slit as thin as a hair, right on the red finish line.') + '</p>'; return; }
+      var got = LN.filter(function (l) { return st.got[l.id]; });
+      out.innerHTML = '<p class="fs-pf-tap">' + esc(Pf.tapLine || 'Now tap each robot’s nose in the photo-finish picture: the first moment it touched the line.') + '</p>' +
+        '<div class="fs-pf-reads">' + LN.map(function (l) { return '<span class="' + (st.got[l.id] ? 'on' : '') + '" style="border-color:' + l.c + '">' + esc(l.name) + ': <b>' + (st.got[l.id] ? esc((Pf.readTpl || '{t} seconds').replace('{t}', noseT(l).toFixed(0))) : '?') + '</b></span>'; }).join('') + '</div>' +
+        (got.length === LN.length ? '<div class="fs-hs-card flash"><span class="fs-hs-n">📸</span><div>' + esc(Pf.slowLine) + '</div></div>' : '');
+      if (got.length < LN.length) { more.innerHTML = ''; return; }
+      if (!st.photo) { more.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-btn fs-pf-ph">' + esc(Pf.photoBtn || '📷 See a real photo finish') + '</button></div>'; $('.fs-pf-ph', more).addEventListener('click', function () { st.photo = 1; saveJ('photofinish', st); SFX.snap(); paint(); }); return; }
+      more.innerHTML = '<figure class="fs-gls-fig fs-pf-fig"><img src="' + esc(Pf.photo.img) + '" alt="' + esc(Pf.photo.alt || '') + '"><figcaption>' + esc(Pf.photo.cap || '') + '</figcaption></figure>';
+      winOnce(win, Pf.done, null, 'photofinish-wow');
+    }
+    strip.addEventListener('click', function (e) {
+      if (!st.ran) return; var r = strip.getBoundingClientRect(), tt = (e.clientX - r.left) / r.width * SECS, li = Math.min(LN.length - 1, Math.floor((e.clientY - r.top) / r.height * LN.length)), l = LN[li];
+      if (Math.abs(tt - noseT(l)) <= (Pf.tol || 0.45)) { if (!st.got[l.id]) { st.got[l.id] = 1; saveJ('photofinish', st); SFX.chime(); paint(); } }
+      else bounce(strip, miss, (Pf.missTap || 'Find where {name}’s picture STARTS (its left edge). That is when its nose first touched the line.').replace('{name}', l.name));
+    });
+    if (st.ran) full(); else draw(0);
+    paint(); host.parentNode.insertBefore(g, host.nextSibling);
+  }
+
+  /* ---------- Part 3 (the old Explore): "The fair rematch" — one finish flag across both lanes (drag it along the tape, or tap a mark), run the race, read each
+     race clock, type the numbers into a 4-column data table, Check; the claim sentence is built from YOUR table; then a chip question (25.02) ----------
+     D.rematch = {afterText, kicker, title, todo[], why, max, marks[], unit, flagLabel, markTpl, needFlag, msPerSec, runBtn, againBtn, lanes:[{id, name, icon, rate, c}], clockWord,
+                  tableLabel, cols[4], notesPh, checkBtn, needRun, distMiss, timeMiss, blankMiss, okLine, claimLabel, claimTpl, q, opts, win, clue} */
+  function buildRematch() {
+    var Rm = D.rematch; if (!Rm) return;
+    var at = anchorP(Rm.afterText); if (!at) { FAILED.push('rematch anchor text not found'); return; }
+    var g = gameShell(Rm.kicker || 'Part 3 game', Rm.title, Rm.todo, Rm.why); g.dataset.mod = 'rematch';
+    var st = loadJ('rematch', { d: 0, ran: 0, t: {}, ok: 0, notes: {} }), MAXS = Rm.max || 40, X0 = 60, PX = 780 / MAXS, LN = Rm.lanes, LH = 64;
+    var H = 40 + LN.length * LH + 56, raf = null;
+    var stage = el('div', 'fs-rm-stage'), chips = el('div', 'fs-in-chips fs-rm-marks'), ctl = el('div'), miss = el('div', 'fs-miss'), tab = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    var tape = ''; for (var s = 0; s <= MAXS; s++) { var tx0 = X0 + s * PX; tape += '<line x1="' + tx0.toFixed(1) + '" y1="' + (H - 46) + '" x2="' + tx0.toFixed(1) + '" y2="' + (H - (s % 5 ? 40 : 32)) + '"/>' + (s % 10 ? '' : '<text x="' + tx0.toFixed(1) + '" y="' + (H - 16) + '" text-anchor="middle">' + s + '</text>'); }
+    var lanes = LN.map(function (l, i) { var y = 30 + i * LH; return '<rect x="0" y="' + y + '" width="900" height="' + (LH - 4) + '" fill="' + (i % 2 ? '#C79A63' : '#D4AA72') + '"/>' + [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(function (k) { return '<line x1="' + (k * 80) + '" y1="' + y + '" x2="' + (k * 80) + '" y2="' + (y + LH - 4) + '" stroke="#A97C46" stroke-width="2"/>'; }).join('') +
+      '<text class="fs-rm-bot" data-i="' + i + '" x="' + X0 + '" y="' + (y + LH / 2 + 10) + '" font-size="30" text-anchor="end">' + l.icon + '</text><text class="fs-rm-clk" data-i="' + i + '" x="892" y="' + (y + 22) + '" text-anchor="end">' + esc(l.name) + ' ⏱ 0 s</text>'; }).join('');
+    stage.innerHTML = '<div class="fs-svgbox" style="padding-top:' + (H / 9).toFixed(3) + '%"><svg viewBox="0 0 900 ' + H + '" class="fs-rm-svg" role="img" aria-label="' + esc(Rm.alt || 'A model race course on the boardwalk: two lanes, one start line, and a tape measure in steps.') + '"><rect width="900" height="' + H + '" rx="12" fill="#F3E2B3"/>' + lanes +
+      '<line x1="' + X0 + '" y1="26" x2="' + X0 + '" y2="' + (30 + LN.length * LH) + '" stroke="#2F7A55" stroke-width="5"/><text x="' + (X0 + 4) + '" y="20" class="fs-rm-lab">' + esc(Rm.startWord || 'START') + '</text>' +
+      '<g class="fs-rm-fin" style="display:none"><line class="fs-rm-finl" y1="26" y2="' + (30 + LN.length * LH) + '"/><text class="fs-rm-lab fs-rm-fint" y="20" text-anchor="middle">' + esc(Rm.finishWord || 'FINISH') + '</text></g>' +
+      '<g class="fs-rm-tape">' + tape + '</g><text x="892" y="' + (H - 16) + '" text-anchor="end" class="fs-rm-unit">' + esc(Rm.unit || 'steps') + '</text><text x="12" y="' + (H - 4) + '" class="fs-trn-model">' + esc(Rm.model || 'a model') + '</text></svg></div>';
+    var flag = el('div', 'fs-card fs-rm-flag', esc(Rm.flagLabel || '🏁 Drag me onto the tape, or tap a mark below'));
+    g.appendChild(flag); g.appendChild(stage); g.appendChild(chips); g.appendChild(ctl); g.appendChild(miss); g.appendChild(tab); g.appendChild(qh); g.appendChild(win);
+    var svg = $('svg', stage);
+    chips.innerHTML = (Rm.marks || [20, 30, 40]).map(function (m) { return '<button type="button" class="fs-in-chip fs-rm-mk" data-m="' + m + '">' + esc((Rm.markTpl || 'Finish at {n} steps').replace('{n}', m)) + '</button>'; }).join('');
+    function tOf(l) { return st.d / l.rate; }
+    function setD(m, anim) { if (st.ran && st.ok) return; st.d = m; st.ran = 0; st.t = {}; saveJ('rematch', st); SFX.blip(); paint(); }
+    $$('.fs-rm-mk', chips).forEach(function (b) { b.addEventListener('click', function () { setD(+b.dataset.m); }); });
+    dragDrop(flag, function () { return [stage]; }, function (it, hit) { /* snap the drop point to the nearest allowed mark */
+      var r = svg.getBoundingClientRect(), lx = (lastX - r.left) / r.width * 900, s = Math.round((lx - X0) / PX), best = null;
+      (Rm.marks || [20, 30, 40]).forEach(function (m) { if (best == null || Math.abs(m - s) < Math.abs(best - s)) best = m; }); setD(best);
+    });
+    svg.addEventListener('click', function (e) { if (st.ok) return; var r = svg.getBoundingClientRect(), lx = (e.clientX - r.left) / r.width * 900, s = Math.round((lx - X0) / PX), best = null; if (s < 5) return;
+      (Rm.marks || [20, 30, 40]).forEach(function (m) { if (best == null || Math.abs(m - s) < Math.abs(best - s)) best = m; }); var sel = $('.fs-rm-flag.sel', g); if (sel) sel.classList.remove('sel'); setD(best); });
+    var lastX = 0; document.addEventListener('pointermove', function (e) { lastX = e.clientX; }, { passive: true }); document.addEventListener('pointerup', function (e) { lastX = e.clientX; }, { passive: true, capture: true });
+    function place(i, s, secs) { var b = $('.fs-rm-bot[data-i="' + i + '"]', svg); b.setAttribute('x', (X0 + s * PX).toFixed(1)); $('.fs-rm-clk[data-i="' + i + '"]', svg).textContent = LN[i].name + ' ⏱ ' + Math.floor(secs) + ' s'; }
+    function race() {
+      cancelAnimationFrame(raf); ac(); var MS = Rm.msPerSec || 90, t0 = null, end = Math.max.apply(null, LN.map(tOf)), dn = {};
+      (function f(now) { if (t0 == null) t0 = now; var t = reduceMotion ? end : Math.min(end, (now - t0) / MS);
+        LN.forEach(function (l, i) { var tt = Math.min(t, tOf(l)); place(i, l.rate * tt, tt); if (tt >= tOf(l) && !dn[i]) { dn[i] = 1; tone(880 + i * 220, 0, 0.18, 'triangle', 0.05); } });
+        if (t < end) raf = requestAnimationFrame(f); else { st.ran = 1; saveJ('rematch', st); SFX.chime(); paint(); } })(performance.now());
+    }
+    function paint() {
+      var fin = $('.fs-rm-fin', svg); flag.style.display = st.ok ? 'none' : ''; chips.style.display = st.ok ? 'none' : '';
+      $$('.fs-rm-mk', chips).forEach(function (b) { b.classList.toggle('on', +b.dataset.m === st.d); });
+      if (st.d) { var fx = X0 + st.d * PX; fin.style.display = ''; $('.fs-rm-finl', fin).setAttribute('x1', fx); $('.fs-rm-finl', fin).setAttribute('x2', fx); $('.fs-rm-fint', fin).setAttribute('x', fx); }
+      LN.forEach(function (l, i) { if (st.ran && st.d) place(i, st.d, tOf(l)); else place(i, 0, 0); });
+      ctl.innerHTML = st.ok ? '' : '<div class="fs-mug-go"><button type="button" class="fs-btn fs-rm-run">' + esc(st.ran ? (Rm.againBtn || '↺ Race again') : (Rm.runBtn || '▶ Start the race')) + '</button></div>';
+      var rb = $('.fs-rm-run', ctl); if (rb) rb.addEventListener('click', function () { if (!st.d) { bounce(flag, miss, Rm.needFlag || 'Put the finish flag on the tape first.'); return; } miss.classList.remove('show'); this.disabled = true; st.ran = 0; LN.forEach(function (l, i) { place(i, 0, 0); }); race(); });
+      paintTable();
+    }
+    function paintTable() {
+      if (!st.ran) { tab.innerHTML = ''; return; }
+      var C = Rm.cols || ['Object', 'Distance (steps)', 'Time (seconds)', 'Notes'];
+      tab.innerHTML = '<div class="fs-lu-lab">' + esc(Rm.tableLabel || 'My data table') + '</div><table class="fs-rm-tab"><thead><tr>' + C.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+        LN.map(function (l, i) { var v = st.t[l.id] || {}; return '<tr><td>' + l.icon + ' ' + esc(l.name) + '</td><td><input type="number" inputmode="numeric" min="0" class="fs-rm-in" data-k="' + l.id + '-d" value="' + (v.d != null ? v.d : '') + '"' + (st.ok ? ' disabled' : '') + '></td><td><input type="number" inputmode="numeric" min="0" class="fs-rm-in" data-k="' + l.id + '-t" value="' + (v.t != null ? v.t : '') + '"' + (st.ok ? ' disabled' : '') + '></td><td><input type="text" class="fs-rm-nt" data-k="' + l.id + '" maxlength="60" placeholder="' + esc(Rm.notesPh || 'optional') + '" value="' + esc(st.notes[l.id] || '') + '"></td></tr>'; }).join('') + '</tbody></table>' +
+        (st.ok ? '' : '<div class="fs-mug-go"><button type="button" class="fs-btn fs-rm-chk">' + esc(Rm.checkBtn || '✓ Check my table') + '</button></div>') + '<div class="fs-rm-claim"></div>';
+      $$('.fs-rm-nt', tab).forEach(function (n) { n.addEventListener('input', function () { st.notes[n.dataset.k] = n.value.slice(0, 60); saveJ('rematch', st); }); });
+      var cb = $('.fs-rm-chk', tab); if (cb) cb.addEventListener('click', function () {
+        var bad = null; LN.forEach(function (l) { var d = $('.fs-rm-in[data-k="' + l.id + '-d"]', tab).value, t = $('.fs-rm-in[data-k="' + l.id + '-t"]', tab).value; st.t[l.id] = { d: d === '' ? null : +d, t: t === '' ? null : +t };
+          if (bad) return; if (d === '' || t === '') bad = Rm.blankMiss || 'Fill in every number box.'; else if (+d !== st.d) bad = (Rm.distMiss || 'Check {name}’s distance: where is the finish flag on the tape?').replace('{name}', l.name); else if (+t !== tOf(l)) bad = (Rm.timeMiss || 'Check {name}’s time: read its race clock.').replace('{name}', l.name); });
+        saveJ('rematch', st); if (bad) { bounce(cb, miss, bad); return; } st.ok = 1; saveJ('rematch', st); miss.classList.remove('show'); SFX.chime(); paint(); });
+      if (!st.ok) return;
+      var fast = LN.slice().sort(function (a, b) { return tOf(a) - tOf(b); }), A = fast[0], B = fast[fast.length - 1];
+      $('.fs-rm-claim', tab).innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">✍️</span><div><b>' + esc(Rm.claimLabel || 'Your claim, from your table') + '</b>' + esc((Rm.claimTpl || '').replace(/\{a\}/g, A.name).replace(/\{b\}/g, B.name).replace(/\{d\}/g, st.d).replace('{ta}', tOf(A)).replace('{tb}', tOf(B))) + '</div></div>';
+      askOnce(qh, Rm.q, Rm.opts, 'rematch-q', win, Rm.win, Rm.clue, 'rematch', miss);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* after the solve, shared lock helper: place g after the solve card (after any games already there), lock until fs:solved */
+  function afterSolve(g, sel, lockLine, build) {
+    var lock = el('div', 'fs-lock', '🔒 <span>' + esc(lockLine || 'Crack the case first.') + '</span>'), body = el('div'); g.appendChild(lock); g.appendChild(body);
+    var host = $(sel || '.fs-solve'); if (!host) return false;
+    var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref);
+    var built = false; function gate() { var on = !!store('solved'); lock.style.display = on ? 'none' : 'block'; body.style.display = on ? '' : 'none'; if (on && !built) { built = true; build(body); } }
+    document.addEventListener('fs:solved', function () { setTimeout(gate, 0); }); gate(); return true;
+  }
+
+  /* ---------- after the solve: "Rosa's robot report" — the rematch numbers fill a report card; pick the faster robot and the best evidence; stamp it (25.02) ----------
+     D.hireform = {after, kicker, title, todo[], lockLine, head, sub, rowsTpl:[[k, v ({d},{ta},{tb})]], fasterQ, fasterOpts, evQ, evOpts, stampBtn, stamp, sign, win} */
+  function buildHireform() {
+    var Hf = D.hireform; if (!Hf) return;
+    var g = gameShell(Hf.kicker || 'Case closed', Hf.title, Hf.todo, Hf.why); g.dataset.mod = 'hireform';
+    var ok = afterSolve(g, Hf.after, Hf.lockLine, function (body) {
+      var st = loadJ('hireform', { a: 0, b: 0, s: 0 }), rm = loadJ('rematch', { d: 0 }), d = rm.ok && rm.d ? rm.d : (Hf.defD || 40), L = (D.rematch && D.rematch.lanes) || [];
+      function tl(id) { var l = L.filter(function (x) { return x.id === id; })[0]; return l ? d / l.rate : ''; }
+      var card = el('div', 'fs-hrf'), qa = el('div'), qb = el('div'), sb = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      body.appendChild(card); body.appendChild(qa); body.appendChild(qb); body.appendChild(sb); body.appendChild(miss); body.appendChild(win);
+      function fill(t) { return String(t).replace(/\{d\}/g, d).replace('{ta}', tl(Hf.idA || 'scoot')).replace('{tb}', tl(Hf.idB || 'zippy')); }
+      function paint(anim) {
+        card.innerHTML = '<div class="fs-hrf-h"><b>' + esc(Hf.head) + '</b><small>' + esc(Hf.sub || '') + '</small></div><dl>' + Hf.rowsTpl.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(fill(r[1])) + '</dd>'; }).join('') +
+          '<dt>' + esc(Hf.fasterLabel || 'Faster robot') + '</dt><dd>' + (st.a ? esc(Hf.fasterOpts.filter(function (o) { return o.ok; })[0].fill) : '…') + '</dd><dt>' + esc(Hf.evLabel || 'Best evidence') + '</dt><dd>' + (st.b ? esc(Hf.evOpts.filter(function (o) { return o.ok; })[0].fill) : '…') + '</dd></dl>' +
+          (st.s ? '<em class="fs-hrf-st' + (anim ? ' new' : '') + '">' + esc(Hf.stamp || 'APPROVED') + '</em><div class="fs-hrf-sign">' + esc(Hf.sign || '') + '</div>' : '');
+      }
+      function steps() {
+        if (!st.a) { qa.innerHTML = ''; chipsQ(qa, Hf.fasterQ, Hf.fasterOpts, function () { st.a = 1; saveJ('hireform', st); paint(); steps(); }, miss); return; }
+        if (!st.b) { qb.innerHTML = ''; chipsQ(qb, Hf.evQ, Hf.evOpts, function () { st.b = 1; saveJ('hireform', st); paint(); steps(); }, miss); return; }
+        if (!st.s) { sb.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-btn fs-hrf-go">' + esc(Hf.stampBtn || '🖋️ Stamp it') + '</button></div>'; $('.fs-hrf-go', sb).addEventListener('click', function () { st.s = 1; saveJ('hireform', st); SFX.stamp(); sb.innerHTML = ''; paint(true); winOnce(win, Hf.win, null, 'hireform'); }); return; }
+        winOnce(win, Hf.win, null, 'hireform');
+      }
+      paint(false); steps();
+    });
+    if (!ok) FAILED.push('hireform: no anchor');
+  }
+
+  /* ---------- after the solve: "The head-start twist" — Zippy's owner shows a race Zippy 'won'; play it, tap what makes it unfair, decide if it counts,
+     then run the fair redo (25.02) ----------
+     D.headstart = {after, kicker, title, todo[], lockLine, max, finish, lanes:[{id, name, icon, rate, start}], caption, playBtn, againBtn, msPerSec, spotQ, spots:[{k, t, ok, miss}],
+                    q, opts, fairBtn, fairCap, fairLine, win} */
+  function buildHeadstart() {
+    var Hs = D.headstart; if (!Hs) return;
+    var g = gameShell(Hs.kicker || 'Twist!', Hs.title, Hs.todo, Hs.why); g.dataset.mod = 'headstart';
+    var ok = afterSolve(g, Hs.after, Hs.lockLine, function (body) {
+      var st = loadJ('headstart', { ph: 0 }), MAXS = Hs.max || 30, X0 = 60, PX = 780 / MAXS, LN = Hs.lanes, LH = 60, H = 30 + LN.length * LH + 20, raf = null;
+      var stage = el('div', 'fs-hst-stage'), ctl = el('div'), qh = el('div'), out = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      body.appendChild(stage); body.appendChild(ctl); body.appendChild(qh); body.appendChild(out); body.appendChild(miss); body.appendChild(win);
+      function startOf(l, fair) { return fair ? 0 : (l.start || 0); }
+      function tOf(l, fair) { return (Hs.finish - startOf(l, fair)) / l.rate; }
+      function draw(fair) {
+        stage.innerHTML = '<div class="fs-hst-tv"><span class="fs-hst-rec">● ' + esc(fair ? (Hs.fairCap || 'FAIR REDO') : (Hs.recWord || 'REPLAY')) + '</span><div class="fs-svgbox" style="padding-top:' + (H / 9).toFixed(3) + '%"><svg viewBox="0 0 900 ' + H + '" class="fs-hst-svg" role="img" aria-label="' + esc(Hs.alt || 'A model replay of a two-lane robot race.') + '"><rect width="900" height="' + H + '" fill="#F3E2B3"/>' +
+          LN.map(function (l, i) { var y = 26 + i * LH, sx = X0 + startOf(l, fair) * PX; return '<rect x="0" y="' + y + '" width="900" height="' + (LH - 4) + '" fill="' + (i % 2 ? '#C79A63' : '#D4AA72') + '"/><line class="fs-hst-sl" x1="' + sx + '" y1="' + y + '" x2="' + sx + '" y2="' + (y + LH - 4) + '"/>' +
+            '<text class="fs-rm-bot" data-i="' + i + '" x="' + sx + '" y="' + (y + LH / 2 + 10) + '" font-size="28" text-anchor="end">' + l.icon + '</text><text class="fs-rm-clk" data-i="' + i + '" x="892" y="' + (y + 20) + '" text-anchor="end">' + esc(l.name) + '</text>'; }).join('') +
+          '<line x1="' + (X0 + Hs.finish * PX) + '" y1="20" x2="' + (X0 + Hs.finish * PX) + '" y2="' + (26 + LN.length * LH) + '" stroke="#C0392B" stroke-width="5" stroke-dasharray="10 6"/>' +
+          (st.ph >= 1 && !fair ? '<g class="fs-hst-spots">' + Hs.spots.map(function (s) { return '<rect class="fs-hst-spot" data-k="' + s.k + '" x="' + s.x + '" y="' + (s.y || 0) + '" width="' + s.w + '" height="' + (s.h || H) + '" rx="10"/>'; }).join('') + '</g>' : '') +
+          '</svg></div><div class="fs-hst-cap"></div></div>';
+        $$('.fs-hst-spot', stage).forEach(function (r) { r.addEventListener('click', function () { tapSpot(r.dataset.k, r); }); });
+      }
+      function play(fair, cb) {
+        draw(fair); ac(); cancelAnimationFrame(raf); var MS = Hs.msPerSec || 120, t0 = null, end = Math.max.apply(null, LN.map(function (l) { return tOf(l, fair); })), first = null, svg = $('svg', stage);
+        (function f(now) { if (t0 == null) t0 = now; var t = reduceMotion ? end : Math.min(end, (now - t0) / MS);
+          LN.forEach(function (l, i) { var tt = Math.min(t, tOf(l, fair)); $('.fs-rm-bot[data-i="' + i + '"]', svg).setAttribute('x', (X0 + (startOf(l, fair) + l.rate * tt) * PX).toFixed(1)); if (tt >= tOf(l, fair) && first == null) first = l; });
+          if (t < end) raf = requestAnimationFrame(f); else { cb(first); } })(performance.now());
+      }
+      function finalPos(fair) { var svg = $('svg', stage); LN.forEach(function (l, i) { $('.fs-rm-bot[data-i="' + i + '"]', svg).setAttribute('x', (X0 + Hs.finish * PX).toFixed(1)); }); }
+      function tapSpot(k, r) { if (st.ph !== 1) return; var s = Hs.spots.filter(function (x) { return x.k === k; })[0]; if (!s.ok) { bounce(r, miss, s.miss); return; } st.ph = 2; saveJ('headstart', st); SFX.chime(); miss.classList.remove('show'); r.classList.add('ok'); paint(); }
+      function paint() {
+        if (st.ph === 0) { draw(false); ctl.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-btn fs-hst-play">' + esc(Hs.playBtn || '▶ Play the replay') + '</button></div>'; qh.innerHTML = ''; out.innerHTML = '';
+          $('.fs-hst-play', ctl).addEventListener('click', function () { this.disabled = true; play(false, function () { $('.fs-hst-cap', stage).textContent = Hs.caption || ''; SFX.win(); st.ph = 1; saveJ('headstart', st); setTimeout(paint, reduceMotion ? 0 : 900); }); }); return; }
+        if (st.ph >= 1 && st.ph < 4) { if (!$('.fs-hst-spot', stage)) { draw(false); finalPos(false); } $('.fs-hst-cap', stage).textContent = Hs.caption || ''; }
+        if (st.ph === 1) { ctl.innerHTML = '<p class="fs-pf-tap">' + esc(Hs.spotQ) + '</p>'; return; }
+        if (st.ph === 2) { ctl.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">🔎</span><div>' + esc(Hs.spotLine || '') + '</div></div>'; qh.innerHTML = ''; chipsQ(qh, Hs.q, Hs.opts, function () { st.ph = 3; saveJ('headstart', st); paint(); }, miss); return; }
+        if (st.ph === 3) { qh.innerHTML = ''; ctl.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-btn fs-hst-fair">' + esc(Hs.fairBtn || '▶ Run a fair redo') + '</button></div>';
+          $('.fs-hst-fair', ctl).addEventListener('click', function () { this.disabled = true; play(true, function () { st.ph = 4; saveJ('headstart', st); SFX.chime(); paint(); }); }); return; }
+        draw(true); finalPos(true); $('.fs-hst-cap', stage).textContent = Hs.fairCapEnd || ''; ctl.innerHTML = ''; out.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">🏁</span><div>' + esc(Hs.fairLine) + '</div></div>'; winOnce(win, Hs.win, null, 'headstart');
+      }
+      paint();
+    });
+    if (!ok) FAILED.push('headstart: no anchor');
+  }
+
   /* ---------- Warm-Up: "Which train moved?" — watch out one window as the next train slides by, vote, then look out the other window at the station
      sign (something that stays put) to find out; two trips, the second one fools you (25.01) ----------
      D.trainwin = {afterText, kicker, title, todo[], why, model, tripWord, watchBtn, againBtn, voteQ, votes:[{k:'mine'|'other'|'unsure', t}], lookBtn, nextBtn, sign,
@@ -11938,6 +12296,13 @@
     guard('diagram', buildDiagram);
     guard('redirect', buildRedirect);
     guard('nightrun', buildNightrun);
+    guard('fixsign', buildFixsign);
+    guard('scratch', buildScratch);
+    guard('slicer', buildSlicer);
+    guard('photofinish', buildPhotofinish);
+    guard('rematch', buildRematch);
+    guard('hireform', buildHireform);
+    guard('headstart', buildHeadstart);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

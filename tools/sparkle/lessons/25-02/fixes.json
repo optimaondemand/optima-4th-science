@@ -1,0 +1,316 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; the plan puts Module 25 in “Energy, Motion, and Waves”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Waves</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "speed is physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS codes, CPALMS first; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.N.1.1, SC.4.P.12.2 · TEKS 4.2(A)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.12.2, SC.4.N.1.1</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "NGSS line: the plan lists 4-PS3-1 as support",
+  "old": "<div class=\"info-detail\">NGSS 4-PS3-1 · Measuring & Recording Data</div>",
+  "new": "<div class=\"info-detail\">NGSS 4-PS3-1 (support)</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label (Bethany, 22 Nov 2026): weeks 24 on are Q4 in the Canvas plan",
+  "old": "<div class=\"info-value\">Q3 &middot; Week 25</div>",
+  "new": "<div class=\"info-value\">Q4 &middot; Week 25</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Fastest on the Beach?</div>\n        <div class=\"act-subtitle\">Does the number prove it?</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → Zippy’s sign",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Zippy’s sign says it is the fastest robot on the beach. Does the number on the sign prove that?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → races you have seen (answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Now think about races you’ve seen. How could you tell who was faster?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): “Device” is in the plan row, but its meaning was about converting energy. Same word, a meaning for this lesson",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job, like a stopwatch or a tape measure."
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for a speed data table",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; My Speed Data Table"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task (now the lesson’s own data table: a home race or the rematch numbers, drawn on the sketch pad, + claim and evidence)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Race two things that roll (toy cars, balls or marbles) down a book ramp at home, from the same start to the same finish line. Or use your numbers from the Fair Rematch. Draw your data table and write your claim.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: what Part C can use",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🚗</span>Optional: two things that roll, a book for a ramp and a timer</span>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll measure how far and how long, run a fair race, and use your data to prove who was faster.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash; steps added (the lesson measures in steps)",
+  "old": "How far an object traveled — measured in feet, meters, miles, etc.",
+  "new": "How far something traveled. We measure it in feet, meters, miles or steps."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "How long an event took — measured in seconds, minutes, hours, etc.",
+  "new": "How long something took. We measure it in seconds, minutes or hours."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "Information you collect during an investigation — usually numbers like measurements, times, or counts.",
+  "new": "Information you collect in an investigation, usually numbers like measurements, times or counts."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dashes; same idea",
+  "old": "<p>\"Maya ran 30 feet in 5 seconds\" tells you her speed in a useful way. \"Maya ran 30 feet\" alone doesn't — she could have been racing or strolling. \"Maya ran for 5 seconds\" alone doesn't — she could have walked or sprinted. You need BOTH numbers.</p>",
+  "new": "<p>\"Maya ran 30 feet in 5 seconds\" tells you her speed. \"Maya ran 30 feet\" alone doesn't: she could have raced or strolled. \"Maya ran for 5 seconds\" alone doesn't either. You need BOTH numbers.</p>\n\n      <p>Speeds can be huge. A peregrine falcon (a hunting bird) can dive at over 240 miles per hour, faster than a car on the highway.</p>\n\n      <p>Try it with race tickets. Some numbers hide under silver scratch panels. Call each race before you scratch.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: no dash",
+  "old": " — everything stays the same except the thing you're testing.",
+  "new": ": everything stays the same except the thing you're testing."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: “distance ÷ time” in words a 4th grader can use (same meaning, same example); this is what the Slice game does",
+  "old": "<li><strong>Different both</strong> → compare distance ÷ time. A car going 60 miles in 1 hour is faster than one going 90 miles in 2 hours.</li>",
+  "new": "<li><strong>Both different</strong> → find how far each one goes in the SAME amount of time. A car that goes 60 miles in 1 hour is faster than one that goes 90 miles in 2 hours (only 45 miles each hour).</li>"
+ },
+ {
+  "kind": "cut",
+  "why": "Part 2: the data table paragraph repeats the list line above it (Part 3 and Part C build the table)",
+  "old": "<p>A good data table has the OBJECT in column 1, the DISTANCE in column 2, the TIME in column 3, and (if you want) a NOTES column. Then comparing speeds is just looking at the numbers side by side.</p>",
+  "new": ""
+ },
+ {
+  "kind": "plain",
+  "why": "plain words: “misconception” is a hard word; no dash; adds the wrong idea Bethany ticked (more seconds = faster); leads into the Slice game",
+  "old": "<p><strong>Common misconception:</strong> Some people think the object that goes the longest distance must be the fastest. Not always — you have to check the TIME too. A turtle that walks 10 feet in an hour went farther than a sprinter who runs 5 feet in a second, but the sprinter was MUCH faster.</p>",
+  "new": "<p><strong>Watch out:</strong> the one that went farther is not always faster. A turtle that walks 10 feet in an hour goes farther than a sprinter who runs 5 feet in one second, but the sprinter is MUCH faster. And more seconds does not mean more speed. Taking LONGER to go the same distance means you were slower.</p>\n\n      <p>Now back to Zippy and Scoot. Both of their numbers are different! Slice each run into 10-second pieces and compare the pieces.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"A red car covers 20 feet in 4 seconds. A blue car ...\"",
+  "new": "data-label=\"The red car or the blue car: which is faster?\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why is a FAIR TEST important when measuring speed?...\"",
+  "new": "data-label=\"Why a fair test matters, and an unfair test\""
+ },
+ {
+  "kind": "plain",
+  "why": "no dash in the classmate’s claim (same claim)",
+  "old": "You can tell which car is fastest just by watching them — you don't need to time it.",
+  "new": "You can tell which car is fastest just by watching them. You don't need to time it."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dashes; plain words (same meaning; the teaser for 26.01 Waves is right)",
+  "old": " to back up your claim. Next module, we leave motion for WAVES — slinkies, water, and sound — to see how energy moves without anything actually traveling far.</p>",
+  "new": " to back up your claim. Next lesson: WAVES. Slinkies, water and sound carry energy from place to place, while the water or air itself only wiggles back and forth.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Stop & Think (the scratch-off tickets play the same Maya and Jordan race)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "hidden (ticked): the sample table picture’s FINISH arrow points near the 3½-foot mark while its bracket says 6 feet; the Slice game teaches the same idea. The file stays in images/",
+  "old": "\\s*<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"lesson-figure-caption\">.*?</div>\\s*</div>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "removed: Key Concept, the Stop & Reason about “the three devices above” (a 22.01 leftover), the Four Speed Comparisons tap diagram (its turtle and hare card was muddled; Part B question 5 that used it is cut), Observe & Reason, the falcon fact box (kept as one sentence in Part 1, ticked), the Daytona callout (true, cut for length) and Go Deeper. Part 3 = the old Explore (Toy Car Speed Test → the Fair Rematch); the next button goes to Self-Check.",
+  "old": "\\s*<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?<div class=\"tab-next-wrap\">\\s*<button class=\"tab-next-btn\" onclick=\"switchTab\\(\\'explore\\'\\)\">Continue to 🔬 Explore →</button>",
+  "new": "\n\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · The Fair Rematch</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Rosa wants proof she can trust: a fair rematch. Same start line, same finish line, same boardwalk. Only the robot is different. Set the finish, run the race and record your data.</p>\n      <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its toy car test is now Part 3’s Fair Rematch and Part C’s home race; its NASCAR fact (true: 200 mph is about 293 feet per second), Think like a scientist and Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; 5 asked about the removed tap diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 6 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C drawn and typed on the page",
+  "old": "A 4-column speed data table for two objects, plus a claim and evidence about which was faster.",
+  "new": "What I raced, my claim and my evidence. Plus your labeled sketch: your 4-column data table."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether you can tell speed just by watching, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether you can tell speed just by watching, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your data table sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]

@@ -1,0 +1,279 @@
+{
+ "slots": {
+  "welcome": {
+   "label": "Welcome · Zippy vs Scoot",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🪧 Zippy’s sign",
+     "tag": "CASE 25 · PART 2",
+     "title": "FASTEST ON THE BEACH!",
+     "col": "#C8553D",
+     "body": "90 steps!"
+    },
+    {
+     "label": "🤖 Rosa’s question",
+     "tag": "THE PROBLEM",
+     "title": "Should she trade Scoot?",
+     "col": "#B8860B",
+     "body": "Zippy went farther. Does that make Zippy faster?"
+    },
+    {
+     "label": "🔍 Today",
+     "tag": "TODAY",
+     "title": "Measure speed",
+     "col": "#2F7A55",
+     "body": "How far, how long, and a fair test."
+    }
+   ],
+   "script": "(Hold up a paper sign that says FASTEST!) If I hold up a sign that says fastest, does that make me fast?\n\n[ON SCREEN: Zippy’s sign]\nThe hot-dog stand’s robot, Zippy, has a sign like this. Ninety steps!\n\n[ON SCREEN: Rosa’s question]\nRosa wants to know: should she trade Scoot for Zippy?\n\n[ON SCREEN: Today]\nToday you’ll find out what it takes to PROVE who is faster. Read the case file just below me. Look closely at the tickets."
+  },
+  "warmup": {
+   "label": "Warm-Up · fix the sign (Clue 1)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🧲 Fix the sign",
+     "tag": "WARM-UP GAME",
+     "title": "Word magnets",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "👀",
+       "Read each sentence"
+      ],
+      [
+       "🧲",
+       "Drag a magnet onto the blank"
+      ],
+      [
+       "↩",
+       "Wrong words slide off"
+      ]
+     ]
+    },
+    {
+     "label": "📏 Far or fast?",
+     "tag": "THINK ABOUT IT",
+     "title": "90 steps tells how ___",
+     "col": "#1F7F86",
+     "body": "Far? Or fast?"
+    }
+   ],
+   "script": "(Take three giant steps across the room.) Three steps! Was I fast? Hmm, you can’t tell. I didn’t say how long it took.\n\n[ON SCREEN: Fix the sign]\nZippy’s sign has the same problem. Drag a word magnet onto each blank so the sign only says what the number proves.\n\n[ON SCREEN: Far or fast?]\nAre ninety steps about how far, or how fast? Then answer three quick lines about races you have seen."
+  },
+  "part1": {
+   "label": "Part 1 · scratch-off tickets (Clue 2)",
+   "length": "35–45 s",
+   "want": false,
+   "parts": [
+    {
+     "label": "🎟️ Scratch-off tickets",
+     "tag": "PART 1 GAME",
+     "title": "Call it, then scratch",
+     "col": "#B8860B",
+     "rows": [
+      [
+       "🤔",
+       "Call the winner first"
+      ],
+      [
+       "🪙",
+       "Scratch off the silver"
+      ],
+      [
+       "✅",
+       "Call it again"
+      ]
+     ]
+    }
+   ],
+   "script": "(Cover one hand with the other, like hiding a number.) I ran thirty feet. Am I fast? I’m not telling you the time!\n\n[ON SCREEN: Scratch-off tickets]\nEach ticket hides a number under silver. Call the race first. It’s okay to say you can’t tell yet. Then rub off the silver and call it again."
+  },
+  "part2": {
+   "label": "Part 2 · slice it into seconds (Clue 3)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "✂️ Slice it into seconds",
+     "tag": "PART 2 GAME",
+     "title": "Same time, side by side",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "▶",
+       "Run each robot"
+      ],
+      [
+       "✂",
+       "Cut every 10 seconds"
+      ],
+      [
+       "📏",
+       "Compare one piece of each"
+      ]
+     ]
+    },
+    {
+     "label": "🧮 Zippy and Scoot",
+     "tag": "BOTH NUMBERS DIFFERENT",
+     "title": "90 steps in 90 s · 60 steps in 30 s",
+     "col": "#C8553D",
+     "body": "Who is faster?"
+    },
+    {
+     "kind": "photo",
+     "pic": "photofinish",
+     "label": "📷 The photo finish"
+    }
+   ],
+   "script": "(Hold up a long strip of paper and fold it into equal parts.) If I cut a race into equal pieces of time, I can compare the pieces.\n\n[ON SCREEN: Zippy and Scoot]\nZippy went ninety steps in ninety seconds. Scoot went sixty steps in thirty. Both numbers are different! So who is faster?\n\n[ON SCREEN: Slice it into seconds]\nPress Run. Every ten seconds, press Cut. Then compare one piece from each robot.\n\n[ON SCREEN: The photo finish]\nAfter that, a camera that takes a picture of TIME. Wow."
+  },
+  "explore": {
+   "label": "Part 3 · the fair rematch (Clue 4)",
+   "length": "45–55 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🏁 The fair rematch",
+     "tag": "PART 3 GAME",
+     "title": "One start, one finish",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "🏁",
+       "Drag the finish flag onto the tape"
+      ],
+      [
+       "⏱",
+       "Start the race, read both clocks"
+      ],
+      [
+       "📋",
+       "Type your numbers in the table"
+      ],
+      [
+       "✓",
+       "Check, and your claim builds"
+      ]
+     ]
+    }
+   ],
+   "script": "(Draw a start line and a finish line in the air with your finger.) Same start. Same finish. Same floor. Now it’s a fair race!\n\n[ON SCREEN: The fair rematch]\nDrag the finish flag onto the tape, or tap a mark. Start the race and watch both race clocks. Then type each robot’s distance and time into your data table. Press Check, and your claim sentence builds itself from YOUR numbers."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔓 Crack the case",
+     "tag": "TOP OF THE ASSIGNMENT",
+     "title": "Which robot is really faster?",
+     "col": "#1F7F86",
+     "body": "Pick the answer that fits all four clues."
+    },
+    {
+     "label": "✍️ Your case report",
+     "tag": "WHAT TO DO",
+     "title": "Three places to work",
+     "col": "#B8860B",
+     "rows": [
+      [
+       "Part B",
+       "Two short answers"
+      ],
+      [
+       "Part C",
+       "Race two things and draw your data table"
+      ],
+      [
+       "CER",
+       "Claim, evidence, reasoning"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nYou have four clues. So which robot is really faster, and how do you know? Pick the answer that fits every clue. Then fill in Rosa’s report, and watch out for a twist!\n\n[ON SCREEN: Your case report]\nNext: two short answers. Then race two things at home, or use your rematch numbers, and draw your data table. Then sketch and label it. Last comes your CER."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💬 The claim",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "A classmate says…",
+     "col": "#C8553D",
+     "body": "“You can tell which car is fastest just by watching them. You don’t need to time it.”"
+    },
+    {
+     "label": "🧩 The planner",
+     "tag": "PLAN BEFORE YOU WRITE",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#7A5BB5",
+     "rows": [
+      [
+       "1",
+       "Tap I agree or I disagree."
+      ],
+      [
+       "2",
+       "Tap two pieces of evidence."
+      ],
+      [
+       "3",
+       "You write the reasoning."
+      ]
+     ]
+    }
+   ],
+   "script": "(Squint and point at two imaginary cars.) That one’s faster. I can tell just by looking! Can I, though?\n\n[ON SCREEN: The claim]\nA classmate says watching is enough. Think about Zippy’s sign, the photo finish and the race clocks.\n\n[ON SCREEN: The planner]\nTap your side and two facts. Then explain how they prove your claim. Try starting with “This shows that…”"
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "30–40 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🪧 Your specimen",
+     "tag": "FIELD NOTEBOOK",
+     "title": "Zippy’s sign",
+     "col": "#1F7F86",
+     "body": "Finish the checklist to stamp CASE CLOSED."
+    },
+    {
+     "label": "➡ Next lesson",
+     "tag": "LESSON 26.01",
+     "title": "Waves",
+     "col": "#2D7AA6",
+     "body": "Slinkies, water and sound."
+    }
+   ],
+   "script": "(Hold up the FASTEST sign, cross out the word and write FARTHER.) There. Now the sign tells the truth.\n\n[ON SCREEN: Your specimen]\nFinish your checklist, and Zippy’s sign goes into your Field Notebook.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next lesson]\nNext time: waves. How can energy travel across the water, while the water itself mostly stays put?"
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s",
+   "want": false,
+   "parts": [],
+   "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  }
+ },
+ "pics": {
+  "photofinish": {
+   "src": "images/25-02-photo-finish.jpg",
+   "cap": "A real photo finish from a 2005 rowing race (CC BY-SA 2.5)"
+  }
+ },
+ "other": [
+  "vocab",
+  "lesson",
+  "partb",
+  "partc"
+ ]
+}
