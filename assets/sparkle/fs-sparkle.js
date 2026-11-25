@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -12539,6 +12539,418 @@
     });
   }
 
+
+  /* ======================= 26.02 "Around the Bend" (Case 26, part 2): case.creek, knock, morsekey, lighthouse, crossbend, codetest, fogtwist, myname ======================= */
+
+  /* ---------- the creek map (shared by case.creek and crossbend): Palmetto Creek bends around a wooded hill; the start dock and the finish dock can't see
+     each other; a little waterfall roars in the middle. M = {start, finish, fall, hill, feet, alt} ---------- */
+  function creekMap(M, cls) {
+    M = M || {};
+    var grass = '';
+    [[214, 196], [244, 172], [276, 150], [306, 140], [336, 152], [366, 172], [394, 194], [260, 206], [330, 204], [300, 176], [230, 178], [372, 210]].forEach(function (p, i) {
+      grass += '<path d="M' + p[0] + ' ' + p[1] + ' l-6 -16 M' + p[0] + ' ' + p[1] + ' l0 -20 M' + p[0] + ' ' + p[1] + ' l6 -16" stroke="' + (i % 2 ? '#6E8F3E' : '#86A64E') + '" stroke-width="2.5" stroke-linecap="round"/>';
+    });
+    return '<div class="fs-svgbox ' + (cls || '') + '" style="padding-top:43.33%"><svg viewBox="0 0 600 260" role="img" aria-label="' + esc(M.alt || 'A hand-drawn map of a creek that bends the long way around an open marsh, with a start dock, a little waterfall and a finish dock.') + '">' +
+      '<rect width="600" height="260" rx="10" fill="#F3EBD3"/><rect x="6" y="6" width="588" height="248" rx="8" fill="none" stroke="#C9B98E" stroke-width="2" stroke-dasharray="6 5"/>' +
+      '<path d="M8 214 C 120 214 150 58 300 58 S 480 214 592 214" fill="none" stroke="#7FB8DA" stroke-width="30" stroke-linecap="round"/>' +
+      '<path d="M8 214 C 120 214 150 58 300 58 S 480 214 592 214" fill="none" stroke="#A9D3EC" stroke-width="10" stroke-linecap="round" stroke-dasharray="14 18"/>' +
+      '<path d="M150 214 C 200 150 250 120 300 118 S 400 150 450 214 Z" fill="#CFE0A8"/>' + grass +
+      '<g class="fs-crk-fall"><path d="M288 44 v28 M296 42 v32 M304 42 v32 M312 44 v28" stroke="#fff" stroke-width="3" stroke-linecap="round"/><text x="300" y="30" text-anchor="middle" class="fs-crk-lab">' + esc(M.fall || '💦 little waterfall (LOUD!)') + '</text></g>' +
+      '<line x1="90" y1="226" x2="510" y2="226" stroke="#8A6640" stroke-width="2" stroke-dasharray="7 6"/>' +
+      (M.feet ? '<text x="300" y="220" text-anchor="middle" class="fs-crk-small">' + esc(M.feet) + '</text>' : '') +
+      '<g><rect x="34" y="220" width="56" height="12" rx="2" fill="#8A6640"/><text x="62" y="250" text-anchor="middle" class="fs-crk-lab">' + esc(M.start || '🚩 START dock') + '</text></g>' +
+      '<g><rect x="510" y="220" width="56" height="12" rx="2" fill="#8A6640"/><text x="538" y="250" text-anchor="middle" class="fs-crk-lab">' + esc(M.finish || '🏁 FINISH dock') + '</text></g>' +
+      '<text x="300" y="250" text-anchor="middle" class="fs-crk-lab">' + esc(M.hill || '🌾 open marsh') + '</text>' +
+      '<text x="122" y="128" class="fs-crk-arrow" transform="rotate(-55 122 128)">➜</text><text x="470" y="128" class="fs-crk-arrow" transform="rotate(55 470 128)">➜</text>' +
+      (M.duckWord ? '<text x="150" y="100" class="fs-crk-small">' + esc(M.duckWord) + '</text>' : '') + '</svg></div>';
+  }
+
+  /* ---------- case: a hand-drawn creek map + a walkie-talkie practice log (sent vs heard) + the organizer's note (26.02).
+     case.creek = {map:{start, finish, fall, hill, feet, alt}, mapCap, log:{head, sub, cols:[3], rows:[[who, sent, heard, bad]]}, note:{to, body[], sign}} ---------- */
+  function creekCard(K) {
+    var L = K.log, N = K.note;
+    return '<div class="fs-crk">' + '<div class="fs-crk-map">' + creekMap(K.map) + (K.mapCap ? '<div class="fs-crk-cap">' + esc(K.mapCap) + '</div>' : '') + '</div>' +
+      (L ? '<div class="fs-crk-log"><div class="fs-crk-lh"><b>📻 ' + esc(L.head) + '</b><small>' + esc(L.sub || '') + '</small></div><table><tr>' + L.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        L.rows.map(function (r) { return '<tr' + (r[3] ? ' class="bad"' : '') + '><td>' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + (r[3] ? ' <span class="fs-crk-x">✗</span>' : '') + '</td></tr>'; }).join('') + '</table></div>' : '') +
+      (N ? '<div class="fs-fly-letter fs-crk-note"><div class="fs-fly-to">' + esc(N.to) + '</div>' + N.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-fly-sign">' + esc(N.sign) + '</div></div>' : '') + '</div>';
+  }
+
+  /* knock sound: a low wooden thud */
+  function knockSound() { tone(130, 0, 0.1, 'sine', 0.22); noise(0.05, 180, 700, 0.55); }
+  function groupsOf(times, gap) { var g = [], n = 0; times.forEach(function (t, i) { if (i && t - times[i - 1] > gap) { g.push(n); n = 0; } n++; }); if (n) g.push(n); return g; }
+  function dotsHTML(gr) { return gr.map(function (n) { var s = ''; for (var i = 0; i < n; i++) s += '●'; return '<span>' + s + '</span>'; }).join('<i></i>'); }
+
+  /* ---------- Warm-Up: "The secret knock" — a knock comes at the clubhouse door; listen, then tap the door to knock the same rhythm back (knocks close together
+     make a group, a pause starts a new group). Only then does the club's code key slide out from under the mat, and the knock means something (26.02) ----------
+     D.knock = {afterText, kicker, title, todo[], why, sign, alt, listenBtn, againBtn, doorBtn, heardLabel, youLabel, gap, endGap, rounds:[{id, ask, play:[groups]}],
+                keyHead, keyBtn, key:[{g:[groups], t}], rightLine, wrongLine ({got},{want}), q1, q, opts, win, clue} */
+  function buildKnock() {
+    var Kn = D.knock; if (!Kn) return;
+    var at = anchorP(Kn.afterText); if (!at) { FAILED.push('knock anchor text not found'); return; }
+    var g = gameShell(Kn.kicker || 'Warm-Up game', Kn.title, Kn.todo, Kn.why); g.dataset.mod = 'knock';
+    var GAP = Kn.gap || 550, END = Kn.endGap || 1400, R = Kn.rounds, st = loadJ('knock', { r: 0, key: 0, q1: 0 }), taps = [], endT = null, busy = false;
+    var stage = el('div', 'fs-knk-stage'), ask = el('div', 'fs-knk-ask'), strips = el('div', 'fs-knk-strips'), ctl = el('div', 'fs-mug-go'), miss = el('div', 'fs-miss'), keyBox = el('div', 'fs-knk-keybox'), q1h = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    [ask, ctl, stage, strips, miss, keyBox, q1h, qh, win].forEach(function (e) { g.appendChild(e); });
+    stage.innerHTML = '<button type="button" class="fs-knk-door" aria-label="' + esc(Kn.doorBtn || 'Knock on the door') + '"><svg viewBox="0 0 220 300" role="img" aria-label="' + esc(Kn.alt || 'A wooden clubhouse door with a sign, and a welcome mat in front of it.') + '">' +
+      '<rect x="20" y="10" width="180" height="270" rx="10" fill="#9C6B3E"/><rect x="34" y="24" width="152" height="244" rx="6" fill="#B57D48"/>' +
+      '<rect x="48" y="40" width="124" height="96" rx="5" fill="#A86F3C"/><rect x="48" y="152" width="124" height="100" rx="5" fill="#A86F3C"/><circle cx="166" cy="150" r="9" fill="#E3B341"/>' +
+      '<rect x="62" y="58" width="96" height="40" rx="6" fill="#FFF3D6" stroke="#6B4A2B" stroke-width="2"/><text x="110" y="84" text-anchor="middle" class="fs-knk-sign">' + esc(Kn.sign || 'CLUB') + '</text>' +
+      '<rect x="10" y="280" width="200" height="16" rx="5" fill="#C0392B"/></svg><span class="fs-knk-hint">' + esc(Kn.doorBtn || '👊 Tap to knock') + '</span></button>';
+    var door = $('.fs-knk-door', stage);
+    function round() { return R[Math.min(st.r, R.length - 1)]; }
+    function paintStrips(you) {
+      var r = round();
+      strips.innerHTML = (r.play ? '<div class="fs-knk-row"><small>' + esc(Kn.heardLabel || 'The door knocked') + '</small><b class="fs-knk-dots">' + (st.heard === st.r || st.r >= R.length ? dotsHTML(r.play) : '<em>?</em>') + '</b></div>' : '') +
+        '<div class="fs-knk-row you"><small>' + esc(Kn.youLabel || 'You knocked') + '</small><b class="fs-knk-dots">' + (you && you.length ? dotsHTML(you) : '<em>…</em>') + '</b></div>';
+    }
+    function paintCtl() {
+      ctl.innerHTML = ''; var r = round(); if (st.r >= R.length || !r.play) return;
+      var b = el('button', 'fs-btn fs-knk-listen', esc(st.heard === st.r ? (Kn.againBtn || '🔁 Listen again') : (Kn.listenBtn || '👂 Listen to the knock'))); b.type = 'button'; ctl.appendChild(b);
+      b.addEventListener('click', play);
+    }
+    function play() {
+      if (busy) return; ac(); busy = true; var r = round(), t = 0, seq = [];
+      r.play.forEach(function (n, gi) { for (var i = 0; i < n; i++) { seq.push(t); t += 280; } t += 650; });
+      seq.forEach(function (ms) { setTimeout(function () { knockSound(); door.classList.remove('hit'); void door.offsetWidth; door.classList.add('hit'); }, ms); });
+      setTimeout(function () { busy = false; st.heard = st.r; saveJ('knock', st); paintStrips(); paintCtl(); }, t);
+    }
+    function judge() {
+      var gr = groupsOf(taps, GAP), r = round(), want = r.play || (Kn.key.filter(function (k) { return k.id === r.want; })[0] || {}).g; taps = [];
+      var same = want && gr.join('-') === want.join('-');
+      if (!same) { bounce(door, miss, (Kn.wrongLine || 'You knocked {got}. Listen again: the door knocked {want}.').replace('{got}', gr.join(' · ')).replace('{want}', r.play ? want.join(' · ') : (r.hint || want.join(' · ')))); paintStrips(gr); return; }
+      miss.classList.remove('show'); SFX.chime(); st.r++; saveJ('knock', st); paintStrips(gr);
+      ask.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">👊</span><div>' + esc(r.done || Kn.rightLine || 'You knocked it back exactly!') + '</div></div>';
+      setTimeout(next, reduceMotion ? 0 : 900);
+    }
+    door.addEventListener('click', function () {
+      if (busy || st.r >= R.length) return; var r = round();
+      if (r.play && st.heard !== st.r) { bounce(door, miss, Kn.listenFirst || 'Listen to the knock first.'); return; }
+      ac(); knockSound(); door.classList.remove('hit'); void door.offsetWidth; door.classList.add('hit'); miss.classList.remove('show');
+      taps.push(Date.now()); paintStrips(groupsOf(taps, GAP)); clearTimeout(endT); endT = setTimeout(judge, END);
+    });
+    function showKey() {
+      keyBox.innerHTML = '<div class="fs-knk-key' + (st.key ? ' open' : '') + '"><div class="fs-knk-kh">🗝️ ' + esc(Kn.keyHead || 'Club knock code') + '</div>' + Kn.key.map(function (k) { return '<div class="fs-knk-kr"><b class="fs-knk-dots">' + dotsHTML(k.g) + '</b><span>' + esc(k.t) + '</span></div>'; }).join('') + '</div>';
+    }
+    function next() {
+      var r = round();
+      if (st.r === 1 && !st.key) {
+        ask.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">❓</span><div>' + esc(Kn.q0 || 'You copied the knock. But what does it MEAN?') + '</div></div>';
+        var b = el('button', 'fs-btn fs-knk-mat', esc(Kn.keyBtn || '🧺 Look under the mat')); b.type = 'button'; ctl.innerHTML = ''; ctl.appendChild(b);
+        b.addEventListener('click', function () { st.key = 1; saveJ('knock', st); SFX.whoosh(); showKey(); next(); }); return;
+      }
+      if (st.r >= 1 && st.key && !st.q1) {
+        showKey(); ctl.innerHTML = ''; ask.innerHTML = '';
+        if (!q1h.dataset.on) { q1h.dataset.on = '1'; chipsQ(q1h, Kn.q1, Kn.key.map(function (k) { return { t: k.t, ok: k.g.join('-') === R[0].play.join('-'), miss: Kn.q1Miss || 'Find the row with the same dots as the knock you copied.' }; }), function () { st.q1 = 1; saveJ('knock', st); next(); }, miss); }
+        return;
+      }
+      if (st.r < R.length) { r = round(); showKey(); ask.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">👊</span><div>' + esc(r.ask) + '</div></div>'; paintStrips(); paintCtl(); return; }
+      showKey(); ctl.innerHTML = ''; ask.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">✅</span><div>' + esc(Kn.doneLine || 'Message sent and read!') + '</div></div>';
+      askOnce(qh, Kn.q, Kn.opts, 'knock-q', win, Kn.win, Kn.clue, 'knock', miss);
+    }
+    if (st.r === 0) { ask.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">🚪</span><div>' + esc(R[0].ask) + '</div></div>'; paintStrips(); paintCtl(); }
+    else next();
+    if (st.key) showKey();
+    placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "The flashlight key" — tap for a short flash (dot), hold for a long flash (dash); a pause ends a letter. The strip draws what you sent and
+     decodes it; a flash that is neither clearly short nor clearly long is marked "?" (your partner can't tell). Send SOS, then GO (26.02) ----------
+     D.morsekey = {afterText, kicker, title, todo[], why, keyBtn, dotMax, dashMin, letterGap, letters:{A:'.-'}, rounds:[{word, ask}], showBtn, clearBtn, sendLabel,
+                   wobbly, wrongLetter ({want},{got}), rightLine, q, opts, win, clue} */
+  function buildMorsekey() {
+    var Mk = D.morsekey; if (!Mk) return;
+    var at = anchorP(Mk.afterText); if (!at) { FAILED.push('morsekey anchor text not found'); return; }
+    var g = gameShell(Mk.kicker || 'Part 1 game', Mk.title, Mk.todo, Mk.why); g.dataset.mod = 'morsekey';
+    var DOT = Mk.dotMax || 280, DASH = Mk.dashMin || 430, LG = Mk.letterGap || 1000, L = Mk.letters, R = Mk.rounds, st = loadJ('morsekey', { r: 0 });
+    var cur = [], letters = [], downT = 0, lgT = null, demo = false, osc = null;
+    var top = el('div', 'fs-mky-top'), strip = el('div', 'fs-mky-strip'), ctl = el('div', 'fs-mug-go'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    [top, strip, ctl, miss, qh, win].forEach(function (e) { g.appendChild(e); });
+    top.innerHTML = '<div class="fs-mky-light"><svg viewBox="0 0 300 120" role="img" aria-label="A flashlight. Its beam lights up while the key is pressed."><path class="fs-mky-beam" d="M120 60 L300 6 L300 114 Z"/>' +
+      '<rect x="14" y="44" width="80" height="32" rx="8" fill="#2D3A4A"/><path d="M94 40 L124 30 L124 90 L94 80 Z" fill="#3E4E62"/><circle class="fs-mky-bulb" cx="120" cy="60" r="10"/></svg></div>' +
+      '<div class="fs-mky-side"><div class="fs-mky-send"></div><button type="button" class="fs-mky-key">' + esc(Mk.keyBtn || 'Press and hold') + '</button><div class="fs-mky-cheat"></div></div>';
+    var key = $('.fs-mky-key', top), light = $('.fs-mky-light', top);
+    function round() { return R[Math.min(st.r, R.length - 1)]; }
+    function code(ch) { return L[ch] || ''; }
+    function sym(s) { return s === '.' ? '<i class="d"></i>' : s === '-' ? '<i class="h"></i>' : '<i class="w">?</i>'; }
+    function paintTop() {
+      var r = round(); $('.fs-mky-send', top).innerHTML = st.r >= R.length ? '' : '<small>' + esc(Mk.sendLabel || 'Send this:') + '</small> <b>' + r.word.split('').join(' ') + '</b>';
+      var chars = []; R.forEach(function (x) { x.word.split('').forEach(function (c) { if (chars.indexOf(c) < 0) chars.push(c); }); });
+      $('.fs-mky-cheat', top).innerHTML = '<small>' + esc(Mk.cheatLabel || 'Code key') + '</small>' + chars.map(function (c) { return '<span><b>' + c + '</b>' + code(c).split('').map(sym).join('') + '</span>'; }).join('');
+    }
+    function decode(seq) { if (seq.indexOf('?') > -1) return '?'; for (var c in L) if (L[c] === seq) return c; return '·'; }
+    function paintStrip() {
+      var all = letters.concat(cur.length ? [cur.join('')] : []);
+      strip.innerHTML = '<div class="fs-mky-row">' + (all.length ? all.map(function (s, i) { var open = i === letters.length; return '<span class="fs-mky-let' + (open ? ' open' : '') + (!open && decode(s) === '?' ? ' bad' : '') + '"><span class="fs-mky-syms">' + s.split('').map(sym).join('') + '</span><b>' + (open ? '…' : decode(s)) + '</b></span>'; }).join('') : '<em>' + esc(Mk.emptyLine || 'Your flashes show up here.') + '</em>') + '</div>';
+    }
+    function lightOn(on) { light.classList.toggle('on', on); var c = ac(); if (on && c && !osc) { osc = c.createOscillator(); var gn = c.createGain(); osc.type = 'sine'; osc.frequency.value = 660; gn.gain.value = 0.05; osc.connect(gn); gn.connect(c.destination); osc.start(); osc._g = gn; } if (!on && osc) { try { osc.stop(); } catch (e) {} osc = null; } }
+    function press() { if (demo || st.r >= R.length) return; clearTimeout(lgT); downT = Date.now(); lightOn(true); key.classList.add('down'); }
+    function release() {
+      if (!downT) return; var d = Date.now() - downT; downT = 0; lightOn(false); key.classList.remove('down');
+      cur.push(d < DOT ? '.' : d >= DASH ? '-' : '?'); paintStrip();
+      if (cur[cur.length - 1] === '?') bounce(key, miss, Mk.wobbly || 'That flash was too long for a dot and too short for a dash. Your partner can’t tell which one you meant!');
+      lgT = setTimeout(endLetter, LG);
+    }
+    function endLetter() {
+      if (!cur.length) return; var s = cur.join(''), r = round(), want = r.word[letters.length]; letters.push(s); cur = [];
+      if (s !== code(want)) { paintStrip(); var got = decode(s); bounce(strip, miss, (got === '?' ? (Mk.wobbly || 'One flash was not clearly short or long.') + ' ' : '') + (Mk.wrongLetter || 'The letter {want} is {code}. Start the word again.').replace('{want}', want).replace('{code}', code(want).replace(/\./g, 'short ').replace(/-/g, 'long ').trim()));
+        lgT = setTimeout(function () { letters = []; cur = []; paintStrip(); }, reduceMotion ? 400 : 2200); return; }
+      miss.classList.remove('show'); paintStrip();
+      if (letters.length === r.word.length) { SFX.chime(); st.r++; saveJ('morsekey', st);
+        strip.insertAdjacentHTML('beforeend', '<div class="fs-hs-card flash"><span class="fs-hs-n">🔦</span><div>' + esc((r.done || Mk.rightLine || 'You sent {word}!').replace('{word}', r.word)) + '</div></div>');
+        setTimeout(function () { letters = []; paintTop(); if (st.r < R.length) paintStrip(); paintCtl(); }, reduceMotion ? 0 : 1600); }
+    }
+    key.addEventListener('pointerdown', function (e) { e.preventDefault(); press(); });
+    key.addEventListener('pointerup', release); key.addEventListener('pointerleave', release); key.addEventListener('pointercancel', release);
+    key.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    key.addEventListener('keydown', function (e) { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) { e.preventDefault(); press(); } });
+    key.addEventListener('keyup', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); release(); } });
+    function show() {
+      if (demo) return; demo = true; ac(); var r = round(), t = 0;
+      r.word.split('').forEach(function (c) { code(c).split('').forEach(function (s) { var d = s === '.' ? 180 : 600; (function (t0, dd) { setTimeout(function () { lightOn(true); }, t0); setTimeout(function () { lightOn(false); }, t0 + dd); })(t, d); t += d + 220; }); t += 700; });
+      setTimeout(function () { demo = false; }, t);
+    }
+    function paintCtl() {
+      ctl.innerHTML = ''; if (st.r >= R.length) { strip.innerHTML = ''; askOnce(qh, Mk.q, Mk.opts, 'morsekey-q', win, Mk.win, Mk.clue, 'morsekey', miss); return; }
+      var b1 = el('button', 'fs-btn alt fs-mky-show', esc(Mk.showBtn || '▶ Show me')), b2 = el('button', 'fs-btn alt fs-mky-clear', esc(Mk.clearBtn || '↺ Clear')); b1.type = b2.type = 'button'; ctl.appendChild(b1); ctl.appendChild(b2);
+      b1.addEventListener('click', show); b2.addEventListener('click', function () { clearTimeout(lgT); cur = []; letters = []; miss.classList.remove('show'); paintStrip(); });
+      var r = round(); if (r.ask) ctl.insertAdjacentHTML('afterbegin', '<p class="fs-scr-tip">' + esc(r.ask) + '</p>');
+    }
+    paintTop(); paintStrip(); paintCtl(); placeAfter(g, at);
+  }
+
+  /* ---------- the wow (after morsekey): "Lighthouse fingerprints" — three lighthouses blink at night, each with its own real pattern (sped up); drag (or tap) each
+     name tag from the light list onto the right light; then the real Cape Canaveral Lighthouse photo (26.02; not a clue) ----------
+     D.lighthouse = {after, kicker, title, todo[], why, speed, alt, listHead, lights:[{id, name, short, flashes, apart, period, x}], miss, photo:{img, alt, cap, id}, done} */
+  function buildLighthouse() {
+    var Lh = D.lighthouse; if (!Lh) return;
+    var host = $('.fs-game[data-mod="' + (Lh.after || 'morsekey') + '"]'); if (!host) { FAILED.push('lighthouse: no anchor game'); return; }
+    var g = gameShell(Lh.kicker || 'Wow!', Lh.title, Lh.todo, Lh.why); g.dataset.mod = 'lighthouse'; g.classList.add('fs-pdl-wow');
+    var SP = Lh.speed || 5, LS = Lh.lights, st = loadJ('lighthouse', { got: {} });
+    var stage = el('div', 'fs-lth-stage'), tags = el('div', 'fs-lth-tags'), miss = el('div', 'fs-miss'), pic = el('div'), win = el('div', 'fs-win');
+    [stage, tags, miss, pic, win].forEach(function (e) { g.appendChild(e); });
+    var towers = LS.map(function (l, i) {
+      var x = l.x || (150 + i * 300), st = '';
+      for (var k = 0; k < 3; k++) { var y0 = 150 + k * 46; st += '<path d="M' + (x - 21 - k * 3.2) + ' ' + (y0 + 23) + ' L' + (x - 19 - k * 3.2) + ' ' + y0 + ' L' + (x + 19 + k * 3.2) + ' ' + y0 + ' L' + (x + 21 + k * 3.2) + ' ' + (y0 + 23) + ' Z" fill="#2E3D58"/>'; }
+      return '<g class="fs-lth-t" data-id="' + l.id + '"><path class="fs-lth-ray" d="M' + x + ' 106 L' + (x - 150) + ' 60 L' + (x - 150) + ' 152 Z"/><path class="fs-lth-ray" d="M' + x + ' 106 L' + (x + 150) + ' 60 L' + (x + 150) + ' 152 Z"/>' +
+        '<path d="M' + (x - 30) + ' 290 L' + (x - 18) + ' 126 L' + (x + 18) + ' 126 L' + (x + 30) + ' 290 Z" fill="#1A2436"/>' + st + '<rect x="' + (x - 24) + '' + '" y="118" width="48" height="10" rx="3" fill="#25324A"/><rect x="' + (x - 17) + '" y="88" width="34" height="30" rx="4" fill="#25324A"/><path d="M' + (x - 19) + ' 88 L' + x + ' 72 L' + (x + 19) + ' 88 Z" fill="#25324A"/>' +
+        '<circle class="fs-lth-lamp" cx="' + x + '" cy="104" r="13"/><text x="' + x + '" y="322" text-anchor="middle" class="fs-lth-abc">' + String.fromCharCode(65 + i) + '</text>' +
+        '<rect class="fs-lth-drop" x="' + (x - 110) + '" y="298" width="220" height="38" rx="9"/></g>';
+    }).join('');
+    stage.innerHTML = '<div class="fs-svgbox" style="padding-top:38.89%"><svg viewBox="0 0 900 350" role="img" aria-label="' + esc(Lh.alt || 'A model of a dark coast at night with three lighthouses, A, B and C, each blinking its own pattern.') + '">' +
+      '<rect width="900" height="350" fill="#0B1630"/><circle cx="60" cy="30" r="2.4" fill="#fff"/><circle cx="420" cy="22" r="2" fill="#fff"/><circle cx="780" cy="40" r="2.4" fill="#fff"/><circle cx="640" cy="16" r="1.8" fill="#fff"/><circle cx="300" cy="46" r="1.6" fill="#fff"/>' +
+      '<rect y="288" width="900" height="62" fill="#13284A"/>' + towers + '<text x="10" y="344" class="fs-trn-model">' + esc((Lh.model || 'a model, sped up {n} times').replace('{n}', SP)) + '</text></svg></div>';
+    var svg = $('svg', stage);
+    function on(l, t) { /* t in real seconds; flashes of 0.25 s (shown), `apart` s between flashes, repeating every `period` s */
+      var p = t % l.period; for (var k = 0; k < l.flashes; k++) { var s = k * l.apart; if (p >= s && p < s + (l.flash || 1.2)) return true; } return false;
+    }
+    var t0 = performance.now(), raf = null, vis = true;
+    function tick(now) { var t = (now - t0) / 1000 * SP; LS.forEach(function (l) { var gT = $('.fs-lth-t[data-id="' + l.id + '"]', svg); if (gT) gT.classList.toggle('on', on(l, t)); }); raf = vis ? requestAnimationFrame(tick) : null; }
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; if (vis && !raf) raf = requestAnimationFrame(tick); }).observe(stage);
+    raf = requestAnimationFrame(tick);
+    function paintTags() {
+      tags.innerHTML = '<div class="fs-lu-lab">' + esc(Lh.listHead || 'The light list (what sailors read)') + '</div>' + LS.map(function (l) { return '<div class="fs-lth-tag' + (st.got[l.id] ? ' placed' : '') + '" data-id="' + l.id + '"><b>' + esc(l.name) + '</b><small>' + esc(l.short) + '</small></div>'; }).join('');
+      $$('.fs-lth-t', svg).forEach(function (gT) { var id = gT.dataset.id, l = LS.filter(function (x) { return x.id === id; })[0]; var old = $('.fs-lth-name', gT); if (old) old.remove();
+        if (st.got[id]) gT.insertAdjacentHTML('beforeend', '<text class="fs-lth-name" x="' + (+$('.fs-lth-lamp', gT).getAttribute('cx')) + '" y="324" text-anchor="middle">✓ ' + esc(l.name) + '</text>'); gT.classList.toggle('done', !!st.got[id]); });
+      $$('.fs-lth-tag:not(.placed)', tags).forEach(function (t) { dragDrop(t, function () { return $$('.fs-lth-t:not(.done)', svg); }, drop); });
+      if (LS.every(function (l) { return st.got[l.id]; })) finish();
+    }
+    function drop(tag, target) {
+      var id = tag.dataset.id; if (target.dataset.id !== id) { var l = LS.filter(function (x) { return x.id === id; })[0]; bounce(tag, miss, (Lh.miss || 'Count that light’s flashes before it goes dark. {name}: {short}.').replace('{name}', l.name).replace('{short}', l.short)); return; }
+      miss.classList.remove('show'); st.got[id] = 1; saveJ('lighthouse', st); SFX.chime(); paintTags();
+    }
+    $$('.fs-lth-t', svg).forEach(function (gT) { gT.addEventListener('click', function () { var s = $('.fs-lth-tag.sel', tags); if (s) { s.classList.remove('sel'); drop(s, gT); } }); });
+    function finish() {
+      if (pic.dataset.on) return; pic.dataset.on = '1'; var P = Lh.photo;
+      if (P) pic.innerHTML = '<figure class="fs-lth-photo"><img src="' + esc(P.img) + '" alt="' + esc(P.alt) + '" loading="lazy"><figcaption>' + esc(P.cap) + '</figcaption></figure>';
+      winOnce(win, Lh.done, null, 'lighthouse-wow');
+    }
+    paintTags(); host.parentNode.insertBefore(g, host.nextSibling);
+  }
+
+  /* ---------- Part 2: "Which signal crosses the bend?" — six ways to send a message; flip on each real limit of the creek (constraints) and watch the tools that
+     break it get crossed out; then check the last tool against the goals (criteria) (26.02) ----------
+     D.crossbend = {afterText, kicker, title, todo[], why, map, tools:[{id, icon, t}], limits:[{id, icon, t, kills:[toolId], why}], limitsLabel, toolsLabel, onWord,
+                    goalsLabel, goals:[{id, icon, t, ok}], keep, needAll, q, opts, win, clue} */
+  function buildCrossbend() {
+    var Xb = D.crossbend; if (!Xb) return;
+    var at = anchorP(Xb.afterText); if (!at) { FAILED.push('crossbend anchor text not found'); return; }
+    var g = gameShell(Xb.kicker || 'Part 2 game', Xb.title, Xb.todo, Xb.why); g.dataset.mod = 'crossbend';
+    var st = loadJ('crossbend', { on: {}, goal: {} }), map = el('div', 'fs-xbd-map'), tools = el('div', 'fs-xbd-tools'), lims = el('div', 'fs-xbd-lims'), goals = el('div'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    if (Xb.map) { map.innerHTML = creekMap(Xb.map); g.appendChild(map); }
+    [lims, tools, goals, miss, qh, win].forEach(function (e) { g.appendChild(e); });
+    function killedBy(id) { var by = null; Xb.limits.forEach(function (l) { if (st.on[l.id] && l.kills.indexOf(id) > -1 && !by) by = l; }); return by; }
+    function paint(flash) {
+      lims.innerHTML = '<div class="fs-lu-lab">' + esc(Xb.limitsLabel || 'The limits at the bend (constraints): tap each one to switch it on') + '</div>' + Xb.limits.map(function (l) {
+        return '<button type="button" class="fs-xbd-lim' + (st.on[l.id] ? ' on' : '') + '" data-id="' + l.id + '"' + (st.on[l.id] ? ' disabled' : '') + '><span>' + l.icon + '</span><b>' + esc(l.t) + '</b><em>' + esc(st.on[l.id] ? (Xb.onWord || 'ON') : (Xb.offWord || 'tap to switch on')) + '</em></button>'; }).join('');
+      tools.innerHTML = '<div class="fs-lu-lab">' + esc(Xb.toolsLabel || 'Ways to send a message') + '</div>' + Xb.tools.map(function (t) { var k = killedBy(t.id);
+        return '<div class="fs-xbd-tool' + (k ? ' out' : '') + (k && flash === k.id ? ' new' : '') + '" data-id="' + t.id + '"><span class="fs-xbd-ic">' + t.icon + '</span><b>' + esc(t.t) + '</b>' + (k ? '<small>✗ ' + esc((k.whyTool && k.whyTool[t.id]) || k.why) + '</small>' : '') + '</div>'; }).join('');
+      $$('.fs-xbd-lim', lims).forEach(function (b) { b.addEventListener('click', function () { st.on[b.dataset.id] = 1; saveJ('crossbend', st); SFX.stamp(); paint(b.dataset.id); }); });
+      var all = Xb.limits.every(function (l) { return st.on[l.id]; });
+      goals.innerHTML = '';
+      if (all) {
+        var keep = Xb.tools.filter(function (t) { return t.id === Xb.keep; })[0];
+        goals.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">' + keep.icon + '</span><div>' + esc((Xb.leftLine || 'Only one is left: {t}. Does it meet every goal?').replace('{t}', keep.t)) + '</div></div>' +
+          '<div class="fs-lu-lab">' + esc(Xb.goalsLabel || 'The goals (criteria): tap each one to check') + '</div><div class="fs-xbd-goals">' + Xb.goals.map(function (q) {
+            return '<button type="button" class="fs-xbd-goal' + (st.goal[q.id] ? ' ok' : '') + '" data-id="' + q.id + '"><span>' + (st.goal[q.id] ? '✅' : q.icon) + '</span><b>' + esc(q.t) + '</b>' + (st.goal[q.id] ? '<small>' + esc(q.ok) + '</small>' : '') + '</button>'; }).join('') + '</div>';
+        $$('.fs-xbd-goal', goals).forEach(function (b) { b.addEventListener('click', function () { if (st.goal[b.dataset.id]) return; st.goal[b.dataset.id] = 1; saveJ('crossbend', st); SFX.chime(); paint(); }); });
+        if (Xb.goals.every(function (q) { return st.goal[q.id]; })) askOnce(qh, Xb.q, Xb.opts, 'crossbend-q', win, Xb.win, Xb.clue, 'crossbend', miss);
+      }
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* shared partner model for codetest + fogtwist. A pattern is a string of . (short) and - (long).
+     Short gaps: quick short flashes blur together 300 feet away, so all-short patterns get mixed up with each other.
+     Mist + short gaps: flashes close together smear into ONE long glow, so every pattern of 2+ flashes looks like a single long flash. Long gaps fix both. */
+  function partnerSees(p, gap, fog) {
+    if (gap === 'long') return p;
+    if (fog) return p.length > 1 ? '-' : p;
+    return /^\.+$/.test(p) ? '.*' : p;
+  }
+  function partnerTest(code, msgs, tiles, gap, fog) {
+    var seen = {}; msgs.forEach(function (m) { var tl = tiles.filter(function (t) { return t.id === code[m.id]; })[0]; seen[m.id] = partnerSees(tl ? tl.p : '', gap, fog); });
+    return msgs.map(function (m, i) {
+      var twins = msgs.filter(function (o) { return o.id !== m.id && seen[o.id] === seen[m.id]; });
+      return { m: m, ok: !twins.length, got: twins.length ? twins[0] : m };
+    });
+  }
+  function patHTML(p) { return '<span class="fs-cdt-pat">' + p.split('').map(function (s) { return s === '.' ? '<i class="d"></i>' : '<i class="h"></i>'; }).join('') + '</span>'; }
+
+  /* ---------- Part 3: "Test it across the creek" — the judges' first code (a pattern tile on each race message + a gap setting); Test sends it to a partner
+     MODEL at the finish dock; the test sheet shows sent vs got, mix-ups glow (failure points). Change ONE thing (one tile or the gap), test again, until 4/4 (26.02) ----------
+     D.codetest = {afterText, kicker, title, todo[], why, msgs:[{id, icon, t}], tiles:[{id, p}], start:{msgId: tileId}, startGap, gapLabel, gaps:[{k, t}], tilesLabel,
+                   testBtn, sheetHead, cols[4], scoreTpl ({n}), oneLine, changedLine, failLine, passLine, needFail, q, opts, win, clue} */
+  function buildCodetest() {
+    var Ct = D.codetest; if (!Ct) return;
+    var at = anchorP(Ct.afterText); if (!at) { FAILED.push('codetest anchor text not found'); return; }
+    var g = gameShell(Ct.kicker || 'Part 3 game', Ct.title, Ct.todo, Ct.why); g.dataset.mod = 'codetest';
+    var M = Ct.msgs, T = Ct.tiles, st = loadJ('codetest', null);
+    if (!st) st = { code: JSON.parse(JSON.stringify(Ct.start)), gap: Ct.startGap || 'short', tests: 0, fails: 0, changed: 0, last: null, pass: 0 };
+    var board = el('div', 'fs-cdt-board'), tray = el('div', 'fs-cdt-tiles'), gapBox = el('div', 'fs-cdt-gap'), ctl = el('div', 'fs-mug-go'), sheet = el('div', 'fs-cdt-sheet'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    [board, gapBox, tray, ctl, miss, sheet, qh, win].forEach(function (e) { g.appendChild(e); });
+    function save() { saveJ('codetest', st); }
+    function tileOf(id) { return T.filter(function (t) { return t.id === id; })[0]; }
+    function locked() { return st.pass || (st.tests > 0 && st.changed >= 1); }
+    function bad() { return st.last ? st.last.filter(function (r) { return !r.ok; }).map(function (r) { return r.m; }) : []; }
+    function paint() {
+      var fails = bad();
+      board.innerHTML = '<div class="fs-lu-lab">' + esc(Ct.boardLabel || 'The race code') + '</div>' + M.map(function (m) { var tl = tileOf(st.code[m.id]);
+        return '<div class="fs-cdt-slot' + (fails.indexOf(m.id) > -1 && !st.changed ? ' fail' : '') + '" data-id="' + m.id + '"><span class="fs-cdt-msg">' + m.icon + ' ' + esc(m.t) + '</span>' + (tl ? patHTML(tl.p) : '<em>?</em>') + '</div>'; }).join('');
+      gapBox.innerHTML = '<span class="fs-in-k">' + esc(Ct.gapLabel || 'Gap between flashes:') + '</span>' + Ct.gaps.map(function (gp) { return '<button type="button" class="fs-in-chip fs-cdt-g' + (st.gap === gp.k ? ' on' : '') + '" data-k="' + gp.k + '">' + esc(gp.t) + '</button>'; }).join('');
+      var used = M.map(function (m) { return st.code[m.id]; });
+      tray.innerHTML = '<div class="fs-lu-lab">' + esc(Ct.tilesLabel || 'Pattern tiles: drag one onto a message, or tap a tile and then a message') + '</div>' + T.map(function (t) { return '<div class="fs-cdt-tile' + (used.indexOf(t.id) > -1 ? ' used' : '') + '" data-id="' + t.id + '">' + patHTML(t.p) + '</div>'; }).join('');
+      var slots = $$('.fs-cdt-slot', board);
+      $$('.fs-cdt-tile', tray).forEach(function (t) { dragDrop(t, function () { return slots; }, place); });
+      tapTargets(g, slots, place);
+      $$('.fs-cdt-g', gapBox).forEach(function (b) { b.addEventListener('click', function () { if (b.dataset.k === st.gap) return; if (!canChange()) return; st.gap = b.dataset.k; st.changed++; save(); SFX.pop(); paint(); }); });
+      paintCtl();
+    }
+    function canChange() {
+      if (st.pass) return false;
+      if (!st.tests) { bounce(board, miss, Ct.firstLine || 'Test the judges’ first code before you change anything. Press Test across the creek.'); return false; }
+      if (locked()) { bounce(board, miss, Ct.oneLine || 'You already changed one thing. Test it first! Engineers change ONE thing at a time, so they know what fixed it.'); return false; }
+      return true;
+    }
+    function place(tile, slot) {
+      var tid = tile.dataset.id, mid = slot.dataset.id; tile.classList.remove('sel'); if (st.code[mid] === tid) return; if (!canChange()) return;
+      var other = M.filter(function (m) { return st.code[m.id] === tid; })[0]; if (other) st.code[other.id] = st.code[mid]; /* a tile in use swaps places */
+      st.code[mid] = tid; st.changed++; save(); SFX.pop(); miss.classList.remove('show'); paint();
+    }
+    function paintCtl() {
+      ctl.innerHTML = ''; if (st.pass) return;
+      var b = el('button', 'fs-btn fs-cdt-test', esc(st.tests ? (Ct.againBtn || '🔦 Test again') : (Ct.testBtn || '🔦 Test across the creek'))); b.type = 'button'; ctl.appendChild(b);
+      if (st.tests && !st.pass) ctl.insertAdjacentHTML('beforeend', '<span class="fs-cdt-chg">' + esc((Ct.changedLine || 'Changes since the last test: {n} of 1').replace('{n}', Math.min(1, st.changed))) + '</span>');
+      b.addEventListener('click', test);
+    }
+    function test() {
+      if (st.tests && !st.changed) { bounce($('.fs-cdt-test', ctl), miss, Ct.sameLine || 'Nothing changed, so the test would come out the same. Change ONE thing first: a tile or the gap.'); return; }
+      ac(); miss.classList.remove('show'); var res = partnerTest(st.code, M, T, st.gap, false), b = $('.fs-cdt-test', ctl); b.disabled = true;
+      var t = 0; M.forEach(function (m) { var p = tileOf(st.code[m.id]).p; p.split('').forEach(function (s) { (function (t0, d) { setTimeout(function () { tone(660, 0, d / 1000, 'sine', 0.04); g.classList.add('fs-cdt-flash'); setTimeout(function () { g.classList.remove('fs-cdt-flash'); }, d); }, t0); })(t, s === '.' ? 90 : 260); t += (s === '.' ? 90 : 260) + (st.gap === 'long' ? 260 : 110); }); t += 300; });
+      setTimeout(function () {
+        st.tests++; st.changed = 0; st.last = res.map(function (r) { return { m: r.m.id, ok: r.ok, got: r.got.id }; });
+        var n = res.filter(function (r) { return r.ok; }).length; if (n < M.length) st.fails++; else st.pass = 1; save();
+        if (st.pass) SFX.win(); else SFX.thud(); paint(); paintSheet(true);
+      }, reduceMotion ? 0 : t);
+    }
+    function paintSheet(fresh) {
+      if (!st.last) { sheet.innerHTML = ''; return; }
+      var C4 = Ct.cols || ['Sent', 'Pattern', 'Partner got', ''], n = st.last.filter(function (r) { return r.ok; }).length;
+      sheet.innerHTML = '<div class="fs-cdt-paper' + (fresh ? ' flash' : '') + '"><div class="fs-cdt-sh"><b>📝 ' + esc((Ct.sheetHead || 'Partner test #{n}').replace('{n}', st.tests)) + '</b><span class="fs-cdt-score' + (n === M.length ? ' ok' : '') + '">' + esc((Ct.scoreTpl || '{n} out of 4').replace('{n}', n)) + '</span></div><table><tr>' + C4.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        st.last.map(function (r) { var m = M.filter(function (x) { return x.id === r.m; })[0], gt = M.filter(function (x) { return x.id === r.got; })[0];
+          return '<tr class="' + (r.ok ? 'ok' : 'bad') + '"><td>' + m.icon + ' ' + esc(m.t) + '</td><td>' + patHTML(tileOf(st.code[m.id]).p) + '</td><td>' + gt.icon + ' ' + esc(gt.t) + '</td><td>' + (r.ok ? '✓' : '✗') + '</td></tr>'; }).join('') + '</table>' +
+        '<p>' + esc(n === M.length ? (Ct.passLine || 'Your partner read every message!') : (Ct.failLine || 'Some messages got mixed up. Those are your failure points. Change ONE thing and test again.')) + '</p></div>';
+      if (st.pass) askOnce(qh, Ct.q, Ct.opts, 'codetest-q', win, Ct.win, Ct.clue, 'codetest', miss);
+    }
+    paint(); paintSheet(); placeAfter(g, at);
+  }
+
+  /* ---------- after the solve, the twist: "Race day: mist on the creek" — the code from codetest is tested again in the real place at sunset; in mist, flashes
+     close together smear into one glow; pick a fix, test again (26.02) ----------
+     D.fogtwist = {after, kicker, title, todo[], lockLine, intro, testBtn, againBtn, sheetHead, fixQ, fixes:[{t, ok, miss}], readyLine, passLine, win} */
+  function buildFogtwist() {
+    var Fg = D.fogtwist, Ct = D.codetest; if (!Fg || !Ct) return;
+    var g = gameShell(Fg.kicker || 'Twist!', Fg.title, Fg.todo, Fg.why); g.dataset.mod = 'fogtwist';
+    afterSolve(g, Fg.after, Fg.lockLine, function (body) {
+      var M = Ct.msgs, T = Ct.tiles, ct = loadJ('codetest', null), st = loadJ('fogtwist', { t1: 0, fix: 0, t2: 0 });
+      var code = ct && ct.pass ? ct.code : (Fg.defCode || Ct.start), gap0 = ct && ct.pass ? ct.gap : (Fg.defGap || 'long');
+      var scene = el('div', 'fs-fog-scene'), ctl = el('div', 'fs-mug-go'), sheet = el('div', 'fs-cdt-sheet'), fx = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      [scene, ctl, sheet, fx, miss, win].forEach(function (e) { body.appendChild(e); });
+      scene.innerHTML = '<div class="fs-fog-pic">' + creekMap(Fg.map || (D.case && D.case.creek && D.case.creek.map)) + '<div class="fs-fog-mist"></div></div><p class="fs-scr-tip">' + esc(Fg.intro || '') + '</p>';
+      function tileOf(id) { return T.filter(function (t) { return t.id === id; })[0]; }
+      function sheetOf(res, gap, n) {
+        var k = res.filter(function (r) { return r.ok; }).length;
+        return '<div class="fs-cdt-paper"><div class="fs-cdt-sh"><b>🌫️ ' + esc((Fg.sheetHead || 'Mist test #{n}').replace('{n}', n)) + '</b><span class="fs-cdt-score' + (k === M.length ? ' ok' : '') + '">' + esc((Ct.scoreTpl || '{n} out of 4').replace('{n}', k)) + '</span></div><table>' +
+          res.map(function (r) { return '<tr class="' + (r.ok ? 'ok' : 'bad') + '"><td>' + r.m.icon + ' ' + esc(r.m.t) + '</td><td>' + patHTML(tileOf(code[r.m.id]).p) + '</td><td>' + r.got.icon + ' ' + esc(r.got.t) + '</td><td>' + (r.ok ? '✓' : '✗') + '</td></tr>'; }).join('') + '</table><small>' + esc(gap === 'long' ? (Fg.longWord || 'Long gaps') : (Fg.shortWord || 'Short gaps')) + '</small></div>';
+      }
+      function paint() {
+        ctl.innerHTML = ''; sheet.innerHTML = ''; fx.innerHTML = '';
+        if (!st.t1) { var b = el('button', 'fs-btn fs-fog-test', esc(Fg.testBtn || '🔦 Test my code in the mist')); b.type = 'button'; ctl.appendChild(b); b.addEventListener('click', function () { st.t1 = 1; saveJ('fogtwist', st); SFX.whoosh(); paint(); }); return; }
+        var r1 = partnerTest(code, M, T, gap0, true), ok1 = r1.every(function (r) { return r.ok; });
+        sheet.innerHTML = sheetOf(r1, gap0, 1);
+        if (ok1) { fx.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">🌫️</span><div>' + esc(Fg.readyLine || 'Your long gaps were ready for the mist!') + '</div></div>'; winOnce(win, Fg.win, null, 'fogtwist'); return; }
+        if (!st.fix) {
+          chipsQ(fx, Fg.fixQ, Fg.fixes, function () { st.fix = 1; saveJ('fogtwist', st); SFX.chime(); paint(); }, miss); return;
+        }
+        if (!st.t2) { var b2 = el('button', 'fs-btn fs-fog-test', esc(Fg.againBtn || '🔦 Test again with long gaps')); b2.type = 'button'; ctl.appendChild(b2); b2.addEventListener('click', function () { st.t2 = 1; saveJ('fogtwist', st); paint(); }); return; }
+        var r2 = partnerTest(code, M, T, 'long', true);
+        sheet.innerHTML += sheetOf(r2, 'long', 2);
+        fx.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">✅</span><div>' + esc(Fg.passLine || 'Long gaps: 4 out of 4 in the mist!') + '</div></div>';
+        winOnce(win, Fg.win, null, 'fogtwist');
+      }
+      paint();
+    });
+  }
+
+  /* ---------- bonus (fold it with D.fold.myname): "Send your name" — type your first name, watch and hear it blink in real Morse timing; compare its time with a
+     one-flash race code (26.02) ----------
+     D.myname = {after, kicker, title, todo[], ph, sendBtn, unit (s), letters:{A:'.-'}, timeTpl ({name},{s}), compare, onlyLetters, done} */
+  function buildMyname() {
+    var Mn = D.myname; if (!Mn) return;
+    var host = $(Mn.after || '.fs-solve'); if (!host) { FAILED.push('myname: no anchor'); return; }
+    var g = gameShell(Mn.kicker || 'Bonus', Mn.title, Mn.todo, Mn.why); g.dataset.mod = 'myname';
+    var U = Mn.unit || 0.2, Lt = Mn.letters || (D.morsekey && D.morsekey.letters) || {};
+    var row = el('div', 'fs-mnm-row', '<input type="text" class="fs-mnm-in" maxlength="12" autocomplete="off" aria-label="' + esc(Mn.ph || 'Your first name') + '" placeholder="' + esc(Mn.ph || 'Your first name') + '"><button type="button" class="fs-btn fs-mnm-go">' + esc(Mn.sendBtn || '🔦 Send it') + '</button>');
+    var lamp = el('div', 'fs-mnm-lamp', '<span></span>'), out = el('div', 'fs-mnm-out'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    [row, lamp, out, miss, win].forEach(function (e) { g.appendChild(e); });
+    var busy = false;
+    $('.fs-mnm-go', row).addEventListener('click', function () {
+      if (busy) return; var name = $('.fs-mnm-in', row).value.toUpperCase().replace(/[^A-Z]/g, '');
+      if (!name) { bounce(row, miss, Mn.onlyLetters || 'Type your first name with letters A to Z.'); return; }
+      miss.classList.remove('show'); ac(); busy = true; var t = 0, units = 0;
+      out.innerHTML = '<div class="fs-mnm-lets">' + name.split('').map(function (c, i) { return '<span data-i="' + i + '"><b>' + c + '</b>' + patHTML(Lt[c] || '') + '</span>'; }).join('') + '</div>';
+      name.split('').forEach(function (c, i) {
+        (function (t0, idx) { setTimeout(function () { var s = $('span[data-i="' + idx + '"]', out); if (s) s.classList.add('on'); }, t0 * 1000); })(t, i);
+        (Lt[c] || '').split('').forEach(function (s, j, arr) { var d = (s === '.' ? 1 : 3) * U; (function (t0, dd) { setTimeout(function () { lamp.classList.add('on'); tone(660, 0, dd, 'sine', 0.045); }, t0 * 1000); setTimeout(function () { lamp.classList.remove('on'); }, (t0 + dd) * 1000); })(t, d);
+          t += d; units += s === '.' ? 1 : 3; if (j < arr.length - 1) { t += U; units += 1; } });
+        if (i < name.length - 1) { t += 3 * U; units += 3; }
+      });
+      setTimeout(function () { busy = false; var secs = (units * U).toFixed(1);
+        out.insertAdjacentHTML('beforeend', '<div class="fs-hs-card flash"><span class="fs-hs-n">⏱️</span><div>' + esc((Mn.timeTpl || '{name} took {s} seconds to send.').replace('{name}', name.charAt(0) + name.slice(1).toLowerCase()).replace('{s}', secs)) + ' ' + esc(Mn.compare || '') + '</div></div>');
+        winOnce(win, Mn.done, null, 'myname'); }, reduceMotion ? 0 : t * 1000 + 200);
+    });
+    setTimeout(function () { var ref = host.nextSibling; while (ref && ref.classList && ref.classList.contains('fs-game')) ref = ref.nextSibling; host.parentNode.insertBefore(g, ref); if (D.fold && D.fold.myname) foldGame(g, D.fold.myname); }, 0);
+  }
+
   /* ---------- Tool of the Week: two tuning forks (26.01). Strike each: hear its note (WebAudio) and watch the prongs in slow motion; compare how fast each
      vibrates; then dip one in water to see the splash (a real photo).
      T.tuningfork = {title, todo[], model, forks:[{id, name, hz, c}], slow, strikeBtn, wigTpl, needBoth, q:{q, opts}, dipBtn, photo:{img, alt, cap}} ---------- */
@@ -12745,6 +13157,13 @@
     guard('shake', buildShake);
     guard('rivertwist', buildRivertwist);
     guard('raceplan', buildRaceplan);
+    guard('knock', buildKnock);
+    guard('morsekey', buildMorsekey);
+    guard('lighthouse', buildLighthouse);
+    guard('crossbend', buildCrossbend);
+    guard('codetest', buildCodetest);
+    guard('fogtwist', buildFogtwist);
+    guard('myname', buildMyname);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

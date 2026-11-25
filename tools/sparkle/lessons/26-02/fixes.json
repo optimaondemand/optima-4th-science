@@ -1,0 +1,323 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; the plan puts Module 26 in “Energy, Motion, and Waves”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Energy, Motion &amp; Waves</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "coded messages with light and sound waves are physical science (engineering), not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS code; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.N.1.8 · TEKS 4.4(A)</div>",
+  "new": "<div class=\"info-value\">SC.4.N.1.8</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label: weeks 24 on are Q4 in the Canvas plan",
+  "old": "<div class=\"info-value\">Q3 &middot; Week 26</div>",
+  "new": "<div class=\"info-value\">Q4 &middot; Week 26</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: The Secret Knock</div>\n        <div class=\"act-subtitle\">When does a pattern become a message?</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the secret knock",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Knock, knock! Someone is at the clubhouse door. Listen to the knock, then knock it back.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → codes you already know (answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Now think of a code you already know, like a doorbell, a school bell or a car horn. What pattern does it use, and what does it mean?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “Device” is in the plan row, but its meaning was about converting energy. Same word, a meaning for this lesson",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job, like a flashlight or a whistle."
+ },
+ {
+  "kind": "fix",
+  "why": "Morse history (ticked): Morse code in the 1800s went over telegraph wires (railroads used the telegraph to run trains safely); ships sent it by radio from about 1900 and by signal lamps",
+  "old": "In the 1800s, sailors and trains used Morse code to send urgent messages across long distances. It used short and long pulses (dots and dashes) — basically the same idea you'll design today.",
+  "new": "In the 1800s, telegraph operators tapped Morse code over wires, and railroads used it to run trains safely. Later, ships sent it by radio and flashed it with lamps."
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for a code design",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; My Code Design"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task → design a code for your own life (key drawn on the sketch pad; goals, limit, test plan and predicted redesign typed)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Invent a code for your own life, like a family signal or a game with a friend. Draw its key with 4 messages. Then write your goals, a limit, a test plan and one redesign you predict.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: what Part C can use",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🔦</span>Optional: a flashlight</span>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "wrong closing teaser (ticked): the next lesson is 27.01 What Is Matter?, not rocks and fossils",
+  "old": " Next module starts something new — Earth's past and the rocks and fossils that tell its story.</p>",
+  "new": " Next lesson starts something new: matter, the stuff everything is made of.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll design a code, test it with a partner and make it better.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "A repeating arrangement that has meaning — like dot-dash-dot or three slow claps. Patterns are how we turn waves into messages.",
+  "new": "A repeating arrangement that has meaning, like dot-dash-dot or three slow claps. Patterns are how we turn waves into messages."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "To improve a design based on what testing taught you. Every test that fails teaches you something — and you redesign to fix it.",
+  "new": "To improve a design based on what testing taught you. Every test that fails teaches you something, and you redesign to fix it."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: shorter, no dashes (same meaning)",
+  "old": " is something repeating in a way you can recognize. Three slow knocks. Two short flashes followed by a long flash. A red light then a green light. When a pattern means something — like \"open the door\" or \"stop, then go\" — it becomes a ",
+  "new": " is something that repeats in a way you can recognize, like three slow knocks or two short flashes. When a pattern means something, like “open the door,” it becomes a "
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: shorter, no dash (Morse code is explained in the game just below and in Part 2)",
+  "old": " messages using waves. Morse code uses dots and dashes (short and long signals) to spell out letters. Phone signals use patterns of radio waves. Even traffic lights are a basic code — red, yellow, green mean specific things.",
+  "new": " messages with waves of light, sound or radio. Phone signals use patterns of radio waves. Even traffic lights are a simple code: red, yellow and green each mean something."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (four knocks) is played in the Warm-Up knock game; a one-line lead-in to the Part 1 game instead",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "<p>Try it! Send a message with a flashlight key, the way Morse code does.</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Test line in the example list (Part 3 is the test)",
+  "old": "\\s*<li><strong>Test:</strong> have your partner read your message and tell you what they got\\.</li>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "misconception paragraph: plain words, no dash, shorter (same idea)",
+  "old": "<p><strong>Common misconception:</strong> Some people think a code needs to be complicated to be useful\\. Simple codes are often the best.*?</p>",
+  "new": "<p><strong>Watch out:</strong> some people think a code has to be complicated to work. Simple codes are often best: fewer parts to remember, fewer ways to misread.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "leads into the Part 2 game (the creek’s goals and limits)",
+  "old": "<div class=\"lesson-figure-caption\"><strong>A good code sheet has four parts:</strong> the patterns, the criteria, the constraints, and a redesign plan.</div>\n      </div>",
+  "new": "<div class=\"lesson-figure-caption\"><strong>A good code sheet has four parts:</strong> the patterns, the criteria, the constraints, and a redesign plan.</div>\n      </div>\n\n      <p>Now be the engineer for the Duck Derby. Which signal can cross the bend?</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Science Connection: define “creativity” where first seen (same meaning; this box teaches SC.4.N.1.8, so it stays)",
+  "old": "<p><strong>Science Connection:</strong> Scientists and engineers use creativity. Inventing a code means imagining a new pattern, testing whether others can read it, and improving it.</p>",
+  "new": "<p><strong>Science Connection:</strong> Scientists and engineers use creativity (coming up with new ideas). Inventing a code means imagining a new pattern, testing whether others can read it, and improving it.</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Explain why testing with a partner is important in...\"",
+  "new": "data-label=\"Why test with a partner?\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why is REDESIGN such an important step? Give an ex...\"",
+  "new": "data-label=\"Why redesign matters, and my redesign\""
+ },
+ {
+  "kind": "plain",
+  "why": "CER label (Gathered Answers)",
+  "old": "id=\"cer-4\" data-label=\"Response\"",
+  "new": "id=\"cer-4\" data-label=\"Use Your Evidence: do engineers get it right the first time?\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dash",
+  "old": "You've now done what real engineers do — defined",
+  "new": "You did what real engineers do: you defined"
+ },
+ {
+  "kind": "cut",
+  "why": "removed: Key Concept, the Stop & Reason (22.01 leftover), the Four Coded Systems tap diagram (Part B question 5 that used it is cut; the knock, the flashlight key and the lighthouses cover the same systems), Observe & Reason, the World War II fact (shaky: “faster than most people type”), the Florida connection (Morse-signaling keepers: no evidence; the true flash-pattern part is the lighthouse wow) and Go Deeper (true, beyond this lesson)",
+  "old": "\\s*<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?(?=<div class=\"callout callout-think scroll-reveal\">)",
+  "new": "\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 3 = the old Explore (Engineering Challenge: Design Your Code → Test It Across the Creek); the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Test It Across the Creek</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">The judges made their first code: a pattern of flashes for each race message. Test it with a partner at the finish dock. Find what fails, change one thing and test again.</p>\n  <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its design-test-redesign steps are now the Part 3 game and Part C; its Big Cypress “radio code patterns” fact (no source, likely made up), Think like a scientist and Go Deeper (binary: true, beyond this lesson) go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 5 removed (Bethany kept 6 and 7; 5 asked about the removed tap diagram)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>5</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 6 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C drawn and typed on the page",
+  "old": "A full code design — key with 4 messages, 2 criteria, 1 constraint, a test plan, and one predicted redesign.",
+  "new": "My goals, my limit, my test plan and one redesign I predict. Plus your labeled sketch: your code key with 4 messages and their patterns."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether testing is essential to good engineering, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether real engineers get it right the first time, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your code key sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]
