@@ -1,0 +1,306 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label (ticked): “Ecosystems & Energy” is a leftover; the plan puts Module 28 in Unit 6 “Matter, Magnets, and Changes”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Matter, Magnets &amp; Changes</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "science label (ticked): magnets are physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS code; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.P.8.4 · TEKS 4.7(C)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.8.4</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer (ticked): 28.01 is due Apr 20, Q4 in the Canvas plan (the header already says Q4)",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Magnet Fishing Day</div>\n        <div class=\"act-subtitle\">What will the magnet pull up?</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → magnet fishing off the dock",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Magnet fishing means tying a strong magnet to a rope, dropping it into the water and pulling up lost things. Dr. Nair’s team is trying it off the Palmetto Springs dock.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → the magnet-fishing game (played and answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Before every cast, make your guess. Then reel it up and see.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): “Device” meant converting energy; this lesson’s devices are a compass and a magnet sweeper",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job. A compass and a magnet sweeper are devices."
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the Stop & Reason asked about “the three devices above … INPUT and OUTPUT” (no devices on this page)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C was a food chain; the checklist already asks for a two-magnet diagram",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Draw Two Magnets"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C task → the checklist’s two-magnet diagram (planned and sketched on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Draw two bar magnets near each other. Label every pole N or S. Add arrows to show whether they attract or repel. Then flip one magnet in your head: what happens now?</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: what the games can use at home",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🧲</span>Optional: a fridge magnet</span><span class=\"need-chip\"><span>📎</span>Optional: a paperclip, foil, a coin, a key</span>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: the snap-in-half fact is now the wow, so the page asks instead of telling; no dash; the poles picture moves up to the poles paragraph",
+  "old": " — a NORTH pole and a SOUTH pole. These poles are ALWAYS in opposite ends of the magnet. If you break a magnet in half, each piece becomes a smaller magnet with its own north AND south pole.</p>",
+  "new": ": a NORTH pole and a SOUTH pole, always at opposite ends. So what happens if you snap a magnet in half? You’ll find out below.</p>\n      <div class=\"lesson-figure scroll-reveal\">\n        <div class=\"lesson-figure-label\">🧲 Two Magnets, Two Outcomes</div>\n        <img src=\"images/28-01-magnet-poles.png\" alt=\"Two side-by-side diagrams. Left: two bar magnets with opposite poles facing (N to S) pull together. Right: two bar magnets with the same poles facing (N to N) push apart.\" />\n        <div class=\"lesson-figure-caption\"><strong>The rule never changes:</strong> N + S = pull together. N + N or S + S = push apart.</div>\n      </div>\n\n      "
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: a lead-in for the worn-label game",
+  "old": "(N + N = push apart; S + S = push apart).</p>",
+  "new": "(N + N = push apart; S + S = push apart).</p>\n      <p>Scientists use this rule to find a pole they can’t see. Try it on a magnet whose letters wore off.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (flip one magnet) is played by the worn-label game",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: the answer list becomes the sweeper game; the magnetic field line stays, with the compass (ticked compass wording) so quiz Q3 is taught on the page; the fridge line is kept short; the misconception is played by the sweeper; the poles picture moved to Part 1",
+  "old": "<ul style=\"font-size:16px;color:#2B1D12;line-height:1\\.7;margin:10px 0 12px 24px;\">\\s*<li><strong>Magnetic \\(a magnet pulls\\):</strong>.*?</div>\\s*</div>\\s*(?=<div style=\"background:#FFF6E5)",
+  "new": "<p>So is every metal magnetic? Sweep the tray and see.</p>\n\n      <p>That’s why a magnet sticks to your fridge door (steel) but not to a soda can (aluminum).</p>\n\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · The Invisible Pull Zone</h3>\n      <p>The invisible pull zone around a magnet is its <span class=\"vtip\">magnetic field<span class=\"vtip-box\"><span class=\"vtip-word\">Magnetic field</span>Invisible area of pull or push.</span></span>. Earth itself is a giant magnet! A compass needle is a tiny magnet, so Earth’s magnetic field turns it to point toward Earth’s magnetic north, near the North Pole.</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: no dash",
+  "old": "</span></span> — mainly iron, nickel, and most kinds of steel.</p>",
+  "new": "</span></span>: mainly iron, nickel and most kinds of steel.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Key Concept (the games teach it)",
+  "old": "<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Four Magnet Tests tap diagram is replaced by the sweeper; with it go Observe & Reason (Part B question 5 asks the same), the compass Amazing Fact (its idea is now a sentence in Part 2), the sea-turtle Florida connection and the Where does magnetism come from Go Deeper",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Magnet Tests</h3>.*?(?=<div class=\"tab-next-wrap\">)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "An object that can pull (attract) certain metals — and that has two ends that push or pull on other magnets.",
+  "new": "An object that can pull (attract) certain metals. Its two ends push or pull on other magnets."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "Two of the same poles (N+N or S+S) repel each other — they push away.",
+  "new": "Two of the same poles (N+N or S+S) repel each other. They push away."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; no dashes",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll predict whether a magnet will attract, repel or do nothing, and explain why.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 4 = the old Explore (Magnet Treasure Hunt → the full prediction chart, the plan’s product); the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · The Magnet Treasure Hunt</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Scientists predict BEFORE they test. Fill in the whole prediction chart first: will a magnet stick to each thing? Lock it in. Then test every row.</p>\n  <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its predict-test-sort steps live on as the prediction chart; the MRI Amazing Fact, the Think like a scientist and the Electromagnets Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 no longer points at the cut diagram",
+  "old": "Pick ONE object from the diagram (paperclip, soda can, another magnet, wooden block).",
+  "new": "Pick ONE object: a paperclip, a soda can, another magnet or a wooden block."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE object from the diagram (paperclip, soda ...\"",
+  "new": "data-label=\"One object: attract, repel or ignore, and why\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Two bar magnets snap together. Then someone flips ...\"",
+  "new": "data-label=\"One magnet flipped: what changed about the poles?\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6; the CER asks the same “all metal” question)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C checklist ends with the required sketch",
+  "old": "A two-magnet diagram with poles labeled and an arrow showing whether they attract or repel.",
+  "new": "My plan: which poles face, what they do, why, and what a flip changes. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether magnets stick to all metal, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether magnets stick to all metal, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "closing: shorter; tells what next lesson does",
+  "old": "Next lesson, you'll run a real systematic test on a bunch of materials and back up your findings with data.",
+  "new": "Next lesson: a real fair test, with a data table to prove which materials are magnetic."
+ }
+]

@@ -4879,3 +4879,63 @@ html.fs-on .fs-replaced { display:none !important; }
   .fs-pst-sheet { gap: 5px; padding: 6px; }
   .fs-pst-sheet .fs-in-chip { font-size: 13px; padding: 4px 9px; }
 }
+
+/* ======================= 28.01 Magnet Fishing Day: fs-llg (lost-item log), fs-fsh (fishing), fs-pol (worn-label poles), fs-swp (sweeper), fs-pch (prediction chart), fs-cln (cleanup report), fs-ctw (compass twist), fs-fv (field viewer) ======================= */
+.fs-llg { display: grid; grid-template-columns: 1.6fr 1fr; gap: 12px; margin: 10px 0 12px; align-items: start; }
+.fs-llg-log { background: #FFFDF6; border: 2px solid #8A6A44; border-radius: 6px; padding: 10px 12px; box-shadow: 0 3px 0 #D8C49C; background-image: repeating-linear-gradient(#FFFDF6 0 25px, #E7EEF4 25px 26px); }
+.fs-llg-h { font: 900 12px 'Nunito', sans-serif; letter-spacing: 1px; color: #5C442E; text-transform: uppercase; } .fs-llg-t { font: 900 17px 'Nunito', sans-serif; color: #0E1C42; margin-bottom: 6px; }
+.fs-llg table { width: 100%; border-collapse: collapse; font-size: 14px; } .fs-llg th { text-align: left; font-size: 12px; color: #6B5B49; border-bottom: 2px solid #8A6A44; padding: 3px 4px; } .fs-llg td { padding: 4px; border-bottom: 1px dashed #C9B489; color: #2B1D12; }
+.fs-llg-sign { text-align: right; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Nunito', sans-serif; color: #2D3F6B; margin-top: 6px; }
+.fs-llg-kit { background: #F3EEE2; border: 2px dashed #8A6A44; border-radius: 10px; padding: 8px 10px; transform: rotate(-1.5deg); }
+.fs-llg-kh { font: 900 13px 'Nunito', sans-serif; color: #5C442E; margin-bottom: 4px; } .fs-llg-kit p { margin: 4px 0 0; font-size: 14px; line-height: 1.45; color: #2B1D12; }
+.fs-llg-kit svg { width: 100%; height: auto; display: block; } .fs-llg-kit svg text { font: 900 15px 'Nunito', sans-serif; fill: #fff; } .fs-llg-kit svg .fs-llg-push { fill: #9A3A2C; font-size: 12px; }
+.fs-llg-m1 { animation: fsLlgL 2.4s ease-in-out infinite; } .fs-llg-m2 { animation: fsLlgR 2.4s ease-in-out infinite; }
+@keyframes fsLlgL { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-5px); } } @keyframes fsLlgR { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+@media (max-width: 640px) { .fs-llg { grid-template-columns: 1fr; } }
+
+.fs-fsh-stage { border-radius: 12px; overflow: hidden; border: 2px solid #8A6A44; margin: 8px 0; }
+.fs-fsh-q { font: 900 16px 'Nunito', sans-serif; fill: #F5E6C6; } .fs-fsh-mud:hover ellipse:first-child { fill: #6B5537; }
+.fs-fsh-tray { margin: 6px 0; } .fs-fsh-mag { font-weight: 800; }
+.fs-fsh-ok { color: #1a6b35; font-weight: 800; } .fs-fsh-no { color: #B0502C; font-weight: 800; }
+.fs-swv-log tr.new td { background: #FFF6D8; }
+
+.fs-pol-stage { border-radius: 12px; overflow: hidden; border: 2px solid #C9B489; margin: 8px 0; }
+.fs-pol-l { font: 900 22px 'Nunito', sans-serif; fill: #fff; } .fs-pol-l.w { font-size: 17px; }
+.fs-pol-ends { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0; } .fs-pol-end.done { border-color: #1a6b35; color: #1a6b35; }
+.fs-pol-end.over, .fs-pol-stage.over { outline: 3px dashed #F5C842; }
+
+.fs-swp-tray { position: relative; height: 270px; margin: 10px 0; border-radius: 14px; background: #E7D6B5; border: 3px solid #8A6A44; box-shadow: inset 0 3px 10px rgba(0,0,0,.15); touch-action: none; overflow: hidden; }
+.fs-swp-it { position: absolute; width: 22%; display: flex; flex-direction: column; align-items: center; background: none; border: 0; cursor: pointer; font-family: 'Nunito', sans-serif; transition: transform .35s ease, opacity .35s; }
+.fs-swp-ic { font-size: 30px; line-height: 1; } .fs-swp-it b { font-size: 12.5px; color: #32241A; text-align: center; } .fs-swp-it small { font-size: 11.5px; font-weight: 800; color: #6B5B49; min-height: 14px; }
+.fs-swp-it.up { transform: translateY(-14px); opacity: .45; } .fs-swp-it.up small { color: #1a6b35; } .fs-swp-it.stay small { color: #B0502C; }
+.fs-swp-it.new.up .fs-swp-ic { animation: fsSwpJump .5s ease; }
+@keyframes fsSwpJump { 0% { transform: translateY(0); } 50% { transform: translateY(-26px); } 100% { transform: translateY(0); } }
+.fs-swp-wand { position: absolute; left: 12px; top: 6px; width: 40px; height: 60px; cursor: grab; z-index: 2; display: flex; flex-direction: column; align-items: center; user-select: none; }
+.fs-swp-wand b { font-size: 30px; line-height: 1; } .fs-swp-stick { width: 6px; height: 18px; background: #5C442E; border-radius: 3px; }
+.fs-swp-wand.on { cursor: grabbing; filter: drop-shadow(0 0 6px #F5C842); } .fs-swp-held { font-size: 16px; white-space: nowrap; }
+.fs-swp-model { position: absolute; bottom: 4px; left: 0; right: 0; text-align: center; font-size: 12px; color: #6B5B49; font-weight: 700; }
+
+.fs-pch { background: #FFFDF6; border: 2px solid #C9B489; border-radius: 10px; padding: 8px 10px; margin: 8px 0; }
+.fs-pch-head, .fs-pch-row { display: grid; grid-template-columns: 1.3fr 1.5fr 1.1fr 30px; gap: 6px; align-items: center; }
+.fs-pch-head span { font: 900 12px 'Nunito', sans-serif; color: #6B5B49; text-transform: uppercase; border-bottom: 2px solid #C9B489; padding-bottom: 3px; }
+.fs-pch-row { border-bottom: 1px dashed #E0D3B8; padding: 5px 0; font-size: 14.5px; } .fs-pch-row .fs-in-chip { padding: 4px 9px; font-size: 13px; }
+.fs-pch-pred { display: flex; gap: 4px; flex-wrap: wrap; } .fs-pch-ink { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Nunito', sans-serif; color: #2D3F6B; }
+.fs-pch-mk { font: 900 18px 'Nunito', sans-serif; color: #1a6b35; text-align: center; } .fs-pch-mk i { font-style: normal; color: #C0392B; }
+.fs-pch-row.wrong .fs-pch-ink { border: 2.5px solid #C0392B; border-radius: 50%; padding: 1px 8px; }
+.fs-pch-row.testing { background: #FFF6D8; } .fs-pch-row.over { outline: 3px dashed #F5C842; } .fs-pch-row.new { background: #F1F8EE; }
+.fs-pch-test { padding: 4px 10px !important; font-size: 13px !important; } .fs-pch-mg { margin: 6px 0; }
+.fs-pch-rule { margin-top: 8px; font: 800 16px 'Nunito', sans-serif; color: #0E1C42; background: #FFF6D8; border-left: 5px solid #F5C842; padding: 8px 12px; border-radius: 6px; }
+@media (max-width: 560px) { .fs-pch-head, .fs-pch-row { grid-template-columns: 1fr 1.2fr 1fr 24px; font-size: 13px; } }
+
+.fs-cln { position: relative; background: #FFFDF6; border: 2px solid #8A6A44; border-radius: 6px; padding: 10px 12px 44px; margin: 8px 0; }
+.fs-cln-h b { display: block; font: 900 16px 'Nunito', sans-serif; color: #0E1C42; } .fs-cln-h small { color: #6B5B49; }
+.fs-cln-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 6px 0; border-top: 1px dashed #C9B489; } .fs-cln-row > span { flex: 1 1 180px; font-size: 15px; }
+.fs-cln-mark { font: 900 14px 'Nunito', sans-serif; font-style: normal; padding: 2px 8px; border: 2.5px solid; border-radius: 6px; transform: rotate(-4deg); }
+.fs-cln-mark.magnet { color: #1a6b35; } .fs-cln-mark.net { color: #2D6FB8; } .fs-cln-why { font-size: 13.5px; color: #5A4D3E; padding: 0 0 4px 4px; }
+
+.fs-ctw-stage { border-radius: 12px; overflow: hidden; border: 2px solid #8A6A44; margin: 8px 0; } .fs-ctw-d { font: 900 15px 'Nunito', sans-serif; fill: #5C442E; }
+.fs-ctw-ctl { margin: 6px 0; } .fs-ctw-r { width: 100%; accent-color: #D9453B; }
+
+.fs-fv-stage { border-radius: 10px; overflow: hidden; border: 2px solid #B8AE98; margin: 8px 0; }
+@media (prefers-reduced-motion: reduce) { .fs-llg-m1, .fs-llg-m2, .fs-swp-it, .fs-swp-it.new.up .fs-swp-ic { animation: none !important; transition: none !important; } }
+@media (max-width: 560px) { .fs-swp-tray { height: 350px; } .fs-swp-ic { font-size: 24px; } .fs-swp-it b { font-size: 11px; line-height: 1.2; } .fs-swp-it small { font-size: 10.5px; line-height: 1.2; } }

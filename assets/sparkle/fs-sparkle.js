@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.order ? orderCard(C.order) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.order ? orderCard(C.order) : '') + (C.lostlog ? lostLog(C.lostlog) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -13411,6 +13411,421 @@
     draw(); paintTray(); if (st.pairs >= 2) puzzle();
   };
 
+  /* ======================= 28.01 "Magnet Fishing Day" (Case 28): case.lostlog, fishing, poles, sweeper, predchart, cleanup, compasstwist, SIMS.fieldviewer ======================= */
+
+  /* ---------- case: the ranger's lost-item log + the magnet kit tag (28.01). case.lostlog = {head, title, cols[3], rows:[[item, madeOf, where]], sign, kit:{label, t}}
+     Classes fs-llg-*. ---------- */
+  function lostLog(L) {
+    return '<div class="fs-llg"><div class="fs-llg-log"><div class="fs-llg-h">' + esc(L.head) + '</div><div class="fs-llg-t">' + esc(L.title) + '</div><table><tr>' +
+      (L.cols || ['Lost item', 'Made of', 'Where it fell']).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+      L.rows.map(function (r) { return '<tr><td>' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>'; }).join('') + '</table>' +
+      (L.sign ? '<div class="fs-llg-sign">' + esc(L.sign) + '</div>' : '') + '</div>' +
+      (L.kit ? '<div class="fs-llg-kit"><div class="fs-llg-kh">' + esc(L.kit.label) + '</div><svg viewBox="0 0 220 70" role="img" aria-label="Two bar magnets that push apart: their north ends face each other.">' +
+        '<g class="fs-llg-m1"><rect x="10" y="22" width="44" height="26" fill="#2D6FB8"/><rect x="54" y="22" width="44" height="26" fill="#D9453B"/><text x="32" y="40" text-anchor="middle">S</text><text x="76" y="40" text-anchor="middle">N</text></g>' +
+        '<g class="fs-llg-m2"><rect x="122" y="22" width="44" height="26" fill="#D9453B"/><rect x="166" y="22" width="44" height="26" fill="#2D6FB8"/><text x="144" y="40" text-anchor="middle">N</text><text x="188" y="40" text-anchor="middle">S</text></g>' +
+        '<path d="M104 35 h-0 M116 35 h0" stroke="#7a5b3a"/><text x="110" y="16" text-anchor="middle" class="fs-llg-push">⟵ push ⟶</text></svg><p>' + esc(L.kit.t) + '</p></div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Magnet fishing" — cast the magnet on a rope over a muddy shape on the pond bottom (drag the magnet onto it, or tap the shape),
+     guess clank or nothing, then reel it up: a magnetic thing rides up stuck to the magnet; anything else stays in the mud with its made-of tag (28.01) ----------
+     D.fishing = {afterText, kicker, title, todo[], why, model, alt, items:[{id, icon, t, made, mag, line}], guessQ, yesWord, noWord, reelBtn, castFirst, haulLabel, cols[3],
+                  rightWord, wrongWord, q, opts, win, clue}. Classes fs-fsh-*. */
+  function buildFishing() {
+    var F = D.fishing; if (!F) return;
+    var at = anchorP(F.afterText); if (!at) { FAILED.push('fishing anchor text not found'); return; }
+    var g = gameShell(F.kicker || 'Warm-Up game', F.title, F.todo, F.why); g.dataset.mod = 'fishing';
+    var st = loadJ('fishing', { done: {} }), cur = null, guess = null, busy = false;
+    var stage = el('div', 'fs-fsh-stage', '<div class="fs-svgbox" style="padding-top:52%"><svg viewBox="0 0 480 250" role="img" aria-label="' + esc(F.alt || 'A model dock over a pond. Six muddy shapes lie on the bottom.') + '"></svg></div>');
+    var tray = el('div', 'fs-fsh-tray'), ask = el('div'), log = el('div'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [stage, tray, ask, miss, log, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    var svg = $('svg', stage), N = F.items.length;
+    var mag = el('button', 'fs-in-chip fs-dragc fs-fsh-mag', '🧲 ' + esc(F.magWord || 'The magnet on its rope')); mag.type = 'button'; tray.appendChild(mag);
+    function X(i) { return 50 + i * (380 / (N - 1)); }
+    function item(id) { return F.items.filter(function (x) { return x.id === id; })[0]; }
+    /* p = 0..1 reel progress (0 = magnet on the bottom) */
+    function draw(p) {
+      var h = '<rect width="480" height="250" fill="#CFE6EE"/><rect y="70" width="480" height="180" fill="#5E9CB2"/><rect y="70" width="480" height="180" fill="url(#fshDeep)"/>' +
+        '<defs><linearGradient id="fshDeep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB7C9" stop-opacity=".2"/><stop offset="1" stop-color="#2E5E70" stop-opacity=".8"/></linearGradient></defs>' +
+        '<path d="M0 222 Q120 206 240 220 T480 214 V250 H0z" fill="#6B5537"/><rect x="0" y="52" width="480" height="18" fill="#8A6A44"/><rect x="0" y="48" width="480" height="6" fill="#A98656"/>' +
+        [40, 160, 280, 400].map(function (x) { return '<rect x="' + x + '" y="70" width="10" height="160" fill="#6E5236"/>'; }).join('') +
+        '<path d="M0 74 q30 -5 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="#E9F5F8" stroke-width="2" opacity=".7"/>';
+      F.items.forEach(function (it, i) {
+        var x = X(i), d = st.done[it.id], up = cur === it.id && p > 0;
+        if (d === undefined && !up) h += '<g class="fs-fsh-mud" data-id="' + it.id + '"><ellipse cx="' + x + '" cy="222" rx="26" ry="11" fill="#4E3D27"/><text x="' + x + '" y="226" text-anchor="middle" class="fs-fsh-q">?</text>' + (cur === it.id ? '<ellipse cx="' + x + '" cy="222" rx="31" ry="15" fill="none" stroke="#F5C842" stroke-width="3"/>' : '') + '</g>';
+        else if (d === false || (up && !it.mag)) h += '<text x="' + x + '" y="226" text-anchor="middle" font-size="24">' + it.icon + '</text>';
+      });
+      if (cur) {
+        var it = item(cur), x = X(F.items.map(function (z) { return z.id; }).indexOf(cur)), y = 206 - 170 * p;
+        h += '<line x1="' + x + '" y1="20" x2="' + x + '" y2="' + y + '" stroke="#E8DCC4" stroke-width="2.5"/><g transform="translate(' + (x - 13) + ' ' + y + ')"><rect width="26" height="14" rx="3" fill="#8C959B" stroke="#4E565C" stroke-width="2"/><rect x="2" y="12" width="9" height="6" fill="#D9453B"/><rect x="15" y="12" width="9" height="6" fill="#2D6FB8"/></g>';
+        if (p > 0 && it.mag) h += '<text x="' + x + '" y="' + (y + 40) + '" text-anchor="middle" font-size="24">' + it.icon + '</text>';
+        if (p > 0 && p < 0.5) h += '<circle cx="' + x + '" cy="' + (y + 6) + '" r="' + (10 + 30 * p) + '" fill="none" stroke="#E9F5F8" opacity="' + (0.6 - p) + '"/>';
+      }
+      h += '<text x="240" y="244" text-anchor="middle" class="fs-sq-model">' + esc(F.model || 'A model pond. Real magnet fishing needs an adult.') + '</text>';
+      svg.innerHTML = h;
+      $$('.fs-fsh-mud', svg).forEach(function (m) { m.style.cursor = 'pointer'; m.addEventListener('click', function () { var s = $('.sel', g); if (s) s.classList.remove('sel'); cast(m.dataset.id); }); });
+    }
+    dragDrop(mag, function () { return $$('.fs-fsh-mud', svg); }, function (_, t) { cast(t.dataset.id); });
+    function cast(id) {
+      if (busy || st.done[id] !== undefined) return; ac(); SFX.blip(); cur = id; guess = null; draw(0); paintAsk();
+    }
+    function paintAsk() {
+      ask.innerHTML = ''; if (!cur) return;
+      var w = el('div', 'fs-sv-q', '<div class="fs-in-k">' + esc(F.guessQ || 'Your guess: will something clank onto the magnet?') + '</div><div class="fs-in-chips"></div>'), ch = $('.fs-in-chips', w);
+      [[true, F.yesWord || '🧲 Clank! It sticks'], [false, F.noWord || '💨 Nothing sticks']].forEach(function (o) {
+        var b = el('button', 'fs-in-chip' + (guess === o[0] ? ' on' : ''), esc(o[1])); b.type = 'button';
+        b.addEventListener('click', function () { if (busy) return; guess = o[0]; SFX.blip(); paintAsk(); }); ch.appendChild(b);
+      });
+      var go = el('div', 'fs-mug-go', '<button type="button" class="fs-btn fs-fsh-reel"' + (guess === null ? ' disabled' : '') + '>' + esc(F.reelBtn || '🎣 Reel it up') + '</button>');
+      w.appendChild(go); ask.appendChild(w); $('.fs-fsh-reel', go).addEventListener('click', reel);
+    }
+    function reel() {
+      if (busy || !cur || guess === null) return; busy = true; ac(); SFX.whoosh(); var it = item(cur), t0 = null;
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 1500)); draw(p); if (p < 1) { requestAnimationFrame(f); return; }
+        it.mag ? SFX.pop() : SFX.thud(); st.done[it.id] = it.mag; st.g = st.g || {}; st.g[it.id] = guess; saveJ('fishing', st);
+        busy = false; var id = cur; cur = null; ask.innerHTML = ''; paint(id); })(performance.now());
+    }
+    function paint(last) {
+      draw(0);
+      var rows = F.items.filter(function (x) { return st.done[x.id] !== undefined; });
+      log.innerHTML = rows.length ? '<div class="fs-swv-log"><div class="fs-lu-lab">' + esc(F.haulLabel || 'The haul') + '</div><table><tr>' + (F.cols || ['Found', 'Made of', 'Came up?']).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        rows.map(function (x) { var ok = st.g && st.g[x.id] === x.mag; return '<tr' + (x.id === last ? ' class="new"' : '') + '><td>' + x.icon + ' ' + esc(x.t) + '</td><td>' + esc(x.made) + '</td><td><b>' + (x.mag ? '🧲 ' + esc(F.upWord || 'Stuck to the magnet') : '💨 ' + esc(F.downWord || 'Stayed in the mud')) + '</b> <small class="fs-fsh-' + (ok ? 'ok' : 'no') + '">' + esc(ok ? (F.rightWord || 'you called it') : (F.wrongWord || 'surprise!')) + '</small></td></tr>'; }).join('') + '</table></div>' : '';
+      if (last) { var x = item(last); log.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + x.icon + '</span><div>' + esc(x.line) + '</div>')); }
+      count.textContent = '🎣 ' + rows.length + ' of ' + N + ' ' + (F.countWord || 'casts');
+      count.classList.toggle('ok', rows.length === N);
+      if (rows.length === N) askOnce(qh, F.q, F.opts, 'fishing-q', win, F.win, F.clue, 'fishing', miss);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "The worn-label magnet" — the N and S paint wore off a magnet. Bring the test magnet (flip it to face N or S) to each end: it snaps in or
+     scoots away. A test log fills; then paint the letter on each end. The wow: snap the magnet in half and label the two NEW ends the same way (28.01) ----------
+     D.poles = {afterText, kicker, title, todo[], why, model, testLabel, flipBtn, ends:{a:'N', d:'S'}, newEnds:{b:'S', c:'N'}, pushWord, pullWord, logLabel, paintQ ({e}),
+                needTest, paintMiss:{same, opp}, snapBtn, snapLine, doneLine, q, opts, win, clue}. Classes fs-pol-*. */
+  function buildPoles() {
+    var P = D.poles; if (!P) return;
+    var at = anchorP(P.afterText); if (!at) { FAILED.push('poles anchor text not found'); return; }
+    var g = gameShell(P.kicker || 'Part 1 game', P.title, P.todo, P.why); g.dataset.mod = 'poles';
+    var st = loadJ('poles', { face: 'N', tests: [], paint: {}, snapped: 0 }), busy = false, anim = null;
+    var truth = { a: P.ends.a, d: P.ends.d, b: P.newEnds.b, c: P.newEnds.c };
+    var stage = el('div', 'fs-pol-stage', '<div class="fs-svgbox" style="padding-top:44%"><svg viewBox="0 0 480 210" role="img"></svg></div>'), ctl = el('div', 'fs-mug-go'), lab = el('div', 'fs-lu-lab'), ends = el('div', 'fs-pol-ends');
+    var log = el('div'), paintH = el('div'), snapH = el('div'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    [stage, ctl, lab, ends, miss, log, paintH, snapH, qh, win].forEach(function (e) { g.appendChild(e); });
+    var svg = $('svg', stage);
+    function live() { return st.snapped ? ['a', 'b', 'c', 'd'] : ['a', 'd']; }
+    function endName(e) { return (P.endNames || { a: 'Left end', b: 'Middle-left end', c: 'Middle-right end', d: 'Right end' })[e]; }
+    function col(e) { var v = st.paint[e]; return v === 'N' ? '#D9453B' : v === 'S' ? '#2D6FB8' : '#B9B2A6'; }
+    function draw() {
+      var h = '<rect width="480" height="210" fill="#F6EEDC"/><rect y="168" width="480" height="42" fill="#D9BE8E"/>', sh = anim ? anim.dx : 0, half = anim && anim.half;
+      if (!st.snapped) {
+        var ox = half === 'all' ? sh : 0;
+        h += '<g transform="translate(' + ox + ' 0)"><rect x="120" y="120" width="120" height="40" fill="' + col('a') + '" stroke="#3B3328" stroke-width="2"/><rect x="240" y="120" width="120" height="40" fill="' + col('d') + '" stroke="#3B3328" stroke-width="2"/>' +
+          '<text x="180" y="147" text-anchor="middle" class="fs-pol-l">' + (st.paint.a || '?') + '</text><text x="300" y="147" text-anchor="middle" class="fs-pol-l">' + (st.paint.d || '?') + '</text>' +
+          (st.snapReady ? '<path d="M240 112 l-6 10 l8 6 l-6 10 l8 6 l-6 10" fill="none" stroke="#3B3328" stroke-width="2.5" stroke-dasharray="4 3"/>' : '') + '</g>';
+      } else {
+        var gap = anim && anim.gap != null ? anim.gap : 1, oL = half === 'L' ? sh : 0, oR = half === 'R' ? sh : 0;
+        h += '<g transform="translate(' + (-20 * gap + oL) + ' 0)"><rect x="120" y="120" width="60" height="40" fill="' + col('a') + '" stroke="#3B3328" stroke-width="2"/><rect x="180" y="120" width="60" height="40" fill="' + col('b') + '" stroke="#3B3328" stroke-width="2"/>' +
+          '<text x="150" y="147" text-anchor="middle" class="fs-pol-l">' + (st.paint.a || '?') + '</text><text x="210" y="147" text-anchor="middle" class="fs-pol-l">' + (st.paint.b || '?') + '</text></g>' +
+          '<g transform="translate(' + (20 * gap + oR) + ' 0)"><rect x="240" y="120" width="60" height="40" fill="' + col('c') + '" stroke="#3B3328" stroke-width="2"/><rect x="300" y="120" width="60" height="40" fill="' + col('d') + '" stroke="#3B3328" stroke-width="2"/>' +
+          '<text x="270" y="147" text-anchor="middle" class="fs-pol-l">' + (st.paint.c || '?') + '</text><text x="330" y="147" text-anchor="middle" class="fs-pol-l">' + (st.paint.d || '?') + '</text></g>';
+      }
+      /* the test magnet, top, facing down with the chosen pole */
+      var tx = anim && anim.tx != null ? anim.tx : 220, ty = anim && anim.ty != null ? anim.ty : 20, f = st.face, o = f === 'N' ? 'S' : 'N';
+      h += '<g transform="translate(' + tx + ' ' + ty + ')"><rect width="40" height="34" fill="' + (o === 'N' ? '#D9453B' : '#2D6FB8') + '" stroke="#3B3328" stroke-width="2"/><rect y="34" width="40" height="34" fill="' + (f === 'N' ? '#D9453B' : '#2D6FB8') + '" stroke="#3B3328" stroke-width="2"/>' +
+        '<text x="20" y="23" text-anchor="middle" class="fs-pol-l w">' + o + '</text><text x="20" y="57" text-anchor="middle" class="fs-pol-l w">' + f + '</text></g>';
+      if (anim && anim.word) h += '<text x="240" y="104" text-anchor="middle" class="fs-rig-fx' + (anim.pull ? ' ok' : '') + '">' + esc(anim.word) + '</text>';
+      h += '<text x="240" y="196" text-anchor="middle" class="fs-sq-model">' + esc(P.model || 'A model test. Try it with two fridge magnets.') + '</text>';
+      svg.innerHTML = h; svg.setAttribute('aria-label', 'A model: a test magnet held over a magnet whose letters wore off.');
+    }
+    function endX(e) { return st.snapped ? { a: 110, b: 170, c: 270, d: 330 }[e] : { a: 160, d: 280 }[e]; }
+    function test(e) {
+      if (busy) return; busy = true; ac();
+      var pull = truth[e] !== st.face, x1 = endX(e), t0 = null, half = st.snapped ? (e === 'a' || e === 'b' ? 'L' : 'R') : 'all';
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 1300));
+        var down = Math.min(1, p * 2), tx = 220 + (x1 - 220) * down, ty = 20 + (pull ? 52 : 34) * down, dx = 0;
+        if (p > 0.5) { var q = (p - 0.5) * 2; dx = pull ? 0 : (x1 < 240 ? -1 : 1) * 40 * Math.sin(q * Math.PI / 2); }
+        anim = { tx: tx, ty: ty, dx: dx, half: half, word: p > 0.55 ? (pull ? (P.pullWord || 'SNAP! It pulls') : (P.pushWord || 'It scoots away!')) : '', pull: pull }; draw();
+        if (p < 1) { requestAnimationFrame(f); return; }
+        pull ? SFX.snap() : SFX.whoosh(); busy = false;
+        st.tests.push([e, st.face, pull ? 1 : 0]); saveJ('poles', st); setTimeout(function () { anim = null; draw(); }, reduceMotion ? 0 : 700); paint();
+      })(performance.now());
+    }
+    function tested(e) { return st.tests.some(function (t) { return t[0] === e; }); }
+    function paint() {
+      draw();
+      ctl.innerHTML = '<button type="button" class="fs-btn alt fs-pol-flip">' + esc((P.flipBtn || '🔄 Flip the test magnet (now facing: {f})').replace('{f}', st.face)) + '</button>';
+      $('.fs-pol-flip', ctl).addEventListener('click', function () { if (busy) return; st.face = st.face === 'N' ? 'S' : 'N'; saveJ('poles', st); SFX.blip(); paint(); });
+      lab.textContent = P.testLabel || 'Bring the test magnet to an end (drag it there, or tap the end):';
+      ends.innerHTML = '';
+      live().forEach(function (e) {
+        var b = el('button', 'fs-in-chip fs-pol-end' + (st.paint[e] ? ' done' : ''), esc(endName(e)) + (st.paint[e] ? ' · ' + st.paint[e] : '')); b.type = 'button'; b.dataset.e = e;
+        b.addEventListener('click', function () { test(e); }); ends.appendChild(b);
+      });
+      var tm = el('button', 'fs-in-chip fs-dragc fs-pol-tm', '🧲 ' + esc(P.tmWord || 'Test magnet')); tm.type = 'button'; ends.insertBefore(tm, ends.firstChild);
+      dragDrop(tm, function () { return $$('.fs-pol-end', ends).concat([stage]); }, function (_, t) { if (t.dataset.e) test(t.dataset.e); });
+      log.innerHTML = st.tests.length ? '<div class="fs-swv-log"><div class="fs-lu-lab">' + esc(P.logLabel || 'My test log') + '</div><table><tr><th>' + esc(P.colEnd || 'End') + '</th><th>' + esc(P.colFace || 'I brought my…') + '</th><th>' + esc(P.colWhat || 'What happened') + '</th></tr>' +
+        st.tests.slice(-6).map(function (t, i, a) { return '<tr' + (i === a.length - 1 ? ' class="new"' : '') + '><td>' + esc(endName(t[0])) + '</td><td>' + t[1] + ' pole</td><td><b>' + (t[2] ? '🤝 ' + esc(P.pullShort || 'pulled together') : '↔️ ' + esc(P.pushShort || 'pushed apart')) + '</b></td></tr>'; }).join('') + '</table></div>' : '';
+      paintH.innerHTML = '';
+      live().filter(function (e) { return tested(e) && !st.paint[e]; }).slice(0, 1).forEach(function (e) {
+        var w = el('div', 'fs-sv-q', '<div class="fs-in-k">' + esc((P.paintQ || 'Paint the {e}: which pole is it?').replace('{e}', endName(e).toLowerCase())) + '</div><div class="fs-in-chips"></div>'), ch = $('.fs-in-chips', w);
+        ['N', 'S'].forEach(function (v) {
+          var b = el('button', 'fs-in-chip', '🖌️ ' + v); b.type = 'button';
+          b.addEventListener('click', function () {
+            ac(); if (v !== truth[e]) { var t = st.tests.filter(function (x) { return x[0] === e; }).pop(); bounce(b, miss, t[2] ? (P.paintMiss && P.paintMiss.pull || 'Your {f} pole PULLED. Opposite poles pull together. So this end is the opposite of {f}.').replace(/\{f\}/g, t[1]) : (P.paintMiss && P.paintMiss.push || 'Your {f} pole PUSHED it away. Same poles push apart. So this end is…').replace(/\{f\}/g, t[1])); return; }
+            st.paint[e] = v; saveJ('poles', st); miss.classList.remove('show'); SFX.chime(); paint();
+          }); ch.appendChild(b);
+        });
+        paintH.appendChild(w);
+      });
+      var leftToTest = live().filter(function (e) { return !st.paint[e]; });
+      if (!st.snapped && leftToTest.length && !paintH.innerHTML && st.tests.length) paintH.appendChild(el('p', 'fs-scr-tip', esc(P.nextLine || 'Now test the other end.')));
+      snapH.innerHTML = '';
+      if (!st.snapped && st.paint.a && st.paint.d) {
+        snapH.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">🤔</span><div>' + esc(P.snapAsk || 'Now the wow. Snap this magnet in half. Will you get one N piece and one S piece?') + '</div>'));
+        var sb = el('div', 'fs-mug-go', '<button type="button" class="fs-btn fs-pol-snap">' + esc(P.snapBtn || '💥 Snap it in half') + '</button>'); snapH.appendChild(sb);
+        $('.fs-pol-snap', sb).addEventListener('click', snap);
+      }
+      if (st.snapped && ['a', 'b', 'c', 'd'].every(function (e) { return st.paint[e]; })) {
+        snapH.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">🤯</span><div>' + esc(P.doneLine || 'Each half got its own N AND its own S. Snap a magnet and you get two smaller magnets!') + '</div>'));
+        askOnce(qh, P.q, P.opts, 'poles-q', win, P.win, P.clue, 'poles', miss);
+      } else if (st.snapped) snapH.appendChild(el('p', 'fs-scr-tip', esc(P.snapLine || 'Two NEW ends appeared in the middle. Test each one, then paint it.')));
+    }
+    function snap() {
+      if (busy) return; busy = true; ac(); SFX.snap(); var t0 = null; st.snapped = 1; saveJ('poles', st);
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 700)); anim = { gap: p }; draw(); if (p < 1) { requestAnimationFrame(f); return; } busy = false; anim = null; SFX.thud(); paint(); })(performance.now());
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 2: "The magnet sweeper" — drag the magnet wand slowly over a tray of metal-looking things (or tap an item to sweep it). Magnetic ones jump
+     up and cling to the wand; the rest stay put and get a made-of tag. Then empty the wand into the jar (28.01) ----------
+     D.sweeper = {afterText, kicker, title, todo[], why, model, wandWord, items:[{id, icon, t, made, mag, line}], cling, stay, countWord, jarLine ({n}), q, opts, win, clue}. Classes fs-swp-*. */
+  function buildSweeper() {
+    var S = D.sweeper; if (!S) return;
+    var at = anchorP(S.afterText); if (!at) { FAILED.push('sweeper anchor text not found'); return; }
+    var g = gameShell(S.kicker || 'Part 2 game', S.title, S.todo, S.why); g.dataset.mod = 'sweeper';
+    var st = loadJ('sweeper', { s: {} });
+    var tray = el('div', 'fs-swp-tray'), wand = el('div', 'fs-swp-wand', '<span class="fs-swp-stick"></span><b>🧲</b><span class="fs-swp-held"></span>'), miss = el('div', 'fs-miss'), info = el('div'), count = el('div', 'fs-count'), jar = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    tray.appendChild(wand); tray.appendChild(el('div', 'fs-swp-model', esc(S.model || 'A model tray. Try it at home with a fridge magnet.')));
+    [tray, info, miss, count, jar, qh, win].forEach(function (e) { g.appendChild(e); });
+    S.items.forEach(function (it, i) {
+      var c = el('button', 'fs-swp-it', '<span class="fs-swp-ic">' + it.icon + '</span><b>' + esc(it.t) + '</b><small></small>'); c.type = 'button'; c.dataset.id = it.id;
+      c.style.left = (6 + (i % 4) * 24) + '%'; c.style.top = (i < 4 ? 30 : 64) + '%'; tray.appendChild(c);
+      c.addEventListener('click', function () { sweep(it, true); });
+    });
+    function sweep(it, tapped) {
+      if (st.s[it.id] !== undefined) return; ac(); st.s[it.id] = it.mag ? 1 : 0; saveJ('sweeper', st);
+      if (it.mag) { SFX.snap(); } else if (tapped) SFX.thud();
+      info.innerHTML = ''; info.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + it.icon + '</span><div><b>' + esc(it.t + ': ' + (it.mag ? (S.cling || 'jumped up and clung on!') : (S.stay || 'stayed put.'))) + '</b>' + esc(it.line) + '</div>'));
+      paint(it.id);
+    }
+    /* dragging the wand: whatever it passes over gets swept */
+    var dragging = false;
+    function over(e) {
+      var r = tray.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      wand.style.left = Math.max(0, Math.min(r.width - 40, x - 20)) + 'px'; wand.style.top = Math.max(0, Math.min(r.height - 50, y - 40)) + 'px';
+      $$('.fs-swp-it', tray).forEach(function (c) { var b = c.getBoundingClientRect(); if (e.clientX > b.left && e.clientX < b.right && e.clientY > b.top - 20 && e.clientY < b.bottom) { var it = S.items.filter(function (z) { return z.id === c.dataset.id; })[0]; sweep(it); } });
+    }
+    wand.addEventListener('pointerdown', function (e) { dragging = true; wand.classList.add('on'); wand.setPointerCapture && wand.setPointerCapture(e.pointerId); e.preventDefault(); });
+    wand.addEventListener('pointermove', function (e) { if (dragging) over(e); });
+    ['pointerup', 'pointercancel'].forEach(function (k) { wand.addEventListener(k, function () { dragging = false; wand.classList.remove('on'); }); });
+    function paint(last) {
+      var held = [];
+      S.items.forEach(function (it) {
+        var c = $('.fs-swp-it[data-id="' + it.id + '"]', tray), v = st.s[it.id];
+        c.classList.toggle('up', v === 1); c.classList.toggle('stay', v === 0); c.classList.toggle('new', it.id === last);
+        $('small', c).textContent = v === undefined ? '' : it.made;
+        if (v === 1) held.push(it.icon);
+      });
+      $('.fs-swp-held', wand).textContent = held.join('');
+      var n = Object.keys(st.s).length; count.textContent = '🧲 ' + n + ' of ' + S.items.length + ' ' + (S.countWord || 'things swept'); count.classList.toggle('ok', n === S.items.length);
+      jar.innerHTML = '';
+      if (n === S.items.length) {
+        jar.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">🫙</span><div>' + esc((S.jarLine || 'The wand held {n} things. Everything else stayed on the tray.').replace('{n}', held.length)) + '</div>'));
+        askOnce(qh, S.q, S.opts, 'sweeper-q', win, S.win, S.clue, 'sweeper', miss);
+      }
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 4 (the old Explore): "The full prediction chart" — predict YES or NO for every item first (the whole chart), lock it, then test each row
+     (drag the magnet onto the row, or press its Test button). Results fill in; wrong predictions get circled. Then finish the rule sentence (28.01) ----------
+     D.predchart = {afterText, kicker, title, todo[], why, model, items:[{id, icon, t, mag, line}], cols[4], yes, no, lockBtn, lockNeed ({n}), testBtn, rightWord, wrongWord,
+                    scoreLine ({r},{n}), ruleQ, ruleOpts, q, opts, win, clue}. Classes fs-pch-*. */
+  function buildPredchart() {
+    var C = D.predchart; if (!C) return;
+    var at = anchorP(C.afterText); if (!at) { FAILED.push('predchart anchor text not found'); return; }
+    var g = gameShell(C.kicker || 'Part 4 game', C.title, C.todo, C.why); g.dataset.mod = 'predchart';
+    var st = loadJ('predchart', { p: {}, lock: 0, r: {}, rule: 0 }), busy = false;
+    var chart = el('div', 'fs-pch'), ctl = el('div', 'fs-mug-go'), mg = el('div', 'fs-pch-mg'), out = el('div'), miss = el('div', 'fs-miss'), rule = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    [chart, ctl, mg, out, miss, rule, qh, win].forEach(function (e) { g.appendChild(e); });
+    function item(id) { return C.items.filter(function (x) { return x.id === id; })[0]; }
+    function test(id) {
+      if (busy || !st.lock || st.r[id] !== undefined) return; busy = true; ac(); var it = item(id), row = $('.fs-pch-row[data-id="' + id + '"]', chart);
+      row.classList.add('testing'); SFX.whoosh();
+      setTimeout(function () { row.classList.remove('testing'); it.mag ? SFX.snap() : SFX.thud(); st.r[id] = it.mag ? 1 : 0; saveJ('predchart', st); busy = false;
+        out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card flash' + (st.p[id] === (it.mag ? 'y' : 'n') ? '' : ' fs-rig-bad'), '<span class="fs-hs-n">' + it.icon + '</span><div><b>' + esc(it.t + ': ' + (it.mag ? (C.yesRes || 'it sticks!') : (C.noRes || 'it doesn’t stick.'))) + '</b>' + esc(it.line) + '</div>'));
+        paint(id); }, reduceMotion ? 0 : 900);
+    }
+    function paint(last) {
+      var cols = C.cols || ['Item', 'My prediction', 'Result', ''];
+      chart.innerHTML = '<div class="fs-lu-lab">' + esc(C.chartLabel || 'My prediction chart') + '</div><div class="fs-pch-head">' + cols.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('') + '</div>';
+      C.items.forEach(function (it) {
+        var p = st.p[it.id], r = st.r[it.id], row = el('div', 'fs-pch-row' + (it.id === last ? ' new' : '') + (r !== undefined ? ((p === 'y') === !!r ? ' right' : ' wrong') : '')); row.dataset.id = it.id;
+        var pc = el('span', 'fs-pch-pred');
+        if (!st.lock) ['y', 'n'].forEach(function (v) { var b = el('button', 'fs-in-chip' + (p === v ? ' on' : ''), esc(v === 'y' ? (C.yes || 'Yes, it sticks') : (C.no || 'No')) ); b.type = 'button'; b.addEventListener('click', function () { st.p[it.id] = v; saveJ('predchart', st); SFX.blip(); paint(); }); pc.appendChild(b); });
+        else pc.innerHTML = '<b class="fs-pch-ink">' + esc(p === 'y' ? (C.yes || 'Yes, it sticks') : (C.no || 'No')) + '</b>';
+        var rc = el('span', 'fs-pch-res', r === undefined ? (st.lock ? '<button type="button" class="fs-btn alt fs-pch-test">' + esc(C.testBtn || '🧲 Test it') + '</button>' : '…') : '<b>' + (r ? '🧲 ' + esc(C.yesShort || 'Sticks') : '💨 ' + esc(C.noShort || 'Doesn’t stick')) + '</b>');
+        var mk = el('span', 'fs-pch-mk', r === undefined ? '' : ((p === 'y') === !!r ? '✓' : '<i>✗</i>'));
+        row.appendChild(el('span', 'fs-pch-it', it.icon + ' ' + esc(it.t))); row.appendChild(pc); row.appendChild(rc); row.appendChild(mk); chart.appendChild(row);
+        var tb = $('.fs-pch-test', row); if (tb) tb.addEventListener('click', function () { test(it.id); });
+      });
+      ctl.innerHTML = ''; mg.innerHTML = '';
+      var filled = C.items.filter(function (x) { return st.p[x.id]; }).length;
+      if (!st.lock) {
+        var b = el('button', 'fs-btn fs-pch-lock', esc(C.lockBtn || '🔒 Lock my chart')); b.type = 'button'; if (filled < C.items.length) b.disabled = true;
+        b.addEventListener('click', function () { st.lock = 1; saveJ('predchart', st); SFX.stamp(); paint(); }); ctl.appendChild(b);
+        ctl.appendChild(el('span', 'fs-count', esc((C.lockNeed || '{n} predictions to go').replace('{n}', C.items.length - filled))));
+      } else if (Object.keys(st.r).length < C.items.length) {
+        var m = el('button', 'fs-in-chip fs-dragc fs-pch-mag', '🧲 ' + esc(C.magWord || 'Drag me onto a row')); m.type = 'button'; mg.appendChild(m);
+        dragDrop(m, function () { return $$('.fs-pch-row', chart).filter(function (r) { return st.r[r.dataset.id] === undefined; }); }, function (_, r) { test(r.dataset.id); });
+      }
+      var done = Object.keys(st.r).length === C.items.length;
+      rule.innerHTML = '';
+      if (done) {
+        var right = C.items.filter(function (x) { return (st.p[x.id] === 'y') === !!st.r[x.id]; }).length;
+        rule.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">📊</span><div>' + esc((C.scoreLine || '{r} of {n} predictions were right. The circled ones are where the learning is!').replace('{r}', right).replace('{n}', C.items.length)) + '</div>'));
+        var rh = el('div'); rule.appendChild(rh);
+        if (!st.rule) chipsQ(rh, C.ruleQ, C.ruleOpts, function () { st.rule = 1; saveJ('predchart', st); paint(); }, miss);
+        else { var ok = C.ruleOpts.filter(function (o) { return o.ok; })[0]; rh.appendChild(el('div', 'fs-pch-rule', esc(ok.fill || ok.t))); askOnce(qh, C.q, C.opts, 'predchart-q', win, C.win, C.clue, 'predchart', miss); }
+      }
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- after the solve: "Stamp the cleanup report" — each lost item gets MAGNET or NET (wrong stamps bounce with a reason), then stamp it CLOSED (28.01) ----------
+     D.cleanup = {after, kicker, title, todo[], lockLine, head, sub, rows:[{id, icon, t, how:'magnet'|'net', why, miss}], magWord, netWord, stampBtn, stamp, sign, win}. Classes fs-cln-*. */
+  function buildCleanup() {
+    var K = D.cleanup; if (!K) return;
+    var g = gameShell(K.kicker || 'Case closed', K.title, K.todo, K.why); g.dataset.mod = 'cleanup';
+    afterSolve(g, K.after, K.lockLine, function (body) {
+      var st = loadJ('cleanup', { r: {}, s: 0 }), card = el('div', 'fs-cln'), sb = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      [card, sb, miss, win].forEach(function (e) { body.appendChild(e); });
+      function paint(anim) {
+        card.innerHTML = '<div class="fs-cln-h"><b>' + esc(K.head) + '</b><small>' + esc(K.sub || '') + '</small></div>';
+        K.rows.forEach(function (r) {
+          var row = el('div', 'fs-cln-row', '<span>' + r.icon + ' ' + esc(r.t) + '</span>'), v = st.r[r.id];
+          if (v) row.appendChild(el('em', 'fs-cln-mark ' + v, esc(v === 'magnet' ? (K.magWord || '🧲 MAGNET') : (K.netWord || '🥅 NET'))));
+          else ['magnet', 'net'].forEach(function (k) {
+            var b = el('button', 'fs-in-chip', esc(k === 'magnet' ? (K.magWord || '🧲 MAGNET') : (K.netWord || '🥅 NET'))); b.type = 'button';
+            b.addEventListener('click', function () { ac(); if (k !== r.how) { bounce(b, miss, r.miss); return; } st.r[r.id] = k; saveJ('cleanup', st); SFX.stamp(); miss.classList.remove('show'); paint(); });
+            row.appendChild(b);
+          });
+          card.appendChild(row);
+          if (v) card.appendChild(el('div', 'fs-cln-why', esc(r.why)));
+        });
+        if (st.s) card.appendChild(el('em', 'fs-hrf-st fs-cln-st' + (anim ? ' new' : ''), esc(K.stamp || 'CLOSED')));
+        if (st.s && K.sign) card.appendChild(el('div', 'fs-hrf-sign', esc(K.sign)));
+        sb.innerHTML = '';
+        if (!st.s && K.rows.every(function (r) { return st.r[r.id]; })) {
+          sb.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-btn">' + esc(K.stampBtn || '🖋️ Stamp it CLOSED') + '</button></div>';
+          $('.fs-btn', sb).addEventListener('click', function () { st.s = 1; saveJ('cleanup', st); SFX.stamp(); paint(true); winOnce(win, K.win, null, 'cleanup'); });
+        }
+        if (st.s) winOnce(win, K.win, null, 'cleanup');
+      }
+      paint();
+    });
+  }
+
+  /* ---------- after the solve: "The compass twist" — the ranger's compass in the tackle box. Slide the magnet closer: the needle swings (N end of the magnet
+     pushes the needle's north end away; flip it and the north end swings toward it). Take it away and the needle points north again (28.01) ----------
+     D.compasstwist = {after, kicker, title, todo[], lockLine, why, model, slideLabel, flipBtn, nearLine, farLine, q, opts, fact, win}. Classes fs-ctw-*. */
+  function buildCompasstwist() {
+    var T = D.compasstwist; if (!T) return;
+    var g = gameShell(T.kicker || 'Case closed · a twist', T.title, T.todo, T.why); g.dataset.mod = 'compasstwist';
+    afterSolve(g, T.after, T.lockLine, function (body) {
+      var st = loadJ('compasstwist', { face: 'N', seen: {} }), d = 0;
+      var stage = el('div', 'fs-ctw-stage', '<div class="fs-svgbox" style="padding-top:46%"><svg viewBox="0 0 440 200" role="img" aria-label="A model compass with a bar magnet that can slide closer."></svg></div>');
+      var ctl = el('div', 'fs-ctw-ctl', '<label class="fs-lu-lab">' + esc(T.slideLabel || 'Slide the magnet closer') + '</label><input type="range" min="0" max="100" value="0" class="fs-ctw-r" aria-label="Move the magnet closer to the compass">'),
+        fl = el('div', 'fs-mug-go'), say = el('div'), qh = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      [stage, ctl, fl, say, qh, miss, win].forEach(function (e) { body.appendChild(e); });
+      var svg = $('svg', stage), r = $('.fs-ctw-r', ctl);
+      function angle() { /* 0 = needle north end points up (north). The magnet sits to the east (right). */
+        var k = Math.pow(d / 100, 2); return (st.face === 'N' ? -1 : 1) * 90 * k; }
+      function draw() {
+        var a = angle(), mx = 400 - 170 * (d / 100), f = st.face, o = f === 'N' ? 'S' : 'N';
+        svg.innerHTML = '<rect width="440" height="200" fill="#E9DCC0"/><circle cx="130" cy="100" r="78" fill="#FBF6EA" stroke="#8A6A44" stroke-width="6"/>' +
+          '<text x="130" y="38" text-anchor="middle" class="fs-ctw-d">N</text><text x="130" y="172" text-anchor="middle" class="fs-ctw-d">S</text><text x="64" y="105" text-anchor="middle" class="fs-ctw-d">W</text><text x="196" y="105" text-anchor="middle" class="fs-ctw-d">E</text>' +
+          '<g transform="rotate(' + a + ' 130 100)"><path d="M130 40 L140 100 L120 100z" fill="#D9453B"/><path d="M130 160 L140 100 L120 100z" fill="#8C959B"/><circle cx="130" cy="100" r="6" fill="#3B3328"/></g>' +
+          '<g transform="translate(' + mx + ' 84)"><rect width="40" height="32" fill="' + (f === 'N' ? '#D9453B' : '#2D6FB8') + '" stroke="#3B3328" stroke-width="2"/><rect x="40" width="40" height="32" fill="' + (o === 'N' ? '#D9453B' : '#2D6FB8') + '" stroke="#3B3328" stroke-width="2"/>' +
+          '<text x="20" y="22" text-anchor="middle" class="fs-pol-l w">' + f + '</text><text x="60" y="22" text-anchor="middle" class="fs-pol-l w">' + o + '</text></g>' +
+          '<text x="220" y="194" text-anchor="middle" class="fs-sq-model">' + esc(T.model || 'A model compass. The red end of the needle is its north end.') + '</text>';
+      }
+      function paint() {
+        draw();
+        fl.innerHTML = '<button type="button" class="fs-btn alt">' + esc((T.flipBtn || '🔄 Flip the magnet (now its {f} end faces the compass)').replace('{f}', st.face)) + '</button>';
+        $('.fs-btn', fl).addEventListener('click', function () { st.face = st.face === 'N' ? 'S' : 'N'; saveJ('compasstwist', st); SFX.blip(); check(); paint(); });
+      }
+      function check() {
+        var near = d > 80; say.innerHTML = '';
+        if (near) { st.seen[st.face] = 1; saveJ('compasstwist', st); say.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">🧭</span><div>' + esc((T.nearLine && T.nearLine[st.face]) || '') + '</div>')); }
+        else if (d < 10 && (st.seen.N || st.seen.S)) say.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">🌎</span><div>' + esc(T.farLine || 'Magnet gone: the needle swings back to point north.') + '</div>'));
+        if (st.seen.N && st.seen.S) {
+          askOnce(qh, T.q, T.opts, 'compasstwist-q', win, T.win, null, 'compasstwist', miss);
+          if (T.fact && !$('.fs-ctw-fact', body)) body.insertBefore(el('div', 'fs-why fs-kraft fs-ctw-fact', '<span class="fs-why-ic">🌎</span><div><b>' + esc(T.fact.q) + '</b>' + esc(T.fact.t) + '</div>'), qh);
+        }
+      }
+      var last = 0;
+      r.addEventListener('input', function () { d = +r.value; ac(); if (Math.abs(d - last) > 12) { SFX.blip(); last = d; } draw(); check(); });
+      paint(); check();
+    });
+  }
+
+  /* ---------- Tool of the Week: "The magnetic field viewer" — iron filings sprinkled on a sheet over one magnet, an attracting pair or a repelling pair.
+     The filings settle along the field one sprinkle at a time (a model computed from the poles). Then one chip question (28.01) ----------
+     T.fieldviewer = {title, todo[], setups:[{k, icon, t, mags:[[x, flip]], note}], sprinkleBtn, model, q:{q, opts:[{t, ok, why}]}} */
+  SIMS.fieldviewer = function (host, T) {
+    var V = T.fieldviewer, st = loadJ('fieldviewer', { seen: {}, done: 0 }), cur = V.setups[0].k, timer = null;
+    host.innerHTML = '<div class="fs-game-k">' + esc(V.kicker || 'Try it: the magnetic field viewer') + '</div><div class="fs-game-t">' + esc(V.title) + '</div><ul class="fs-todo">' + V.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-twn-tools fs-fv-tabs"></div><div class="fs-fv-stage"><div class="fs-svgbox" style="padding-top:50%"><svg viewBox="0 0 480 240" role="img" aria-label="A model sheet of iron filings over magnets."></svg></div></div>' +
+      '<div class="fs-mug-go fs-fv-go"></div><div class="fs-fv-note"></div><div class="fs-fv-q"></div><div class="fs-miss"></div><p class="fs-pbal-model">' + esc(V.model || 'A model: the filings line up the way the magnetic field points.') + '</p>';
+    var svg = $('svg', host), tabs = $('.fs-fv-tabs', host), go = $('.fs-fv-go', host), note = $('.fs-fv-note', host), qh = $('.fs-fv-q', host), miss = $('.fs-miss', host);
+    function setup() { return V.setups.filter(function (s) { return s.k === cur; })[0]; }
+    function poles(s) { /* each magnet: [x center, flip]; length 100, N on the right unless flipped */
+      var P = []; s.mags.forEach(function (m) { var nR = !m[1]; P.push([m[0] + 46, 120, nR ? 1 : -1]); P.push([m[0] - 46, 120, nR ? -1 : 1]); }); return P; }
+    function field(P, x, y) { var bx = 0, by = 0; P.forEach(function (p) { var dx = x - p[0], dy = y - p[1], r2 = dx * dx + dy * dy + 30, r3 = r2 * Math.sqrt(r2); bx += p[2] * dx / r3; by += p[2] * dy / r3; }); return [bx, by]; }
+    function inside(s, x, y) { return s.mags.some(function (m) { return Math.abs(x - m[0]) < 52 && Math.abs(y - 120) < 15; }); }
+    function magsSVG(s) { return s.mags.map(function (m) { var nR = !m[1]; return '<rect x="' + (m[0] - 50) + '" y="108" width="50" height="24" fill="' + (nR ? '#2D6FB8' : '#D9453B') + '" opacity=".9"/><rect x="' + m[0] + '" y="108" width="50" height="24" fill="' + (nR ? '#D9453B' : '#2D6FB8') + '" opacity=".9"/>' +
+      '<text x="' + (m[0] - 25) + '" y="125" text-anchor="middle" class="fs-pol-l w">' + (nR ? 'S' : 'N') + '</text><text x="' + (m[0] + 25) + '" y="125" text-anchor="middle" class="fs-pol-l w">' + (nR ? 'N' : 'S') + '</text>'; }).join(''); }
+    function draw(frac) {
+      var s = setup(), P = poles(s), h = '<rect width="480" height="240" fill="#F4F1E8"/>' + magsSVG(s), n = 0, total = 0;
+      var seed = 7; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+      for (var gy = 8; gy < 236; gy += 9) for (var gx = 6; gx < 476; gx += 9) {
+        total++; var x = gx + rnd() * 6, y = gy + rnd() * 6, show = rnd() < frac; if (!show || inside(s, x, y)) continue;
+        var B = field(P, x, y), m = Math.sqrt(B[0] * B[0] + B[1] * B[1]); if (!m) continue; var L = Math.min(8, 2.5 + 1500 * m), ux = B[0] / m * L / 2, uy = B[1] / m * L / 2;
+        h += '<line x1="' + (x - ux).toFixed(1) + '" y1="' + (y - uy).toFixed(1) + '" x2="' + (x + ux).toFixed(1) + '" y2="' + (y + uy).toFixed(1) + '" stroke="#2B2B2B" stroke-width="1.3" stroke-linecap="round" opacity="' + Math.min(1, 0.35 + 900 * m).toFixed(2) + '"/>'; n++;
+      }
+      svg.innerHTML = h + magsSVG(s);
+    }
+    function paint() {
+      tabs.innerHTML = '';
+      V.setups.forEach(function (s) { var b = el('button', 'fs-in-chip' + (s.k === cur ? ' on' : '') + (st.seen[s.k] ? ' done' : ''), s.icon + ' ' + esc(s.t)); b.type = 'button';
+        b.addEventListener('click', function () { cur = s.k; clearInterval(timer); SFX.blip(); note.innerHTML = ''; paint(); draw(st.seen[s.k] ? 1 : 0); }); tabs.appendChild(b); });
+      go.innerHTML = '<button type="button" class="fs-btn">' + esc(V.sprinkleBtn || '🧂 Sprinkle the iron filings') + '</button>';
+      $('.fs-btn', go).addEventListener('click', sprinkle);
+      if (V.setups.every(function (s) { return st.seen[s.k]; }) && !qh.dataset.on) {
+        qh.dataset.on = '1';
+        chipsQ(qh, V.q.q, V.q.opts.map(function (o) { return { t: o.t, ok: o.ok, miss: o.why }; }), function () { var o = V.q.opts.filter(function (x) { return x.ok; })[0]; qh.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">✅</span><div>' + esc(o.why) + '</div>')); toolDone(); }, miss);
+      }
+    }
+    function sprinkle() {
+      ac(); SFX.crackle(); clearInterval(timer); var f = 0, s = setup();
+      if (reduceMotion) { f = 1; draw(1); fin(); return; }
+      timer = setInterval(function () { f += 0.12; draw(Math.min(1, f)); if (f >= 1) { clearInterval(timer); fin(); } }, 90);
+      function fin() { st.seen[s.k] = 1; saveJ('fieldviewer', st); note.innerHTML = ''; note.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + s.icon + '</span><div>' + esc(s.note) + '</div>')); paint(); }
+    }
+    paint(); draw(st.seen[cur] ? 1 : 0);
+  };
+
   /* ======================= 27.02 "Next Year's Trophy" (Case 27 part 2): case.order, takeapart, stickers, rigs, tally, driplab, sunnote, photos[].afterSolve ======================= */
 
   /* ---------- case: an order form + design cards (27.02). case.order = {head, title, rows:[[k, v]], sign, designsLabel, designs:[{tag, icon, t, parts:[[part, material, grams]], totalLine}]}
@@ -13967,6 +14382,12 @@
     guard('tally', buildTally);
     guard('driplab', buildDriplab);
     guard('sunnote', buildSunnote);
+    guard('fishing', buildFishing);
+    guard('poles', buildPoles);
+    guard('sweeper', buildSweeper);
+    guard('predchart', buildPredchart);
+    guard('cleanup', buildCleanup);
+    guard('compasstwist', buildCompasstwist);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

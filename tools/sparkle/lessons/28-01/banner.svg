@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="The Palmetto Springs dock at golden hour. A magnet on a rope rises out of the water with a bottle cap and a key ring clinging to it. A heron watches from the reeds.">
+  <defs>
+    <linearGradient id="b28sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6C98A"/><stop offset=".55" stop-color="#F9DDB0"/><stop offset="1" stop-color="#FBE9CC"/></linearGradient>
+    <linearGradient id="b28water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FA7B5"/><stop offset="1" stop-color="#2F5F6E"/></linearGradient>
+    <linearGradient id="b28glint" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFE7B0" stop-opacity="0"/><stop offset=".5" stop-color="#FFE7B0" stop-opacity=".8"/><stop offset="1" stop-color="#FFE7B0" stop-opacity="0"/></linearGradient>
+    <style>
+      .b28-rip { animation: b28rip 3.2s ease-out infinite; transform-origin: 470px 150px; }
+      .b28-rip2 { animation-delay: 1.6s; }
+      @keyframes b28rip { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(1.6); opacity: 0; } }
+      .b28-sway { animation: b28sway 4s ease-in-out infinite; transform-origin: 470px 20px; }
+      @keyframes b28sway { 0%,100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+      .b28-drip { animation: b28drip 1.6s ease-in infinite; }
+      .b28-drip2 { animation-delay: .8s; }
+      @keyframes b28drip { 0% { transform: translateY(0); opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(34px); opacity: 0; } }
+      .b28-glint { animation: b28gl 5s ease-in-out infinite; }
+      @keyframes b28gl { 0%,100% { opacity: .35; } 50% { opacity: .8; } }
+      @media (prefers-reduced-motion: reduce) { .b28-rip, .b28-sway, .b28-drip, .b28-glint { animation: none; } }
+    </style>
+  </defs>
+  <rect width="920" height="200" fill="url(#b28sky)"/>
+  <circle cx="760" cy="62" r="34" fill="#FFE2A3" opacity=".9"/>
+  <path d="M0 112 Q60 98 120 106 T260 102 T420 108 T600 100 T780 106 T920 102 V122 H0z" fill="#5E7B4C"/>
+  <g fill="#3E5A34">
+    <path d="M70 110 l6 -34 l3 34z"/><path d="M78 106 q-14 -22 -26 -24 q14 8 22 26z"/><path d="M80 106 q12 -24 26 -26 q-14 10 -22 28z"/>
+    <path d="M820 108 l5 -40 l3 40z"/><path d="M826 104 q-16 -24 -30 -26 q16 10 26 28z"/><path d="M828 104 q14 -26 30 -28 q-16 10 -26 30z"/>
+  </g>
+  <rect y="120" width="920" height="80" fill="url(#b28water)"/>
+  <rect class="b28-glint" x="660" y="128" width="200" height="4" rx="2" fill="url(#b28glint)"/>
+  <rect class="b28-glint" x="610" y="142" width="150" height="3" rx="1.5" fill="url(#b28glint)"/>
+  <!-- reeds and the heron, left -->
+  <g fill="#4F6E3E"><rect x="130" y="96" width="3" height="40"/><rect x="140" y="90" width="3" height="46"/><rect x="150" y="100" width="3" height="36"/><rect x="232" y="94" width="3" height="42"/><rect x="242" y="102" width="3" height="34"/></g>
+  <g transform="translate(176 72)">
+    <path d="M18 30 q-4 -20 6 -28 q6 -4 10 0" fill="none" stroke="#7D8C98" stroke-width="5" stroke-linecap="round"/>
+    <path d="M34 2 l16 3 l-16 2z" fill="#D9A43B"/><circle cx="32" cy="3" r="1.4" fill="#1E2A33"/>
+    <ellipse cx="22" cy="40" rx="20" ry="11" fill="#8E9DA8"/><path d="M4 40 q-10 4 -14 12 q12 -4 18 -6z" fill="#6E7D88"/>
+    <line x1="18" y1="50" x2="16" y2="72" stroke="#5D5A4E" stroke-width="2.5"/><line x1="26" y1="50" x2="28" y2="72" stroke="#5D5A4E" stroke-width="2.5"/>
+  </g>
+  <!-- the dock -->
+  <rect x="300" y="104" width="270" height="12" fill="#8A6A44"/><rect x="300" y="100" width="270" height="5" fill="#A98656"/>
+  <g fill="#6E5236"><rect x="312" y="116" width="10" height="56"/><rect x="420" y="116" width="10" height="56"/><rect x="548" y="116" width="10" height="56"/></g>
+  <!-- ripples where the magnet broke the surface -->
+  <ellipse class="b28-rip" cx="470" cy="150" rx="40" ry="7" fill="none" stroke="#E9F5F8" stroke-width="2"/>
+  <ellipse class="b28-rip b28-rip2" cx="470" cy="150" rx="40" ry="7" fill="none" stroke="#E9F5F8" stroke-width="2"/>
+  <!-- the magnet on its rope, rising -->
+  <g class="b28-sway">
+    <line x1="470" y1="0" x2="470" y2="118" stroke="#E8DCC4" stroke-width="3"/>
+    <g transform="translate(446 116)">
+      <rect width="48" height="20" rx="3" fill="#8C959B" stroke="#4E565C" stroke-width="2"/>
+      <rect x="3" y="18" width="18" height="9" fill="#D9453B"/><rect x="27" y="18" width="18" height="9" fill="#2D6FB8"/>
+      <!-- bottle cap -->
+      <g transform="translate(-6 26)"><path d="M2 0 h18 l-2 6 h-14z" fill="#C2C8CC" stroke="#6C757B" stroke-width="1.5"/><path d="M3 1 l2 5 M8 1 l1 5 M13 1 l-1 5 M18 1 l-2 5" stroke="#6C757B" stroke-width="1"/></g>
+      <!-- key ring with a brass key -->
+      <g transform="translate(30 27)"><circle cx="6" cy="6" r="6" fill="none" stroke="#7E868B" stroke-width="2.5"/><path d="M8 11 l6 16" stroke="#C9A23A" stroke-width="4" stroke-linecap="round"/><path d="M12 22 l4 -1 M13 25 l4 -1" stroke="#C9A23A" stroke-width="2"/></g>
+      <circle class="b28-drip" cx="10" cy="36" r="2.2" fill="#BFE3EE"/>
+      <circle class="b28-drip b28-drip2" cx="38" cy="58" r="2.2" fill="#BFE3EE"/>
+    </g>
+  </g>
+</svg>
