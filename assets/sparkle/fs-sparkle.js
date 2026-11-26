@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -12984,6 +12984,430 @@
     paint();
   };
 
+  /* ======================= 27.01 "The Trophy Twins" (Case 27): case.shelf, squeeze, gates, airscale, twins, dunklab, kgsphere, SIMS.panbalance ======================= */
+
+  /* ---------- case: the lost-and-found shelf (27.01). case.shelf = {label, trophies:[{id, tag, line}], note} — two identical drawn trophies on a wooden
+     shelf, each with a hanging claim tag. Classes fs-shf-*. ---------- */
+  function trophySVG(id) {
+    return '<svg viewBox="0 0 120 140" role="img" aria-label="A small gold trophy cup with two handles on a dark base" class="fs-shf-tr">' +
+      '<defs><linearGradient id="fsshfg' + id + '" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C99B3F"/><stop offset=".45" stop-color="#F2D98B"/><stop offset=".6" stop-color="#E3B85C"/><stop offset="1" stop-color="#B07F2E"/></linearGradient></defs>' +
+      '<path d="M30 22 h60 l-6 44 q-4 22 -24 22 q-20 0 -24 -22 z" fill="url(#fsshfg' + id + ')" stroke="#8A5F1E" stroke-width="2"/>' +
+      '<path d="M30 28 q-18 2 -16 18 q2 14 20 16" fill="none" stroke="#B07F2E" stroke-width="7"/>' +
+      '<path d="M90 28 q18 2 16 18 q-2 14 -20 16" fill="none" stroke="#B07F2E" stroke-width="7"/>' +
+      '<rect x="52" y="86" width="16" height="16" fill="#C99B3F" stroke="#8A5F1E" stroke-width="2"/>' +
+      '<path d="M40 102 h40 l6 14 h-52 z" fill="#4A3524" stroke="#32241A" stroke-width="2"/>' +
+      '<rect x="34" y="116" width="52" height="12" rx="2" fill="#5C442E" stroke="#32241A" stroke-width="2"/>' +
+      '<ellipse cx="48" cy="38" rx="5" ry="14" fill="#FFF4D0" opacity=".55"/></svg>';
+  }
+  function shelfCard(S) {
+    return '<div class="fs-shf">' + (S.label ? '<div class="fs-shf-lab">' + esc(S.label) + '</div>' : '') +
+      '<div class="fs-shf-board">' + (S.trophies || []).map(function (t, i) {
+        return '<div class="fs-shf-item">' + trophySVG(i) + '<span class="fs-shf-tag" style="--r:' + ((i % 2 ? 1 : -1) * 2.5) + 'deg"><b>' + esc(t.tag) + '</b>' + (t.line ? '<small>' + esc(t.line) + '</small>' : '') + '</span></div>';
+      }).join('') + '</div><div class="fs-shf-wood"></div>' + (S.note ? '<div class="fs-shf-note">' + esc(S.note) + '</div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Squeeze the bottle" — a model bottle; put the cap on or take it off, then squeeze (drag down on the bottle, or the Squeeze button).
+     Cap ON: it dents a little and springs back (the trapped air pushes back). Cap OFF: it squashes flat and the air whooshes out. Try both, then a chip question (27.01) ----------
+     D.squeeze = {afterText, kicker, title, todo[], why, model, alt, capOnBtn, capOffBtn, squeezeBtn, resetBtn, dragHint, needBoth ({k}), rows:{on:[label, what happened], off:[...]},
+                  logLabel, cols[2], onLine, offLine, q, opts, win, clue} */
+  function buildSqueeze() {
+    var Sq = D.squeeze; if (!Sq) return;
+    var at = anchorP(Sq.afterText); if (!at) { FAILED.push('squeeze anchor text not found'); return; }
+    var g = gameShell(Sq.kicker || 'Warm-Up game', Sq.title, Sq.todo, Sq.why); g.dataset.mod = 'squeeze';
+    var st = loadJ('squeeze', { log: {} }), capOn = true, s = 0, drag = null, anim = null, settle = null, crushed = false;
+    var stage = el('div', 'fs-sq-stage', '<div class="fs-svgbox" style="padding-top:62%"><svg viewBox="0 0 460 290" role="img" aria-label="' + esc(Sq.alt || 'A model plastic bottle on a table. A cap can go on or off. Squeeze it and watch what happens.') + '"></svg></div>');
+    var ctl = el('div', 'fs-mug-go fs-sq-ctl'), note = el('div', 'fs-sq-note'), miss = el('div', 'fs-miss'), log = el('div'), qh = el('div'), win = el('div', 'fs-win');
+    [stage, ctl, note, miss, log, qh, win].forEach(function (e) { g.appendChild(e); });
+    var svg = $('svg', stage);
+    function draw() {
+      var pinch = 52 * s, open = !capOn && s > 0.25 && (drag || anim);
+      var h = '<rect width="460" height="290" fill="#F6EEDC"/><rect y="252" width="460" height="38" fill="#D9BE8E"/>';
+      var yT = 92, yB = 250, cx = 230, w0 = 62, pts = [];
+      for (var i = 0; i <= 20; i++) { var t = i / 20, y = yT + (yB - yT) * t, dent = pinch * Math.exp(-Math.pow((t - 0.42) / 0.26, 2)), wob = w0 - dent + 3 * Math.sin(t * 9); pts.push([wob, y]); }
+      var dL = pts.map(function (p, i) { return (i ? 'L' : 'M') + (cx - p[0]).toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+      var dR = pts.slice().reverse().map(function (p) { return 'L' + (cx + p[0]).toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+      h += '<path d="' + dL + ' L' + (cx + pts[20][0]).toFixed(1) + ' ' + yB + ' ' + dR + ' z" fill="#DDF0F8" stroke="#5E8CA8" stroke-width="5" stroke-linejoin="round"/>';
+      h += '<path d="M' + (cx - w0) + ' ' + yT + ' L' + (cx - 20) + ' ' + (yT - 26) + ' L' + (cx - 20) + ' ' + (yT - 44) + ' M' + (cx + w0) + ' ' + yT + ' L' + (cx + 20) + ' ' + (yT - 26) + ' L' + (cx + 20) + ' ' + (yT - 44) + '" fill="none" stroke="#5E8CA8" stroke-width="5" stroke-linecap="round"/>';
+      if (capOn) h += '<rect x="' + (cx - 26) + '" y="' + (yT - 62) + '" width="52" height="22" rx="5" fill="#E8636B" stroke="#A33037" stroke-width="3"/>';
+      else h += '<rect x="330" y="206" width="52" height="22" rx="5" fill="#E8636B" stroke="#A33037" stroke-width="3" transform="rotate(14 356 217)"/>';
+      if (capOn && s > 0.08) h += '<g class="fs-sq-air">' + [[cx, 150], [cx, 190]].map(function (p) {
+        return '<path d="M' + (p[0] - 22) + ' ' + p[1] + ' h-16 m4 -5 l-5 5 l5 5" class="fs-sq-arr"/><path d="M' + (p[0] + 22) + ' ' + p[1] + ' h16 m-4 -5 l5 5 l-5 5" class="fs-sq-arr"/>';
+      }).join('') + '</g>';
+      if (open) h += '<g class="fs-sq-puff"><path d="M' + cx + ' ' + (yT - 48) + ' q-6 -16 2 -30 m10 30 q8 -14 2 -28 m-24 26 q-10 -12 -4 -26" fill="none" stroke="#9FC4D8" stroke-width="4" stroke-linecap="round"/></g>';
+      h += '<text x="' + cx + '" y="278" text-anchor="middle" class="fs-sq-model">' + esc(Sq.model || 'A model bottle. Try it for real with a clean, empty plastic bottle.') + '</text>';
+      svg.innerHTML = h;
+    }
+    function logIt(k) {
+      if (!st.log[k]) { st.log[k] = 1; saveJ('squeeze', st); SFX.chime(); }
+      paint(k);
+    }
+    function release(force) {
+      if (!force && drag === null && !anim) return;
+      drag = null;
+      if (capOn) { // spring back
+        if (s > 0.1) { SFX.pop(); logIt('on'); }
+        var t0 = null, s0 = s;
+        (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 320)); s = s0 * (1 - p) * (reduceMotion ? 0 : Math.cos(p * 9) * 0.5 + 0.5); if (p >= 1) s = 0; draw(); if (p < 1) requestAnimationFrame(f); })(performance.now());
+      } else if (s > 0.4) { crushed = true; logIt('off'); draw(); } else { s = 0; draw(); }
+    }
+    stage.addEventListener('pointerdown', function (e) { if (crushed) return; var r = svg.getBoundingClientRect(); drag = { y: e.clientY, s: s }; stage.setPointerCapture && stage.setPointerCapture(e.pointerId); e.preventDefault(); ac(); });
+    stage.addEventListener('pointermove', function (e) { if (drag == null || crushed) return; var r = svg.getBoundingClientRect(); s = Math.max(0, Math.min(capOn ? 0.3 : 0.92, drag.s + (e.clientY - drag.y) / r.height * 1.6)); if (!capOn && s > 0.5) noise(0.06, 900, 2600, 0.06); draw(); });
+    ['pointerup', 'pointercancel'].forEach(function (k) { stage.addEventListener(k, release); });
+    function autoSqueeze() {
+      if (crushed) return; ac(); SFX.whoosh(); var t0 = null, max = capOn ? 0.3 : 0.9;
+      anim = true;
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 500)); s = max * p; draw(); if (p < 1) { requestAnimationFrame(f); return; } anim = null; release(true); })(performance.now());
+    }
+    function paint(last) {
+      var on = st.log.on, off = st.log.off;
+      ctl.innerHTML = '<button type="button" class="fs-btn alt fs-sq-cap">' + esc(capOn ? (Sq.capOffBtn || '🔴 Take the cap off') : (Sq.capOnBtn || '🔴 Put the cap on')) + '</button>' +
+        '<button type="button" class="fs-btn fs-sq-go">' + esc(Sq.squeezeBtn || '🤜 Squeeze it') + '</button>' +
+        (crushed ? '<button type="button" class="fs-btn alt fs-sq-rst">' + esc(Sq.resetBtn || '↺ A fresh bottle') + '</button>' : '');
+      $('.fs-sq-cap', ctl).addEventListener('click', function () { if (crushed) { crushed = false; s = 0; } capOn = !capOn; SFX.blip(); draw(); paint(); });
+      $('.fs-sq-go', ctl).addEventListener('click', autoSqueeze);
+      var rst = $('.fs-sq-rst', ctl); if (rst) rst.addEventListener('click', function () { crushed = false; s = 0; SFX.blip(); draw(); paint(); });
+      note.innerHTML = '<em>' + esc(Sq.dragHint || 'Drag down on the bottle to squeeze it with your own hand, or press Squeeze it.') + '</em>';
+      var R = Sq.rows || { on: ['Cap ON', 'It dented a little, then sprang back.'], off: ['Cap OFF', 'It squashed flat, and the air whooshed out the top.'] };
+      log.innerHTML = '<div class="fs-swv-log"><div class="fs-lu-lab">' + esc(Sq.logLabel || 'My squeeze log') + '</div><table><tr>' + (Sq.cols || ['The bottle', 'What happened']).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        ['on', 'off'].map(function (k) { return '<tr' + (last === k ? ' class="new"' : '') + '><td>' + esc(R[k][0]) + '</td><td>' + (st.log[k] ? esc(R[k][1]) : '?') + '</td></tr>'; }).join('') + '</table></div>';
+      if ((on && !off) || (off && !on)) log.appendChild(el('p', 'fs-scr-tip', esc((Sq.needBoth || 'Now try it with the cap {k}.').replace('{k}', on ? 'off' : 'on'))));
+      if (on && off) askOnce(qh, Sq.q, Sq.opts, 'squeeze-q', win, Sq.win, Sq.clue, 'squeeze', miss);
+    }
+    draw(); paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "The matter gates" — send each candidate through Gate 1 (Has mass?) and Gate 2 (Takes up space?), picking the evidence that answers each
+     gate. Pass both = the MATTER tray; fail one = the NOT MATTER bin (27.01) ----------
+     D.gates = {afterText, kicker, title, todo[], why, g1:{t, sub}, g2:{t, sub}, trayYes, trayNo, pickLine, cands:[{id, icon, name, g1:{pass, opts:[{t, ok, miss}]},
+                g2:{pass, opts}, why}], passWord, failWord, countWord, q, opts, win, clue} */
+  function buildGates() {
+    var Gt = D.gates; if (!Gt) return;
+    var at = anchorP(Gt.afterText); if (!at) { FAILED.push('gates anchor text not found'); return; }
+    var g = gameShell(Gt.kicker || 'Part 1 game', Gt.title, Gt.todo, Gt.why); g.dataset.mod = 'gates';
+    var st = loadJ('gates', { done: {} }), cur = null, gate = 1;
+    var tray = el('div', 'fs-mg-tray'), machine = el('div', 'fs-mg-machine'), ask = el('div', 'fs-mg-ask'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [tray, machine, ask, miss, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    machine.innerHTML = '<div class="fs-mg-gate" data-g="1"><span class="fs-mg-gn">GATE 1</span><b>' + esc(Gt.g1.t) + '</b><small>' + esc(Gt.g1.sub || '') + '</small><i class="fs-mg-door"></i></div>' +
+      '<div class="fs-mg-gate" data-g="2"><span class="fs-mg-gn">GATE 2</span><b>' + esc(Gt.g2.t) + '</b><small>' + esc(Gt.g2.sub || '') + '</small><i class="fs-mg-door"></i></div>' +
+      '<div class="fs-mg-out"><div class="fs-mg-yes"><b>✅ ' + esc(Gt.trayYes || 'MATTER') + '</b><div class="fs-mg-pile" data-k="yes"></div></div>' +
+      '<div class="fs-mg-no"><b>⛔ ' + esc(Gt.trayNo || 'NOT MATTER') + '</b><div class="fs-mg-pile" data-k="no"></div></div></div>';
+    function paintTray() {
+      tray.innerHTML = '';
+      Gt.cands.forEach(function (c, i) {
+        if (st.done[c.id]) return;
+        var b = el('button', 'fs-in-chip fs-mg-cand' + (cur === c.id ? ' on' : ''), '<span>' + c.icon + '</span> ' + esc(c.name)); b.type = 'button';
+        b.addEventListener('click', function () { if (cur) return; start(c); });
+        tray.appendChild(b);
+      });
+      if (!cur && tray.children.length) tray.appendChild(el('p', 'fs-scr-tip', esc(Gt.pickLine || 'Tap the next thing to send it into the machine.')));
+      var n = Object.keys(st.done).length;
+      count.textContent = '🔎 ' + n + ' of ' + Gt.cands.length + ' ' + (Gt.countWord || 'things tested');
+      count.classList.toggle('ok', n === Gt.cands.length);
+      ['yes', 'no'].forEach(function (k) {
+        var pile = $('.fs-mg-pile[data-k="' + k + '"]', machine);
+        pile.innerHTML = Gt.cands.filter(function (c) { return st.done[c.id] === k; }).map(function (c) { return '<span class="fs-mg-chip" title="' + esc(c.name) + '">' + c.icon + '</span>'; }).join('');
+      });
+      if (n === Gt.cands.length) { ask.innerHTML = ''; askOnce(qh, Gt.q, Gt.opts, 'gates-q', win, Gt.win, Gt.clue, 'gates', miss); }
+    }
+    function start(c) { cur = c.id; gate = 1; SFX.blip(); paintTray(); askGate(c); }
+    function askGate(c) {
+      var G = gate === 1 ? c.g1 : c.g2, gd = $('.fs-mg-gate[data-g="' + gate + '"]', machine);
+      $$('.fs-mg-gate', machine).forEach(function (x) { x.classList.toggle('now', x === gd); });
+      gd.appendChild(el('span', 'fs-mg-token', c.icon));
+      ask.innerHTML = '';
+      chipsQ(ask, '<b>' + esc(c.name) + '</b> · ' + esc(gate === 1 ? Gt.g1.t : Gt.g2.t), G.opts, function () {
+        var tok = $('.fs-mg-token', machine); if (tok) tok.remove();
+        if (!G.pass) { // fails this gate
+          st.done[c.id] = 'no'; saveJ('gates', st); SFX.thud(); cur = null;
+          $$('.fs-mg-gate', machine).forEach(function (x) { x.classList.remove('now'); });
+          ask.innerHTML = ''; miss.classList.remove('show');
+          var card = el('div', 'fs-hs-card flash', '<span class="fs-hs-n">⛔</span><div><b>' + esc(c.name) + ' · ' + esc(Gt.failWord || 'not matter') + '</b>' + esc(c.why) + '</div>'); g.insertBefore(card, miss); setTimeout(function () { card.remove(); }, 6000);
+          paintTray(); return;
+        }
+        if (gate === 1) { gate = 2; SFX.blip(); askGate(c); return; }
+        st.done[c.id] = 'yes'; saveJ('gates', st); SFX.chime(); cur = null;
+        $$('.fs-mg-gate', machine).forEach(function (x) { x.classList.remove('now'); });
+        ask.innerHTML = ''; miss.classList.remove('show');
+        var card2 = el('div', 'fs-hs-card flash', '<span class="fs-hs-n">✅</span><div><b>' + esc(c.name) + ' · ' + esc(Gt.passWord || 'matter!') + '</b>' + esc(c.why) + '</div>'); g.insertBefore(card2, miss); setTimeout(function () { card2.remove(); }, 6000);
+        paintTray();
+      }, miss);
+    }
+    paintTray(); placeAfter(g, at);
+  }
+
+  /* ---------- the wow (after the gates, not a clue): "Air on the scale" — weigh the empty balloon, pump it up, weigh it again. The scale moves (27.01) ----------
+     D.airscale = {after, kicker, title, todo[], why, model, alt, weighBtn, pumpBtn, pumps, emptyG, fullG, weigh1Line, pumpLine ({n}), weigh2Line ({x}), q, opts, done} */
+  function buildAirscale() {
+    var As = D.airscale; if (!As) return;
+    var host = As.after ? $$('.fs-game').filter(function (x) { return x.dataset.mod === As.after; })[0] : null;
+    if (!host) { FAILED.push('airscale: no anchor game ' + As.after); return; }
+    var g = gameShell(As.kicker || 'Wow!', As.title, As.todo, As.why); g.dataset.mod = 'airscale';
+    var st = loadJ('airscale', { step: 0 }), pumps = 0, NEED = As.pumps || 3;
+    var stage = el('div', 'fs-as-stage', '<div class="fs-svgbox" style="padding-top:43%"><svg viewBox="0 60 460 198" role="img" aria-label="' + esc(As.alt || 'A model digital kitchen scale and a balloon.') + '"></svg></div>');
+    var ctl = el('div', 'fs-mug-go'), out = el('div'), qh = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+    [stage, ctl, out, qh, miss, win].forEach(function (e) { g.appendChild(e); });
+    var svg = $('svg', stage), lcd = '0.0';
+    function draw(balloonOn, big) {
+      var h = '<rect width="460" height="258" fill="#F6EEDC"/><rect y="224" width="460" height="34" fill="#D9BE8E"/>';
+      h += '<rect x="150" y="168" width="160" height="56" rx="10" fill="#8C959B" stroke="#5B646B" stroke-width="3"/><rect x="170" y="156" width="120" height="14" rx="6" fill="#B8C2C9" stroke="#5B646B" stroke-width="3"/>';
+      h += '<rect x="186" y="186" width="88" height="26" rx="5" fill="#1B2B20"/><text x="230" y="205" text-anchor="middle" class="fs-as-lcd">' + lcd + ' g</text>';
+      var r = big ? 42 : 15, bx = balloonOn ? 230 : 86, by = balloonOn ? 150 - r : 206 - r;
+      h += '<g' + (big ? ' class="fs-as-big"' : '') + '><ellipse cx="' + bx + '" cy="' + (by) + '" rx="' + r + '" ry="' + (r * 1.12) + '" fill="#E8636B" opacity="0.9" stroke="#A33037" stroke-width="2.5"/><path d="M' + bx + ' ' + (by + r * 1.12) + ' l-6 10 h12 z" fill="#A33037"/></g>';
+      if (!balloonOn) h += '<text x="86" y="238" text-anchor="middle" class="fs-shk-lab">' + (big ? '' : '') + '</text>';
+      h += '<text x="230" y="250" text-anchor="middle" class="fs-sq-model">' + esc(As.model || 'A model of a real balloon test.') + '</text>';
+      svg.innerHTML = h;
+    }
+    function count(to, then) {
+      var from = 0, t0 = null, D1 = reduceMotion ? 1 : 900;
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / D1); lcd = (to * p).toFixed(1); draw(true, st.step >= 2); if (p < 1) { requestAnimationFrame(f); return; } SFX.chime(); then(); })(performance.now());
+    }
+    function paint() {
+      var lines = [];
+      if (st.step >= 1) lines.push((As.weigh1Line || 'Empty balloon: {x} g.').replace('{x}', (As.emptyG || 2).toFixed(1)));
+      if (st.step >= 2 && st.step < 3) lines.push((As.pumpLine || 'Pumped up! Now weigh it again.'));
+      if (st.step >= 3) lines.push((As.weigh2Line || 'Blown up: {x} g. The scale moved!').replace('{x}', (As.fullG || 2.3).toFixed(1)));
+      out.innerHTML = lines.length ? '<div class="fs-as-out">' + lines.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '</div>' : '';
+      ctl.innerHTML = '';
+      if (st.step === 0) ctl.innerHTML = '<button type="button" class="fs-btn fs-as-w">' + esc(As.weighBtn || '⚖️ Put the balloon on the scale') + '</button>';
+      else if (st.step === 1) ctl.innerHTML = '<button type="button" class="fs-btn fs-as-p">' + esc(As.pumpBtn || '💨 Pump it up') + (pumps ? ' (' + pumps + '/' + NEED + ')' : '') + '</button>';
+      else if (st.step === 2) ctl.innerHTML = '<button type="button" class="fs-btn fs-as-w">' + esc(As.weighBtn2 || '⚖️ Weigh it again') + '</button>';
+      var w = $('.fs-as-w', ctl); if (w) w.addEventListener('click', function () {
+        ac(); w.disabled = true;
+        if (st.step === 0) count(As.emptyG || 2, function () { st.step = 1; saveJ('airscale', st); draw(false, false); paint(); });
+        else count(As.fullG || 2.3, function () { st.step = 3; saveJ('airscale', st); paint(); });
+      });
+      var p = $('.fs-as-p', ctl); if (p) p.addEventListener('click', function () {
+        ac(); SFX.pop(); pumps++;
+        if (pumps >= NEED) { st.step = 2; saveJ('airscale', st); }
+        draw(false, st.step >= 2); paint();
+      });
+      if (st.step >= 3) {
+        lcd = (As.fullG || 2.3).toFixed(1); draw(true, true);
+        askOnce(qh, As.q, As.opts, 'airscale-q', win, As.done, null, 'airscale', miss);
+      } else { lcd = st.step === 1 ? (As.emptyG || 2).toFixed(1) : '0.0'; draw(false, st.step >= 2); }
+    }
+    paint(); host.parentNode.insertBefore(g, host.nextSibling);
+  }
+
+  /* ---------- Part 2: "Tell the twins apart" — two look-alike jars; try each tool on the pair. The observable tools come back SAME for both; the balance
+     comes back DIFFERENT. The property table builds as you go (27.01) ----------
+     D.twins = {afterText, kicker, title, todo[], why, alt, aName, bName, trayLabel, dropHint, tools:[{k, icon, t, prop, a, b, same, note}], logLabel,
+                cols[4], sameWord, diffWord, countWord, q, opts, win, clue} */
+  function buildTwins() {
+    var Tw = D.twins; if (!Tw) return;
+    var at = anchorP(Tw.afterText); if (!at) { FAILED.push('twins anchor text not found'); return; }
+    var g = gameShell(Tw.kicker || 'Part 2 game', Tw.title, Tw.todo, Tw.why); g.dataset.mod = 'twins';
+    var st = loadJ('twins', { used: {} });
+    function jar(id, name) {
+      return '<div class="fs-twn-jar"><svg viewBox="0 0 120 150" role="img" aria-label="' + esc('A sealed jar labeled ' + name) + '"><rect x="34" y="12" width="52" height="16" rx="4" fill="#8C959B" stroke="#5B646B" stroke-width="2.5"/>' +
+        '<path d="M30 28 h60 v96 q0 14 -14 14 h-32 q-14 0 -14 -14 z" fill="#DDeff6" stroke="#5E8CA8" stroke-width="4"/>' +
+        '<rect x="42" y="60" width="36" height="34" rx="4" fill="#FFF9E8" stroke="#D9BE8E" stroke-width="2" transform="rotate(-3 60 77)"/>' +
+        '<ellipse cx="44" cy="48" rx="4" ry="16" fill="#fff" opacity=".6"/></svg><b>' + esc(name) + '</b></div>';
+    }
+    var stage = el('div', 'fs-twn-stage', jar('a', Tw.aName || 'Jar A') + jar('b', Tw.bName || 'Jar B'));
+    var beam = el('div', 'fs-twn-beam');
+    var trayLab = el('div', 'fs-lu-lab', esc(Tw.trayLabel || 'Your tools (drag one onto the jars, or tap it, then tap the jars)'));
+    var trayBox = el('div', 'fs-twn-tools'), hint = el('div', 'fs-sq-note', '<em>' + esc(Tw.dropHint || 'Each tool checks BOTH jars at once.') + '</em>');
+    var log = el('div'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [stage, beam, trayLab, trayBox, hint, log, miss, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    Tw.tools.forEach(function (t) {
+      var b = el('button', 'fs-in-chip fs-twn-tool' + (st.used[t.k] ? ' done' : ''), '<span>' + t.icon + '</span> ' + esc(t.t)); b.type = 'button'; b.dataset.k = t.k;
+      trayBox.appendChild(b);
+      dragDrop(b, function () { return [stage]; }, function (item) { use(t); });
+    });
+    tapTargets(g, [stage], function (item) { var t = Tw.tools.filter(function (x) { return x.k === item.dataset.k; })[0]; if (t) use(t); });
+    function use(t) {
+      if (st.used[t.k]) { bounce($('.fs-twn-tool[data-k="' + t.k + '"]', trayBox), miss, Tw.againMiss || 'You already checked that. Try a tool with no check mark.'); return; }
+      st.used[t.k] = 1; saveJ('twins', st); ac();
+      if (t.k === 'balance') {
+        SFX.thud();
+        beam.classList.add('tip');
+        if (!reduceMotion) { beam.classList.add('rock'); setTimeout(function () { beam.classList.remove('rock'); }, 900); }
+      } else SFX.blip();
+      paint(t.k);
+    }
+    function paint(last) {
+      $$('.fs-twn-tool', trayBox).forEach(function (b) { b.classList.toggle('done', !!st.used[b.dataset.k]); });
+      var rows = Tw.tools.filter(function (t) { return st.used[t.k]; });
+      log.innerHTML = rows.length ? '<div class="fs-swv-log"><div class="fs-lu-lab">' + esc(Tw.logLabel || 'The twins’ property table') + '</div><table><tr>' + (Tw.cols || ['Property', Tw.aName || 'Jar A', Tw.bName || 'Jar B', 'Verdict']).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        Tw.tools.map(function (t) { if (!st.used[t.k]) return ''; return '<tr' + (t.k === last ? ' class="new"' : '') + '><td>' + t.icon + ' ' + esc(t.prop) + '</td><td>' + esc(t.a) + '</td><td>' + esc(t.b) + '</td><td class="' + (t.same ? 'fs-twn-same' : 'fs-twn-diff') + '">' + esc(t.same ? (Tw.sameWord || 'SAME') : (Tw.diffWord || 'DIFFERENT!')) + '</td></tr>'; }).join('') + '</table></div>' : '';
+      if (last) { var t = Tw.tools.filter(function (x) { return x.k === last; })[0]; if (t && t.note) log.appendChild(el('p', 'fs-scr-tip', esc(t.note))); }
+      var n = Object.keys(st.used).length;
+      count.textContent = '🔎 ' + n + ' of ' + Tw.tools.length + ' ' + (Tw.countWord || 'tools tried');
+      count.classList.toggle('ok', n === Tw.tools.length);
+      if (n === Tw.tools.length) askOnce(qh, Tw.q, Tw.opts, 'twins-q', win, Tw.win, Tw.clue, 'twins', miss);
+      if (st.used.balance) beam.classList.add('tip');
+      beam.innerHTML = '<span class="fs-twn-bm"></span>';
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 3 (the old Explore): "The weigh and dunk test" — measure each trophy twice: on the balance (read the screen), then dunked in the measuring
+     tank (read how far the water climbed). The property cards fill in; then compare (27.01) ----------
+     D.dunklab = {afterText, kicker, title, todo[], why, model, alt, items:[{id, name, massG, massOpts:[{t, ok, miss}], volOpts:[{t, ok, miss}]}], tankStart, tankRise,
+                  unit, mlWord, placeBtn ({name}), dunkBtn ({name}), readScale, readTank, pickLine, cardWord, logLabel, doneLine, q, opts, win, clue} */
+  function buildDunklab() {
+    var Dk = D.dunklab; if (!Dk) return;
+    var at = anchorP(Dk.afterText); if (!at) { FAILED.push('dunklab anchor text not found'); return; }
+    var g = gameShell(Dk.kicker || 'Part 3 game', Dk.title, Dk.todo, Dk.why); g.dataset.mod = 'dunklab';
+    var st = loadJ('dunklab', { m: {}, v: {} }), cur = Dk.items[0].id, busy = false, lcd = '0', water = Dk.tankStart || 600;
+    var tabs = el('div', 'fs-twn-tools fs-dk-tabs'), stage = el('div', 'fs-dk-stage'), ctl = el('div', 'fs-mug-go'), ask = el('div'), miss = el('div', 'fs-miss'), cards = el('div', 'fs-dk-cards'), qh = el('div'), win = el('div', 'fs-win');
+    [tabs, stage, ctl, ask, miss, cards, qh, win].forEach(function (e) { g.appendChild(e); });
+    stage.innerHTML = '<div class="fs-svgbox" style="padding-top:39%"><svg viewBox="0 92 480 186" role="img" aria-label="' + esc(Dk.alt || 'A model balance scale and a measuring tank with a push rod, used to measure each trophy.') + '"></svg></div>';
+    var svg = $('svg', stage);
+    function item() { return Dk.items.filter(function (x) { return x.id === cur; })[0]; }
+    function draw(opt) {
+      opt = opt || {};
+      var h = '<rect width="480" height="278" fill="#F6EEDC"/><rect y="244" width="480" height="34" fill="#D9BE8E"/>';
+      // balance (left)
+      h += '<rect x="40" y="188" width="150" height="48" rx="9" fill="#8C959B" stroke="#5B646B" stroke-width="3"/><rect x="58" y="176" width="114" height="14" rx="6" fill="#B8C2C9" stroke="#5B646B" stroke-width="2.5"/>';
+      h += '<rect x="66" y="202" width="98" height="26" rx="5" fill="#1B2B20"/><text x="115" y="221" text-anchor="middle" class="fs-as-lcd">' + lcd + ' g</text>';
+      if (opt.onScale) h += '<g transform="translate(78 108) scale(0.56)">' + trophySVG('dk1').replace(/<\/?svg[^>]*>/g, '') + '</g>';
+      // tank (right): the mark for V milliliters sits at yOf(V)
+      var T0 = Dk.tankStart || 600, RISE = Dk.tankRise || 150;
+      function yOf(v) { return 236 - (v - (T0 - RISE)) / RISE * 38; }
+      var lv = yOf(water);
+      h += '<path d="M300 112 h130 v124 q0 8 -8 8 h-114 q-8 0 -8 -8 z" fill="none" stroke="#5E8CA8" stroke-width="5"/>';
+      h += '<rect x="303" y="' + lv.toFixed(1) + '" width="124" height="' + (241 - lv).toFixed(1) + '" fill="#9FD3EA" opacity="0.8"/>';
+      for (var m = 0; m <= 2; m++) { var mv = T0 - RISE + m * RISE, my = yOf(mv); h += '<line x1="300" y1="' + my + '" x2="314" y2="' + my + '" stroke="#5E8CA8" stroke-width="3"/><text x="318" y="' + (my + 4) + '" class="fs-dk-ml">' + mv + '</text>'; }
+      if (opt.inTank) h += '<g transform="translate(332 ' + (lv + 8) + ') scale(0.5)" opacity="0.9">' + trophySVG('dk2').replace(/<\/?svg[^>]*>/g, '') + '</g>' + '<rect x="358" y="90" width="8" height="' + (lv - 82) + '" rx="4" fill="#B5835A"/><text x="380" y="104" class="fs-shk-lab">' + esc(Dk.rodWord || 'push rod') + '</text>';
+      if (!opt.onScale && !opt.inTank) h += '<g transform="translate(208 150) scale(0.6)">' + trophySVG('dk3').replace(/<\/?svg[^>]*>/g, '') + '</g><text x="244" y="160" text-anchor="middle" class="fs-shk-lab">' + esc(item().name) + '</text>';
+      h += '<text x="240" y="270" text-anchor="middle" class="fs-sq-model">' + esc(Dk.model || 'A model lab bench. The rod holds the trophy under the water.') + '</text>';
+      svg.innerHTML = h;
+    }
+    function paint() {
+      tabs.innerHTML = '';
+      Dk.items.forEach(function (it) {
+        var b = el('button', 'fs-in-chip' + (cur === it.id ? ' on' : '') + ((st.m[it.id] && st.v[it.id]) ? ' done' : ''), esc(it.name)); b.type = 'button';
+        b.addEventListener('click', function () { if (busy) return; cur = it.id; water = Dk.tankStart || 600; lcd = '0'; SFX.blip(); paint(); });
+        tabs.appendChild(b);
+      });
+      var it = item(); ctl.innerHTML = ''; ask.innerHTML = '';
+      if (!st.m[it.id]) {
+        ctl.innerHTML = '<button type="button" class="fs-btn">' + esc((Dk.placeBtn || '⚖️ Put {name} on the balance').replace('{name}', it.name)) + '</button>';
+        $('button', ctl).addEventListener('click', function () {
+          if (busy) return; busy = true; ac(); SFX.blip(); var t0 = null;
+          (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 900)); lcd = Math.round(it.massG * p); draw({ onScale: true }); if (p < 1) { requestAnimationFrame(f); return; } SFX.chime(); busy = false;
+            chipsQ(ask, (Dk.readScale || 'Read the screen. What is the mass of ' + it.name + '?'), it.massOpts, function () { st.m[it.id] = 1; saveJ('dunklab', st); ask.innerHTML = ''; paint(); }, miss); })(performance.now());
+        });
+        draw({});
+      } else if (!st.v[it.id]) {
+        ctl.innerHTML = '<button type="button" class="fs-btn">' + esc((Dk.dunkBtn || '💧 Hold {name} under the water').replace('{name}', it.name)) + '</button>';
+        $('button', ctl).addEventListener('click', function () {
+          if (busy) return; busy = true; ac(); SFX.whoosh(); var t0 = null, w0 = Dk.tankStart || 600, w1 = w0 + (Dk.tankRise || 150);
+          (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 900)); water = w0 + (w1 - w0) * p; draw({ inTank: true }); if (p < 1) { requestAnimationFrame(f); return; } SFX.chime(); busy = false;
+            chipsQ(ask, (Dk.readTank || 'How far did the water climb?'), it.volOpts, function () { st.v[it.id] = 1; saveJ('dunklab', st); ask.innerHTML = ''; water = w0; paint(); }, miss); })(performance.now());
+        });
+        lcd = it.massG; draw({ onScale: false });
+      } else draw({});
+      cards.innerHTML = Dk.items.map(function (x) {
+        return '<div class="fs-dk-card' + ((st.m[x.id] && st.v[x.id]) ? ' full' : '') + '"><b>' + esc(Dk.cardWord || 'Property card') + ' · ' + esc(x.name) + '</b>' +
+          '<dl><dt>' + esc(Dk.massWord || 'Mass') + '</dt><dd>' + (st.m[x.id] ? x.massG + ' g' : '?') + '</dd>' +
+          '<dt>' + esc(Dk.volWord || 'Volume (water climb)') + '</dt><dd>' + (st.v[x.id] ? (Dk.tankRise || 150) + ' ' + (Dk.unit || 'mL') + '</dd>' : '?</dd>') + '</dl></div>';
+      }).join('');
+      var all = Dk.items.every(function (x) { return st.m[x.id] && st.v[x.id]; });
+      if (all) { cards.appendChild(el('p', 'fs-scr-tip', esc(Dk.doneLine || 'Both cards are full. Look at them side by side.'))); askOnce(qh, Dk.q, Dk.opts, 'dunklab-q', win, Dk.win, Dk.clue, 'dunklab', miss); }
+      else { var nxt = Dk.items.filter(function (x) { return !(st.m[x.id] && st.v[x.id]); })[0]; if (nxt && nxt.id !== cur && st.m[cur] && st.v[cur]) { cur = nxt.id; paint(); } }
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- after the solve: "The most careful measurement on Earth" — the real silicon-sphere photo, a chip question and a fact line (27.01) ----------
+     D.kgsphere = {after, kicker, title, todo[], lockLine, img, alt, cap, q, opts, fact, win} */
+  function buildKgsphere() {
+    var Kg = D.kgsphere; if (!Kg) return;
+    var g = gameShell(Kg.kicker || 'Case closed · one more wow', Kg.title, Kg.todo, Kg.why); g.dataset.mod = 'kgsphere';
+    afterSolve(g, Kg.after, Kg.lockLine, function (body) {
+      var qh = el('div'), miss = el('div', 'fs-miss'), out = el('div'), win = el('div', 'fs-win');
+      body.appendChild(el('figure', 'fs-gls-fig', '<img src="' + esc(Kg.img) + '" alt="' + esc(Kg.alt || '') + '"><figcaption>' + esc(Kg.cap || '') + '</figcaption>'));
+      [qh, miss, out, win].forEach(function (e) { body.appendChild(e); });
+      chipsQ(qh, Kg.q, Kg.opts, function () { store('kgsphere-q', '1'); out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">⚖️</span><div>' + esc(Kg.fact || '') + '</div>')); winOnce(win, Kg.win, null, 'kgsphere'); }, miss);
+      if (store('kgsphere-q')) { var i = Kg.opts.map(function (o) { return !!o.ok; }).indexOf(true), c = $$('.fs-in-chip', qh)[i]; if (c) c.click(); }
+    });
+  }
+
+  /* ---------- Tool of the Week: a two-pan balance (27.01). Round 1: compare pairs from the tray (big isn't always heavy). Round 2: three look-alike boxes, one
+     heavier — find it in TWO weighings ----------
+     tool.panbalance = {title, todo[], model, trayLabel, weighBtn, clearBtn, needTwo, objs:[{id, icon, t, g, big}], pairLine, puzzle:{head, sub, boxes:[id, id, id],
+       heavy, weighWord, weighsLeft ({n}), noneLine, tipLine ({a},{b}), balLine ({a},{b}), outLine, ask, opts:[{t, k, miss}], done}, q:{q, opts}} */
+  SIMS.panbalance = function (host, T) {
+    var M = T.panbalance, st = loadJ('panbalance', { pairs: 0, solved: 0 });
+    host.innerHTML = '<div class="fs-game-k">' + esc(M.kicker || 'Try it: the pan balance') + '</div><div class="fs-game-t">' + esc(M.title) + '</div><ul class="fs-todo">' + M.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-pbal-stage"><div class="fs-svgbox" style="padding-top:48%"><svg viewBox="0 0 480 230" role="img" aria-label="A model two-pan balance."></svg></div></div>' +
+      '<div class="fs-lu-lab">' + esc(M.trayLabel || 'Tap an object, then tap a pan. Weigh any two against each other.') + '</div><div class="fs-pbal-tray"></div>' +
+      '<div class="fs-mug-go fs-pbal-go"></div><div class="fs-pbal-out"></div><div class="fs-pbal-pz"></div><div class="fs-pbal-q"></div><div class="fs-miss"></div>' +
+      '<p class="fs-pbal-model">' + esc(M.model || 'A model balance. When the pans sit level, the two sides have the same mass.') + '</p>';
+    var svg = $('svg', host), tray = $('.fs-pbal-tray', host), go = $('.fs-pbal-go', host), out = $('.fs-pbal-out', host), pz = $('.fs-pbal-pz', host), qh = $('.fs-pbal-q', host), miss = $('.fs-miss', host);
+    var L = null, R = null, tilt = 0, mode = 'free', pzSt = { left: null, right: null, used: 0, tips: [] };
+    function objOf(id) { return M.objs.filter(function (o) { return o.id === id; })[0]; }
+    function draw() {
+      var a = -tilt * 9;
+      var h = '<rect width="480" height="230" fill="#F6EEDC"/><rect x="230" y="60" width="20" height="130" rx="6" fill="#8A5F1E"/><rect x="170" y="188" width="140" height="14" rx="6" fill="#5C442E"/>';
+      h += '<g transform="rotate(' + a + ' 240 66)"><rect x="90" y="58" width="300" height="12" rx="6" fill="#B07F2E" stroke="#8A5F1E" stroke-width="2"/>';
+      [[108, 'L'], [372, 'R']].forEach(function (p) {
+        var it = p[1] === 'L' ? L : R;
+        h += '<line x1="' + p[0] + '" y1="70" x2="' + (p[0] - 26) + '" y2="118" stroke="#8A5F1E" stroke-width="3"/><line x1="' + p[0] + '" y1="70" x2="' + (p[0] + 26) + '" y2="118" stroke="#8A5F1E" stroke-width="3"/>' +
+          '<path d="M' + (p[0] - 34) + ' 118 q34 26 68 0 z" fill="#C99B3F" stroke="#8A5F1E" stroke-width="2.5"/>' +
+          (it ? '<text x="' + p[0] + '" y="114" text-anchor="middle" font-size="30">' + it.icon + '</text>' : '');
+      });
+      h += '</g><circle cx="240" cy="66" r="9" fill="#8A5F1E"/>';
+      svg.innerHTML = h;
+    }
+    function paintTray() {
+      tray.innerHTML = '';
+      M.objs.forEach(function (o) {
+        var b = el('button', 'fs-in-chip' + ((L && L.id === o.id) || (R && R.id === o.id) ? ' on' : ''), '<span>' + o.icon + '</span> ' + esc(o.t)); b.type = 'button';
+        b.addEventListener('click', function () { if (mode !== 'free') return; if (!L || (L && R)) { L = o; R = (R && R.id === o.id) ? null : R; } else if (o.id !== L.id) R = o; tilt = 0; SFX.blip(); draw(); paintTray(); });
+        tray.appendChild(b);
+      });
+      go.innerHTML = '<button type="button" class="fs-btn"' + (L && R ? '' : ' disabled') + '>' + esc(M.weighBtn || '⚖️ Weigh them') + '</button><button type="button" class="fs-btn alt">' + esc(M.clearBtn || '↺ Clear the pans') + '</button>';
+      $$('button', go)[0].addEventListener('click', function () {
+        if (!L || !R) return; ac(); SFX.thud(); tilt = L.g > R.g ? -1 : (R.g > L.g ? 1 : 0); draw();
+        st.pairs++; saveJ('panbalance', st);
+        out.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">⚖️</span><div>' + esc((tilt === 0 ? (M.balLine || '{a} and {b} balance: same mass.') : (M.tipLine || 'The {a} pan sank: more mass, even if it is not bigger.')).replace('{a}', (tilt <= 0 ? L.t : R.t)).replace('{b}', (tilt <= 0 ? R.t : L.t))) + '</div></div>';
+        if (st.pairs >= 2) puzzle();
+      });
+      $$('button', go)[1].addEventListener('click', function () { L = R = null; tilt = 0; draw(); paintTray(); });
+      if (st.pairs < 2) out.innerHTML = st.pairs ? '<p class="fs-scr-tip">' + esc(M.pairLine || 'Weigh one more pair. Can a BIGGER thing lose?') + '</p>' : '';
+    }
+    function puzzle() {
+      if (pz.dataset.on) return; pz.dataset.on = '1'; mode = 'free';
+      var P = M.puzzle, picks = { left: null, right: null }, used = 0, done = !!st.solved;
+      var box = el('div', 'fs-pbal-puzzle');
+      pz.appendChild(box);
+      function bpaint() {
+        box.innerHTML = '<div class="fs-game-k">' + esc(P.head || 'The puzzle') + '</div><p class="fs-sq-note"><em>' + esc(P.sub) + '</em></p>' +
+          '<div class="fs-pbal-boxes">' + P.boxes.map(function (id) { return '<button type="button" class="fs-in-chip' + (picks.left === id ? ' on' : picks.right === id ? ' on' : '') + '" data-id="' + id + '">📦 ' + esc(id) + (picks.left === id ? ' · left pan' : picks.right === id ? ' · right pan' : '') + '</button>'; }).join('') + '</div>' +
+          '<div class="fs-mug-go"><button type="button" class="fs-btn"' + (picks.left && picks.right && used < 2 && !done ? '' : ' disabled') + '>' + esc(M.weighBtn || '⚖️ Weigh them') + '</button><span class="fs-count">' + esc((P.weighsLeft || '{n} weighings left').replace('{n}', 2 - used)) + '</span></div><div class="fs-pbal-pout"></div><div class="fs-pbal-pask"></div>';
+        $$('.fs-pbal-boxes .fs-in-chip', box).forEach(function (b) {
+          b.addEventListener('click', function () { if (done) return; var id = b.dataset.id;
+            if (picks.left === id) picks.left = null; else if (picks.right === id) picks.right = null; else if (!picks.left) picks.left = id; else if (!picks.right && id !== picks.left) picks.right = id;
+            SFX.blip(); bpaint(); });
+        });
+        $('.fs-mug-go .fs-btn', box).addEventListener('click', function () {
+          used++; ac(); SFX.thud();
+          var lH = picks.left === P.heavy, rH = picks.right === P.heavy, pout = $('.fs-pbal-pout', box);
+          var line = lH || rH ? (P.tipLine || 'The pan with {a} sank!').replace('{a}', lH ? picks.left : picks.right) : (P.balLine || '{a} and {b} balance. Neither is the heavy one.').replace('{a}', picks.left).replace('{b}', picks.right);
+          pout.innerHTML = '<div class="fs-hs-card flash"><span class="fs-hs-n">⚖️</span><div>' + esc(line) + '</div></div>';
+          picksLog(); bpaint();
+          $('.fs-pbal-pout', box).innerHTML = pout.innerHTML;
+          askBox();
+        });
+        if (done || used > 0) askBox();
+      }
+      function picksLog() { picks = { left: null, right: null }; }
+      function askBox() {
+        var pa = $('.fs-pbal-pask', box); if (pa.dataset.on) return; pa.dataset.on = '1';
+        chipsQ(pa, P.ask, P.opts, function () { st.solved = 1; saveJ('panbalance', st); SFX.win();
+          var q2 = el('div'); box.appendChild(q2);
+          chipsQ(q2, M.q.q, M.q.opts, function () { pa.appendChild(el('div', 'fs-win show', esc(P.done || 'Puzzle solved!'))); toolDone(); }, miss);
+        }, miss);
+      }
+      bpaint();
+    }
+    draw(); paintTray(); if (st.pairs >= 2) puzzle();
+  };
+
   function init() {
     if (/[?&]review\b/.test(location.search)) html.classList.add('fs-review');
     guard('tabs', trackTabs);
@@ -13164,6 +13588,12 @@
     guard('codetest', buildCodetest);
     guard('fogtwist', buildFogtwist);
     guard('myname', buildMyname);
+    guard('squeeze', buildSqueeze);
+    guard('gates', buildGates);
+    guard('airscale', buildAirscale);
+    guard('twins', buildTwins);
+    guard('dunklab', buildDunklab);
+    guard('kgsphere', buildKgsphere);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

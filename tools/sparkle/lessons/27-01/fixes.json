@@ -1,0 +1,321 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; the plan puts Module 27 in Unit 6 “Matter, Magnets, and Changes”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Matter, Magnets &amp; Changes</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "matter and properties are physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS code; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.P.8.1 · TEKS 4.6(A)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.8.1</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 27 is Q4 in the Canvas plan (the header already says Q4)",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title and subtitle named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: The Bottle That Fights Back</div>\n        <div class=\"act-subtitle\">Something invisible pushes back</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the bottle squeeze",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Grab a clean, empty plastic bottle. Cap on tight: try to squash it. It fights back! Cap off: flat. So what was pushing back? The bottle looked empty.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → the squeeze test (played on the page, answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Try the squeeze test right here. Then tell what pushed back.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): “Device” is in the plan row, but its meaning was about converting energy. This lesson’s devices measure",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job. A balance, a ruler and a measuring cup are measuring devices: they put a number on a property."
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Stop & Reason asked about “the three devices above” (no devices on this page)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already asks for two property cards",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Property Cards for Two Objects"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task (now two property cards for two look-alike home objects, typed and sketched on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick TWO objects from your home that look a little alike: two mugs, two balls, two rocks. Give each a property card: its name, one observable property, one measurable property (a ruler or kitchen scale helps) and one behavior (does it float? does a magnet stick?). Then write one sentence comparing them.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: what the Warm-Up and Part C can use",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🧴</span>A clean, empty plastic bottle with a cap</span><span class=\"need-chip\"><span>⚖️</span>Optional: a kitchen scale, a ruler or a measuring cup</span>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "picture (ticked): the generated chart shows a 600 g / 500 mL water bottle marked “floats” (600 g in 500 mL sinks). The twins game now builds the same kind of property table live, so the picture comes out rather than teaching a wrong number. (The file stays in images/.)",
+  "old": "<div class=\"lesson-figure scroll-reveal\">.*?<div class=\"lesson-figure-caption\"><strong>The more properties you list, the better you can describe any object\\.</strong> Mass, volume, color, texture, and behavior all count\\.</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; plain words",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll describe objects by their properties and measure mass and volume yourself.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "Anything that has MASS and takes up SPACE. Air, water, your body, a rock — all matter.",
+  "new": "Anything that has MASS and takes up SPACE. Air, water, your body and a rock are all matter."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: senses first, no dashes",
+  "old": "Some are <span class=\"vtip\">observable<span class=\"vtip-box\"><span class=\"vtip-word\">Observable</span>Notice with your senses.</span></span> — you notice them with your senses. Others are <span class=\"vtip\">measurable<span class=\"vtip-box\"><span class=\"vtip-word\">Measurable</span>Has a number.</span></span> — you can put a NUMBER on them with a tool.",
+  "new": "Some are <span class=\"vtip\">observable<span class=\"vtip-box\"><span class=\"vtip-word\">Observable</span>Notice with your senses.</span></span>: you notice them with your senses. Others are <span class=\"vtip\">measurable<span class=\"vtip-box\"><span class=\"vtip-word\">Measurable</span>Has a number.</span></span>: you can put a NUMBER on them with a tool."
+ },
+ {
+  "kind": "plain",
+  "why": "safe tasting; shorter",
+  "old": "<li><strong>Observable:</strong> color, shape, texture, smell, taste (be careful!), how it sounds when tapped.</li>",
+  "new": "<li><strong>Observable:</strong> color, shape, texture, smell, taste (only food, with a grown-up).</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; the dunk lab teaches the measuring-cup idea itself",
+  "old": "<li><strong>Measurable:</strong> mass (grams, balance), volume (liters/cm³, ruler or graduated cylinder), length, hardness, temperature.</li>",
+  "new": "<li><strong>Measurable:</strong> mass (grams, on a balance), volume (how much space), length, temperature.</li>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: the game tests these instead of the text giving the answers away",
+  "old": "<p>Air is matter too — it weighs a little (very little, but real) and it takes up space (try squeezing an inflated balloon). Water is matter. Even invisible water vapor in the air is matter. What ISN'T matter? Light, sound, shadows, ideas, and feelings. They don't have mass and don't take up space.</p>",
+  "new": "<p>Air is matter too: it weighs a little, and it takes up space. You felt that in the Warm-Up! But what about a shadow, or a sound? Don’t guess. Send them through the two tests.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (the shadow) is played inside the matter gates, where students test a shadow themselves",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception paragraph repeats the Warm-Up and the air-on-the-scale wow, which let students meet the wrong idea and watch it fail",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think air \\\"isn't really there\\\".*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Florida connection → the coquina photo lead-in (the photo activity Bethany picked); same limestone facts, told where students can see them",
+  "old": "<div class=\"callout callout-info\" style=\"margin-top:18px;\">\\s*<span class=\"callout-icon\">🌴</span>\\s*<p><strong>Florida connection:</strong> Florida\\'s state rock is LIMESTONE.*?</p>\\s*</div>",
+  "new": "<p>Florida’s state rock is LIMESTONE. It makes up most of Florida’s ground, and water slowly dissolves it, carving out springs and sinkholes. At an old fort in St. Augustine, the walls are a Florida limestone called coquina (co-KEE-nah), a rock packed with tiny shells. Look closely:</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE object from the diagram (limestone, water...\"",
+  "new": "data-label=\"One object: two observable and two measurable properties\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"Why do scientists list MANY properties when they d...\"",
+  "new": "data-label=\"Why scientists list MANY properties\""
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter: the two-rocks example carries the idea (and anchors the twins game)",
+  "old": "<p>The more properties you list, the more clearly you can describe an object. Two rocks might both be \"gray and hard,\" but only one weighs 500 grams and only one is heavier than water.</p>",
+  "new": "<p>Two rocks might both be \"gray and hard,\" but only one weighs 500 grams and only one is heavier than water.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "removed: Key Concept (the body text and the games teach it), Observe & Reason (Part B question 5 asks the same thing), the Amazing Florida Fact (the helium balloon: true, cut for length) and Go Deeper (fire: true, beyond this lesson)",
+  "old": "\\s*<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?(?=<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Objects)",
+  "new": "\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Observe & Reason under the diagram (Part B question 5 is the same ask) and the helium Amazing Florida Fact (true, cut for length)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">👀</span>\\s*<div>\\s*<div class=\"label\">Observe &amp; Reason</div>.*?(?=<p>Florida’s state rock is LIMESTONE)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the fire Go Deeper (true, beyond this lesson)",
+  "old": "<details style=\"margin-top:18px;border:2px solid #8B6FC0;[^>]*>\\s*<summary[^>]*>🔭 Go Deeper · What about something like fire\\?</summary>.*?</details>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 3 = the old Explore (Property Detective → the weigh and dunk test); the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · The Weigh and Dunk Test</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Back at the lost-and-found, the twin trophies are waiting. Time to measure: weigh each one, then hold it under the water and watch how far the water climbs.</p>\n  <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its Property Detective hunt lives on as Part C’s home property cards; its calcite fact, the balloon Think like a scientist — now the air-on-the-scale wow — and the mass-vs-weight Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7; the CER already argues about air)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C checklist ends with the required sketch",
+  "old": "Two property cards (one per object) with name, observable, measurable, behavior, and a comparison sentence.",
+  "new": "Two property cards (one per object) with a name, an observable property, a measurable property, a behavior and a comparison sentence. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether air takes up space, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether air takes up space, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]
