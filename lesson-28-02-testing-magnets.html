@@ -786,6 +786,10 @@
 }
 </style>
 <script src="assets/tab-quiet.js?v=e721bcc8"></script>
+<!-- Field Station sparkle layer (G4 Science). Lesson content lives in fs-data; the layer is shared. -->
+<script type="application/json" id="fs-data">{"lesson":"28.02","week":28,"day":2,"guide":"priya","prefix":"g4sci-28-2","manifestKey":"28-02","paths":{"audio":"assets/audio/guide/","video":"assets/video/teacher/","manifest":"https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json","h2c":"assets/sparkle/vendor/html2canvas.min.js","crew":"assets/crew/","ornaments":"assets/ornaments/"},"crew":{"priya":{"name":"Dr. Priya Nair","role":"materials scientist (someone who studies what things are made of and how they behave)","initials":"PN","color":"#7A5BB5","lens":"beaker","voiceId":"uYXf8XasLslADfZ2MB4u"}},"expedition":{"num":28,"title":"Proof for the Steel Bin"},"ambient":{"icon":"♻️","label":"The recycling center"},"case":{"num":28,"title":"Proof for the Steel Bin","style":"order","hook":"Dr. Priya Nair here. The pond is clean, and the haul is at the recycling center! But Dana won’t fill the steel bin until we prove which things are magnetic steel. Listen to her voicemail below.","intake":{"head":"PALMETTO SPRINGS RECYCLING CENTER","title":"Intake slip · pond cleanup haul","cols":["Item from the haul","Steel bin?"],"rows":[["🍾","Bottle caps (a bag of 12)"],["🥫","Bean can (a “tin” can)"],["🥤","Soda can"],["🔧","Wrench"],["🥄","Spoon stamped “stainless steel”"],["🍴","Picnic fork"],["➰","Copper wire"],["🏷️","Race number tag"]],"blank":"?","proofLine":"Proof attached (fair test + data table)","sign":"Dana, intake desk"},"stills":[],"question":"Which haul items go in the steel bin, and what proof should we send Dana?","how":"Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.","clues":[{"id":"spotdiff","icon":"🔍","where":"Warm-Up: two volunteers, two answers","t":"A fair test keeps the magnet, the distance and the wait the same. Kai and Mo changed three things, so their results disagreed."},{"id":"suredial","icon":"🎯","where":"The Lesson, Part 1: the how-sure dial","t":"Names can fool you. A “tin” can is really steel, and it stuck. Test it; don’t guess."},{"id":"notes2table","icon":"📋","where":"The Lesson, Part 2: messy notes to a data table","t":"The data table proved it: the steel fork stuck, but the stainless steel spoon did not."},{"id":"ruler","icon":"📏","where":"The Lesson, Part 4: the fair test","t":"In the fair test, only iron and steel things jumped to the magnet. No jump means not magnetic."}],"solve":{"title":"What goes in the steel bin?","q":"Which answer fits all four clues?","options":[{"t":"Everything with “steel” or “tin” in its name: the caps, the bean can, the wrench, the fork and the stainless spoon. Send a photo of the bin.","why":"Check Clue 3. The stainless steel spoon didn’t stick. And a photo isn’t a fair test or a data table."},{"t":"Only the shiny things: the caps, the soda can, the spoon and the tag. Shiny is proof enough.","why":"Check Clue 2. Looks and names can fool you. The soda can and the tag are aluminum."},{"t":"The caps, the bean can, the wrench and the fork, because they stuck in a fair test. Send the data table as proof.","right":true,"why":"Case cracked! Four items passed the fair test, and the data table is the proof Dana asked for."},{"t":"Whatever Kai remembers sticking. No need to write anything down.","why":"Check Clue 1. Kai and Mo remembered opposite results for the same bottle cap."}]}},"bulletin":{"afterSel":".fs-casecard","kicker":"New voicemail","title":"Dana from the recycling center","skin":"phone","tone":"ring","todo":["Press Play and listen. You can read along.","Tap the 3 things Dana needs from us."],"device":"Voicemail","deviceSub":"Dana · 0:18","station":"1 new message from Dana","playBtn":"Play the voicemail","againBtn":"Play it again","audio":"voicemail","paperHead":"VOICEMAIL · DANA, RECYCLING CENTER","lines":["Hi, this is Dana at the Palmetto Springs Recycling Center. Thanks for the cleanup haul!","But I can’t put anything in the steel bin [[x:That’s why she called. Now listen for what she NEEDS from you.|just because it looks like steel]].","Please [[fair|run a fair test: the same magnet and the same distance, every time]].","[[table|Write every result in a data table]].","Then [[proof|send me the table as your proof]], and I’ll fill the bin. Bye!"],"foundLabel":"What Dana needs","dangerWord":"Need","countIcon":"📎","countWord":"needs found","dangers":[{"id":"fair","icon":"⚖️","t":"A fair test","does":"same magnet, same distance"},{"id":"table","icon":"📋","t":"A data table","does":"every result written down"},{"id":"proof","icon":"📎","t":"Send the proof","does":"the table goes to Dana"}],"win":"A fair test, a data table, and the proof. Now find out which items pass!"},"spotdiff":{"afterText":"Then decide whose result to trust.","kicker":"Warm-Up game","title":"Spot the differences","why":{"icon":"🔍","q":"Why compare their notes?","t":"When two tests of the same thing disagree, something about HOW they tested was different. Find it."},"todo":["Read Kai’s page and Mo’s page.","Tap each place where they tested differently.","Then decide whose result to trust."],"pages":[{"who":"Kai’s test notes","lines":["[[x:Both pages tested the same bottle cap. Look for HOW they tested.|Bottle cap from the pond.]]","Used [[magnet|the big horseshoe magnet]].","Held it [[dist|1 cm away]].","[[time|Counted to 3]] while I waited.","RESULT: it jumped! Magnetic."]},{"who":"Mo’s test notes","lines":["[[x:Both pages tested the same bottle cap. Look for HOW they tested.|Bottle cap from the pond.]]","Used [[magnet|my old, flat fridge magnet]].","Held it [[dist|8 cm away]].","[[time|Waited 1 second]].","RESULT: nothing. Not magnetic."]}],"diffs":[{"id":"magnet","icon":"🧲","t":"Different magnets"},{"id":"dist","icon":"📏","t":"Different distances"},{"id":"time","icon":"⏱️","t":"Different wait times"}],"foundLabel":"Differences you found","countWord":"differences found","q":"Kai and Mo got opposite results. Whose result should Ranger Bell trust?","opts":[{"t":"Neither yet. Test again with the same magnet, the same distance and the same wait.","ok":true},{"t":"Kai’s, because it stuck.","miss":"Maybe! But Kai and Mo changed three things. Until the test is fair, you can’t be sure."},{"t":"Mo’s, because nothing happened.","miss":"8 cm is far, and a weak magnet might not reach. That test isn’t fair either."}],"win":"Change only ONE thing, or results can’t be compared. Clue 1!","clue":"spotdiff"},"suredial":{"afterText":"Try it: predict, say how sure you are, then test.","kicker":"Part 1 game","title":"The how-sure dial","why":{"icon":"🎯","q":"Why say how sure you are?","t":"Scientists love the surprises. A prediction you were SURE about that turns out wrong teaches you the most."},"todo":["Pick a thing. Predict: will it stick?","Turn the dial: how sure are you?","Press Test it. A sure prediction that was wrong earns a gold star!"],"items":[{"id":"can","icon":"🥫","t":"A “tin” can of beans","mag":true,"line":"It stuck! A “tin” can is really steel with a very thin coat of tin."},{"id":"staple","icon":"📌","t":"A staple","mag":true,"line":"Staples are thin steel wire. Snap!"},{"id":"foil","icon":"🥧","t":"A foil pie tray","mag":false,"line":"No pull. The tray is aluminum."},{"id":"cap","icon":"🧴","t":"A plastic bottle cap","mag":false,"line":"No pull. Plastic isn’t magnetic."}],"predQ":"Your prediction:","yes":"🧲 It will stick","no":"💨 It won’t stick","sureQ":"How sure are you?","sure":["A little sure","Pretty sure","Super sure"],"testBtn":"🧲 Test it","rightLine":"You called it!","goldLine":"Big learning! You were sure, and you were wrong. Now you know something new.","wrongLine":"Surprise! That’s new learning.","yesShort":"I said: sticks","noShort":"I said: no","okShort":"right","goldShort":"Big learning!","newShort":"something new","countWord":"tested","starsWord":"gold stars","q":"Lots of scientists predict the “tin” can won’t stick, and they’re wrong. What does a wrong prediction mean?","opts":[{"t":"You found something new to learn. That’s how science works.","ok":true},{"t":"You failed the test.","miss":"Look at the gold stars. A wrong prediction isn’t a failure. It’s a discovery."},{"t":"The magnet must be broken.","miss":"The same magnet worked on the staple. Test results don’t lie."}],"win":"Wrong predictions are gold. Names can fool you, so test! Clue 2!","clue":"suredial"},"notes2table":{"afterText":"Help turn them into a real data table.","kicker":"Part 2 game","title":"Messy notes to a data table","why":{"icon":"📋","q":"What’s wrong with sticky notes?","t":"They get lost, and they don’t say which thing they mean. A data table puts every result in its own row."},"todo":["Read a sticky note. Which thing is it about?","Drag it onto that row (or tap the note, then the row).","Fill all 8 rows. Watch the spoon!"],"notesLabel":"Mo’s sticky notes","tableLabel":"Mo’s data table","cols":["Material","Result","Notes"],"rows":[{"id":"fork","icon":"🍴","t":"Picnic fork","note":"From the picnic basket. Has 4 points. SNAP! It stuck.","short":"steel; stuck fast","mag":true,"miss":"Which thing has 4 points?"},{"id":"spoon","icon":"🥄","t":"Spoon","note":"Also from the picnic basket. Shiny. “STAINLESS STEEL” stamped on it. Nothing?!","short":"stainless steel; NO pull!","mag":false,"wow":true,"miss":"Which picnic thing is stamped “stainless steel”?"},{"id":"beans","icon":"🥫","t":"Bean can","note":"Label says beans. Everybody calls it a tin can. It stuck!","short":"“tin” can is steel","mag":true,"miss":"Which thing has a beans label?"},{"id":"wrench","icon":"🔧","t":"Wrench","note":"From the tackle box. Heavy tool. Stuck hard.","short":"steel tool","mag":true,"miss":"Which heavy tool came from the tackle box?"},{"id":"wire","icon":"➰","t":"Copper wire","note":"Orange-brown and bendy. Nothing.","short":"copper","mag":false,"miss":"Which thing is orange-brown and bendy?"},{"id":"tag","icon":"🏷️","t":"Race number tag","note":"Number 14 from the duck race. Light and silver. Nothing.","short":"aluminum","mag":false,"miss":"Which thing has a race number on it?"},{"id":"caps","icon":"🍾","t":"Bottle cap","note":"Off a root beer bottle. Crimped edges. Stuck!","short":"thin steel","mag":true,"miss":"Which thing came off a root beer bottle?"},{"id":"duck","icon":"🦆","t":"Rubber duck","note":"Yellow. Squeaks. Floats. Nothing.","short":"rubber","mag":false,"miss":"Which thing squeaks and floats?"}],"stuck":"🧲 Stuck","nope":"💨 Nothing","countWord":"notes in the table","emptyLine":"Every note is in the table.","wowCard":{"icon":"🤯","t":"Wow! The spoon is stainless STEEL, and it didn’t stick. Some stainless steel has so much nickel and chromium mixed in that a magnet hardly pulls it. Only a test can tell you, and only a table keeps the proof."},"q":"Dana says, “It’s steel, so it goes in the steel bin.” Which row of the table proves her wrong?","opts":[{"t":"The spoon row: stainless steel, and no pull.","ok":true},{"t":"The fork row.","miss":"The fork stuck. That row agrees with Dana. Which steel thing did NOT stick?"},{"t":"The rubber duck row.","miss":"Nobody thinks the duck is steel. Look for a “steel” thing that didn’t stick."}],"win":"The table caught it: not every steel sticks. Clue 3!","clue":"notes2table"},"ruler":{"afterText":"and record where it jumps.","kicker":"Part 4 game","title":"Slide to the jump","why":{"icon":"📏","q":"What is a jump distance?","t":"Slide something toward a strong magnet. If it’s magnetic, at some point it leaps across the gap. How far away that happens is its jump distance."},"todo":["Lock the two fair-test settings.","Pick an item. Hold the slide button, or drag the item along the ruler toward the magnet.","Watch for a jump. Test all 8."],"model":"A model test with one strong magnet.","settings":[{"id":"mag","q":"Which magnet?","opts":[{"t":"The same magnet for every item","ok":true},{"t":"Whichever magnet is closest","why":"A strong magnet and a weak one give different results. Then you can’t compare the materials."}]},{"id":"start","q":"Where does each item start?","opts":[{"t":"At the 10 cm mark, every time","ok":true},{"t":"Anywhere I like","why":"Start closer, and it jumps sooner. Same start, every time."}]}],"lockLine":"First, lock the fair-test settings:","lockedLine":"Fair test locked: the same magnet, and every item starts at the 10 cm mark.","items":[{"id":"clip","icon":"📎","t":"Paperclip","jump":3,"line":"Steel. It leaped across a 3 cm gap."},{"id":"button","icon":"🔘","t":"Plastic button","jump":0,"line":"Plastic. It touched the magnet and just sat there."},{"id":"nail","icon":"🔩","t":"Iron nail","jump":4,"line":"Iron. It jumped from 4 cm away."},{"id":"foil","icon":"✨","t":"Foil ball","jump":0,"line":"Aluminum. No pull, even touching."},{"id":"pin","icon":"🧷","t":"Safety pin","jump":2,"line":"Steel. It jumped at 2 cm."},{"id":"spoon","icon":"🥄","t":"Stainless spoon","jump":0,"line":"The stainless spoon again: no jump. The table agrees with Mo’s note."},{"id":"washer","icon":"⚙️","t":"Steel washer","jump":2.5,"line":"Steel. It jumped at 2.5 cm."},{"id":"penny","icon":"🪙","t":"Penny","jump":0,"line":"Zinc and copper. No jump."}],"startCm":10,"slideBtn":"◀ Hold to slide it closer","dragTip":"Or drag the item along the ruler toward the magnet.","jumpWord":"It jumped at {x} cm!","noneWord":"It touched the magnet. No pull at all.","tableLabel":"My data table","cols":["Material","Jumped at","Magnetic?"],"yes":"Yes","no":"No","noJump":"no jump","countWord":"tested","q":"Why did every item use the same magnet and start at the 10 cm mark?","opts":[{"t":"So the only thing that changed was the material. That’s a fair test.","ok":true},{"t":"To make the test go faster.","miss":"Speed isn’t the reason. Think about Kai and Mo: what went wrong when they changed things?"},{"t":"Magnets only work at 10 cm.","miss":"The nail jumped at 4 cm and the pin at 2 cm. Magnets work at many distances."}],"win":"Same magnet, same start: only the material changed. Iron and steel jumped. Clue 4!","clue":"ruler"},"exploreMod":"ruler","photos":[{"id":"scrap","afterSolve":true,"lockLine":"Crack the case first.","kicker":"Case closed · one more wow","short":"A real lifting magnet","title":"A magnet as big as a table","todo":["Tap each number on the photo.","Then match each job to its number."],"why":{"icon":"🏗️","q":"What are we looking at?","t":"A real photo from about 80 years ago, at a steel mill in Pennsylvania. A giant magnet on a crane lifts scrap steel so it can be melted into new steel."},"img":"images/28-02-scrap-magnet.jpg","alt":"A huge round magnet hangs from a chain under an overhead crane, above big piles of scrap metal in a steel mill yard. Blue sky and clouds behind.","credit":"Alfred T. Palmer, Office of War Information, Library of Congress (fsac.1a35061)","license":"public domain, via Wikimedia Commons","hotspots":[{"n":1,"x":48,"y":57,"label":"The lifting magnet","t":"A giant electromagnet: a magnet that works only when electricity flows. Switch it on to grab steel, switch it off to drop it."},{"n":2,"x":26,"y":22,"label":"The overhead crane","t":"The crane rolls along its rails to carry the magnet over the piles."},{"n":3,"x":73,"y":36,"label":"The operator’s cab","t":"A worker sits in this little room and drives the crane and the magnet."},{"n":4,"x":60,"y":64,"label":"Scrap steel","t":"Old steel waiting to be melted. The magnet picks up only the magnetic metal."}],"task":{"q":"Match it: which number does each job?","items":[{"icon":"🧲","step":"Grabs steel when the power is on","ans":1,"evid":"The electromagnet grabs steel when electricity flows.","miss":"Look for the round thing on the chain."},{"icon":"👷","step":"Where a worker drives the crane","ans":3,"evid":"The operator works from the cab.","miss":"Look for the little room up high on the right."},{"icon":"♻️","step":"Old steel waiting to become new steel","ans":4,"evid":"Scrap steel gets melted and used again.","miss":"Look for the big piles."}],"win":"A recycling center sorts steel the same way you did: with a magnet. Just a much bigger one!"}}],"tool":{"name":"Magnetic field viewer","icon":"🧲","tab":"assignment","after":"#tab-assignment .activity-card","key":"28-tool","sim":"fieldviewer","kicker":"Bonus · Tool of the Week","teaser":"Put a steel plate, then an aluminum plate, in front of a magnet. Which one blocks the field?","done":"Tool of the Week: you found which plate blocks a magnetic field.","why":{"icon":"🧲","q":"What is a field viewer?","t":"Scientists sprinkle iron filings, or use a special green film, to see a magnetic field that is invisible to our eyes."},"fieldviewer":{"title":"Block the field?","todo":["Pick a setup.","Press Sprinkle and watch the filings.","Try all three, then answer the question."],"model":"A model: each little line is a filing, turned the way the magnetic field points.","sprinkleBtn":"🧂 Sprinkle the iron filings","setups":[{"k":"none","icon":"1️⃣","t":"No plate","mags":[[150,false]],"note":"The field spreads out on both sides of the magnet."},{"k":"steel","icon":"🔩","t":"Steel plate","mags":[[150,false]],"plate":{"x":270,"kind":"steel","label":"steel"},"note":"The steel plate soaks up the field. Behind it, the filings hardly line up at all."},{"k":"alu","icon":"✨","t":"Aluminum plate","mags":[[150,false]],"plate":{"x":270,"kind":"alu","label":"aluminum"},"note":"The aluminum plate changes nothing. The field goes right through it."}],"q":{"q":"Which plate blocked the magnet’s field?","opts":[{"t":"The steel plate","ok":true,"why":"Steel is magnetic, so it pulls the field into itself. Aluminum isn’t magnetic, so the field passes right through."},{"t":"The aluminum plate","why":"Look again: behind the aluminum plate, the filings still line up."},{"t":"Both of them","why":"Compare the two setups. Only one of them changed the filings."}]}}},"quizKicker":"","quizMiss":{"q1":{"B":"Looking smart isn’t the goal. Remember the gold stars for wrong predictions?","C":"A prediction is about THIS test: compare what you expected with what happened."},"q2":{"A":"The magnet lifted a tiny staple AND a heavy wrench. Size isn’t it.","B":"The penny isn’t broken. What is it made of?"},"q3":{"A":"A table can’t change the magnet. Did Mo’s table change any results?","C":"A good table KEEPS the wrong predictions. They’re where the learning is!"}},"flags":{"ans-1":[{"label":"the thing you tested","re":"can|staple|tray|foil|cap|fork|spoon|wrench|wire|tag|duck|clip|button|nail|pin|washer|penny"},{"label":"your prediction","re":"predict|guess|thought|think|said|expect"},{"label":"the result","re":"stuck|stick|jump|pull|attract|nothing|no pull|didn.?t|did not|result"},{"label":"what you learned","re":"learn|now i know|found out|shows|means|because|so |realiz|surpris"}],"ans-2":[{"label":"not magnetic","re":"not magnetic|nonmagnetic|non-magnetic|isn.?t magnetic|not attract|doesn.?t|no attraction|ignore"},{"label":"the new understanding","re":"not all metal|some metal|copper|zinc|kind of metal|only iron|iron|steel|nickel|wrong|learn"}],"cer-4":[{"label":"your claim","re":"agree|disagree|wrong|right|true|not true|false|need to write|should write"},{"label":"two pieces of evidence","any":["kai","mo","opposite","remember","forgot","sticky","note","table","spoon","stainless","proof","dana","row","jump","data","fork","tin can","bean"],"min":2},{"label":"your reasoning","re":"because|so |this shows|that shows|this means|that means|which means|proves|since"}]},"minWords":{"ans-1":15,"ans-2":12,"cer-4":30},"hints":{"ans-1":["Pick one thing you tested today: the tin can, the spoon, a thing on the ruler…","What did you predict? What really happened?","Try: I predicted the ___ would ___. It ___. I learned that ___."],"ans-2":["The penny is metal, but did it stick?","What is a penny made of? Is that one of the magnetic metals?","Try: The data shows the penny is ___. Now I understand that ___."]},"scholar":{},"planner":{"before":"cer-4","title":"Your claim and two pieces of evidence","rows":[{"label":"1. Pick your side","options":["I agree","I disagree"],"pick":1},{"label":"2. Pick two pieces of evidence from the lesson","pick":2,"options":["Kai and Mo remembered opposite results for the same bottle cap.","Mo’s sticky notes were a mess until we put them in a data table.","Only the data table could prove to Dana that the stainless spoon didn’t stick.","Writing takes a long time."]}],"note":"Tap your side and two facts. Then write your reasoning in your own words."},"slots":{"welcome":{"label":"Welcome · Proof for the Steel Bin","length":"40–50 s"},"warmup":{"label":"Warm-Up · spot the differences (Clue 1)","length":"15–20 s","script":"Dr. Nair here. Kai and Mo tested the same bottle cap and got opposite results! Read both notes. Tap every place where they tested differently. Then decide: whose result should we trust?"},"vocab":{"label":"Word Wall","length":"30–45 s"},"lesson":{"label":"The Lesson","length":"25–35 s"},"part1":{"label":"Part 1 · the how-sure dial (Clue 2)","length":"15–20 s","script":"Predict first. Will it stick? Then turn the dial: how sure are you? Press Test it. If you were sure and wrong, you earn a gold star. That is big learning!"},"part2":{"label":"Part 2 · messy notes to a data table (Clue 3)","length":"15–20 s","script":"Mo used sticky notes, and they are a mess! Read each note, then drag it onto the right row of the data table. Watch the spoon row. A surprise is hiding there."},"part3":{"label":"Part 3 · make it a fair test","length":"20–30 s"},"explore":{"label":"Part 4 · slide to the jump (Clue 4)","length":"15–20 s","script":"First, lock the fair test settings. Then pick an item and slide it toward the magnet along the ruler. Does it jump? At how many centimeters? Your data table fills in as you go."},"quiz":{"label":"Self-Check","length":"15–20 s"},"assignment":{"label":"Assignment · crack the case","length":"20–30 s"},"partb":{"label":"Part B","length":"30 s"},"partc":{"label":"Part C · run your own magnet test","length":"30 s"},"evidence":{"label":"Use your evidence · CER","length":"15–20 s"},"closing":{"label":"Case closed","length":"20–30 s","notes":"Celebrate; tease week 29 (mystery materials)."}},"videoOff":[],"lensVoice":false,"camera":{"max":8,"huntTitle":"Bonus: can you snap all 4 shots on this list?","missions":["All three differences found (Warm-Up)","A gold star on the how-sure dial (The Lesson)","Mo’s finished data table (The Lesson)","Your ruler data table with all 8 items (The Lesson)"]},"sketch":{"tip":"Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.","prompts":["Kai and Mo’s two tests","The stainless spoon and the steel fork","Something jumping to a magnet"],"inline":[{"id":"partc","afterPart":"C","kicker":"Part C · draw and label your two circles","required":true,"minLabels":4,"prompts":["Draw two big circles","Label them MAGNETIC and NONMAGNETIC","Draw your 6 items in the right circles","Label each item"]}]},"hlCoach":{"title":"Highlight like a scientist","tips":[["🔑","Highlight key words, not whole paragraphs.","If everything is yellow, nothing stands out. Aim for a few words in each paragraph."],["📖","Look for words that are explained.","Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."],["🎯","Look for answers to the Big Question.","Ask yourself: does this tell how to test fairly, or what counts as evidence?"],["🔗","Watch for clue words.","“Because”, “so” and “first … then” show how ideas connect."],["🎨","Use the colors on purpose.","Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."]],"practice":{"q":"Practice: tap the 3 to 5 words that matter most in this sentence.","text":"A fair test changes only one thing, and a data table keeps every result as evidence.","key":["fair","one","data","table","evidence"],"small":["a","and","only","keeps"],"model":"A scientist might highlight “fair test”, “one thing” and “data table”. Those words hold the big idea."},"outside":"This works in every subject. When you read anything, save the words that answer your question, and skip the rest."},"specimen":{"kicker":"Specimen collected","stamp":"CASE CLOSED","icon":"🧾","name":"Dana’s steel-bin receipt","line":"You cracked Case 28, part 2, and Dana’s steel-bin receipt goes in your Field Notebook. (A specimen is something a scientist collects to keep.) Next week: mystery materials!"},"notebookTitle":"Unit 5 · Energy, Motion & Collisions","notebook":[{"lesson":"18.01","icon":"🧫","name":"Red tide sample slide"},{"lesson":"18.02","icon":"🎟️","name":"Star party ticket"},{"lesson":"19.01","icon":"🏁","name":"Derby checkered flag"},{"lesson":"19.02","icon":"🧦","name":"The fluke sock"},{"lesson":"20.01","icon":"💡","name":"The burnt-out pier bulb"},{"lesson":"20.02","icon":"📋","name":"The approved work order"},{"lesson":"21.01","icon":"🔩","name":"A bolt from the dented bumper"},{"lesson":"21.02","icon":"✉️","name":"An opened prediction envelope"},{"lesson":"22.01","icon":"🪶","name":"A pelican feather from the solar panel"},{"lesson":"22.02","icon":"📐","name":"Your approved patent drawing"},{"lesson":"23.01","icon":"🎧","name":"The canal hum recording"},{"lesson":"23.02","icon":"🎀","name":"The Bright Idea ribbon"},{"lesson":"24.01","icon":"🧾","name":"Order slip #15"},{"lesson":"24.02","icon":"🧻","name":"Teo’s napkin plan"},{"lesson":"25.01","icon":"🗺️","name":"Teo’s treasure map"},{"lesson":"25.02","icon":"🪧","name":"Zippy’s sign"},{"lesson":"26.01","icon":"🦆","name":"A derby duck"},{"lesson":"26.02","icon":"🔦","name":"A judge’s signal flashlight"},{"lesson":"27.01","icon":"🏆","name":"The derby trophy"},{"lesson":"27.02","icon":"🏅","name":"The new trophy design"},{"lesson":"28.01","icon":"🎣","name":"The rusty bolt from the pond"},{"lesson":"28.02","icon":"🧾","name":"Dana’s steel-bin receipt"}],"rankLine":"Your Field Station ID just updated. Keep going, scientist.","lensWin":"All six words are sorted. Nice testing!","inputs":[{"id":"tab1","type":"swap","find":{"sel":".tab-btn[data-tab=\"vocab\"]"},"swap":["📚 Vocabulary","🌅 Warm-Up"]},{"id":"sw-words","type":"swap","find":{"sel":"p","text":"Tap a card to flip it"},"swap":["<strong>Tap a card to flip it<\/strong> and read what the word means.","<strong>Tap a word<\/strong> to see what it means."]},{"id":"fs-warm","type":"frame","find":{"sel":"#tab-vocab p","text":"Then decide whose result to trust."},"label":"Warm-Up: two volunteers, two answers","q":"Warm-Up: what Kai and Mo did differently, whose result I trust, and how I would test fairly.","title":"My fair-test fix","compact":true,"fields":[{"t":"What they did differently","icon":"🔍","ph":"Kai ___, but Mo ___."},{"t":"Whose result I trust","icon":"🤔","ph":"I trust ___ because ___."},{"t":"How I’d test it fairly","icon":"⚖️","ph":"Use the same ___ and the same ___."}]},{"id":"fs-partc","type":"frame","find":{"sel":"#tab-assignment p","text":"finish the sentence about your pattern"},"label":"Part C: run your own magnet test","q":"Part C: my 6 items, predictions, results and pattern.","title":"My magnet test","fields":[{"t":"My 6 items","icon":"🧺","ph":"1. ___ 2. ___ 3. ___ 4. ___ 5. ___ 6. ___"},{"t":"My predictions","icon":"🎯","ph":"Stick: ___. Won’t stick: ___."},{"t":"My results","icon":"🧲","ph":"Stuck: ___. Didn’t stick: ___."},{"t":"My pattern","icon":"📋","ph":"I claim ___ are magnetic. My evidence is ___.","long":true}]},{"id":"fs-cer","type":"cer","target":"cer-4","find":{"sel":"textarea#cer-4"},"reminder":"Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.","parts":[{"k":"C","t":"Claim","ask":"Do scientists need to write their results down?","ph":"I agree / I disagree because…"},{"k":"E","t":"Evidence","ask":"Two facts from the lesson. Tap them in the planner above, or type them.","ph":"One fact is… Another fact is…","rows":3},{"k":"R","t":"Reasoning","ask":"How do those facts prove your claim?","ph":"This shows that…","rows":3}]},{"id":"relabel","type":"relabel","map":{"ans-1":"Part B · Question 5","ans-2":"Part B · Question 6","cer-4":"Use Your Evidence (CER)"}},{"id":"sw-check","type":"swap","find":{"sel":"p","text":"Tap to toggle"},"swap":[" Tap to toggle.",""]},{"id":"sw-circle","type":"swap","find":{"sel":".card-head-title","text":"Revisit Our Key Question"},"swap":["Revisit Our Key Question","Back to the Big Question"]}],"cues":{"warmup":[{"at":"^opposite","sel":".fs-sdf-two","fx":"glow","scroll":true},{"at":"^notes","sel":".fs-sdf-page","i":0,"fx":"pop"},{"at":"^tap","sel":".fs-sdf-w[data-id]","i":0,"fx":"point"},{"at":"^trust","sel":"[data-mod=\"spotdiff\"] .fs-todo li","i":2,"fx":"trace"}],"part1":[{"at":"^predict","sel":".fs-srd-card .fs-sv-q","i":0,"fx":"pop","scroll":true},{"at":"^dial","sel":".fs-srd-dial","fx":"point"},{"at":"^test","sel":".fs-srd-go","fx":"point"},{"at":"^gold","sel":"[data-mod=\"suredial\"] .fs-count","fx":"pop"}],"part2":[{"at":"^sticky","sel":".fs-n2t-board","fx":"glow","scroll":true},{"at":"^drag","sel":".fs-n2t-note","i":0,"fx":"point"},{"at":"^table","sel":".fs-n2t-table","fx":"glow"},{"at":"^spoon","sel":".fs-n2t-row[data-id=\"spoon\"]","fx":"wiggle"}],"explore":[{"at":"^lock","sel":".fs-jmp-set","fx":"pop","scroll":true},{"at":"^slide","sel":"[data-mod=\"ruler\"] .fs-todo li","i":1,"fx":"trace"},{"at":"^ruler","sel":".fs-jmp-stage","fx":"glow"},{"at":"^table","sel":"[data-mod=\"ruler\"] .fs-count","fx":"pop"}]},"cueWords":{},"banner":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 920 200\" role=\"img\" aria-label=\"The Palmetto Springs dock at golden hour. On a plank, a magnet sits at the end of a ruler and a paperclip leaps toward it. A steel can and an aluminum can stand beside two bins.\">\n  <defs>\n    <linearGradient id=\"b282sky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#F6C98A\"/><stop offset=\".6\" stop-color=\"#F9DDB0\"/><stop offset=\"1\" stop-color=\"#FBE9CC\"/><\/linearGradient>\n    <linearGradient id=\"b282water\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#6FA7B5\"/><stop offset=\"1\" stop-color=\"#2F5F6E\"/><\/linearGradient>\n    <style>\n      .b282-clip { animation: b282jump 3s ease-in infinite; }\n      @keyframes b282jump { 0%,55% { transform: translateX(0); } 70%,92% { transform: translateX(-58px); } 100% { transform: translateX(0); } }\n      .b282-glint { animation: b282gl 5s ease-in-out infinite; }\n      @keyframes b282gl { 0%,100% { opacity: .35; } 50% { opacity: .85; } }\n      @media (prefers-reduced-motion: reduce) { .b282-clip, .b282-glint { animation: none; } }\n    <\/style>\n  <\/defs>\n  <rect width=\"920\" height=\"200\" fill=\"url(#b282sky)\"/>\n  <circle cx=\"140\" cy=\"58\" r=\"30\" fill=\"#FFE2A3\" opacity=\".9\"/>\n  <path d=\"M0 98 Q90 86 180 94 T360 90 T560 96 T760 88 T920 94 V112 H0z\" fill=\"#5E7B4C\"/>\n  <rect y=\"108\" width=\"920\" height=\"92\" fill=\"url(#b282water)\"/>\n  <rect class=\"b282-glint\" x=\"60\" y=\"122\" width=\"180\" height=\"4\" rx=\"2\" fill=\"#FFE7B0\"/>\n  <rect class=\"b282-glint\" x=\"680\" y=\"134\" width=\"140\" height=\"3\" rx=\"1.5\" fill=\"#FFE7B0\"/>\n  <g fill=\"#4F6E3E\"><rect x=\"842\" y=\"80\" width=\"3\" height=\"40\"/><rect x=\"852\" y=\"74\" width=\"3\" height=\"46\"/><rect x=\"862\" y=\"84\" width=\"3\" height=\"36\"/><\/g>\n  <!-- the dock plank -->\n  <rect x=\"220\" y=\"138\" width=\"520\" height=\"16\" fill=\"#8A6A44\"/><rect x=\"220\" y=\"134\" width=\"520\" height=\"6\" fill=\"#A98656\"/>\n  <g fill=\"#6E5236\"><rect x=\"236\" y=\"154\" width=\"10\" height=\"46\"/><rect x=\"474\" y=\"154\" width=\"10\" height=\"46\"/><rect x=\"714\" y=\"154\" width=\"10\" height=\"46\"/><\/g>\n  <!-- the ruler -->\n  <rect x=\"300\" y=\"120\" width=\"250\" height=\"16\" fill=\"#F3D98B\" stroke=\"#B08A1E\" stroke-width=\"1.5\"/>\n  <g stroke=\"#5C442E\" stroke-width=\"1.5\">\n    <line x1=\"310\" y1=\"120\" x2=\"310\" y2=\"129\"/><line x1=\"333\" y1=\"120\" x2=\"333\" y2=\"126\"/><line x1=\"356\" y1=\"120\" x2=\"356\" y2=\"126\"/><line x1=\"379\" y1=\"120\" x2=\"379\" y2=\"126\"/><line x1=\"402\" y1=\"120\" x2=\"402\" y2=\"126\"/>\n    <line x1=\"425\" y1=\"120\" x2=\"425\" y2=\"129\"/><line x1=\"448\" y1=\"120\" x2=\"448\" y2=\"126\"/><line x1=\"471\" y1=\"120\" x2=\"471\" y2=\"126\"/><line x1=\"494\" y1=\"120\" x2=\"494\" y2=\"126\"/><line x1=\"517\" y1=\"120\" x2=\"517\" y2=\"126\"/><line x1=\"540\" y1=\"120\" x2=\"540\" y2=\"129\"/>\n  <\/g>\n  <!-- the magnet at the end of the ruler -->\n  <rect x=\"262\" y=\"104\" width=\"22\" height=\"30\" fill=\"#2D6FB8\" stroke=\"#3B3328\" stroke-width=\"1.5\"/><rect x=\"284\" y=\"104\" width=\"22\" height=\"30\" fill=\"#D9453B\" stroke=\"#3B3328\" stroke-width=\"1.5\"/>\n  <!-- the paperclip, leaping toward the magnet -->\n  <g transform=\"translate(372 108)\"><g class=\"b282-clip\">\n    <path d=\"M2 4 h26 a4 4 0 0 1 0 8 h-22 a3 3 0 0 1 0 -6 h18\" fill=\"none\" stroke=\"#7E868B\" stroke-width=\"2.5\" stroke-linecap=\"round\"/>\n  <\/g><\/g>\n  <!-- two bins with a steel can and an aluminum can -->\n  <g transform=\"translate(590 92)\">\n    <path d=\"M0 6 h46 l-5 46 h-36z\" fill=\"#5B646B\" stroke=\"#3B3328\" stroke-width=\"1.5\"/>\n    <rect x=\"12\" y=\"-10\" width=\"20\" height=\"24\" rx=\"2\" fill=\"#B9BFC4\" stroke=\"#6C757B\" stroke-width=\"1.5\"/><line x1=\"12\" y1=\"-2\" x2=\"32\" y2=\"-2\" stroke=\"#8C959B\"/><line x1=\"12\" y1=\"6\" x2=\"32\" y2=\"6\" stroke=\"#8C959B\"/>\n    <path d=\"M60 6 h46 l-5 46 h-36z\" fill=\"#2F7A55\" stroke=\"#1F4F38\" stroke-width=\"1.5\"/>\n    <rect x=\"74\" y=\"-12\" width=\"18\" height=\"26\" rx=\"4\" fill=\"#DCE3E7\" stroke=\"#9AA5AC\" stroke-width=\"1.5\"/><ellipse cx=\"83\" cy=\"-12\" rx=\"9\" ry=\"2.5\" fill=\"#C9D1D6\"/>\n  <\/g>\n<\/svg>\n"}</script>
+<link rel="stylesheet" href="assets/sparkle/fs-sparkle.css?v=9d84788a">
+<script src="assets/tab-quiet.js?v=e721bcc8"></script>
 </head>
 <body>
 <div class="page-wrap">
@@ -1150,7 +1154,7 @@
     <div>
       <div class="info-label">Quarter / Week</div>
       <div class="info-value">Q4 &middot; Week 28</div>
-      <div class="info-detail">Ecosystems &amp; Energy</div>
+      <div class="info-detail">Matter, Magnets &amp; Changes</div>
     </div>
   </div>
   <div class="info-item">
@@ -1158,7 +1162,7 @@
     <div>
       <div class="info-label">Lesson</div>
       <div class="info-value">Lesson 28.02</div>
-      <div class="info-detail">Life Science</div>
+      <div class="info-detail">Physical Science</div>
     </div>
   </div>
   <div class="info-item">
@@ -1173,7 +1177,7 @@
     <div class="info-icon" style="background:#EEF8F0;">🌿</div>
     <div>
       <div class="info-label">Standards</div>
-      <div class="info-value">SC.4.N.1.1, SC.4.P.8.4 · TEKS 4.7(C), 4.2(A)</div>
+      <div class="info-value">SC.4.N.1.1, SC.4.P.8.4</div>
       <div class="info-detail">Magnetic Forces & Data Collection</div>
     </div>
   </div>
@@ -1197,7 +1201,7 @@
           <div class="question">"What EVIDENCE shows whether a material is magnetic — and how do we test it like a scientist?"</div>
         </div>
       </div>
-      <p>Hold this question in your head as you work. By the end of the lesson, you'll have run a systematic test on 6 materials, recorded data in a table, and used your evidence to classify magnetic vs nonmagnetic materials.</p>
+      <p>Keep this question in mind. By the end, you’ll have run a fair test on 8 materials, recorded the data in a table and used it as evidence.</p>
     </div>
   </div>
 
@@ -1228,16 +1232,13 @@
 
 <div class="need-strip">
   <span class="need-strip-label">🎒 You'll need:</span>
-  <span class="need-chip"><span>📓</span>Science notebook</span>
-  <span class="need-chip"><span>✏️</span>Colored pencils</span>
-  <span class="need-chip"><span>🔆</span>A sunny window or memory of one</span>
+  <span class="need-chip"><span>🧲</span>A fridge magnet</span><span class="need-chip"><span>📏</span>Optional: a ruler</span>
 </div>
 
 <!-- ═══ TAB BAR ═══ -->
 <div class="tab-bar" id="tabBar">
   <button class="tab-btn active" data-tab="vocab" onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="lesson" onclick="switchTab('lesson')">📘 The Lesson<span class="tab-check">✓</span></button>
-  <button class="tab-btn" data-tab="explore" onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
 </div>
@@ -1261,34 +1262,22 @@
 </div>
 
 
-</div>
+
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#E8636B;">1</div>
       <div style="flex:1;">
-        <div class="act-title">🌅 Warm-Up: What Goes In, What Comes Out?</div>
-        <div class="act-subtitle">A familiar device, a hidden change</div>
+        <div class="act-title">🌅 Warm-Up: Two Volunteers, Two Answers</div>
+        <div class="act-subtitle">Same bottle cap, opposite results</div>
       </div>
       <div class="act-time" style="background:#E8636B;">⏱ 5 min</div>
     </div>
     <div class="act-body">
-      <p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>
+      <p>Two cleanup volunteers, Kai and Mo, tested the same bottle cap from the pond haul. They wrote down opposite results!</p>
 
-      <p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>
+      <p>Find what they did differently. Then decide whose result to trust.</p>
 
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Notice &amp; Wonder</div>
-          <div class="question">"The bread went in cold and came out hot. Something happened inside the toaster — but it wasn't a collision and nothing moved between objects. What kind of change was that?"</div>
-        </div>
       </div>
-
-      <div class="callout callout-tip">
-        <span class="callout-icon">💡</span>
-        <p>Today you'll learn that energy can CONVERT — change from one form into a completely different form. Toasters, flashlights, wind turbines, your own body — they're all energy converters.</p>
-      </div>
-    </div>
   </div>
 
   <div class="card theme-rock scroll-reveal">
@@ -1300,12 +1289,12 @@
       </div>
     </div>
     <div class="card-body">
-      <p>These six words show up all through the lesson. <strong>Tap a card to flip it</strong> and read the definition. You don't need to memorize them yet — they'll start sticking as you use them.</p>
+      <p><strong>Tap a card to flip it</strong> and read what the word means.</p>
       <div class="vocab-grid">
         <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🔩</div><div class="fc-word">Magnetic</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Magnetic</div><div class="fc-def">A material that a magnet attracts. Iron, nickel, and steel are magnetic.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
         <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🚷</div><div class="fc-word">Nonmagnetic</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Nonmagnetic</div><div class="fc-def">A material that a magnet IGNORES. Wood, plastic, paper, aluminum, and most non-iron metals are nonmagnetic.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
-        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🎯</div><div class="fc-word">Prediction</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Prediction</div><div class="fc-def">A reasonable guess about what will happen — made BEFORE the test, based on what you already know.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
-        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⚙️</div><div class="fc-word">Device</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Device</div><div class="fc-def">A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🎯</div><div class="fc-word">Prediction</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Prediction</div><div class="fc-def">A reasonable guess about what will happen, made BEFORE the test and based on what you already know.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⚙️</div><div class="fc-word">Device</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Device</div><div class="fc-def">A tool or machine made to do a job, like a magnet or a recycling sorter.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
         <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🤝</div><div class="fc-word">Attract</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Attract</div><div class="fc-def">To PULL TOGETHER. A magnet attracts iron, nickel, and steel.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
         <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🚫</div><div class="fc-word">Repel</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Repel</div><div class="fc-def">To PUSH APART. Two of the same poles (N+N or S+S) push away from each other.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
       </div>
@@ -1334,17 +1323,9 @@
     <div class="act-body">
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:18px;">Part 1 · Make a Prediction First</h3>
-      <p>Real scientists don't just touch things with a magnet and see what happens. They make a <span class="vtip">prediction<span class="vtip-box"><span class="vtip-word">Prediction</span>A reasonable guess before testing.</span></span> first. Based on what you already know — magnets attract iron, nickel, and steel — you can usually guess whether something is <span class="vtip">magnetic<span class="vtip-box"><span class="vtip-word">Magnetic</span>A magnet attracts it.</span></span> or <span class="vtip">nonmagnetic<span class="vtip-box"><span class="vtip-word">Nonmagnetic</span>A magnet ignores it.</span></span>.</p>
+      <p>Real scientists don't just touch things with a magnet and see what happens. They make a <span class="vtip">prediction<span class="vtip-box"><span class="vtip-word">Prediction</span>A reasonable guess before testing.</span></span> first. Based on what you already know (magnets attract iron, nickel and steel), you can usually guess whether something is <span class="vtip">magnetic<span class="vtip-box"><span class="vtip-word">Magnetic</span>A magnet attracts it.</span></span> or <span class="vtip">nonmagnetic<span class="vtip-box"><span class="vtip-word">Nonmagnetic</span>A magnet ignores it.</span></span>.</p>
 
-      <p>Predicting before testing has two big benefits: (1) it shows what you ALREADY know; (2) when your prediction is WRONG, that's where you learn the most. A wrong prediction is a clue that there's something interesting about the material you didn't know.</p>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🛑</span>
-        <div>
-          <div class="label">Stop &amp; Think</div>
-          <div class="question">"A penny is metal. So is a paperclip. If you predict the magnet will attract BOTH and the magnet only attracts the paperclip — what does that tell you about the penny?"</div>
-        </div>
-      </div>
+      <p>Predicting first shows what you ALREADY know. And when a prediction is WRONG, that’s where you learn the most. Try it: predict, say how sure you are, then test.</p>
 
       <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 2 · Use a Data Table</h3>
       <p>A <span class="vtip">data table<span class="vtip-box"><span class="vtip-word">Data table</span>Organized record of results.</span></span> keeps your results clear and easy to compare. For a magnet test, a good table has 4 columns: MATERIAL, PREDICTION, RESULT, and NOTES.</p>
@@ -1357,210 +1338,20 @@
       </ul>
 
       <p>When you're done, sort the materials into two groups based on RESULTS: <span class="vtip">attracted<span class="vtip-box"><span class="vtip-word">Attract</span>Pull together.</span></span> (magnetic) and not attracted (nonmagnetic). Then look for patterns: what do all the magnetic items have in common?</p>
-
-      <p><strong>Common misconception:</strong> Some people think the prediction has to be CORRECT for the test to be useful. The OPPOSITE is true — the most surprising thing you learn often comes from a prediction that turned out to be wrong. Wrong predictions are GOLD in science.</p>
+      <p>Mo didn’t use a table. Mo used sticky notes. Help turn them into a real data table.</p>
       <div class="lesson-figure scroll-reveal">
         <div class="lesson-figure-label">📋 A Magnet Test Data Table</div>
         <img src="images/28-02-magnet-data-table.png"
-             alt="A sample data table for a magnet test with columns for material, prediction, result (attract or no effect), and notes. Below, the materials are sorted into MAGNETIC and NONMAGNETIC groups."
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
-        <div class="image-suggestion" style="display:none;">
-          <div class="image-suggestion-icon">🖼️</div>
-          <div class="image-suggestion-label">Suggested Image — Generate This</div>
-          <div class="image-suggestion-desc">A wide horizontal infographic split into TWO parts. LEFT side: a CLEAN DATA TABLE with 4 columns and 6 rows of sample data. HEADER row: "Material | Prediction | Result | Notes." Rows: (1) Paperclip / yes / ATTRACTS / steel; (2) Aluminum can / no / no effect / aluminum is not magnetic; (3) Penny / yes / no effect / surprise! copper-coated zinc; (4) Steel nail / yes / ATTRACTS / strongly; (5) Plastic spoon / no / no effect / plastic; (6) Rubber band / no / no effect / rubber. RIGHT side: a SORTING DIAGRAM with two big circles labeled "MAGNETIC" (containing the paperclip and steel nail icons) and "NONMAGNETIC" (containing the aluminum can, penny, plastic spoon, and rubber band icons). Title at top: "Predict. Test. Record. Sort." Use Optima palette: navy text, coral table accents, soft green/red circles. Cream/transparent background. 16:9 ratio. Friendly diagram style, 4th-grade-appropriate.</div>
-          <div class="image-suggestion-file">Save as: images/28-02-magnet-data-table.png</div>
-        </div>
-        <div class="lesson-figure-caption"><strong>A good investigation always ends with a sort.</strong> Group the magnetic items together — and look for what they have in common.</div>
+             alt="A sample data table for a magnet test with columns for material, prediction, result (attract or no effect), and notes. Below, the materials are sorted into MAGNETIC and NONMAGNETIC groups." />
+        <div class="lesson-figure-caption"><strong>A good investigation always ends with a sort.</strong> Group the magnetic items together, and look for what they have in common.</div>
       </div>
 
-      <div style="background:#FFF6E5;border:2.5px solid #F0C97A;border-radius:14px;padding:18px 20px;margin:18px 0;">
-        <div style="font-size:12px;color:#9A6E10;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:6px;">⭐ Key Concept</div>
-        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin:0;line-height:1.6;">A good magnet investigation has 4 steps: predict, test, record in a data table, and classify materials based on evidence.</p>
-      </div>
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 3 · Make It a Fair Test</h3>
+      <p>A fair test changes only ONE thing. Everything else stays the same: the same magnet, the same distance, the same way of moving it. Then, if the results are different, you know why: it was the material.</p>
 
-      <div class="socratic-q">
-        <span class="sq-icon">🧠</span>
-        <div>
-          <div class="label">Stop &amp; Reason</div>
-          <div class="question">"Look at the three devices above. Pick TWO. For each, name the INPUT form and the OUTPUT form. Are any of the inputs the same? Are any of the outputs the same?"</div>
-        </div>
-      </div>
-
-      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Four Test Results</h3>
-      <p><strong>Tap a result</strong> to see what the test showed and what it teaches us.</p>
-
-      <div class="diagram-wrap diagram-interactive" style="background:linear-gradient(135deg,#E5D8C5,#D8B895);border-radius:14px;padding:14px;">
-        <div style="font-size:13px;color:#5A3010;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;text-align:center;">
-          🔬 Tap a test result
-        </div>
-        <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,sans-serif;width:100%;height:auto;" role="img" aria-label="Four magnet test results">
-
-          <rect x="0"   y="0"   width="360" height="160" fill="#C5E5C5" opacity="0.6"/>
-          <rect x="360" y="0"   width="360" height="160" fill="#E5C5C5" opacity="0.6"/>
-          <rect x="0"   y="160" width="360" height="160" fill="#C5D8E5" opacity="0.6"/>
-          <rect x="360" y="160" width="360" height="160" fill="#E5D8B5" opacity="0.6"/>
-
-          <line x1="360" y1="0"   x2="360" y2="320" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-          <line x1="0"   y1="160" x2="720" y2="160" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-
-          <text x="180" y="90" text-anchor="middle" font-size="56">✅</text>
-          <rect x="100" y="125" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="180" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#1F5F3A">PREDICTED YES, GOT YES</text>
-
-          <text x="540" y="90" text-anchor="middle" font-size="56">❌</text>
-          <rect x="460" y="125" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="540" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#7A1B26">PREDICTED YES, GOT NO</text>
-
-          <text x="180" y="250" text-anchor="middle" font-size="56">❔</text>
-          <rect x="100" y="285" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="180" y="305" text-anchor="middle" font-size="14" font-weight="900" fill="#1B4A6F">PREDICTED NO, GOT YES</text>
-
-          <text x="540" y="250" text-anchor="middle" font-size="56">⚪</text>
-          <rect x="460" y="285" width="160" height="28" rx="6" fill="rgba(255,255,255,0.85)"/>
-          <text x="540" y="305" text-anchor="middle" font-size="14" font-weight="900" fill="#7A5414">PREDICTED NO, GOT NO</text>
-
-          <rect class="hotspot" x="0" y="0" width="360" height="160"
-                fill="#5A8845"
-                data-part="Predicted yes, got yes"
-                data-info="Example: paperclip. You guessed the magnet would attract it (because it's steel), and it did. CONCLUSION: your understanding of magnets is correct for steel. RECORD IT: 'Confirmed — steel is magnetic.'"/>
-          <rect class="hotspot" x="360" y="0" width="360" height="160"
-                fill="#E8636B"
-                data-part="Predicted yes, got no"
-                data-info="Example: a penny (you thought all metal would attract). The magnet IGNORED it. CONCLUSION: not all metal is magnetic. Pennies are mostly copper and zinc. NEW LEARNING: only certain metals (iron, nickel, steel) are magnetic — this is the most valuable test result you got."/>
-          <rect class="hotspot" x="0" y="160" width="360" height="160"
-                fill="#2D7AA6"
-                data-part="Predicted no, got yes"
-                data-info="Example: you guessed a steel fork wouldn't attract (because forks LOOK shiny like aluminum). The magnet pulled it. CONCLUSION: looks can be deceiving — steel still attracts even when it's polished. NEW LEARNING: check the material, not just the appearance."/>
-          <rect class="hotspot" x="360" y="160" width="360" height="160"
-                fill="#D4A017"
-                data-part="Predicted no, got no"
-                data-info="Example: a plastic spoon. You guessed no, and the magnet did nothing. CONCLUSION: your understanding is correct for plastic. RECORD IT: 'Confirmed — plastic is nonmagnetic.' (Also useful — confirmation strengthens your idea.)"/>
-        </svg>
-
-        <div class="diagram-info-panel" id="diagramPanel">
-          <span class="dip-word" id="diagramWord"></span>
-          <span id="diagramInfo"></span>
-        </div>
-      </div>
-      
-      
-      <div class="socratic-q">
-        <span class="sq-icon">👀</span>
-        <div>
-          <div class="label">Observe &amp; Reason</div>
-          <div class="question">"Pick TWO test results from the diagram. For each, explain what the result tells the scientist and what the NEW LEARNING is."</div>
-        </div>
-      </div>
-
-      <div class="mind-blow">
-        <span class="mind-blow-icon">🤯</span>
-        <div class="mind-blow-content">
-          <div class="mind-blow-label">Amazing Florida Fact</div>
-          <div class="mind-blow-text">Some Florida sea turtle species can SENSE Earth's magnetic field to navigate. They use this internal "compass sense" to migrate thousands of miles across the open ocean and find their way back to the exact beach where they hatched.</div>
-        </div>
-      </div>
-      <div class="callout callout-info" style="margin-top:18px;">
-        <span class="callout-icon">🌴</span>
-        <p><strong>Florida connection:</strong> Many Florida lighthouses and ships still keep magnetic compasses as backup navigation in case GPS fails. Sailors compare their magnetic compass readings with paper charts to navigate safely along Florida's coastline.</p>
-      </div>
-
-      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
-        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · Testing with controls</summary>
-        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
-          Real scientists also run "controls" — testing items they KNOW are magnetic (a steel paperclip) and items they KNOW are not (a plastic block) to make sure the magnet and the test method work right. If your "known" items respond as expected, you trust the rest of your results.
-        </div>
-      </details>
-
-      <div class="tab-next-wrap">
-        <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- TAB 3: GUIDED EXPLORATION          -->
-<!-- ═══════════════════════════════════ -->
-<div class="tab-panel" id="tab-explore">
-
-  <div class="activity-card act-explore scroll-reveal">
-    <div class="act-head">
-      <div class="act-num" style="background:#55C8E8;">3</div>
-      <div style="flex:1;">
-        <div class="act-title">🔬 Investigation: 8-Material Magnet Test</div>
-        <div class="act-subtitle">Run a real systematic test with predictions and data</div>
-      </div>
-      <div class="act-time" style="background:#55C8E8;">⏱ 8 min</div>
-    </div>
-    <div class="act-body">
-
-      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Run a real magnet investigation. Pick 8 different items from around the house, predict each one, test each one, and sort your results into magnetic vs nonmagnetic.</p>
-      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFF5E1;border:2px solid #F0C97A;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#F5A623,#D4772C);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#9A6E10;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 1</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Set up your data table</div>
-            <p style="color:#2B1D12;margin:0;">In your notebook, make a 4-column data table: MATERIAL, PREDICTION, RESULT, NOTES. Number 8 rows. Title it "Magnet Test."</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#EEF8F0;border:2px solid #B7DDC3;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#34B76F,#1F9252);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#1F6E3F;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 2</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Gather 8 items + predict</div>
-            <p style="color:#2B1D12;margin:0;">Find 8 small items — paperclip, soda can, plastic spoon, penny, steel nail, key, rubber band, wooden block. Write each in row 1–8 of MATERIAL. In PREDICTION, write YES or NO based on what you know.</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#FFEDEF;border:2px solid #F0B4B8;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#E8636B,#D04450);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#9A1B22;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 3</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Test and record</div>
-            <p style="color:#2B1D12;margin:0;">One item at a time, bring the magnet close. In the RESULT column, write ATTRACTS or NO EFFECT. In NOTES, write anything unexpected (e.g., "only the metal part attracted").</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#F0EDF6;border:2px solid #C9BFE0;border-radius:14px;padding:14px 18px;">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8B6FC0,#6E4FA8);color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-          <div style="flex:1;">
-            <div style="font-size:13px;color:#5A3B92;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;">Step 4</div>
-            <div style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:4px;">Sort + claim with evidence</div>
-            <p style="color:#2B1D12;margin:0;">Underneath your table, draw 2 circles — MAGNETIC and NONMAGNETIC. Sort all 8 items. Write one sentence: "I claim that ___ are magnetic. My evidence is from rows ___ in my data table."</p>
-          </div>
-        </div>
-
-      </div>
-      
-      
-      
-      <div class="mind-blow" style="margin-top:22px;">
-        <span class="mind-blow-icon">🤯</span>
-        <div class="mind-blow-content">
-          <div class="mind-blow-label">Amazing Florida Fact</div>
-          <div class="mind-blow-text">At a Florida scrap yard, workers use HUGE electromagnets to lift entire cars off the ground and sort them by metal type. The magnet only grabs the steel ones — leaving aluminum and copper behind for separate recycling.</div>
-        </div>
-      </div>
-      <div class="socratic-q">
-        <span class="sq-icon">🧪</span>
-        <div>
-          <div class="label">Think like a scientist</div>
-          <div class="question">"You test a stainless steel butter knife. The magnet barely sticks. But a regular steel fork sticks strongly. What might explain the difference?"</div>
-        </div>
-      </div>
-
-      <details style="margin-top:18px;border:2px solid #8B6FC0;border-radius:14px;background:#F6F2FC;">
-        <summary style="cursor:pointer;padding:14px 18px;font-size:16px;font-weight:800;color:#5A3B92;">🔭 Go Deeper · Why we trust repeated tests</summary>
-        <div style="padding:0 18px 16px;color:#2B1D12;line-height:1.6;">
-          Real scientists usually test the SAME thing multiple times — three trials, five trials, even hundreds. If the result is the same each time, they can trust it. If results vary, they ask why. One test by itself is just a START — repeating builds confidence.
-        </div>
-      </details>
-
-      <div class="tab-next-wrap">
+      <h3 style="font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;">Part 4 · The 8-Material Fair Test</h3>
+      <p style="font-size:16px;color:#5A4D3E;margin-bottom:18px;">Now run a real fair test. Lock the settings first. Then slide each item toward the magnet along a ruler, and record where it jumps.</p>
+  <div class="tab-next-wrap">
         <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
       </div>
 
@@ -1648,62 +1439,28 @@
     </div>
     <div class="act-body">
 
-      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Match the Word</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the word bank to fill in the four blanks in your science notebook. <strong>Word Bank: Magnetic, Nonmagnetic, Prediction, Data table</strong></p>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">1</span>
-        <span class="pq-text">A material that a magnet attracts: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">2</span>
-        <span class="pq-text">A material that a magnet ignores: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">3</span>
-        <span class="pq-text">A reasonable guess made BEFORE you test: ___________</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#34B76F;">4</span>
-        <span class="pq-text">An organized record of test results: ___________</span>
-      </div>
-
       <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🌿 Part B &mdash; Short Answer</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use vocabulary words from today's lesson.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">5</span>
-        <span class="pq-text">Pick ONE test result from the diagram. Name the prediction, the actual result, and what the scientist LEARNED.</span>
+        <span class="pq-text">Pick ONE thing you tested today. Name the prediction, the actual result, and what you LEARNED.</span>
       </div>
-      <textarea class="response-textarea" id="ans-1" data-label="Pick ONE test result from the diagram. Name the pr..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+      <textarea class="response-textarea" id="ans-1" data-label="One test: prediction, result, what I learned" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
       <div class="pq">
         <span class="pq-num" style="background:#D4772C;">6</span>
         <span class="pq-text">You predict a copper penny will be magnetic. Your test shows no attraction. What does this DATA tell you? What's the new understanding?</span>
       </div>
-      <textarea class="response-textarea" id="ans-2" data-label="You predict a copper penny will be magnetic. Your ..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
+      <textarea class="response-textarea" id="ans-2" data-label="The penny: what the data tells me" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
 
-      <div class="pq">
-        <span class="pq-num" style="background:#D4772C;">7</span>
-        <span class="pq-text">Why do scientists keep a data table during an investigation instead of just remembering results? Give one reason.</span>
-      </div>
-      <textarea class="response-textarea" id="ans-3" data-label="Why do scientists keep a data table during an inve..." placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
-
-      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Build Your Own Food Chain</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a <strong>new</strong> food chain — different from the one in the lesson. It can be from a Florida beach, a backyard, a pond, or a pine forest. Include: <strong>the Sun · one producer · two consumers · labeled energy arrows between each</strong>.</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use colors. Label every part.</p>
-
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Reflect</div>
-          <div class="question">"What was the trickiest part of figuring out where the energy in a hawk really comes from? Write 2–3 sentences about something you learned today that you didn't know before."</div>
-        </div>
-      </div>
+      <p style="font-size:18px;color:#0E1C42;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C &mdash; Run Your Own Magnet Test</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Pick 6 small things at home (ask first!). Predict each one, test it with a magnet the same fair way, and write what happened. Then sort them into two circles and finish the sentence about your pattern.</p>
 
       <div style="background:#FAF7F3;border:2px solid #8B6FC0;border-radius:16px;padding:22px 24px;margin-bottom:20px;">
         <div style="font-size:12px;color:#8B6FC0;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:8px;">✏️ Use Your Evidence</div>
-        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A classmate says, <em>"You don't need to write down test results — just remember them."</em></p>
-        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.</p>
+        <p style="font-size:17px;color:#0E1C42;font-weight:700;margin-bottom:8px;">A classmate says, <em>"You don't need to write down test results. Just remember them."</em></p>
+        <p style="font-size:16px;color:#2B1D12;margin-bottom:12px;">Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson.</p>
         <textarea class="response-textarea ta-lg" id="cer-4" data-label="Response" placeholder="Type your answer here..." oninput="refreshGathered()"></textarea>
       </div>
 
@@ -1718,7 +1475,7 @@
       </div>
     </div>
     <div class="gathered-body">
-      <div class="gathered-intro">All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.</div>
+      <div class="gathered-intro">All your answers in one place. Copy or download them to turn in on Canvas.</div>
       <div class="gathered-name-row">
         <span class="gathered-name-label">Your name:</span>
         <input type="text" class="gathered-name-input" id="student-name" placeholder="Type your name here" oninput="refreshGathered()" />
@@ -1745,32 +1502,21 @@
 
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part A:</strong> All four blanks filled in using words from the bank.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5 and 6 answered in complete sentences using lesson vocabulary.</span>
           </div>
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part B:</strong> Questions 5, 6, and 7 answered in complete sentences using lesson vocabulary.</span>
-          </div>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
-            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> A real 6-item magnet investigation with predictions, results, notes, and a one-sentence sort with the pattern.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Part C:</strong> My 6 items, predictions, results and my pattern sentence. Plus your labeled sketch of the two circles.</span>
           </div>
           <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
             <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Key Question Response:</strong> 2–3 sentences answering the big question using at least three vocabulary words.</span>
-          </div>
-          <div class="checklist-item" onclick="this.classList.toggle('checked')" style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;margin-bottom:16px;cursor:pointer;transition:background .2s,border-color .2s;user-select:none;">
-            <span class="check-icon" style="font-size:20px;flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #D0C8BE;background:#fff;transition:all .2s;">☐</span>
-            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Evidence Response:</strong> I made a claim about whether scientists need data tables, supported with two pieces of evidence.</span>
+            <span style="font-size:16px;color:#2B1D12;line-height:1.55;"><strong>Use Your Evidence:</strong> My claim about whether scientists need to write results down, with two pieces of evidence.</span>
           </div>
 
           <div style="background:#FFF7EE;border:2px solid #F0DCC4;border-radius:14px;padding:14px 18px;">
             <div style="font-size:13px;color:#C7922C;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;">📎 How to Submit</div>
             <div style="font-size:15px;color:#2B1D12;line-height:1.7;">
-              Submit your work however works best for you:<br/><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">⌨️ <strong>Type it</strong> — Type your answers directly into the Canvas assignment.</span><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;">📸 <strong>Photo</strong> — Take a clear photo of your handwritten work and upload it.</span><br/>
-              <span style="display:inline-flex;align-items:center;gap:8px;">🎥 <strong>Video</strong> — Record a short video explaining your food chain.</span>
+              Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.
             </div>
           </div>
         </div>
@@ -1795,10 +1541,9 @@
           <div class="question">"What EVIDENCE shows whether a material is magnetic — and how do we test it like a scientist?"</div>
         </div>
       </div>
-      <p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong> to this question in your science notebook. Use at least <strong>three vocabulary words</strong> from today.</p>
       <div class="callout callout-tip">
         <span class="callout-icon">⭐</span>
-        <p><strong>Nicely done.</strong> You've now done what real investigators do — made a <span class="vtip">prediction<span class="vtip-box"><span class="vtip-word">Prediction</span>A reasonable guess before testing.</span></span>, ran a systematic test, recorded results in a <span class="vtip">data table<span class="vtip-box"><span class="vtip-word">Data table</span>An organized record.</span></span>, and sorted materials into <span class="vtip">magnetic<span class="vtip-box"><span class="vtip-word">Magnetic</span>A magnet attracts it.</span></span> and <span class="vtip">nonmagnetic<span class="vtip-box"><span class="vtip-word">Nonmagnetic</span>A magnet ignores it.</span></span> groups using evidence. Next module brings physical and chemical changes — what happens when matter transforms.</p>
+        <p><strong>Nicely done.</strong> You’ve now done what real investigators do. You made a <span class="vtip">prediction<span class="vtip-box"><span class="vtip-word">Prediction</span>A reasonable guess before testing.</span></span>, ran a systematic test, recorded results in a <span class="vtip">data table<span class="vtip-box"><span class="vtip-word">Data table</span>An organized record.</span></span>, and sorted materials into <span class="vtip">magnetic<span class="vtip-box"><span class="vtip-word">Magnetic</span>A magnet attracts it.</span></span> and <span class="vtip">nonmagnetic<span class="vtip-box"><span class="vtip-word">Nonmagnetic</span>A magnet ignores it.</span></span> groups using evidence. Next week: mystery materials, and what happens when matter changes.</p>
       </div>
     </div>
   </div>
@@ -1807,7 +1552,7 @@
 
 <!-- ═══ FOOTER ═══ -->
 <div class="footer">
-  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 3 &middot; Student Lesson Page</div>
+  <div class="footer-line1"><span>Optima Academy Online</span> &middot; Science &middot; Quarter 4 &middot; Student Lesson Page</div>
   <div class="footer-line2">Lesson 28.02 &middot; Physical Science: Matter &amp; Properties &middot; CPALMS SC.4.N.1.1, SC.4.P.8.4</div>
   <div class="footer-line3">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
@@ -1821,7 +1566,7 @@
 
 <script>
 // ── Tab System ──
-var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];
+var TAB_ORDER = ['vocab','lesson','quiz','assignment'];
 var tabsVisited = new Set(['vocab']);
 
 function switchTab(tabId) {
@@ -2114,7 +1859,7 @@ window.addEventListener('beforeunload', function(e){
 <!-- Video Manifest Loader -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('https://raw.githubusercontent.com/bbirchum1/optima-4th-science/main/video-manifest.json?v=' + Date.now())
+  fetch('https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json?v=' + Date.now())
     .then(function(r) { return r.json(); })
     .then(function(data) {
       var manifest = data.videos || data;
@@ -2323,5 +2068,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<script src="assets/sparkle/fs-sparkle.js?v=9d84788a"></script>
 </body>
 </html>

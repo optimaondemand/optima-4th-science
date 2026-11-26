@@ -1,0 +1,331 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label (ticked): “Ecosystems & Energy” is a leftover; Module 28 is in Unit 6 “Matter, Magnets, and Changes”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Matter, Magnets &amp; Changes</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "science label (ticked): magnets are physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS codes; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.N.1.1, SC.4.P.8.4 · TEKS 4.7(C), 4.2(A)</div>",
+  "new": "<div class=\"info-value\">SC.4.N.1.1, SC.4.P.8.4</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer (ticked): 28.02 is due Apr 22, Q4 (the header already says Q4)",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
+  "why": "6 vs 8 materials (ticked): the test has 8 materials; no dashes",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll have run a fair test on 8 materials, recorded the data in a table and used it as evidence.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Two Volunteers, Two Answers</div>\n        <div class=\"act-subtitle\">Same bottle cap, opposite results</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → two volunteers’ test notes",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Two cleanup volunteers, Kai and Mo, tested the same bottle cap from the pond haul. They wrote down opposite results!</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → spot the differences (played and answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Find what they did differently. Then decide whose result to trust.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): “Device” meant converting energy",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job, like a magnet or a recycling sorter."
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the Stop & Reason asked about “the three devices above … INPUT and OUTPUT”",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C was a food chain; the checklist already describes a 6-item magnet test",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Run Your Own Magnet Test"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C task → the checklist’s 6-item magnet test (planned on the page, sorted in a required sketch)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick 6 small things at home (ask first!). Predict each one, test it with a magnet the same fair way, and write what happened. Then sort them into two circles and finish the sentence about your pattern.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: what Part C needs",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🧲</span>A fridge magnet</span><span class=\"need-chip\"><span>📏</span>Optional: a ruler</span>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dashes",
+  "old": "Based on what you already know — magnets attract iron, nickel, and steel — you can usually guess",
+  "new": "Based on what you already know (magnets attract iron, nickel and steel), you can usually guess"
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: shorter; a lead-in for the how-sure dial",
+  "old": "<p>Predicting before testing has two big benefits: (1) it shows what you ALREADY know; (2) when your prediction is WRONG, that's where you learn the most. A wrong prediction is a clue that there's something interesting about the material you didn't know.</p>",
+  "new": "<p>Predicting first shows what you ALREADY know. And when a prediction is WRONG, that’s where you learn the most. Try it: predict, say how sure you are, then test.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (penny) is played by the how-sure dial and Part B question 6",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: a lead-in for the notes game; no dash",
+  "old": "Then look for patterns: what do all the magnetic items have in common?</p>",
+  "new": "Then look for patterns: what do all the magnetic items have in common?</p>\n      <p>Mo didn’t use a table. Mo used sticky notes. Help turn them into a real data table.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception (“a wrong prediction = failure”) is played by the how-sure dial’s gold stars",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think the prediction has to be CORRECT.*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "figure caption: no dash",
+  "old": "Group the magnetic items together — and look for what they have in common.",
+  "new": "Group the magnetic items together, and look for what they have in common."
+ },
+ {
+  "kind": "plain",
+  "why": "figure: drop the image-suggestion fallback (the image exists)",
+  "old": "\\s*onerror=\"this\\.style\\.display=\\'none\\';[^\"]*\"\\s*/>\\s*<div class=\"image-suggestion\".*?</div>\\s*</div>",
+  "new": " />",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Key Concept (Part 3 says it)",
+  "old": "<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Four Test Results tap diagram is played by the how-sure dial; with it go Observe & Reason, the sea-turtle Amazing Fact, the lighthouse-compass Florida connection and the controls Go Deeper. Part 3 (fair tests) is added in their place so the parts run 1–4",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Test Results</h3>.*?(?=<div class=\"tab-next-wrap\">)",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Make It a Fair Test</h3>\n      <p>A fair test changes only ONE thing. Everything else stays the same: the same magnet, the same distance, the same way of moving it. Then, if the results are different, you know why: it was the material.</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "A reasonable guess about what will happen — made BEFORE the test, based on what you already know.",
+  "new": "A reasonable guess about what will happen, made BEFORE the test and based on what you already know."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 4 = the old Explore (the 8-material test → slide to the jump, a fair test with a data table); the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · The 8-Material Fair Test</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Now run a real fair test. Lock the settings first. Then slide each item toward the magnet along a ruler, and record where it jumps.</p>\n  <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its predict-test-sort steps live on as the ruler test and Part C; the scrapyard Amazing Fact becomes the real photo after the solve; the stainless knife Think like a scientist is the spoon wow; the repeated-trials Go Deeper goes)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 no longer points at the cut diagram",
+  "old": "<span class=\"pq-text\">Pick ONE test result from the diagram.",
+  "new": "<span class=\"pq-text\">Pick ONE thing you tested today."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5: it is the student who tested",
+  "old": "and what the scientist LEARNED.",
+  "new": "and what you LEARNED."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE test result from the diagram. Name the pr...\"",
+  "new": "data-label=\"One test: prediction, result, what I learned\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"You predict a copper penny will be magnetic. Your ...\"",
+  "new": "data-label=\"The penny: what the data tells me\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6; the CER argues the same “write it down” idea)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "<em>\"You don't need to write down test results — just remember them.\"</em>",
+  "new": "<em>\"You don't need to write down test results. Just remember them.\"</em>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C checklist ends with the required sketch",
+  "old": "A real 6-item magnet investigation with predictions, results, notes, and a one-sentence sort with the pattern.",
+  "new": "My 6 items, predictions, results and my pattern sentence. Plus your labeled sketch of the two circles."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether scientists need data tables, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether scientists need to write results down, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dashes; names next week",
+  "old": "You've now done what real investigators do — made a",
+  "new": "You’ve now done what real investigators do. You made a"
+ },
+ {
+  "kind": "plain",
+  "why": "closing: next week",
+  "old": "Next module brings physical and chemical changes — what happens when matter transforms.",
+  "new": "Next week: mystery materials, and what happens when matter changes."
+ }
+]

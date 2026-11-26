@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.order ? orderCard(C.order) : '') + (C.lostlog ? lostLog(C.lostlog) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.order ? orderCard(C.order) : '') + (C.lostlog ? lostLog(C.lostlog) : '') + (C.intake ? intakeSlip(C.intake) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -13411,6 +13411,216 @@
     draw(); paintTray(); if (st.pairs >= 2) puzzle();
   };
 
+  /* ======================= 28.02 "Proof for the Steel Bin" (Case 28 part 2): case.intake, spotdiff, suredial, notes2table, ruler, SIMS.fieldviewer plates ======================= */
+
+  /* ---------- case: the recycling center's intake slip (28.02). case.intake = {head, title, rows:[[icon, item]], cols[2], blank, proofLine, sign}
+     Each item row has an empty "Steel bin?" box; a proof line with an empty checkbox. Classes fs-itk-*. ---------- */
+  function intakeSlip(K) {
+    return '<div class="fs-itk"><div class="fs-itk-h">' + esc(K.head) + '</div><div class="fs-itk-t">' + esc(K.title) + '</div><table><tr>' + (K.cols || ['Item from the haul', 'Steel bin?']).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+      K.rows.map(function (r) { return '<tr><td>' + r[0] + ' ' + esc(r[1]) + '</td><td><span class="fs-itk-box">' + esc(K.blank || '?') + '</span></td></tr>'; }).join('') + '</table>' +
+      (K.proofLine ? '<div class="fs-itk-proof"><span class="fs-itk-chk"></span> ' + esc(K.proofLine) + '</div>' : '') + (K.sign ? '<div class="fs-itk-sign">' + esc(K.sign) + '</div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Spot the differences" — two volunteers' test notes for the same item, side by side. Tap each phrase where they tested differently
+     (tapping one side lights its partner); same-on-both phrases bounce. Then decide whose result to trust (28.02) ----------
+     D.spotdiff = {afterText, kicker, title, todo[], why, pages:[{who, lines:[text with [[id|phrase]] or [[x:hint|phrase]]]}], diffs:[{id, icon, t}], foundLabel, countWord,
+                   q, opts, win, clue}. Classes fs-sdf-*. */
+  function buildSpotdiff() {
+    var S = D.spotdiff; if (!S) return;
+    var at = anchorP(S.afterText); if (!at) { FAILED.push('spotdiff anchor text not found'); return; }
+    var g = gameShell(S.kicker || 'Warm-Up game', S.title, S.todo, S.why); g.dataset.mod = 'spotdiff';
+    var st = loadJ('spotdiff', { f: {} });
+    var two = el('div', 'fs-sdf-two'), found = el('div', 'fs-sdf-found'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    S.pages.forEach(function (pg, i) {
+      var html = pg.lines.map(function (ln) { return '<p>' + esc(ln).replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, function (m, id, t) {
+        if (id.indexOf('x:') === 0) return '<button type="button" class="fs-sdf-w" data-x="' + esc(id.slice(2)) + '">' + t + '</button>';
+        return '<button type="button" class="fs-sdf-w" data-id="' + esc(id) + '">' + t + '</button>'; }) + '</p>'; }).join('');
+      two.appendChild(el('div', 'fs-sdf-page' + (i ? ' b' : ''), '<div class="fs-sdf-who">' + esc(pg.who) + '</div>' + html));
+    });
+    [two, el('div', 'fs-in-k', esc(S.foundLabel || 'Differences you found')), found, miss, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    $$('.fs-sdf-w', two).forEach(function (b) {
+      b.addEventListener('click', function () {
+        ac(); if (b.dataset.x) { bounce(b, miss, b.dataset.x); return; }
+        var id = b.dataset.id; if (st.f[id]) return; st.f[id] = 1; saveJ('spotdiff', st); SFX.chime(); miss.classList.remove('show'); paint(id);
+      });
+    });
+    function paint(last) {
+      $$('.fs-sdf-w[data-id]', two).forEach(function (b) { b.classList.toggle('on', !!st.f[b.dataset.id]); b.classList.toggle('new', b.dataset.id === last); });
+      found.innerHTML = S.diffs.map(function (d) { var on = st.f[d.id]; return '<div class="fs-sdf-slot' + (on ? ' on' : '') + (d.id === last ? ' flash' : '') + '"><span>' + (on ? d.icon : '❓') + '</span><b>' + esc(on ? d.t : (S.notYet || 'not found yet')) + '</b></div>'; }).join('');
+      var n = S.diffs.filter(function (d) { return st.f[d.id]; }).length;
+      count.textContent = '🔍 ' + n + ' of ' + S.diffs.length + ' ' + (S.countWord || 'differences found'); count.classList.toggle('ok', n === S.diffs.length);
+      if (n === S.diffs.length) askOnce(qh, S.q, S.opts, 'spotdiff-q', win, S.win, S.clue, 'spotdiff', miss);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "The how-sure dial" — for each item: predict (sticks / doesn't), set how sure you are (3 steps), then Test it. A wrong prediction you were
+     sure about earns a gold "Big learning!" star instead of an X. Then a chip question (28.02) ----------
+     D.suredial = {afterText, kicker, title, todo[], why, model, items:[{id, icon, t, mag, line}], predQ, yes, no, sureQ, sure:[3 labels], testBtn, rightLine, goldLine, wrongLine,
+                   starsWord, q, opts, win, clue}. Classes fs-srd-*. */
+  function buildSuredial() {
+    var S = D.suredial; if (!S) return;
+    var at = anchorP(S.afterText); if (!at) { FAILED.push('suredial anchor text not found'); return; }
+    var g = gameShell(S.kicker || 'Part 1 game', S.title, S.todo, S.why); g.dataset.mod = 'suredial';
+    var st = loadJ('suredial', { r: {} }), cur = { p: null, s: 0 }, busy = false;
+    var tabs = el('div', 'fs-twn-tools'), card = el('div', 'fs-srd-card'), out = el('div'), log = el('div', 'fs-srd-log'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [tabs, card, out, log, miss, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    function next() { return S.items.filter(function (x) { return !st.r[x.id]; })[0]; }
+    var sel = (next() || S.items[0]).id;
+    function item() { return S.items.filter(function (x) { return x.id === sel; })[0]; }
+    function dial(s) { var a = -60 + 60 * (s - 1); return '<svg viewBox="0 0 120 70" class="fs-srd-dial" aria-hidden="true"><path d="M10 64 A50 50 0 0 1 110 64" fill="none" stroke="#E8DCC4" stroke-width="12"/><path d="M10 64 A50 50 0 0 1 35 21" fill="none" stroke="#9FD3EA" stroke-width="12"/><path d="M35 21 A50 50 0 0 1 85 21" fill="none" stroke="#F5C842" stroke-width="12"/><path d="M85 21 A50 50 0 0 1 110 64" fill="none" stroke="#E8873A" stroke-width="12"/>' +
+      (s ? '<g style="transform:rotate(' + a + 'deg);transform-origin:60px 64px;transition:transform .4s"><line x1="60" y1="64" x2="60" y2="20" stroke="#32241A" stroke-width="4" stroke-linecap="round"/></g>' : '') + '<circle cx="60" cy="64" r="6" fill="#32241A"/></svg>'; }
+    function paint(last) {
+      tabs.innerHTML = '';
+      S.items.forEach(function (x) { var r = st.r[x.id], b = el('button', 'fs-in-chip' + (x.id === sel ? ' on' : '') + (r ? ' done' : ''), x.icon + ' ' + esc(x.t) + (r && r.gold ? ' ⭐' : '')); b.type = 'button';
+        b.addEventListener('click', function () { if (busy) return; sel = x.id; cur = { p: null, s: 0 }; out.innerHTML = ''; SFX.blip(); paint(); }); tabs.appendChild(b); });
+      var it = item(), r = st.r[it.id];
+      card.innerHTML = '<div class="fs-srd-it">' + it.icon + '<b>' + esc(it.t) + '</b></div>';
+      if (r) { card.appendChild(el('div', 'fs-srd-done', esc((S.doneWord || 'Tested') + ': ' + (it.mag ? (S.stuck || 'it stuck') : (S.nope || 'no pull'))))); }
+      else {
+        var pq = el('div', 'fs-sv-q', '<div class="fs-in-k">' + esc(S.predQ || 'Your prediction:') + '</div><div class="fs-in-chips"></div>'), pc = $('.fs-in-chips', pq);
+        [['y', S.yes || '🧲 It will stick'], ['n', S.no || '💨 It won’t stick']].forEach(function (o) { var b = el('button', 'fs-in-chip' + (cur.p === o[0] ? ' on' : ''), esc(o[1])); b.type = 'button'; b.addEventListener('click', function () { cur.p = o[0]; SFX.blip(); paint(); }); pc.appendChild(b); });
+        card.appendChild(pq);
+        var sq = el('div', 'fs-sv-q fs-srd-sure', '<div class="fs-in-k">' + esc(S.sureQ || 'How sure are you?') + '</div>' + dial(cur.s) + '<div class="fs-in-chips"></div>'), sc = $('.fs-in-chips', sq);
+        (S.sure || ['A little sure', 'Pretty sure', 'Super sure']).forEach(function (t, i) { var b = el('button', 'fs-in-chip' + (cur.s === i + 1 ? ' on' : ''), esc(t)); b.type = 'button'; b.addEventListener('click', function () { cur.s = i + 1; SFX.blip(); paint(); }); sc.appendChild(b); });
+        card.appendChild(sq);
+        var go = el('div', 'fs-mug-go', '<button type="button" class="fs-btn fs-srd-go"' + (cur.p && cur.s ? '' : ' disabled') + '>' + esc(S.testBtn || '🧲 Test it') + '</button>'); card.appendChild(go);
+        $('.fs-srd-go', go).addEventListener('click', test);
+      }
+      log.innerHTML = S.items.filter(function (x) { return st.r[x.id]; }).map(function (x) { var q = st.r[x.id]; return '<div class="fs-srd-row' + (x.id === last ? ' new' : '') + '"><span>' + x.icon + ' ' + esc(x.t) + '</span><span>' + esc(q.p === 'y' ? (S.yesShort || 'I said: sticks') : (S.noShort || 'I said: no')) + '</span><b class="' + (q.ok ? 'ok' : q.gold ? 'gold' : 'no') + '">' + (q.ok ? '✓ ' + esc(S.okShort || 'right') : q.gold ? '⭐ ' + esc(S.goldShort || 'Big learning!') : '🔎 ' + esc(S.newShort || 'something new')) + '</b></div>'; }).join('');
+      var n = Object.keys(st.r).length, stars = S.items.filter(function (x) { return st.r[x.id] && st.r[x.id].gold; }).length;
+      count.textContent = '🧲 ' + n + ' of ' + S.items.length + ' ' + (S.countWord || 'tested') + ' · ⭐ ' + stars + ' ' + (stars === 1 ? (S.starWord || 'gold star') : (S.starsWord || 'gold stars'));
+      count.classList.toggle('ok', n === S.items.length);
+      if (n === S.items.length) askOnce(qh, S.q, S.opts, 'suredial-q', win, S.win, S.clue, 'suredial', miss);
+    }
+    function test() {
+      if (busy || !cur.p || !cur.s) return; busy = true; ac(); SFX.whoosh(); var it = item();
+      setTimeout(function () {
+        var ok = (cur.p === 'y') === it.mag, gold = !ok && cur.s >= 2; st.r[it.id] = { p: cur.p, s: cur.s, ok: ok, gold: gold }; saveJ('suredial', st); busy = false;
+        ok ? SFX.chime() : gold ? SFX.sparkle() : SFX.pop();
+        out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card flash' + (gold ? ' fs-srd-goldcard' : ''), '<span class="fs-hs-n">' + (ok ? '✅' : gold ? '⭐' : '🔎') + '</span><div><b>' + esc(ok ? (S.rightLine || 'You called it!') : gold ? (S.goldLine || 'Big learning! You were sure, and you were wrong. Now you know something new.') : (S.wrongLine || 'Surprise! That’s new learning.')) + '</b>' + esc(it.line) + '</div>'));
+        var nx = next(); cur = { p: null, s: 0 }; if (nx) sel = nx.id; paint(it.id);
+      }, reduceMotion ? 0 : 700);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 2: "Messy notes to a data table" — a volunteer's sticky notes describe each test without naming the item. Drag each note onto its row in an
+     empty data table (or tap the note, then the row). The row fills its Result and Notes; a wrong row bounces with a hint. A `wow` row pops a card (28.02) ----------
+     D.notes2table = {afterText, kicker, title, todo[], why, notesLabel, rows:[{id, icon, t, note, res, short, mag, miss, wow}], cols[3], stuck, nope, countWord, wowCard:{icon, t},
+                      q, opts, win, clue}. Classes fs-n2t-*. */
+  function buildNotes2table() {
+    var N = D.notes2table; if (!N) return;
+    var at = anchorP(N.afterText); if (!at) { FAILED.push('notes2table anchor text not found'); return; }
+    var g = gameShell(N.kicker || 'Part 2 game', N.title, N.todo, N.why); g.dataset.mod = 'notes2table';
+    var st = loadJ('notes2table', { on: {} });
+    var board = el('div', 'fs-n2t-board', '<div class="fs-lu-lab">' + esc(N.notesLabel || 'Mo’s sticky notes') + '</div><div class="fs-n2t-notes"></div>'), table = el('div', 'fs-n2t-table'), wow = el('div'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [board, table, miss, wow, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    var notes = $('.fs-n2t-notes', board), order = N.rows.map(function (r, i) { return i; }).sort(function (a, b) { return ((a * 7 + 3) % N.rows.length) - ((b * 7 + 3) % N.rows.length); });
+    function row(id) { return N.rows.filter(function (r) { return r.id === id; })[0]; }
+    function put(noteId, rowId, item) {
+      var r = row(noteId); if (!r || st.on[noteId]) return; ac();
+      if (noteId !== rowId) { var tr = row(rowId); bounce(item, miss, (r.miss || 'Read the note again. Which thing does it describe?')); var rr = $('.fs-n2t-row[data-id="' + rowId + '"]', table); if (rr) { rr.classList.remove('nope'); void rr.offsetWidth; rr.classList.add('nope'); } return; }
+      st.on[noteId] = 1; saveJ('notes2table', st); SFX.pop(); miss.classList.remove('show'); paint(noteId);
+    }
+    function paint(last) {
+      notes.innerHTML = '';
+      order.forEach(function (i, k) { var r = N.rows[i]; if (st.on[r.id]) return;
+        var b = el('button', 'fs-n2t-note fs-dragc', esc(r.note)); b.type = 'button'; b.dataset.id = r.id; b.style.setProperty('--r', ((k % 2 ? 1 : -1) * (1 + k % 3)) + 'deg'); notes.appendChild(b);
+        dragDrop(b, function () { return $$('.fs-n2t-row:not(.full)', table); }, function (item, t) { put(item.dataset.id, t.dataset.id, item); });
+      });
+      if (!notes.children.length) notes.appendChild(el('p', 'fs-scr-tip', esc(N.emptyLine || 'Every note is in the table.')));
+      var cols = N.cols || ['Material', 'Result', 'Notes'];
+      table.innerHTML = '<div class="fs-lu-lab">' + esc(N.tableLabel || 'Mo’s data table') + '</div><div class="fs-n2t-head">' + cols.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('') + '</div>';
+      N.rows.forEach(function (r) { var on = st.on[r.id], d = el('div', 'fs-n2t-row' + (on ? ' full' : '') + (r.id === last ? ' new' : '') + (on && r.wow ? ' wow' : ''));
+        d.dataset.id = r.id; d.setAttribute('role', 'button'); d.tabIndex = 0;
+        d.innerHTML = '<span>' + r.icon + ' ' + esc(r.t) + '</span><span>' + (on ? '<b class="' + (r.mag ? 'y' : 'n') + '">' + esc(r.mag ? (N.stuck || '🧲 Stuck') : (N.nope || '💨 Nothing')) + '</b>' : '…') + '</span><span>' + (on ? esc(r.short) : '') + '</span>';
+        table.appendChild(d); });
+      tapTargets(g, $$('.fs-n2t-row:not(.full)', table), function (item, t) { put(item.dataset.id, t.dataset.id, item); });
+      wow.innerHTML = ''; var w = N.rows.filter(function (r) { return r.wow && st.on[r.id]; })[0];
+      if (w && N.wowCard) wow.appendChild(el('div', 'fs-hs-card' + (w.id === last ? ' flash' : '') + ' fs-srd-goldcard', '<span class="fs-hs-n">' + (N.wowCard.icon || '🤯') + '</span><div>' + esc(N.wowCard.t) + '</div>'));
+      var n = Object.keys(st.on).length; count.textContent = '📋 ' + n + ' of ' + N.rows.length + ' ' + (N.countWord || 'notes in the table'); count.classList.toggle('ok', n === N.rows.length);
+      if (n === N.rows.length) askOnce(qh, N.q, N.opts, 'notes2table-q', win, N.win, N.clue, 'notes2table', miss);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 4 (the old Explore): "Slide to the jump" — lock the fair-test settings first (wrong settings bounce with why), then pick an item and drag it
+     (or hold ◀ Slide closer) along a ruler toward the magnet. A magnetic item jumps across the gap at its jump distance; the rest touch the magnet with no pull.
+     Each run writes a row in the data table (28.02) ----------
+     D.ruler = {afterText, kicker, title, todo[], why, model, settings:[{id, q, opts:[{t, ok, why}]}], lockLine, items:[{id, icon, t, jump (cm, 0 = none), line}], startCm, slideBtn,
+                jumpWord ({x}), noneWord, cols[3], yes, no, countWord, q, opts, win, clue}. Classes fs-jmp-*. */
+  function buildRuler() {
+    var R = D.ruler; if (!R) return;
+    var at = anchorP(R.afterText); if (!at) { FAILED.push('ruler anchor text not found'); return; }
+    var g = gameShell(R.kicker || 'Part 4 game', R.title, R.todo, R.why); g.dataset.mod = 'ruler';
+    var st = loadJ('ruler', { set: {}, r: {} }), start = R.startCm || 10, pos = start, sel = null, busy = false, hold = null;
+    var setH = el('div', 'fs-jmp-set'), tabs = el('div', 'fs-twn-tools'), stage = el('div', 'fs-jmp-stage', '<div class="fs-svgbox" style="padding-top:30%"><svg viewBox="0 0 500 150" role="img" aria-label="A model ruler with a magnet at the 0 mark."></svg></div>'), ctl = el('div', 'fs-mug-go'), out = el('div'), table = el('div'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [setH, tabs, stage, ctl, out, miss, table, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    var svg = $('svg', stage);
+    function locked() { return R.settings.every(function (s) { return st.set[s.id]; }); }
+    function X(cm) { return 60 + cm * 40; }
+    function item() { return R.items.filter(function (x) { return x.id === sel; })[0]; }
+    function draw(jumpP) {
+      var h = '<rect width="500" height="150" fill="#F6EEDC"/><rect x="40" y="96" width="440" height="30" fill="#F3D98B" stroke="#B08A1E" stroke-width="2"/>';
+      for (var c = 0; c <= 10; c++) h += '<line x1="' + X(c) + '" y1="96" x2="' + X(c) + '" y2="' + (c % 5 ? 108 : 114) + '" stroke="#5C442E" stroke-width="2"/><text x="' + X(c) + '" y="124" text-anchor="middle" class="fs-jmp-n">' + c + '</text>';
+      h += '<text x="' + X(10) + '" y="142" text-anchor="middle" class="fs-jmp-n">cm</text>';
+      h += '<g><rect x="16" y="62" width="44" height="30" fill="#D9453B" stroke="#3B3328" stroke-width="2"/><text x="38" y="83" text-anchor="middle" class="fs-pol-l w">N</text></g>';
+      var it = item();
+      if (it) { var x = X(pos); if (jumpP != null) x = X(pos) + (X(0) - X(pos)) * jumpP; h += '<text x="' + (x + 14) + '" y="88" text-anchor="middle" font-size="26">' + it.icon + '</text>';
+        if (st.r[it.id] === undefined) h += '<path d="M' + (x + 14) + ' 54 l-8 -10 h16z" fill="#2D7AA6"/>'; }
+      h += '<text x="250" y="22" text-anchor="middle" class="fs-sq-model">' + esc(R.model || 'A model test with one strong magnet.') + '</text>';
+      svg.innerHTML = h;
+    }
+    function run(cm) {
+      var it = item(); if (!it || busy || st.r[it.id] !== undefined) return;
+      pos = Math.max(0, Math.min(start, cm)); draw();
+      if (it.jump && pos <= it.jump) { busy = true; ac(); SFX.snap(); var p0 = pos, t0 = null;
+        (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 260)); draw(p); if (p < 1) { requestAnimationFrame(f); return; }
+          st.r[it.id] = it.jump; saveJ('ruler', st); busy = false; done(it, true); })(performance.now()); stopHold(); }
+      else if (pos <= 0.001) { ac(); SFX.thud(); st.r[it.id] = 0; saveJ('ruler', st); done(it, false); stopHold(); }
+    }
+    function done(it, j) {
+      out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + it.icon + '</span><div><b>' + esc(j ? (R.jumpWord || 'It jumped at {x} cm!').replace('{x}', it.jump) : (R.noneWord || 'It touched the magnet. No pull at all.')) + '</b>' + esc(it.line) + '</div>'));
+      var nx = R.items.filter(function (x) { return st.r[x.id] === undefined; })[0]; sel = nx ? nx.id : sel; pos = nx ? start : 0; paint(it.id);
+    }
+    function stopHold() { if (hold) { clearInterval(hold); hold = null; } }
+    /* drag the item along the ruler */
+    var dragging = false;
+    stage.addEventListener('pointerdown', function (e) { if (!locked() || !item() || st.r[sel] !== undefined) return; dragging = true; stage.setPointerCapture && stage.setPointerCapture(e.pointerId); e.preventDefault(); });
+    stage.addEventListener('pointermove', function (e) { if (!dragging) return; var r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 500; var cm = (x - 74) / 40; if (cm < pos) run(cm); });
+    ['pointerup', 'pointercancel'].forEach(function (k) { stage.addEventListener(k, function () { dragging = false; }); });
+    function paint(last) {
+      setH.innerHTML = '';
+      if (!locked()) {
+        setH.appendChild(el('div', 'fs-in-k', esc(R.lockLine || 'First, lock the fair-test settings:')));
+        R.settings.forEach(function (s) { var w = el('div', 'fs-sv-q', '<div class="fs-in-k">' + esc(s.q) + '</div><div class="fs-in-chips"></div>'), ch = $('.fs-in-chips', w);
+          s.opts.forEach(function (o) { var b = el('button', 'fs-in-chip' + (st.set[s.id] && o.ok ? ' on ok' : ''), esc(o.t)); b.type = 'button';
+            b.addEventListener('click', function () { ac(); if (st.set[s.id]) return; if (!o.ok) { bounce(b, miss, o.why); return; } st.set[s.id] = 1; saveJ('ruler', st); SFX.chime(); miss.classList.remove('show'); paint(); }); ch.appendChild(b); });
+          setH.appendChild(w); });
+      } else setH.appendChild(el('div', 'fs-jmp-locked', '🔒 ' + esc(R.lockedLine || 'Fair test locked: same magnet, every item starts at the 10 cm mark.')));
+      tabs.innerHTML = ''; tabs.style.display = locked() ? '' : 'none'; stage.style.display = locked() ? '' : 'none';
+      if (!sel) sel = (R.items.filter(function (x) { return st.r[x.id] === undefined; })[0] || R.items[0]).id;
+      R.items.forEach(function (x) { var b = el('button', 'fs-in-chip' + (x.id === sel ? ' on' : '') + (st.r[x.id] !== undefined ? ' done' : ''), x.icon + ' ' + esc(x.t)); b.type = 'button';
+        b.addEventListener('click', function () { if (busy) return; sel = x.id; pos = start; stopHold(); out.innerHTML = ''; SFX.blip(); paint(); }); tabs.appendChild(b); });
+      ctl.innerHTML = ''; ctl.style.display = locked() ? '' : 'none';
+      if (locked() && st.r[sel] === undefined) {
+        var b = el('button', 'fs-btn fs-jmp-go', esc(R.slideBtn || '◀ Hold to slide it closer')); b.type = 'button'; ctl.appendChild(b);
+        var startH = function (e) { e.preventDefault(); stopHold(); hold = setInterval(function () { run(pos - 0.1); }, 40); };
+        b.addEventListener('pointerdown', startH); ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (k) { b.addEventListener(k, stopHold); });
+        b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); run(pos - 0.5); } });
+        ctl.appendChild(el('span', 'fs-scr-tip', esc(R.dragTip || 'Or drag the item along the ruler toward the magnet.')));
+      }
+      var rows = R.items.filter(function (x) { return st.r[x.id] !== undefined; }), cols = R.cols || ['Material', 'Jumped at', 'Magnetic?'];
+      table.innerHTML = rows.length ? '<div class="fs-swv-log"><div class="fs-lu-lab">' + esc(R.tableLabel || 'My data table') + '</div><table><tr>' + cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>' +
+        rows.map(function (x) { var j = st.r[x.id]; return '<tr' + (x.id === last ? ' class="new"' : '') + '><td>' + x.icon + ' ' + esc(x.t) + '</td><td>' + (j ? j + ' cm' : esc(R.noJump || 'no jump')) + '</td><td><b>' + esc(j ? (R.yes || 'Yes') : (R.no || 'No')) + '</b></td></tr>'; }).join('') + '</table></div>' : '';
+      var n = rows.length; count.textContent = '📏 ' + n + ' of ' + R.items.length + ' ' + (R.countWord || 'tested'); count.classList.toggle('ok', n === R.items.length);
+      if (n === R.items.length) askOnce(qh, R.q, R.opts, 'ruler-q', win, R.win, R.clue, 'ruler', miss);
+      draw();
+    }
+    paint(); placeAfter(g, at);
+  }
+
   /* ======================= 28.01 "Magnet Fishing Day" (Case 28): case.lostlog, fishing, poles, sweeper, predchart, cleanup, compasstwist, SIMS.fieldviewer ======================= */
 
   /* ---------- case: the ranger's lost-item log + the magnet kit tag (28.01). case.lostlog = {head, title, cols[3], rows:[[item, madeOf, where]], sign, kit:{label, t}}
@@ -13801,9 +14011,12 @@
       var seed = 7; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
       for (var gy = 8; gy < 236; gy += 9) for (var gx = 6; gx < 476; gx += 9) {
         total++; var x = gx + rnd() * 6, y = gy + rnd() * 6, show = rnd() < frac; if (!show || inside(s, x, y)) continue;
-        var B = field(P, x, y), m = Math.sqrt(B[0] * B[0] + B[1] * B[1]); if (!m) continue; var L = Math.min(8, 2.5 + 1500 * m), ux = B[0] / m * L / 2, uy = B[1] / m * L / 2;
+        if (s.plate && Math.abs(x - s.plate.x) < 7) continue;
+        var B = field(P, x, y); if (s.plate && s.plate.kind === 'steel' && x > s.plate.x) { var ang = rnd() * Math.PI; B = [Math.cos(ang) * 1e-6, Math.sin(ang) * 1e-6]; }
+        var m = Math.sqrt(B[0] * B[0] + B[1] * B[1]); if (!m) continue; var L = Math.min(8, 2.5 + 1500 * m), ux = B[0] / m * L / 2, uy = B[1] / m * L / 2;
         h += '<line x1="' + (x - ux).toFixed(1) + '" y1="' + (y - uy).toFixed(1) + '" x2="' + (x + ux).toFixed(1) + '" y2="' + (y + uy).toFixed(1) + '" stroke="#2B2B2B" stroke-width="1.3" stroke-linecap="round" opacity="' + Math.min(1, 0.35 + 900 * m).toFixed(2) + '"/>'; n++;
       }
+      if (s.plate) h += '<rect x="' + (s.plate.x - 5) + '" y="10" width="10" height="220" rx="2" fill="' + (s.plate.kind === 'steel' ? '#6E777C' : '#D4DADF') + '" stroke="#4E565C"/><text x="' + s.plate.x + '" y="236" text-anchor="middle" class="fs-jmp-n">' + esc(s.plate.label || s.plate.kind) + '</text>';
       svg.innerHTML = h + magsSVG(s);
     }
     function paint() {
@@ -14388,6 +14601,10 @@
     guard('predchart', buildPredchart);
     guard('cleanup', buildCleanup);
     guard('compasstwist', buildCompasstwist);
+    guard('spotdiff', buildSpotdiff);
+    guard('suredial', buildSuredial);
+    guard('notes2table', buildNotes2table);
+    guard('ruler', buildRuler);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);
