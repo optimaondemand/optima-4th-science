@@ -1,0 +1,313 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label (ticked): “Ecosystems & Energy” is a leftover; the plan puts Module 29 under “Matter, Magnets, and Changes”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Matter, Magnets &amp; Changes</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "science label (ticked): properties and changes of matter are physical science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS codes; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.P.8.1, SC.4.P.9.1 · TEKS 4.6(A)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.8.1, SC.4.P.9.1</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer (ticked): week 29 is Q4 (the header already says Q4)",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; no dashes",
+  "old": "<p>Hold this question in your head as you work\\. Near the end of the year.*?</p>",
+  "new": "<p>Keep this question in mind. Today you’ll learn the big difference scientists make: physical properties (what a material IS) and clues that a NEW substance has formed.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: One S’more, Two Changes</div>\n        <div class=\"act-subtitle\">Same stuff, or new stuff?</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → the s’more split",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>It’s Campfire Night at Palmetto Springs! Dr. Nair toasted a s’more: a graham cracker, a square of chocolate and a marshmallow, all warmed by the fire.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → the lens game (played and answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Pull it apart and look closely at each layer. Which part became something new?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): “Device” meant converting energy",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job, like a toaster or a grill."
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the Stop & Reason asked about “the three devices above … INPUT and OUTPUT”",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C was a food chain; the checklist already describes a property/chemical-change sort",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Sort 4 Things From Home"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C task → the checklist’s 2-column sort (typed on the page, sketched in a required drawing)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Find 4 things at home: 2 with a physical property you can see or measure, and 2 that show a clue of a chemical change (rust, a browned piece of toast, an old banana…). Sort them, and back up one with evidence.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: Part C needs nothing special",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🏠</span>4 things from around your home</span>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dash",
+  "old": "Color, hardness, mass, shape, magnetism, whether it floats — all of these are physical properties.",
+  "new": "Color, hardness, mass, shape, magnetism and whether it floats are all physical properties."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dash; a lead-in for the tool kit",
+  "old": "You've been describing matter this way all year — properties tell you what something IS.</p>",
+  "new": "Properties tell you what something IS.</p>\n      <p>Try it: describe a wooden block without changing it.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (describe a block) is played by the tool kit",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: no dash",
+  "old": "iron + water + air slowly form reddish rust — a brand-new substance.",
+  "new": "iron + water + air slowly form reddish rust, a brand-new substance."
+ },
+ {
+  "kind": "fix",
+  "why": "standards gap (ticked): SC.4.P.9.1 names decay and cooking; the page never did. One line, backed by the time-lapse banana and pancake; no dash",
+  "old": "isn't just changing shape — it's changing INTO something else.</p>",
+  "new": "isn’t just changing shape. It’s changing INTO something else.</p>\n      <p>Rotting food and cooking food make new substances too. When a banana rots, tiny living things called mold and bacteria break it down. When pancake batter cooks, it can never go back to runny batter.</p>\n\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Watch Changes Happen</h3>\n      <p>Some changes take seconds. Some take years. Watch four of them, and catch every clue.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception (any change is chemical) is played by the conveyor sort",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think any change to a material is a chemical change\\..*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "figure: drop the image-suggestion fallback (the image exists)",
+  "old": "\\s*onerror=\"this\\.style\\.display=\\'none\\';[^\"]*\"\\s*/>\\s*<div class=\"image-suggestion\".*?</div>\\s*</div>",
+  "new": " />",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Key Concept (the games teach it)",
+  "old": "<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Four Examples tap diagram is played by the conveyor; with it go Observe & Reason, the Statue of Liberty Amazing Fact (now the time-lapse wow, with real photos), the salty-air Florida connection and the “clues can fool you” Go Deeper (food coloring is a conveyor card; soda fizz is quiz Q3)",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Examples to Classify</h3>.*?(?=<div class=\"tab-next-wrap\">)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "A property you only see when a material CHANGES into something new — like rusting or burning.",
+  "new": "A property you only see when a material CHANGES into something new, like rusting or burning."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 4 = the old Explore (Property Sort → the conveyor sort, the plan’s product); the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · The Property Sort</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Is it a property, a physical change or a clue that something new formed? Sort each card before it rides off the belt.</p>\n  <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (the home sort lives on as Part C; the apple Amazing Fact, the rusty-bike Think like a scientist and the both-kinds Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 no longer points at the cut diagram",
+  "old": "Pick ONE example from the diagram (blue block, wood burning, rock mass, iron rusting).",
+  "new": "Pick ONE example: a blue block, wood burning, the mass of a rock or iron rusting."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE example from the diagram (blue block, woo...\"",
+  "new": "data-label=\"One example: property or chemical clue, with evidence\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Explain the difference between a PHYSICAL property...\"",
+  "new": "data-label=\"Physical property vs chemical-change clue\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6; quiz Q3 asks about bubbles)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C checklist ends with the required sketch",
+  "old": "A 2-column property/chemical-change sort with at least 4 examples and one evidence sentence.",
+  "new": "My 4 things sorted into property or chemical-change clue, with one evidence sentence. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether ALL color changes are chemical changes, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether every color change is a chemical change, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dash",
+  "old": "We're heading into the final stretch of the year — next lesson, you'll use property evidence to IDENTIFY mystery materials like a real detective.",
+  "new": "Next lesson, you’ll use property evidence to IDENTIFY mystery materials like a real detective."
+ }
+]

@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.order ? orderCard(C.order) : '') + (C.lostlog ? lostLog(C.lostlog) : '') + (C.intake ? intakeSlip(C.intake) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.order ? orderCard(C.order) : '') + (C.lostlog ? lostLog(C.lostlog) : '') + (C.intake ? intakeSlip(C.intake) : '') + (C.bingo ? bingoCard(C.bingo) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -13411,6 +13411,290 @@
     draw(); paintTray(); if (st.pairs >= 2) puzzle();
   };
 
+  /* ======================= 29.01 "Campfire Night" (Case 29): case.bingo, lens, toolkit, timelapse, conveyor, glowtwist, SIMS.cabbage ======================= */
+
+  /* ---------- case: Ranger Bell's Changes Bingo card (29.01). case.bingo = {head, title, free:{icon, t}, squares:[{icon, t}] (8), sign}. 3 x 3 with the free square in
+     the middle. Classes fs-bng-*. ---------- */
+  function bingoCard(B) {
+    var sq = B.squares.slice(0, 4).map(function (s) { return '<div class="fs-bng-sq"><span>' + s.icon + '</span><b>' + esc(s.t) + '</b></div>'; }).join('') +
+      '<div class="fs-bng-sq free"><span>' + (B.free.icon || '🔥') + '</span><b>' + esc(B.free.t) + '</b></div>' +
+      B.squares.slice(4).map(function (s) { return '<div class="fs-bng-sq"><span>' + s.icon + '</span><b>' + esc(s.t) + '</b></div>'; }).join('');
+    return '<div class="fs-bng"><div class="fs-bng-h">' + esc(B.head) + '</div><div class="fs-bng-t">' + esc(B.title) + '</div><div class="fs-bng-grid">' + sq + '</div>' + (B.sign ? '<div class="fs-bng-sign">' + esc(B.sign) + '</div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "Lens on the layers" — press Pull it apart (or drag the top layer up) to split a model s'more into its layers, then drag a magnifying lens
+     over each layer (or tap it) to find its clue spots. When a layer's clues are found, mark it SAME STUFF or NEW STUFF (28.01's mechanic list doesn't have it) (29.01) ----------
+     D.lens = {afterText, kicker, title, todo[], why, model, pullBtn, layers:[{id, t, c, y, h, kind:'cracker'|'choc'|'mallow', new:bool, spots:[{x, y, t}], why}], sameWord, newWord,
+               lensTip, q, opts, win, clue}. Classes fs-lns-*. */
+  function buildLens() {
+    var L = D.lens; if (!L) return;
+    var at = anchorP(L.afterText); if (!at) { FAILED.push('lens anchor text not found'); return; }
+    var g = gameShell(L.kicker || 'Warm-Up game', L.title, L.todo, L.why); g.dataset.mod = 'lens';
+    var st = loadJ('lens', { open: 0, f: {}, m: {} });
+    var stage = el('div', 'fs-lns-stage', '<div class="fs-svgbox" style="padding-top:56%"><svg viewBox="0 0 480 270" role="img" aria-label="A model s\'more: graham cracker, melted chocolate and a toasted marshmallow."></svg></div><div class="fs-lns-glass" aria-hidden="true"></div>');
+    var ctl = el('div', 'fs-mug-go'), found = el('div', 'fs-lns-found'), marks = el('div'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    [stage, ctl, found, marks, miss, qh, win].forEach(function (e) { g.appendChild(e); });
+    var svg = $('svg', stage), glass = $('.fs-lns-glass', stage);
+    function key(l, i) { return l.id + ':' + i; }
+    function layerY(l, i) { return st.open ? 40 + i * 78 : 96 + i * 26; }
+    function draw(sep) {
+      var h = '<rect width="480" height="270" fill="#2B2235"/><circle cx="420" cy="40" r="26" fill="#F7E7B4" opacity=".25"/>';
+      L.layers.forEach(function (l, i) {
+        var y = sep == null ? layerY(l, i) : (96 + i * 26) + (40 + i * 78 - 96 - i * 26) * sep, x = 120, w = 240;
+        if (l.kind === 'cracker') h += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="26" rx="4" fill="#C98B4B" stroke="#8A5A2B" stroke-width="2"/>' + [0, 1, 2, 3, 4, 5].map(function (k) { return '<circle cx="' + (x + 30 + k * 36) + '" cy="' + (y + 13) + '" r="2.5" fill="#8A5A2B"/>'; }).join('');
+        else if (l.kind === 'choc') h += '<path d="M' + (x + 10) + ' ' + y + ' h' + (w - 20) + ' v18 q-20 14 -34 0 q-30 16 -60 2 q-34 18 -60 0 q-30 12 -' + (w - 20 - 154) + ' 0 z" fill="#5A3420" stroke="#3B2214" stroke-width="2"/><path d="M' + (x + 40) + ' ' + (y + 5) + ' h60" stroke="#8A5A3C" stroke-width="3" stroke-linecap="round" opacity=".7"/>';
+        else h += '<path d="M' + (x + 20) + ' ' + (y + 30) + ' q0 -30 ' + ((w - 40) / 2) + ' -30 q' + ((w - 40) / 2) + ' 0 ' + ((w - 40) / 2) + ' 30 z" fill="#F4E3C3" stroke="#B37A3A" stroke-width="2"/><path d="M' + (x + 26) + ' ' + (y + 28) + ' q0 -24 ' + ((w - 52) / 2) + ' -24 q' + ((w - 52) / 2) + ' 0 ' + ((w - 52) / 2) + ' 24" fill="none" stroke="#9C5A22" stroke-width="7" opacity=".85"/>' +
+          [0, 1, 2].map(function (k) { return '<circle cx="' + (x + 90 + k * 30) + '" cy="' + (y + 20) + '" r="3" fill="#E8C99A"/>'; }).join('');
+        if (st.open && sep == null) h += '<text x="' + (x + w + 14) + '" y="' + (y + 18) + '" class="fs-lns-lab">' + esc(l.t) + '</text>';
+        if (st.open && sep == null) l.spots.forEach(function (s, k) { var on = st.f[key(l, k)]; h += '<circle class="fs-lns-spot' + (on ? ' on' : '') + '" data-k="' + key(l, k) + '" cx="' + (x + s.x) + '" cy="' + (y + s.y) + '" r="' + (on ? 9 : 14) + '" fill="' + (on ? '#F5C842' : 'rgba(255,255,255,.001)') + '" stroke="' + (on ? '#3B3328' : 'none') + '"/>'; });
+      });
+      h += '<text x="240" y="262" text-anchor="middle" class="fs-lns-model">' + esc(L.model || 'A model s\'more. Try it at a real campfire with an adult.') + '</text>';
+      svg.innerHTML = h;
+      $$('.fs-lns-spot', svg).forEach(function (c) { c.style.cursor = 'pointer'; c.addEventListener('click', function () { find(c.dataset.k); }); });
+    }
+    function spotXY(k) { var p = k.split(':'), i = L.layers.map(function (l) { return l.id; }).indexOf(p[0]), l = L.layers[i], s = l.spots[+p[1]]; return [120 + s.x, layerY(l, i) + s.y]; }
+    function find(k) { if (st.f[k]) return; ac(); st.f[k] = 1; saveJ('lens', st); SFX.sparkle(); paint(k); }
+    function open() {
+      if (st.open) return; ac(); SFX.whoosh(); var t0 = null;
+      (function f(now) { if (t0 == null) t0 = now; var p = Math.min(1, (now - t0) / (reduceMotion ? 1 : 700)); draw(p); if (p < 1) { requestAnimationFrame(f); return; } st.open = 1; saveJ('lens', st); paint(); })(performance.now());
+    }
+    /* the lens: drag it around the stage; spots under its center are found */
+    var drag = false;
+    glass.addEventListener('pointerdown', function (e) { if (!st.open) return; drag = true; lensAt(e); glass.setPointerCapture && glass.setPointerCapture(e.pointerId); glass.classList.add('on'); e.preventDefault(); });
+    glass.addEventListener('pointermove', function (e) { if (drag) lensAt(e); });
+    function lensAt(e) {
+      if (!st.open) return; var r = stage.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      glass.style.left = (x - 36) + 'px'; glass.style.top = (y - 36) + 'px';
+      var sr = svg.getBoundingClientRect(), vx = (e.clientX - sr.left) / sr.width * 480, vy = (e.clientY - sr.top) / sr.height * 270;
+      L.layers.forEach(function (l) { l.spots.forEach(function (s, k) { var kk = key(l, k), p = spotXY(kk); if (Math.abs(p[0] - vx) < 22 && Math.abs(p[1] - vy) < 18) find(kk); }); });
+    }
+    ['pointerup', 'pointercancel'].forEach(function (k) { glass.addEventListener(k, function () { drag = false; glass.classList.remove('on'); }); });
+    function paint(last) {
+      draw(); glass.style.display = st.open ? '' : 'none';
+      ctl.innerHTML = ''; if (!st.open) { var b = el('button', 'fs-btn', esc(L.pullBtn || '✋ Pull it apart')); b.type = 'button'; b.addEventListener('click', open); ctl.appendChild(b); }
+      else ctl.appendChild(el('p', 'fs-scr-tip', esc(L.lensTip || 'Drag the 🔍 lens over each layer, or tap a layer’s spots.')));
+      found.innerHTML = ''; marks.innerHTML = '';
+      if (!st.open) return;
+      L.layers.forEach(function (l) {
+        var got = l.spots.map(function (s, k) { return st.f[key(l, k)] ? s.t : null; }).filter(Boolean), all = got.length === l.spots.length;
+        var box = el('div', 'fs-lns-layer' + (st.m[l.id] ? ' done' : ''), '<b>' + esc(l.t) + '</b>' + (got.length ? '<ul>' + got.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' : '<small>' + esc(L.notYet || 'Lens it to find clues…') + '</small>'));
+        if (all && !st.m[l.id]) {
+          var ch = el('div', 'fs-in-chips');
+          [[false, L.sameWord || '🟰 SAME STUFF'], [true, L.newWord || '✨ NEW STUFF']].forEach(function (o) { var c = el('button', 'fs-in-chip', esc(o[1])); c.type = 'button';
+            c.addEventListener('click', function () { ac(); if (o[0] !== l.new) { bounce(c, miss, l.miss); return; } st.m[l.id] = o[0] ? 'new' : 'same'; saveJ('lens', st); SFX.chime(); miss.classList.remove('show'); paint(); }); ch.appendChild(c); });
+          box.appendChild(ch);
+        }
+        if (st.m[l.id]) box.appendChild(el('div', 'fs-lns-mark ' + st.m[l.id], esc(st.m[l.id] === 'new' ? (L.newWord || '✨ NEW STUFF') : (L.sameWord || '🟰 SAME STUFF')) + ' · ' + esc(l.why)));
+        found.appendChild(box);
+      });
+      if (L.layers.every(function (l) { return st.m[l.id]; })) askOnce(qh, L.q, L.opts, 'lens-q', win, L.win, L.clue, 'lens', miss);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "Safe tools only" — describe a material with tools from a kit. Drag a tool onto the material (or tap tool, then material). Safe tools add a
+     property row to its ID card; tools that would change it into something new are refused with why (29.01) ----------
+     D.toolkit = {afterText, kicker, title, todo[], why, thing:{icon, t}, cardHead, tools:[{k, icon, t, ok, prop, val, why}], need, countWord, q, opts, win, clue}. Classes fs-tlk-*. */
+  function buildToolkit() {
+    var K = D.toolkit; if (!K) return;
+    var at = anchorP(K.afterText); if (!at) { FAILED.push('toolkit anchor text not found'); return; }
+    var g = gameShell(K.kicker || 'Part 1 game', K.title, K.todo, K.why); g.dataset.mod = 'toolkit';
+    var st = loadJ('toolkit', { on: {} });
+    var wrap = el('div', 'fs-tlk'), kit = el('div', 'fs-tlk-kit', '<div class="fs-lu-lab">' + esc(K.kitLabel || 'The tool kit') + '</div>'), thing = el('div', 'fs-tlk-thing'), card = el('div', 'fs-tlk-card');
+    wrap.appendChild(kit); wrap.appendChild(thing); var miss = el('div', 'fs-miss'), out = el('div'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [wrap, miss, out, card, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    thing.innerHTML = '<span>' + K.thing.icon + '</span><b>' + esc(K.thing.t) + '</b><small>' + esc(K.dropLine || 'Drop a tool here') + '</small>'; thing.setAttribute('role', 'button'); thing.tabIndex = 0;
+    K.tools.forEach(function (t) { var b = el('button', 'fs-in-chip fs-dragc', '<span>' + t.icon + '</span> ' + esc(t.t)); b.type = 'button'; b.dataset.k = t.k; kit.appendChild(b);
+      dragDrop(b, function () { return [thing]; }, function (item) { use(item.dataset.k, item); }); });
+    tapTargets(g, [thing], function (item) { use(item.dataset.k, item); });
+    function tool(k) { return K.tools.filter(function (t) { return t.k === k; })[0]; }
+    function use(k, item) {
+      var t = tool(k); if (!t) return; ac();
+      if (!t.ok) { bounce(item, miss, t.why); thing.classList.remove('nope'); void thing.offsetWidth; thing.classList.add('nope'); return; }
+      if (st.on[k]) return; st.on[k] = 1; saveJ('toolkit', st); SFX.pop(); miss.classList.remove('show');
+      out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + t.icon + '</span><div><b>' + esc(t.prop + ': ' + t.val) + '</b>' + esc(t.why || '') + '</div>')); paint(k);
+    }
+    function paint(last) {
+      $$('.fs-dragc', kit).forEach(function (b) { b.classList.toggle('done', !!st.on[b.dataset.k]); });
+      var rows = K.tools.filter(function (t) { return t.ok && st.on[t.k]; });
+      card.innerHTML = '<div class="fs-tlk-ch">🪪 ' + esc(K.cardHead || 'ID card') + '</div>' + (rows.length ? rows.map(function (t) { return '<div class="fs-tlk-row' + (t.k === last ? ' new' : '') + '"><span>' + t.icon + ' ' + esc(t.prop) + '</span><b>' + esc(t.val) + '</b></div>'; }).join('') : '<div class="fs-tlk-row"><span>' + esc(K.emptyLine || 'No properties yet.') + '</span></div>');
+      var need = K.need || K.tools.filter(function (t) { return t.ok; }).length;
+      count.textContent = '🪪 ' + rows.length + ' of ' + need + ' ' + (K.countWord || 'properties on the card'); count.classList.toggle('ok', rows.length >= need);
+      if (rows.length >= need) askOnce(qh, K.q, K.opts, 'toolkit-q', win, K.win, K.clue, 'toolkit', miss);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 3: "Time-lapse" — tabs for several slow changes; drag the time slider forward and the model changes; clue badges pop up at set times. Tap a badge
+     and stamp its clue type (wrong stamps bounce). A change can show real photos (`photo` at the start, `photo2` at the end) crossfading (29.01) ----------
+     D.timelapse = {afterText, kicker, title, todo[], why, types:[{k, icon, t}], changes:[{id, icon, t, unit, from, to, kind, photo?, photo2?, alt, credit, badges:[{at, t, type, miss}],
+                    endLine}], stampQ, countWord, q, opts, win, clue}. Classes fs-tlp-*. */
+  function buildTimelapse() {
+    var T = D.timelapse; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('timelapse anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Part 3 game', T.title, T.todo, T.why); g.dataset.mod = 'timelapse';
+    var st = loadJ('timelapse', { s: {}, max: {} }), cur = T.changes[0].id, open = null;
+    var tabs = el('div', 'fs-twn-tools'), stage = el('div', 'fs-tlp-stage'), ctl = el('div', 'fs-tlp-ctl'), badges = el('div', 'fs-tlp-badges'), ask = el('div'), miss = el('div', 'fs-miss'), out = el('div'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [tabs, stage, ctl, badges, ask, miss, out, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    function ch() { return T.changes.filter(function (c) { return c.id === cur; })[0]; }
+    function bk(c, i) { return c.id + ':' + i; }
+    function type(k) { return T.types.filter(function (t) { return t.k === k; })[0]; }
+    function frac() { return (st.max[cur] || 0) / 100; }
+    function drawModel(c, p) {
+      if (c.photo) {
+        stage.innerHTML = '<div class="fs-tlp-ph"><img src="' + esc(c.photo) + '" alt="' + esc(c.alt || '') + '" style="opacity:' + (1 - p) + '"><img src="' + esc(c.photo2) + '" alt="' + esc(c.alt2 || '') + '" style="opacity:' + p + '"></div>' +
+          '<div class="fs-tlp-cap">' + esc(p < 0.5 ? (c.cap || '') : (c.cap2 || '')) + '</div>' + (c.credit ? '<div class="fs-tlp-cr">📷 ' + esc(c.credit) + '</div>' : '');
+        return;
+      }
+      var h = '<rect width="400" height="200" fill="#F6EEDC"/><rect y="160" width="400" height="40" fill="#D9BE8E"/>', q = p;
+      if (c.kind === 'nail') {
+        h += '<rect x="90" y="128" width="200" height="12" rx="3" fill="' + mix('#9AA3A8', '#9C4A1E', q) + '"/><rect x="80" y="120" width="14" height="28" rx="3" fill="' + mix('#9AA3A8', '#8A3E18', q) + '"/><path d="M290 128 l26 6 l-26 6z" fill="' + mix('#9AA3A8', '#9C4A1E', q) + '"/>';
+        for (var i = 0; i < Math.floor(q * 22); i++) h += '<circle cx="' + (100 + (i * 37) % 190) + '" cy="' + (130 + (i * 13) % 8) + '" r="' + (2 + (i % 3)) + '" fill="#B5531E" opacity=".85"/>';
+        if (q > 0.6) h += '<path d="M150 146 l4 8 M190 146 l-3 9 M230 146 l3 8" stroke="#B5531E" stroke-width="3"/>';
+        h += '<path d="M60 160 q140 -14 280 0" fill="none" stroke="#7FB7C9" stroke-width="5" opacity=".6"/>';
+      } else if (c.kind === 'banana') {
+        var col = q < 0.5 ? mix('#F3D03E', '#C8963A', q * 2) : mix('#C8963A', '#3B2A1A', (q - 0.5) * 2), sag = 14 * Math.max(0, q - 0.6);
+        h += '<path d="M110 ' + (120 + sag) + ' q90 ' + (50 - sag) + ' 190 -40 q-6 -8 -14 -6 q-80 ' + (64 - sag) + ' -168 30 z" fill="' + col + '" stroke="#5C442E" stroke-width="2"/><path d="M296 82 l10 -8" stroke="#5C442E" stroke-width="5" stroke-linecap="round"/>';
+        for (var j = 0; j < Math.floor(q * 14); j++) h += '<ellipse cx="' + (140 + j * 11) + '" cy="' + (132 + Math.sin(j) * 6 - j * 2) + '" rx="3" ry="2" fill="#3B2A1A"/>';
+        if (q > 0.75) h += '<text x="250" y="70" font-size="18">🪰</text><text x="300" y="96" font-size="14">🪰</text>';
+      } else if (c.kind === 'pancake') {
+        h += '<ellipse cx="200" cy="150" rx="120" ry="16" fill="#3A3F44"/><ellipse cx="200" cy="140" rx="90" ry="14" fill="' + mix('#F5E6B8', '#D9A55A', q) + '" stroke="#B3854A"/>';
+        for (var b = 0; b < Math.floor(Math.min(q, 0.7) * 20); b++) h += '<circle cx="' + (130 + (b * 29) % 140) + '" cy="' + (136 + (b * 7) % 8) + '" r="2.5" fill="none" stroke="#B3854A"/>';
+        if (q > 0.7) h += '<path d="M120 150 q80 10 160 0" stroke="#A2652A" stroke-width="4" fill="none"/>';
+        h += [0, 1, 2].map(function (k) { return '<path d="M' + (150 + k * 50) + ' 160 q-6 10 0 18 q6 -8 0 -18" fill="#F28C28" opacity=".8"/>'; }).join('');
+      }
+      h += '<text x="200" y="192" text-anchor="middle" class="fs-sq-model">' + esc(c.model || 'A model. Real changes take this long.') + '</text>';
+      stage.innerHTML = '<div class="fs-svgbox" style="padding-top:50%"><svg viewBox="0 0 400 200" role="img" aria-label="' + esc(c.alt || 'A model change over time') + '">' + h + '</svg></div>';
+    }
+    function mix(a, b, t) { var pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16), r = Math.round(((pa >> 16) & 255) * (1 - t) + ((pb >> 16) & 255) * t), gg = Math.round(((pa >> 8) & 255) * (1 - t) + ((pb >> 8) & 255) * t), bb = Math.round((pa & 255) * (1 - t) + (pb & 255) * t); return 'rgb(' + r + ',' + gg + ',' + bb + ')'; }
+    function timeLabel(c, p) { var v = c.from + (c.to - c.from) * p; return (c.unit === 'year' ? Math.round(v) : Math.round(v) + ' ' + (c.unitWord || c.unit + 's')); }
+    function paint(last) {
+      tabs.innerHTML = '';
+      T.changes.forEach(function (c) { var done = c.badges.every(function (b, i) { return st.s[bk(c, i)]; }); var b = el('button', 'fs-in-chip' + (c.id === cur ? ' on' : '') + (done ? ' done' : ''), c.icon + ' ' + esc(c.t)); b.type = 'button';
+        b.addEventListener('click', function () { cur = c.id; open = null; ask.innerHTML = ''; out.innerHTML = ''; SFX.blip(); paint(); }); tabs.appendChild(b); });
+      var c = ch(), p = frac();
+      drawModel(c, p);
+      ctl.innerHTML = '<label class="fs-lu-lab">' + esc(T.slideLabel || 'Drag time forward') + ' · <b class="fs-tlp-t">' + esc(timeLabel(c, p)) + '</b></label><input type="range" min="0" max="100" value="' + (st.max[cur] || 0) + '" class="fs-tlp-r" aria-label="Move time forward">';
+      var r = $('.fs-tlp-r', ctl);
+      r.addEventListener('input', function () { var v = +r.value; if (v > (st.max[cur] || 0)) { st.max[cur] = v; saveJ('timelapse', st); } var q = v / 100; drawModel(c, q); $('.fs-tlp-t', ctl).textContent = timeLabel(c, q); paintBadges(q); });
+      paintBadges(p, last);
+      var all = T.changes.reduce(function (n, c2) { return n + c2.badges.length; }, 0), got = Object.keys(st.s).length;
+      count.textContent = '⏱️ ' + got + ' of ' + all + ' ' + (T.countWord || 'clues stamped'); count.classList.toggle('ok', got === all);
+      if (got === all) askOnce(qh, T.q, T.opts, 'timelapse-q', win, T.win, T.clue, 'timelapse', miss);
+    }
+    function paintBadges(p, last) {
+      var c = ch(); badges.innerHTML = '';
+      c.badges.forEach(function (b, i) {
+        if (p * 100 < b.at) return; var k = bk(c, i), s = st.s[k];
+        var e = el('button', 'fs-tlp-badge' + (s ? ' done' : '') + (k === last ? ' new' : '') + (open === k ? ' on' : ''), (s ? type(s).icon + ' ' : '❓ ') + esc(b.t)); e.type = 'button';
+        e.addEventListener('click', function () { if (s) return; open = k; SFX.blip(); paintBadges(p); stampQ(c, i); }); badges.appendChild(e);
+      });
+      var allIn = c.badges.every(function (b, i) { return st.s[bk(c, i)]; });
+      if (allIn && c.endLine && !$('.fs-tlp-end', out)) { out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card flash fs-tlp-end' + (c.wow ? ' fs-srd-goldcard' : ''), '<span class="fs-hs-n">' + (c.wow ? '🤯' : c.icon) + '</span><div>' + esc(c.endLine) + '</div>')); }
+      else if (!allIn && p > 0 && c.badges.some(function (b) { return p * 100 >= b.at; }) && !open && !ask.innerHTML) ask.innerHTML = '<p class="fs-scr-tip">' + esc(T.tapTip || 'Tap a clue that popped up to stamp it.') + '</p>';
+    }
+    function stampQ(c, i) {
+      var b = c.badges[i], k = bk(c, i); ask.innerHTML = '';
+      var w = el('div', 'fs-sv-q', '<div class="fs-in-k">' + esc((T.stampQ || 'What kind of clue is “{b}”?').replace('{b}', b.t)) + '</div><div class="fs-in-chips"></div>'), chs = $('.fs-in-chips', w);
+      T.types.forEach(function (t) { var e = el('button', 'fs-in-chip', t.icon + ' ' + esc(t.t)); e.type = 'button';
+        e.addEventListener('click', function () { ac(); if (t.k !== b.type) { bounce(e, miss, b.miss || 'Look at the model again. What changed?'); return; } st.s[k] = t.k; saveJ('timelapse', st); SFX.stamp(); miss.classList.remove('show'); open = null; ask.innerHTML = ''; paint(k); }); chs.appendChild(e); });
+      ask.appendChild(w);
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 4: "Conveyor sort" — example cards ride a belt one at a time. Tap a bin (or drag the card into it) before the card reaches the end. A wrong bin
+     bounces with a hint and the card goes to the back of the line; a card that falls off the end comes back around. 🐢 slows the belt (29.01) ----------
+     D.conveyor = {afterText, kicker, title, todo[], why, bins:[{k, icon, t}], cards:[{id, icon, t, bin, why, miss}], secs, slowBtn, fastBtn, missedLine, countWord, q, opts, win, clue}.
+     Classes fs-cnv-*. */
+  function buildConveyor() {
+    var C = D.conveyor; if (!C) return;
+    var at = anchorP(C.afterText); if (!at) { FAILED.push('conveyor anchor text not found'); return; }
+    var g = gameShell(C.kicker || 'Part 4 game', C.title, C.todo, C.why); g.dataset.mod = 'conveyor';
+    var st = loadJ('conveyor', { done: {} }), queue = C.cards.filter(function (c) { return !st.done[c.id]; }).map(function (c) { return c.id; }), curId = null, pos = 0, last = null, slow = false, running = false, raf = null;
+    var belt = el('div', 'fs-cnv-belt', '<div class="fs-cnv-rollers"></div><div class="fs-cnv-card" role="status"></div><div class="fs-cnv-end">⤵</div>'), bins = el('div', 'fs-cnv-bins'), ctl = el('div', 'fs-mug-go'), out = el('div'), miss = el('div', 'fs-miss'), sorted = el('div', 'fs-cnv-sorted'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [belt, bins, ctl, miss, out, sorted, count, qh, win].forEach(function (e) { g.appendChild(e); });
+    var card = $('.fs-cnv-card', belt);
+    C.bins.forEach(function (b) { var e = el('button', 'fs-cnv-bin', '<span>' + b.icon + '</span><b>' + esc(b.t) + '</b>'); e.type = 'button'; e.dataset.k = b.k; bins.appendChild(e); e.addEventListener('click', function () { drop(b.k, e); }); });
+    dragDrop(card, function () { return $$('.fs-cnv-bin', bins); }, function (_, t) { drop(t.dataset.k, t); });
+    function cardOf(id) { return C.cards.filter(function (c) { return c.id === id; })[0]; }
+    function next() { if (!queue.length) { curId = null; card.style.display = 'none'; stop(); paint(); return; } curId = queue.shift(); pos = 0; var c = cardOf(curId); card.style.display = ''; card.innerHTML = '<span>' + c.icon + '</span>' + esc(c.t); card.classList.remove('bounce'); place(); }
+    function place() { card.style.left = (reduceMotion ? 40 : pos * 82) + '%'; }
+    function tick(t0) {
+      var lastT = null;
+      function f(now) { if (!running) return; if (lastT == null) lastT = now; var dt = (now - lastT) / 1000; lastT = now; if (!reduceMotion && curId) { pos += dt / ((C.secs || 9) * (slow ? 1.8 : 1)); if (pos >= 1) { fall(); } place(); } raf = requestAnimationFrame(f); }
+      raf = requestAnimationFrame(f);
+    }
+    function start() { if (running) return; running = true; if (!curId) next(); tick(); paint(); }
+    function stop() { running = false; if (raf) cancelAnimationFrame(raf); }
+    function fall() { var c = cardOf(curId); SFX.thud(); queue.push(curId); out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">🔁</span><div>' + esc((C.missedLine || 'Missed one! “{c}” will come back around.').replace('{c}', c.t)) + '</div>')); next(); }
+    function drop(k, binEl) {
+      if (!curId) return; ac(); var c = cardOf(curId);
+      if (k !== c.bin) { bounce(card, miss, c.miss || 'Is it still the same stuff, or did something new form?'); return; }
+      st.done[c.id] = k; saveJ('conveyor', st); SFX.chime(); miss.classList.remove('show'); last = c.id; binEl.classList.remove('flash'); void binEl.offsetWidth; binEl.classList.add('flash');
+      out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + c.icon + '</span><div><b>' + esc(c.t) + '</b>' + esc(c.why) + '</div>')); next(); paint();
+    }
+    function paint() {
+      ctl.innerHTML = '';
+      var n = Object.keys(st.done).length;
+      if (n < C.cards.length) {
+        var b = el('button', 'fs-btn' + (running ? ' alt' : ''), esc(running ? (slow ? (C.fastBtn || '🐇 Normal speed') : (C.slowBtn || '🐢 Slow the belt')) : (C.startBtn || '▶ Start the belt'))); b.type = 'button';
+        b.addEventListener('click', function () { if (!running) start(); else { slow = !slow; paint(); } SFX.blip(); }); ctl.appendChild(b);
+      }
+      sorted.innerHTML = C.bins.map(function (bn) { var items = C.cards.filter(function (c) { return st.done[c.id] === bn.k; }); return '<div class="fs-cnv-col"><b>' + bn.icon + ' ' + esc(bn.t) + '</b>' + items.map(function (c) { return '<span' + (c.id === last ? ' class="new"' : '') + '>' + c.icon + ' ' + esc(c.t) + '</span>'; }).join('') + '</div>'; }).join('');
+      count.textContent = '📦 ' + n + ' of ' + C.cards.length + ' ' + (C.countWord || 'cards sorted'); count.classList.toggle('ok', n === C.cards.length);
+      if (n === C.cards.length) { stop(); card.style.display = 'none'; askOnce(qh, C.q, C.opts, 'conveyor-q', win, C.win, C.clue, 'conveyor', miss); }
+    }
+    card.style.display = 'none'; paint(); placeAfter(g, at);
+  }
+
+  /* ---------- after the solve: "The glow stick twist" — lights out; bend the glow stick (press Crack it) and it glows; a chip question and a fact card (29.01) ----------
+     D.glowtwist = {after, kicker, title, todo[], lockLine, why, model, crackBtn, q, opts, fact:{q, t}, win}. Classes fs-glw-*. */
+  function buildGlowtwist() {
+    var G = D.glowtwist; if (!G) return;
+    var g = gameShell(G.kicker || 'Case closed · a twist', G.title, G.todo, G.why); g.dataset.mod = 'glowtwist';
+    afterSolve(g, G.after, G.lockLine, function (body) {
+      var st = loadJ('glowtwist', { on: 0 }), stage = el('div', 'fs-glw-stage'), ctl = el('div', 'fs-mug-go'), qh = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      [stage, ctl, qh, miss, win].forEach(function (e) { body.appendChild(e); });
+      function draw(on, bend) {
+        stage.innerHTML = '<div class="fs-svgbox" style="padding-top:40%"><svg viewBox="0 0 400 160" role="img" aria-label="A model glow stick in the dark, ' + (on ? 'glowing green' : 'not glowing yet') + '.">' +
+          '<rect width="400" height="160" fill="#0F1424"/>' + [30, 90, 330, 370].map(function (x, i) { return '<circle cx="' + x + '" cy="' + (20 + i * 9) + '" r="1.4" fill="#fff" opacity=".7"/>'; }).join('') +
+          (on ? '<ellipse cx="200" cy="86" rx="150" ry="40" fill="#7CFF6B" opacity=".18"/>' : '') +
+          '<g transform="rotate(' + (bend ? -6 : 0) + ' 200 86)"><rect x="70" y="76" width="260" height="20" rx="10" fill="' + (on ? '#9DFF8A' : '#C8D3C3') + '" stroke="' + (on ? '#4BE33A' : '#8C978A') + '" stroke-width="3"/>' +
+          (on ? '' : '<rect x="110" y="83" width="180" height="6" rx="3" fill="#E9F1EA" stroke="#A9B4A7"/>') + '</g>' +
+          '<text x="200" y="150" text-anchor="middle" class="fs-lns-model">' + esc(G.model || 'A model glow stick.') + '</text></svg></div>';
+      }
+      function paint() {
+        draw(st.on); ctl.innerHTML = '';
+        if (!st.on) { var b = el('button', 'fs-btn', esc(G.crackBtn || '💥 Bend it until it cracks')); b.type = 'button'; ctl.appendChild(b);
+          b.addEventListener('click', function () { ac(); SFX.snap(); draw(false, true); setTimeout(function () { st.on = 1; saveJ('glowtwist', st); SFX.sparkle(); paint(); }, reduceMotion ? 0 : 450); }); return; }
+        askOnce(qh, G.q, G.opts, 'glowtwist-q', win, G.win, null, 'glowtwist', miss);
+        if (G.fact && !$('.fs-glw-fact', body)) body.insertBefore(el('div', 'fs-why fs-kraft fs-glw-fact', '<span class="fs-why-ic">💡</span><div><b>' + esc(G.fact.q) + '</b>' + esc(G.fact.t) + '</div>'), qh);
+      }
+      paint();
+    });
+  }
+
+  /* ---------- Tool of the Week: "Red cabbage indicator" — drag the dropper of purple cabbage juice into each cup (or tap the cup). The juice changes color: pink in an
+     acid, purple in plain water, blue-green in a base. A mystery cup last; then one chip question (29.01) ----------
+     T.cabbage = {title, todo[], model, cups:[{k, t, col, line, mystery?}], q:{q, opts:[{t, ok, why}]}} */
+  SIMS.cabbage = function (host, T) {
+    var M = T.cabbage, st = loadJ('cabbage', { on: {} });
+    host.innerHTML = '<div class="fs-game-k">' + esc(M.kicker || 'Try it: the red cabbage indicator') + '</div><div class="fs-game-t">' + esc(M.title) + '</div><ul class="fs-todo">' + M.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-cab-top"><button type="button" class="fs-in-chip fs-dragc fs-cab-drop">💧 ' + esc(M.dropWord || 'Cabbage juice dropper') + '</button></div><div class="fs-cab-cups"></div><div class="fs-cab-out"></div><div class="fs-cab-q"></div><div class="fs-miss"></div>' +
+      '<p class="fs-pbal-model">' + esc(M.model || 'A model. Try it at home with an adult: boil chopped red cabbage, cool the purple water, and drip it in.') + '</p>';
+    var cups = $('.fs-cab-cups', host), out = $('.fs-cab-out', host), qh = $('.fs-cab-q', host), miss = $('.fs-miss', host), drop = $('.fs-cab-drop', host);
+    function paint() {
+      cups.innerHTML = '';
+      M.cups.forEach(function (c) { var on = st.on[c.k], e = el('button', 'fs-cab-cup' + (on ? ' on' : ''), '<svg viewBox="0 0 80 100" aria-hidden="true"><path d="M12 10 h56 l-6 82 h-44z" fill="#F4F7F8" stroke="#8C959B" stroke-width="3"/><path d="M15 40 h50 l-4 50 h-42z" fill="' + (on ? c.col : '#EEF3F5') + '"/></svg><b>' + esc(c.t) + '</b>' + (on ? '<small>' + esc(c.colName || '') + '</small>' : '')); e.type = 'button'; e.dataset.k = c.k; cups.appendChild(e); e.addEventListener('click', function () { if ($('.sel', host)) { $('.sel', host).classList.remove('sel'); } pour(c.k); }); });
+      dragDrop(drop, function () { return $$('.fs-cab-cup', cups); }, function (_, t) { pour(t.dataset.k); });
+      var allOn = M.cups.every(function (c) { return st.on[c.k]; });
+      if (allOn && !qh.dataset.on) { qh.dataset.on = '1'; chipsQ(qh, M.q.q, M.q.opts.map(function (o) { return { t: o.t, ok: o.ok, miss: o.why }; }), function () { var o = M.q.opts.filter(function (x) { return x.ok; })[0]; qh.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">✅</span><div>' + esc(o.why) + '</div>')); toolDone(); }, miss); }
+    }
+    function pour(k) { if (st.on[k]) return; ac(); SFX.blip(); setTimeout(SFX.sparkle, 200); st.on[k] = 1; saveJ('cabbage', st); var c = M.cups.filter(function (x) { return x.k === k; })[0]; out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">🧪</span><div>' + esc(c.line) + '</div>')); paint(); }
+    paint();
+  };
+
   /* ======================= 28.02 "Proof for the Steel Bin" (Case 28 part 2): case.intake, spotdiff, suredial, notes2table, ruler, SIMS.fieldviewer plates ======================= */
 
   /* ---------- case: the recycling center's intake slip (28.02). case.intake = {head, title, rows:[[icon, item]], cols[2], blank, proofLine, sign}
@@ -14605,6 +14889,11 @@
     guard('suredial', buildSuredial);
     guard('notes2table', buildNotes2table);
     guard('ruler', buildRuler);
+    guard('lens', buildLens);
+    guard('toolkit', buildToolkit);
+    guard('timelapse', buildTimelapse);
+    guard('conveyor', buildConveyor);
+    guard('glowtwist', buildGlowtwist);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);
