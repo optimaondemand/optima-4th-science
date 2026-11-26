@@ -1,0 +1,340 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; the plan puts Module 27 in Unit 6 “Matter, Magnets, and Changes”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Matter, Magnets &amp; Changes</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "materials and properties are physical science, not life science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS codes; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.N.1.1, SC.4.P.8.1, SC.4.P.8.3 · TEKS 4.6(A), 4.6(B), 4.6(C)</div>",
+  "new": "<div class=\"info-value\">SC.4.N.1.1, SC.4.P.8.1, SC.4.P.8.3</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards detail: density, mixtures and solutions are Grade 5 (SC.5.P.8); the plan row is sorting materials + mass of whole = sum of parts",
+  "old": "<div class=\"info-detail\">Properties, Density, Mixtures & Solutions</div>",
+  "new": "<div class=\"info-detail\">Sorting materials &amp; mass of parts</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 27 is Q4 in the Canvas plan (the header already says Q4)",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Warm-Up title named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Take It Apart</div>\n        <div class=\"act-subtitle\">Does anything get lost?</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster warm-up → take it apart (SC.4.P.8.3, the plan’s required coverage)",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>A toy robot built from snap-together blocks sits on a kitchen scale: 60 grams. Now pull it apart into a pile of pieces. Will the pile weigh more, less or the same?</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the toaster sketch → the take-apart test (played and answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Lock in your prediction. Then test it right here.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: “Device” meant converting energy; this lesson’s devices are jobs that need the right materials",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job. An umbrella, a sponge and a frying pan are devices: each one needs materials with the right properties."
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover: the Stop & Reason asked about “the three devices above” (no devices on this page)",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C was a food chain; the checklist already describes a material-choice project",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Choose a Material for a Job"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Part C task → the checklist’s material-choice project (typed and sketched on the page)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Pick a real job at home: a raincoat, a phone stand, a kitchen towel or a dog bowl. Name 3 properties the material needs. Pick 2 materials that could work. Then choose the winner and prove it in one sentence.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover: Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list: what the Warm-Up and the drip and bend lab can use at home",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🧱</span>Optional: snap-together blocks and a kitchen scale</span><span class=\"need-chip\"><span>💧</span>Optional: a spoon of water, foil, a paper towel, a scrap of cloth</span>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Grade 5 box (ticked): “Mixtures, Solutions & Relative Density” is not in the plan row (SC.5.P.8.3 and density are 5th grade). Part 3 now teaches the plan’s required SC.4.P.8.3 (mass of the whole = sum of the parts), from the page’s own Science Connection, + the cropped job picture moved here, after the rigs game",
+  "old": "<div style=\"background:#EAF8FD;border:2px solid #B8E0F8;[^>]*>\\s*<p[^>]*>🧪 Mixtures, Solutions & Relative Density</p>.*?</div>\\s*",
+  "new": "<div class=\"lesson-figure scroll-reveal\">\n        <div class=\"lesson-figure-label\">🎯 Job → Material</div>\n        <img src=\"images/27-02-job-to-material.png\" alt=\"Three jobs matched to a material. An umbrella needs flexible and waterproof: plastic. A sponge needs absorbent and flexible: foam. A bridge needs rigid and strong: steel.\" />\n        <div class=\"lesson-figure-caption\"><strong>The job decides.</strong> A material that is right for one job can be wrong for another.</div>\n      </div>\n\n      <h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Mass and Volume Are Properties, Too</h3>\n      <p>Mass is how much matter an object has. Volume is how much space it takes up. Engineers check both: a trophy for a little kid needs a small mass.</p>\n      <p>Here is a surprising fact: take something apart, and the mass of the whole equals the sum of the masses of its parts. Nothing is lost. You saw it with the toy robot. Now try it with the real trophy:</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "picture (ticked): the infographic’s left half puts each material in ONE group, which contradicts Part 1 (one material, many groups). The right half (job → material) is kept as a cropped copy and moved after the rigs game, so it doesn’t give the rigs’ answers away. (The original file stays in images/.)",
+  "old": "<div class=\"lesson-figure scroll-reveal\">\\s*<div class=\"lesson-figure-label\">🗂️ Sort, Then Choose</div>.*?<div class=\"lesson-figure-caption\"><strong>Sort first\\. Choose second\\.</strong>.*?</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "tap diagram (ticked): the Four Material-Job Matches tap diagram is replaced by the job test rigs; with it go Observe & Reason (Part B question 5 asks the same), the spacesuit Amazing Fact, the hurricane Florida connection (the “shingle clips” line is shaky: hurricane clips hold roof trusses), the Smart materials Go Deeper and the Science Connection (its mass idea is now Part 3)",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Material-Job Matches</h3>.*?(?=<div class=\"tab-next-wrap\">)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "shaky fact (ticked): swimsuit fabric does soak up some water (“not absorb water” is wrong). Cut for length rather than reworded: the three jobs above it match the rigs",
+  "old": "\\s*<li><strong>Florida swimsuit:</strong> needs to dry quickly AND not absorb water.*?</li>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; no dashes",
+  "old": "<p>Hold this question in your head as you work\\. By the end of the lesson.*?</p>",
+  "new": "<p>Keep this question in mind. By the end, you’ll sort materials by their properties and pick the best one for a job.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "To sort items into groups based on a shared property — like sorting all metals together or all flexible things together.",
+  "new": "To sort items into groups by a shared property, like putting all the bendy things together."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash, plain words",
+  "old": "A trait of a material — color, hardness, flexibility, magnetism, waterproof, conducts heat.",
+  "new": "A trait of a material: its color, how hard it is, whether it bends, whether it keeps water out."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "A specific kind of matter — wood, metal, plastic, rubber, paper, cloth. Each has its own set of properties.",
+  "new": "A kind of matter, like wood, metal, plastic, rubber, paper or cloth. Each has its own set of properties."
+ },
+ {
+  "kind": "plain",
+  "why": "define magnetism where it first shows up",
+  "old": "You can sort by color, hardness, magnetism, or whether",
+  "new": "You can sort by color, hardness, magnetism (sticking to a magnet), or whether"
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: one example; the stickers game lets students find the rest instead of reading the answers",
+  "old": "<p>For example, rubber is flexible AND waterproof\\. Wood is rigid AND absorbent\\..*?</p>",
+  "new": "<p>Rubber, for example, is flexible AND waterproof. So which groups does each material belong to? Test it with stickers.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (flexible vs rigid) is played by the stickers game",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception paragraph (“one best material”) is played by the rigs game, where steel wins one job and fails three",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think there\\'s ONE \"best material\".*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Key Concept (the rigs game and Part 2 teach it)",
+  "old": "\\s*<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?</p>\\s*</div>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 now points at the rigs (the tap diagram is gone)",
+  "old": "Pick ONE job from the diagram (umbrella, sponge, bridge, frying pan handle).",
+  "new": "Pick ONE job from the test rigs (umbrella, sponge, bridge, frying pan handle)."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE job from the diagram (umbrella, sponge, b...\"",
+  "new": "data-label=\"One job: two properties and the best material\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"A friend wants to build a boat out of paper. Will ...\"",
+  "new": "data-label=\"A paper boat: will it work?\""
+ },
+ {
+  "kind": "plain",
+  "why": "no dash",
+  "old": "<em>\"There's one best material for everything — steel.\"</em>",
+  "new": "<em>\"There's one best material for everything: steel.\"</em>"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dashes",
+  "old": "Engineers everywhere — from architects to spacesuit designers — do exactly this. Next module, we move to MAGNETS — another set of properties that opens up its own world of design.",
+  "new": "Engineers everywhere, from builders to spacesuit designers, do exactly this. Next week: MAGNETS, a whole new set of properties to explore."
+ },
+ {
+  "kind": "cut",
+  "why": "Part 4 = the old Explore (Classify and Choose → the drip and bend lab, a classification table); the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · The Drip and Bend Lab</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Time for an investigation (a test you run to answer a question): five materials, two tests. Drip water on each one, then bend it. Your results go into a classification table (a chart that sorts evidence into rows and columns).</p>\n  <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its sort-and-test steps live on as the drip and bend lab; its choose-a-job step is Part C; the Hubble fact, the phone-stand Think like a scientist and the recycling Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6; the CER argues the same idea)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 6 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C checklist ends with the required sketch",
+  "old": "A material-choice project with job, 3 properties, 2 candidate materials, and a claim+evidence sentence picking the winner.",
+  "new": "A job, 3 properties it needs, 2 materials that could work, and one sentence that picks the winner with evidence. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether one material is best for everything, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether one material is best for everything, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ }
+]

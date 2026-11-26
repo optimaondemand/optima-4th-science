@@ -1,0 +1,355 @@
+{
+ "lesson": "27.02",
+ "prefix": "g4sci-27-2",
+ "manifestKey": "27-02",
+ "guide": "priya",
+ "slots": {
+  "welcome": {
+   "label": "Welcome · Next Year’s Trophy",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🏅 A new trophy",
+     "tag": "CASE 27 · PART 2",
+     "title": "Order one for next year",
+     "col": "#B8860B",
+     "body": "Mr. Ortiz wants a NEW trophy. He wrote down exactly what it must do."
+    },
+    {
+     "label": "📝 The order form",
+     "tag": "THREE NEEDS",
+     "title": "Rain · drops · under 500 g",
+     "col": "#C8553D",
+     "rows": [
+      [
+       "☔",
+       "Survive rain"
+      ],
+      [
+       "🧒",
+       "Not break if dropped"
+      ],
+      [
+       "⚖️",
+       "Under 500 grams"
+      ]
+     ]
+    },
+    {
+     "label": "🧪 Four designs",
+     "tag": "THE QUESTION",
+     "title": "Which one fits every need?",
+     "col": "#7A5BB5",
+     "body": "Brass, glass, aluminum, cardboard."
+    }
+   ],
+   "script": "(Hold up a paper cup and a metal spoon.) If I needed a cup for hot soup, which would you pick? What about a spoon for stirring?\n\n[ON SCREEN: A new trophy]\nYou found the real Duck Derby trophy. Now Mr. Ortiz wants a brand new one for next year.\n\n[ON SCREEN: The order form]\nIt has to survive rain, not break if a little kid drops it, and weigh under 500 grams.\n\n[ON SCREEN: Four designs]\nThe engraver sent four designs. Only one fits every need. Read the case file just below me."
+  },
+  "warmup": {
+   "label": "Warm-Up · take it apart (Clue 1)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🧱 Take it apart",
+     "tag": "WARM-UP GAME",
+     "title": "Two scales, one robot",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "🔒",
+       "Lock in your prediction"
+      ],
+      [
+       "👉",
+       "Drag each part to Scale 2"
+      ],
+      [
+       "🧾",
+       "Watch the adding tape"
+      ]
+     ]
+    },
+    {
+     "label": "🤔 Predict",
+     "tag": "THE QUESTION",
+     "title": "More, less or the same?",
+     "col": "#7A5BB5",
+     "body": "The whole robot weighs 60 grams."
+    }
+   ],
+   "script": "(Snap two blocks or two markers together, then pull them apart.) Together… apart. Did I just lose anything?\n\n[ON SCREEN: Predict]\nThe whole robot weighs 60 grams. Will the pile of parts weigh more, less, or the same? Lock in your prediction first.\n\n[ON SCREEN: Take it apart]\nThen drag each part onto Scale 2 and watch the adding tape. Answer the question, and Clue one is yours."
+  },
+  "part1": {
+   "label": "Part 1 · sticker every property (Clue 2)",
+   "length": "40–50 s",
+   "want": false,
+   "parts": [
+    {
+     "label": "🏷️ The sticker sheet",
+     "tag": "PART 1 GAME",
+     "title": "One material, many groups",
+     "col": "#5A3B92",
+     "rows": [
+      [
+       "🤸",
+       "Bends"
+      ],
+      [
+       "🧱",
+       "Stays stiff"
+      ],
+      [
+       "☔",
+       "Waterproof"
+      ],
+      [
+       "🧽",
+       "Soaks up water"
+      ],
+      [
+       "🧲",
+       "Sticks to a magnet"
+      ]
+     ]
+    }
+   ],
+   "script": "(Hold up a rubber band and stretch it, then drip a drop of water on it.) It bends. And water rolls right off. So which group does rubber belong in?\n\n[ON SCREEN: The sticker sheet]\nBoth! Give every material every sticker that fits. Each card shows how many it needs. A wrong sticker bounces off, so read why."
+  },
+  "part2": {
+   "label": "Part 2 · the job test rigs (Clue 3)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🧪 The rigs",
+     "tag": "PART 2 GAME",
+     "title": "Test before you build",
+     "col": "#2F7A55",
+     "rows": [
+      [
+       "☂️",
+       "Umbrella"
+      ],
+      [
+       "🧽",
+       "Sponge"
+      ],
+      [
+       "🌉",
+       "Bridge beam"
+      ],
+      [
+       "🍳",
+       "Frying pan handle"
+      ]
+     ]
+    },
+    {
+     "label": "🔩 Steel",
+     "tag": "WATCH THIS",
+     "title": "Can steel win them all?",
+     "col": "#C8553D",
+     "body": "Strong and heavy. Is that always best?"
+    }
+   ],
+   "script": "(Pretend to open an umbrella, then pretend it is made of heavy metal and can barely lift it.) Hmm. A steel umbrella. Great idea?\n\n[ON SCREEN: The rigs]\nPick a job, read what it needs, drag in a material, and run the test. If it fails, swap and run again.\n\n[ON SCREEN: Steel]\nTry steel in every rig. Does the strongest material win every job?"
+  },
+  "part3": {
+   "label": "Part 3 · the 412-gram puzzle (wow)",
+   "length": "30–40 s",
+   "want": false,
+   "parts": [
+    {
+     "label": "🔧 The bench",
+     "tag": "WOW!",
+     "title": "The real trophy in pieces",
+     "col": "#B8860B",
+     "body": "Tap each part. The tape adds it up."
+    }
+   ],
+   "script": "(Point at a pile of LEGO or pencils on your desk.) A pile always LOOKS smaller than the whole thing.\n\n[ON SCREEN: The bench]\nThe engraver took the real trophy apart, and Mr. Ortiz is worried some brass went missing. Tap every part on the bench, and watch the total. Remember: the whole trophy weighed 412 grams."
+  },
+  "explore": {
+   "label": "Part 4 · the drip and bend lab (Clue 4)",
+   "length": "40–50 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💧 Drip it",
+     "tag": "PART 4 GAME",
+     "title": "Beads up, or soaks in?",
+     "col": "#2D7AA6",
+     "rows": [
+      [
+       "✨",
+       "Foil"
+      ],
+      [
+       "🧻",
+       "Paper towel"
+      ],
+      [
+       "🫧",
+       "Plastic wrap"
+      ],
+      [
+       "🧣",
+       "Cotton cloth"
+      ],
+      [
+       "📦",
+       "Cardboard"
+      ]
+     ]
+    },
+    {
+     "label": "📋 Your table",
+     "tag": "CLASSIFICATION TABLE",
+     "title": "Rows and columns of evidence",
+     "col": "#5A3B92",
+     "body": "Material · Water test · Bend test"
+    }
+   ],
+   "script": "(Drip one drop of water on a paper towel and one on a piece of foil.) Look! One drinks it up, one won’t.\n\n[ON SCREEN: Drip it]\nTest all five swatches. Drip water, watch, and tap what you saw. Then bend each one.\n\n[ON SCREEN: Your table]\nYour results build a classification table. Read it to find which materials pass BOTH tests. That’s Clue four."
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🔓 Crack the case",
+     "tag": "TOP OF THE ASSIGNMENT",
+     "title": "Which design?",
+     "col": "#7A5BB5",
+     "body": "Add up each design. Check every need. Pick the one that fits all four clues."
+    },
+    {
+     "label": "✍️ Your case report",
+     "tag": "WHAT TO DO",
+     "title": "Three places to work",
+     "col": "#B8860B",
+     "rows": [
+      [
+       "Part B",
+       "Two short answers"
+      ],
+      [
+       "Part C",
+       "Choose a material for a job at home"
+      ],
+      [
+       "CER",
+       "Claim, evidence, reasoning"
+      ]
+     ]
+    }
+   ],
+   "script": "[ON SCREEN: Crack the case]\nFour designs, three needs. Add up each design’s parts, check every need, and pick the one that fits all four clues. Then watch for a late note from Mr. Ortiz!\n\n[ON SCREEN: Your case report]\nNext, two short answers. For Part C, pick a job at home, like a raincoat or a dog bowl, and choose its material. Then sketch and label it. Last comes your CER about steel."
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "35–45 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "💬 The claim",
+     "tag": "USE YOUR EVIDENCE",
+     "title": "A classmate says…",
+     "col": "#C8553D",
+     "body": "“There’s one best material for everything: steel.”"
+    },
+    {
+     "label": "🧩 The planner",
+     "tag": "PLAN BEFORE YOU WRITE",
+     "title": "Claim · Evidence · Reasoning",
+     "col": "#5A3B92",
+     "rows": [
+      [
+       "1",
+       "Tap I agree or I disagree."
+      ],
+      [
+       "2",
+       "Tap two pieces of evidence."
+      ],
+      [
+       "3",
+       "You write the reasoning."
+      ]
+     ]
+    }
+   ],
+   "script": "(Flex your arm like a strongman.) Steel is strong. Steel is tough. So steel is the best at everything… right?\n\n[ON SCREEN: The claim]\nA classmate says steel is the best material for everything. You tested steel today, in four different jobs.\n\n[ON SCREEN: The planner]\nTap your side and two facts. Then explain how they prove your claim. Try starting with “This shows that…”"
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "30–40 s",
+   "want": true,
+   "parts": [
+    {
+     "label": "🏅 Your specimen",
+     "tag": "FIELD NOTEBOOK",
+     "title": "The new trophy design",
+     "col": "#B8860B",
+     "body": "Finish the checklist to stamp CASE CLOSED."
+    },
+    {
+     "kind": "photo",
+     "pic": "tile",
+     "label": "🚀 One more wow"
+    },
+    {
+     "label": "➡ Next week",
+     "tag": "WEEK 28",
+     "title": "Magnets",
+     "col": "#2D7AA6",
+     "body": "Attract, repel, and test them yourself."
+    }
+   ],
+   "script": "(Hold up an imaginary trophy and read an imaginary engraving.) Next year’s winner will hold a trophy YOU designed.\n\n[ON SCREEN: Your specimen]\nFinish your checklist, and the new trophy design goes into your Field Notebook.\n\n[ON SCREEN: One more wow]\nDid you see the glowing NASA tile? Every material in that photo was picked for a job.\n\n[ON SCREEN: Confetti]\n\n[ON SCREEN: Next week]\nNext week: magnets!"
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s",
+   "want": false,
+   "parts": [],
+   "script": "Quick check: three questions, one at a time. It’s not graded. If you miss one, read the hint and try again."
+  }
+ },
+ "pics": {
+  "tile": {
+   "src": "images/27-02-heat-tile-oven.jpg",
+   "cap": "A glowing shuttle heat tile at NASA Kennedy Space Center (NASA/Jim Grossmann, public domain)"
+  },
+  "jobs": {
+   "src": "images/27-02-job-to-material.png",
+   "cap": "Job → material"
+  }
+ },
+ "other": [
+  {
+   "id": "vocab",
+   "label": "Word Wall",
+   "length": "30–45 s"
+  },
+  {
+   "id": "lesson",
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  {
+   "id": "partb",
+   "label": "Part B",
+   "length": "30 s"
+  },
+  {
+   "id": "partc",
+   "label": "Part C · choose a material for a job",
+   "length": "30 s"
+  }
+ ],
+ "redo": []
+}

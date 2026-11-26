@@ -4796,3 +4796,86 @@ html.fs-on .fs-replaced { display:none !important; }
 
 .fs-sq-model { font: 800 11.5px 'Nunito', sans-serif; fill: #8A7357; }
 .fs-pbal-model { font-size: 12.5px; color: #8A7357; font-weight: 700; margin: 6px 0 0; }
+
+/* ======================= 27.02 Next Year's Trophy: fs-ord (case order form), fs-tka (take it apart), fs-pst (property stickers), fs-rig (job test rigs), fs-tly (adding tape), fs-dbl (drip and bend lab), fs-sun (late note) ======================= */
+.fs-dragc { touch-action: none; }
+.fs-dragc.sel { border-color: var(--fs-gold); box-shadow: 0 3px 0 #E3A92D; transform: translateY(-2px); }
+.fs-dragc.ghost { position: fixed; pointer-events: none; z-index: 9999; opacity: .92; }
+.fs-dragc.bounce { animation: fsBounce .45s; }
+.fs-dragc small { font-weight: 800; color: #7C8C92; }
+
+.fs-ord { margin: 14px 0; }
+.fs-ord-form { background: #FFFDF6; border: 2px solid #D9BE8E; border-radius: 10px; padding: 12px 16px; box-shadow: 0 3px 8px rgba(50, 36, 26, .15); background-image: repeating-linear-gradient(180deg, transparent 0 27px, #EFE4CC 27px 28px); }
+.fs-ord-h { font: 900 12px 'Nunito', sans-serif; letter-spacing: 1px; color: #7A5BB5; text-transform: uppercase; }
+.fs-ord-t { font: 900 18px 'Nunito', sans-serif; color: #0E1C42; margin-bottom: 6px; }
+.fs-ord-form dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; }
+.fs-ord-form dt { font-weight: 800; color: #6B5B49; font-size: 14px; }
+.fs-ord-form dd { margin: 0; font-size: 14.5px; color: #2B1D12; font-weight: 700; }
+.fs-ord-sign { font: italic 700 15px Georgia, serif; color: #3A4A8A; text-align: right; margin-top: 6px; }
+.fs-ord-lab { font: 900 12px 'Nunito', sans-serif; letter-spacing: .6px; text-transform: uppercase; color: #7A5BB5; margin: 12px 0 6px; }
+.fs-ord-designs { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.fs-ord-d { background: #fff; border: 2px solid #C9D6DA; border-radius: 10px; padding: 8px 10px; }
+.fs-ord-tag { display: inline-block; font: 900 11px 'Nunito', sans-serif; background: #0E1C42; color: #fff; border-radius: 6px; padding: 1px 7px; margin-bottom: 3px; }
+.fs-ord-d b { display: block; font-size: 14.5px; color: #0E1C42; margin-bottom: 3px; }
+.fs-ord-d table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.fs-ord-d td { padding: 2px 3px; border-bottom: 1px dashed #E5DDCF; color: #2B1D12; }
+.fs-ord-d td:last-child { text-align: right; font-weight: 800; white-space: nowrap; }
+.fs-ord-tot td { border-bottom: none; border-top: 2px solid #32241A; font-weight: 900; }
+.fs-ord-d small { display: block; color: #6B5B49; font-size: 12.5px; margin-top: 4px; }
+
+.fs-tka-stage, .fs-dbl-stage { margin: 10px 0 8px; border-radius: 14px; overflow: hidden; border: 2px solid #D9BE8E; }
+.fs-tka-stage.over { border-color: var(--fs-gold); box-shadow: 0 0 0 4px rgba(245, 184, 61, .35); }
+.fs-tka-tray { display: flex; flex-wrap: wrap; gap: 8px; }
+.fs-tka-pred { background: #FFF6DD; border: 2px solid #E8C35A; border-radius: 10px; padding: 7px 12px; font-size: 15px; color: #2B1D12; display: inline-block; }
+
+.fs-tly-tape { background: #FFFEF8; border: 1.5px solid #D8D0C0; border-radius: 6px 6px 0 0; padding: 8px 12px 10px; margin: 10px 0; font-family: 'Courier New', monospace; max-width: 360px; box-shadow: 0 3px 6px rgba(50, 36, 26, .12); }
+.fs-tly-tape > div:not(.fs-lu-lab) { display: flex; justify-content: space-between; gap: 10px; font-size: 14.5px; color: #2B1D12; padding: 1px 0; }
+.fs-tly-tape > div.new { background: #EEF8F0; }
+.fs-tly-sum { border-top: 2px dashed #32241A; margin-top: 4px; padding-top: 4px !important; font-weight: 900; }
+.fs-tly-tape.all .fs-tly-sum b { color: #1F9252; }
+.fs-tly-bench { background: #EADFC4; border: 2px solid #C9A86A; border-radius: 14px; padding: 10px 12px; margin: 10px 0; }
+.fs-tly-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.fs-tly-tag { display: flex; flex-direction: column; align-items: center; min-width: 92px; background: #FFF9E8; border: 2px solid #B07F2E; border-radius: 8px; padding: 6px 8px; cursor: pointer; font-family: 'Nunito', sans-serif; box-shadow: 0 3px 0 #B07F2E; }
+.fs-tly-tag span { font-size: 22px; } .fs-tly-tag b { font-size: 13px; color: #32241A; } .fs-tly-tag small { font-size: 12px; color: #6B5B49; font-weight: 800; }
+.fs-tly-tag.done { opacity: .5; box-shadow: none; transform: translateY(3px); }
+
+.fs-pst-sheet { display: flex; flex-wrap: wrap; gap: 8px; background: #F4F0FA; border: 2px dashed #B9A6DD; border-radius: 12px; padding: 8px 10px; margin: 8px 0; }
+.fs-pst-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 10px 0; }
+.fs-pst-card { position: relative; background: #fff; border: 2.5px solid #C9D6DA; border-radius: 12px; padding: 8px 10px 10px; text-align: center; cursor: pointer; min-height: 118px; transition: border-color .2s; }
+.fs-pst-card.over { border-color: var(--fs-gold); background: #FFF9E8; }
+.fs-pst-card.full { border-color: #7FC79B; background: #F4FBF4; }
+.fs-pst-card.nope { animation: fsBounce .45s; }
+.fs-pst-ic { font-size: 30px; line-height: 1.1; }
+.fs-pst-card > b { display: block; font-size: 14.5px; color: #0E1C42; margin-bottom: 4px; }
+.fs-pst-spots { display: flex; flex-direction: column; gap: 4px; }
+.fs-pst-empty { border: 2px dashed #C9D6DA; border-radius: 999px; font-size: 12.5px; color: #9AA9AE; padding: 2px 0; }
+.fs-pst-on { background: #E9E2F6; border: 2px solid #7A5BB5; border-radius: 999px; font: 800 12.5px 'Nunito', sans-serif; color: #3E2A6B; padding: 2px 6px; }
+.fs-pst-on.new { animation: fsPstPop .4s ease-out; }
+@keyframes fsPstPop { 0% { transform: scale(.4); } 70% { transform: scale(1.12); } 100% { transform: scale(1); } }
+.fs-pst-ok { position: absolute; top: 4px; right: 8px; color: #1F9252; font-style: normal; font-weight: 900; }
+
+.fs-rig { border: 2px solid #D9BE8E; border-radius: 14px; overflow: hidden; margin: 8px 0; background: #F6EEDC; }
+.fs-rig.over { border-color: var(--fs-gold); box-shadow: 0 0 0 4px rgba(245, 184, 61, .35); }
+.fs-rig-need { padding: 8px 12px; background: #FFF9E8; border-bottom: 1.5px solid #E8D9A8; font-size: 14.5px; color: #2B1D12; }
+.fs-rig-need em { font-style: normal; font-weight: 800; color: #7A5BB5; }
+.fs-rig-slot { padding: 6px 12px; background: #EADFC4; font-size: 14px; color: #5A4D3E; }
+.fs-rig-tabs .fs-in-chip.done::after, .fs-dbl-stage ~ .fs-twn-tools .fs-in-chip.done::after { content: ' ✓'; color: #1F9252; font-weight: 900; }
+.fs-rig-fx { font: 900 15px 'Nunito', sans-serif; fill: #C0392B; }
+.fs-rig-fx.ok { fill: #1F9252; }
+.fs-rig-bad { border-color: #E39AA0; background: #FDEEEF; }
+.fs-twn-tools .fs-in-chip.done::after { content: ' ✓'; color: #1F9252; font-weight: 900; }
+
+.fs-dbl-table td.fs-dbl-beads, .fs-dbl-table td.fs-dbl-bends { color: #1F6B9A; font-weight: 800; }
+.fs-dbl-table td.fs-dbl-soaks, .fs-dbl-table td.fs-dbl-stiff { color: #8A5A1E; font-weight: 800; }
+.fs-dbl-table td.new { background: #EEF8F0; }
+.fs-sun-note { transform: rotate(-.6deg); }
+@media (prefers-reduced-motion: reduce) { .fs-pst-on.new, .fs-pst-card.nope { animation: none; } }
+@media (max-width: 560px) {
+  .fs-pst-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .fs-pst-card { padding: 6px 5px 8px; min-height: 96px; }
+  .fs-pst-ic { font-size: 24px; }
+  .fs-pst-card > b { font-size: 13px; }
+  .fs-pst-on, .fs-pst-empty { font-size: 11.5px; padding: 1px 3px; }
+  .fs-pst-sheet { gap: 5px; padding: 6px; }
+  .fs-pst-sheet .fs-in-chip { font-size: 13px; padding: 4px 9px; }
+}
