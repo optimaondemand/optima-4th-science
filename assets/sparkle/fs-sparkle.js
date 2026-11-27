@@ -568,7 +568,7 @@
     card.innerHTML = '<div class="fs-folder-tab">CASE FILE ' + esc(C.num) + '</div><div class="fs-folder fs-kraft">' +
       '<div class="fs-case-k"><span class="fs-case-av"></span><span>From ' + esc(crewOf().name) + ', ' + esc(crewOf().role) + '</span></div>' +
       '<div class="fs-case-t">' + esc(C.title) + '</div>' +
-      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.order ? orderCard(C.order) : '') + (C.lostlog ? lostLog(C.lostlog) : '') + (C.intake ? intakeSlip(C.intake) : '') + (C.bingo ? bingoCard(C.bingo) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
+      '<p class="fs-case-p">' + esc(C.hook) + '</p>' + (C.paper ? gazette(C.paper) : '') + (C.menu ? menuBoard(C.menu) : '') + (C.napkin ? napkinCard(C.napkin) : '') + (C.tmap ? treasureMap(C.tmap) : '') + (C.board ? boardCard(C.board) : '') + (C.flyer ? flyerCard(C.flyer) : '') + (C.shelf ? shelfCard(C.shelf) : '') + (C.order ? orderCard(C.order) : '') + (C.lostlog ? lostLog(C.lostlog) : '') + (C.intake ? intakeSlip(C.intake) : '') + (C.bingo ? bingoCard(C.bingo) : '') + (C.pouch ? pouchCard(C.pouch) : '') + (C.creek ? creekCard(C.creek) : '') + (C.strip ? stripChart(C.strip) : '') + (C.thread ? '<div class="fs-th3"><div class="fs-th3-top"><span>' + esc(C.threadHead || 'Messages') + '</span><small>' + esc(C.threadSub || '') + '</small></div>' + C.thread.map(function (m) { return '<div class="fs-th3-m ' + (m.me ? 'me' : 'them') + '"><b>' + esc(m.who) + '</b><p>' + esc(m.t) + '</p>' + (m.time ? '<small>' + esc(m.time) + '</small>' : '') + '</div>'; }).join('') + '</div>' : '') + (C.letter ? '<div class="fs-letter"><div class="fs-letter-paper"><div class="fs-letter-to">' + esc(C.letter.to) + '</div>' + C.letter.body.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '<div class="fs-letter-sign">' + esc(C.letter.sign) + '</div></div>' + (C.letter.pins && D.flmap ? '<div class="fs-letter-map">' + flMap({ cities: true, label: 'Marco\u2019s map of Florida with four numbered pins.' }).outerHTML.replace('<g class="fs-fl-top"></g>', '<g class="fs-fl-top">' + flPinsSVG(C.letter.pins) + '</g>') + '<div class="fs-letter-pins">' + C.letter.pins.map(function (p) { return '<span><b>' + p.n + '</b> ' + esc(p.name) + '</span>'; }).join('') + '</div></div>' : '') + '</div>' : '') + (C.plans ? '<div class="fs-bp">' + C.plans.map(function (p) { return '<div class="fs-bp-card"><div class="fs-bp-tag">' + esc(p.tag) + '</div><div class="fs-bp-svg">' + p.svg + '</div><b>' + p.icon + ' ' + esc(p.t) + '</b><ul>' + p.rows.map(function (r) { return '<li><span>' + esc(r[0]) + ':</span> ' + esc(r[1]) + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div>' : '') + (C.map && D.townmap ? '<div class="fs-sn-casemap">' + D.townmap + (C.mapCap ? '<div class="fs-sn-cap">' + esc(C.mapCap) + '</div>' : '') + '</div>' : '') + (C.notice ? '<div class="fs-notice"><div class="fs-notice-h">' + esc(C.notice.head) + '</div><div class="fs-notice-t">' + esc(C.notice.title) + '</div><dl>' + C.notice.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (C.notice.line ? '<div class="fs-notice-line">' + esc(C.notice.line) + '</div>' : '') + '</div>' : '') + (C.diagram ? '<div class="fs-rpt-dia">' + C.diagram.svg + (C.diagram.cap ? '<div class="fs-rpt-cap">' + esc(C.diagram.cap) + '</div>' : '') + '</div>' : '') + (C.memo ? '<div class="fs-memo"><p>' + esc(C.memo.t) + '</p><b>' + esc(C.memo.sign || '') + '</b></div>' : '') + (C.ticket ? workTicket(C.ticket) : '') + (C.envelopes ? envBoard(C) : '') + (C.wishes ? '<div class="fs-wishes">' + C.wishes.map(function (w, i) { return '<div class="fs-wish" style="--r:' + ((i % 2 ? 1 : -1) * (1.5 + i)) + 'deg"><span class="fs-wish-ic">' + (w.icon || '⭐') + '</span><p>' + esc(w.t) + '</p><b>' + esc(w.who) + '</b></div>'; }).join('') + '</div>' : '') + (stills ? '<div class="fs-stills">' + stills + '</div>' : '') + (C.logs ? '<div class="fs-logs">' + C.logs.map(function (lg) {
         return '<div class="fs-log">' + (lg.img ? '<div class="fs-log-img"><img alt="' + esc(lg.alt || '') + '" src="' + esc(lg.img) + '"></div>' : '') + '<div class="fs-log-h">' + esc(lg.head) + '</div><dl>' + lg.rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' + (lg.big ? '<div class="fs-log-big">' + esc(lg.big) + '</div>' : '') + '</div>';
       }).join('') + (C.sticky ? '<div class="fs-log-sticky">' + esc(C.sticky) + '</div>' : '') + '</div>' : '') + (C.stillsCredit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credits</summary>' + esc(C.stillsCredit) + '</details>' : '') +
       (C.smudge ? '<div class="fs-case-smudge" aria-label="' + esc(C.smudge.replace(/…$/, '') + '… (the rest is washed out)') + '"><span>' + esc(C.smudge) + '</span><i></i></div>' : '') +
@@ -13695,6 +13695,356 @@
     paint();
   };
 
+  /* ======================= 29.02 Kai's Treasure Pouch (Case 29 part 2): case.pouch, tower, barcode, knockout, streak, claimtiles, ringtwist, mlabel, SIMS.hardness ======================= */
+
+  /* ---------- case: Kai's treasure pouch (29.02). case.pouch = {head, title, tags:[{icon, t, sub}], note, sign}. Four handwritten tags tied to a pouch. Classes fs-pou-*. ---------- */
+  function pouchCard(K) {
+    return '<div class="fs-pou"><div class="fs-pou-h">' + esc(K.head) + '</div><div class="fs-pou-t">' + esc(K.title) + '</div><div class="fs-pou-bag" aria-hidden="true">👝</div><div class="fs-pou-tags">' +
+      K.tags.map(function (g, i) { return '<div class="fs-pou-tag" style="--r:' + ((i % 2 ? 1 : -1) * (2 + i)) + 'deg"><span>' + g.icon + '</span><b>' + esc(g.t) + '</b>' + (g.sub ? '<small>' + esc(g.sub) + '</small>' : '') + '</div>'; }).join('') +
+      '</div>' + (K.note ? '<div class="fs-pou-note">' + esc(K.note) + '</div>' : '') + (K.sign ? '<div class="fs-pou-sign">' + esc(K.sign) + '</div>' : '') + '</div>';
+  }
+
+  /* ---------- Warm-Up: "The claim tower" — two real nugget photos, then a claim sign ("IT'S GOLD!") that needs evidence blocks under it. Look-only blocks
+     are wobbly: stack enough of them and the tower topples. Test blocks are locked until Part 3. Then a chip question (29.02) ----------
+     D.tower = {afterText, kicker, title, todo[], why, photos:[{img, alt, cap}], credit, sign, blocks:[{id, icon, t, kind:'look'|'test', lock}], need, wobbleLine, fallLine,
+                dropLine, q, opts, win, clue}. Classes fs-twr-*. */
+  function buildTower() {
+    var T = D.tower; if (!T) return;
+    var at = anchorP(T.afterText); if (!at) { FAILED.push('tower anchor text not found'); return; }
+    var g = gameShell(T.kicker || 'Warm-Up game', T.title, T.todo, T.why); g.dataset.mod = 'tower';
+    var st = loadJ('tower', { p: [], fell: 0 });
+    var pics = el('div', 'fs-twr-pics', (T.photos || []).map(function (p) { return '<figure class="fs-twr-pic"><img src="' + esc(p.img) + '" alt="' + esc(p.alt) + '" loading="lazy"><figcaption>' + esc(p.cap) + '</figcaption></figure>'; }).join(''));
+    var row = el('div', 'fs-twr-row'), pile = el('div', 'fs-twr-pile'), stage = el('div', 'fs-twr-stage', '<div class="fs-twr-col"><div class="fs-twr-sign">' + esc(T.sign) + '</div><div class="fs-twr-stack"></div></div><div class="fs-twr-base"></div><div class="fs-twr-drop">' + esc(T.dropLine || 'Drop evidence here') + '</div>');
+    var note = el('div', 'fs-hs-card fs-twr-note', '<em>' + esc(T.startLine || 'Pick a block to hold up Kai’s sign.') + '</em>'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    row.appendChild(pile); row.appendChild(stage);
+    [pics, row, note, miss, qh, win].forEach(function (e) { g.appendChild(e); });
+    if (T.credit) g.appendChild(el('details', 'fs-credit fs-credit-fold', '<summary>📷 Photo credit</summary>' + esc(T.credit)));
+    var col = $('.fs-twr-col', stage), stack = $('.fs-twr-stack', stage);
+    function blk(id) { return T.blocks.filter(function (b) { return b.id === id; })[0]; }
+    function paint(last) {
+      pile.innerHTML = '';
+      T.blocks.forEach(function (b) {
+        if (st.p.indexOf(b.id) > -1) return;
+        var c = el('button', 'fs-in-chip fs-dragc fs-twr-blk' + (b.kind === 'test' ? ' locked' : ''), '<span>' + b.icon + '</span> ' + esc(b.t) + (b.kind === 'test' ? ' <em>🔒</em>' : '')); c.type = 'button'; c.dataset.id = b.id; pile.appendChild(c);
+        if (b.kind === 'test') { c.addEventListener('click', function () { bounce(c, miss, b.lock || 'You’ll run this test in Part 3!'); }); return; }
+        if (st.fell) { c.disabled = true; return; }
+        dragDrop(c, function () { return [stage]; }, function (it) { put(it.dataset.id); });
+      });
+      stack.innerHTML = st.p.map(function (id, i) { var b = blk(id); return '<div class="fs-twr-b' + (id === last ? ' new' : '') + '" style="--t:' + ((i % 2 ? 1 : -1) * (2 + i * 2)) + 'deg"><span>' + b.icon + '</span>' + esc(b.t) + '</div>'; }).join('');
+      var n = st.p.length;
+      col.classList.toggle('w1', n === 1 && !st.fell); col.classList.toggle('w2', n >= 2 && !st.fell); col.classList.toggle('fell', !!st.fell);
+      if (st.fell) note.innerHTML = '<span class="fs-hs-n">💥</span><div>' + esc(T.fallLine) + '</div>';
+      else if (n) note.innerHTML = '<span class="fs-hs-n">〰️</span><div>' + esc(T.wobbleLine.replace('{n}', n)) + '</div>';
+      if (st.fell) askOnce(qh, T.q, T.opts, 'tower-q', win, T.win, T.clue, 'tower', miss);
+    }
+    function put(id) {
+      if (st.fell || st.p.indexOf(id) > -1) return; var b = blk(id); if (!b || b.kind === 'test') return;
+      ac(); SFX.thud(); st.p.push(id); miss.classList.remove('show');
+      if (st.p.length >= (T.need || 3)) { saveJ('tower', st); paint(id); setTimeout(function () { st.fell = 1; saveJ('tower', st); SFX.crackle(); paint(); }, reduceMotion ? 0 : 700); return; }
+      saveJ('tower', st); paint(id);
+    }
+    stage.addEventListener('click', function () { var s = $('.fs-twr-blk.sel', pile); if (s) { s.classList.remove('sel'); put(s.dataset.id); } });
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 1: "Fingerprint barcode" — run 4 quick tests on a mystery object and flip a switch to match each result; the switches print a stripe
+     fingerprint. Then slide the strip along a shelf of known fingerprints (drag it, or tap a card) until every stripe lines up (29.02) ----------
+     D.barcode = {afterText, kicker, title, todo[], why, thing:{icon, t}, props:[{k, icon, t, test, result, val, opts:[{v, t}]}], shelf:[{id, icon, t, fp:{k:v}, why}], answer,
+                  printLine, slideLine, q, opts, win, clue}. Values: a color hex for k 'color', true/false for the rest. Classes fs-bcd-*. */
+  function buildBarcode() {
+    var B = D.barcode; if (!B) return;
+    var at = anchorP(B.afterText); if (!at) { FAILED.push('barcode anchor text not found'); return; }
+    var g = gameShell(B.kicker || 'Part 1 game', B.title, B.todo, B.why); g.dataset.mod = 'barcode';
+    var st = loadJ('barcode', { t: {}, s: {}, lock: '' });
+    var rows = el('div', 'fs-bcd-rows'), strip = el('div', 'fs-bcd-mine'), track = el('div', 'fs-bcd-track'), shelf = el('div', 'fs-bcd-shelf'), out = el('div'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    [rows, strip, track, shelf, out, miss, qh, win].forEach(function (e) { g.appendChild(e); });
+    function bars(fp, cls) {
+      return '<svg viewBox="0 0 ' + (B.props.length * 40) + ' 60" class="fs-bcd-svg ' + (cls || '') + '" aria-hidden="true">' + B.props.map(function (p, i) {
+        var v = fp[p.k], x = i * 40 + 6;
+        if (v == null) return '<rect x="' + x + '" y="4" width="28" height="52" rx="3" fill="none" stroke="#C9B489" stroke-dasharray="4 3"/>';
+        if (p.k === 'color') return '<rect x="' + x + '" y="4" width="28" height="52" rx="3" fill="' + v + '" stroke="#32241A" stroke-width="1.5"/>';
+        return v ? '<rect x="' + (x + 2) + '" y="4" width="24" height="52" rx="2" fill="#32241A"/>' : '<rect x="' + (x + 12) + '" y="4" width="4" height="52" fill="#32241A"/>';
+      }).join('') + '</svg>';
+    }
+    function labels() { return '<div class="fs-bcd-labs">' + B.props.map(function (p) { return '<span>' + p.icon + '</span>'; }).join('') + '</div>'; }
+    function allSet() { return B.props.every(function (p) { return st.s[p.k] != null; }); }
+    function card(id) { return B.shelf.filter(function (c) { return c.id === id; })[0]; }
+    function paint(last) {
+      rows.innerHTML = '<div class="fs-bcd-thing"><span>' + B.thing.icon + '</span><b>' + esc(B.thing.t) + '</b></div>';
+      B.props.forEach(function (p) {
+        var r = el('div', 'fs-bcd-row' + (st.s[p.k] != null ? ' set' : ''));
+        r.innerHTML = '<div class="fs-bcd-q"><span>' + p.icon + '</span><b>' + esc(p.t) + '</b></div>' +
+          (st.t[p.k] ? '<div class="fs-bcd-res">' + esc(p.result) + '</div>' : '<button type="button" class="fs-btn fs-bcd-test">' + esc(p.test) + '</button>') +
+          '<div class="fs-bcd-sw">' + p.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip' + (st.s[p.k] === o.v ? ' on ok' : '') + '" data-i="' + i + '"' + (st.t[p.k] ? '' : ' disabled') + '>' + esc(o.t) + '</button>'; }).join('') + '</div>';
+        rows.appendChild(r);
+        var tb = $('.fs-bcd-test', r); if (tb) tb.addEventListener('click', function () { ac(); SFX.blip(); st.t[p.k] = 1; saveJ('barcode', st); paint(); });
+        $$('.fs-bcd-sw .fs-in-chip', r).forEach(function (c) { c.addEventListener('click', function () {
+          if (st.s[p.k] != null) return; var o = p.opts[+c.dataset.i];
+          if (o.v !== p.val) { bounce(c, miss, p.miss || 'Read the test result again.'); return; }
+          SFX.pop(); miss.classList.remove('show'); st.s[p.k] = o.v; saveJ('barcode', st); paint(p.k);
+        }); });
+      });
+      strip.innerHTML = '<div class="fs-in-k">' + esc(B.printLabel || 'The mystery fingerprint') + '</div>' + bars(st.s, last ? 'new' : '') + labels() + (allSet() ? '' : '<small>' + esc(B.printLine || 'Each switch you set prints a stripe.') + '</small>');
+      track.style.display = allSet() ? '' : 'none'; shelf.style.display = allSet() ? '' : 'none';
+      if (!allSet()) return;
+      shelf.innerHTML = B.shelf.map(function (c) { return '<button type="button" class="fs-bcd-card' + (st.lock === c.id ? ' match' : '') + '" data-id="' + c.id + '"><b><span>' + c.icon + '</span> ' + esc(c.t) + '</b>' + bars(c.fp) + labels() + '</button>'; }).join('');
+      $$('.fs-bcd-card', shelf).forEach(function (b) { b.addEventListener('click', function () { tryCard(b.dataset.id); }); });
+      if (st.lock) { track.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">✅</span><div>' + esc(card(st.lock).why) + '</div></div>'; askOnce(qh, B.q, B.opts, 'barcode-q', win, B.win, B.clue, 'barcode', miss); return; }
+      track.innerHTML = '<div class="fs-bcd-rail"><div class="fs-bcd-slider" tabindex="0" role="button" aria-label="' + esc(B.printLabel || 'The mystery fingerprint') + '">' + bars(st.s) + '</div></div><small>' + esc(B.slideLine || 'Drag the strip over a card, or tap a card.') + '</small>';
+      var sl = $('.fs-bcd-slider', track), rail = $('.fs-bcd-rail', track), sx = null, ox = 0;
+      sl.addEventListener('pointerdown', function (e) { sx = e.clientX; ox = sl.offsetLeft; sl.setPointerCapture && sl.setPointerCapture(e.pointerId); });
+      sl.addEventListener('pointermove', function (e) { if (sx == null) return; var x = Math.max(0, Math.min(rail.clientWidth - sl.offsetWidth, ox + e.clientX - sx)); sl.style.left = x + 'px'; hover(); });
+      function up() { if (sx == null) return; sx = null; var h = $('.fs-bcd-card.over', shelf); if (h) tryCard(h.dataset.id); }
+      sl.addEventListener('pointerup', up); sl.addEventListener('pointercancel', function () { sx = null; });
+      function hover() { var r = sl.getBoundingClientRect(), cx = r.left + r.width / 2; $$('.fs-bcd-card', shelf).forEach(function (b) { var q = b.getBoundingClientRect(); b.classList.toggle('over', cx > q.left && cx < q.right); }); }
+    }
+    function tryCard(id) {
+      if (st.lock) return; var c = card(id), bad = B.props.filter(function (p) { return c.fp[p.k] !== st.s[p.k]; });
+      var b = $('.fs-bcd-card[data-id="' + id + '"]', shelf);
+      if (bad.length) { if (b) bounce(b, miss, c.why); return; }
+      ac(); SFX.chime(); st.lock = id; saveJ('barcode', st); paint();
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 2: "Knock out the suspects" — a Guess Who board of known materials. Run a test on the mystery and every card that doesn't match
+     flips down. A test that knocks nobody out says so. One suspect left = identified (29.02) ----------
+     D.knockout = {afterText, kicker, title, todo[], why, mystery:{icon, t}, suspects:[{id, icon, t, p:{k:v}}], tests:[{k, icon, t, v, res, line}], answer, leftWord, noneLine,
+                   q, opts, win, clue}. Classes fs-ko-*. */
+  function buildKnockout() {
+    var K = D.knockout; if (!K) return;
+    var at = anchorP(K.afterText); if (!at) { FAILED.push('knockout anchor text not found'); return; }
+    var g = gameShell(K.kicker || 'Part 2 game', K.title, K.todo, K.why); g.dataset.mod = 'knockout';
+    var st = loadJ('knockout', { r: [] });
+    var top = el('div', 'fs-ko-top'), tests = el('div', 'fs-twn-tools fs-ko-tests'), board = el('div', 'fs-ko-board'), ev = el('div', 'fs-ko-ev'), out = el('div'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), qh = el('div'), win = el('div', 'fs-win');
+    [top, tests, board, count, ev, out, miss, qh, win].forEach(function (e) { g.appendChild(e); });
+    top.innerHTML = '<div class="fs-ko-myst"><span>' + K.mystery.icon + '</span><b>' + esc(K.mystery.t) + '</b></div>';
+    function test(k) { return K.tests.filter(function (t) { return t.k === k; })[0]; }
+    function alive(s) { return st.r.every(function (k) { var t = test(k); return s.p[t.k] === t.v; }); }
+    function paint(last, gone) {
+      tests.innerHTML = '';
+      K.tests.forEach(function (t) { var b = el('button', 'fs-in-chip fs-dragc' + (st.r.indexOf(t.k) > -1 ? ' done' : ''), '<span>' + t.icon + '</span> ' + esc(t.t)); b.type = 'button'; b.dataset.k = t.k; tests.appendChild(b);
+        if (st.r.indexOf(t.k) > -1) return; dragDrop(b, function () { return [board]; }, function (it) { run(it.dataset.k); }); });
+      board.innerHTML = K.suspects.map(function (s) { var on = alive(s); return '<div class="fs-ko-card' + (on ? '' : ' out') + (gone && gone.indexOf(s.id) > -1 ? ' now' : '') + '"><div class="fs-ko-in"><span>' + s.icon + '</span><b>' + esc(s.t) + '</b></div></div>'; }).join('');
+      var left = K.suspects.filter(alive);
+      count.textContent = '🕵️ ' + left.length + ' ' + (left.length === 1 ? (K.leftOne || 'suspect left') : (K.leftWord || 'suspects left')); count.classList.toggle('ok', left.length === 1);
+      ev.innerHTML = st.r.length ? '<div class="fs-in-k">' + esc(K.evLabel || 'Evidence so far') + '</div>' + st.r.map(function (k) { var t = test(k); return '<span class="fs-ko-chip' + (k === last ? ' flash' : '') + '">' + t.icon + ' ' + esc(t.res) + '</span>'; }).join('') : '';
+      if (left.length === 1 && left[0].id === K.answer) askOnce(qh, K.q, K.opts, 'knockout-q', win, K.win, K.clue, 'knockout', miss);
+    }
+    function run(k) {
+      if (st.r.indexOf(k) > -1) return; var before = K.suspects.filter(alive);
+      if (before.length === 1) return;
+      ac(); SFX.blip(); st.r.push(k); saveJ('knockout', st);
+      var gone = before.filter(function (s) { return !alive(s); }).map(function (s) { return s.id; }), t = test(k);
+      if (gone.length) setTimeout(SFX.pop, 150);
+      paint(k, gone);
+      out.innerHTML = ''; out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + t.icon + '</span><div><b>' + esc(t.res) + '</b>' + esc(gone.length ? t.line : (K.noneLine || 'Nobody got knocked out. Try a test that splits the suspects.')) + '</div>'));
+    }
+    board.addEventListener('click', function () { var s = $('.fs-ko-tests .sel', g); if (s) { s.classList.remove('sel'); run(s.dataset.k); } });
+    paint();
+    if (st.r.length) { var lt = test(st.r[st.r.length - 1]); out.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">' + lt.icon + '</span><div><b>' + esc(lt.res) + '</b>' + esc(lt.line) + '</div>')); }
+    placeAfter(g, at);
+  }
+
+  /* ---------- Part 3: "The streak plate" — the fool's gold wow. Drag each nugget across a white tile and it draws its streak (tap the nugget, then the tile,
+     works too). Then drag the steel nail onto each nugget, then put each one on the scale (same size). Then the real photos and a chip question (29.02) ----------
+     D.streak = {afterText, kicker, title, todo[], why, nuggets:[{id, t, img, alt, col, colName, scratch, scratchLine, grams}], steps:{streak, scratch, heft}, nail, scale,
+                 reveal:[{img, alt, cap}], credit, q, opts, fact:{q, t}, win, clue?}. Classes fs-skp-*. */
+  function buildStreak() {
+    var S = D.streak; if (!S) return;
+    var at = anchorP(S.afterText); if (!at) { FAILED.push('streak anchor text not found'); return; }
+    var g = gameShell(S.kicker || 'Part 3 · the wow', S.title, S.todo, S.why); g.dataset.mod = 'streak';
+    var st = loadJ('streak', { s: {}, n: {}, h: {} });
+    var steps = el('div', 'fs-skp-steps'), nugs = el('div', 'fs-skp-nugs'), work = el('div', 'fs-skp-work'), res = el('div', 'fs-skp-res'), rev = el('div', 'fs-skp-rev'), miss = el('div', 'fs-miss'), qh = el('div'), win = el('div', 'fs-win');
+    [steps, nugs, work, res, rev, miss, qh, win].forEach(function (e) { g.appendChild(e); });
+    function nug(id) { return S.nuggets.filter(function (x) { return x.id === id; })[0]; }
+    function stage() { return S.nuggets.every(function (x) { return st.s[x.id]; }) ? (S.nuggets.every(function (x) { return st.n[x.id]; }) ? (S.nuggets.every(function (x) { return st.h[x.id]; }) ? 3 : 2) : 1) : 0; }
+    function paint() {
+      var k = stage();
+      steps.innerHTML = [S.steps.streak, S.steps.scratch, S.steps.heft].map(function (t, i) { return '<span class="fs-skp-st' + (i < k ? ' done' : i === k ? ' on' : '') + '">' + (i < k ? '✅' : (i + 1)) + ' ' + esc(t) + '</span>'; }).join('');
+      nugs.innerHTML = '';
+      S.nuggets.forEach(function (x) {
+        var c = el('div', 'fs-skp-nug fs-dragc' + (k === 1 ? ' tgt' : ''), '<img src="' + esc(x.img) + '" alt="' + esc(x.alt) + '"><b>' + esc(x.t) + '</b>'); c.dataset.id = x.id; c.setAttribute('role', 'button'); c.tabIndex = 0; nugs.appendChild(c);
+        if (k === 0 || k === 2) { dragDrop(c, function () { return [$('.fs-skp-zone', work)]; }, function (it) { act(it.dataset.id, true); }); c.style.touchAction = 'none'; }
+        if (k === 1) c.addEventListener('click', function () { var s = $('.fs-skp-nail.sel', work); if (s) { s.classList.remove('sel'); act(x.id); } });
+      });
+      if (k === 0) {
+        work.innerHTML = '<div class="fs-skp-zone fs-skp-plate"><svg viewBox="0 0 320 150" aria-label="' + esc(S.plateAlt || 'A white streak plate') + '"><rect x="6" y="6" width="308" height="138" rx="10" fill="#FBFAF6" stroke="#B9B2A4" stroke-width="3"/>' +
+          S.nuggets.map(function (x, i) { return st.s[x.id] ? '<path d="M40 ' + (50 + i * 50) + ' C 100 ' + (36 + i * 50) + ', 170 ' + (64 + i * 50) + ', 280 ' + (46 + i * 50) + '" stroke="' + x.col + '" stroke-width="12" stroke-linecap="round" fill="none" opacity=".85"/><text x="290" y="' + (54 + i * 50) + '" class="fs-skp-lab" text-anchor="end">' + esc(x.t) + ': ' + esc(x.colName) + '</text>' : ''; }).join('') + '</svg></div><small>' + esc(S.plateLine || 'Drag a nugget onto the white tile, or tap a nugget and then the tile.') + '</small>';
+        $('.fs-skp-zone', work).addEventListener('click', function () { var s = $('.fs-skp-nug.sel', nugs); if (s) { s.classList.remove('sel'); act(s.dataset.id); } });
+      } else if (k === 1) {
+        work.innerHTML = '<div class="fs-mug-go"><button type="button" class="fs-in-chip fs-dragc fs-skp-nail">🔩 ' + esc(S.nail || 'Steel nail') + '</button></div><small>' + esc(S.nailLine || 'Drag the nail onto a nugget, or tap the nail and then a nugget.') + '</small>';
+        dragDrop($('.fs-skp-nail', work), function () { return $$('.fs-skp-nug', nugs); }, function (_, t) { act(t.dataset.id); });
+      } else if (k === 2) {
+        work.innerHTML = '<div class="fs-skp-zone fs-skp-scale"><div class="fs-skp-pan"></div><div class="fs-skp-read">' + (S.nuggets.filter(function (x) { return st.h[x.id]; }).map(function (x) { return esc(x.t) + ': <b>' + x.grams + ' g</b>'; }).join(' · ') || '0 g') + '</div></div><small>' + esc(S.scaleLine || 'Drag a nugget onto the scale, or tap a nugget and then the scale.') + '</small>';
+        $('.fs-skp-zone', work).addEventListener('click', function () { var s = $('.fs-skp-nug.sel', nugs); if (s) { s.classList.remove('sel'); act(s.dataset.id); } });
+      } else work.innerHTML = '';
+      res.innerHTML = '<table class="fs-skp-tab"><tr><th></th>' + S.nuggets.map(function (x) { return '<th>' + esc(x.t) + '</th>'; }).join('') + '</tr>' +
+        '<tr><td>✏️ ' + esc(S.steps.streak) + '</td>' + S.nuggets.map(function (x) { return '<td>' + (st.s[x.id] ? esc(x.colName) : '…') + '</td>'; }).join('') + '</tr>' +
+        '<tr><td>🔩 ' + esc(S.steps.scratch) + '</td>' + S.nuggets.map(function (x) { return '<td>' + (st.n[x.id] ? esc(x.scratch ? (S.yesScratch || 'scratched') : (S.noScratch || 'no scratch')) : '…') + '</td>'; }).join('') + '</tr>' +
+        '<tr><td>⚖️ ' + esc(S.steps.heft) + '</td>' + S.nuggets.map(function (x) { return '<td>' + (st.h[x.id] ? x.grams + ' g' : '…') + '</td>'; }).join('') + '</tr></table>';
+      if (k === 3) {
+        if (!rev.innerHTML) rev.innerHTML = '<div class="fs-skp-photos">' + S.reveal.map(function (p) { return '<figure><img src="' + esc(p.img) + '" alt="' + esc(p.alt) + '" loading="lazy"><figcaption>' + esc(p.cap) + '</figcaption></figure>'; }).join('') + '</div>' + (S.credit ? '<details class="fs-credit fs-credit-fold"><summary>📷 Photo credit</summary>' + esc(S.credit) + '</details>' : '');
+        askOnce(qh, S.q, S.opts, 'streak-q', win, S.win, S.clue, 'streak', miss);
+        if (S.fact && !$('.fs-skp-fact', g)) g.insertBefore(el('div', 'fs-why fs-kraft fs-skp-fact', '<span class="fs-why-ic">⛏️</span><div><b>' + esc(S.fact.q) + '</b>' + esc(S.fact.t) + '</div>'), win.nextSibling);
+      }
+    }
+    function act(id, dragged) {
+      var k = stage(), x = nug(id); if (!x) return; ac();
+      if (k === 0 && !st.s[id]) { st.s[id] = 1; SFX.whoosh(); }
+      else if (k === 1 && !st.n[id]) { st.n[id] = 1; SFX.snap(); miss.innerHTML = ''; }
+      else if (k === 2 && !st.h[id]) { st.h[id] = 1; SFX.blip(); }
+      else return;
+      saveJ('streak', st); paint();
+      var line = k === 1 ? x.scratchLine : k === 2 ? x.heftLine : x.streakLine;
+      if (line) { var n = el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + (k === 1 ? '🔩' : k === 2 ? '⚖️' : '✏️') + '</span><div>' + esc(line) + '</div>'); work.appendChild(n); }
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- Part 4: "Claim tile builder" — drag test tools onto three sealed samples so a data table fills; then build a claim for each sample from tiles:
+     "I identify ___ as ___ because ___ and ___." A one-property or opinion claim bounces (29.02) ----------
+     D.claimtiles = {afterText, kicker, title, todo[], why, tests:[{k, icon, t}], samples:[{id, icon, t, res:{k: text}, answer, key:[k], wrongWhy}], guide:[{id, icon, t, fp}],
+                     decoys:[{t, miss}], tpl:[4 strings], check, oneLine, keyLine, need, win, clue}. Classes fs-clt-*. */
+  function buildClaimtiles() {
+    var C = D.claimtiles; if (!C) return;
+    var at = anchorP(C.afterText); if (!at) { FAILED.push('claimtiles anchor text not found'); return; }
+    var g = gameShell(C.kicker || 'Part 4 game', C.title, C.todo, C.why); g.dataset.mod = 'claimtiles';
+    var st = loadJ('claimtiles', { r: {}, ok: {} }), cur = null, slots = [null, null, null];
+    var tools = el('div', 'fs-twn-tools fs-clt-tools'), tab = el('div', 'fs-clt-tab'), guide = el('details', 'fs-clt-guide'), build = el('div', 'fs-clt-build'), miss = el('div', 'fs-miss'), count = el('div', 'fs-count'), win = el('div', 'fs-win');
+    guide.open = true;
+    guide.innerHTML = '<summary>📒 ' + esc(C.guideTitle || 'The property guide') + '</summary><div class="fs-clt-gl">' + C.guide.map(function (m) { return '<div><b>' + m.icon + ' ' + esc(m.t) + '</b><span>' + esc(m.fp) + '</span></div>'; }).join('') + '</div>';
+    [tools, tab, guide, build, miss, count, win].forEach(function (e) { g.appendChild(e); });
+    function smp(id) { return C.samples.filter(function (s) { return s.id === id; })[0]; }
+    function ran(s) { return C.tests.filter(function (t) { return (st.r[s.id] || {})[t.k]; }).length; }
+    function paint() {
+      tools.innerHTML = '';
+      C.tests.forEach(function (t) { var b = el('button', 'fs-in-chip fs-dragc', '<span>' + t.icon + '</span> ' + esc(t.t)); b.type = 'button'; b.dataset.k = t.k; tools.appendChild(b);
+        dragDrop(b, function () { return $$('.fs-clt-row', tab); }, function (it, row) { runT(row.dataset.id, it.dataset.k); }); });
+      tab.innerHTML = '<table><tr><th>' + esc(C.sampleHead || 'Sample') + '</th>' + C.tests.map(function (t) { return '<th title="' + esc(t.t) + '">' + t.icon + '</th>'; }).join('') + '<th>' + esc(C.idHead || 'Identified') + '</th></tr>' +
+        C.samples.map(function (s) { var r = st.r[s.id] || {}; return '<tr class="fs-clt-row' + (cur === s.id ? ' cur' : '') + '" data-id="' + s.id + '"><td><span>' + s.icon + '</span> ' + esc(s.t) + '</td>' + C.tests.map(function (t) { return '<td>' + (r[t.k] ? esc(s.res[t.k]) : '·') + '</td>'; }).join('') + '<td class="fs-clt-id">' + (st.ok[s.id] ? '✅ ' + esc(st.ok[s.id]) : '') + '</td></tr>'; }).join('') + '</table>' +
+        '<small>' + esc(C.tabLine || 'Drag a tool onto a sample’s row, or tap a tool and then the row.') + '</small>';
+      $$('.fs-clt-row', tab).forEach(function (row) { row.addEventListener('click', function () { var s = $('.fs-clt-tools .sel', g); if (s) { s.classList.remove('sel'); runT(row.dataset.id, s.dataset.k); } }); });
+      var n = Object.keys(st.ok).length; count.textContent = '🧾 ' + n + ' of ' + C.samples.length + ' ' + (C.countWord || 'claims built'); count.classList.toggle('ok', n === C.samples.length);
+      paintBuild();
+      if (n === C.samples.length) winOnce(win, C.win, C.clue, 'claimtiles');
+    }
+    function runT(id, k) { var r = st.r[id] = st.r[id] || {}; if (r[k]) return; ac(); SFX.blip(); r[k] = 1; saveJ('claimtiles', st); if (!cur && !st.ok[id]) cur = id; paint(); }
+    function paintBuild() {
+      build.innerHTML = '';
+      var ready = C.samples.filter(function (s) { return !st.ok[s.id] && ran(s) >= (C.need || 3); });
+      if (!cur || st.ok[cur] || ran(smp(cur)) < (C.need || 3)) cur = ready.length ? ready[0].id : null;
+      if (!cur) { var wait = C.samples.filter(function (s) { return !st.ok[s.id]; }); if (wait.length) build.innerHTML = '<div class="fs-hs-card"><span class="fs-hs-n">🧪</span><div>' + esc((C.waitLine || 'Run at least {n} tests on a sample to build its claim.').replace('{n}', C.need || 3)) + '</div></div>'; return; }
+      var s = smp(cur), r = st.r[s.id];
+      var pick = el('div', 'fs-twn-tools'); C.samples.forEach(function (x) { if (st.ok[x.id] || ran(x) < (C.need || 3)) return; var b = el('button', 'fs-in-chip' + (x.id === cur ? ' on' : ''), x.icon + ' ' + esc(x.t)); b.type = 'button'; b.addEventListener('click', function () { cur = x.id; slots = [null, null, null]; paint(); }); pick.appendChild(b); });
+      var tiles = C.guide.map(function (m) { return { k: 'm', v: m.id, t: m.t }; }).concat(C.tests.filter(function (t) { return r[t.k]; }).map(function (t) { return { k: 'e', v: t.k, t: s.res[t.k] }; })).concat((C.decoys || []).map(function (d, i) { return { k: 'd', v: i, t: d.t }; }));
+      var sent = el('div', 'fs-clt-sent', esc(C.tpl[0]) + ' <b>' + esc(s.t) + '</b> ' + esc(C.tpl[1]) + ' <span class="fs-clt-slot" data-i="0"></span> ' + esc(C.tpl[2]) + ' <span class="fs-clt-slot" data-i="1"></span> ' + esc(C.tpl[3]) + ' <span class="fs-clt-slot" data-i="2"></span>.');
+      var tray = el('div', 'fs-clt-tray'), go = el('div', 'fs-mug-go', '<button type="button" class="fs-btn">' + esc(C.check || '✔ Check my claim') + '</button>');
+      build.appendChild(el('div', 'fs-in-k', esc(C.buildLabel || 'Build a claim for:'))); build.appendChild(pick); build.appendChild(sent); build.appendChild(tray); build.appendChild(go);
+      function fill() { $$('.fs-clt-slot', sent).forEach(function (sl) { var v = slots[+sl.dataset.i]; sl.textContent = v ? v.t : (+sl.dataset.i ? (C.evBlank || 'evidence') : (C.mBlank || 'material')); sl.classList.toggle('on', !!v); }); }
+      tiles.forEach(function (t) {
+        var b = el('button', 'fs-in-chip fs-dragc fs-clt-tile ' + (t.k === 'm' ? 'm' : 'e'), esc(t.t)); b.type = 'button'; tray.appendChild(b); b._t = t;
+        dragDrop(b, function () { return $$('.fs-clt-slot', sent); }, function (it, sl) { place(it._t, +sl.dataset.i); });
+      });
+      $$('.fs-clt-slot', sent).forEach(function (sl) { sl.addEventListener('click', function () { var s2 = $('.fs-clt-tray .sel', build); if (s2) { s2.classList.remove('sel'); place(s2._t, +sl.dataset.i); } else { slots[+sl.dataset.i] = null; fill(); } }); });
+      function place(t, i) { if ((i === 0) !== (t.k === 'm')) { bounce($$('.fs-clt-slot', sent)[i], miss, i === 0 ? (C.mSlotLine || 'This blank needs a material from the guide.') : (C.eSlotLine || 'This blank needs a piece of evidence.')); return; } SFX.pop(); slots[i] = t; fill(); }
+      fill();
+      $('.fs-btn', go).addEventListener('click', function () {
+        var m = slots[0], e1 = slots[1], e2 = slots[2];
+        if (!m || !e1 || !e2) { bounce(sent, miss, C.fillLine || 'Fill all three blanks first.'); return; }
+        var d = [e1, e2].filter(function (e) { return e.k === 'd'; })[0];
+        if (d) { bounce(sent, miss, C.decoys[d.v].miss); return; }
+        if (e1.v === e2.v) { bounce(sent, miss, C.oneLine || 'That’s only one property. Use two different tests.'); return; }
+        if (m.v !== s.answer) { bounce(sent, miss, s.wrongWhy || 'Check your evidence against the guide again.'); return; }
+        if (s.key.indexOf(e1.v) < 0 && s.key.indexOf(e2.v) < 0) { bounce(sent, miss, s.keyLine || C.keyLine || 'True, but a lookalike has that too. Add a test that tells them apart.'); return; }
+        ac(); SFX.chime(); miss.classList.remove('show'); st.ok[s.id] = C.guide.filter(function (x) { return x.id === m.v; })[0].t; saveJ('claimtiles', st); slots = [null, null, null]; cur = null;
+        toast('🧾', s.t, (s.doneLine || '').replace('{m}', st.ok[s.id])); paint();
+      });
+    }
+    paint(); placeAfter(g, at);
+  }
+
+  /* ---------- after the solve: "The 'silver' ring" — drag a magnet to Kai's ring (or tap); it clings. A chip question and a fact card (29.02) ----------
+     D.ringtwist = {after, kicker, title, todo[], lockLine, why, magnet, ringT, clingLine, q, opts, fact:{q, t}, win}. Classes fs-rng-*. */
+  function buildRingtwist() {
+    var R = D.ringtwist; if (!R) return;
+    var g = gameShell(R.kicker || 'Case closed · a twist', R.title, R.todo, R.why); g.dataset.mod = 'ringtwist';
+    afterSolve(g, R.after, R.lockLine, function (body) {
+      var st = loadJ('ringtwist', { on: 0 }), stage = el('div', 'fs-rng-stage'), ctl = el('div', 'fs-mug-go'), qh = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      [stage, ctl, qh, miss, win].forEach(function (e) { body.appendChild(e); });
+      function paint() {
+        stage.innerHTML = '<div class="fs-rng-ring' + (st.on ? ' on' : '') + '"><div class="fs-rng-in"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="66" r="34" fill="none" stroke="#C9CED3" stroke-width="12"/><circle cx="60" cy="66" r="34" fill="none" stroke="#F4F6F8" stroke-width="4" stroke-dasharray="20 30"/><path d="M48 30 l12 -16 l12 16 z" fill="#BFE3F5" stroke="#8FB6C9" stroke-width="2"/></svg><b>' + esc(R.ringT || 'Kai’s “silver” ring') + '</b></div></div>' +
+          (st.on ? '<div class="fs-hs-card flash"><span class="fs-hs-n">🧲</span><div>' + esc(R.clingLine) + '</div></div>' : '');
+        ctl.innerHTML = '';
+        if (!st.on) {
+          var m = el('button', 'fs-in-chip fs-dragc', '🧲 ' + esc(R.magnet || 'Magnet')); m.type = 'button'; ctl.appendChild(m);
+          dragDrop(m, function () { return [$('.fs-rng-ring', stage)]; }, function () { cling(); });
+          $('.fs-rng-ring', stage).addEventListener('click', function () { if ($('.sel', ctl)) cling(); });
+          ctl.appendChild(el('small', '', esc(R.dragLine || 'Drag the magnet to the ring, or tap the magnet and then the ring.')));
+          return;
+        }
+        askOnce(qh, R.q, R.opts, 'ringtwist-q', win, R.win, null, 'ringtwist', miss);
+        if (R.fact && !$('.fs-rng-fact', body)) body.insertBefore(el('div', 'fs-why fs-kraft fs-rng-fact', '<span class="fs-why-ic">💍</span><div><b>' + esc(R.fact.q) + '</b>' + esc(R.fact.t) + '</div>'), qh);
+      }
+      function cling() { if (st.on) return; ac(); SFX.snap(); st.on = 1; saveJ('ringtwist', st); paint(); }
+      paint();
+    });
+  }
+
+  /* ---------- after the solve: "The museum label" — pick the name and two pieces of evidence for Kai's find; then print the label under its photo (29.02) ----------
+     D.mlabel = {after, kicker, title, todo[], lockLine, why, img, alt, rows:[{k, label, opts:[{t, ok, miss}]}], foundBy, printBtn, head, win}. Classes fs-mlb-*. */
+  function buildMlabel() {
+    var M = D.mlabel; if (!M) return;
+    var g = gameShell(M.kicker || 'Case closed', M.title, M.todo, M.why); g.dataset.mod = 'mlabel';
+    afterSolve(g, M.after, M.lockLine, function (body) {
+      var st = loadJ('mlabel', { p: {}, pr: 0 }), ph = el('div', 'fs-mlb-ph', '<img src="' + esc(M.img) + '" alt="' + esc(M.alt) + '" loading="lazy">'), rows = el('div'), go = el('div', 'fs-mug-go'), card = el('div'), miss = el('div', 'fs-miss'), win = el('div', 'fs-win');
+      [ph, rows, go, card, miss, win].forEach(function (e) { body.appendChild(e); });
+      function pickT(r) { var i = st.p[r.k]; return i == null ? '' : r.opts[i].t; }
+      function paint(anim) {
+        rows.innerHTML = '';
+        M.rows.forEach(function (r) {
+          var w = el('div', 'fs-sv-q', '<div class="fs-in-k">' + esc(r.label) + '</div><div class="fs-in-chips">' + r.opts.map(function (o, i) { return '<button type="button" class="fs-in-chip' + (st.p[r.k] === i ? ' on ok' : '') + '" data-i="' + i + '">' + esc(o.t) + '</button>'; }).join('') + '</div>');
+          rows.appendChild(w);
+          $$('.fs-in-chip', w).forEach(function (c) { c.addEventListener('click', function () {
+            if (st.pr) return; var o = r.opts[+c.dataset.i];
+            if (!o.ok) { bounce(c, miss, o.miss); return; }
+            if (r.k === 'e2' && st.p.e1 != null && M.rows[1].opts[st.p.e1].t === o.t) return;
+            SFX.pop(); miss.classList.remove('show'); st.p[r.k] = +c.dataset.i; saveJ('mlabel', st); paint();
+          }); });
+        });
+        var all = M.rows.every(function (r) { return st.p[r.k] != null; });
+        go.innerHTML = all && !st.pr ? '<button type="button" class="fs-btn">' + esc(M.printBtn || '🖨️ Print the label') + '</button>' : '';
+        if (all && !st.pr) $('.fs-btn', go).addEventListener('click', function () { st.pr = 1; saveJ('mlabel', st); ac(); SFX.stamp(); paint(true); winOnce(win, M.win, null, 'mlabel'); });
+        card.innerHTML = st.pr ? '<div class="fs-mlb-card' + (anim ? ' new' : '') + '"><small>' + esc(M.head) + '</small><b>' + esc(pickT(M.rows[0])) + '</b><ul>' + M.rows.slice(1).map(function (r) { return '<li>' + esc(pickT(r)) + '</li>'; }).join('') + '</ul><em>' + esc(M.foundBy) + '</em></div>' : '';
+        if (st.pr) winOnce(win, M.win, null, 'mlabel');
+      }
+      paint();
+    });
+  }
+
+  /* ---------- Tool of the Week: "Scratch kit" — drag a scratching tool onto a sample (or tap the tool, then the sample). Each result fills a hardness grid; then
+     a chip question (29.02). T.hardness = {title, todo[], model, tools:[{k, icon, t}], samples:[{k, icon, t, res:{tool: true|false}, band}], yes, no, q:{q, opts:[{t, ok, why}]}} ---------- */
+  SIMS.hardness = function (host, T) {
+    var M = T.hardness, st = loadJ('hardness', { r: {} });
+    host.innerHTML = '<div class="fs-game-k">' + esc(M.kicker || 'Try it: the scratch kit') + '</div><div class="fs-game-t">' + esc(M.title) + '</div><ul class="fs-todo">' + M.todo.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="fs-twn-tools fs-hdk-tools"></div><div class="fs-hdk-grid"></div><div class="fs-hdk-out"></div><div class="fs-hdk-q"></div><div class="fs-miss"></div><p class="fs-pbal-model">' + esc(M.model) + '</p>';
+    var tools = $('.fs-hdk-tools', host), grid = $('.fs-hdk-grid', host), out = $('.fs-hdk-out', host), qh = $('.fs-hdk-q', host), miss = $('.fs-miss', host);
+    function key(s, t) { return s + ':' + t; }
+    function paint() {
+      tools.innerHTML = '';
+      M.tools.forEach(function (t) { var b = el('button', 'fs-in-chip fs-dragc', '<span>' + t.icon + '</span> ' + esc(t.t)); b.type = 'button'; b.dataset.k = t.k; tools.appendChild(b);
+        dragDrop(b, function () { return $$('.fs-hdk-s', grid); }, function (it, s) { scratch(s.dataset.k, it.dataset.k); }); });
+      grid.innerHTML = M.samples.map(function (s) { var done = M.tools.every(function (t) { return st.r[key(s.k, t.k)]; });
+        return '<div class="fs-hdk-s' + (done ? ' done' : '') + '" data-k="' + s.k + '" role="button" tabindex="0"><b><span>' + s.icon + '</span> ' + esc(s.t) + '</b><div class="fs-hdk-cells">' +
+          M.tools.map(function (t) { var r = st.r[key(s.k, t.k)]; return '<span class="' + (r ? (s.res[t.k] ? 'y' : 'n') : '') + '">' + t.icon + ' ' + (r ? esc(s.res[t.k] ? M.yes : M.no) : '…') + '</span>'; }).join('') + '</div>' + (done ? '<em>' + esc(s.band) + '</em>' : '') + '</div>'; }).join('');
+      $$('.fs-hdk-s', grid).forEach(function (s) { s.addEventListener('click', function () { var t = $('.fs-hdk-tools .sel', host); if (t) { t.classList.remove('sel'); scratch(s.dataset.k, t.dataset.k); } }); });
+      var all = M.samples.every(function (s) { return M.tools.every(function (t) { return st.r[key(s.k, t.k)]; }); });
+      if (all && !qh.dataset.on) { qh.dataset.on = '1'; chipsQ(qh, M.q.q, M.q.opts.map(function (o) { return { t: o.t, ok: o.ok, miss: o.why }; }), function () { var o = M.q.opts.filter(function (x) { return x.ok; })[0]; qh.appendChild(el('div', 'fs-hs-card', '<span class="fs-hs-n">✅</span><div>' + esc(o.why) + '</div>')); toolDone(); }, miss); }
+    }
+    function scratch(s, t) { if (st.r[key(s, t)]) return; ac(); var sm = M.samples.filter(function (x) { return x.k === s; })[0]; if (sm.res[t]) SFX.snap(); else SFX.thud(); st.r[key(s, t)] = 1; saveJ('hardness', st); out.innerHTML = ''; var tl = M.tools.filter(function (x) { return x.k === t; })[0]; out.appendChild(el('div', 'fs-hs-card flash', '<span class="fs-hs-n">' + tl.icon + '</span><div>' + esc((sm.lines && sm.lines[t]) || (sm.t + ': ' + (sm.res[t] ? M.yes : M.no))) + '</div>')); paint(); }
+    paint();
+  };
+
   /* ======================= 28.02 "Proof for the Steel Bin" (Case 28 part 2): case.intake, spotdiff, suredial, notes2table, ruler, SIMS.fieldviewer plates ======================= */
 
   /* ---------- case: the recycling center's intake slip (28.02). case.intake = {head, title, rows:[[icon, item]], cols[2], blank, proofLine, sign}
@@ -14894,6 +15244,13 @@
     guard('timelapse', buildTimelapse);
     guard('conveyor', buildConveyor);
     guard('glowtwist', buildGlowtwist);
+    guard('tower', buildTower);
+    guard('barcode', buildBarcode);
+    guard('knockout', buildKnockout);
+    guard('streak', buildStreak);
+    guard('claimtiles', buildClaimtiles);
+    guard('ringtwist', buildRingtwist);
+    guard('mlabel', buildMlabel);
     guard('starchart', buildStarchart);
     guard('fold', foldExtras);
     guard('helpers', buildHelpers);

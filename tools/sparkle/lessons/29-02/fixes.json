@@ -1,0 +1,337 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; the plan puts Module 29 under “Matter, Magnets, and Changes”",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Matter, Magnets &amp; Changes</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "science label: identifying materials by their properties is physical science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: the plan’s CPALMS codes, content benchmark first; TEKS is a Texas code that isn’t in the plan",
+  "old": "<div class=\"info-value\">SC.4.N.1.1, SC.4.P.8.1 · TEKS 4.6(A)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.8.1, SC.4.N.1.1</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "footer standards in the same order as the header",
+  "old": "CPALMS SC.4.N.1.1, SC.4.P.8.1",
+  "new": "CPALMS SC.4.P.8.1, SC.4.N.1.1"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 29 is Q4 (the header already says Q4)",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; no dashes",
+  "old": "<p>Hold this question in your head as you work\\. Near the end of the year.*?</p>",
+  "new": "<p>Keep this question in mind. Today you’ll work like a detective: test a mystery material, compare it to a property guide, and back up every answer with evidence.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the Warm-Up title named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: Gold or Not?</div>\n        <div class=\"act-subtitle\">Two nuggets, one question</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the toaster warm-up → Kai’s nugget",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Kai found a shiny nugget in the creek and shouted, “GOLD! I’m rich!” Dr. Nair held up a photo of a real gold nugget from a museum.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the toaster sketch → the claim tower (played and answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>Same color. Same shine. Is Kai’s nugget gold? Try to prove it.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): “Device” meant converting energy",
+  "old": "A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.",
+  "new": "A tool or machine made to do a job, like a scale for measuring mass."
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the Stop & Reason asked about “the three devices above … INPUT and OUTPUT”",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C was a food chain; the checklist already describes a 3-sample mystery investigation",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Your Own Mystery"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C task → the checklist’s home investigation (typed on the page, sketched in a required drawing)",
+  "old": "In your science notebook, draw a <strong>new</strong> food chain.*?</p>\\s*<p[^>]*>Use colors\\. Label every part\\.</p>",
+  "new": "Ask a family member to secretly pick 3 small, safe things from home and call them A, B and C. Test each one: color, a magnet, does it float, how hard it is. Then identify each one with evidence.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list (ticked): “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list (ticked): no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list (ticked): Part C needs 3 things from home, not colored pencils",
+  "old": "<span class=\"need-chip\"><span>✏️</span>Colored pencils</span>",
+  "new": "<span class=\"need-chip\"><span>🏠</span>3 small things from home and a magnet</span>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dash",
+  "old": "properties — like a fingerprint.",
+  "new": "properties, like a fingerprint."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dash",
+  "old": " — lists of common materials and their properties.",
+  "new": ": lists of common materials and their properties."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: a lead-in for the barcode game",
+  "old": "they collect property data and match it to the guide.</p>",
+  "new": "they collect property data and match it to the guide.</p>\n      <p>Try it: print the fingerprint of Kai’s “SILVER” bolt.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (could a gray, hard, magnetic material be aluminum?) is played by the barcode and the knock-out board",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: plain words, no semicolon; anchor for the knock-out board",
+  "old": "The best matches usually rely on 3+ properties agreeing. One property can be misleading (lots of things are gray); three or four properties together build a strong case.",
+  "new": "The best matches use 3 or more properties that agree. One property can fool you, because lots of things are gray. Three or four properties together build a strong case."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the misconception (one property is enough) is played by the knock-out board (gray alone leaves 5 suspects)",
+  "old": "\\s*<p><strong>Common misconception:</strong> Some people think one property is enough to identify a material\\..*?</p>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "figure (ticked): the picture lists glass hardness as “smooth” (a texture). Same 4 mysteries as an on-page table; glass is hard",
+  "old": "<img src=\"images/29-02-mystery-table\\.png\".*?<div class=\"lesson-figure-caption\">",
+  "new": "<table style=\"width:100%;border-collapse:collapse;font-size:15px;background:#fff;border-radius:10px;overflow:hidden;\"><tr style=\"background:#F0806B;color:#fff;\"><th style=\"padding:7px;text-align:left;\">Mystery</th><th style=\"padding:7px;\">Color</th><th style=\"padding:7px;\">Hardness</th><th style=\"padding:7px;\">Magnetic?</th><th style=\"padding:7px;\">Floats?</th><th style=\"padding:7px;\">Identified</th></tr><tr style=\"background:#EAF2FB;\"><td style=\"padding:7px;font-weight:800;\">🔍 A</td><td style=\"padding:7px;text-align:center;\">silver-gray</td><td style=\"padding:7px;text-align:center;\">hard</td><td style=\"padding:7px;text-align:center;\">YES</td><td style=\"padding:7px;text-align:center;\">no</td><td style=\"padding:7px;text-align:center;font-weight:900;color:#0E1C42;\">IRON</td></tr><tr style=\"background:#EEF8F0;\"><td style=\"padding:7px;font-weight:800;\">🔍 B</td><td style=\"padding:7px;text-align:center;\">clear</td><td style=\"padding:7px;text-align:center;\">hard</td><td style=\"padding:7px;text-align:center;\">no</td><td style=\"padding:7px;text-align:center;\">no</td><td style=\"padding:7px;text-align:center;font-weight:900;color:#0E1C42;\">GLASS</td></tr><tr style=\"background:#FFF6E0;\"><td style=\"padding:7px;font-weight:800;\">🔍 C</td><td style=\"padding:7px;text-align:center;\">brown</td><td style=\"padding:7px;text-align:center;\">soft</td><td style=\"padding:7px;text-align:center;\">no</td><td style=\"padding:7px;text-align:center;\">yes</td><td style=\"padding:7px;text-align:center;font-weight:900;color:#0E1C42;\">WOOD</td></tr><tr style=\"background:#F3EEFA;\"><td style=\"padding:7px;font-weight:800;\">🔍 D</td><td style=\"padding:7px;text-align:center;\">silver-gray</td><td style=\"padding:7px;text-align:center;\">softer than iron</td><td style=\"padding:7px;text-align:center;\">no</td><td style=\"padding:7px;text-align:center;\">no</td><td style=\"padding:7px;text-align:center;font-weight:900;color:#0E1C42;\">ALUMINUM</td></tr></table>\n        <div class=\"lesson-figure-caption\">",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Key Concept (the games teach it)",
+  "old": "<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Four Mystery Samples tap diagram repeats the table (and the claim tiles play it); with it go Observe & Reason, the police-lab Amazing Fact, the marine-biologist Florida connection and the Titanic Go Deeper. A new Part 3 holds the fool’s gold wow",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Mystery Samples</h3>.*?(?=<div class=\"tab-next-wrap\">)",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Fool’s Gold!</h3>\n      <p>Kai’s nugget looked like gold. So did the museum nugget. Time to run the tests that looking can’t do.</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "A property you notice with your senses — color, shape, texture, smell (if safe), how it sounds when tapped.",
+  "new": "A property you notice with your senses: color, shape, texture, smell (if safe), or how it sounds when tapped."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "A property you can put a number on — mass, length, volume, temperature.",
+  "new": "A property you can put a number on: mass, length, volume or temperature."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "A specific kind of matter — iron, water, glass, plastic, wood. Each has a unique property \"fingerprint.\"",
+  "new": "A specific kind of matter, like iron, water, glass, plastic or wood. Each has its own property “fingerprint.”"
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 4 = the old Explore (Identify the Mystery → the claim tiles: test 3 unknowns, fill a data table, identify and justify); the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · Build Your Claim</h3>\n      <p style=\"font-size:16px;color:#5A4D3E;margin-bottom:18px;\">Time to prove it. Test Kai’s “GOLD!” nugget, his “DIAMOND” and a black lump from the fire pit. Then build a claim for each one.</p>\n  <div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (the home investigation lives on as Part C; the ancient-pottery Amazing Fact, the gray-sample Think like a scientist and the density Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 no longer points at the cut diagram (same task, Kai’s finds)",
+  "old": "Pick ONE mystery sample from the diagram. Name the 2 most useful pieces of evidence and the material identification.",
+  "new": "Pick ONE of Kai’s finds: the “GOLD!” nugget, the “SILVER” bolt, the “DIAMOND” or the old “COIN”. Name the 2 most useful pieces of evidence and what it really is."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE mystery sample from the diagram. Name the...\"",
+  "new": "data-label=\"One of Kai’s finds: the 2 best pieces of evidence\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 7 label (Gathered Answers)",
+  "old": "data-label=\"An unknown sample is gray and hard. Name THREE mor...\"",
+  "new": "data-label=\"Gray and hard: three more tests and why\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 6 removed (Bethany kept 5 and 7; the CER argues why one property isn’t enough)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>6</span>.*?</textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today's lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered",
+  "new": "Questions 5 and 7 answered"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part C checklist ends with the required sketch",
+  "old": "A real 3-sample mystery investigation with data table, identifications, and answer key from a family member.",
+  "new": "My 3 mystery things, each tested and identified with evidence. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether one property is enough to identify a material, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether gray and hard means iron, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dash; shorter",
+  "old": "Next lesson is our second-to-last — exploring how matter can CHANGE without becoming something new.",
+  "new": "Next lesson: how matter can CHANGE without becoming something new."
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dash",
+  "old": "You've just done what real scientists, archaeologists, and detectives do — collected",
+  "new": "You did what real scientists and detectives do. You collected"
+ }
+]

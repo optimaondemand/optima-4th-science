@@ -1,0 +1,1753 @@
+{
+ "lesson": "29.02",
+ "week": 29,
+ "day": 2,
+ "guide": "priya",
+ "prefix": "g4sci-29-2",
+ "manifestKey": "29-02",
+ "paths": {
+  "audio": "assets/audio/guide/",
+  "video": "assets/video/teacher/",
+  "manifest": "https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json",
+  "h2c": "assets/sparkle/vendor/html2canvas.min.js",
+  "crew": "assets/crew/",
+  "ornaments": "assets/ornaments/"
+ },
+ "crew": {
+  "priya": {
+   "name": "Dr. Priya Nair",
+   "role": "materials scientist (someone who studies what things are made of and how they behave)",
+   "initials": "PN",
+   "color": "#7A5BB5",
+   "lens": "beaker",
+   "voiceId": "uYXf8XasLslADfZ2MB4u"
+  }
+ },
+ "expedition": {
+  "num": 29,
+  "title": "Campfire Night, part 2"
+ },
+ "ambient": {
+  "icon": "🏞️",
+  "label": "The creek at sunrise"
+ },
+ "case": {
+  "num": 29,
+  "title": "Kai’s Treasure Pouch",
+  "style": "order",
+  "hook": "Dr. Priya Nair here. It’s the morning after Campfire Night. Kai panned the creek at sunrise (he swirled creek sand in a pan, hunting for gold) and came back with a pouch of treasure! He tied a tag on every find. But Kai only LOOKED at them. What is each one really made of?",
+  "pouch": {
+   "head": "PALMETTO SPRINGS CREEK",
+   "title": "Kai’s Treasure Pouch",
+   "tags": [
+    {
+     "icon": "🟡",
+     "t": "GOLD!",
+     "sub": "a shiny yellow nugget"
+    },
+    {
+     "icon": "🔩",
+     "t": "SILVER bolt",
+     "sub": "silver-gray and hard"
+    },
+    {
+     "icon": "💎",
+     "t": "DIAMOND",
+     "sub": "a clear, sparkly pebble"
+    },
+    {
+     "icon": "🪙",
+     "t": "old COIN",
+     "sub": "a gray metal disc"
+    }
+   ],
+   "note": "“I’m going to be RICH!”",
+   "sign": "Kai"
+  },
+  "stills": [],
+  "question": "What is each of Kai’s finds really made of?",
+  "how": "Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.",
+  "clues": [
+   {
+    "id": "tower",
+    "icon": "🏗️",
+    "where": "Warm-Up: the claim tower",
+    "t": "Looks can’t prove what a material is. Gold and fool’s gold look almost the same. Kai’s tags need TESTS."
+   },
+   {
+    "id": "barcode",
+    "icon": "🧬",
+    "where": "The Lesson, Part 1: fingerprint barcode",
+    "t": "The “SILVER” bolt is silver-gray, hard, magnetic and sinks. That fingerprint matches steel. Silver is NOT magnetic."
+   },
+   {
+    "id": "knockout",
+    "icon": "🕵️",
+    "where": "The Lesson, Part 2: knock out the suspects",
+    "t": "The “old COIN” is gray, NOT magnetic and light for its size: aluminum. Gray alone left 5 suspects!"
+   },
+   {
+    "id": "claimtiles",
+    "icon": "🧾",
+    "where": "The Lesson, Part 4: build your claim",
+    "t": "The “GOLD!” nugget has a greenish-black streak and weighs only 5 g: pyrite, fool’s gold. The “DIAMOND” weighs 2.5 g and leaves a white streak: glass."
+   }
+  ],
+  "solve": {
+   "title": "What did Kai really find?",
+   "q": "Which answer fits all four clues?",
+   "options": [
+    {
+     "t": "Gold, silver, a diamond and an old coin, just like his tags say.",
+     "why": "Check Clue 1. Kai only looked. The tests tell a different story."
+    },
+    {
+     "t": "Fool’s gold (pyrite), a steel bolt, a piece of glass and an aluminum disc.",
+     "right": true,
+     "why": "Case cracked! Every tag was wrong, and every answer has two or more tests behind it."
+    },
+    {
+     "t": "Fool’s gold, steel, glass and silver, because the coin is gray and shiny.",
+     "why": "Check Clue 3. Silver is heavy for its size. The coin was light, so it’s aluminum."
+    },
+    {
+     "t": "Fool’s gold, silver, glass and iron, because every metal sticks to a magnet.",
+     "why": "Check Clues 2 and 3. The bolt stuck, so it isn’t silver. The coin didn’t stick, and it’s still a metal."
+    }
+   ]
+  }
+ },
+ "tower": {
+  "afterText": "Is Kai’s nugget gold? Try to prove it.",
+  "kicker": "Warm-Up game",
+  "title": "The claim tower",
+  "why": {
+   "icon": "🏗️",
+   "q": "What is a claim?",
+   "t": "Something you say is true. A strong claim stands on evidence, like a tower on strong blocks."
+  },
+  "todo": [
+   "Look at the two nuggets.",
+   "Drag a block under Kai’s sign (or tap a block, then the tower).",
+   "Watch what happens. The 🔒 blocks are tests: you’ll run them in Part 3."
+  ],
+  "photos": [
+   {
+    "img": "images/29-02-pyrite.jpg",
+    "alt": "Kai’s nugget: a shiny, brassy yellow cluster.",
+    "cap": "Kai’s nugget, from the creek"
+   },
+   {
+    "img": "images/29-02-gold-nugget.jpg",
+    "alt": "A large, shiny gold nugget in a museum.",
+    "cap": "A real gold nugget in a museum"
+   }
+  ],
+  "credit": "Kai’s nugget (pyrite from Peru): James St. John, CC BY 2.0 · Museum gold nugget from Australia: James St. John, CC BY 2.0 · both via Wikimedia Commons",
+  "sign": "IT’S GOLD!",
+  "dropLine": "Drop evidence here",
+  "blocks": [
+   {
+    "id": "color",
+    "icon": "🟡",
+    "t": "It’s gold-colored",
+    "kind": "look"
+   },
+   {
+    "id": "shine",
+    "icon": "✨",
+    "t": "It’s shiny",
+    "kind": "look"
+   },
+   {
+    "id": "creek",
+    "icon": "🏞️",
+    "t": "It was in a creek",
+    "kind": "look"
+   },
+   {
+    "id": "sure",
+    "icon": "😤",
+    "t": "Kai is SURE",
+    "kind": "look"
+   },
+   {
+    "id": "streak",
+    "icon": "✏️",
+    "t": "A streak test",
+    "kind": "test",
+    "lock": "Locked! You’ll run the streak test in Part 3."
+   },
+   {
+    "id": "scratch",
+    "icon": "🔩",
+    "t": "A scratch test",
+    "kind": "test",
+    "lock": "Locked! You’ll run the scratch test in Part 3."
+   },
+   {
+    "id": "weigh",
+    "icon": "⚖️",
+    "t": "A weigh test",
+    "kind": "test",
+    "lock": "Locked! You’ll run the weigh test in Part 3."
+   }
+  ],
+  "need": 3,
+  "startLine": "Pick a block to hold up Kai’s sign.",
+  "wobbleLine": "Wobble! Blocks so far: {n}. Is it strong enough?",
+  "fallLine": "CRASH! Color, shine and Kai’s word can’t hold up the claim. Fool’s gold has all of those too. You need TESTS.",
+  "q": "Why did the tower fall?",
+  "opts": [
+   {
+    "t": "Looks alone can’t prove what a material is.",
+    "ok": true
+   },
+   {
+    "t": "The blocks were too small.",
+    "miss": "It’s not the size of the blocks. Fool’s gold is gold-colored and shiny too!"
+   },
+   {
+    "t": "Kai’s nugget isn’t shiny.",
+    "miss": "It IS shiny. But so is fool’s gold. Shine can’t tell them apart."
+   }
+  ],
+  "win": "Looks can’t prove it. Tests can. Clue 1!",
+  "clue": "tower"
+ },
+ "barcode": {
+  "afterText": "print the fingerprint of Kai’s “SILVER” bolt.",
+  "kicker": "Part 1 game",
+  "title": "Fingerprint barcode",
+  "why": {
+   "icon": "🧬",
+   "q": "What is a material’s fingerprint?",
+   "t": "Its own set of properties. Two materials can share one or two, but the whole set is different, like your fingerprint."
+  },
+  "todo": [
+   "Run each test on the bolt. Then flip the switch to match.",
+   "Each switch prints a stripe.",
+   "Drag the strip over the shelf (or tap a card) until every stripe lines up."
+  ],
+  "thing": {
+   "icon": "🔩",
+   "t": "Kai’s “SILVER” bolt"
+  },
+  "printLabel": "The bolt’s fingerprint",
+  "printLine": "Each switch you set prints a stripe.",
+  "slideLine": "Drag the strip over a card on the shelf, or tap a card.",
+  "props": [
+   {
+    "k": "color",
+    "icon": "🎨",
+    "t": "Color",
+    "test": "👀 Look",
+    "result": "Silver-gray",
+    "val": "#A9B1B8",
+    "opts": [
+     {
+      "v": "#A9B1B8",
+      "t": "Silver-gray"
+     },
+     {
+      "v": "#E2B640",
+      "t": "Gold-yellow"
+     },
+     {
+      "v": "#8A5A2B",
+      "t": "Brown"
+     }
+    ],
+    "miss": "Look again: what color did the test show?"
+   },
+   {
+    "k": "hard",
+    "icon": "💪",
+    "t": "Hard?",
+    "test": "✋ Press a fingernail in",
+    "result": "No dent at all. It’s hard.",
+    "val": true,
+    "opts": [
+     {
+      "v": true,
+      "t": "Yes"
+     },
+     {
+      "v": false,
+      "t": "No"
+     }
+    ],
+    "miss": "Your fingernail couldn’t dent it. Is it hard?"
+   },
+   {
+    "k": "mag",
+    "icon": "🧲",
+    "t": "Magnetic?",
+    "test": "🧲 Bring a magnet close",
+    "result": "CLICK! The magnet grabs it.",
+    "val": true,
+    "opts": [
+     {
+      "v": true,
+      "t": "Yes"
+     },
+     {
+      "v": false,
+      "t": "No"
+     }
+    ],
+    "miss": "The magnet grabbed it. Is it magnetic?"
+   },
+   {
+    "k": "float",
+    "icon": "💧",
+    "t": "Floats?",
+    "test": "💧 Drop it in water",
+    "result": "Plop. It sinks to the bottom.",
+    "val": false,
+    "opts": [
+     {
+      "v": true,
+      "t": "Yes"
+     },
+     {
+      "v": false,
+      "t": "No"
+     }
+    ],
+    "miss": "It sank. Does it float?"
+   }
+  ],
+  "shelf": [
+   {
+    "id": "silver",
+    "icon": "🥄",
+    "t": "Silver",
+    "fp": {
+     "color": "#A9B1B8",
+     "hard": true,
+     "mag": false,
+     "float": false
+    },
+    "why": "So close! But the magnet stripe doesn’t match. Silver is NOT magnetic, and the bolt is."
+   },
+   {
+    "id": "wood",
+    "icon": "🪵",
+    "t": "Wood",
+    "fp": {
+     "color": "#8A5A2B",
+     "hard": false,
+     "mag": false,
+     "float": true
+    },
+    "why": "Wood is brown, a fingernail can dent it, and it floats. Most stripes don’t match!"
+   },
+   {
+    "id": "steel",
+    "icon": "🔧",
+    "t": "Steel (iron)",
+    "fp": {
+     "color": "#A9B1B8",
+     "hard": true,
+     "mag": true,
+     "float": false
+    },
+    "why": "Every stripe lines up! The bolt is steel. Steel is mostly iron, so the magnet grabbed it."
+   },
+   {
+    "id": "copper",
+    "icon": "🟠",
+    "t": "Copper",
+    "fp": {
+     "color": "#C46A3A",
+     "hard": true,
+     "mag": false,
+     "float": false
+    },
+    "why": "The color stripe doesn’t match. Copper is orange-brown, and it isn’t magnetic."
+   },
+   {
+    "id": "glass",
+    "icon": "🫙",
+    "t": "Glass",
+    "fp": {
+     "color": "#DDEFF5",
+     "hard": true,
+     "mag": false,
+     "float": false
+    },
+    "why": "Glass is clear, and a magnet doesn’t pull it."
+   }
+  ],
+  "q": "Kai’s tag says SILVER. Which stripe proves it isn’t silver?",
+  "opts": [
+   {
+    "t": "The magnet stripe: silver isn’t magnetic, but the bolt is.",
+    "ok": true
+   },
+   {
+    "t": "The color stripe",
+    "miss": "Both are silver-gray. Color can’t tell them apart!"
+   },
+   {
+    "t": "The float stripe",
+    "miss": "Steel and silver both sink."
+   }
+  ],
+  "win": "The “SILVER” bolt is steel. Clue 2!",
+  "clue": "barcode"
+ },
+ "knockout": {
+  "afterText": "Three or four properties together build a strong case.",
+  "kicker": "Part 2 game",
+  "title": "Knock out the suspects",
+  "why": {
+   "icon": "🕵️",
+   "q": "Why knock out suspects?",
+   "t": "Each test rules some materials out. Keep testing until only one material fits ALL the evidence."
+  },
+  "todo": [
+   "Drag a test onto the board (or tap a test, then the board).",
+   "Every suspect that doesn’t match flips down.",
+   "Keep testing until ONE suspect is left."
+  ],
+  "mystery": {
+   "icon": "🪙",
+   "t": "Mystery: Kai’s “old COIN”"
+  },
+  "suspects": [
+   {
+    "id": "iron",
+    "icon": "🔩",
+    "t": "Iron",
+    "p": {
+     "color": "gray",
+     "mag": true,
+     "heft": "heavy",
+     "sink": true
+    }
+   },
+   {
+    "id": "nickel",
+    "icon": "⚪",
+    "t": "Nickel",
+    "p": {
+     "color": "gray",
+     "mag": true,
+     "heft": "heavy",
+     "sink": true
+    }
+   },
+   {
+    "id": "alum",
+    "icon": "🥫",
+    "t": "Aluminum",
+    "p": {
+     "color": "gray",
+     "mag": false,
+     "heft": "light",
+     "sink": true
+    }
+   },
+   {
+    "id": "silver",
+    "icon": "🥄",
+    "t": "Silver",
+    "p": {
+     "color": "gray",
+     "mag": false,
+     "heft": "heavy",
+     "sink": true
+    }
+   },
+   {
+    "id": "lead",
+    "icon": "🎣",
+    "t": "Lead",
+    "p": {
+     "color": "gray",
+     "mag": false,
+     "heft": "heavy",
+     "sink": true
+    }
+   },
+   {
+    "id": "copper",
+    "icon": "🟠",
+    "t": "Copper",
+    "p": {
+     "color": "orange",
+     "mag": false,
+     "heft": "heavy",
+     "sink": true
+    }
+   },
+   {
+    "id": "gold",
+    "icon": "🟡",
+    "t": "Gold",
+    "p": {
+     "color": "yellow",
+     "mag": false,
+     "heft": "heavy",
+     "sink": true
+    }
+   },
+   {
+    "id": "wood",
+    "icon": "🪵",
+    "t": "Wood",
+    "p": {
+     "color": "brown",
+     "mag": false,
+     "heft": "light",
+     "sink": false
+    }
+   }
+  ],
+  "tests": [
+   {
+    "k": "color",
+    "icon": "🎨",
+    "t": "Color",
+    "v": "gray",
+    "res": "Gray and shiny.",
+    "line": "Every suspect that isn’t gray flips down. Look how many gray ones are left!"
+   },
+   {
+    "k": "mag",
+    "icon": "🧲",
+    "t": "Magnet",
+    "v": false,
+    "res": "No pull at all.",
+    "line": "The magnetic ones flip down. Surprise: aluminum, silver, lead, copper and gold are metals too, and a magnet doesn’t pull any of them. Only iron, nickel and steel stick."
+   },
+   {
+    "k": "heft",
+    "icon": "⚖️",
+    "t": "Weigh it (same size)",
+    "v": "light",
+    "res": "Light for its size.",
+    "line": "It weighs about one third as much as the same size of steel. The heavy suspects flip down."
+   },
+   {
+    "k": "sink",
+    "icon": "💧",
+    "t": "Water",
+    "v": true,
+    "res": "It sinks.",
+    "line": "Anything that floats flips down."
+   }
+  ],
+  "answer": "alum",
+  "leftWord": "suspects left",
+  "noneLine": "Nobody flipped down. That test can’t split the suspects that are left. Try another one.",
+  "q": "Why did the color test leave so many suspects?",
+  "opts": [
+   {
+    "t": "Lots of different materials are gray.",
+    "ok": true
+   },
+   {
+    "t": "Color is a measurable property.",
+    "miss": "Color is observable: you see it. And lots of materials share the same color."
+   },
+   {
+    "t": "The coin is too old.",
+    "miss": "Age doesn’t matter. Iron, nickel, aluminum, silver and lead are all gray."
+   }
+  ],
+  "win": "The coin is aluminum: gray, not magnetic and light for its size. Clue 3!",
+  "clue": "knockout"
+ },
+ "streak": {
+  "afterText": "Time to run the tests that looking can’t do.",
+  "kicker": "Part 3 · the wow",
+  "title": "The streak plate",
+  "why": {
+   "icon": "✏️",
+   "q": "What is a streak?",
+   "t": "The color of a mineral’s powder. Rub it on a rough white tile and look. The streak can be a different color than the mineral itself!"
+  },
+  "todo": [
+   "Drag each nugget across the white tile (or tap a nugget, then the tile).",
+   "Then drag the steel nail onto each nugget.",
+   "Then weigh each one. Both pieces are the same size."
+  ],
+  "steps": {
+   "streak": "Streak test",
+   "scratch": "Scratch test",
+   "heft": "Weigh test"
+  },
+  "nuggets": [
+   {
+    "id": "kai",
+    "t": "Kai’s nugget",
+    "img": "images/29-02-pyrite.jpg",
+    "alt": "Kai’s brassy yellow nugget.",
+    "col": "#2F3A2E",
+    "colName": "greenish black",
+    "scratch": false,
+    "grams": 5,
+    "streakLine": "A greenish-black streak! Hmm. Is that what gold does?",
+    "scratchLine": "Screech… the nail slid right off. Not a scratch!",
+    "heftLine": "5 grams."
+   },
+   {
+    "id": "gold",
+    "t": "Museum gold",
+    "img": "images/29-02-gold-nugget.jpg",
+    "alt": "The museum’s gold nugget.",
+    "col": "#D9A92A",
+    "colName": "gold-yellow",
+    "scratch": true,
+    "grams": 19,
+    "streakLine": "A gold-yellow streak.",
+    "scratchLine": "The nail left a scratch. Gold is soft!",
+    "heftLine": "19 grams. Heavy for its size!"
+   }
+  ],
+  "plateAlt": "A white streak plate",
+  "plateLine": "Drag a nugget onto the white tile, or tap a nugget and then the tile.",
+  "nail": "Steel nail",
+  "nailLine": "Drag the nail onto a nugget, or tap the nail and then a nugget.",
+  "scaleLine": "Both pieces are the same size (a 1-centimeter cube). Drag one onto the scale, or tap it and then the scale.",
+  "yesScratch": "scratched",
+  "noScratch": "no scratch",
+  "reveal": [
+   {
+    "img": "images/29-02-pyrite.jpg",
+    "alt": "Kai’s nugget",
+    "cap": "Kai’s nugget"
+   },
+   {
+    "img": "images/29-02-pyrite-streak.jpg",
+    "alt": "A real streak test on a white tile: a dark streak next to a small brassy cube.",
+    "cap": "Its real streak: dark"
+   },
+   {
+    "img": "images/29-02-gold-nugget.jpg",
+    "alt": "A real gold nugget",
+    "cap": "Museum gold"
+   },
+   {
+    "img": "images/29-02-gold-streak.jpg",
+    "alt": "Real gold flakes beside a gold-yellow streak on a dark tile.",
+    "cap": "Its real streak: gold-yellow"
+   }
+  ],
+  "credit": "Kai’s nugget (pyrite from Peru): James St. John, CC BY 2.0 · Museum gold nugget from Australia: James St. John, CC BY 2.0 · both via Wikimedia Commons · Pyrite streak plate: Ra’ike, CC BY-SA 3.0 · Gold streak: Ra’ike, CC BY-SA 3.0 DE · via Wikimedia Commons",
+  "q": "Is Kai’s nugget gold?",
+  "opts": [
+   {
+    "t": "No. Its streak is dark, a nail can’t scratch it, and it’s too light. It’s pyrite: fool’s gold!",
+    "ok": true
+   },
+   {
+    "t": "Yes, it’s gold-colored and shiny.",
+    "miss": "Remember the tower? Looks can’t prove it. Check the streak."
+   },
+   {
+    "t": "Yes, because it’s hard.",
+    "miss": "Real gold is soft. The nail scratched the museum gold, but not Kai’s nugget."
+   }
+  ],
+  "fact": {
+   "q": "Why is it called fool’s gold?",
+   "t": "During gold rushes, some miners found shiny pyrite and thought they were rich. A streak test would have told them the truth: gold leaves a gold-yellow streak, and pyrite leaves a dark one."
+  },
+  "win": "Kai’s nugget is pyrite: fool’s gold!"
+ },
+ "claimtiles": {
+  "afterText": "Then build a claim for each one.",
+  "kicker": "Part 4 game",
+  "title": "Build your claim",
+  "why": {
+   "icon": "🧾",
+   "q": "What makes a strong claim?",
+   "t": "It names the material AND gives two pieces of evidence from tests. One clue alone could fit a lookalike."
+  },
+  "todo": [
+   "Drag a test onto a sample’s row (or tap a test, then the row). Run at least 3 tests on each sample.",
+   "Compare the results with the property guide.",
+   "Build a claim for each sample: drag tiles into the blanks."
+  ],
+  "tests": [
+   {
+    "k": "color",
+    "icon": "🎨",
+    "t": "Look"
+   },
+   {
+    "k": "streak",
+    "icon": "✏️",
+    "t": "Streak"
+   },
+   {
+    "k": "nail",
+    "icon": "🔩",
+    "t": "Steel nail"
+   },
+   {
+    "k": "mag",
+    "icon": "🧲",
+    "t": "Magnet"
+   },
+   {
+    "k": "water",
+    "icon": "💧",
+    "t": "Water"
+   },
+   {
+    "k": "weigh",
+    "icon": "⚖️",
+    "t": "Weigh (same size)"
+   }
+  ],
+  "samples": [
+   {
+    "id": "nug",
+    "icon": "🟡",
+    "t": "The “GOLD!” nugget",
+    "answer": "pyrite",
+    "key": [
+     "streak",
+     "nail",
+     "weigh"
+    ],
+    "res": {
+     "color": "brassy yellow",
+     "streak": "greenish-black streak",
+     "nail": "no scratch",
+     "mag": "no pull",
+     "water": "sinks",
+     "weigh": "5 g"
+    },
+    "wrongWhy": "Check the guide. Gold leaves a gold-yellow streak and weighs 19 g.",
+    "keyLine": "True, but gold could match that too. Add the streak, the nail or the weigh test.",
+    "doneLine": "Identified: {m}!"
+   },
+   {
+    "id": "dia",
+    "icon": "💎",
+    "t": "The “DIAMOND”",
+    "answer": "glass",
+    "key": [
+     "weigh",
+     "streak"
+    ],
+    "res": {
+     "color": "clear",
+     "streak": "white streak",
+     "nail": "no scratch",
+     "mag": "no pull",
+     "water": "sinks",
+     "weigh": "2.5 g"
+    },
+    "wrongWhy": "Check the guide. A diamond weighs 3.5 g and leaves no streak.",
+    "keyLine": "True, but a diamond could match that too. The weigh test or the streak tells them apart.",
+    "doneLine": "Identified: {m}!"
+   },
+   {
+    "id": "lump",
+    "icon": "⚫",
+    "t": "The black lump",
+    "answer": "charcoal",
+    "key": [
+     "color",
+     "streak",
+     "nail"
+    ],
+    "res": {
+     "color": "black",
+     "streak": "black streak",
+     "nail": "it crumbles",
+     "mag": "no pull",
+     "water": "floats",
+     "weigh": "less than 1 g"
+    },
+    "wrongWhy": "Check the guide. Wood is brown and leaves no streak.",
+    "keyLine": "True, but wood matches that too. Add the color, the streak or the nail test.",
+    "doneLine": "Identified: {m}! Wood that burned in the fire."
+   }
+  ],
+  "guide": [
+   {
+    "id": "gold",
+    "icon": "🟡",
+    "t": "Gold",
+    "fp": "gold-yellow · gold-yellow streak · a nail scratches it · 19 g"
+   },
+   {
+    "id": "pyrite",
+    "icon": "✨",
+    "t": "Pyrite",
+    "fp": "brassy yellow · greenish-black streak · a nail can’t scratch it · 5 g"
+   },
+   {
+    "id": "glass",
+    "icon": "🫙",
+    "t": "Glass",
+    "fp": "clear · white streak · a nail can’t scratch it · 2.5 g"
+   },
+   {
+    "id": "diamond",
+    "icon": "💎",
+    "t": "Diamond",
+    "fp": "clear · no streak (it scratches the tile!) · 3.5 g"
+   },
+   {
+    "id": "charcoal",
+    "icon": "⚫",
+    "t": "Charcoal",
+    "fp": "black · black streak · crumbles · floats · less than 1 g"
+   },
+   {
+    "id": "wood",
+    "icon": "🪵",
+    "t": "Wood",
+    "fp": "brown · no streak · floats · less than 1 g"
+   }
+  ],
+  "guideTitle": "The property guide (same-size pieces)",
+  "decoys": [
+   {
+    "t": "it is shiny",
+    "miss": "Lots of materials are shiny. Use a test result from the table."
+   },
+   {
+    "t": "Kai said so",
+    "miss": "Kai only looked! Use a test result from the table."
+   }
+  ],
+  "tpl": [
+   "I identify",
+   "as",
+   "because of this evidence:",
+   "and"
+  ],
+  "need": 3,
+  "countWord": "claims built",
+  "waitLine": "Run at least {n} tests on a sample. Then you can build its claim.",
+  "oneLine": "That’s the same test twice. Use two different tests.",
+  "win": "Three claims, each with two pieces of evidence. Clue 4!",
+  "clue": "claimtiles"
+ },
+ "exploreMod": "claimtiles",
+ "ringtwist": {
+  "after": ".fs-solve",
+  "kicker": "Case closed · a twist",
+  "title": "The “silver” ring",
+  "lockLine": "Crack the case first.",
+  "why": {
+   "icon": "💍",
+   "q": "One more find!",
+   "t": "Kai found a ring on the dock. “This one’s SILVER for sure!” Ranger Bell hands you a magnet."
+  },
+  "todo": [
+   "Bring the magnet to the ring.",
+   "Then decide: is it silver?"
+  ],
+  "magnet": "Magnet",
+  "ringT": "Kai’s “silver” ring",
+  "clingLine": "CLICK! The magnet grabbed the ring.",
+  "q": "Real silver is never pulled by a magnet. So what is the ring?",
+  "opts": [
+   {
+    "t": "Not silver. Probably steel with a silver-colored coating.",
+    "ok": true
+   },
+   {
+    "t": "Silver, because it’s shiny.",
+    "miss": "Shine can’t prove it. Silver doesn’t stick to magnets, and this ring did."
+   },
+   {
+    "t": "Gold",
+    "miss": "Gold isn’t magnetic either, and the ring isn’t gold-colored."
+   }
+  ],
+  "fact": {
+   "q": "A jeweler’s trick",
+   "t": "Jewelers often start with a magnet. Real silver and real gold don’t stick. If a “silver” ring sticks, there’s iron or steel in it."
+  },
+  "win": "One magnet test, and the tag was wrong again!"
+ },
+ "mlabel": {
+  "after": ".fs-solve",
+  "kicker": "Case closed · one more job",
+  "title": "The museum label",
+  "lockLine": "Crack the case first.",
+  "why": {
+   "icon": "🏛️",
+   "q": "A museum label?",
+   "t": "Ranger Bell wants Kai’s fool’s gold in the nature center. A good museum label names the find and gives the evidence."
+  },
+  "todo": [
+   "Pick the name.",
+   "Pick two pieces of evidence.",
+   "Print the label."
+  ],
+  "img": "images/29-02-pyrite.jpg",
+  "alt": "Kai’s pyrite nugget.",
+  "rows": [
+   {
+    "k": "name",
+    "label": "Name",
+    "opts": [
+     {
+      "t": "Pyrite (fool’s gold)",
+      "ok": true
+     },
+     {
+      "t": "Gold",
+      "miss": "The tests said no!"
+     },
+     {
+      "t": "Brass",
+      "miss": "Brass is made by people. Kai’s nugget came out of the ground."
+     }
+    ]
+   },
+   {
+    "k": "e1",
+    "label": "Evidence 1",
+    "opts": [
+     {
+      "t": "Greenish-black streak",
+      "ok": true
+     },
+     {
+      "t": "Gold-colored",
+      "miss": "Real gold is gold-colored too, so that can’t prove it."
+     },
+     {
+      "t": "A steel nail can’t scratch it",
+      "ok": true
+     }
+    ]
+   },
+   {
+    "k": "e2",
+    "label": "Evidence 2",
+    "opts": [
+     {
+      "t": "Only 5 g, not 19 g like gold",
+      "ok": true
+     },
+     {
+      "t": "Very shiny",
+      "miss": "Gold is shiny too."
+     },
+     {
+      "t": "A steel nail can’t scratch it",
+      "ok": true
+     }
+    ]
+   }
+  ],
+  "head": "Palmetto Springs Nature Center",
+  "foundBy": "Found by Kai in the Palmetto Springs creek. Identified by the Field Station crew.",
+  "printBtn": "🖨️ Print the label",
+  "win": "Printed! Kai’s fool’s gold has a home."
+ },
+ "tool": {
+  "name": "Scratch kit",
+  "icon": "🪛",
+  "tab": "assignment",
+  "after": "#tab-assignment .activity-card",
+  "key": "29-02-tool",
+  "sim": "hardness",
+  "kicker": "Bonus · Tool of the Week",
+  "teaser": "A real geologist’s kit: find out how hard a mystery sample is.",
+  "done": "Tool of the Week: you used a real scratch kit.",
+  "why": {
+   "icon": "🪛",
+   "q": "What is a scratch kit?",
+   "t": "Tools of known hardness. If a tool scratches a sample, the sample is softer than the tool. Geologists carry one into the field."
+  },
+  "hardness": {
+   "title": "Scratch and see",
+   "todo": [
+    "Drag a tool onto a sample (or tap the tool, then the sample).",
+    "Try every tool on every sample.",
+    "Then answer the question."
+   ],
+   "model": "A model. Try a fingernail and a penny on a piece of chalk at home.",
+   "tools": [
+    {
+     "k": "nail",
+     "icon": "✋",
+     "t": "Fingernail"
+    },
+    {
+     "k": "penny",
+     "icon": "🪙",
+     "t": "Copper penny"
+    },
+    {
+     "k": "steel",
+     "icon": "🔩",
+     "t": "Steel nail"
+    }
+   ],
+   "samples": [
+    {
+     "k": "chalk",
+     "icon": "🖍️",
+     "t": "Chalk",
+     "res": {
+      "nail": true,
+      "penny": true,
+      "steel": true
+     },
+     "band": "Very soft: even a fingernail scratches it."
+    },
+    {
+     "k": "shell",
+     "icon": "🐚",
+     "t": "Seashell",
+     "res": {
+      "nail": false,
+      "penny": true,
+      "steel": true
+     },
+     "band": "Soft: a penny scratches it, a fingernail can’t."
+    },
+    {
+     "k": "marble",
+     "icon": "🔵",
+     "t": "Glass marble",
+     "res": {
+      "nail": false,
+      "penny": false,
+      "steel": false
+     },
+     "band": "Hard: nothing in the kit scratches it."
+    },
+    {
+     "k": "pyrite",
+     "icon": "✨",
+     "t": "Kai’s nugget",
+     "res": {
+      "nail": false,
+      "penny": false,
+      "steel": false
+     },
+     "band": "Hard: nothing in the kit scratches it."
+    }
+   ],
+   "yes": "scratched",
+   "no": "no scratch",
+   "q": {
+    "q": "Real gold is soft: a copper penny scratches it. What did the kit show about Kai’s nugget?",
+    "opts": [
+     {
+      "t": "Nothing scratched it, so it’s much harder than gold.",
+      "ok": true,
+      "why": "Right! Gold is soft. Pyrite is hard. One more piece of evidence that Kai found fool’s gold."
+     },
+     {
+      "t": "It’s as soft as chalk.",
+      "why": "Look again: even the steel nail couldn’t scratch it."
+     },
+     {
+      "t": "It’s gold, because it’s hard.",
+      "why": "Real gold is soft. A penny scratches it."
+     }
+    ]
+   }
+  }
+ },
+ "quizKicker": "",
+ "quizMiss": {
+  "q1": {
+   "A": "Plastic isn’t hard and doesn’t sink. And this one is magnetic!",
+   "B": "Aluminum is silver-gray, but a magnet doesn’t pull it. Remember Kai’s coin?"
+  },
+  "q2": {
+   "A": "Properties don’t lie. But one property can match lots of materials.",
+   "C": "Tests aren’t expensive. Gray alone left 5 suspects!"
+  },
+  "q3": {
+   "B": "A guess isn’t evidence. Kai guessed GOLD!",
+   "C": "Start simple: look closely first."
+  }
+ },
+ "flags": {
+  "ans-1": [
+   {
+    "label": "one of Kai’s finds",
+    "re": "gold|nugget|bolt|silver|diamond|coin|pyrite"
+   },
+   {
+    "label": "two pieces of evidence",
+    "any": [
+     "streak",
+     "magnet",
+     "scratch",
+     "nail",
+     "weigh",
+     "gram",
+     " g ",
+     "heavy",
+     "light",
+     "sink",
+     "float",
+     "color",
+     "colour",
+     "hard",
+     "clear",
+     "gray",
+     "grey",
+     "black"
+    ],
+    "min": 2
+   },
+   {
+    "label": "what it really is",
+    "re": "pyrite|fool|steel|iron|glass|alumin"
+   }
+  ],
+  "ans-3": [
+   {
+    "label": "three more tests",
+    "any": [
+     "magnet",
+     "float",
+     "water",
+     "sink",
+     "streak",
+     "scratch",
+     "weigh",
+     "mass",
+     "scale",
+     "heavy",
+     "light",
+     "bend",
+     "nail",
+     "file",
+     "shin",
+     "color",
+     "colour"
+    ],
+    "min": 3
+   },
+   {
+    "label": "why each one",
+    "re": "because|so |to see|to find|to check|tells|shows|if it|would"
+   }
+  ],
+  "cer-4": [
+   {
+    "label": "your claim",
+    "re": "agree|disagree|wrong|right|true|not true|false|not always|not every|could be|might|not iron"
+   },
+   {
+    "label": "two pieces of evidence",
+    "any": [
+     "aluminum",
+     "aluminium",
+     "silver",
+     "lead",
+     "nickel",
+     "steel",
+     "magnet",
+     "coin",
+     "bolt",
+     "gray",
+     "grey",
+     "heavy",
+     "light",
+     "weigh",
+     "suspect",
+     "test"
+    ],
+    "min": 2
+   },
+   {
+    "label": "your reasoning",
+    "re": "because|so |this shows|that shows|this means|that means|which means|proves|since"
+   }
+  ]
+ },
+ "minWords": {
+  "ans-1": 15,
+  "ans-3": 18,
+  "cer-4": 30
+ },
+ "hints": {
+  "ans-1": [
+   "Pick one: the “GOLD!” nugget, the “SILVER” bolt, the “DIAMOND” or the old “COIN”.",
+   "Which two tests told you the most?",
+   "Try: Kai’s ___ is really ___. The best evidence is ___ and ___."
+  ],
+  "ans-3": [
+   "Think about the tests from the lesson: magnet, water, weigh, streak, scratch.",
+   "Gray and hard could be iron, aluminum, silver or lead. Which test splits them?",
+   "Try: First I would ___ because ___. Next I would ___ because ___."
+  ]
+ },
+ "scholar": {},
+ "planner": {
+  "before": "cer-4",
+  "title": "Your claim and two pieces of evidence",
+  "rows": [
+   {
+    "label": "1. Pick your side",
+    "options": [
+     "I agree",
+     "I disagree"
+    ],
+    "pick": 1
+   },
+   {
+    "label": "2. Pick two pieces of evidence from the lesson",
+    "pick": 2,
+    "options": [
+     "Kai’s “old COIN” was gray, but a magnet didn’t pull it. It was aluminum.",
+     "Gray left 5 suspects: iron, nickel, aluminum, silver and lead.",
+     "Kai’s “SILVER” bolt was gray and hard, and only the magnet test showed it was steel.",
+     "Iron is a cool metal."
+    ]
+   }
+  ],
+  "note": "Tap your side and two facts. Then write your reasoning in your own words."
+ },
+ "slots": {
+  "welcome": {
+   "label": "Welcome · Kai’s treasure pouch",
+   "length": "40–50 s"
+  },
+  "warmup": {
+   "label": "Warm-Up · the claim tower (Clue 1)",
+   "length": "15–20 s",
+   "script": "Dr. Nair here! Look at the two nuggets. Same color, same shine. Kai says his is GOLD. Drag a block under his sign and see if it holds. The locked blocks are tests. You’ll get those later!"
+  },
+  "vocab": {
+   "label": "Word Wall",
+   "length": "30–45 s"
+  },
+  "lesson": {
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  "part1": {
+   "label": "Part 1 · fingerprint barcode (Clue 2)",
+   "length": "15–20 s",
+   "script": "Let’s print a fingerprint for Kai’s silver bolt. Run each test, then flip the switch to match. Then drag the strip along the shelf until every stripe lines up. Which stripe gives it away?"
+  },
+  "part2": {
+   "label": "Part 2 · knock out the suspects (Clue 3)",
+   "length": "20–30 s"
+  },
+  "part3": {
+   "label": "Part 3 · fool’s gold!",
+   "length": "15–20 s",
+   "script": "Here’s the test that looking can’t do. Drag each nugget across the white tile and check its streak. Then try the steel nail, and weigh them. Both pieces are the same size!"
+  },
+  "explore": {
+   "label": "Part 4 · build your claim (Clue 4)",
+   "length": "15–20 s",
+   "script": "Three samples, six tests. Drag a test onto a sample’s row and watch the table fill. Then build a claim with two pieces of evidence. One clue alone won’t do!"
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s"
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "20–30 s"
+  },
+  "partb": {
+   "label": "Part B",
+   "length": "30 s"
+  },
+  "partc": {
+   "label": "Part C · your own mystery",
+   "length": "30 s"
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "15–20 s"
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "20–30 s",
+   "notes": "Celebrate; tease 30.01 (physical changes)."
+  }
+ },
+ "videoOff": [],
+ "lensVoice": false,
+ "camera": {
+  "max": 8,
+  "huntTitle": "Bonus: can you snap all 4 shots on this list?",
+  "missions": [
+   "Kai’s claim tower, crashed (Warm-Up)",
+   "The bolt’s fingerprint lined up on the shelf (The Lesson)",
+   "The suspect board with one suspect left (The Lesson)",
+   "Two streaks on the white tile (The Lesson)"
+  ]
+ },
+ "sketch": {
+  "tip": "Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.",
+  "prompts": [
+   "Kai’s treasure pouch",
+   "Two streaks on a white tile",
+   "A fingerprint barcode"
+  ],
+  "inline": [
+   {
+    "id": "partc",
+    "afterPart": "C",
+    "kicker": "Part C · draw and label your mysteries",
+    "required": true,
+    "minLabels": 4,
+    "prompts": [
+     "Draw your 3 mystery things",
+     "Label each one with what it is",
+     "Add one property label to each",
+     "Circle the test that helped most"
+    ]
+   }
+  ]
+ },
+ "hlCoach": {
+  "title": "Highlight like a scientist",
+  "tips": [
+   [
+    "🔑",
+    "Highlight key words, not whole paragraphs.",
+    "If everything is yellow, nothing stands out. Aim for a few words in each paragraph."
+   ],
+   [
+    "📖",
+    "Look for words that are explained.",
+    "Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."
+   ],
+   [
+    "🎯",
+    "Look for answers to the Big Question.",
+    "Ask yourself: which properties helped identify the material, and which ones could fool you?"
+   ],
+   [
+    "🔗",
+    "Watch for clue words.",
+    "“Because”, “so” and “first … then” show how ideas connect."
+   ],
+   [
+    "🎨",
+    "Use the colors on purpose.",
+    "Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."
+   ]
+  ],
+  "practice": {
+   "q": "Practice: tap the 3 to 5 words that matter most in this sentence.",
+   "text": "One property can fool you, so scientists match three or four properties to a property guide.",
+   "key": [
+    "property",
+    "fool",
+    "three",
+    "four",
+    "guide"
+   ],
+   "small": [
+    "can",
+    "so",
+    "to",
+    "a",
+    "or"
+   ],
+   "model": "A scientist might highlight “one property can fool you” and “three or four properties”. Those words hold the big idea."
+  },
+  "outside": "This works in every subject. When you read anything, save the words that answer your question, and skip the rest."
+ },
+ "specimen": {
+  "kicker": "Specimen collected",
+  "stamp": "CASE CLOSED",
+  "icon": "✨",
+  "name": "A chip of Kai’s fool’s gold",
+  "line": "You cracked Case 29, part 2, and a chip of Kai’s fool’s gold goes in your Field Notebook. (A specimen is something a scientist collects to keep.) Next lesson: changes that don’t make anything new!"
+ },
+ "notebookTitle": "Unit 5 · Energy, Motion & Collisions",
+ "notebook": [
+  {
+   "lesson": "18.01",
+   "icon": "🧫",
+   "name": "Red tide sample slide"
+  },
+  {
+   "lesson": "18.02",
+   "icon": "🎟️",
+   "name": "Star party ticket"
+  },
+  {
+   "lesson": "19.01",
+   "icon": "🏁",
+   "name": "Derby checkered flag"
+  },
+  {
+   "lesson": "19.02",
+   "icon": "🧦",
+   "name": "The fluke sock"
+  },
+  {
+   "lesson": "20.01",
+   "icon": "💡",
+   "name": "The burnt-out pier bulb"
+  },
+  {
+   "lesson": "20.02",
+   "icon": "📋",
+   "name": "The approved work order"
+  },
+  {
+   "lesson": "21.01",
+   "icon": "🔩",
+   "name": "A bolt from the dented bumper"
+  },
+  {
+   "lesson": "21.02",
+   "icon": "✉️",
+   "name": "An opened prediction envelope"
+  },
+  {
+   "lesson": "22.01",
+   "icon": "🪶",
+   "name": "A pelican feather from the solar panel"
+  },
+  {
+   "lesson": "22.02",
+   "icon": "📐",
+   "name": "Your approved patent drawing"
+  },
+  {
+   "lesson": "23.01",
+   "icon": "🎧",
+   "name": "The canal hum recording"
+  },
+  {
+   "lesson": "23.02",
+   "icon": "🎀",
+   "name": "The Bright Idea ribbon"
+  },
+  {
+   "lesson": "24.01",
+   "icon": "🧾",
+   "name": "Order slip #15"
+  },
+  {
+   "lesson": "24.02",
+   "icon": "🧻",
+   "name": "Teo’s napkin plan"
+  },
+  {
+   "lesson": "25.01",
+   "icon": "🗺️",
+   "name": "Teo’s treasure map"
+  },
+  {
+   "lesson": "25.02",
+   "icon": "🪧",
+   "name": "Zippy’s sign"
+  },
+  {
+   "lesson": "26.01",
+   "icon": "🦆",
+   "name": "A derby duck"
+  },
+  {
+   "lesson": "26.02",
+   "icon": "🔦",
+   "name": "A judge’s signal flashlight"
+  },
+  {
+   "lesson": "27.01",
+   "icon": "🏆",
+   "name": "The derby trophy"
+  },
+  {
+   "lesson": "27.02",
+   "icon": "🏅",
+   "name": "The new trophy design"
+  },
+  {
+   "lesson": "28.01",
+   "icon": "🎣",
+   "name": "The rusty bolt from the pond"
+  },
+  {
+   "lesson": "28.02",
+   "icon": "🧾",
+   "name": "Dana’s steel-bin receipt"
+  },
+  {
+   "lesson": "29.01",
+   "icon": "🍡",
+   "name": "A toasted marshmallow"
+  },
+  {
+   "lesson": "29.02",
+   "icon": "✨",
+   "name": "A chip of Kai’s fool’s gold"
+  }
+ ],
+ "rankLine": "Your Field Station ID just updated. Keep going, scientist.",
+ "lensWin": "All six words are sorted. Nice work, detective!",
+ "inputs": [
+  {
+   "id": "tab1",
+   "type": "swap",
+   "find": {
+    "sel": ".tab-btn[data-tab=\"vocab\"]"
+   },
+   "swap": [
+    "📚 Vocabulary",
+    "🌅 Warm-Up"
+   ]
+  },
+  {
+   "id": "sw-words",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap a card to flip it"
+   },
+   "swap": [
+    "<strong>Tap a card to flip it</strong> and read what the word means.",
+    "<strong>Tap a word</strong> to see what it means."
+   ]
+  },
+  {
+   "id": "fs-warm",
+   "type": "frame",
+   "find": {
+    "sel": "#tab-vocab .fs-game[data-mod=\"tower\"]"
+   },
+   "label": "Warm-Up: gold or not?",
+   "q": "Warm-Up: what I notice about the two nuggets, and a test I would try.",
+   "title": "My nugget notes",
+   "compact": true,
+   "fields": [
+    {
+     "t": "Same on both",
+     "icon": "🟰",
+     "ph": "Both nuggets are ___."
+    },
+    {
+     "t": "Something different",
+     "icon": "🔍",
+     "ph": "But Kai’s nugget ___."
+    },
+    {
+     "t": "A test I would try",
+     "icon": "🧪",
+     "ph": "I would test ___ because ___."
+    }
+   ]
+  },
+  {
+   "id": "fs-partc",
+   "type": "frame",
+   "find": {
+    "sel": "#tab-assignment p",
+    "text": "Then identify each one with evidence."
+   },
+   "label": "Part C: your own mystery",
+   "q": "Part C: my 3 mystery things, my test results, and what each one is.",
+   "title": "My mystery table",
+   "fields": [
+    {
+     "t": "Mystery A",
+     "icon": "🔍",
+     "ph": "Color ___ · magnet? ___ · floats? ___ · hard? ___ → it’s ___"
+    },
+    {
+     "t": "Mystery B",
+     "icon": "🔍",
+     "ph": "Color ___ · magnet? ___ · floats? ___ · hard? ___ → it’s ___"
+    },
+    {
+     "t": "Mystery C",
+     "icon": "🔍",
+     "ph": "Color ___ · magnet? ___ · floats? ___ · hard? ___ → it’s ___"
+    },
+    {
+     "t": "My evidence sentence",
+     "icon": "🔍",
+     "ph": "I identify Mystery ___ as ___ because ___ and ___.",
+     "long": true
+    }
+   ]
+  },
+  {
+   "id": "fs-cer",
+   "type": "cer",
+   "target": "cer-4",
+   "find": {
+    "sel": "textarea#cer-4"
+   },
+   "reminder": "Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.",
+   "parts": [
+    {
+     "k": "C",
+     "t": "Claim",
+     "ask": "Is every gray, hard material iron?",
+     "ph": "I agree / I disagree because…"
+    },
+    {
+     "k": "E",
+     "t": "Evidence",
+     "ask": "Two facts from the lesson. Tap them in the planner above, or type them.",
+     "ph": "One fact is… Another fact is…",
+     "rows": 3
+    },
+    {
+     "k": "R",
+     "t": "Reasoning",
+     "ask": "How do those facts prove your claim?",
+     "ph": "This shows that…",
+     "rows": 3
+    }
+   ]
+  },
+  {
+   "id": "relabel",
+   "type": "relabel",
+   "map": {
+    "ans-1": "Part B · Question 5",
+    "ans-3": "Part B · Question 7",
+    "cer-4": "Use Your Evidence (CER)"
+   }
+  },
+  {
+   "id": "sw-check",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap to toggle"
+   },
+   "swap": [
+    " Tap to toggle.",
+    ""
+   ]
+  },
+  {
+   "id": "sw-circle",
+   "type": "swap",
+   "find": {
+    "sel": ".card-head-title",
+    "text": "Revisit Our Key Question"
+   },
+   "swap": [
+    "Revisit Our Key Question",
+    "Back to the Big Question"
+   ]
+  }
+ ],
+ "cues": {
+  "warmup": [
+   {
+    "at": "^nuggets",
+    "sel": ".fs-twr-pics",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^block",
+    "sel": ".fs-twr-pile .fs-twr-blk",
+    "i": 0,
+    "fx": "point"
+   },
+   {
+    "at": "^sign",
+    "sel": ".fs-twr-sign",
+    "fx": "wiggle"
+   },
+   {
+    "at": "^locked",
+    "sel": ".fs-twr-blk.locked",
+    "all": true,
+    "fx": "glow"
+   }
+  ],
+  "part1": [
+   {
+    "at": "^fingerprint",
+    "sel": ".fs-bcd-mine",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^test",
+    "sel": ".fs-bcd-test",
+    "i": 0,
+    "fx": "point"
+   },
+   {
+    "at": "^switch",
+    "sel": ".fs-bcd-sw",
+    "i": 0,
+    "fx": "glow"
+   },
+   {
+    "at": "^shelf",
+    "sel": "[data-mod=\"barcode\"] .fs-todo li",
+    "i": 2,
+    "fx": "trace"
+   }
+  ],
+  "part3": [
+   {
+    "at": "^tile",
+    "sel": ".fs-skp-plate",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^streak",
+    "sel": "[data-mod=\"streak\"] .fs-todo li",
+    "i": 0,
+    "fx": "trace"
+   },
+   {
+    "at": "^nail",
+    "sel": ".fs-skp-st",
+    "i": 1,
+    "fx": "glow"
+   },
+   {
+    "at": "^weigh",
+    "sel": ".fs-skp-st",
+    "i": 2,
+    "fx": "glow"
+   }
+  ],
+  "explore": [
+   {
+    "at": "^tests",
+    "sel": ".fs-clt-tools",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^row",
+    "sel": ".fs-clt-row",
+    "i": 0,
+    "fx": "point"
+   },
+   {
+    "at": "^table",
+    "sel": ".fs-clt-tab table",
+    "fx": "glow"
+   },
+   {
+    "at": "^claim",
+    "sel": "[data-mod=\"claimtiles\"] .fs-todo li",
+    "i": 2,
+    "fx": "trace"
+   }
+  ]
+ },
+ "cueWords": {}
+}

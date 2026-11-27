@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="Sunrise at the Palmetto Springs creek. A gold pan sits at the water's edge holding glittering nuggets and pebbles, with mist on the water and a dragonfly hovering.">
+  <defs>
+    <linearGradient id="b292sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FB8D8"/><stop offset=".6" stop-color="#F6C98E"/><stop offset="1" stop-color="#F9DDB0"/></linearGradient>
+    <linearGradient id="b292water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8DB7C4"/><stop offset="1" stop-color="#4F7F8E"/></linearGradient>
+    <radialGradient id="b292sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF3C4"/><stop offset=".45" stop-color="#FFD978" stop-opacity=".8"/><stop offset="1" stop-color="#FFD978" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b292pan" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#5E6266"/><stop offset="1" stop-color="#2B2E31"/></radialGradient>
+    <style>
+      .b292-tw { animation: b292tw 1.8s ease-in-out infinite; } .b292-tw2 { animation-delay: .6s; } .b292-tw3 { animation-delay: 1.2s; }
+      @keyframes b292tw { 0%, 100% { opacity: .15; } 50% { opacity: 1; } }
+      .b292-mist { animation: b292mist 9s ease-in-out infinite alternate; }
+      @keyframes b292mist { from { transform: translateX(-20px); } to { transform: translateX(30px); } }
+      .b292-fly { animation: b292fly 3.4s ease-in-out infinite; }
+      @keyframes b292fly { 0%, 100% { transform: translate(0, 0); } 30% { transform: translate(14px, -6px); } 60% { transform: translate(-8px, 4px); } }
+      .b292-glint { animation: b292gl 5s ease-in-out infinite; }
+      @keyframes b292gl { 0%, 100% { opacity: .2; } 50% { opacity: .7; } }
+      @media (prefers-reduced-motion: reduce) { .b292-tw, .b292-mist, .b292-fly, .b292-glint { animation: none; } }
+    </style>
+  </defs>
+  <rect width="920" height="200" fill="url(#b292sky)"/>
+  <circle cx="700" cy="92" r="70" fill="url(#b292sun)"/>
+  <circle cx="700" cy="92" r="20" fill="#FFF1BE"/>
+  <path d="M0 98 Q140 80 280 92 T560 86 T820 94 T920 88 V120 H0z" fill="#6E8A5A"/>
+  <g fill="#4E6B3F">
+    <path d="M80 98 l5 -46 l4 46z"/><path d="M85 58 q-22 -6 -30 6 q16 -6 30 -2z"/><path d="M85 58 q22 -8 32 2 q-16 -4 -32 2z"/><path d="M85 56 q-6 -18 4 -26 q-2 14 -4 26z"/>
+    <path d="M190 96 l4 -34 l4 34z"/><path d="M194 66 q-18 -4 -24 6 q12 -4 24 -2z"/><path d="M194 66 q18 -6 26 2 q-12 -2 -26 2z"/>
+    <path d="M846 94 l5 -40 l4 40z"/><path d="M851 58 q-20 -6 -28 6 q14 -6 28 -2z"/><path d="M851 58 q20 -8 30 2 q-14 -4 -30 2z"/>
+  </g>
+  <rect y="112" width="920" height="88" fill="url(#b292water)"/>
+  <path d="M640 120 h120 M660 132 h80 M675 144 h50" stroke="#FFE6A6" stroke-width="3" stroke-linecap="round" class="b292-glint"/>
+  <g class="b292-mist" opacity=".55"><ellipse cx="300" cy="118" rx="180" ry="8" fill="#FFFFFF"/><ellipse cx="560" cy="124" rx="140" ry="6" fill="#FFFFFF"/></g>
+  <path d="M0 168 Q120 150 260 160 Q380 170 470 158 L520 200 H0z" fill="#C8B48A"/>
+  <g fill="#9B8A6A"><ellipse cx="60" cy="182" rx="12" ry="6"/><ellipse cx="420" cy="176" rx="9" ry="5"/><ellipse cx="110" cy="190" rx="7" ry="4"/><ellipse cx="470" cy="188" rx="8" ry="4"/></g>
+  <g transform="translate(250 164)">
+    <ellipse cx="4" cy="12" rx="98" ry="20" fill="#3E3A2E" opacity=".3"/>
+    <path d="M-94 -6 Q-80 26 0 28 Q80 26 94 -6 Z" fill="#4A4F54"/>
+    <ellipse cx="0" cy="-6" rx="94" ry="22" fill="#8C9298" stroke="#3A3E42" stroke-width="3"/>
+    <ellipse cx="0" cy="-4" rx="78" ry="16" fill="#5D6368"/>
+    <ellipse cx="0" cy="-2" rx="62" ry="11" fill="#86AEB9"/>
+    <path d="M-70 -14 Q0 -22 70 -14" stroke="#C9CED2" stroke-width="2" fill="none" opacity=".7"/>
+    <g fill="#8C8577"><ellipse cx="-36" cy="-2" rx="8" ry="4"/><ellipse cx="30" cy="2" rx="7" ry="4"/><ellipse cx="-4" cy="5" rx="6" ry="3"/><ellipse cx="48" cy="-4" rx="5" ry="3"/></g>
+    <g fill="#F2C443" stroke="#9C7418" stroke-width="1.4">
+      <path d="M-20 -6 l12 -7 l11 4 l-2 9 l-13 3 z"/><path d="M10 -5 l9 -5 l8 3 l-2 7 l-10 2 z"/><path d="M-52 3 l7 -4 l7 3 l-2 5 l-8 1 z"/>
+    </g>
+    <g fill="#FFFBE3">
+      <path class="b292-tw" d="M-10 -20 l2 5 l5 2 l-5 2 l-2 5 l-2 -5 l-5 -2 l5 -2z"/>
+      <path class="b292-tw b292-tw2" d="M20 -16 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 l4 -1.5z"/>
+      <path class="b292-tw b292-tw3" d="M-46 -6 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 l4 -1.5z"/>
+    </g>
+  </g>
+  <g transform="translate(560 64)"><g class="b292-fly">
+    <rect x="-2" y="-2" width="34" height="4" rx="2" fill="#2F6E8A"/>
+    <circle cx="-3" cy="0" r="4" fill="#24546A"/>
+    <ellipse cx="8" cy="-8" rx="10" ry="4" fill="#DDF1F8" opacity=".85" transform="rotate(-20 8 -8)"/>
+    <ellipse cx="8" cy="8" rx="10" ry="4" fill="#DDF1F8" opacity=".85" transform="rotate(20 8 8)"/>
+    <ellipse cx="17" cy="-7" rx="9" ry="3.5" fill="#DDF1F8" opacity=".75" transform="rotate(-12 17 -7)"/>
+    <ellipse cx="17" cy="7" rx="9" ry="3.5" fill="#DDF1F8" opacity=".75" transform="rotate(12 17 7)"/>
+  </g></g>
+</svg>
