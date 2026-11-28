@@ -1,0 +1,155 @@
+
+/* ======================= 30.01 "The Melted Box": claim form, sealbag, callit, undoer, wipe, statedial, remelt, claimstamp, evapdish ======================= */
+
+/* ---- the freight damage claim (case.claim) ---- */
+.fs-cfm { position: relative; background: #FFFDF6; border: 2px solid #D8C7A8; border-radius: 10px; padding: 14px 16px 16px; margin: 12px 0; box-shadow: 0 3px 10px rgba(50,36,26,.12); overflow: hidden; }
+.fs-cfm::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 6px; background: repeating-linear-gradient(90deg, #C8553D 0 14px, #FFFDF6 14px 28px); }
+.fs-cfm-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 6px; font-weight: 900; color: #6B4A2E; font-size: 13.5px; letter-spacing: .6px; text-transform: uppercase; }
+.fs-cfm-h small { font-weight: 800; color: #9A8E82; letter-spacing: 0; text-transform: none; }
+.fs-cfm-rows { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 10px 0 0; font-size: 15px; }
+.fs-cfm-rows dt { color: #9A8E82; font-weight: 800; }
+.fs-cfm-rows dd { margin: 0; color: #2B1D12; font-weight: 700; }
+.fs-cfm-note { margin: 12px 0 0; padding: 10px 12px; background: #FBF2EC; border-left: 4px solid #C8553D; border-radius: 0 8px 8px 0; font-size: 14.5px; color: #5A4D3E; line-height: 1.55; }
+.fs-cfm-stamp { position: absolute; right: 14px; bottom: 36px; transform: rotate(-11deg); border: 4px double #C8553D; color: #C8553D; font-weight: 900; font-size: 22px; letter-spacing: 2px; padding: 4px 14px; border-radius: 6px; opacity: .82; }
+.fs-cfm-stamp.ok { border-color: #2F7A55; color: #2F7A55; }
+.fs-cfm-sign { margin-top: 14px; font-family: 'Comic Sans MS', cursive; color: #4A6B8A; font-size: 16px; }
+
+/* ---- Warm-Up: the sealed bag ---- */
+.fs-sb-row { display: grid; grid-template-columns: 1fr 1.2fr; gap: 14px; align-items: center; margin: 10px 0; }
+.fs-sb-chip { font-size: 15px; }
+.fs-sb-seal { background: #EAF4FA; border: 2px dashed #9FC8DD; border-radius: 10px; padding: 10px 12px; font-weight: 800; color: #2D5A7A; text-align: center; }
+.fs-sb-scale { background: #EDEFF1; border: 2px solid #C3CBD2; border-radius: 14px; padding: 12px; text-align: center; }
+.fs-sb-scale.over { border-color: #2F7A55; background: #E7F4EC; }
+.fs-sb-pan { background: #FFFFFF; border: 2px solid #D5DCE2; border-radius: 10px; min-height: 76px; display: flex; align-items: center; justify-content: center; }
+.fs-sb-pan em { color: #9A8E82; font-size: 13.5px; }
+.fs-sb-bag { font-size: 40px; line-height: 1; }
+.fs-sb-bag.melted { filter: none; }
+.fs-sb-read { margin-top: 10px; background: #1C2B22; color: #8CF3B0; font-family: 'Courier New', monospace; font-weight: 700; font-size: 26px; border-radius: 8px; padding: 6px 0; letter-spacing: 2px; }
+.fs-sb-read.off { color: #4C7A60; }
+.fs-sb-lab { margin-top: 6px; font-size: 12px; color: #78828A; font-weight: 800; text-transform: uppercase; letter-spacing: .6px; }
+.fs-sb-go { margin-top: 8px; }
+.fs-sb-scale.melting .fs-sb-bag { animation: fsSbMelt .9s ease-in-out; }
+@keyframes fsSbMelt { 0% { transform: scale(1); } 60% { transform: scale(.7) translateY(8px); } 100% { transform: scale(1); } }
+@media (max-width: 560px) { .fs-sb-row { grid-template-columns: 1fr; } }
+
+/* ---- Part 1: call the number first ---- */
+.fs-cal-stage { background: #FAF7F3; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px; text-align: center; }
+.fs-cal-thing { display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 800; color: #0E1C42; font-size: 16px; }
+.fs-cal-ic { font-size: 30px; }
+.fs-cal-read { margin: 10px auto 2px; width: 180px; background: #1C2B22; color: #8CF3B0; font-family: 'Courier New', monospace; font-weight: 700; font-size: 28px; border-radius: 8px; padding: 6px 0; }
+.fs-cal-read.flash { animation: fsCalFlash .7s ease-out; }
+@keyframes fsCalFlash { 0% { background: #2F7A55; } 100% { background: #1C2B22; } }
+.fs-cal-sub { font-size: 13px; color: #9A8E82; font-weight: 700; margin-bottom: 10px; }
+.fs-cal-line { text-align: left; margin: 10px 0; }
+.fs-cal-pad { background: #FFFFFF; border: 2px solid #E8DDD2; border-radius: 12px; padding: 10px; margin-top: 10px; }
+.fs-cal-disp { background: #FFF6E5; border: 2px dashed #E3C98E; border-radius: 8px; font-size: 24px; font-weight: 900; color: #0E1C42; padding: 6px 0; margin: 6px 0 10px; }
+.fs-cal-disp small { font-size: 14px; color: #9A8E82; }
+.fs-cal-keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; max-width: 280px; margin: 0 auto; }
+.fs-cal-key { background: #F2EEE8; border: 2px solid #E0D6C8; border-radius: 8px; font-size: 18px; font-weight: 800; color: #2B1D12; padding: 8px 0; cursor: pointer; }
+.fs-cal-key:hover { background: #E9E2D8; }
+.fs-cal-key.go { background: #2F7A55; border-color: #2F7A55; color: #fff; }
+.fs-cal-weigh { margin-top: 10px; }
+.fs-cal-log { margin-top: 10px; }
+.fs-cal-lrow { display: flex; align-items: center; gap: 8px; background: #EEF8F0; border: 1.5px solid #B8E8CF; border-radius: 8px; padding: 6px 10px; margin-bottom: 5px; font-size: 14px; }
+.fs-cal-lrow b { color: #0E1C42; }
+.fs-cal-lrow em { margin-left: auto; font-style: normal; font-weight: 800; color: #1a6b35; }
+.fs-cal-done { font-size: 17px; font-weight: 800; color: #1a6b35; }
+
+/* ---- Part 2: the UNDO button ---- */
+.fs-und-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 0; }
+.fs-und-card { background: #FFFFFF; border: 2px solid #E8DDD2; border-radius: 12px; padding: 10px; text-align: center; }
+.fs-und-card.over { border-color: #2F7A55; background: #EEF8F0; }
+.fs-und-card.stamped.back { border-color: #2F7A55; background: #EEF8F0; }
+.fs-und-card.stamped.stuck { border-color: #C8553D; background: #FBF1EE; }
+.fs-und-t { font-size: 13.5px; font-weight: 800; color: #0E1C42; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.fs-und-pair { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 26px; margin: 8px 0; }
+.fs-und-pair em { font-size: 15px; color: #9A8E82; font-style: normal; }
+.fs-und-card.undone .fs-und-pair em { color: #2F7A55; }
+.fs-und-line { font-size: 13px; color: #5A4D3E; line-height: 1.5; }
+.fs-und-mat { margin-top: 6px; background: #EAF2FB; border-radius: 6px; padding: 4px 6px; font-size: 12.5px; font-weight: 800; color: #2D5A7A; }
+.fs-und-ask { margin-top: 6px; font-size: 12.5px; color: #9A8E82; font-weight: 700; }
+.fs-und-mark { margin-top: 6px; border: 2.5px double #2B1D12; border-radius: 6px; font-size: 12.5px; font-weight: 900; letter-spacing: 1px; padding: 3px 0; color: #2B1D12; opacity: .8; }
+.fs-und-btn { margin-top: 4px; font-size: 14px; padding: 6px 12px; }
+.fs-und-card.rewind .fs-und-pair { animation: fsUndBack .65s ease-in-out; }
+@keyframes fsUndBack { 0% { transform: translateX(0); } 50% { transform: translateX(-14px); opacity: .5; } 100% { transform: translateX(0); } }
+.fs-und-card.shudder { animation: fsUndStuck .55s ease-in-out; }
+@keyframes fsUndStuck { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+@media (max-width: 640px) { .fs-und-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .fs-und-grid { grid-template-columns: 1fr; } }
+
+/* ---- Part 3: the wipe + hotspot photos ---- */
+.fs-wp-box { position: relative; border-radius: 14px; overflow: hidden; border: 2px solid #E8DDD2; margin: 10px 0 4px; touch-action: none; }
+.fs-wp-box img { display: block; width: 100%; height: auto; }
+.fs-wp-base { width: 100%; }
+.fs-wp-top { position: absolute; inset: 0 auto 0 0; width: 62%; overflow: hidden; }
+.fs-wp-top img { position: absolute; left: 0; top: 0; height: 100%; width: auto; max-width: none; }
+.fs-wp-handle { position: absolute; top: 0; bottom: 0; left: 62%; width: 4px; background: #FFFFFF; box-shadow: 0 0 0 1px rgba(0,0,0,.25); cursor: ew-resize; }
+.fs-wp-handle span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #FFFFFF; color: #0E1C42; font-size: 12px; font-weight: 800; border-radius: 999px; padding: 5px 10px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+.fs-wp-handle.on span { background: #FFF6E5; }
+.fs-wp-caps { display: flex; justify-content: space-between; font-size: 12.5px; color: #9A8E82; font-weight: 700; margin-bottom: 10px; }
+.fs-wp-pic { position: relative; border-radius: 12px; overflow: hidden; border: 2px solid #E8DDD2; }
+.fs-wp-pic img { display: block; width: 100%; height: auto; }
+.fs-wp-info { margin-top: 8px; }
+
+/* ---- Part 4: the state dial ---- */
+.fs-std-wrap { display: grid; grid-template-columns: 220px 1fr; gap: 16px; align-items: stretch; margin: 10px 0; }
+.fs-std-rail { position: relative; background: #EDEFF1; border: 2px solid #C3CBD2; border-radius: 14px; padding: 8px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
+.fs-std-fill { position: absolute; left: 0; right: 0; bottom: 0; background: #FBE3DC; }
+.fs-std-stop { position: relative; background: #FFFFFF; border: 2px solid #D5DCE2; border-radius: 10px; padding: 6px 8px; text-align: left; cursor: pointer; }
+.fs-std-stop b { display: block; font-size: 14px; color: #0E1C42; }
+.fs-std-stop small { font-size: 12px; color: #9A8E82; font-weight: 700; }
+.fs-std-stop.on { border-color: #C8553D; background: #FFF6E5; box-shadow: 0 0 0 3px rgba(200,85,61,.18); }
+.fs-std-jar { background: #EAF4FA; border: 2px solid #B8DCEE; border-radius: 14px; padding: 14px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.fs-std-glass { font-size: 54px; line-height: 1.2; }
+.fs-std-glass.moved { animation: fsStdPop .5s ease-out; }
+@keyframes fsStdPop { 0% { transform: scale(.8); } 60% { transform: scale(1.1); } 100% { transform: scale(1); } }
+.fs-std-cap { font-size: 12.5px; color: #2D5A7A; font-weight: 800; margin-top: 6px; }
+.fs-std-out { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 0; }
+.fs-std-o { background: #FFFFFF; border: 2px solid #E8DDD2; border-radius: 10px; padding: 8px; text-align: center; }
+.fs-std-o small { display: block; font-size: 11.5px; color: #9A8E82; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; }
+.fs-std-o b { font-size: 16px; color: #0E1C42; }
+.fs-std-o em { display: block; font-style: normal; font-size: 11.5px; color: #1a6b35; font-weight: 800; }
+.fs-std-o.lock { border-color: #B8E8CF; background: #EEF8F0; }
+@media (max-width: 640px) { .fs-std-wrap { grid-template-columns: 1fr; } .fs-std-out { grid-template-columns: 1fr; } }
+
+/* ---- Part 4, the wow: one giant crayon ---- */
+.fs-rmt-strip { display: flex; gap: 6px; justify-content: center; margin: 10px 0; flex-wrap: wrap; }
+.fs-rmt-step { background: #F2EEE8; border: 2px solid #E0D6C8; border-radius: 10px; padding: 6px 10px; text-align: center; min-width: 86px; }
+.fs-rmt-step span { display: block; font-size: 22px; }
+.fs-rmt-step small { font-size: 12px; color: #9A8E82; font-weight: 800; }
+.fs-rmt-step.done { background: #EEF8F0; border-color: #B8E8CF; }
+.fs-rmt-step.on { background: #FFF6E5; border-color: #E3C98E; box-shadow: 0 0 0 3px rgba(227,201,142,.35); }
+.fs-rmt-stage { background: #FAF7F3; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px; text-align: center; }
+.fs-rmt-art { font-size: 56px; line-height: 1.1; }
+.fs-rmt-art.moved { animation: fsRmtPour .7s ease-in-out; }
+@keyframes fsRmtPour { 0% { transform: translateY(-10px) rotate(-8deg); opacity: .4; } 100% { transform: translateY(0) rotate(0); opacity: 1; } }
+.fs-rmt-scale { display: inline-block; background: #1C2B22; color: #8CF3B0; border-radius: 8px; padding: 5px 14px; margin: 6px 0 10px; }
+.fs-rmt-scale small { display: block; font-size: 11px; color: #6FBF8C; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; }
+.fs-rmt-scale b { font-family: 'Courier New', monospace; font-size: 20px; }
+.fs-rmt-line { text-align: left; }
+.fs-rmt-go { margin-top: 10px; }
+
+/* ---- after the solve: stamp the claim ---- */
+.fs-cst-chips { display: flex; flex-direction: column; gap: 6px; margin: 8px 0; }
+.fs-cst-chip { text-align: left; }
+.fs-cst-copy { margin-top: 10px; }
+.fs-cst-blank { color: #9A8E82 !important; font-style: italic; }
+.fs-cst-stamps { margin-top: 10px; }
+
+/* ---- Tool of the Week: the evaporating dish ---- */
+.fs-evd-bench { position: relative; background: #FAF7F3; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px; text-align: center; margin: 10px 0; }
+.fs-evd-dish { position: relative; width: 190px; height: 74px; margin: 0 auto; background: #F3F6F8; border: 3px solid #C3CBD2; border-top-width: 2px; border-radius: 10px 10px 80px 80px / 10px 10px 40px 40px; overflow: hidden; }
+.fs-evd-dish.empty { display: flex; align-items: center; justify-content: center; }
+.fs-evd-dish.empty em { font-size: 13px; color: #9A8E82; }
+.fs-evd-liquid { position: absolute; left: 4px; right: 4px; bottom: 0; height: 42px; background: #BBDDEE; opacity: 0; transition: height .9s linear, opacity .4s; }
+.fs-evd-dish.poured .fs-evd-liquid, .fs-evd-dish.warm .fs-evd-liquid { opacity: .9; }
+.fs-evd-dish.warm .fs-evd-liquid { height: 4px; }
+.fs-evd-left { position: absolute; left: 0; right: 0; bottom: 6px; font-size: 22px; }
+.fs-evd-warmer { font-size: 24px; margin-top: 4px; opacity: .3; }
+.fs-evd-warmer.on { opacity: 1; }
+.fs-evd-out { margin: 10px 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fs-sb-scale.melting .fs-sb-bag, .fs-cal-read.flash, .fs-und-card.rewind .fs-und-pair, .fs-und-card.shudder, .fs-std-glass.moved, .fs-rmt-art.moved { animation: none !important; }
+  .fs-evd-liquid { transition: none; }
+}

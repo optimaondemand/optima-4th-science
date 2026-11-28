@@ -1,0 +1,362 @@
+[
+ {
+  "kind": "fix",
+  "why": "unit label: “Ecosystems & Energy” is a leftover; Module 30 sits under Matter, Magnets & Changes",
+  "old": "<div class=\"info-detail\">Ecosystems &amp; Energy</div>",
+  "new": "<div class=\"info-detail\">Matter, Magnets &amp; Changes</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "science label: changes of shape, size and state are physical science",
+  "old": "<div class=\"info-detail\">Life Science</div>",
+  "new": "<div class=\"info-detail\">Physical Science</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "standards label: content benchmark first; content benchmark first; TEKS is a Texas code that isn’t in the plan (the lesson also teaches conservation of mass, SC.4.P.8.3, but the plan row doesn’t list it)",
+  "old": "<div class=\"info-value\">SC.4.P.8.2, SC.4.P.9.1 · TEKS 4.6(D)</div>",
+  "new": "<div class=\"info-value\">SC.4.P.9.1, SC.4.P.8.2</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "footer standards in the same order as the header",
+  "old": "&middot; CPALMS SC.4.P.8.2, SC.4.P.9.1</div>",
+  "new": "&middot; CPALMS SC.4.P.9.1, SC.4.P.8.2</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "the header comment carries the same standards line",
+  "old": "NGSS enrichment  ·  CPALMS SC.4.P.8.2, SC.4.P.9.1",
+  "new": "NGSS enrichment  ·  CPALMS SC.4.P.9.1, SC.4.P.8.2"
+ },
+ {
+  "kind": "fix",
+  "why": "quarter label in the footer: week 30 is Q4 (the header already says Q4)",
+  "old": "Science &middot; Quarter 3 &middot; Student Lesson Page",
+  "new": "Science &middot; Quarter 4 &middot; Student Lesson Page"
+ },
+ {
+  "kind": "plain",
+  "why": "shorter; no dashes",
+  "old": "<p>Hold this question in your head as you work\\. We're nearly at the end of the year.*?</p>",
+  "new": "<p>Keep this question in mind. Today you’ll weigh things before and after they change, and find out that a change can look huge and still leave the same material behind.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the Warm-Up title named the toaster lesson",
+  "old": "<div class=\"act-title\">🌅 Warm-Up: What Goes In, What Comes Out?</div>\n        <div class=\"act-subtitle\">A familiar device, a hidden change</div>",
+  "new": "<div class=\"act-title\">🌅 Warm-Up: The Sealed Bag</div>\n        <div class=\"act-subtitle\">One number, before and after</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the toaster → the sealed bag on the scale",
+  "old": "<p>Think about a toaster. You drop in cold bread. A minute later, you pull out hot toast.</p>",
+  "new": "<p>Dr. Priya Nair zipped one ice cube into a sandwich bag and set the bag on a kitchen scale. The scale showed a number. Then she left it on the counter.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the toaster sketch → the game (played and answered on the page)",
+  "old": "<p>In your notebook, draw a quick sketch of a toaster. On one side, label what goes IN. On the other, label what comes OUT. (Hint: bread on both sides — but something invisible is also going in. What is it?)</p>",
+  "new": "<p>An hour later the ice was gone and the bag held water. Read the number before you touch anything.</p>"
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): Notice & Wonder about the toaster",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Notice &amp; Wonder</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the “energy can CONVERT … toasters” callout",
+  "old": "<div class=\"callout callout-tip\">\\s*<span class=\"callout-icon\">💡</span>\\s*<p>Today you\\'ll learn that energy can CONVERT.*?</p>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "22.01 leftover (ticked): the Stop & Reason asked about “the three devices above … INPUT and OUTPUT”",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🧠</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Reason</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "Word Wall (ticked): “Device” is an energy-lesson leftover; this lesson needs conservation of matter",
+  "old": "<div class=\"fc-emoji\">⚙️</div><div class=\"fc-word\">Device</div><div class=\"fc-tap\">tap to flip</div></div><div class=\"flip-card-back\"><div class=\"fc-word-back\">Device</div><div class=\"fc-def\">A tool or machine designed to do a job. Most devices convert energy from one form to another — a flashlight, a toaster, a fan are all devices.</div>",
+  "new": "<div class=\"fc-emoji\">⚖️</div><div class=\"fc-word\">Conservation of matter</div><div class=\"fc-tap\">tap to flip</div></div><div class=\"flip-card-back\"><div class=\"fc-word-back\">Conservation of matter</div><div class=\"fc-def\">The rule that matter is never made and never destroyed. Change its shape and the amount stays exactly the same.</div>"
+ },
+ {
+  "kind": "fix",
+  "why": "Word Wall (ticked): “Magnetic” is a magnet-lesson leftover; this lesson uses dissolve",
+  "old": "<div class=\"fc-emoji\">🔩</div><div class=\"fc-word\">Magnetic</div><div class=\"fc-tap\">tap to flip</div></div><div class=\"flip-card-back\"><div class=\"fc-word-back\">Magnetic</div><div class=\"fc-def\">A material that a magnet can attract. Iron, nickel, and steel are magnetic. Aluminum, copper, plastic, and wood are not.</div>",
+  "new": "<div class=\"fc-emoji\">🥄</div><div class=\"fc-word\">Dissolve</div><div class=\"fc-tap\">tap to flip</div></div><div class=\"flip-card-back\"><div class=\"fc-word-back\">Dissolve</div><div class=\"fc-def\">To mix into a liquid so evenly that you can’t see it any more. The stuff is still in there. Let the water dry up and it comes back.</div>"
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dashes",
+  "old": "A change in shape, size, or state — but NOT in what the material is. Cut paper is still paper. Melted ice is still water.",
+  "new": "A change in shape, size or state, but NOT in what the material is. Cut paper is still paper. Melted ice is still water."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dash",
+  "old": "A change you can't easily undo — even though the material is still the same. Cutting paper into pieces is irreversible.",
+  "new": "A change you can’t easily undo, even though the material is still the same. Cutting paper into pieces is irreversible."
+ },
+ {
+  "kind": "plain",
+  "why": "Word Wall: no dashes",
+  "old": "The form of matter — solid, liquid, or gas. Water can be ice, liquid water, or steam — and stays water through all three states.",
+  "new": "The form of matter: solid, liquid or gas. Water can be ice, liquid water or steam, and it stays water through all three."
+ },
+ {
+  "kind": "plain",
+  "why": "cut filler; no dash",
+  "old": "<p>These six words show up all through the lesson\\. <strong>Tap a card to flip it</strong>.*?</p>",
+  "new": "<p><strong>Tap a card to flip it</strong> and read what the word means.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list (ticked): “a sunny window” is a copy-paste leftover",
+  "old": "\\s*<span class=\"need-chip\"><span>🔆</span>A sunny window or memory of one</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "supply list (ticked): no notebook needed (answers are typed on the page)",
+  "old": "\\s*<span class=\"need-chip\"><span>📓</span>Science notebook</span>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dashes, shorter",
+  "old": "Cut a piece of paper into 20 strips — you have paper strips. Same paper. Crumple it into a ball — still paper. Soak it in water and tear it — still paper.",
+  "new": "Cut a piece of paper into 20 strips and you have paper strips. Same paper."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dashes",
+  "old": "ice into water and freeze it back — still H2O.",
+  "new": "ice into water, then freeze it back. Still water."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 1: no dash; anchor for the scale game",
+  "old": "sugar in water and let it evaporate — the sugar comes back.</p>",
+  "new": "sugar in water, let the water dry up, and the sugar comes back.</p>\n      <p>Try it: call the number before the scale does.</p>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Stop & Think (how do you know it’s still water?) is played by the sealed bag and the scale game",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🛑</span>\\s*<div>\\s*<div class=\"label\">Stop &amp; Think</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: no dashes",
+  "old": "Some physical changes are <span class=\"vtip\">reversible<span class=\"vtip-box\"><span class=\"vtip-word\">Reversible</span>Can be undone.</span></span> — you can return the material to its starting form. Others are <span class=\"vtip\">irreversible<span class=\"vtip-box\"><span class=\"vtip-word\">Irreversible</span>Can't easily undo.</span></span> — even though the material is the SAME, you can't easily undo the change.",
+  "new": "Some physical changes are <span class=\"vtip\">reversible<span class=\"vtip-box\"><span class=\"vtip-word\">Reversible</span>Can be undone.</span></span>: you can put the material back the way it started. Others are <span class=\"vtip\">irreversible<span class=\"vtip-box\"><span class=\"vtip-word\">Irreversible</span>Can’t easily undo.</span></span>. The material is still the SAME, but you can’t easily undo the change."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the three-bullet list is exactly what the UNDO game plays (six changes, stamped, with a material line on every card)",
+  "old": "<ul style=\"font-size:16px;color:#2B1D12;line-height:1\\.7;margin:10px 0 12px 24px;\">\\s*<li><strong>Reversible:</strong>.*?</ul>\\s*",
+  "new": "<p>Melting ice and folding paper can be undone. Shredding paper and breaking glass cannot. Either way, no new material forms.</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: plain words",
+  "old": "The big test for any physical change is to ask: \"Is it still the SAME material?\" If yes, it's physical. If a brand-new substance has formed, you're looking at a chemical change (that's tomorrow's lesson).",
+  "new": "The big test for any change is one question: is it still the SAME material? If yes, the change is physical. If a brand new material has formed, like wood turning to ash when it burns, iron turning to rust, or an egg cooking, that is a chemical change."
+ },
+ {
+  "kind": "plain",
+  "why": "Part 2: no dash",
+  "old": "You can't easily un-shred paper or un-break glass, but the material is still paper and glass — physical changes, just hard-to-reverse ones.",
+  "new": "Un-shredded paper and un-broken glass are impossible, but both are still the same material."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Key Concept repeats the paragraph above it; its place holds the lead-in for the UNDO game",
+  "old": "<div style=\"background:#FFF6E5;border:2\\.5px solid #F0C97A;[^>]*>\\s*<div[^>]*>⭐ Key Concept</div>.*?</p>\\s*</div>\\s*",
+  "new": "<p>Try it: press UNDO on six changes and watch which ones really come back.</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 3 heading so the part numbers run 1, 2, 3, 4",
+  "old": "<div style=\"background:#EAF8FD;border:2px solid #B8E0F8;border-radius:14px;padding:16px 20px;margin:16px 0;\">\n        <p style=\"font-size:16px;color:#0E1C42;font-weight:800;margin:0 0 8px;\">⚖️ Conservation of Matter — Nothing Disappears!</p>",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 3 · Nothing Disappears</h3>\n      <div style=\"background:#EAF8FD;border:2px solid #B8E0F8;border-radius:14px;padding:16px 20px;margin:16px 0;\">\n        <p style=\"font-size:16px;color:#0E1C42;font-weight:800;margin:0 0 8px;\">⚖️ Conservation of matter</p>"
+ },
+ {
+  "kind": "plain",
+  "why": "Part 3: no dashes, shorter (the scale game already does the clay test)",
+  "old": "<p style=\\\"font-size:15px;color:#5A4D3E;line-height:1\\.65;margin:0 0 10px;\\\">Here's one of the biggest ideas in all of science.*?</p>",
+  "new": "<p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0 0 10px;\">Here is one of the biggest ideas in all of science: <strong>matter is never made and never destroyed.</strong> It only changes form. Melt an ice cube and the water weighs exactly what the ice did.</p>",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part 3: no dashes; shorter; anchor for the salt photos",
+  "old": "<p style=\"font-size:15px;color:#5A4D3E;line-height:1\\.65;margin:0;\">You can test this yourself.*?</p>",
+  "new": "<p style=\"font-size:15px;color:#5A4D3E;line-height:1.65;margin:0;\">Even when matter seems to disappear, it hasn’t. A puddle dries up in the sun, but the water didn’t vanish. It turned into <strong>water vapor</strong> (water as a gas) in the air, and it still weighs what the puddle did.</p>\n      </div>\n      <p>People have used that for thousands of years. Look at what the sun leaves behind.</p>\n      <div style=\"display:none;\"><!-- the blue box is closed above so the salt photos sit outside it; the original closing tag closes this empty div -->",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: the Four Physical Changes tap diagram repeats the infographic right above it (the UNDO game plays it). With it go Observe & Reason, the boiled-peanut Amazing Fact (cooking is mostly chemical, so it also contradicts the lesson), the beach Florida connection and the states Go Deeper. Part 4 = the old Explore: take one material all the way and back",
+  "old": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Four Physical Changes</h3>.*?(?=<div class=\"tab-next-wrap\">)",
+  "new": "<h3 style=\"font-size:22px;color:#0E1C42;font-weight:900;margin-bottom:10px;margin-top:22px;\">Part 4 · All the Way and Back</h3>\n      <p>Now take one material all the way from solid to gas, and all the way back.</p>\n      <p>Last stop: the art room. Dr. Nair carried the melted slab inside and put it on the hot plate.</p>\n\n      ",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "Part 4 replaces the Explore tab, so the next button goes to Self-Check",
+  "old": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('explore')\">Continue to 🔬 Explore →</button>",
+  "new": "<div class=\"tab-next-wrap\">\n        <button class=\"tab-next-btn\" onclick=\"switchTab('quiz')\">Continue to 🧠 Self-Check →</button>"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Explore tab button",
+  "old": "\\s*<button class=\"tab-btn\" data-tab=\"explore\"[^>]*>.*?</button>",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: tab order without Explore",
+  "old": "var TAB_ORDER = ['vocab','lesson','explore','quiz','assignment'];",
+  "new": "var TAB_ORDER = ['vocab','lesson','quiz','assignment'];"
+ },
+ {
+  "kind": "cut",
+  "why": "lean: remove the whole Explore tab (its 6-change home chart lives on as Part C; the evaporation Amazing Fact, the limestone Think like a scientist and the mixtures Go Deeper go with it)",
+  "old": "<!-- ═+ -->\\s*<!-- TAB 3: GUIDED EXPLORATION\\s*-->\\s*<!-- ═+ -->\\s*<div class=\"tab-panel\" id=\"tab-explore\">.*?(?=<!-- ═+ -->\\s*<!-- TAB 4)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no Part A word bank",
+  "old": "<p[^>]*>🔍 Part A &mdash; Match the Word</p>.*?(?=<p[^>]*>🌿 Part B)",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 no longer points at the cut tap diagram (same task)",
+  "old": "Pick ONE physical change from the diagram (melting ice, sugar dissolving, cutting paper, breaking glass). Tell whether it's reversible and what material stays the same.",
+  "new": "Pick ONE physical change from today: melting ice, sugar dissolving, cutting paper, breaking glass, or the melted crayons. Tell whether it can be undone, and what material stays the same."
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 5 label (Gathered Answers)",
+  "old": "data-label=\"Pick ONE physical change from the diagram (melting...\"",
+  "new": "data-label=\"One physical change: can it be undone, what stays the same\""
+ },
+ {
+  "kind": "plain",
+  "why": "Part B question 6 label (Gathered Answers)",
+  "old": "data-label=\"Explain why &quot;irreversible&quot; doesn&#x27;t mean &quot;chemical ...\"",
+  "new": "data-label=\"Why “can’t undo it” doesn’t mean chemical\""
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B question 7 removed (Bethany kept 5 and 6; the three states are taught and tested by the state dial in Part 4)",
+  "old": "<div class=\"pq\">\\s*<span class=\"pq-num\"[^>]*>7</span>.*?id=\"ans-3\"[^>]*></textarea>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C was a food chain; the checklist already describes the chart this lesson needs",
+  "old": "🎨 Part C &mdash; Build Your Own Food Chain",
+  "new": "🎨 Part C &mdash; Your Own Change Chart"
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Part C task → the checklist’s own chart (typed on the page, plus a required labeled drawing)",
+  "old": "<p style=\"font-size:15px;color:#9A8E82;margin-bottom:14px;\">In your science notebook, draw a <strong>new</strong> food chain.*?<p style=\"font-size:15px;color:#9A8E82;margin-bottom:14px;\">Use colors\\. Label every part\\.</p>",
+  "new": "<p style=\"font-size:15px;color:#9A8E82;margin-bottom:14px;\">Find <strong>four</strong> physical changes at home. Sort them into changes you <strong>can undo</strong> and changes that are <strong>hard to undo</strong>, and name the material that stays the same in each one.</p>",
+  "regex": true
+ },
+ {
+  "kind": "fix",
+  "why": "9.01 leftover (ticked): Reflect asked about a hawk; the lean shape cuts Reflect",
+  "old": "<div class=\"socratic-q\">\\s*<span class=\"sq-icon\">🤔</span>\\s*<div>\\s*<div class=\"label\">Reflect</div>.*?</div>\\s*</div>\\s*</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "shorter CER directions (the C/E/R boxes explain each part)",
+  "old": "Write a short argument explaining whether you agree or disagree. Use at least <strong>two pieces of evidence</strong> from today's lesson to support your claim.",
+  "new": "Do you agree or disagree? Prove it with <strong>two pieces of evidence</strong> from today’s lesson."
+ },
+ {
+  "kind": "plain",
+  "why": "shorter",
+  "old": "All of your written responses — gathered in one place so you can copy or download them for Canvas turn-in.",
+  "new": "All your answers in one place. Copy or download them to turn in on Canvas."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: checklist without Part A",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Part A:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: Part B has 2 questions",
+  "old": "Questions 5, 6, and 7 answered in complete sentences using lesson vocabulary.",
+  "new": "Both questions answered in complete sentences, using words from today."
+ },
+ {
+  "kind": "plain",
+  "why": "Part C checklist matches the task and ends with the required sketch",
+  "old": "A 2-column reversible/irreversible chart with 4 physical changes and a what-stays-the-same note for each.",
+  "new": "My chart: 4 changes from home, sorted, with the material that stays the same in each. Plus your labeled sketch."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<div class=\"checklist-item\"[^>]*>\\s*<span class=\"check-icon\"[^>]*>☐</span>\\s*<span[^>]*><strong>Key Question Response:</strong>.*?</div>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "cut",
+  "why": "lean: no separate Big Question answer",
+  "old": "<p>Now that you've finished the lesson, write a <strong>2–3 sentence answer</strong>.*?</p>\\s*",
+  "new": "",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "lean: shorter checklist line",
+  "old": "<strong>Evidence Response:</strong> I made a claim about whether ANY irreversible change is automatically chemical, supported with two pieces of evidence.",
+  "new": "<strong>Use Your Evidence:</strong> My claim about whether a change you can’t undo must be chemical, with two pieces of evidence."
+ },
+ {
+  "kind": "cut",
+  "why": "lean: answers are typed on the page, so one way to turn in (this also drops “explaining your food chain”, a 9.01 leftover)",
+  "old": "Submit your work however works best for you:<br/><br/>.*?(?=\\s*</div>\\s*</div>)",
+  "new": "Download your field journal (it has your answers and your sketch) and upload it to the Canvas assignment. Or copy your Gathered Answers (above) into Canvas.",
+  "regex": true
+ },
+ {
+  "kind": "plain",
+  "why": "closing: no dashes; shorter",
+  "old": "<p><strong>Nicely done\\.</strong> You can now explain that a <span class=\\\"vtip\\\">physical change.*?Get ready for our finale!</p>",
+  "new": "<p><strong>Nicely done.</strong> You can now explain that a physical change can be undone or not, and that the material stays the same either way. One lesson left in the year, and it is the big one: chemical changes, where the material really does become something new.</p>",
+  "regex": true
+ }
+]

@@ -1,0 +1,1389 @@
+{
+ "lesson": "30.01",
+ "week": 30,
+ "day": 1,
+ "guide": "priya",
+ "prefix": "g4sci-30-1",
+ "manifestKey": "30-01",
+ "paths": {
+  "audio": "assets/audio/guide/",
+  "video": "assets/video/teacher/",
+  "manifest": "https://raw.githubusercontent.com/optimaondemand/optima-4th-science/main/video-manifest.json",
+  "h2c": "assets/sparkle/vendor/html2canvas.min.js",
+  "crew": "assets/crew/",
+  "ornaments": "assets/ornaments/"
+ },
+ "crew": {
+  "priya": {
+   "name": "Dr. Priya Nair",
+   "role": "materials scientist (someone who studies what things are made of and how they behave)",
+   "initials": "PN",
+   "color": "#7A5BB5",
+   "lens": "beaker",
+   "voiceId": "uYXf8XasLslADfZ2MB4u"
+  }
+ },
+ "expedition": {
+  "num": 30,
+  "title": "The Melted Box"
+ },
+ "ambient": {
+  "icon": "🌅",
+  "label": "Morning on the dock"
+ },
+ "case": {
+  "num": 30,
+  "title": "The Melted Box",
+  "style": "claim",
+  "hook": "Dr. Priya Nair here. The art show is Friday, and 300 crayons were shipped to Palmetto Springs Elementary for it. The truck sat in the sun, and the box arrived with one solid rainbow slab inside. The freight company stamped the school’s claim DENIED: “the wax became a new material.” Is that true? And is the art show over?",
+  "claim": {
+   "head": "SUNSHINE FREIGHT · DAMAGE CLAIM",
+   "no": "Claim #4408",
+   "rows": [
+    [
+     "Shipment",
+     "300 wax crayons, 1 carton"
+    ],
+    [
+     "From",
+     "Tallahassee warehouse"
+    ],
+    [
+     "To",
+     "Palmetto Springs Elementary"
+    ],
+    [
+     "Weight when it left",
+     "1,200 g"
+    ],
+    [
+     "Weight when it arrived",
+     "1,200 g"
+    ],
+    [
+     "Driver’s note",
+     "Truck sat in the sun. Box got hot."
+    ]
+   ],
+   "stamp": "DENIED",
+   "note": "Inspector: contents melted into one solid block. The wax became a new material. Nothing usable was delivered. Claim denied.",
+   "sign": "Sunshine Freight"
+  },
+  "stills": [],
+  "question": "Did the crayons become a new material, and can the art show still happen?",
+  "how": "Find 4 clues as you work through the lesson. Then crack the case (solve it) at the top of the Assignment tab.",
+  "clues": [
+   {
+    "id": "sealbag",
+    "icon": "⚖️",
+    "where": "Warm-Up: the sealed bag",
+    "t": "The ice melted and the scale did not move. Melting changes the form, not the amount, and not the material."
+   },
+   {
+    "id": "callit",
+    "icon": "🔢",
+    "where": "The Lesson, Part 1: call the number first",
+    "t": "Cut it, flatten it, dissolve it: the number on the scale never changed, and neither did the material."
+   },
+   {
+    "id": "undoer",
+    "icon": "↩️",
+    "where": "The Lesson, Part 2: the UNDO button",
+    "t": "Some changes cannot be undone and are STILL physical. Shredded paper is paper. And melted wax CAN be poured into a new shape."
+   },
+   {
+    "id": "statedial",
+    "icon": "🌡️",
+    "where": "The Lesson, Part 4: the state dial",
+    "t": "Solid to liquid to gas and all the way back: still water, every single time. A melted solid can be made solid again."
+   }
+  ],
+  "solve": {
+   "title": "Was the claim fair?",
+   "q": "Which answer fits all four clues AND the claim form?",
+   "options": [
+    {
+     "t": "No new material. The box left at 1,200 g and arrived at 1,200 g, and melted wax can be poured into new crayons. The claim should be approved.",
+     "right": true,
+     "why": "Case cracked! Same mass, same wax, new shape. That is a physical change, and the art show is on."
+    },
+    {
+     "t": "It is a new material, because the crayons cannot be put back the way they were.",
+     "why": "Check Clue 3. Hard to undo does not mean a new material. Shredded paper is still paper."
+    },
+    {
+     "t": "It is a new material, because the wax went from solid to liquid.",
+     "why": "Check Clue 4. Changing state is a physical change. Ice to water to steam is still water."
+    },
+    {
+     "t": "The crayons are gone, because the box weighs less than it did.",
+     "why": "Read the claim form again. It left at 1,200 g and arrived at 1,200 g. Nothing left the box."
+    }
+   ]
+  }
+ },
+ "sealbag": {
+  "afterText": "Read the number before you touch anything.",
+  "kicker": "Warm-Up game",
+  "title": "The sealed bag",
+  "why": {
+   "icon": "⚖️",
+   "q": "Why seal the bag?",
+   "t": "Nothing can get in and nothing can get out. So anything that changes is still in there."
+  },
+  "todo": [
+   "Drag the bag onto the scale (or tap the bag, then the scale).",
+   "Read the number. Then press Wait an hour.",
+   "Call it: what will the scale say now?"
+  ],
+  "bag": {
+   "icon": "🧊",
+   "t": "Sealed bag · one ice cube"
+  },
+  "scaleLabel": "Kitchen scale",
+  "start": 48,
+  "end": 48,
+  "unit": "g",
+  "dropLine": "Drop the bag on the scale, or tap the scale.",
+  "readLine": "The scale reads {n} g. Write that number down in your head.",
+  "waitBtn": "⏱ Wait an hour",
+  "waitLine": "The ice is melting…",
+  "ask": "The ice melted. What does the scale say now?",
+  "opts": [
+   {
+    "t": "Less than 48 g",
+    "miss": "Nothing left the bag. It was sealed shut the whole time."
+   },
+   {
+    "t": "Exactly 48 g",
+    "ok": true
+   },
+   {
+    "t": "More than 48 g",
+    "miss": "Nothing got into the bag either. It was sealed shut."
+   }
+  ],
+  "revealLine": "Still 48 g. Exactly the same.",
+  "q": "What is in the bag now?",
+  "opts2": [
+   {
+    "t": "The same water, in a different form.",
+    "ok": true
+   },
+   {
+    "t": "A brand new material.",
+    "miss": "Freeze it again and you get your ice cube back. Nothing new was made."
+   },
+   {
+    "t": "Less water than before.",
+    "miss": "The scale says 48 g, same as the start. None of it left."
+   }
+  ],
+  "win": "Melting changed the form, not the amount and not the material. Clue 1!",
+  "clue": "sealbag"
+ },
+ "callit": {
+  "afterText": "call the number before the scale does.",
+  "kicker": "Part 1 game",
+  "title": "Call the number first",
+  "why": {
+   "icon": "🔢",
+   "q": "Why call it first?",
+   "t": "Scientists write down what they expect BEFORE they measure, so they can’t fool themselves after."
+  },
+  "todo": [
+   "Read the starting number.",
+   "Press the change button and watch.",
+   "Type the number you think the scale will show, then press Weigh it."
+  ],
+  "keyLabel": "Type your call",
+  "weighBtn": "⚖️ Weigh it",
+  "unit": "g",
+  "startLine": "On the scale now: {n}",
+  "callLine": "Your call: {n} g",
+  "realLine": "The scale says: {n} g",
+  "hitLine": "Called it! Nothing was added and nothing left the tray.",
+  "overLine": "Not quite. Look at the tray: is there more stuff than before, or the same stuff in a new shape?",
+  "underLine": "Not quite. Nothing fell off the tray. Where could the missing grams have gone?",
+  "rounds": [
+   {
+    "id": "paper",
+    "icon": "📄",
+    "t": "A sheet of paper",
+    "btn": "✂️ Cut it into strips",
+    "mass": 5,
+    "after": "20 paper strips",
+    "line": "Snip, snip, snip. Twenty strips, all still on the tray.",
+    "same": "paper"
+   },
+   {
+    "id": "clay",
+    "icon": "🟤",
+    "t": "A ball of clay",
+    "btn": "🫳 Flatten it",
+    "mass": 60,
+    "after": "a clay pancake",
+    "line": "Squash. The ball is now a flat pancake.",
+    "same": "clay"
+   },
+   {
+    "id": "sugar",
+    "icon": "🥤",
+    "t": "A cup of water and a spoon of sugar",
+    "btn": "🥄 Stir the sugar in",
+    "mass": 212,
+    "after": "sugar water",
+    "line": "Stir, stir. The sugar disappears from sight. The whole cup is on the scale.",
+    "same": "sugar and water"
+   }
+  ],
+  "needLine": "Call the number first.",
+  "q": "Three changes, three readings. What happened to the number every time?",
+  "opts": [
+   {
+    "t": "It stayed exactly the same.",
+    "ok": true
+   },
+   {
+    "t": "It went down when things got smaller.",
+    "miss": "Look at your readings. Cutting the paper made more pieces, not less paper."
+   },
+   {
+    "t": "It changed every time.",
+    "miss": "Check your three readings again: 5 g, 60 g, 212 g, before and after."
+   }
+  ],
+  "win": "Cut, flattened, dissolved: same number, same material. Clue 2!",
+  "clue": "callit"
+ },
+ "undoer": {
+  "afterText": "press UNDO on six changes",
+  "kicker": "Part 2 game",
+  "title": "The UNDO button",
+  "why": {
+   "icon": "↩️",
+   "q": "What does UNDO test?",
+   "t": "Whether you can put the material back the way it started. It does NOT test whether the material changed."
+  },
+  "todo": [
+   "Press ↩ UNDO on a change and watch.",
+   "Then drag a stamp onto that card (or tap a stamp, then the card).",
+   "Do all six."
+  ],
+  "undoBtn": "↩ UNDO",
+  "stampQ": "Now stamp it.",
+  "stamps": [
+   {
+    "k": "back",
+    "icon": "↩️",
+    "t": "CAME BACK"
+   },
+   {
+    "k": "stuck",
+    "icon": "🚫",
+    "t": "STUCK THIS WAY"
+   }
+  ],
+  "cards": [
+   {
+    "id": "ice",
+    "icon": "🧊",
+    "t": "Melted ice",
+    "from": "🧊",
+    "to": "💧",
+    "k": "back",
+    "line": "Into the freezer. An hour later: an ice cube again.",
+    "mat": "water"
+   },
+   {
+    "id": "fold",
+    "icon": "📄",
+    "t": "Folded paper",
+    "from": "📄",
+    "to": "📃",
+    "k": "back",
+    "line": "Unfold it. Flat again, with a crease line left over.",
+    "mat": "paper"
+   },
+   {
+    "id": "sugar",
+    "icon": "🥄",
+    "t": "Dissolved sugar",
+    "from": "🍬",
+    "to": "🥤",
+    "k": "back",
+    "line": "Leave the cup in the sun. The water dries up and the sugar is sitting there.",
+    "mat": "sugar"
+   },
+   {
+    "id": "shred",
+    "icon": "🗞️",
+    "t": "Shredded paper",
+    "from": "📄",
+    "to": "🎊",
+    "k": "stuck",
+    "line": "You can tape a few strips. You cannot make it one clean sheet again.",
+    "mat": "paper"
+   },
+   {
+    "id": "glass",
+    "icon": "🥛",
+    "t": "Broken glass",
+    "from": "🥛",
+    "to": "🔹",
+    "k": "stuck",
+    "line": "The shards will not go back together. (Never try this one at home.)",
+    "mat": "glass"
+   },
+   {
+    "id": "cheese",
+    "icon": "🧀",
+    "t": "Grated cheese",
+    "from": "🧀",
+    "to": "🟡",
+    "k": "stuck",
+    "line": "Press the shreds. You get a lump of cheese, not the block you started with.",
+    "mat": "cheese"
+   }
+  ],
+  "miss": {
+   "back": "Press UNDO again and watch. Did it really come back?",
+   "stuck": "Press UNDO again. That one did come back!"
+  },
+  "matLine": "Material: {m}, before AND after.",
+  "q": "Six changes. How many of them made a NEW material?",
+  "opts": [
+   {
+    "t": "None of them. Every one is still the same material.",
+    "ok": true
+   },
+   {
+    "t": "The three with the 🚫 stamp.",
+    "miss": "Read their material lines. Shredded paper is paper, shards are glass, shreds are cheese."
+   },
+   {
+    "t": "Only the broken glass.",
+    "miss": "Every shard is still clear, hard glass. Nothing new was made."
+   }
+  ],
+  "win": "Hard to undo is NOT the same as a new material. Clue 3!",
+  "clue": "undoer"
+ },
+ "wipe": {
+  "afterText": "Look at what the sun leaves behind.",
+  "kicker": "Part 3 · real photos",
+  "title": "Where did the water go?",
+  "why": {
+   "icon": "🧂",
+   "q": "What is a salt pond?",
+   "t": "A shallow pond of seawater left out in the sun. The water turns to vapor and floats away. The salt cannot, so it stays."
+  },
+  "todo": [
+   "Drag the slider across the photo.",
+   "Then tap the numbers on the close-up photo."
+  ],
+  "before": {
+   "img": "images/30-01-salt-ponds.jpg",
+   "alt": "An aerial view of huge shallow ponds of seawater, each a different shade of pink and green.",
+   "cap": "Seawater in shallow ponds"
+  },
+  "after": {
+   "img": "images/30-01-salt-harvest.jpg",
+   "alt": "Heaps of white salt sitting in shallow stone-walled pans, with pink seawater still in the pans around them.",
+   "cap": "The salt the sun leaves behind"
+  },
+  "hint": "Drag me",
+  "photo": {
+   "img": "images/30-01-salt-crystals.jpg",
+   "alt": "A close-up of clear salt crystals. Each one is a cube with flat square faces.",
+   "hotspots": [
+    {
+     "n": 1,
+     "x": 66,
+     "y": 52,
+     "label": "A cube",
+     "t": "Salt always grows in cubes. The grains in a salt shaker are these same cubes, far too small to see."
+    },
+    {
+     "n": 2,
+     "x": 27,
+     "y": 16,
+     "label": "See-through",
+     "t": "Clear enough to look through. Salt that comes out of water looks nothing like the water it came from."
+    },
+    {
+     "n": 3,
+     "x": 17,
+     "y": 76,
+     "label": "Little ones too",
+     "t": "Smaller cubes, same shape. Stir any of them back into water and they dissolve again, ready to come back."
+    }
+   ]
+  },
+  "credit": "Salt ponds on San Francisco Bay: Daniel L. Lu (user:dllu), CC BY-SA 4.0 · Salt drying in the pans at Salinas del Carmen, Fuerteventura: Dietmar Rabich, CC BY-SA 4.0 · Salt crystals at the Natural History Museum of Vienna: włodi, CC BY-SA 2.0 · all via Wikimedia Commons",
+  "q": "Dissolving salt in water and drying it out again: what kind of change is that?",
+  "opts": [
+   {
+    "t": "A physical change. The salt was there all along.",
+    "ok": true
+   },
+   {
+    "t": "A chemical change, because the salt disappeared.",
+    "miss": "It never disappeared. It came back, grain for grain, when the water left."
+   },
+   {
+    "t": "A chemical change, because the water vanished.",
+    "miss": "The water did not vanish either. It turned into vapor in the air."
+   }
+  ],
+  "win": "Nothing disappeared. It just changed form."
+ },
+ "statedial": {
+  "afterText": "Now take one material all the way from solid to gas, and all the way back.",
+  "kicker": "Part 4 game",
+  "title": "The state dial",
+  "why": {
+   "icon": "🌡️",
+   "q": "What is a state of matter?",
+   "t": "Solid, liquid or gas. Heat or cool water and it moves between all three, and it is water the whole time."
+  },
+  "todo": [
+   "Drag the dial (or tap a stop) to heat the sealed jar.",
+   "Visit every stop, all the way to the top.",
+   "Then bring it all the way back down to ice."
+  ],
+  "jarLabel": "A sealed glass jar · 200 g of water",
+  "massLabel": "Mass",
+  "mass": 200,
+  "unit": "g",
+  "matLabel": "Material",
+  "matValue": "WATER",
+  "matNote": "Never changes.",
+  "stops": [
+   {
+    "k": "freezer",
+    "t": "−18 °C",
+    "sub": "Freezer",
+    "state": "SOLID",
+    "icon": "🧊",
+    "line": "Hard ice, one solid block."
+   },
+   {
+    "k": "cold",
+    "t": "0 °C",
+    "sub": "Melting",
+    "state": "SOLID + LIQUID",
+    "icon": "🫗",
+    "line": "Half ice, half water. The scale has not budged."
+   },
+   {
+    "k": "room",
+    "t": "20 °C",
+    "sub": "Room",
+    "state": "LIQUID",
+    "icon": "💧",
+    "line": "All liquid water now."
+   },
+   {
+    "k": "hot",
+    "t": "90 °C",
+    "sub": "Hot",
+    "state": "LIQUID + GAS",
+    "icon": "♨️",
+    "line": "Steam is rising, and the lid is holding it in."
+   },
+   {
+    "k": "boil",
+    "t": "110 °C",
+    "sub": "Stovetop",
+    "state": "GAS",
+    "icon": "☁️",
+    "line": "All water vapor. The jar looks empty, but it is full."
+   }
+  ],
+  "needUp": "Keep going up. You have not reached the top stop yet.",
+  "needDown": "Now bring it all the way back down to the freezer.",
+  "backLine": "Back to a solid block of ice. Same jar, same 200 g, same water.",
+  "q": "You turned the water into a gas and then back into ice. What material is in the jar now?",
+  "opts": [
+   {
+    "t": "Water. It was water at every single stop.",
+    "ok": true
+   },
+   {
+    "t": "A new material, because it was a gas for a while.",
+    "miss": "Check the Material readout. It said WATER at every stop, including the top one."
+   },
+   {
+    "t": "Less water, because some turned into steam.",
+    "miss": "The jar is sealed. Check the Mass readout: 200 g the whole way up and the whole way down."
+   }
+  ],
+  "win": "Solid, liquid, gas and back again: still water. Clue 4!",
+  "clue": "statedial"
+ },
+ "remelt": {
+  "afterText": "Dr. Nair carried the melted slab inside and put it on the hot plate.",
+  "kicker": "Part 4 · the wow",
+  "title": "One giant crayon",
+  "why": {
+   "icon": "🖍️",
+   "q": "Is melting wax a physical change?",
+   "t": "Yes. Solid to liquid and back to solid, and it is wax the whole time."
+  },
+  "todo": [
+   "Press each step. Keep an eye on the scale."
+  ],
+  "massLabel": "On the scale",
+  "mass": 1200,
+  "unit": "g",
+  "steps": [
+   {
+    "k": "slab",
+    "icon": "🌈",
+    "t": "The slab",
+    "btn": "🔥 Melt it",
+    "line": "The rainbow slab that the freight company called ruined. 1,200 g."
+   },
+   {
+    "k": "melt",
+    "icon": "🫕",
+    "t": "Melted",
+    "btn": "🫗 Pour it into a mold",
+    "line": "Liquid wax, swirling with every color. Still 1,200 g."
+   },
+   {
+    "k": "mold",
+    "icon": "🧁",
+    "t": "In the mold",
+    "btn": "❄️ Let it cool",
+    "line": "Poured into one big crayon mold. Still 1,200 g."
+   },
+   {
+    "k": "crayon",
+    "icon": "🖍️",
+    "t": "One giant crayon",
+    "btn": "",
+    "line": "One giant rainbow crayon, ready for the art show. Still 1,200 g."
+   }
+  ],
+  "q": "Is the giant crayon a new material?",
+  "opts": [
+   {
+    "t": "No. It is the same wax in a new shape.",
+    "ok": true
+   },
+   {
+    "t": "Yes, because it looks completely different.",
+    "miss": "Looks are not the test. The test is: is it still the same material? Melt it again and you get the same wax."
+   },
+   {
+    "t": "Yes, because the colors mixed together.",
+    "miss": "Mixing colors of wax makes a mixture of wax. Each color is still the wax it was."
+   }
+  ],
+  "win": "Same wax, same 1,200 g, brand new shape. The art show is saved."
+ },
+ "claimstamp": {
+  "afterSolve": true,
+  "kicker": "Case 30 · close it out",
+  "title": "Stamp the claim",
+  "why": {
+   "icon": "🧾",
+   "q": "Why stamp it yourself?",
+   "t": "Because you have the evidence now. Tests settle a claim, not how the box looks."
+  },
+  "todo": [
+   "Pick the two pieces of evidence that settle the claim.",
+   "Then stamp the form."
+  ],
+  "formHead": "SUNSHINE FREIGHT · DAMAGE CLAIM #4408",
+  "pickQ": "Pick TWO pieces of evidence for the form.",
+  "need": 2,
+  "chips": [
+   {
+    "id": "mass",
+    "t": "It left at 1,200 g and arrived at 1,200 g.",
+    "ok": true
+   },
+   {
+    "id": "remelt",
+    "t": "The wax melted and poured into a new crayon, so it is still wax.",
+    "ok": true
+   },
+   {
+    "id": "ugly",
+    "t": "The slab looks nothing like crayons.",
+    "miss": "How it looks is not evidence about the material."
+   },
+   {
+    "id": "hot",
+    "t": "The truck was hot.",
+    "miss": "True, but that is what caused the change, not evidence about the material."
+   }
+  ],
+  "stampQ": "Now stamp it.",
+  "stamps": [
+   {
+    "k": "ok",
+    "icon": "✅",
+    "t": "APPROVED"
+   },
+   {
+    "k": "no",
+    "icon": "🚫",
+    "t": "DENIED"
+   }
+  ],
+  "answer": "ok",
+  "missStamp": "Look at your two pieces of evidence. Do they say the school lost its crayons, or not?",
+  "win": "Approved. Case 30 closed, and the art show has its giant crayon."
+ },
+ "tool": {
+  "name": "Evaporating dish",
+  "icon": "🧂",
+  "tab": "assignment",
+  "after": "#tab-assignment .activity-card",
+  "key": "30-01-tool",
+  "sim": "evapdish",
+  "kicker": "Bonus · Tool of the Week",
+  "teaser": "Real lab gear: make the water leave and see what stays behind.",
+  "done": "Tool of the Week: you used a real evaporating dish.",
+  "why": {
+   "icon": "🧂",
+   "q": "What is an evaporating dish?",
+   "t": "A shallow dish that scientists warm gently so the water turns to vapor and leaves. Whatever was dissolved in the water is left sitting in the dish."
+  },
+  "evapdish": {
+   "title": "Warm it and watch",
+   "todo": [
+    "Pick a liquid and pour it into the dish.",
+    "Turn the warmer on and wait.",
+    "Then weigh what is left."
+   ],
+   "model": "A model of a real tool. An adult uses heat for this one.",
+   "liquids": [
+    {
+     "k": "salt",
+     "icon": "🧂",
+     "t": "Salt water",
+     "grams": 9,
+     "left": "white cubic crystals",
+     "res": "Salt! 9 g of it, the same 9 g that was stirred in."
+    },
+    {
+     "k": "sugar",
+     "icon": "🍬",
+     "t": "Sugar water",
+     "grams": 12,
+     "left": "sticky clear crystals",
+     "res": "Sugar, 12 g. It was dissolved in there the whole time."
+    },
+    {
+     "k": "plain",
+     "icon": "💧",
+     "t": "Plain water",
+     "grams": 0,
+     "left": "nothing at all",
+     "res": "An empty dish. Nothing was dissolved in it to leave behind."
+    },
+    {
+     "k": "sand",
+     "icon": "🏖️",
+     "t": "Sandy water",
+     "grams": 15,
+     "left": "damp sand",
+     "res": "Sand, 15 g. It never dissolved. It was only floating about."
+    }
+   ],
+   "onBtn": "🔥 Warm it",
+   "waitLine": "The water is leaving as vapor…",
+   "weighBtn": "⚖️ Weigh what is left",
+   "q": {
+    "q": "You warmed salt water and 9 g of salt was left. Where did the salt come from?",
+    "opts": [
+     {
+      "t": "It was dissolved in the water the whole time.",
+      "ok": true,
+      "why": "Right. Dissolving hid it from your eyes. It never left."
+     },
+     {
+      "t": "The heat made new salt.",
+      "why": "Heat cannot make a new material here. Nothing was added to the dish."
+     },
+     {
+      "t": "It came out of the dish.",
+      "why": "The dish is just a container. The salt came out of the water."
+     }
+    ]
+   }
+  }
+ },
+ "exploreMod": "statedial",
+ "quizKicker": "",
+ "quizMiss": {
+  "q1": {
+   "A": "A new substance means a CHEMICAL change. This one is about form.",
+   "B": "Heat is not the test. Cutting paper takes no heat at all."
+  },
+  "q2": {
+   "B": "You cannot make shreds into one clean sheet again. Try the one you put in the freezer.",
+   "C": "Broken glass will not go back together. Which one would?"
+  },
+  "q3": {
+   "A": "More pieces does not mean a new material. Every shred is still cheese.",
+   "C": "Shredding is never chemical. Nothing new was made."
+  }
+ },
+ "flags": {
+  "ans-1": [
+   {
+    "label": "one change",
+    "re": "melt|ice|sugar|dissolv|cut|paper|glass|break|broke|crayon|wax|shred|fold"
+   },
+   {
+    "label": "can it be undone",
+    "any": [
+     "undo",
+     "undone",
+     "reversible",
+     "reverse",
+     "back",
+     "refreeze",
+     "freeze again",
+     "cannot",
+     "can’t",
+     "can't",
+     "hard to"
+    ],
+    "min": 1
+   },
+   {
+    "label": "the material that stays the same",
+    "re": "water|paper|glass|sugar|wax|cheese|clay|same material|still"
+   }
+  ],
+  "ans-2": [
+   {
+    "label": "your explanation",
+    "re": "same material|still|no new|not new|does not make|doesn’t make|doesn't make|material stays"
+   },
+   {
+    "label": "an example",
+    "re": "paper|glass|shred|cut|break|broke|cheese|crayon|wax|sand|chalk"
+   }
+  ],
+  "cer-4": [
+   {
+    "label": "your claim",
+    "re": "agree|disagree|wrong|right|true|not true|false|not always|not every|does not|doesn’t"
+   },
+   {
+    "label": "two pieces of evidence",
+    "any": [
+     "paper",
+     "glass",
+     "shred",
+     "cheese",
+     "crayon",
+     "wax",
+     "melt",
+     "scale",
+     "gram",
+     "1,200",
+     "1200",
+     "mass",
+     "weigh",
+     "same material",
+     "sugar",
+     "salt"
+    ],
+    "min": 2
+   },
+   {
+    "label": "your reasoning",
+    "re": "because|so |this shows|that shows|this means|that means|which means|proves|since"
+   }
+  ]
+ },
+ "minWords": {
+  "ans-1": 15,
+  "ans-2": 15,
+  "cer-4": 30
+ },
+ "hints": {
+  "ans-1": [
+   "Pick one: melting ice, sugar dissolving, cutting paper, breaking glass, or the melted crayons.",
+   "Can you put it back the way it started? And what is it made of now?",
+   "Try: When ___ changes, you ___ undo it. The material is still ___."
+  ],
+  "ans-2": [
+   "Think about the shredded paper and the broken glass in the UNDO game.",
+   "What makes a change chemical? A NEW material, not a change you cannot undo.",
+   "Try: Irreversible only means ___. It is still ___ because ___. For example ___."
+  ]
+ },
+ "scholar": {},
+ "planner": {
+  "before": "cer-4",
+  "title": "Your claim and two pieces of evidence",
+  "rows": [
+   {
+    "label": "1. Pick your side",
+    "options": [
+     "I agree",
+     "I disagree"
+    ],
+    "pick": 1
+   },
+   {
+    "label": "2. Pick two pieces of evidence from the lesson",
+    "pick": 2,
+    "options": [
+     "Shredded paper cannot be undone, and every shred is still paper.",
+     "The melted crayon slab weighed 1,200 g before and after, and it poured into a new crayon.",
+     "The sealed bag read 48 g as ice and 48 g as water.",
+     "Breaking glass makes a loud noise."
+    ]
+   }
+  ],
+  "note": "Tap your side and two facts. Then write your reasoning in your own words."
+ },
+ "slots": {
+  "welcome": {
+   "label": "Welcome · the melted box",
+   "length": "40–50 s"
+  },
+  "warmup": {
+   "label": "Warm-Up · the sealed bag (Clue 1)",
+   "length": "15–20 s",
+   "script": "Dr. Nair here! One ice cube, zipped in a bag, sitting on a scale. Drag the bag onto the scale and read the number. Then press Wait an hour. Before you look, call it: what will the scale say now?"
+  },
+  "vocab": {
+   "label": "Word Wall",
+   "length": "30–45 s"
+  },
+  "lesson": {
+   "label": "The Lesson",
+   "length": "25–35 s"
+  },
+  "part1": {
+   "label": "Part 1 · call the number first (Clue 2)",
+   "length": "15–20 s",
+   "script": "Three changes, three times on the scale. Read the starting number, press the change button, then type your call before you weigh it. No peeking at the answer first. That is how real scientists keep themselves honest."
+  },
+  "part2": {
+   "label": "Part 2 · the UNDO button (Clue 3)",
+   "length": "20–30 s",
+   "script": "Six changes, six undo buttons. Press UNDO and watch. Some come right back. Some are stuck that way forever. Then stamp each card. Keep an eye on the material line at the bottom of every one."
+  },
+  "part3": {
+   "label": "Part 3 · where did the water go?",
+   "length": "15–20 s"
+  },
+  "explore": {
+   "label": "Part 4 · the state dial (Clue 4)",
+   "length": "15–20 s",
+   "script": "Take the dial all the way up to the stovetop, then all the way back down to the freezer. Watch two readouts the whole time: the mass, and the material. Neither one moves."
+  },
+  "quiz": {
+   "label": "Self-Check",
+   "length": "15–20 s"
+  },
+  "assignment": {
+   "label": "Assignment · crack the case",
+   "length": "20–30 s"
+  },
+  "partb": {
+   "label": "Part B",
+   "length": "30 s"
+  },
+  "partc": {
+   "label": "Part C · your own change chart",
+   "length": "30 s"
+  },
+  "evidence": {
+   "label": "Use your evidence · CER",
+   "length": "15–20 s"
+  },
+  "closing": {
+   "label": "Case closed",
+   "length": "20–30 s",
+   "notes": "Celebrate; tease 30.02, the last lesson (chemical changes)."
+  }
+ },
+ "videoOff": [],
+ "lensVoice": false,
+ "camera": {
+  "max": 8,
+  "huntTitle": "Bonus: can you snap all 4 shots on this list?",
+  "missions": [
+   "The sealed bag on the scale, after the ice melted (Warm-Up)",
+   "A call you got exactly right (The Lesson)",
+   "All six cards stamped (The Lesson)",
+   "The dial at the top, with the material still reading WATER (The Lesson)"
+  ]
+ },
+ "sketch": {
+  "tip": "Draw with the pen. Then use 🏷️ Label: drag from a part of your sketch to an empty spot, and type its name.",
+  "prompts": [
+   "The sealed bag on the scale",
+   "One giant rainbow crayon",
+   "Ice, water and vapor in one jar"
+  ],
+  "inline": [
+   {
+    "id": "partc",
+    "afterPart": "C",
+    "kicker": "Part C · draw and label two of your changes",
+    "required": true,
+    "minLabels": 4,
+    "prompts": [
+     "Draw one change you can undo",
+     "Draw one that is hard to undo",
+     "Label the material in each one",
+     "Add an arrow showing the change"
+    ]
+   }
+  ]
+ },
+ "hlCoach": {
+  "title": "Highlight like a scientist",
+  "tips": [
+   [
+    "🔑",
+    "Highlight key words, not whole paragraphs.",
+    "If everything is yellow, nothing stands out. Aim for a few words in each paragraph."
+   ],
+   [
+    "📖",
+    "Look for words that are explained.",
+    "Bold words, and words followed by “means”, “is called” or a meaning in ( ), are often worth saving."
+   ],
+   [
+    "🎯",
+    "Look for answers to the Big Question.",
+    "Ask yourself: what changed, and what stayed exactly the same?"
+   ],
+   [
+    "🔗",
+    "Watch for clue words.",
+    "“Because”, “so” and “first … then” show how ideas connect."
+   ],
+   [
+    "🎨",
+    "Use the colors on purpose.",
+    "Yellow = important. Green = evidence I might use in my answer. Pink = something I wonder about."
+   ]
+  ],
+  "practice": {
+   "q": "Practice: tap the 3 to 5 words that matter most in this sentence.",
+   "text": "A physical change can be hard to undo, but the material stays exactly the same.",
+   "key": [
+    "physical",
+    "hard",
+    "undo",
+    "material",
+    "same"
+   ],
+   "small": [
+    "a",
+    "can",
+    "be",
+    "to",
+    "but",
+    "the"
+   ],
+   "model": "A scientist might highlight “hard to undo” and “material stays exactly the same”. Those words hold the big idea."
+  },
+  "outside": "This works in every subject. When you read anything, save the words that answer your question, and skip the rest."
+ },
+ "specimen": {
+  "kicker": "Specimen collected",
+  "stamp": "CASE CLOSED",
+  "icon": "🖍️",
+  "name": "A sliver of the rainbow crayon",
+  "line": "You cracked Case 30, and a sliver of the giant rainbow crayon goes in your Field Notebook. (A specimen is something a scientist keeps.) Next lesson is the last of the year: changes that really do make something new!"
+ },
+ "notebookTitle": "Unit 7 · Waves, Patterns & Changes",
+ "notebook": [
+  {
+   "lesson": "18.01",
+   "icon": "🧫",
+   "name": "Red tide sample slide"
+  },
+  {
+   "lesson": "18.02",
+   "icon": "🎟️",
+   "name": "Star party ticket"
+  },
+  {
+   "lesson": "19.01",
+   "icon": "🏁",
+   "name": "Derby checkered flag"
+  },
+  {
+   "lesson": "19.02",
+   "icon": "🧦",
+   "name": "The fluke sock"
+  },
+  {
+   "lesson": "20.01",
+   "icon": "💡",
+   "name": "The burnt-out pier bulb"
+  },
+  {
+   "lesson": "20.02",
+   "icon": "📋",
+   "name": "The approved work order"
+  },
+  {
+   "lesson": "21.01",
+   "icon": "🔩",
+   "name": "A bolt from the dented bumper"
+  },
+  {
+   "lesson": "21.02",
+   "icon": "✉️",
+   "name": "An opened prediction envelope"
+  },
+  {
+   "lesson": "22.01",
+   "icon": "🪶",
+   "name": "A pelican feather from the solar panel"
+  },
+  {
+   "lesson": "22.02",
+   "icon": "📐",
+   "name": "Your approved patent drawing"
+  },
+  {
+   "lesson": "23.01",
+   "icon": "🎧",
+   "name": "The canal hum recording"
+  },
+  {
+   "lesson": "23.02",
+   "icon": "🎀",
+   "name": "The Bright Idea ribbon"
+  },
+  {
+   "lesson": "24.01",
+   "icon": "🧾",
+   "name": "Order slip #15"
+  },
+  {
+   "lesson": "24.02",
+   "icon": "🧻",
+   "name": "Teo’s napkin plan"
+  },
+  {
+   "lesson": "25.01",
+   "icon": "🗺️",
+   "name": "Teo’s treasure map"
+  },
+  {
+   "lesson": "25.02",
+   "icon": "🪧",
+   "name": "Zippy’s sign"
+  },
+  {
+   "lesson": "26.01",
+   "icon": "🦆",
+   "name": "A derby duck"
+  },
+  {
+   "lesson": "26.02",
+   "icon": "🔦",
+   "name": "A judge’s signal flashlight"
+  },
+  {
+   "lesson": "27.01",
+   "icon": "🏆",
+   "name": "The derby trophy"
+  },
+  {
+   "lesson": "27.02",
+   "icon": "🏅",
+   "name": "The new trophy design"
+  },
+  {
+   "lesson": "28.01",
+   "icon": "🎣",
+   "name": "The rusty bolt from the pond"
+  },
+  {
+   "lesson": "28.02",
+   "icon": "🧾",
+   "name": "Dana’s steel-bin receipt"
+  },
+  {
+   "lesson": "29.01",
+   "icon": "🍡",
+   "name": "A toasted marshmallow"
+  },
+  {
+   "lesson": "29.02",
+   "icon": "✨",
+   "name": "A chip of Kai’s fool’s gold"
+  },
+  {
+   "lesson": "30.01",
+   "icon": "🖍️",
+   "name": "A sliver of the rainbow crayon"
+  }
+ ],
+ "rankLine": "Your Field Station ID just updated. Keep going, scientist.",
+ "lensWin": "All six words are sorted. The art show thanks you!",
+ "inputs": [
+  {
+   "id": "tab1",
+   "type": "swap",
+   "find": {
+    "sel": ".tab-btn[data-tab=\"vocab\"]"
+   },
+   "swap": [
+    "📚 Vocabulary",
+    "🌅 Warm-Up"
+   ]
+  },
+  {
+   "id": "sw-words",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap a card to flip it"
+   },
+   "swap": [
+    "<strong>Tap a card to flip it</strong> and read what the word means.",
+    "<strong>Tap a word</strong> to see what it means."
+   ]
+  },
+  {
+   "id": "fs-warm",
+   "type": "frame",
+   "find": {
+    "sel": "#tab-vocab .fs-game[data-mod=\"sealbag\"]"
+   },
+   "label": "Warm-Up: the sealed bag",
+   "q": "Warm-Up: what the scale said, and what I think is in the bag.",
+   "title": "My bag notes",
+   "compact": true,
+   "fields": [
+    {
+     "t": "Before",
+     "icon": "⚖️",
+     "ph": "The scale said ___ with the ice in it."
+    },
+    {
+     "t": "After",
+     "icon": "💧",
+     "ph": "After the ice melted it said ___."
+    },
+    {
+     "t": "So",
+     "icon": "💡",
+     "ph": "That tells me ___."
+    }
+   ]
+  },
+  {
+   "id": "fs-partc",
+   "type": "frame",
+   "find": {
+    "sel": "#tab-assignment p",
+    "text": "name the material that stays the same"
+   },
+   "label": "Part C: my change chart",
+   "q": "Part C: four changes from home, sorted, with the material that stays the same.",
+   "title": "My change chart",
+   "fields": [
+    {
+     "t": "I can undo it",
+     "icon": "↩️",
+     "ph": "1. ___ → material that stays the same: ___"
+    },
+    {
+     "t": "I can undo it",
+     "icon": "↩️",
+     "ph": "2. ___ → material that stays the same: ___"
+    },
+    {
+     "t": "Hard to undo",
+     "icon": "🚫",
+     "ph": "3. ___ → material that stays the same: ___"
+    },
+    {
+     "t": "Hard to undo",
+     "icon": "🚫",
+     "ph": "4. ___ → material that stays the same: ___"
+    }
+   ]
+  },
+  {
+   "id": "fs-cer",
+   "type": "cer",
+   "target": "cer-4",
+   "find": {
+    "sel": "textarea#cer-4"
+   },
+   "reminder": "Claim = what you think is true. Evidence = facts from the lesson that prove it. Reasoning = how the evidence proves your claim.",
+   "parts": [
+    {
+     "k": "C",
+     "t": "Claim",
+     "ask": "Must a change you cannot undo be a chemical change?",
+     "ph": "I agree / I disagree because…"
+    },
+    {
+     "k": "E",
+     "t": "Evidence",
+     "ask": "Two facts from the lesson. Tap them in the planner above, or type them.",
+     "ph": "One fact is… Another fact is…",
+     "rows": 3
+    },
+    {
+     "k": "R",
+     "t": "Reasoning",
+     "ask": "How do those facts prove your claim?",
+     "ph": "This shows that…",
+     "rows": 3
+    }
+   ]
+  },
+  {
+   "id": "relabel",
+   "type": "relabel",
+   "map": {
+    "ans-1": "Part B · Question 5",
+    "ans-2": "Part B · Question 6",
+    "cer-4": "Use Your Evidence (CER)"
+   }
+  },
+  {
+   "id": "sw-check",
+   "type": "swap",
+   "find": {
+    "sel": "p",
+    "text": "Tap to toggle"
+   },
+   "swap": [
+    " Tap to toggle.",
+    ""
+   ]
+  },
+  {
+   "id": "sw-circle",
+   "type": "swap",
+   "find": {
+    "sel": ".card-head-title",
+    "text": "Revisit Our Key Question"
+   },
+   "swap": [
+    "Revisit Our Key Question",
+    "Back to the Big Question"
+   ]
+  }
+ ],
+ "cues": {
+  "warmup": [
+   {
+    "at": "^bag",
+    "sel": ".fs-sb-bag",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^scale",
+    "sel": ".fs-sb-scale",
+    "fx": "point"
+   },
+   {
+    "at": "^number",
+    "sel": ".fs-sb-read",
+    "fx": "glow"
+   },
+   {
+    "at": "^call",
+    "sel": "[data-mod=\"sealbag\"] .fs-todo li",
+    "i": 2,
+    "fx": "trace"
+   }
+  ],
+  "part1": [
+   {
+    "at": "^starting",
+    "sel": ".fs-cal-read",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^change",
+    "sel": ".fs-cal-do",
+    "fx": "point"
+   },
+   {
+    "at": "^type",
+    "sel": ".fs-cal-pad",
+    "fx": "glow"
+   },
+   {
+    "at": "^honest",
+    "sel": "[data-mod=\"callit\"] .fs-why",
+    "fx": "trace"
+   }
+  ],
+  "part2": [
+   {
+    "at": "^six",
+    "sel": ".fs-und-grid",
+    "fx": "pop",
+    "scroll": true
+   },
+   {
+    "at": "^UNDO",
+    "sel": ".fs-und-btn",
+    "i": 0,
+    "fx": "point"
+   },
+   {
+    "at": "^stamp",
+    "sel": ".fs-und-stamps",
+    "fx": "glow"
+   },
+   {
+    "at": "^material",
+    "sel": ".fs-und-mat",
+    "i": 0,
+    "fx": "reveal"
+   }
+  ],
+  "explore": [
+   {
+    "at": "^dial",
+    "sel": ".fs-std-dial",
+    "fx": "point",
+    "scroll": true
+   },
+   {
+    "at": "^stovetop",
+    "sel": ".fs-std-stop",
+    "i": 4,
+    "fx": "glow"
+   },
+   {
+    "at": "^freezer",
+    "sel": ".fs-std-stop",
+    "i": 0,
+    "fx": "glow"
+   },
+   {
+    "at": "^readouts",
+    "sel": ".fs-std-out",
+    "fx": "pop",
+    "tag": "watch these"
+   }
+  ]
+ },
+ "cueWords": {}
+}

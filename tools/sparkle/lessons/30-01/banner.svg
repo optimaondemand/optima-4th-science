@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="Sunrise over the Palmetto Springs dock. A half-melted ice cube sits on the sun-warmed boards, and the puddle under it still holds the square outline the cube started with, with a wisp of vapor rising.">
+  <defs>
+    <linearGradient id="b301sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FAEDC"/><stop offset=".55" stop-color="#F7C98D"/><stop offset="1" stop-color="#FBE4BC"/></linearGradient>
+    <linearGradient id="b301lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9CC3CE"/><stop offset="1" stop-color="#5B8794"/></linearGradient>
+    <linearGradient id="b301wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C79A68"/><stop offset="1" stop-color="#9A713F"/></linearGradient>
+    <linearGradient id="b301ice" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".95"/><stop offset=".5" stop-color="#D6EEF8" stop-opacity=".9"/><stop offset="1" stop-color="#A8D4E8" stop-opacity=".95"/></linearGradient>
+    <radialGradient id="b301sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF6D0"/><stop offset=".45" stop-color="#FFD87A" stop-opacity=".8"/><stop offset="1" stop-color="#FFD87A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b301pool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#BFE4F2" stop-opacity=".95"/><stop offset="1" stop-color="#7FB8CE" stop-opacity=".6"/></radialGradient>
+    <style>
+      .b301-vap { animation: b301vap 7s ease-in-out infinite; transform-origin: 50% 100%; }
+      .b301-vap2 { animation-delay: 2.2s; } .b301-vap3 { animation-delay: 4.1s; }
+      @keyframes b301vap { 0% { opacity: 0; transform: translateY(6px) scale(.9); } 35% { opacity: .55; } 100% { opacity: 0; transform: translateY(-26px) scale(1.25); } }
+      .b301-drip { animation: b301drip 4.5s ease-in infinite; }
+      @keyframes b301drip { 0%, 60% { opacity: 0; transform: translateY(0); } 70% { opacity: .9; } 100% { opacity: 0; transform: translateY(16px); } }
+      .b301-glint { animation: b301gl 5.5s ease-in-out infinite; }
+      @keyframes b301gl { 0%, 100% { opacity: .2; } 50% { opacity: .75; } }
+      .b301-shine { animation: b301sh 6s ease-in-out infinite; }
+      @keyframes b301sh { 0%, 100% { opacity: .25; } 50% { opacity: .8; } }
+      @media (prefers-reduced-motion: reduce) { .b301-vap, .b301-drip, .b301-glint, .b301-shine { animation: none; opacity: .4; } }
+    </style>
+  </defs>
+
+  <rect width="920" height="200" fill="url(#b301sky)"/>
+  <circle cx="762" cy="78" r="76" fill="url(#b301sun)"/>
+  <circle cx="762" cy="78" r="21" fill="#FFF4C6"/>
+
+  <path d="M0 96 Q120 82 250 92 T520 86 T780 94 T920 88 V112 H0z" fill="#6F8F62"/>
+  <g fill="#516E46">
+    <path d="M62 96 l5 -44 l4 44z"/><path d="M67 54 q-22 -6 -30 6 q16 -6 30 -2z"/><path d="M67 54 q22 -8 32 2 q-16 -4 -32 2z"/>
+    <path d="M884 94 l5 -38 l4 38z"/><path d="M889 58 q-20 -6 -28 6 q14 -6 28 -2z"/><path d="M889 58 q20 -8 30 2 q-14 -4 -30 2z"/>
+  </g>
+
+  <rect y="106" width="920" height="94" fill="url(#b301lake)"/>
+  <path d="M700 118 h150 M724 130 h104 M744 142 h64" stroke="#FFEFC2" stroke-width="3" stroke-linecap="round" class="b301-glint"/>
+
+  <rect x="0" y="126" width="920" height="74" fill="url(#b301wood)"/>
+  <g stroke="#7E5A31" stroke-width="2" opacity=".55">
+    <path d="M0 148 H920"/><path d="M0 172 H920"/>
+    <path d="M120 126 V200"/><path d="M300 126 V200"/><path d="M480 126 V200"/><path d="M660 126 V200"/><path d="M840 126 V200"/>
+  </g>
+  <rect x="0" y="126" width="920" height="4" fill="#E0B07A" opacity=".8"/>
+
+  <ellipse cx="392" cy="166" rx="118" ry="21" fill="url(#b301pool)"/>
+  <rect x="316" y="150" width="86" height="30" rx="5" fill="none" stroke="#FFFFFF" stroke-width="2.5" opacity=".65"/>
+  <ellipse cx="392" cy="166" rx="118" ry="21" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity=".45"/>
+  <path d="M300 160 q40 -8 84 -4" stroke="#FFFBEA" stroke-width="3" stroke-linecap="round" opacity=".5" class="b301-shine"/>
+
+  <g>
+    <path d="M430 128 l54 -16 l44 18 l0 44 l-44 16 l-54 -18z" fill="url(#b301ice)" stroke="#8FC6DE" stroke-width="2"/>
+    <path d="M430 128 l54 -16 l44 18 l-50 16z" fill="#FFFFFF" opacity=".8"/>
+    <path d="M484 146 l44 -16 l0 44 l-44 16z" fill="#A9D7EA" opacity=".85"/>
+    <path d="M444 136 l30 -9" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+    <g class="b301-drip"><ellipse cx="452" cy="176" rx="4" ry="6" fill="#CDEBF8"/></g>
+  </g>
+
+  <g fill="#FFFFFF">
+    <ellipse class="b301-vap" cx="498" cy="112" rx="13" ry="8"/>
+    <ellipse class="b301-vap b301-vap2" cx="520" cy="110" rx="10" ry="6"/>
+    <ellipse class="b301-vap b301-vap3" cx="480" cy="108" rx="9" ry="5"/>
+  </g>
+</svg>
